@@ -11,13 +11,10 @@
  * @param {Object} handlers
  * @returns {function}
  */
-export function createReducer(initialState: Object, handlers: Object): Function {
-  return function reducer(state: Object = initialState, action: Object): Object {
-    if ({}.hasOwnProperty.call(handlers, action.type)) {
-      return handlers[action.type](state, action)
-    }
-
-    return state
+export function createReducer(initialState, handlers) {
+  return function reducer(state = initialState, action) {
+    const handler = handlers[action.type]
+    return handler ? handler(state, action) : state
   }
 }
 
