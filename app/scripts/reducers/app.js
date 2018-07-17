@@ -1,31 +1,26 @@
-import immutable from 'immutability-helper';
-import { REHYDRATE } from 'redux-persist/lib/constants';
-import { createReducer } from 'modules/helpers';
+import { REHYDRATE } from 'redux-persist/lib/constants'
+import { createReducer } from 'modules/helpers'
 
-import { ActionTypes } from 'constants/index';
+import { APP } from './../actions/types'
 
-export const appState = {
-  alerts: [],
-};
+export const initialState = {
+  alerts: []
+}
 
 export default {
-  app: createReducer(appState, {
+  app: createReducer(initialState, {
     [REHYDRATE](state) {
-      return immutable(state, {
-        alerts: { $set: [] },
-      });
+      return initialState
     },
-    [ActionTypes.HIDE_ALERT](state, { payload: { id } }) {
-      const alerts = state.alerts.filter(d => d.id !== id);
-
-      return immutable(state, {
-        alerts: { $set: alerts },
-      });
+    [APP.HIDE_ALERT](state, { payload: { id } }) {
+      return {
+        alerts: state.alerts.filter(d => d.id !== id)
+      }
     },
-    [ActionTypes.SHOW_ALERT](state, { payload }) {
-      return immutable(state, {
-        alerts: { $push: [payload] },
-      });
-    },
-  }),
-};
+    [APP.SHOW_ALERT](state, { payload }) {
+      return {
+        alerts: [...state.alerts, payload]
+      }
+    }
+  })
+}

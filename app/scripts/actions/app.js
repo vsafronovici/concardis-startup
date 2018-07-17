@@ -3,12 +3,12 @@
  * @module Actions/App
  * @desc App Actions
  */
-import { go, goBack, push, replace } from 'react-router-redux';
-import uuid from 'uuid/v4';
+import { go, goBack, push, replace } from 'react-router-redux'
+import uuid from 'uuid/v4'
 
-import { ActionTypes } from 'constants/index';
+import { APP } from './types'
 
-export { go, goBack, push, replace };
+export { go, goBack, push, replace }
 
 /**
  * Hide alert.
@@ -18,9 +18,9 @@ export { go, goBack, push, replace };
  */
 export function hideAlert(id: string): Object {
   return {
-    type: ActionTypes.HIDE_ALERT,
+    type: APP.HIDE_ALERT,
     payload: { id },
-  };
+  }
 }
 
 /**
@@ -36,10 +36,10 @@ export function hideAlert(id: string): Object {
  * @returns {Object}
  */
 export function showAlert(message: string, options: Object): Object {
-  const timeout = options.type === 'error' ? 0 : 5;
+  const timeout = options.type === 'error' ? 0 : 5
 
   return {
-    type: ActionTypes.SHOW_ALERT,
+    type: APP.SHOW_ALERT,
     payload: {
       id: options.id || uuid(),
       icon: options.icon,
@@ -48,5 +48,5 @@ export function showAlert(message: string, options: Object): Object {
       type: options.type,
       timeout: !isNaN(options.timeout) ? options.timeout : timeout,
     },
-  };
+  }
 }

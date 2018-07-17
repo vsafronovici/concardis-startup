@@ -14,11 +14,11 @@
 export function createReducer(initialState: Object, handlers: Object): Function {
   return function reducer(state: Object = initialState, action: Object): Object {
     if ({}.hasOwnProperty.call(handlers, action.type)) {
-      return handlers[action.type](state, action);
+      return handlers[action.type](state, action)
     }
 
-    return state;
-  };
+    return state
+  }
 }
 
 /**
@@ -28,24 +28,7 @@ export function createReducer(initialState: Object, handlers: Object): Function 
  */
 export function createRequestTypes(base: string): Object {
   return ['REQUEST', 'SUCCESS', 'FAILURE'].reduce((acc, type) => {
-    acc[type] = `${base}_${type}`;
-    return acc;
-  }, {});
-}
-
-/**
- * Convert data attributes to Object
- * @param {Element} elem
- * @returns {{}}
- */
-export function datasetToObject(elem: Element): Object {
-  const data = {};
-  [].forEach.call(elem.attributes, attr => {
-    /* istanbul ignore else */
-    if (/^data-/.test(attr.name)) {
-      const camelCaseName = attr.name.substr(5).replace(/-(.)/g, ($0, $1) => $1.toUpperCase());
-      data[camelCaseName] = attr.value;
-    }
-  });
-  return data;
+    acc[type] = `${base}_${type}`
+    return acc
+  }, {})
 }

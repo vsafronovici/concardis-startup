@@ -1,4 +1,4 @@
-import keyMirror from 'fbjs/lib/keyMirror';
+import { createEnum } from "../utils/namespace-util"
 
 /**
  * @namespace Constants
@@ -9,7 +9,7 @@ import keyMirror from 'fbjs/lib/keyMirror';
  * @constant {Object} ActionTypes
  * @memberof Constants
  */
-export const ActionTypes = keyMirror({
+export const ActionTypes = createEnum({
   USER_LOGIN_REQUEST: undefined,
   USER_LOGIN_SUCCESS: undefined,
   USER_LOGIN_FAILURE: undefined,
@@ -21,13 +21,13 @@ export const ActionTypes = keyMirror({
   GITHUB_GET_REPOS_FAILURE: undefined,
   SHOW_ALERT: undefined,
   HIDE_ALERT: undefined,
-});
+})
 
 /**
  * @constant {Object} XHR
  * @memberof Constants
  */
-export const XHR = keyMirror({
+export const XHR = createEnum({
   SUCCESS: undefined,
   FAIL: undefined,
-});
+})
