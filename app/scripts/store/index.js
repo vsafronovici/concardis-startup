@@ -7,6 +7,7 @@ import storage from 'redux-persist/lib/storage';
 import history from 'modules/history';
 import rootSaga from 'sagas';
 import rootReducer from 'reducers';
+import { reducer as formReducer } from 'redux-form';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -19,6 +20,7 @@ const reducer = persistReducer(
   combineReducers({
     ...rootReducer,
     router: routerReducer,
+    form: formReducer
   })
 );
 
