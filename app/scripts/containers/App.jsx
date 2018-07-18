@@ -19,6 +19,7 @@ import NotFound from 'routes/NotFound';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 import SystemAlerts from 'components/SystemAlerts';
+import LocaleDemoPage from "../routes/LocaleDemoPage";
 
 export class App extends React.Component {
   static propTypes = {
@@ -60,6 +61,7 @@ export class App extends React.Component {
             <Switch>
               <RoutePublic isAuthenticated={user.isAuthenticated} path="/" exact component={Home} />
               <RoutePrivate isAuthenticated={user.isAuthenticated} path="/private" component={Private} />
+              <RoutePublic isAuthenticated={false} path="/localeDemo" component={LocaleDemoPage} />
               <Route component={NotFound} />
             </Switch>
           </main>

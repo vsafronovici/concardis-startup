@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Translate } from 'react-redux-i18n'
+
 
 import { logOut } from 'actions';
 import Logo from 'components/Logo';
@@ -25,7 +27,7 @@ export default class Header extends React.PureComponent {
             <ul className="list-unstyled">
               <li>
                 <a href="#logout" className="app__logout" onClick={this.handleClickLogout}>
-                  <span>logout</span><i className="i-sign-out" />
+                  <Translate value="app.logout"/><i className="i-sign-out" />
                 </a>
               </li>
             </ul>
