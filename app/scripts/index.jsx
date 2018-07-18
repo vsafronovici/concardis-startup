@@ -1,22 +1,22 @@
 // Polyfills
-import 'core-js/shim';
-import 'isomorphic-fetch';
-import 'classlist-polyfill';
-import 'vendor/polyfills';
+import 'core-js/shim'
+import 'isomorphic-fetch'
+import 'classlist-polyfill'
+import 'vendor/polyfills'
 
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-import { Provider } from 'react-redux';
-import { AppContainer } from 'react-hot-loader';
-import { PersistGate } from 'redux-persist/lib/integration/react';
+import { Provider } from 'react-redux'
+import { AppContainer } from 'react-hot-loader'
+import { PersistGate } from 'redux-persist/lib/integration/react'
 
-import { store, persistor } from 'app-store';
-import { showAlert } from 'actions';
+import { store, persistor } from 'app-store'
+import { showAlert } from 'actions'
 
-import App from 'containers/App';
-import Loader from 'components/Loader';
-import '../styles/main.scss';
+import App from 'containers/App'
+import Loader from 'components/Loader'
+import '../styles/main.scss'
 
 export const init = {
   cssRetries: 0,
@@ -25,11 +25,11 @@ export const init = {
   run() {
     /* istanbul ignore else */
     if (process.env.NODE_ENV !== 'production') {
-      this.render(App);
-      return Promise.resolve();
+      this.render(App)
+      return Promise.resolve()
     }
 
-    this.initOfflinePlugin();
+    this.initOfflinePlugin()
 
     /* istanbul ignore next */
     return Promise
@@ -37,37 +37,37 @@ export const init = {
       .then(() => this.render(App))
       .catch(reason => {
         if (this.fetchRetries < 3) {
-          this.fetchRetries++;
-          this.run();
+          this.fetchRetries++
+          this.run()
         }
-        console.log(reason); //eslint-disable-line no-console
-      });
+        console.log(reason) //eslint-disable-line no-console
+      })
   },
   loadCSS() {
     /* istanbul ignore next */
     return new Promise(resolve => {
       this.retryCSS = () => {
         if (this.isCSSLoaded() || this.cssRetries > 2) {
-          resolve();
+          resolve()
         }
         else {
-          this.cssRetries++;
+          this.cssRetries++
           setTimeout(() => {
-            this.retryCSS();
-          }, this.cssRetries * 500);
+            this.retryCSS()
+          }, this.cssRetries * 500)
         }
-      };
+      }
 
-      this.retryCSS();
-    });
+      this.retryCSS()
+    })
   },
   initOfflinePlugin() {
-    const OfflinePlugin = require('offline-plugin/runtime');
+    const OfflinePlugin = require('offline-plugin/runtime')
 
     /* istanbul ignore next */
     OfflinePlugin.install({
       onUpdateReady: () => {
-        OfflinePlugin.applyUpdate();
+        OfflinePlugin.applyUpdate()
       },
       onUpdated: () => {
         store.dispatch(showAlert((
@@ -77,19 +77,19 @@ export const init = {
               Reload
             </button>
           </div>
-        ), { id: 'sw-update', type: 'primary', icon: 'i-flash', timeout: 0 }));
-      },
-    });
+        ), { id: 'sw-update', type: 'primary', icon: 'i-flash', timeout: 0 }))
+      }
+    })
   },
   isCSSLoaded() {
-    const styles = document.styleSheets;
+    const styles = document.styleSheets
 
     /* istanbul ignore next */
     try {
       for (let i = 0; i < styles.length; i++) {
         if (styles[i].href && styles[i].href.match('app.*.css')) {
           if (styles[i].cssRules !== null && styles[i].cssRules.length > 0) {
-            return true;
+            return true
           }
         }
       }
@@ -98,10 +98,10 @@ export const init = {
       // error
     }
 
-    return false;
+    return false
   },
   render(Component) {
-    const root = document.getElementById('react');
+    const root = document.getElementById('react')
 
     /* istanbul ignore next */
     if (root) {
@@ -117,17 +117,17 @@ export const init = {
           </Provider>
         </AppContainer>,
         root
-      );
+      )
     }
-  },
-};
+  }
+}
 
-init.run();
+init.run()
 
 /* istanbul ignore next  */
 if (module.hot) {
   module.hot.accept(
     'containers/App',
     () => init.render(App)
-  );
+  )
 }

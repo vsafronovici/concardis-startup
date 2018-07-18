@@ -1,33 +1,33 @@
-import reducer from 'reducers/github';
-import { ActionTypes } from 'constants/index';
+import reducer from 'reducers/github'
+import { ActionTypes } from 'constants/index'
 
 describe('Github', () => {
   it('should return the initial state', () => {
     expect(reducer.github(undefined, {}))
-      .toMatchSnapshot();
-  });
+      .toMatchSnapshot()
+  })
 
   it(`should handle ${ActionTypes.GITHUB_GET_REPOS_REQUEST}`, () => {
     expect(reducer.github(undefined, {
       type: ActionTypes.GITHUB_GET_REPOS_REQUEST,
-      payload: { q: 'react' },
+      payload: { q: 'react' }
     }))
-      .toMatchSnapshot();
-  });
+      .toMatchSnapshot()
+  })
 
   it(`should handle ${ActionTypes.GITHUB_GET_REPOS_SUCCESS}`, () => {
     expect(reducer.github(undefined, {
       type: ActionTypes.GITHUB_GET_REPOS_SUCCESS,
-      payload: {},
+      payload: {}
     }))
-      .toMatchSnapshot();
-  });
+      .toMatchSnapshot()
+  })
 
   it(`should handle ${ActionTypes.GITHUB_GET_REPOS_FAILURE}`, () => {
     expect(reducer.github(undefined, {
       type: ActionTypes.GITHUB_GET_REPOS_FAILURE,
-      payload: {},
+      payload: {}
     }))
-      .toMatchSnapshot();
-  });
-});
+      .toMatchSnapshot()
+  })
+})

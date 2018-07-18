@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Route, Redirect } from 'react-router-dom';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Route, Redirect } from 'react-router-dom'
 
 const RoutePublic = ({ component: Component, isAuthenticated, to, ...rest }) => (
   <Route
@@ -11,16 +11,16 @@ const RoutePublic = ({ component: Component, isAuthenticated, to, ...rest }) => 
         : (<Component {...props} />)
     )}
   />
-);
+)
 
 RoutePublic.propTypes = {
   component: PropTypes.func.isRequired,
   isAuthenticated: PropTypes.bool.isRequired,
-  to: PropTypes.string,
-};
+  to: PropTypes.string
+}
 
 RoutePublic.defaultProps = {
-  to: '/private',
-};
+  to: '/private'
+}
 
-export default RoutePublic;
+export default RoutePublic

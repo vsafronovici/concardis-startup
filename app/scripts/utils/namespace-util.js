@@ -7,4 +7,3 @@ export const createNamespace = (prefix, keys) => (
 
 export const createEnum = keys => createNamespace(undefined, keys)
 
-

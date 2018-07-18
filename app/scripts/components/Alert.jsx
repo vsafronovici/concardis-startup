@@ -1,33 +1,33 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
 
 const Alert = ({ children, handleClickClose, id, icon, type }) => {
-  const output = {};
-  const typeClass = type ? ` is-${type}` : '';
+  const output = {}
+  const typeClass = type ? ` is-${type}` : ''
 
   switch (type) {
     case 'success': {
-      output.icon = icon || 'i-check-circle';
-      break;
+      output.icon = icon || 'i-check-circle'
+      break
     }
     case 'error': {
-      output.icon = icon || 'i-times-circle';
-      break;
+      output.icon = icon || 'i-times-circle'
+      break
     }
     case 'warning': {
-      output.icon = icon || 'i-exclamation-circle';
-      break;
+      output.icon = icon || 'i-exclamation-circle'
+      break
     }
     case 'info': {
-      output.icon = icon || 'i-question-circle';
-      break;
+      output.icon = icon || 'i-question-circle'
+      break
     }
     case 'black': {
-      output.icon = icon || 'i-bell-o';
-      break;
+      output.icon = icon || 'i-bell-o'
+      break
     }
     default: {
-      output.icon = icon || 'i-dot-circle-o';
+      output.icon = icon || 'i-dot-circle-o'
     }
   }
 
@@ -40,7 +40,7 @@ const Alert = ({ children, handleClickClose, id, icon, type }) => {
       >
         <i className="i-times" />
       </button>
-    );
+    )
   }
 
   return (
@@ -51,15 +51,15 @@ const Alert = ({ children, handleClickClose, id, icon, type }) => {
       <div className="app__alert__content">{children}</div>
       {output.button}
     </div>
-  );
-};
+  )
+}
 
 Alert.propTypes = {
   children: PropTypes.node.isRequired,
   handleClickClose: PropTypes.func,
   icon: PropTypes.string,
   id: PropTypes.string,
-  type: PropTypes.string,
-};
+  type: PropTypes.string
+}
 
-export default Alert;
+export default Alert

@@ -1,50 +1,50 @@
-import React from 'react';
-import { shallow } from 'enzyme';
+import React from 'react'
+import { shallow } from 'enzyme'
 
-import { App } from 'containers/App';
+import { App } from 'containers/App'
 
-const mockDispatch = jest.fn();
+const mockDispatch = jest.fn()
 
 const props = {
   app: {
-    alerts: [],
+    alerts: []
   },
   dispatch: mockDispatch,
   user: {
-    isAuthenticated: false,
-  },
-};
+    isAuthenticated: false
+  }
+}
 
 function setup(ownProps = props) {
   return shallow(
     <App {...ownProps} />,
     { attachTo: document.getElementById('react') }
-  );
+  )
 }
 
 describe('App', () => {
-  const wrapper = setup();
+  const wrapper = setup()
 
   it('should be a Component', () => {
-    expect(wrapper.instance() instanceof React.Component).toBe(true);
-  });
+    expect(wrapper.instance() instanceof React.Component).toBe(true)
+  })
 
   it('should render properly for anonymous users', () => {
-    expect(wrapper.find('HelmetWrapper')).toBePresent();
-    expect(wrapper.find('ConnectedRouter')).toBePresent();
-    expect(wrapper.find('Switch')).toBePresent();
-    expect(wrapper.find('Footer')).toBePresent();
-    expect(wrapper.find('SystemAlerts')).toBePresent();
-  });
+    expect(wrapper.find('HelmetWrapper')).toBePresent()
+    expect(wrapper.find('ConnectedRouter')).toBePresent()
+    expect(wrapper.find('Switch')).toBePresent()
+    expect(wrapper.find('Footer')).toBePresent()
+    expect(wrapper.find('SystemAlerts')).toBePresent()
+  })
 
   it('should render properly for logged users', () => {
     wrapper.setProps({
       ...wrapper.props(),
       user: {
-        isAuthenticated: true,
-      },
-    });
+        isAuthenticated: true
+      }
+    })
 
-    expect(wrapper.find('Header')).toBePresent();
-  });
-});
+    expect(wrapper.find('Header')).toBePresent()
+  })
+})

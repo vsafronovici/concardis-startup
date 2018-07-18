@@ -1,6 +1,6 @@
-import React from 'react';
-import RouterRoute from 'react-router-dom/Route';
-import RouterSwitch from 'react-router-dom/Switch';
+import React from 'react'
+import RouterRoute from 'react-router-dom/Route'
+import RouterSwitch from 'react-router-dom/Switch'
 
 export const Link = (props) => {
   const {
@@ -10,8 +10,8 @@ export const Link = (props) => {
     style,
     className,
     ...rest
-  } = props;
-  delete rest.exact;
+  } = props
+  delete rest.exact
 
   return (
     <a
@@ -19,22 +19,22 @@ export const Link = (props) => {
       className={className}
       style={style}
       onClick={e => {
-        e.preventDefault();
+        e.preventDefault()
 
         jsdom.reconfigure({
-          url: e.currentTarget.href,
-        });
+          url: e.currentTarget.href
+        })
 
         if (typeof onClick === 'function') {
-          onClick(e);
+          onClick(e)
         }
       }}
       {...rest}
     >
       {children}
     </a>
-  );
-};
+  )
+}
 
 export const NavLink = (props) => {
   const {
@@ -45,14 +45,14 @@ export const NavLink = (props) => {
     activeClassName,
     isActive: getIsActive,
     ...rest
-  } = props;
-  let match = null;
+  } = props
+  let match = null
 
   if ((to.pathname || to) === location.pathname) {
-    match = { path: location.pathname };
+    match = { path: location.pathname }
   }
 
-  const isActive = typeof getIsActive === 'function' ? getIsActive(match, location) : null;
+  const isActive = typeof getIsActive === 'function' ? getIsActive(match, location) : null
 
   return (
     <Link
@@ -61,10 +61,10 @@ export const NavLink = (props) => {
       style={isActive ? { ...style, ...activeStyle } : style}
       {...rest}
     />
-  );
-};
+  )
+}
 
-export const Redirect = () => (<div id="redirect" />);
+export const Redirect = () => (<div id="redirect" />)
 
-export const Route = RouterRoute;
-export const Switch = RouterSwitch;
+export const Route = RouterRoute
+export const Switch = RouterSwitch

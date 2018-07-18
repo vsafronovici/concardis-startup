@@ -1,27 +1,27 @@
-import PropTypes from 'prop-types';
-import React from 'react';
-import { connect } from 'react-redux';
-import cx from 'classnames';
+import PropTypes from 'prop-types'
+import React from 'react'
+import { connect } from 'react-redux'
+import cx from 'classnames'
 
-import config from 'config';
+import config from 'config'
 
-import Logo from 'components/Logo';
-import { login } from 'actions/index';
+import Logo from 'components/Logo'
+import { login } from 'actions/index'
 
 export class Home extends React.PureComponent {
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
-    user: PropTypes.object.isRequired,
+    user: PropTypes.object.isRequired
   };
 
   handleClickLogin = (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
-    this.props.dispatch(login());
+    this.props.dispatch(login())
   };
 
   render() {
-    const { user } = this.props;
+    const { user } = this.props
 
     return (
       <div key="Home" className="app__home app__route">
@@ -35,7 +35,7 @@ export class Home extends React.PureComponent {
               href="#login"
               onClick={this.handleClickLogin}
               className={cx('btn btn-lg btn-primary btn-icon', {
-                'btn-loading': user.status === 'running',
+                'btn-loading': user.status === 'running'
               })}
             >
               <i className="i-sign-in" />
@@ -44,13 +44,13 @@ export class Home extends React.PureComponent {
           </div>
         </div>
       </div>
-    );
+    )
   }
 }
 
 /* istanbul ignore next */
 function mapStateToProps(state) {
-  return { user: state.user };
+  return { user: state.user }
 }
 
-export default connect(mapStateToProps)(Home);
+export default connect(mapStateToProps)(Home)

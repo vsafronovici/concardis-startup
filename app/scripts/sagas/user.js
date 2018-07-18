@@ -3,28 +3,28 @@
  * @desc User
  */
 
-import { delay } from 'redux-saga';
-import { all, call, put, takeLatest } from 'redux-saga/effects';
+import { delay } from 'redux-saga'
+import { all, call, put, takeLatest } from 'redux-saga/effects'
 
-import { ActionTypes } from 'constants/index';
+import { ActionTypes } from 'constants/index'
 
 /**
  * Login
  */
 export function* login() {
   try {
-    yield call(delay, 400);
+    yield call(delay, 400)
 
     yield put({
-      type: ActionTypes.USER_LOGIN_SUCCESS,
-    });
+      type: ActionTypes.USER_LOGIN_SUCCESS
+    })
   }
   catch (err) {
     /* istanbul ignore next */
     yield put({
       type: ActionTypes.USER_LOGIN_FAILURE,
-      payload: err,
-    });
+      payload: err
+    })
   }
 }
 
@@ -33,18 +33,18 @@ export function* login() {
  */
 export function* logout() {
   try {
-    yield call(delay, 200);
+    yield call(delay, 200)
 
     yield put({
-      type: ActionTypes.USER_LOGOUT_SUCCESS,
-    });
+      type: ActionTypes.USER_LOGOUT_SUCCESS
+    })
   }
   catch (err) {
     /* istanbul ignore next */
     yield put({
       type: ActionTypes.USER_LOGOUT_FAILURE,
-      payload: err,
-    });
+      payload: err
+    })
   }
 }
 
@@ -54,6 +54,6 @@ export function* logout() {
 export default function* root() {
   yield all([
     takeLatest(ActionTypes.USER_LOGIN_REQUEST, login),
-    takeLatest(ActionTypes.USER_LOGOUT_REQUEST, logout),
-  ]);
+    takeLatest(ActionTypes.USER_LOGOUT_REQUEST, logout)
+  ])
 }

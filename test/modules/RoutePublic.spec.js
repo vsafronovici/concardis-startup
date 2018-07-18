@@ -1,7 +1,7 @@
-import React from 'react';
-import Router from 'react-router-dom/MemoryRouter';
-import { renderToString } from 'react-dom/server';
-import RoutePublic from 'modules/RoutePublic';
+import React from 'react'
+import Router from 'react-router-dom/MemoryRouter'
+import { renderToString } from 'react-dom/server'
+import RoutePublic from 'modules/RoutePublic'
 
 describe('modules/RoutePublic', () => {
   it('should render the Login component for unauthenticated access', () => {
@@ -14,10 +14,10 @@ describe('modules/RoutePublic', () => {
           isAuthenticated={false}
         />
       </Router>
-    );
+    )
 
-    expect(render).toMatchSnapshot();
-  });
+    expect(render).toMatchSnapshot()
+  })
 
   it('should redirect to /private for authenticated access', () => {
     const render = renderToString(
@@ -29,8 +29,8 @@ describe('modules/RoutePublic', () => {
           isAuthenticated={true}
         />
       </Router>
-    );
+    )
 
-    expect(render).toMatchSnapshot();
-  });
-});
+    expect(render).toMatchSnapshot()
+  })
+})

@@ -3,7 +3,7 @@ import { ActionTypes } from 'constants/index'
 
 export const userState = {
   isAuthenticated: false,
-  status: 'idle',
+  status: 'idle'
 }
 
 export default {
@@ -11,7 +11,7 @@ export default {
     [ActionTypes.USER_LOGIN_REQUEST](state) {
       return {
         ...state,
-        status: { $set: 'running' },
+        status: { $set: 'running' }
       }
     },
     [ActionTypes.USER_LOGIN_SUCCESS](state) {

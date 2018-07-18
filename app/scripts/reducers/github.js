@@ -8,7 +8,7 @@ export const initialState = {
     data: {},
     status: 'idle',
     message: '',
-    query: '',
+    query: ''
   }
 }
 
@@ -21,7 +21,7 @@ export default {
         repos: {
           data: {
             ...state.repos.data,
-            [payload.query]: data,
+            [payload.query]: data
           },
           message: '',
           query: payload.query,
@@ -34,17 +34,17 @@ export default {
         repos: {
           data: {
             ...state.repos.data,
-            [state.repos.query]: payload.data || [],
+            [state.repos.query]: payload.data || []
           },
-          status: 'loaded',
+          status: 'loaded'
         }
       }
     },
     [ActionTypes.GITHUB_GET_REPOS_FAILURE](state, { payload }) {
       return {
         repos: {
-          message: parseError(payload.message) ,
-          status: 'error',
+          message: parseError(payload.message),
+          status: 'error'
         }
       }
     }

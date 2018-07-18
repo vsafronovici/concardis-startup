@@ -1,55 +1,55 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import cx from 'classnames';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import cx from 'classnames'
 
-import { getRepos, showAlert } from 'actions';
+import { getRepos, showAlert } from 'actions'
 
-import Loader from 'components/Loader';
+import Loader from 'components/Loader'
 
 export class GitHub extends React.Component {
   state = {
-    query: 'react',
+    query: 'react'
   };
 
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
-    github: PropTypes.object.isRequired,
+    github: PropTypes.object.isRequired
   };
 
   componentDidMount() {
-    const { query } = this.state;
-    const { dispatch } = this.props;
+    const { query } = this.state
+    const { dispatch } = this.props
 
-    dispatch(getRepos(query));
+    dispatch(getRepos(query))
   }
 
   componentWillReceiveProps(nextProps) {
-    const { dispatch, github: { repos } } = this.props;
-    const { github: { repos: nextRepos } } = nextProps;
+    const { dispatch, github: { repos } } = this.props
+    const { github: { repos: nextRepos } } = nextProps
 
     if (repos.status === 'running' && nextRepos.status === 'error') {
-      dispatch(showAlert(nextRepos.message, { type: 'error' }));
+      dispatch(showAlert(nextRepos.message, { type: 'error' }))
     }
   }
 
   handleClick = (e) => {
-    const { query } = e.currentTarget.dataset;
-    const { dispatch, github } = this.props;
+    const { query } = e.currentTarget.dataset
+    const { dispatch, github } = this.props
 
     this.setState({
-      query,
-    });
+      query
+    })
 
     if (!github.repos.data[query] || !github.repos.data[query].length) {
-      dispatch(getRepos(query));
+      dispatch(getRepos(query))
     }
   };
 
   render() {
-    const { query } = this.state;
-    const { github } = this.props;
-    let output;
+    const { query } = this.state
+    const { github } = this.props
+    let output
 
     if (github.repos.data[query] && github.repos.status === 'loaded') {
       output = (
@@ -70,10 +70,10 @@ export class GitHub extends React.Component {
               </li>
             ))}
         </ul>
-      );
+      )
     }
     else {
-      output = <Loader />;
+      output = <Loader />
     }
 
     return (
@@ -85,7 +85,7 @@ export class GitHub extends React.Component {
               className={cx('btn', {
                 'btn-primary': query === 'react',
                 'btn-outline-primary': query !== 'react',
-                'btn-loading': query === 'react' && github.repos.status === 'running',
+                'btn-loading': query === 'react' && github.repos.status === 'running'
               })}
               data-query="react"
               onClick={this.handleClick}
@@ -97,7 +97,7 @@ export class GitHub extends React.Component {
               className={cx('btn', {
                 'btn-primary': query === 'redux',
                 'btn-outline-primary': query !== 'redux',
-                'btn-loading': query === 'redux' && github.repos.status === 'running',
+                'btn-loading': query === 'redux' && github.repos.status === 'running'
               })}
               data-query="redux"
               onClick={this.handleClick}
@@ -108,13 +108,13 @@ export class GitHub extends React.Component {
         </div>
         {output}
       </div>
-    );
+    )
   }
 }
 
 /* istanbul ignore next */
 function mapStateToProps(state) {
-  return { github: state.github };
+  return { github: state.github }
 }
 
-export default connect(mapStateToProps)(GitHub);
+export default connect(mapStateToProps)(GitHub)

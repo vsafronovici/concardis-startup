@@ -19,7 +19,7 @@ export { go, goBack, push, replace }
 export function hideAlert(id: string): Object {
   return {
     type: APP.HIDE_ALERT,
-    payload: { id },
+    payload: { id }
   }
 }
 
@@ -46,7 +46,7 @@ export function showAlert(message: string, options: Object): Object {
       message,
       position: options.position || 'bottom-right',
       type: options.type,
-      timeout: !isNaN(options.timeout) ? options.timeout : timeout,
-    },
+      timeout: !isNaN(options.timeout) ? options.timeout : timeout
+    }
   }
 }

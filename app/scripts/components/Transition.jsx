@@ -1,12 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
 const Transition = ({ children, className, style, ...rest }) => (
   <TransitionGroup className={className} style={style}>
     {React.Children.map(children, child => (<CSSTransition {...rest}>{child}</CSSTransition>))}
   </TransitionGroup>
-);
+)
 
 Transition.propTypes = {
   appear: PropTypes.bool,
@@ -17,8 +17,8 @@ Transition.propTypes = {
   exit: PropTypes.bool,
   style: PropTypes.object,
   timeout: PropTypes.number,
-  transitionName: PropTypes.string,
-};
+  transitionName: PropTypes.string
+}
 
 Transition.defaultProps = {
   appear: false,
@@ -27,7 +27,7 @@ Transition.defaultProps = {
   enter: true,
   exit: true,
   style: null,
-  timeout: 300,
-};
+  timeout: 300
+}
 
-export default Transition;
+export default Transition

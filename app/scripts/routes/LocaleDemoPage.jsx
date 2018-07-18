@@ -1,8 +1,12 @@
-import React from 'react';
+import React from 'react'
 import { I18n, setLocale, Translate } from 'react-redux-i18n'
-import { connect } from "react-redux";
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 
 export class LocaleDemoPage extends React.Component {
+  static propTypes = {
+    dispatch: PropTypes.func.isRequired
+  }
 
   onChange = e =>
     this.props.dispatch(setLocale(e.target.value))
@@ -12,10 +16,10 @@ export class LocaleDemoPage extends React.Component {
       <div key="Private" className="app__private app__route">
         <div className="app__container">
           <h1>Locale Demo2</h1>
-          <h2><Translate value="app.title"/></h2>
-          <h2><Translate value="app.hello" name="xxx"/></h2>
+          <h2><Translate value="app.title" /></h2>
+          <h2><Translate value="app.hello" name="xxx" /></h2>
           <h2>{I18n.t('app.title')}</h2>
-          <h2>{I18n.t('app.hello', {name: 'Aad'})}</h2>
+          <h2>{I18n.t('app.hello', { name: 'Aad' })}</h2>
           <div>
             <select onChange={this.onChange}>
               <option value="en">en</option>
@@ -28,5 +32,5 @@ export class LocaleDemoPage extends React.Component {
   }
 }
 
-export default connect()(LocaleDemoPage);
+export default connect()(LocaleDemoPage)
 

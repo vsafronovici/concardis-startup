@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-import Github from 'containers/GitHub';
+import Github from 'containers/GitHub'
 
 export default class Private extends React.PureComponent {
   render() {
@@ -27,6 +27,6 @@ export default class Private extends React.PureComponent {
           </div>
         </div>
       </div>
-    );
+    )
   }
 }

@@ -1,4 +1,4 @@
-import { createEnum } from "../utils/namespace-util"
+import { createEnum } from '../utils/namespace-util'
 
 /**
  * @namespace Constants
@@ -20,7 +20,7 @@ export const ActionTypes = createEnum({
   GITHUB_GET_REPOS_SUCCESS: undefined,
   GITHUB_GET_REPOS_FAILURE: undefined,
   SHOW_ALERT: undefined,
-  HIDE_ALERT: undefined,
+  HIDE_ALERT: undefined
 })
 
 /**
@@ -29,5 +29,5 @@ export const ActionTypes = createEnum({
  */
 export const XHR = createEnum({
   SUCCESS: undefined,
-  FAIL: undefined,
+  FAIL: undefined
 })

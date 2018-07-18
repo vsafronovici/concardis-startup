@@ -1,4 +1,3 @@
-// @flow
 /**
  * Helper functions
  * @module Helpers
@@ -23,7 +22,7 @@ export function createReducer(initialState, handlers) {
  * @param {string} base
  * @returns {Object}
  */
-export function createRequestTypes(base: string): Object {
+export function createRequestTypes(base) {
   return ['REQUEST', 'SUCCESS', 'FAILURE'].reduce((acc, type) => {
     acc[type] = `${base}_${type}`
     return acc

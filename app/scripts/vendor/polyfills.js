@@ -10,19 +10,19 @@
 /* istanbul ignore next */
 (function() {
   if (typeof window.CustomEvent === 'function') {
-    return;
+    return
   }
 
   function CustomEvent(event, params) {
-    const newParams = params || { bubbles: false, cancelable: false, detail: undefined };
-    const evt = document.createEvent('CustomEvent');
-    evt.initCustomEvent(event, newParams.bubbles, newParams.cancelable, newParams.detail);
-    return evt;
+    const newParams = params || { bubbles: false, cancelable: false, detail: undefined }
+    const evt = document.createEvent('CustomEvent')
+    evt.initCustomEvent(event, newParams.bubbles, newParams.cancelable, newParams.detail)
+    return evt
   }
 
-  CustomEvent.prototype = window.Event.prototype;
+  CustomEvent.prototype = window.Event.prototype
 
-  window.CustomEvent = CustomEvent;
+  window.CustomEvent = CustomEvent
 }());
 
 /**
@@ -31,55 +31,55 @@
 /* istanbul ignore next */
 (function() {
   if (!document.documentElement.dataset && (!Object.getOwnPropertyDescriptor(Element.prototype, 'dataset') || !Object.getOwnPropertyDescriptor(Element.prototype, 'dataset').get)) {
-    const descriptor = {};
+    const descriptor = {}
 
-    descriptor.enumerable = true;
+    descriptor.enumerable = true
 
     descriptor.get = function() {
-      const element = this;
-      const map = {};
-      const { attributes } = this;
+      const element = this
+      const map = {}
+      const { attributes } = this
 
       function toUpperCase(n0) {
-        return n0.charAt(1).toUpperCase();
+        return n0.charAt(1).toUpperCase()
       }
 
       function getter() {
-        return this.value;
+        return this.value
       }
 
       function setter(name, value) {
         if (typeof value !== 'undefined') {
-          this.setAttribute(name, value);
+          this.setAttribute(name, value)
         }
         else {
-          this.removeAttribute(name);
+          this.removeAttribute(name)
         }
       }
 
       for (let i = 0; i < attributes.length; i++) {
-        const attribute = attributes[i];
+        const attribute = attributes[i]
 
         // This test really should allow any XML Name without
         // colons (and non-uppercase for XHTML)
 
         if (attribute && attribute.name && /^data-\w[\w-]*$/.test(attribute.name)) {
-          const { name, value } = attribute;
+          const { name, value } = attribute
 
           // Change to CamelCase
 
-          const propName = name.substr(5).replace(/-./g, toUpperCase);
+          const propName = name.substr(5).replace(/-./g, toUpperCase)
 
           Object.defineProperty(map, propName, {
             enumerable: this.enumerable,
             get: getter.bind({ value: value || '' }),
-            set: setter.bind(element, name),
-          });
+            set: setter.bind(element, name)
+          })
         }
       }
-      return map;
-    };
+      return map
+    }
 
-    Object.defineProperty(Element.prototype, 'dataset', descriptor);
+    Object.defineProperty(Element.prototype, 'dataset', descriptor)
   }
-}());
+}())

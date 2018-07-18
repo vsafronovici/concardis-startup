@@ -9,7 +9,5 @@ export default {
   },
   export: 'Export %{count} items',
   export_0: 'Nothing to export',
-  export_1: 'Export %{count} item',
-  two_lines: 'Line 1<br />Line 2',
-  literal_two_lines: 'Line 1 \Line 2'
+  export_1: 'Export %{count} item'
 }

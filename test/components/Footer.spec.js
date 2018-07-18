@@ -1,20 +1,20 @@
-import React from 'react';
-import { mount } from 'enzyme';
+import React from 'react'
+import { mount } from 'enzyme'
 
-import Footer from 'components/Footer';
+import Footer from 'components/Footer'
 
 function setup() {
-  return mount(<Footer />);
+  return mount(<Footer />)
 }
 
 describe('Footer', () => {
-  const wrapper = setup();
+  const wrapper = setup()
 
   it('should be a StatelessComponent', () => {
-    expect(wrapper.instance()).toBeNull();
-  });
+    expect(wrapper.instance()).toBeNull()
+  })
 
   it('should render properly', () => {
-    expect(wrapper.html()).toMatchSnapshot();
-  });
-});
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+})

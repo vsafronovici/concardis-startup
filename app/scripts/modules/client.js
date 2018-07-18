@@ -8,19 +8,19 @@ export class ServerError extends Error {
   response: Object;
 
   constructor(response: Object, ...params: any): Error {
-    super(...params);
+    super(...params)
 
-    Error.captureStackTrace(this, ServerError);
+    Error.captureStackTrace(this, ServerError)
 
-    this.name = 'ServerError';
-    this.response = {};
+    this.name = 'ServerError'
+    this.response = {}
 
-    return this;
+    return this
   }
 }
 
 export function parseError(error: string): string {
-  return error || 'Something went wrong';
+  return error || 'Something went wrong'
 }
 
 /**
@@ -37,65 +37,65 @@ export function parseError(error: string): string {
 export function request(url: string, options: Object = {}): Promise<*> {
   const config = {
     method: 'GET',
-    ...options,
-  };
-  const errors = [];
+    ...options
+  }
+  const errors = []
 
   if (!url) {
-    errors.push('url');
+    errors.push('url')
   }
 
   if (!config.payload && (config.method !== 'GET' && config.method !== 'DELETE')) {
-    errors.push('payload');
+    errors.push('payload')
   }
 
   if (errors.length) {
-    throw new Error(`Error! You must pass \`${errors.join('`, `')}\``);
+    throw new Error(`Error! You must pass \`${errors.join('`, `')}\``)
   }
 
   const headers = {
     Accept: 'application/json',
     'Content-Type': 'application/json',
-    ...config.headers,
-  };
+    ...config.headers
+  }
 
   const params: Object = {
     headers,
-    method: config.method,
-  };
+    method: config.method
+  }
 
   if (params.method !== 'GET') {
-    params.body = JSON.stringify(config.payload);
+    params.body = JSON.stringify(config.payload)
   }
 
   return fetch(url, params)
     .then(async (response) => {
       if (response.status > 299) {
-        const error: ServerError = new ServerError(response.statusText);
-        const contentType = response.headers.get('content-type');
+        const error: ServerError = new ServerError(response.statusText)
+        const contentType = response.headers.get('content-type')
 
         if (contentType && contentType.includes('application/json')) {
           error.response = {
             status: response.status,
-            data: await response.json(),
-          };
+            data: await response.json()
+          }
         }
         else {
           error.response = {
             status: response.status,
-            data: await response.text(),
-          };
+            data: await response.text()
+          }
         }
 
-        throw error;
+        throw error
       }
       else {
-        const contentType = response.headers.get('content-type');
+        const contentType = response.headers.get('content-type')
         if (contentType && contentType.includes('application/json')) {
-          return response.json();
+          return response.json()
         }
 
-        return response.text();
+        return response.text()
       }
-    });
+    })
 }

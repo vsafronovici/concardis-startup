@@ -1,4 +1,4 @@
-import {createNamespace} from "../utils/namespace-util";
+import { createNamespace } from '../utils/namespace-util'
 
 export const APP = createNamespace('APP', {
   SHOW_ALERT: undefined,

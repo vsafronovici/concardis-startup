@@ -1,15 +1,15 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+import PropTypes from 'prop-types'
+import React from 'react'
 
 const Loader = ({ pulse }) => {
-  let html;
+  let html
 
   if (pulse) {
     html = (
       <div className="app__loader app__loader--pulse">
         <div />
       </div>
-    );
+    )
   }
   else {
     html = (
@@ -25,18 +25,18 @@ const Loader = ({ pulse }) => {
           />
         </svg>
       </div>
-    );
+    )
   }
 
-  return html;
-};
+  return html
+}
 
 Loader.propTypes = {
-  pulse: PropTypes.bool.isRequired,
-};
+  pulse: PropTypes.bool.isRequired
+}
 
 Loader.defaultProps = {
-  pulse: true,
-};
+  pulse: true
+}
 
-export default Loader;
+export default Loader

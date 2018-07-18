@@ -1,51 +1,51 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { Switch, Route } from 'react-router-dom';
-import { ConnectedRouter } from 'react-router-redux';
-import Helmet from 'react-helmet';
-import cx from 'classnames';
-import history from './../modules/history';
-import RoutePublic from 'modules/RoutePublic';
-import RoutePrivate from 'modules/RoutePrivate';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import { Switch, Route } from 'react-router-dom'
+import { ConnectedRouter } from 'react-router-redux'
+import Helmet from 'react-helmet'
+import cx from 'classnames'
+import history from './../modules/history'
+import RoutePublic from './../modules/RoutePublic'
+import RoutePrivate from './../modules/RoutePrivate'
 
-import config from 'config';
-import { showAlert } from 'actions';
+import config from './../config'
+import { showAlert } from './../actions'
 
-import Home from 'routes/Home';
-import Private from 'routes/Private';
-import NotFound from 'routes/NotFound';
+import Home from './../routes/Home'
+import Private from './../routes/Private'
+import NotFound from './../routes/NotFound'
 
-import Header from 'components/Header';
-import Footer from 'components/Footer';
-import SystemAlerts from 'components/SystemAlerts';
-import LocaleDemoPage from "../routes/LocaleDemoPage";
+import Header from './../components/Header'
+import Footer from './../components/Footer'
+import SystemAlerts from './../components/SystemAlerts'
+import LocaleDemoPage from '../routes/LocaleDemoPage'
 
 export class App extends React.Component {
   static propTypes = {
     app: PropTypes.object.isRequired,
     dispatch: PropTypes.func.isRequired,
-    user: PropTypes.object.isRequired,
+    user: PropTypes.object.isRequired
   };
 
   componentWillReceiveProps(nextProps) {
-    const { dispatch, user } = this.props;
-    const { user: nextUser } = nextProps;
+    const { dispatch, user } = this.props
+    const { user: nextUser } = nextProps
 
     /* istanbul ignore else */
     if (!user.isAuthenticated && nextUser.isAuthenticated) {
-      dispatch(showAlert('Hello! And welcome!', { type: 'success', icon: 'i-trophy' }));
+      dispatch(showAlert('Hello! And welcome!', { type: 'success', icon: 'i-trophy' }))
     }
   }
 
   render() {
-    const { app, dispatch, user } = this.props;
+    const { app, dispatch, user } = this.props
 
     return (
       <ConnectedRouter history={history}>
         <div
           className={cx('app', {
-            'app--private': user.isAuthenticated,
+            'app--private': user.isAuthenticated
           })}
         >
           <Helmet
@@ -69,7 +69,7 @@ export class App extends React.Component {
           <SystemAlerts alerts={app.alerts} dispatch={dispatch} />
         </div>
       </ConnectedRouter>
-    );
+    )
   }
 }
 
@@ -77,8 +77,8 @@ export class App extends React.Component {
 function mapStateToProps(state) {
   return {
     app: state.app,
-    user: state.user,
-  };
+    user: state.user
+  }
 }
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps)(App)

@@ -56,7 +56,7 @@ const configStore = (initialState = {}) => {
 
   return {
     persistor: persistStore(store),
-    store,
+    store
   }
 }
 

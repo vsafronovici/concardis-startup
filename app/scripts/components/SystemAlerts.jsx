@@ -1,58 +1,58 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
 
-import { hideAlert } from 'actions';
+import { hideAlert } from 'actions'
 
-import Transition from 'components/Transition';
-import Alert from 'components/Alert';
+import Transition from 'components/Transition'
+import Alert from 'components/Alert'
 
 export default class SystemAlerts extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
 
-    this.timeouts = {};
+    this.timeouts = {}
   }
 
   static propTypes = {
     alerts: PropTypes.array.isRequired,
-    dispatch: PropTypes.func.isRequired,
+    dispatch: PropTypes.func.isRequired
   };
 
   componentWillReceiveProps(nextProps) {
-    const { alerts: nextAlerts, dispatch } = nextProps;
+    const { alerts: nextAlerts, dispatch } = nextProps
 
     /* istanbul ignore else */
     if (nextAlerts.length) {
       nextAlerts.forEach(d => {
         if (d.timeout && !this.timeouts[d.id]) {
           this.timeouts[d.id] = setTimeout(() => {
-            dispatch(hideAlert(d.id));
-          }, d.timeout * 1000);
+            dispatch(hideAlert(d.id))
+          }, d.timeout * 1000)
         }
-      });
+      })
     }
   }
 
   componentWillUnmount() {
     Object.keys(this.timeouts).forEach(d => {
-      clearTimeout(this.timeouts[d]);
-    });
+      clearTimeout(this.timeouts[d])
+    })
   }
 
   handleClick = (e) => {
-    e.preventDefault();
-    const { dataset } = e.currentTarget;
-    const { dispatch } = this.props;
+    e.preventDefault()
+    const { dataset } = e.currentTarget
+    const { dispatch } = this.props
 
-    dispatch(hideAlert(dataset.id));
+    dispatch(hideAlert(dataset.id))
   };
 
   renderAlerts(position) {
-    const { alerts } = this.props;
-    const items = alerts.filter(d => d.position === position);
+    const { alerts } = this.props
+    const items = alerts.filter(d => d.position === position)
 
     if (!items.length) {
-      return null;
+      return null
     }
 
     return items.map(d => (
@@ -65,7 +65,7 @@ export default class SystemAlerts extends React.Component {
       >
         {d.message}
       </Alert>
-    ));
+    ))
   }
 
   render() {
@@ -102,6 +102,6 @@ export default class SystemAlerts extends React.Component {
           </Transition>
         </div>
       </div>
-    );
+    )
   }
 }
