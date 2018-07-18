@@ -142,6 +142,8 @@
     "analyze": "NODE_ENV=production webpack --config config/webpack.config.prod.js --profile --json > webpack.stats.json",
     "lint": "eslint  --ext .js --ext .jsx app/scripts config test tools",
     "lint:styles": "stylelint 'app/styles/**/*.scss'",
+    "eslint": "eslint app/scripts",
+    "eslint:fix": "eslint app/scripts",
     "test": "jest --config config/jest.config.js --bail --coverage",
     "test:watch": "jest --config config/jest.config.js --watch",
     "test:automation": "cypress run",

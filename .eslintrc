@@ -32,6 +32,7 @@
     }
   },
   "rules": {
+    "semi": ["error", "never"],
     "arrow-body-style": [
       "warn",
       "as-needed"
@@ -81,7 +82,7 @@
     "no-template-curly-in-string": "warn",
     "no-trailing-spaces": "warn",
     "no-underscore-dangle": "off",
-    "no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
+    "no-unused-vars": ["error", { "vars": "all", "args": "none", "ignoreRestSiblings": false }],
     "object-curly-newline": "off",
     "object-shorthand": ["warn", "always"],
     "one-var": "warn",
