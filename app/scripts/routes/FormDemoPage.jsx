@@ -16,8 +16,8 @@ const createRenderer = render => ({ input, meta, label, ...rest }) => (
     { render(input, label, rest) }
     {
       meta.error && meta.touched
-      ? <span>{meta.error}</span>
-      : null
+        ? <span>{meta.error}</span>
+        : null
     }
   </div>
 )
@@ -26,10 +26,11 @@ const RenderInput = createRenderer((input, label) =>
   <Input {...input} placeholder={label} />
 )
 
-const RenderSelect = createRenderer((input, label, { children }) =>
-  <select {...input}>
-    {children}
-  </select>
+const RenderSelect = createRenderer((input, label, { children }) => (
+    <select {...input}>
+      {children}
+    </select>
+  )
 )
 
 const validate = values => {
@@ -49,12 +50,11 @@ export class FormDemoPage extends React.Component {
   }
 
   render() {
-
     console.log('--', this.props)
     return (
       <form>
-        <Field name="firstName" component={RenderInput} placeholder="Street"/>
-        <Field name="firstName2" component={RenderInput} placeholder="Street"/>
+        <Field name="firstName" component={RenderInput} placeholder="Street" />
+        <Field name="firstName2" component={RenderInput} placeholder="Street" />
         <Button>xxx</Button>
       </form>
     )

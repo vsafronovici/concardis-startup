@@ -5,7 +5,7 @@ import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 import thunk from 'redux-thunk'
 import { loadTranslations, setLocale, syncTranslationWithStore, i18nReducer } from 'react-redux-i18n'
-import { reducer as formReducer } from 'redux-form'
+import { reducer as formReducer } from 'redux-form'
 
 import history from 'modules/history'
 import rootSaga from 'sagas'
