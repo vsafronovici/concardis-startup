@@ -19,6 +19,7 @@
     "ES6"
   ],
   "dependencies": {
+    "antd": "^3.7.1",
     "bootstrap": "^4.0.0",
     "classlist-polyfill": "^1.2.0",
     "classnames": "^2.2.5",
@@ -43,6 +44,7 @@
     "react-router-redux": "^5.0.0-alpha.9",
     "react-transition-group": "^2.2.1",
     "redux": "^3.7.2",
+    "redux-form": "^7.4.2",
     "redux-persist": "^5.9.1",
     "redux-saga": "^0.16.0",
     "redux-thunk": "^2.3.0",
@@ -141,7 +143,7 @@
     "build:serve": "npm run build && npm run serve",
     "analyze": "NODE_ENV=production webpack --config config/webpack.config.prod.js --profile --json > webpack.stats.json",
     "lint": "eslint  --ext .js --ext .jsx app/scripts test",
-    "lint:fix": "eslint --fix  --ext .js --ext .jsx app/scripts test",
+    "lint:fix": "eslint --fix  --ext .js --ext .jsx app/scripts",
     "lint:styles": "stylelint 'app/styles/**/*.scss'",
     "test": "jest --config config/jest.config.js --bail --coverage",
     "test:watch": "jest --config config/jest.config.js --watch",

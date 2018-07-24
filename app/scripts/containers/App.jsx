@@ -20,6 +20,7 @@ import Header from './../components/Header'
 import Footer from './../components/Footer'
 import SystemAlerts from './../components/SystemAlerts'
 import LocaleDemoPage from '../routes/LocaleDemoPage'
+import FormDemoPage from '../routes/FormDemoPage'
 
 export class App extends React.Component {
   static propTypes = {
@@ -62,6 +63,7 @@ export class App extends React.Component {
               <RoutePublic isAuthenticated={user.isAuthenticated} path="/" exact component={Home} />
               <RoutePrivate isAuthenticated={user.isAuthenticated} path="/private" component={Private} />
               <RoutePublic isAuthenticated={false} path="/localeDemo" component={LocaleDemoPage} />
+              <RoutePublic isAuthenticated={false} path="/formDemo" component={FormDemoPage} />
               <Route component={NotFound} />
             </Switch>
           </main>
