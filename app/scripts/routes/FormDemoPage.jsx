@@ -1,7 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { reduxForm, Field } from 'redux-form'
-import { Button, Input } from 'antd'
+import { Button, Input, DatePicker } from 'antd'
+import moment from 'moment'
 
 const createRenderer = render => ({ input, meta, label, ...rest }) => (
   <div
@@ -33,6 +34,10 @@ const RenderSelect = createRenderer((input, label, { children }) => (
   )
 )
 
+const RenderDatepicker = createRenderer((input, label, rest) =>
+  <DatePicker {...rest} />
+)
+
 const validate = values => {
   const errors = {}
   if (values.firstName && values.firstName.includes('xxx')) {
@@ -55,7 +60,7 @@ export class FormDemoPage extends React.Component {
       <form>
         <Field name="firstName" component={RenderInput} placeholder="Street" />
         <Field name="firstName2" component={RenderInput} placeholder="Street" />
-        <Button>xxx</Button>
+        <Field name="date" component={RenderDatepicker} defaultValue={moment()}/>
       </form>
     )
   }

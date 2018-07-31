@@ -92,7 +92,7 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        test: /\.scss$/,
+        test: /\.(scss|css|less)$/,
         loader: isProd ? ExtractText.extract({
           use: cssLoaders.slice(1),
         }) : cssLoaders,
