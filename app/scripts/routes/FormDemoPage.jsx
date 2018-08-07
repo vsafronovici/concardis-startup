@@ -55,7 +55,7 @@ export class FormDemoPage extends React.Component {
   }
 
   render() {
-    console.log('--', this.props)
+    console.log('----', this.props)
     return (
       <form>
         <Field name="firstName" component={RenderInput} placeholder="Street" />
