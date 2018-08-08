@@ -31,7 +31,7 @@ module.exports = merge.smart(webpackConfig, {
   },
   devtool: 'source-map',
   plugins: [
-    // new CleanPlugin(['dist'], { root: paths.root }),
+    new CleanPlugin(['dist/scripts/app.*.js', 'dist/scripts/app.*.js.map'], { root: paths.root }),
     /*new CopyPlugin([
       { from: '../assets/manifest.json' }
     ]),*/
