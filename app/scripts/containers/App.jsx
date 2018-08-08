@@ -57,11 +57,12 @@ export class App extends React.Component {
             titleTemplate={`%s | ${config.name}`}
             titleAttributes={{ itemprop: 'name', lang: 'pt-br' }}
           />
-          {user.isAuthenticated && <Header dispatch={dispatch} user={user} />}
+          <Header dispatch={dispatch} user={user} />
           <main className="app__main">
             <Switch>
-              <RoutePublic isAuthenticated={user.isAuthenticated} path="/" exact component={Home} />
-              <RoutePrivate isAuthenticated={user.isAuthenticated} path="/private" component={Private} />
+              <RoutePrivate isAuthenticated={true} path="/" component={Private} />
+              {/*<RoutePublic isAuthenticated={user.isAuthenticated} path="/" exact component={Home} />*/}
+              {/*<RoutePrivate isAuthenticated={user.isAuthenticated} path="/private" component={Private} />*/}
               <RoutePublic isAuthenticated={false} path="/localeDemo" component={LocaleDemoPage} />
               <RoutePublic isAuthenticated={false} path="/formDemo" component={FormDemoPage} />
               <Route component={NotFound} />

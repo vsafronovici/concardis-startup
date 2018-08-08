@@ -5,7 +5,6 @@ const ExtractText = require('extract-text-webpack-plugin');
 const CleanPlugin = require('clean-webpack-plugin');
 const HtmlPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
-const OfflinePlugin = require('offline-plugin');
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 
 const paths = require('./paths');
@@ -21,7 +20,7 @@ if (definePlugin) {
 
 module.exports = merge.smart(webpackConfig, {
   entry: {
-    'scripts/modernizr': paths.modernizr,
+    // 'scripts/modernizr': paths.modernizr,
     'scripts/app': paths.appIndexJs,
   },
   output: {
@@ -32,12 +31,12 @@ module.exports = merge.smart(webpackConfig, {
   },
   devtool: 'source-map',
   plugins: [
-    new CleanPlugin(['dist'], { root: paths.root }),
-    new CopyPlugin([
+    // new CleanPlugin(['dist'], { root: paths.root }),
+    /*new CopyPlugin([
       { from: '../assets/manifest.json' }
-    ]),
+    ]),*/
     new ExtractText('styles/app.[git-hash].css'),
-    new HtmlPlugin({
+    /*new HtmlPlugin({
       githash: GITHASH,
       inject: false,
       minify: {
@@ -51,45 +50,12 @@ module.exports = merge.smart(webpackConfig, {
     new webpack.LoaderOptionsPlugin({
       minimize: true,
       debug: false,
-    }),
-    new webpack.optimize.UglifyJsPlugin({
+    }),*/
+    /*new webpack.optimize.UglifyJsPlugin({
       sourceMap: true,
       mangle: {
         keep_fnames: true,
       },
-    }),
-    // new OfflinePlugin({
-    //   autoUpdate: true,
-    //   safeToUseOptionalCaches: true,
-    //   ServiceWorker: {
-    //     events: true,
-    //   },
-    //   AppCache: {
-    //     events: true,
-    //   },
-    //   caches: {
-    //     main: [
-    //       '**/*.js',
-    //       '**/*.css',
-    //       'index.html',
-    //     ],
-    //     additional: [
-    //       'fonts/*.woff',
-    //       'fonts/*.ttf',
-    //       'fonts/*.svg',
-    //     ],
-    //     optional: [
-    //       ':rest:',
-    //     ],
-    //   },
-    //   cacheMaps: [
-    //     {
-    //       match: function() {
-    //         return new URL('/', location);
-    //       },
-    //       requestTypes: ['navigate'],
-    //     },
-    //   ],
-    // }),
+    })*/
   ],
 });
