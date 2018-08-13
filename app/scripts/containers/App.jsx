@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { ConnectedRouter } from 'react-router-redux'
 import history from './../modules/history'
-import LocaleDemoPage from "../routes/LocaleDemoPage";
+import ReactDemoPage from "../components/ReactDemoPage";
 
 
 export class App extends React.Component {
@@ -15,7 +15,7 @@ export class App extends React.Component {
     return (
       <ConnectedRouter history={history}>
         <div>
-          <LocaleDemoPage />
+          <ReactDemoPage />
         </div>
       </ConnectedRouter>
     )
