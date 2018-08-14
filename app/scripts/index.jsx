@@ -14,17 +14,42 @@ import { PersistGate } from 'redux-persist/lib/integration/react'
 import { store, persistor } from 'app-store'
 import { showAlert } from 'actions'
 
-import App from 'containers/App'
+import App from './containers/App'
+import LandingPage from './containers/LandingPage'
+import ApplicationFormPage from './containers/ApplicationFormPage'
 import 'antd/dist/antd.css'
+import {PageContainers} from "./utils/constants"
 
 export const init = {
   cssRetries: 0,
   fetchRetries: 0,
 
+  detectPageComponent() {
+    switch(true) {
+      case (document.getElementById(PageContainers.LANDING_PAGE) !== null):
+        return {
+          rootId: PageContainers.LANDING_PAGE,
+          Component: LandingPage
+        }
+      case (document.getElementById(PageContainers.APPLICATION_FORM_PAGE) !== null):
+        return {
+          rootId: PageContainers.APPLICATION_FORM_PAGE,
+          Component: ApplicationFormPage
+        }
+      default:
+        return {
+          rootId: 'react',
+          Component: App
+        }
+    }
+  },
+
   run() {
+    const pageComponent = this.detectPageComponent()
+    console.log('--run', pageComponent)
     /* istanbul ignore else */
     if (process.env.NODE_ENV !== 'production') {
-      this.render(App)
+      this.render(pageComponent)
       return Promise.resolve()
     }
 
@@ -33,7 +58,7 @@ export const init = {
     /* istanbul ignore next */
     return Promise
       .all([this.loadCSS()])
-      .then(() => this.render(App))
+      .then(() => this.render(pageComponent))
       .catch(reason => {
         if (this.fetchRetries < 3) {
           this.fetchRetries++
@@ -99,8 +124,8 @@ export const init = {
 
     return false
   },
-  render(Component) {
-    const root = document.getElementById('react')
+  render({ rootId, Component }) {
+    const root = document.getElementById(rootId)
 
     /* istanbul ignore next */
     if (root) {
@@ -124,8 +149,9 @@ init.run()
 
 /* istanbul ignore next  */
 if (module.hot) {
+  const pageComponent = init.detectPageComponent()
   module.hot.accept(
     'containers/App',
-    () => init.render(App)
+    () => init.render(pageComponent)
   )
 }
