@@ -12,44 +12,23 @@ import { AppContainer } from 'react-hot-loader'
 import { PersistGate } from 'redux-persist/lib/integration/react'
 
 import { store, persistor } from 'app-store'
-import { showAlert } from 'actions'
+import { showAlert } from './actions/app-action'
 
 import App from './containers/App'
-import LandingPage from './containers/LandingPage'
-import ApplicationFormPage from './containers/ApplicationFormPage'
 import 'antd/dist/antd.css'
-import {PageContainers} from "./utils/constants"
+import '../styles/main.scss'
+import {detectRootContainer} from "./utils/page-utils";
 
 export const init = {
   cssRetries: 0,
   fetchRetries: 0,
 
-  detectPageComponent() {
-    switch(true) {
-      case (document.getElementById(PageContainers.LANDING_PAGE) !== null):
-        return {
-          rootId: PageContainers.LANDING_PAGE,
-          Component: LandingPage
-        }
-      case (document.getElementById(PageContainers.APPLICATION_FORM_PAGE) !== null):
-        return {
-          rootId: PageContainers.APPLICATION_FORM_PAGE,
-          Component: ApplicationFormPage
-        }
-      default:
-        return {
-          rootId: 'react',
-          Component: App
-        }
-    }
-  },
-
   run() {
-    const pageComponent = this.detectPageComponent()
-    console.log('--run', pageComponent)
+    const { rootId } = detectRootContainer()
+    console.log('--run', rootId)
     /* istanbul ignore else */
     if (process.env.NODE_ENV !== 'production') {
-      this.render(pageComponent)
+      this.render(rootId)
       return Promise.resolve()
     }
 
@@ -58,7 +37,7 @@ export const init = {
     /* istanbul ignore next */
     return Promise
       .all([this.loadCSS()])
-      .then(() => this.render(pageComponent))
+      .then(() => this.render(rootId))
       .catch(reason => {
         if (this.fetchRetries < 3) {
           this.fetchRetries++
@@ -124,7 +103,7 @@ export const init = {
 
     return false
   },
-  render({ rootId, Component }) {
+  render(rootId) {
     const root = document.getElementById(rootId)
 
     /* istanbul ignore next */
@@ -135,7 +114,7 @@ export const init = {
             <PersistGate
               persistor={persistor}
             >
-              <Component />
+              <App />
             </PersistGate>
           </Provider>
         </AppContainer>,
@@ -149,9 +128,9 @@ init.run()
 
 /* istanbul ignore next  */
 if (module.hot) {
-  const pageComponent = init.detectPageComponent()
+  const { rootId } = detectRootContainer()
   module.hot.accept(
     'containers/App',
-    () => init.render(pageComponent)
+    () => init.render(rootId)
   )
 }

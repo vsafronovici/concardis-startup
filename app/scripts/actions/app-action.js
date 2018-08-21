@@ -50,3 +50,17 @@ export function showAlert(message: string, options: Object): Object {
     }
   }
 }
+
+export const initPage = () => ({
+  type: APP.INIT_PAGE
+})
+
+export const loadTranslationsReq = () => ({
+  type: APP.LOAD_TRANSLATIONS_REQ
+})
+
+export const loadTranslationsResp = payload => ({
+  type: APP.LOAD_TRANSLATIONS_RESP,
+  payload
+})
+

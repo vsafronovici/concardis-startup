@@ -3,29 +3,36 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { ConnectedRouter } from 'react-router-redux'
 import history from './../modules/history'
-import ReactDemoPage from "../components/ReactDemoPage";
+import { detectRootContainer } from '../utils/page-utils'
+import { initPage } from './../actions/app-action'
 
 
 export class App extends React.Component {
-  static propTypes = {};
+  static propTypes = {
+    initPage: PropTypes.func,
+  }
+
+  componentWillMount() {
+    const { Container } = detectRootContainer()
+    this.Container = Container
+    this.props.initPage()
+  }
 
   render() {
-    const { app, dispatch, user } = this.props
+    const Container = this.Container
 
     return (
       <ConnectedRouter history={history}>
         <div>
-          <ReactDemoPage />
+          <Container />
         </div>
       </ConnectedRouter>
     )
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    
-  }
-}
+const mapDispatchToProps = ({
+  initPage
+})
 
-export default connect(mapStateToProps)(App)
+export default connect(null, mapDispatchToProps)(App)

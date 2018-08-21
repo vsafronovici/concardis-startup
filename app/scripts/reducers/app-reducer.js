@@ -1,5 +1,5 @@
 import { REHYDRATE } from 'redux-persist/lib/constants'
-import { createReducer } from 'modules/helpers'
+import { createReducer } from './../modules/helpers'
 
 import { APP } from './../actions/types'
 

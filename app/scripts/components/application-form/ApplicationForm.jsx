@@ -1,25 +1,27 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
-import { ConnectedRouter } from 'react-router-redux'
-import history from './../modules/history'
-import ReactDemoPage from "../components/ReactDemoPage";
+import { FormSection } from './FormSection'
+import { StepsForm } from './StepsForm'
+import { translate } from './../../i18n/i18n'
 
 
 export class ApplicationForm extends React.Component {
-  static propTypes = {};
+  static propTypes = {
+    data: PropTypes.object
+  }
 
   render() {
+    const { data } = this.props
     return (
-      <h1>Application Form</h1>
+      <div className="app__application-form">
+        <h1>{translate('appForm.title')}</h1>
+        <StepsForm sections={data.sections} />
+        <div>
+          { data.sections.map((section, index) => <FormSection key={section.id} index={index} section={section} /> ) }
+        </div>
+      </div>
     )
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    
-  }
-}
 
-export default connect(mapStateToProps)(ApplicationForm)
