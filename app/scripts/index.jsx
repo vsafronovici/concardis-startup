@@ -12,21 +12,23 @@ import { AppContainer } from 'react-hot-loader'
 import { PersistGate } from 'redux-persist/lib/integration/react'
 
 import { store, persistor } from 'app-store'
-import { showAlert } from 'actions'
+import { showAlert } from './actions/app-action'
 
-import App from 'containers/App'
-import Loader from 'components/Loader'
-import '../styles/main.scss'
+import App from './containers/App'
 import 'antd/dist/antd.css'
+import '../styles/main.scss'
+import {detectRootContainer} from "./utils/page-utils";
 
 export const init = {
   cssRetries: 0,
   fetchRetries: 0,
 
   run() {
+    const { rootId } = detectRootContainer()
+    console.log('--run', rootId)
     /* istanbul ignore else */
     if (process.env.NODE_ENV !== 'production') {
-      this.render(App)
+      this.render(rootId)
       return Promise.resolve()
     }
 
@@ -35,7 +37,7 @@ export const init = {
     /* istanbul ignore next */
     return Promise
       .all([this.loadCSS()])
-      .then(() => this.render(App))
+      .then(() => this.render(rootId))
       .catch(reason => {
         if (this.fetchRetries < 3) {
           this.fetchRetries++
@@ -101,8 +103,8 @@ export const init = {
 
     return false
   },
-  render(Component) {
-    const root = document.getElementById('react')
+  render(rootId) {
+    const root = document.getElementById(rootId)
 
     /* istanbul ignore next */
     if (root) {
@@ -110,10 +112,9 @@ export const init = {
         <AppContainer>
           <Provider store={store}>
             <PersistGate
-              loading={<Loader />}
               persistor={persistor}
             >
-              <Component />
+              <App />
             </PersistGate>
           </Provider>
         </AppContainer>,
@@ -127,8 +128,9 @@ init.run()
 
 /* istanbul ignore next  */
 if (module.hot) {
+  const { rootId } = detectRootContainer()
   module.hot.accept(
     'containers/App',
-    () => init.render(App)
+    () => init.render(rootId)
   )
 }

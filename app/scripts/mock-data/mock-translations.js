@@ -1,0 +1,15 @@
+export const mockTranslations = {
+  'appForm.title': 'Application Form',
+  'appForm.header': 'Some header',
+  'section1.title': 'Section 1',
+  'section2.title': 'Section 2',
+  'section3.title': 'Section 3',
+  'f1.label': 'Label1',
+  'f1.help': 'Help text 1',
+  'f2.label': 'Label2 Label2',
+  'f2.help': 'Help text 2',
+  'f3.label': 'Label3 Label3 Label3',
+  'f3.help': 'Help text 3',
+  'f4.label': 'Label4',
+  'f4.help': 'Help text 4',
+}

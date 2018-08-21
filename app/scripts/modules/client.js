@@ -99,3 +99,34 @@ export function request(url: string, options: Object = {}): Promise<*> {
       }
     })
 }
+
+export const SFAction = (action) => {
+  return new Promise((resolve, reject) => {
+    Visualforce.remoting.Manager.invokeAction(
+      action,
+      (result, event) => {
+        if (event.status) {
+          return resolve({ data: result })
+        }
+
+        return reject({ err: result })
+      },
+      { buffer: true, escape: true }
+    )
+  })
+}
+
+export const SFRemoteObject = (modelName, criteria) => {
+  return new Promise((resolve, reject) => {
+    const modelCtx = new SObjectModel[modelName]()
+    modelCtx.retrieve(
+      criteria,
+      (err, records, event) => {
+        if (err) {
+          return reject({ err: err.message, status: 400 })
+        }
+        return resolve({ data: { records } })
+      }
+    )
+  })
+}
