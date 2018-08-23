@@ -16,6 +16,7 @@ import { showAlert } from 'actions'
 
 import App from 'containers/App'
 import 'antd/dist/antd.css'
+import './../styles/main.scss'
 
 export const init = {
   cssRetries: 0,
