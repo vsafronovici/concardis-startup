@@ -1,9 +1,20 @@
 import { createReducer } from './../modules/helpers'
 import { APPLICATION_FORM } from './../actions/types'
+import { SectionStatusType } from '../utils/constants'
 
 export const initialState = {
-  data: undefined,
+  sections: undefined,
   loaded: false
+}
+
+const goToNextStep = (state, sectionId) => {
+  const { current, sections } = state
+  const currentSection = sections[sectionId]
+  const currentSectionUpdated = {
+    ...currentSection,
+    status: SectionStatusType.FINISHED
+  }
+
 }
 
 export default {
@@ -16,9 +27,12 @@ export default {
     },
     [APPLICATION_FORM.GET_FIELDS_SECTIONS_RESP](state, { payload }) {
       return {
-        data: payload,
+        sections: payload,
         loaded: true
       }
+    },
+    [APPLICATION_FORM.GO_TO_NEXT_STEP](state, { sectionId }) {
+      return goToNextStep(state, sectionId)
     },
   })
 }

@@ -11,3 +11,8 @@ export const FieldType = createEnum({
   DROPBOX: undefined
 })
 
+export const SectionStatusType = createEnum({
+  FINISHED: undefined,
+  IN_PROGRESS: undefined,
+  WAITING: undefined
+})

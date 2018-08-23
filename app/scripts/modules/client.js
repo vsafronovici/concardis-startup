@@ -100,18 +100,21 @@ export function request(url: string, options: Object = {}): Promise<*> {
     })
 }
 
-export const SFAction = (action) => {
+export const SFAction = (action, options = { buffer: true, escape: true }) => {
   return new Promise((resolve, reject) => {
     Visualforce.remoting.Manager.invokeAction(
       action,
       (result, event) => {
         if (event.status) {
+          if (!options.escape) {
+            result = JSON.parse(result)
+          }
           return resolve({ data: result })
         }
 
         return reject({ err: result })
       },
-      { buffer: true, escape: true }
+      options
     )
   })
 }

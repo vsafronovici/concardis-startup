@@ -21,10 +21,10 @@ export class ApplicationFormPage extends React.Component {
   render() {
     console.log('ApplicationFormPage render props', this.props)
 
-    const { i18n, applicationForm: { loaded, data} } = this.props
+    const { i18n, applicationForm: { loaded, sections} } = this.props
     return (
       <Loader loading={!i18n || !loaded}>
-        <ApplicationForm  data={data} />
+        <ApplicationForm  sections={sections} />
       </Loader>
     )
   }

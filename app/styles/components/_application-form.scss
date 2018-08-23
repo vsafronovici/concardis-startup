@@ -1,5 +1,12 @@
 .app__application-form {
 
+  .error {
+    color: red;
+    input {
+      border: 1px solid red;
+    }
+  }
+
   .step-form {
     margin: 20px 0px;
   }
@@ -14,7 +21,7 @@
 
     .form-fields {
       padding: 20px;
-      border: 1px solid red;
+      border: 1px solid blue;
 
       .field-row {
         margin-top: 15px;

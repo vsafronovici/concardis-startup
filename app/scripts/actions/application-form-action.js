@@ -22,3 +22,9 @@ export const saveFieldsSectionResp = payload => ({
   type: APPLICATION_FORM.SAVE_FIELDS_SECTION_RESP,
   payload
 })
+
+export const goToNextStep = sectionId => ({
+  type: APPLICATION_FORM.GO_TO_NEXT_STEP,
+  payload: { sectionId }
+})
+
