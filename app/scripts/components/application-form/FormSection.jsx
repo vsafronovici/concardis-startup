@@ -34,13 +34,13 @@ export class FormSection extends React.Component {
     return (
       <div className="form-section">
         <Row>
-          <Col span={8}>
-            <div className="section-title">{translate(section.title)}</div>
+          <Col lg={{span: 12}}>
+            <div className="section-title"><h3>{translate(section.title)}</h3></div>
           </Col>
         </Row>
         <Row>
-          <Col span={8} offset={4}>
-            <div>
+          <Col lg={{span: 12, offset: 12}}>
+            <div className="section">
               <ReduxForm sectionIndex={sectionIndex} section={section} />
             </div>
           </Col>

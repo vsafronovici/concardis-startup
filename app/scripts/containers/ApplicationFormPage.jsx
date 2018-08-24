@@ -6,6 +6,7 @@ import { i18nSelector } from '../selectors/i18n-selector'
 import { initData } from '../actions/application-form-action'
 import { ApplicationForm } from '../components/application-form/ApplicationForm'
 import { Loader } from '../components/Loader'
+import { Col, Row } from 'antd'
 
 export class ApplicationFormPage extends React.Component {
   static propTypes = {
@@ -24,7 +25,13 @@ export class ApplicationFormPage extends React.Component {
     const { i18n, applicationForm: { loaded, sections} } = this.props
     return (
       <Loader loading={!i18n || !loaded}>
-        <ApplicationForm  sections={sections} />
+        <div className="application-form-bgc">
+          <Row>
+            <Col lg={{span: 16, offset: 4}}>
+              <ApplicationForm  sections={sections} />
+            </Col>
+          </Row>
+        </div>
       </Loader>
     )
   }

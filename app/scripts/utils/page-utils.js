@@ -23,7 +23,7 @@ export const detectRootContainer = () => {
     default:
       return {
         rootId: 'react',
-        Container: LandingPage
+        Container: ApplicationFormPage
       }
   }
 }

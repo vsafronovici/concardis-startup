@@ -12,8 +12,8 @@ const createRenderer = render => ({ input, meta, label, help, ...rest }) => (
       meta.active ? 'active' : ''
     ].join(' ')}
   >
-    <label>
-      {translate(label)}
+    <label className="label-field">
+      <strong>{translate(label)}</strong>
     </label>
     { help &&
       <Tooltip placement="rightTop" trigger="click" title={translate(help)}>

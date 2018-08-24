@@ -23,7 +23,7 @@ export class DynamicForm extends React.Component {
         </div>
         <Row type="flex" justify="center">
           <Col>
-            <Button className="form-btn" type="primary" onClick={this.saveForm} disabled={!valid}>Next Step</Button>
+            <Button className={!valid ? 'form-btn-disabled' : 'form-btn'} type="primary" onClick={this.saveForm}  disabled={!valid}>next step</Button>
           </Col>
         </Row>
       </form>

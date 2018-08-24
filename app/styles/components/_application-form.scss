@@ -1,5 +1,10 @@
 .app__application-form {
+  background-color: #FAFAFA;
+  padding: 30px 30px;
 
+  .section {
+    background-color: $white;
+  }
   .error {
     color: red;
     input {
@@ -16,12 +21,13 @@
     .section-title {
       margin: 20px;
       padding: 20px;
-      border: 1px solid green;
+      background-color: $orange;
+      border-radius: 5px;
+      color: $white;
     }
 
     .form-fields {
       padding: 20px;
-      border: 1px solid blue;
 
       .field-row {
         margin-top: 15px;
@@ -33,7 +39,48 @@
 
     .form-btn {
       margin: 20px;
+      background-color: $orange;
+      padding: 0px 20px;
+      color: $white;
+      line-height: 30px;
+      border-radius: none;
+
+    }
+    .form-btn-disabled {
+      margin: 20px;
+      background-color: $grey300;
+      padding: 0px 30px;
+      color: $grey500;
+      line-height: 20px;
+      border-radius: none;
     }
   }
 
+}
+
+.label-field {
+  color: $grey600;
+}
+
+.form-fields {
+  .anticon-info-circle {
+    color: $orange !important;
+    border: none;
+  }
+}
+.ant-steps-item-icon {
+  background-color: $orange;
+}
+
+.application-form-bgc {
+  background-color: #F5F5F5;
+}
+
+.ant-steps-item-icon {
+  background-color: $orange !important;
+  border: none;
+  .anticon-check {
+    color: $white !important;
+    border: none;
+  }
 }
