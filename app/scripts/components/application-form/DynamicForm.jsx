@@ -5,12 +5,18 @@ import { FieldRow } from './FieldRow'
 
 export class DynamicForm extends React.Component {
   static propTypes = {
-    section: PropTypes.object
+    section: PropTypes.object,
+    saveFieldsSectionReq: PropTypes.func
   }
 
   saveForm = e => {
-    const { section: { id, fields } } = this.props
-    console.log('saving section ', id)
+    const { section, rValues, saveFieldsSectionReq } = this.props
+    const payload = {
+      sectionId: section.id,
+      values: rValues
+    }
+    console.log('saving section ', payload)
+    saveFieldsSectionReq(payload)
   }
 
   render() {

@@ -5,11 +5,11 @@ export const PageContainers = {
   APPLICATION_FORM_PAGE: 'application-form-page'
 }
 
-export const FieldType = createEnum({
-  TEXT: undefined,
+export const FieldType = {
+  TEXT: 'text',
+  DROPDOWN: 'drop_down',
   TEXT_WITH_SEARCH: undefined,
-  DROPBOX: undefined
-})
+}
 
 export const SectionStatusType = createEnum({
   FINISHED: undefined,

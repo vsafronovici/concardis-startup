@@ -8,6 +8,14 @@ import { getFormValues, getFormSyncErrors } from 'redux-form'
 import { translate } from './../../i18n/i18n'
 import { DynamicForm } from './DynamicForm'
 import { Validator } from './form-validator'
+import { initData, saveFieldsSectionReq } from '../../actions/application-form-action'
+import { applicationFormSelector } from '../../selectors/application-form-selector'
+import { i18nSelector } from '../../selectors/i18n-selector'
+
+const mapDispatchToProps = ({
+  saveFieldsSectionReq
+})
+
 
 const createDynamicReduxForm = ({ id, fields }) => {
   const formId = `form_${id}`
@@ -16,10 +24,12 @@ const createDynamicReduxForm = ({ id, fields }) => {
     validate: Validator(fields)
   })(DynamicForm)
 
-  return connect(state => ({
-    values: getFormValues(formId)(state),
-    syncErrs: getFormSyncErrors(formId)(state)
-  }))(ReduxForm)
+  const mapStateToProps = state => ({
+    rValues: getFormValues(formId)(state),
+    rSyncErrors: getFormSyncErrors(formId)(state)
+  })
+
+  return connect(mapStateToProps, mapDispatchToProps)(ReduxForm)
 }
 
 export class FormSection extends React.Component {

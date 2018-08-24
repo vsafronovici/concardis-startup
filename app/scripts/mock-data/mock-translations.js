@@ -6,7 +6,7 @@ export const mockTranslations = {
   'section2.title': 'Section 2',
   'section3.title': 'Section 3',
   'f1.label': 'Label1',
-  'f1.label': 'Label1',
+  'f1.help': 'Help text',
   'f1.err.required': 'Help text 1',
   'f2.label': 'Label2 Label2',
   'f2.help': 'Help text 2',

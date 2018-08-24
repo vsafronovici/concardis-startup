@@ -12,6 +12,7 @@ export const mockFieldsSections = {
           name: 'f1',
           label: 'f1.label',
           help: 'f1.help',
+          value: 1,
           validation: {
             validate: true, // if needed, otherwise false
             required: true, // if needed, otherwise false or don't provide this property
@@ -21,14 +22,18 @@ export const mockFieldsSections = {
         },
         {
           id: 2,
-          type: FieldType.TEXT,
+          type: FieldType.DROPDOWN,
           name: 'f2',
           label: 'f2.label',
           help: 'f2.help',
+          value: 'No',
           validation: {
             validate: true, // if needed, otherwise false
             required: true, // if needed, otherwise false or don't provide this property
             requiredError: 'err.required',
+          },
+          options: {
+            items: { No: 'No', Yes: 'Yes' }
           }
         },
         {
