@@ -6,18 +6,11 @@ import history from './../modules/history'
 import { detectRootContainer } from '../utils/page-utils'
 import { initPage } from './../actions/app-action'
 
-
-
-
 export class App extends React.Component {
   static propTypes = {};
 
   render() {
 
-    
-
-
-    
     const Container = this.Container
 
     return (
