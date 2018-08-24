@@ -1,9 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import MainHeader from '../components/MainHeader';
-import MainContent from '../components/MainContent';
-import MainFooter from '../components/MainFooter';
 
 export class App extends React.Component {
   static propTypes = {};
@@ -11,10 +8,7 @@ export class App extends React.Component {
   render() {
 
     return (
-      <div className="app">
-        <MainHeader />
-        <MainContent />
-        <MainFooter />
+      <div>
       </div>
     )
   }
