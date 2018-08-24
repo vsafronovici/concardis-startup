@@ -46,7 +46,7 @@ export const landingPageItems = {
     },
   ]},
     slider1: {
-      title: 'YOUR TOURNOVER',
+      title: 'YOUR TURNOVER',
       subTitle: 'Average annual turnover',
     },
     slider2: {
