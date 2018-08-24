@@ -11,8 +11,8 @@ export class App extends React.Component {
 
   render() {
 
-    return (
-      const Container = this.Container
+    
+    const Container = this.Container
 
     return (
       <ConnectedRouter history={history}>
