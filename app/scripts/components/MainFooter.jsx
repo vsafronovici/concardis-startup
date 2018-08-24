@@ -15,7 +15,7 @@ class MainFooter extends Component {
       
         <Footer>
           
-          <h2>Footer</h2>
+          
 
           <div style={{display: 'flex', direction: 'row'}}>
             
