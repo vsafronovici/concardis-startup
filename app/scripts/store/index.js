@@ -10,7 +10,7 @@ import { reducer as formReducer } from 'redux-form'
 import history from 'modules/history'
 import rootSaga from 'sagas'
 import rootReducer from 'reducers'
-import messages from './../i18n/messages'
+import { initI18N } from '../i18n/i18n'
 
 const sagaMiddleware = createSagaMiddleware()
 
@@ -23,7 +23,6 @@ const reducer = persistReducer(
   combineReducers({
     ...rootReducer,
     router: routerReducer,
-    i18n: i18nReducer,
     form: formReducer
   })
 )
@@ -64,8 +63,6 @@ const configStore = (initialState = {}) => {
 
 const { store, persistor } = configStore()
 
-syncTranslationWithStore(store)
-store.dispatch(loadTranslations(messages))
-store.dispatch(setLocale('en'))
+initI18N(store)
 
 export { store, persistor }

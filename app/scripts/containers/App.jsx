@@ -7,7 +7,15 @@ import { detectRootContainer } from '../utils/page-utils'
 import { initPage } from './../actions/app-action'
 
 export class App extends React.Component {
-  static propTypes = {};
+  static propTypes = {
+    initPage: PropTypes.func,
+  }
+
+  componentWillMount() {
+    const { Container } = detectRootContainer()
+    this.Container = Container
+    this.props.initPage()
+  }
 
   render() {
 
@@ -27,4 +35,4 @@ const mapDispatchToProps = ({
   initPage
 })
 
-export default connect(mapStateToProps)(App)
+export default connect(null, mapDispatchToProps)(App)

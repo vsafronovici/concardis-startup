@@ -1,0 +1,39 @@
+.app__application-form {
+
+  .error {
+    color: red;
+    input {
+      border: 1px solid red;
+    }
+  }
+
+  .step-form {
+    margin: 20px 0px;
+  }
+
+  .form-section {
+
+    .section-title {
+      margin: 20px;
+      padding: 20px;
+      border: 1px solid green;
+    }
+
+    .form-fields {
+      padding: 20px;
+      border: 1px solid blue;
+
+      .field-row {
+        margin-top: 15px;
+        label {
+          margin-right: 5px;
+        }
+      }
+    }
+
+    .form-btn {
+      margin: 20px;
+    }
+  }
+
+}
