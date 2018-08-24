@@ -4,6 +4,8 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { getAccountReq, sayHelloReq } from "../actions/react-demo-action";
 import { accountSelector, sayHelloSelector } from "../selectors/react-demo-selector";
+import MainContent from './MainContent';
+import MainFooter from './MainFooter'
 
 export class ReactDemoPage extends React.Component {
   static propTypes = {
@@ -30,33 +32,9 @@ export class ReactDemoPage extends React.Component {
     console.log('props', this.props)
     return (
       <div key="Private" className="app__private app__route">
-        <div className="app__container">
-          <h1>Locale Demo2</h1>
-          <h2><Translate value="app.title" /></h2>
-          <h2><Translate value="app.hello" name="xxx" /></h2>
-          <h2>{I18n.t('app.title')}</h2>
-          <h2>{I18n.t('app.hello', { name: 'Aad' })}</h2>
-          <div>
-            <select onChange={this.onChange}>
-              <option value="en">en</option>
-              <option value="nl">nl</option>
-            </select>
-          </div>
-        </div>
-        <div>
-          <button onClick={this.sayHello}>say hello</button>
-          <span>{this.props.sayHelloMsg}</span>
-        </div>
-        <div>
-          <button onClick={this.getRemoteObj}>account obj</button>
-          {
-            this.props.account
-              ? <span>
-                  Id = {this.props.account.get('Id')}; Name = {this.props.account.get('Name')};
-                </span>
-            : null
-          }
-        </div>
+        <MainContent />
+        <MainFooter />
+
       </div>
     )
   }
