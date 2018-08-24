@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { landingPageItems } from './LandingPageItems/LandingPageItems';
-import { Row, Col, Input, Select, Slider } from 'antd';
+import { Row, Col, Input, Select, Slider, Radio } from 'antd';
 
 const item = landingPageItems;
 const Option = Select.Option;
@@ -90,6 +90,20 @@ class LandingPage extends Component {
       radioMenu1: !this.state.radioMenu1
     })
   }
+  handleRadioMenuTrue = (e) => {
+    e.preventDefault()
+    this.setState({
+      radioMenu1: true
+    })
+    console.log(this.state.radioMenu1)
+  }
+  handleRadioMenuFalse = (e) => {
+    e.preventDefault()
+    this.setState({
+      radioMenu1: false
+    })
+    console.log(this.state.radioMenu1)
+  }
 
   render() {
     
@@ -107,22 +121,30 @@ class LandingPage extends Component {
                 <h5>{item.radioMenu1.title}</h5>
               </div>
               <form action="">
-                  <div className="landingPage_radio2"><Input type="radio" name='radioMenu1' id="f2f" onChange={this.handleRadioMenu1}/>{item.radioMenu1.field1}</div>
-                  <div className="landingPage_radio2"><Input type="radio" name='radioMenu1' id="ecomerce" onChange={this.handleRadioMenu1}/>{item.radioMenu1.field2}</div>
+                <div style={{width: '100%'}}>
+                  <Radio.Group defaultValue="a" buttonStyle="solid" onChange={this.handleRadioMenu1}>
+                    <div  style={{width: '100%', textAlign: 'center'}}><Radio.Button className="landingPage_antRadio" value="b" onChange={this.handleRadioMenuTrue}>{item.radioMenu1.field1}</Radio.Button></div>
+                    <div  style={{width: '100%', textAlign: 'center'}}><Radio.Button className="landingPage_antRadio" value="c" onChange={this.handleRadioMenuFalse}>{item.radioMenu1.field2}</Radio.Button></div>
+                  </Radio.Group>
+                </div>
               </form>
             </div>
           </Col>
-          <Col lg={{span: 6}} sm={{span: 24}} md={{span: 24}}>
+          <Col lg={{span: 9, offset: 1}} sm={{span: 24}} md={{span: 24}}>
             <div className="marginTop">
               <div className="landingPage_title_radioMenu2"><h5>{item.radioMenu2.title}</h5></div>
               <form action="">
-                  <div className="landingPage_radio2"><Input type="radio" name='radioMenu2' id="1" disabled={this.state.radioMenu1}/>{item.radioMenu2.field1}</div>
-                  <div className="landingPage_radio2"><Input type="radio" name='radioMenu2' id="2" disabled={this.state.radioMenu1}/>{item.radioMenu2.field2}</div>
-                  <div className="landingPage_radio2"><Input type="radio" name='radioMenu2' id="3" disabled={!this.state.radioMenu1}/>{item.radioMenu2.field3}</div>
+                <div style={{width: '100%'}}>
+                  <Radio.Group defaultValue="a" buttonStyle="solid">
+                    <div  style={{width: '100%', textAlign: 'center'}}><Radio.Button className="landingPage_antRadio" disabled={this.state.radioMenu1} value="a">{item.radioMenu2.field1}</Radio.Button></div>
+                    <div  style={{width: '100%', textAlign: 'center'}}><Radio.Button className="landingPage_antRadio" disabled={this.state.radioMenu1} value="b">{item.radioMenu2.field2}</Radio.Button></div>
+                    <div  style={{width: '100%', textAlign: 'center'}}><Radio.Button className="landingPage_antRadio" disabled={!this.state.radioMenu1} value="c">{item.radioMenu2.field3}</Radio.Button></div>
+                  </Radio.Group>
+                </div>
               </form>
             </div>
           </Col>
-          <Col lg={{span: 6, offset: 4}} sm={{span: 24}} md={{span: 24}}>
+          <Col lg={{span: 6, offset: 1}} sm={{span: 24}} md={{span: 24}}>
             <div className="marginTop">
               <div>
                 <div className="landingPage_dropDownMenu_title"><h5>{item.dropDownMenu.title}</h5></div>

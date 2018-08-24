@@ -53,5 +53,36 @@
   .landingPage_radio2 {
     color: $grey500;
   }
+  .landingPage_antRadio {
+    width: 100%;
+    margin-bottom: 10px;
+    .ant-radio-button-wrapper {
+      width: 100px;
+    }
+    .ant-radio-button-wrapper-checked {
+      background-color: $orange;
+    }
+    .ant-radio-group {
+      width: 100%;
+    }
+    label {
+      width: 150px;
+    }
+  }
+  .ant-radio-group-solid .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+    background-color: $orange;
+  }
+  .ant-radio-group-solid .ant-radio-button-wrapper-checked {
+    border: none;
+    border-radius: none;
+  }
+  .ant-radio-group-solid .ant-radio-button-wrapper {
+    &:hover {
+      color: $orange;
+      text-decoration-line: none;
+      &:active {
+        color: $white;
+      }
+    }
+  }
 }
-
