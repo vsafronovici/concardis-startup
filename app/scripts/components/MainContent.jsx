@@ -41,7 +41,7 @@ class MainContent extends Component {
             </Col>
             </Row> 
           }
-          <Row>
+          {/* <Row>
             <Col lg={{span: 8, offset: 8}} xs={{span: 24}} sm={{span: 10, offset: 7}}>
               <SpecialOffers title={itemsSpecialOffers[0].title} content={itemsSpecialOffers[0].content}/>
             </Col>
@@ -50,7 +50,7 @@ class MainContent extends Component {
             <Col lg={{span: 24 }} xs={{span: 24}} sm={{span: 24}} md={{span: 24}} xl={{span: 16, offset: 4}}>
               <CardsSection />
             </Col>
-          </Row>
+          </Row> */}
           
         </Content>
     )
