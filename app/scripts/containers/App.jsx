@@ -6,7 +6,6 @@ import history from './../modules/history'
 import { detectRootContainer } from '../utils/page-utils'
 import { initPage } from './../actions/app-action'
 
-
 export class App extends React.Component {
   static propTypes = {
     initPage: PropTypes.func,
@@ -19,6 +18,7 @@ export class App extends React.Component {
   }
 
   render() {
+
     const Container = this.Container
 
     return (

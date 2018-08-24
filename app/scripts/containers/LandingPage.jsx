@@ -11,7 +11,9 @@ export class LandingPage extends React.Component {
 
   render() {
     return (
-      <h1>Landing page</h1>
+      <div>
+        <ReactDemoPage />
+      </div>
     )
   }
 }
