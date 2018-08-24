@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { getAccountReq, sayHelloReq } from "../actions/react-demo-action";
 import { accountSelector, sayHelloSelector } from "../selectors/react-demo-selector";
-import MainHeader from './MainHeader';
 import MainContent from './MainContent';
 import MainFooter from './MainFooter'
 
@@ -33,7 +32,6 @@ export class ReactDemoPage extends React.Component {
     console.log('props', this.props)
     return (
       <div key="Private" className="app__private app__route">
-        <MainHeader />
         <MainContent />
         <MainFooter />
 
