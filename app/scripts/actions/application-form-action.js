@@ -28,3 +28,7 @@ export const goToNextStep = payload => ({
   payload
 })
 
+export const editSection = id => ({
+  type: APPLICATION_FORM.EDIT_SECTION,
+  payload: { id }
+})

@@ -1,9 +1,10 @@
-import { FieldType } from '../utils/constants'
+import { FieldType, SectionStatusType } from '../utils/constants'
 
-export const mockFieldsSections = {
-    '1': {
+export const mockFieldsSections = [
+    {
+      id: '1',
       title: 'section1.title',
-      status: 'FINISHED',
+      status: SectionStatusType.IN_PROGRESS,
       hidden: true,
       fields: [
         {
@@ -12,7 +13,7 @@ export const mockFieldsSections = {
           name: 'f1',
           label: 'f1.label',
           help: 'f1.help',
-          value: 1,
+          value: '1',
           validation: {
             validate: true, // if needed, otherwise false
             required: true, // if needed, otherwise false or don't provide this property
@@ -59,21 +60,21 @@ export const mockFieldsSections = {
             required: true, // if needed, otherwise false or don't provide this property
             requiredError: 'err.required',
           }
-        },
-
+        }
       ]
-
     },
-    '2': {
+
+    {
+      id: '2',
       title: 'section2.title',
-      status: 'IN_PROGRESS',
+      status: SectionStatusType.WAITING,
       hidden: false,
       fields: [
         {
-          id: 1,
+          id: 21,
           type: FieldType.TEXT,
-          name: 'f1',
-          label: 'f1.label',
+          name: 'f21',
+          label: 'f21.label',
           help: 'f1.help',
           validation: {
             validate: true, // if needed, otherwise false
@@ -82,10 +83,10 @@ export const mockFieldsSections = {
           }
         },
         {
-          id: 2,
+          id: 22,
           type: FieldType.TEXT,
-          name: 'f2',
-          label: 'f2.label',
+          name: 'f22',
+          label: 'f22.label',
           help: 'f2.help',
           validation: {
             validate: true, // if needed, otherwise false
@@ -94,26 +95,27 @@ export const mockFieldsSections = {
           }
         },
         {
-          id: 3,
+          id: 23,
           type: FieldType.TEXT,
-          name: 'f3',
-          label: 'f3.label',
+          name: 'f23',
+          label: 'f23.label',
           help: 'f3.help',
           validation: {
             validate: false, // if needed, otherwise false
           }
         },
         {
-          id: 4,
+          id: 24,
           type: FieldType.TEXT,
-          name: 'f4',
-          label: 'f4.label',
+          name: 'f24',
+          label: 'f24.label',
           help: 'f4.help',
           validation: {
             validate: false, // if needed, otherwise false
           }
         },
-
       ]
     }
-}
+]
+
+

@@ -21,7 +21,11 @@ const createDynamicReduxForm = ({ id, fields }) => {
   const formId = `form_${id}`
   const ReduxForm = reduxForm({
     form: formId,
-    validate: Validator(fields)
+    initialValues: getInitialValues(fields),
+    validate: Validator(fields),
+    // enableReinitialize: true,
+    // keepDirtyOnReinitialize: true,
+    destroyOnUnmount: false
   })(DynamicForm)
 
   const mapStateToProps = state => ({
@@ -38,8 +42,8 @@ export class FormSection extends React.Component {
   }
 
   render() {
-    console.log('FormSection ---')
-    const { sectionIndex, section } = this.props
+    console.log('FormSection ---', this.props)
+    const { section, submitting } = this.props
     const ReduxForm = createDynamicReduxForm(section)
     return (
       <div className="form-section">
@@ -51,7 +55,7 @@ export class FormSection extends React.Component {
         <Row>
           <Col lg={{span: 12, offset: 12}}>
             <div className="section">
-              <ReduxForm sectionIndex={sectionIndex} section={section} />
+              <ReduxForm section={section} rSubmitting={submitting} />
             </div>
           </Col>
         </Row>

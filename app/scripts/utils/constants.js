@@ -11,8 +11,9 @@ export const FieldType = {
   TEXT_WITH_SEARCH: undefined,
 }
 
-export const SectionStatusType = createEnum({
-  FINISHED: undefined,
-  IN_PROGRESS: undefined,
-  WAITING: undefined
-})
+export const SectionStatusType = {
+  FINISHED: 'FINISHED',
+  IN_PROGRESS: 'IN_PROGRESS',
+  WAITING: 'WAITING',
+  PAUSED: 'PAUSED'
+}

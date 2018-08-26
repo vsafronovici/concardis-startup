@@ -14,4 +14,8 @@ export const mockTranslations = {
   'f3.help': 'Help text 3',
   'f4.label': 'Label4',
   'f4.help': 'Help text 4',
+  'f21.label': 'Label21 Label2',
+  'f22.label': 'Label22 Label2',
+  'f23.label': 'Label23 Label2',
+  'f24.label': 'Label24 Label2',
 }

@@ -26,39 +26,39 @@ const createRenderer = render => ({ input, meta, label, required, help, ...rest 
         </Tooltip>
       }
 
-      { render(input, label, rest) }
-      {
-        meta.error && meta.touched
-          ? <span>{meta.error}</span>
-          : null
-      }
+      { render(input, meta, label, rest) }
+
+      { meta.error && meta.touched && <span>{meta.error}</span> }
     </div>
   )
 }
 
-const RenderInput = createRenderer((input, label, { val }) => {
-  //input.value = val
-  return <Input   placeholder={translate(label)} defaultValue={val} value={val}/>
+const RenderInput = createRenderer((input, meta, label, { val, readOnly }) => {
+  const xxx = meta.dirty ? input.value : val
+  console.log('RenderInput=', {label, input, meta, val, xxx})
+  return <Input {...input} onChange={(event) => input.onChange(event)} placeholder={translate(label)} value={input.value} disabled={readOnly}/>
 })
 
 
-const RenderSelect = createRenderer((input, label, { options, val }) => {
+const RenderSelect = createRenderer((input, meta, label, { options, val, readOnly }) => {
   // input.value = val
   console.log('RenderSelect', { options, val, input })
   return (
-    <Select onChange={(event) => input.onChange(event)} defaultValue={val}>
+    <Select onChange={(event) => input.onChange(event)} defaultValue={val} disabled={readOnly}>
       { objectToArrayKeyValue(options.items).map(entry => <Option key={entry.key} value={entry.key}>{entry.value}</Option>) }
     </Select>
   )
 })
 
-const getFieldComponent = field => {
+const renderFieldComponent = ({ field, readOnly }) => {
   const { type, name, label, validation: { required }, value } = field
 
   const fieldProps = pickAll(['name', 'label', 'required', 'help'], field)
+  fieldProps.readOnly = readOnly
   if (value) {
     fieldProps.val = value
   }
+
 
   console.log('fieldProps=', fieldProps)
 
@@ -66,6 +66,7 @@ const getFieldComponent = field => {
     case FieldType.TEXT: {
       // return <Field {...fieldProps} component={TextField} />
       return <Field {...fieldProps} component={RenderInput} required={required} />
+      //return <Input defaultValue={'2'} value={3}/>
     }
 
     case FieldType.DROPDOWN: {
@@ -78,11 +79,11 @@ const getFieldComponent = field => {
   }
 }
 
-export const FieldRow = ({ field }) => {
+export const FieldRow = ({ field, readOnly }) => {
   console.log('xxx', {field})
   return (
     <div className="field-row">
-      {getFieldComponent(field)}
+      { renderFieldComponent({ field, readOnly }) }
     </div>
   )
 }
