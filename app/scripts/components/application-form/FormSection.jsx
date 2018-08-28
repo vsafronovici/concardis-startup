@@ -8,20 +8,37 @@ import { getFormValues, getFormSyncErrors } from 'redux-form'
 import { translate } from './../../i18n/i18n'
 import { DynamicForm } from './DynamicForm'
 import { Validator } from './form-validator'
-import { initData, saveFieldsSectionReq } from '../../actions/application-form-action'
-import { applicationFormSelector } from '../../selectors/application-form-selector'
-import { i18nSelector } from '../../selectors/i18n-selector'
+import { editSection, saveFieldsSectionReq } from '../../actions/application-form-action'
+import {
+  sectionFieldsSelector, sectionStateSelector, sectionFieldsValuesSelector
+} from '../../selectors/application-form-selector'
 
 const mapDispatchToProps = ({
-  saveFieldsSectionReq
+  saveFieldsSectionReq,
+  editSection
 })
 
+/*const initialValueReducer = (acc, field) => {
+  const { name, value } = field
+  if (!value) {
+    return acc
+  }
 
-const createDynamicReduxForm = ({ id, fields }) => {
-  const formId = `form_${id}`
+  return {
+    ...acc,
+    [name]: value
+  }
+}*/
+
+
+//const getInitialValues = fields => fields.reduce(initialValueReducer, {})
+
+const createDynamicReduxForm = ({ section, fields, fieldsValues }) => {
+  console.log('createDynamicReduxForm ', { section, fields, fieldsValues })
+  const formId = `form_${section.id}`
   const ReduxForm = reduxForm({
     form: formId,
-    initialValues: getInitialValues(fields),
+    initialValues: fieldsValues,
     validate: Validator(fields),
     // enableReinitialize: true,
     // keepDirtyOnReinitialize: true,
@@ -43,25 +60,39 @@ export class FormSection extends React.Component {
 
   render() {
     console.log('FormSection ---', this.props)
-    const { section, submitting } = this.props
-    const ReduxForm = createDynamicReduxForm(section)
-    return (
+    const { section, sectionState, fields, fieldsValues, submitting } = this.props
+    const ReduxForm = createDynamicReduxForm({ section, fields, fieldsValues })
+    /*return (
       <div className="form-section">
         <Row>
-          <Col lg={{span: 12}}>
-            <div className="section-title"><h3>{translate(section.title)}</h3></div>
+          <Col span={8}>
+            <div className="section-title">{translate(section.title)}</div>
           </Col>
         </Row>
         <Row>
-          <Col lg={{span: 12, offset: 12}}>
-            <div className="section">
-              <ReduxForm section={section} rSubmitting={submitting} />
+          <Col span={8} offset={4}>
+            <div>
+              <ReduxForm section={section} sectionState={sectionState} fields={fields} rSubmitting={submitting} />
             </div>
           </Col>
         </Row>
       </div>
-    )
+    )*/
+
+    return <ReduxForm section={section} sectionState={sectionState} fields={fields} rSubmitting={submitting} />
   }
 }
 
+const mapStateToProps = (state, props) => {
+  const x = sectionStateSelector(state, props)
+  console.log('FormSection.mapStateToProps sectionState=', x)
+
+  return {
+    sectionState: sectionStateSelector(state, props),
+    fields: sectionFieldsSelector(state, props),
+    fieldsValues: sectionFieldsValuesSelector(state, props),
+  }
+}
+
+export default connect(mapStateToProps)(FormSection)
 

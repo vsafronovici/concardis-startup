@@ -44,7 +44,7 @@ const RenderSelect = createRenderer((input, meta, label, { options, val, readOnl
   // input.value = val
   console.log('RenderSelect', { options, val, input })
   return (
-    <Select onChange={(event) => input.onChange(event)} defaultValue={val} disabled={readOnly}>
+    <Select onChange={(event) => input.onChange(event)} defaultValue={input.value} disabled={readOnly}>
       { objectToArrayKeyValue(options.items).map(entry => <Option key={entry.key} value={entry.key}>{entry.value}</Option>) }
     </Select>
   )

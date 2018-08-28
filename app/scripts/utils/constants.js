@@ -5,6 +5,11 @@ export const PageContainers = {
   APPLICATION_FORM_PAGE: 'application-form-page'
 }
 
+export const SectionType = {
+  SIMPLE: 'Simple',
+  CONDITIONAL: 'Conditional'
+}
+
 export const FieldType = {
   TEXT: 'text',
   DROPDOWN: 'drop_down',
