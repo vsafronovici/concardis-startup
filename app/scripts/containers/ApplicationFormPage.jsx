@@ -28,7 +28,7 @@ export class ApplicationFormPage extends React.Component {
         <div className="application-form-bgc">
           <Row>
             <Col lg={{span: 16, offset: 4}}>
-              <ApplicationForm  sections={sections} />
+              <ApplicationForm />
             </Col>
           </Row>
         </div>

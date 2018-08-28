@@ -2,8 +2,14 @@ import React from 'react'
 import { Steps, Row, Col, Icon } from 'antd'
 import { translate } from '../../i18n/i18n'
 import { SectionStatusType } from '../../utils/constants'
+import {
+  sectionsStateSelector, currentSectionsSelector,
+} from '../../selectors/application-form-selector'
+import { connect } from 'react-redux'
 
 const Step = Steps.Step
+
+const Loading = <Icon type="loading" style={{ color: 'black'}} />
 
 const getStepTitle = status => {
   switch (status) {
@@ -11,16 +17,21 @@ const getStepTitle = status => {
       return 'Finished'
     case SectionStatusType.IN_PROGRESS:
       return 'In Progress'
+    case SectionStatusType.PAUSED:
+      return 'Paused'
     default:
       return 'Waiting'
   }
 }
 
-const renderStep = ({ id, status }, submitting) => (submitting && status === SectionStatusType.IN_PROGRESS)
-  ? <Step key={id} title={getStepTitle(status)} status="process" icon={<Icon type="loading" />} />
-  : <Step key={id} title={getStepTitle(status)} />
+const renderStep = ({ section, sectionsState, submitting }) => {
+  const status = sectionsState[section.id].status
+  const extraProps = (submitting && status === SectionStatusType.IN_PROGRESS) ? { status: 'process', icon: Loading } : {}
 
-export const StepsForm = ({ sections, current, submitting }) => {
+  return <Step key={section.id} title={getStepTitle(status)} {...extraProps}/>
+}
+
+export const StepsForm = ({ sections, sectionsState, current, submitting }) => {
   const currentIdx = current >= 0 ? current : sections.length
   console.log('ApplicationForm.StepsForm current=', { sections, current, currentIdx })
   return (
@@ -28,12 +39,20 @@ export const StepsForm = ({ sections, current, submitting }) => {
       <Row>
         <Col span={12}>
           <Steps current={current >= 0 ? current : sections.length} size="small">
-            { sections.map(section => renderStep(section, submitting)) }
+            { sections.map(section => renderStep({ section, sectionsState, submitting })) }
           </Steps>
         </Col>
       </Row>
     </div>
   )
 }
+
+const mapStateToProps = state => ({
+  current: currentSectionsSelector(state),
+  sectionsState: sectionsStateSelector(state),
+})
+
+export default connect(mapStateToProps)(StepsForm)
+
 
 

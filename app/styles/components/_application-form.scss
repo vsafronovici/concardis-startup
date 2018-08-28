@@ -47,9 +47,9 @@
       color: $white;
       line-height: 30px;
       border-radius: none;
-
     }
-    .form-btn-disabled {
+
+    .form-btn[disabled] {
       margin: 20px;
       background-color: $grey300;
       padding: 0px 30px;

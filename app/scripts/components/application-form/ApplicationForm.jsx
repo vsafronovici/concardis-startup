@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 import FormSection from './FormSection'
-import { StepsForm } from './StepsForm'
+import StepsForm from './StepsForm'
 import { translate } from './../../i18n/i18n'
 import {
   applicationFormSubmittingSelector,
@@ -17,7 +17,7 @@ export class ApplicationForm extends React.Component {
   }
 
   render() {
-    const { current, sections, sectionsState, fields, fieldsValues, submitting } = this.props
+    const { current, sections, submitting } = this.props
     //const sections = objectToArray(sectionsObj, 'id')
     console.log('ApplicationForm=', this.props)
     return (
@@ -25,7 +25,6 @@ export class ApplicationForm extends React.Component {
         <h1>{translate('appForm.title')}</h1>
         <StepsForm
           sections={sections}
-          current={current}
           submitting={submitting}
         />
         <div>
@@ -46,7 +45,6 @@ export class ApplicationForm extends React.Component {
 
 const mapStateToProps = state => ({
   sections: sectionsSelector(state),
-  current: currentSectionsSelector(state),
   submitting: applicationFormSubmittingSelector(state)
 })
 
