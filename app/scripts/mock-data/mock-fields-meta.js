@@ -58,7 +58,7 @@ export const mockFieldsMeta = {
   '2': [
     {
       id: '21',
-      type: FieldType.TEXT,
+      type: FieldType.DROPDOWN,
       name: 'f21',
       label: 'f21.label',
       help: 'f1.help',
@@ -66,6 +66,9 @@ export const mockFieldsMeta = {
         validate: true, // if needed, otherwise false
         required: true, // if needed, otherwise false or don't provide this property
         requiredError: 'err.required',
+      },
+      options: {
+        items: { 'No': 'No', 'Yes': 'Yes' }
       }
     },
     {
@@ -89,17 +92,7 @@ export const mockFieldsMeta = {
       validation: {
         validate: false, // if needed, otherwise false
       }
-    },
-    {
-      id: '24',
-      type: FieldType.TEXT,
-      name: 'f24',
-      label: 'f24.label',
-      help: 'f4.help',
-      validation: {
-        validate: false, // if needed, otherwise false
-      }
-    },
+    }
   ]
 }
 

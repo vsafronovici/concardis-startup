@@ -18,7 +18,7 @@ const createRenderer = render => ({ input, meta, label, required, help, ...rest 
       ].join(' ')}
     >
       <label>
-        {translate(label)} {required && <span className="require-symbol">*</span>}
+        <strong>{translate(label)}</strong> {required && <span className="require-symbol">*</span>}
       </label>
       { help &&
         <Tooltip placement="rightTop" trigger="click" title={translate(help)}>

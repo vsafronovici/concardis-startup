@@ -5,6 +5,7 @@ import { FieldRow } from './FieldRow'
 import { SectionStatusType, SectionType } from '../../utils/constants'
 import { editSection } from '../../actions/application-form-action'
 import { translate } from '../../i18n/i18n'
+import { ConditionalQuestion } from './ConditionalQuestion'
 
 export class DynamicForm extends React.Component {
   static propTypes = {
@@ -44,44 +45,52 @@ export class DynamicForm extends React.Component {
     const { section, fields, sectionState: {status}, valid, rValues, rSubmitting } = this.props
     const readOnly = status === SectionStatusType.FINISHED || status === SectionStatusType.PAUSED
 
-    /*return (
-      <div>
-        <div className="form-fields">
-          { fields.map(field => <FieldRow key={field.id} field={field} readOnly={readOnly}/>) }
-        </div>
-        <Row type="flex" justify="center">
-          <Col>
-            {status === SectionStatusType.IN_PROGRESS && <Button className="form-btn" type="primary" onClick={this.saveForm} disabled={!valid || rSubmitting}>Next Step</Button>}
-            {status === SectionStatusType.FINISHED && <Button className="form-btn" type="primary" onClick={this.editForm} disabled={rSubmitting}>Edit</Button>}
-          </Col>
-        </Row>
-      </div>
-    )*/
+    let conditionalField, otherFields
+    let showOtherFields = true
+    if (section.type === SectionType.CONDITIONAL) {
+      [conditionalField, ...otherFields] = fields
+      if (rValues) {
+        showOtherFields = rValues[conditionalField.name] === section.conditionAnswer
+      }
+    } else {
+      otherFields = [...fields]
+    }
 
     return (
       <form>
-        <div className="form-section">
-          <Row>
-            <Col span={8}>
-              <div className="section-title">{translate(section.title)}</div>
-            </Col>
-          </Row>
-          <Row>
-            <Col span={8} offset={4}>
-              <div>
-                <div className="form-fields">
-                  { fields.map(field => <FieldRow key={field.id} field={field} readOnly={readOnly}/>) }
-                </div>
-                <Row type="flex" justify="center">
-                  <Col>
-                    {status === SectionStatusType.IN_PROGRESS && <Button className="form-btn" type="primary" onClick={this.saveForm} disabled={!valid || rSubmitting}>Next Step</Button>}
-                    {status === SectionStatusType.FINISHED && <Button className="form-btn" type="primary" onClick={this.editForm} disabled={rSubmitting}>Edit</Button>}
-                  </Col>
-                </Row>
-              </div>
-            </Col>
-          </Row>
-        </div>
+        {
+          conditionalField && (
+            <ConditionalQuestion field={fields[0]} conditionQuestion={section.conditionQuestion} readOnly={readOnly}/>
+          )
+        }
+        {
+          showOtherFields && (
+            <div className="form-section">
+              <Row>
+                <Col span={8}>
+                  <div className="section-title">{translate(section.title)}</div>
+                </Col>
+              </Row>
+              <Row>
+                <Col span={8} offset={4}>
+                  <div>
+                    <div className="form-fields">
+                      { otherFields.map(field => <FieldRow key={field.id} field={field} readOnly={readOnly}/>) }
+                    </div>
+                    <Row type="flex" justify="center">
+                      <Col>
+                        {status === SectionStatusType.IN_PROGRESS && <Button className="form-btn" type="primary" onClick={this.saveForm} disabled={!valid || rSubmitting}>Next Step</Button>}
+                        {status === SectionStatusType.FINISHED && <Button className="form-btn" type="primary" onClick={this.editForm} disabled={rSubmitting}>Edit</Button>}
+                      </Col>
+                    </Row>
+                  </div>
+                </Col>
+              </Row>
+            </div>
+
+          )
+
+        }
       </form>
     )
   }

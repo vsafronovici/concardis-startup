@@ -67,7 +67,7 @@ export const mockFieldsSections = [
     {
       id: '2',
       title: 'section2.title',
-      status: SectionStatusType.WAITING,
+      status: SectionStatusType.DROPDOWN,
       hidden: false,
       fields: [
         {

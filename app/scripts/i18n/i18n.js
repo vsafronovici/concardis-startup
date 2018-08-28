@@ -9,6 +9,6 @@ export const initI18N = _store => {
 }
 
 export const translate = key => {
-  console.log('i18n store.getState().i18n', store.getState())
-  return i18nSelector(store.getState())[key]
+  const val = i18nSelector(store.getState())[key]
+  return val === undefined ? `${key} missing` : val
 }

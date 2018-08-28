@@ -9,7 +9,7 @@ import { connect } from 'react-redux'
 
 const Step = Steps.Step
 
-const Loading = <Icon type="loading" style={{ color: 'black'}} />
+const Loading = <Icon type="loading" style={{ color: 'white'}} />
 
 const getStepTitle = status => {
   switch (status) {

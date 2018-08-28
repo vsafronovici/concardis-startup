@@ -10,8 +10,8 @@ export const mockSectionsMeta = [
       id: '2',
       title: 'section2.title',
       type: SectionType.CONDITIONAL,
-      Condition_Answers: 'Yes;No',
-      Condition_Question: 'Altern'
+      conditionAnswer: 'Yes',
+      conditionQuestion: 'Altern'
     }
 ]
 
