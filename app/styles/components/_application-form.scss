@@ -2,7 +2,7 @@
   background-color: #FAFAFA;
   padding: 30px 30px;
 
-  .section {
+  .section { 
     background-color: $white;
   }
   .error {
@@ -47,9 +47,9 @@
       color: $white;
       line-height: 30px;
       border-radius: none;
-    }
 
-    .form-btn[disabled] {
+    }
+    .form-btn-disabled {
       margin: 20px;
       background-color: $grey300;
       padding: 0px 30px;
@@ -86,4 +86,26 @@
     color: $white !important;
     border: none;
   }
+}
+
+.ant-steps-item-icon>.ant-steps-icon {
+  line-height: 24px !important;
+}
+
+.spin-align {
+  text-align: center;
+  font-size: 35px;
+  position: relative;
+  height: 300px;
+}
+
+.spin-relative {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  font-size: 50px;
+}
+
+.ant-spin-dot i {
+  background-color: #dc4405 !important;
 }

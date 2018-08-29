@@ -17,12 +17,12 @@ export class ConditionalQuestion extends React.Component {
     return (
       <div className="form-section">
         <Row>
-          <Col span={8}>
+          <Col span={10} offset={2}>
             <div className="section-title">{conditionQuestion}</div>
           </Col>
         </Row>
         <Row>
-          <Col span={8} offset={4}>
+          <Col span={10} offset={12}>
             <div className="form-fields">
               <FieldRow key={field.id} field={field} readOnly={readOnly}/>
             </div>

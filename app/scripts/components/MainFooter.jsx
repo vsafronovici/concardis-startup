@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Layout } from 'antd';
 import { Slider } from 'antd';
+import CSSLight from './CSSLight'
 
 const { Footer } = Layout;
 
@@ -17,8 +18,7 @@ class MainFooter extends Component {
           
           
 
-          <div style={{display: 'flex', direction: 'row'}}>
-            
+            <div style={{display: 'flex', direction: 'row'}}>
             
           </div>
         </Footer>

@@ -65,14 +65,14 @@ export class DynamicForm extends React.Component {
         }
         {
           showOtherFields && (
-            <div className="form-section">
+            <div className="form-section" tabindex="0">
               <Row>
-                <Col span={8}>
+                <Col span={10} offset={2}>
                   <div className="section-title">{translate(section.title)}</div>
                 </Col>
               </Row>
               <Row>
-                <Col span={8} offset={4}>
+                <Col span={10} offset={12}>
                   <div>
                     <div className="form-fields">
                       { otherFields.map(field => <FieldRow key={field.id} field={field} readOnly={readOnly}/>) }
