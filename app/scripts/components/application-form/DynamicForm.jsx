@@ -105,7 +105,7 @@ export class DynamicForm extends React.Component {
           <Col span={10} offset={12}>
             <Row type="flex" justify="center">
               <Col>
-                {status === SectionStatusType.IN_PROGRESS && <Button className="form-btn" type="primary" onClick={this.saveForm} disabled={!valid || rSubmitting}>Next Step</Button>}
+                {status === SectionStatusType.IN_PROGRESS && <Button className="form-btn" type="primary" onClick={this.saveForm} disabled={!valid || rSubmitting}>Next</Button>}
                 {status === SectionStatusType.FINISHED && <Button className="form-btn" type="primary" onClick={this.editForm} disabled={rSubmitting}>Edit</Button>}
               </Col>
             </Row>

@@ -3,14 +3,24 @@
   padding: 30px 30px;
 
   .ant-btn-primary {
-      margin: 20px;
-      background-color: $orange ;
-      padding: 0px 20px;
-      color: $white !important;
-      line-height: 30px;
-      border-radius: none;
-      text-align: center;
+    margin: 20px;
+    background-color: $orange ;
+    padding: 0px 30px;
+    color: $white !important;
+    line-height: 30px;
+    border-radius: none;
+    border: none;
   }
+  .ant-btn-primary:disabled {
+    margin: 20px;
+    background-color: $grey500 !important;
+    padding: 0px 30px;
+    color: $grey500;
+    line-height: 20px;
+    border-radius: none;
+  }
+
+
   .section { 
     background-color: $white;
   }
@@ -47,24 +57,6 @@
           }
         }
       }
-    }
-
-    .form-btn.ant-btn-primary {
-      margin: 20px;
-      background-color: $orange ;
-      padding: 0px 20px;
-      color: $white !important;
-      line-height: 30px;
-      border-radius: none;
-      border: none;
-    }
-    .form-btn.ant-btn-primary.ant-btn:disabled {
-      margin: 20px;
-      background-color: $grey500;
-      padding: 0px 30px;
-      color: $grey500;
-      line-height: 20px;
-      border-radius: none;
     }
   }
 
