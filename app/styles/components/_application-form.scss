@@ -2,6 +2,15 @@
   background-color: #FAFAFA;
   padding: 30px 30px;
 
+  .ant-btn-primary {
+      margin: 20px;
+      background-color: $orange !important;
+      padding: 0px 20px;
+      color: $white !important;
+      line-height: 30px;
+      border-radius: none;
+      text-align: center;
+  }
   .section { 
     background-color: $white;
   }
@@ -40,14 +49,14 @@
       }
     }
 
-    .form-btn {
+    .form-btn.ant-btn-primary {
       margin: 20px;
-      background-color: $orange;
+      background-color: $orange !important;
       padding: 0px 20px;
-      color: $white;
+      color: $white !important;
       line-height: 30px;
       border-radius: none;
-
+      border: none;
     }
     .form-btn-disabled {
       margin: 20px;
@@ -108,4 +117,48 @@
 
 .ant-spin-dot i {
   background-color: #dc4405 !important;
+}
+
+.active-section {
+  background-color: $grey300;
+  border-radius: 20px;
+  outline: none;
+}
+
+.modal_button_ok {
+  .ant-btn-primary {
+    background-color: $orange;
+    border: none;
+  }
+  .ant-modal-header {
+    background-color: $orange;
+    color: $white;
+    .ant-modal-title {
+      color: $white;
+    }
+  }
+  .ant-modal-close {
+    color: $white;
+  }
+  
+}
+.ant-btn-primary {
+  border: none;
+}
+
+.step_loading {
+  color: $orange;
+  background-color: #fafafa;
+  border: none;
+  &:before {
+    border: none;
+    background-color: #fafafa;
+  }
+}
+
+.ant-modal-body {
+  .ant-btn.ant-btn-primary {
+    background-color: $orange;
+    border: none;
+  }
 }

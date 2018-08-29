@@ -9,7 +9,7 @@ import { connect } from 'react-redux'
 
 const Step = Steps.Step
 
-const Loading = <Icon type="loading" style={{ color: 'white'}} />
+const Loading = <Icon type="loading" className="step_loading"  />
 
 const getStepTitle = status => {
   switch (status) {
@@ -28,7 +28,7 @@ const renderStep = ({ section, sectionsState, submitting }) => {
   const status = sectionsState[section.id].status
   const extraProps = (submitting && status === SectionStatusType.IN_PROGRESS) ? { status: 'process', icon: Loading } : {}
 
-  return <Step key={section.id} title={getStepTitle(status)} {...extraProps}/>
+  return <Step key={section.id} title={getStepTitle(status)} {...extraProps} />
 }
 
 export const StepsForm = ({ sections, sectionsState, current, submitting }) => {
@@ -37,7 +37,7 @@ export const StepsForm = ({ sections, sectionsState, current, submitting }) => {
   return (
     <div className="step-form">
       <Row>
-        <Col span={12}>
+        <Col span={20} offset={2}>
           <Steps current={current >= 0 ? current : sections.length} size="small">
             { sections.map(section => renderStep({ section, sectionsState, submitting })) }
           </Steps>

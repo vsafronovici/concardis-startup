@@ -70,7 +70,7 @@ export class DynamicForm extends React.Component {
     }
 
     return (
-      <form ref={ el => { this.ref = el } }>
+      <form ref={ el => { this.ref = el } } className={this.props.sectionState.status === "IN_PROGRESS" ? "active-section" : ''}>
         {
           conditionalField && (
             <ConditionalQuestion field={fields[0]} conditionQuestion={section.conditionQuestion} readOnly={readOnly}/>

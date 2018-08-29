@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { Button, Row, Col } from 'antd'
+import { Button, Row, Col, Modal } from 'antd'
 
 import FormSection from './FormSection'
 import StepsForm from './StepsForm'
@@ -13,12 +13,22 @@ import {
 } from '../../selectors/application-form-selector'
 
 export class ApplicationForm extends React.Component {
+
+
   static propTypes = {
     sections: PropTypes.array
   }
 
-  submitForms = () => {
-    alert('submited')
+
+ 
+
+  success = () => {
+    const modal = Modal.success({
+      title: 'Registration is finished',
+      content: 'Your registration was done with successful',
+    });
+    return <div>{modal}</div>
+    
   }
 
   render() {
@@ -43,7 +53,7 @@ export class ApplicationForm extends React.Component {
             )
           }
         </div>
-        { isFormCompleted && <Button className="form-btn" type="primary" onClick={this.submitForms}>Submit</Button>}
+        { isFormCompleted && <div style={{width: '100%', textAlign: 'center'}}><Button className="form-btn" type="primary" onClick={this.success}>Submit</Button></div>}
       </div>
     )
   }
