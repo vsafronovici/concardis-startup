@@ -4,7 +4,7 @@
 
   .ant-btn-primary {
       margin: 20px;
-      background-color: $orange !important;
+      background-color: $orange ;
       padding: 0px 20px;
       color: $white !important;
       line-height: 30px;
@@ -51,16 +51,16 @@
 
     .form-btn.ant-btn-primary {
       margin: 20px;
-      background-color: $orange !important;
+      background-color: $orange ;
       padding: 0px 20px;
       color: $white !important;
       line-height: 30px;
       border-radius: none;
       border: none;
     }
-    .form-btn-disabled {
+    .form-btn.ant-btn-primary.ant-btn:disabled {
       margin: 20px;
-      background-color: $grey300;
+      background-color: $grey500;
       padding: 0px 30px;
       color: $grey500;
       line-height: 20px;
