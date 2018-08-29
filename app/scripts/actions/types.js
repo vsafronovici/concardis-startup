@@ -22,5 +22,7 @@ export const APPLICATION_FORM = createNamespace('APPLICATION_FORM', {
   SAVE_FIELDS_SECTION_REQ: undefined,
   SAVE_FIELDS_SECTION_RESP: undefined,
   GO_TO_NEXT_STEP: undefined,
-  EDIT_SECTION: undefined
+  EDIT_SECTION: undefined,
+  SUBMIT_ALL_REQ: undefined,
+  SUBMIT_ALL_RESP: undefined
 })

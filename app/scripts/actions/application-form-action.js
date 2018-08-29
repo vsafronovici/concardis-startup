@@ -32,3 +32,11 @@ export const editSection = id => ({
   type: APPLICATION_FORM.EDIT_SECTION,
   payload: { id }
 })
+
+export const submitAllReq = () => ({
+  type: APPLICATION_FORM.SUBMIT_ALL_REQ
+})
+
+export const submitAllResp = () => ({
+  type: APPLICATION_FORM.SUBMIT_ALL_RESP
+})

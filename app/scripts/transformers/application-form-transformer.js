@@ -1,6 +1,9 @@
 import { pickAll } from 'ramda'
 import { SectionStatusType } from '../utils/constants'
 
+//export const transformI18N = payload =>
+
+
 export const transformSectionsMeta = payload =>
   payload.map(p =>
     ({
@@ -14,38 +17,33 @@ export const transformSectionsMeta = payload =>
 
 
 export const transformFieldsMeta = (payload, sections) =>
-  sections.map(s =>
+  sections.reduce((acc, s) =>
     ({
-      [s.id]: payload.filter(p => p.section === s.id).map(p =>
+      ...acc,
+      [s.Id]: payload.filter(p => p.section === s.Id).map(p =>
         ({
           ...p,
           options: {
             items: p.options.items
           },
-          validation: pickAll(['validate', 'required', 'requiredError', 'regEx'])
+          validation: pickAll(['validate', 'required', 'requiredError', 'regEx'], p.validation)
         })
-      )
-    })
-  )
-  /*payload.map(p =>
-    ({
-      ...p,
-      options: {
-        items: p.options.items
-      },
-      validation: pickAll(['validate', 'required', 'requiredError', 'regEx'])
-    })
-  )*/
+      ).sort((a, b) => (a.sequence - b.sequence))
+    }), {})
 
 export const transformSectionsState = sections =>
-  sections.map((s, i) =>
+  sections.reduce((acc, s, i) =>
     ({
-      [s.id]: {
-        id: s.id,
+      ...acc,
+      [s.Id]: {
+        id: s.Id,
         status: i > 0 ? SectionStatusType.WAITING : SectionStatusType.IN_PROGRESS
       }
-    })
-  )
+    }), {})
 
 export const transformFieldsValues = sections =>
-  sections.map(s => ({ [s.id]: {} }))
+  sections.reduce((acc, s) =>
+    ({
+      ...acc,
+      [s.Id]: {}
+    }), {})

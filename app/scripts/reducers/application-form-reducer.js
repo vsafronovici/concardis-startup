@@ -98,5 +98,17 @@ export default {
     [APPLICATION_FORM.EDIT_SECTION](state, { payload: { id } }) {
       return editSection(state, id)
     },
+    [APPLICATION_FORM.SUBMIT_ALL_REQ](state, { payload }) {
+      return {
+        ...state,
+        submitting: true
+      }
+    },
+    [APPLICATION_FORM.SUBMIT_ALL_RESP](state, { payload }) {
+      return {
+        ...state,
+        submitting: false
+      }
+    },
   })
 }

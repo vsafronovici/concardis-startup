@@ -33,11 +33,9 @@ export class ApplicationForm extends React.Component {
 
   render() {
     const { sections, submitting, isFormCompleted } = this.props
-    //const sections = objectToArray(sectionsObj, 'id')
     console.log('ApplicationForm=', this.props)
     return (
       <div className="app__application-form">
-        <h1>{translate('appForm.title')}</h1>
         <StepsForm
           sections={sections}
           submitting={submitting}

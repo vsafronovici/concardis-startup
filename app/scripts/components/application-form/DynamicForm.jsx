@@ -49,13 +49,18 @@ export class DynamicForm extends React.Component {
   putFocus = () => {
     setTimeout(() => {
       console.log('---putFocus', this.ref)
-      this.ref && this.ref.scrollIntoView(false)
+      this.ref && this.ref.scrollIntoView(true)
     }, 1500)
   }
 
   render() {
     console.log('DynamicForm:', this.props)
     const { section, fields, sectionState: {status}, valid, rValues, rSubmitting } = this.props
+
+    if (status === SectionStatusType.WAITING) {
+      return null
+    }
+
     const readOnly = status === SectionStatusType.FINISHED || status === SectionStatusType.PAUSED
 
     let conditionalField, otherFields
@@ -78,7 +83,7 @@ export class DynamicForm extends React.Component {
         }
         {
           showOtherFields && (
-            <div className="form-section" tabindex="0">
+            <div className="form-section">
               <Row>
                 <Col span={10} offset={2}>
                   <div className="section-title">{translate(section.title)}</div>
@@ -90,20 +95,22 @@ export class DynamicForm extends React.Component {
                     <div className="form-fields">
                       { otherFields.map(field => <FieldRow key={field.id} field={field} readOnly={readOnly}/>) }
                     </div>
-                    <Row type="flex" justify="center">
-                      <Col>
-                        {status === SectionStatusType.IN_PROGRESS && <Button className="form-btn" type="primary" onClick={this.saveForm} disabled={!valid || rSubmitting}>Next Step</Button>}
-                        {status === SectionStatusType.FINISHED && <Button className="form-btn" type="primary" onClick={this.editForm} disabled={rSubmitting}>Edit</Button>}
-                      </Col>
-                    </Row>
                   </div>
                 </Col>
               </Row>
             </div>
-
           )
-
         }
+        <Row>
+          <Col span={10} offset={12}>
+            <Row type="flex" justify="center">
+              <Col>
+                {status === SectionStatusType.IN_PROGRESS && <Button className="form-btn" type="primary" onClick={this.saveForm} disabled={!valid || rSubmitting}>Next Step</Button>}
+                {status === SectionStatusType.FINISHED && <Button className="form-btn" type="primary" onClick={this.editForm} disabled={rSubmitting}>Edit</Button>}
+              </Col>
+            </Row>
+          </Col>
+        </Row>
       </form>
     )
   }

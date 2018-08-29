@@ -13,7 +13,7 @@ function* initPageSaga({ payload }) {
 
   if (window.configSettings) {
     const response = yield call(SFAction, configSettings.remoteActions.getDictionaryMetadata)
-    yield put(loadTranslationsResp(response))
+    yield put(loadTranslationsResp(response.data))
   } else {
     // load mocks
     yield call(delay, 600)

@@ -1,11 +1,7 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import { Button, Row, Col } from 'antd'
+import { Row, Col } from 'antd'
 import { FieldRow } from './FieldRow'
-import { SectionStatusType, SectionType } from '../../utils/constants'
-import { editSection } from '../../actions/application-form-action'
 import { translate } from '../../i18n/i18n'
-import { objectToArrayKeyValue } from '../../utils/function-utils'
 
 export class ConditionalQuestion extends React.Component {
   static propTypes = {
@@ -18,7 +14,7 @@ export class ConditionalQuestion extends React.Component {
       <div className="form-section">
         <Row>
           <Col span={10} offset={2}>
-            <div className="section-title">{conditionQuestion}</div>
+            <div className="section-title">{translate(conditionQuestion)}</div>
           </Col>
         </Row>
         <Row>
