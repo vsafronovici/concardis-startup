@@ -14,6 +14,11 @@ export class DynamicForm extends React.Component {
     editSection: PropTypes.func,
   }
 
+  /*constructor(props) {
+    super(props);
+    this.ref = React.createRef();
+  }*/
+
   saveForm = e => {
     const { section, rValues, saveFieldsSectionReq } = this.props
     const payload = {
@@ -30,15 +35,23 @@ export class DynamicForm extends React.Component {
     editSection(id)
   }
 
-  /*getFieldsToDisplay = () => {
-    const { section, fields, sectionState: {status}, valid, rValues, rSubmitting } = this.props
-
-    if (section.type === SectionType.SIMPLE) {
-      return fields
+  componentDidMount() {
+    console.log('DynamicForm componentDidMount ----')
+    if (this.props.sectionState.status === SectionStatusType.IN_PROGRESS) {
+      this.putFocus()
     }
+  }
 
-    const { Condition_Answers } =
-  }*/
+  componentDidUpdate() {
+    console.log('DynamicForm componentDidUpdate ----')
+  }
+
+  putFocus = () => {
+    setTimeout(() => {
+      console.log('---putFocus', this.ref)
+      this.ref && this.ref.scrollIntoView(false)
+    }, 1500)
+  }
 
   render() {
     console.log('DynamicForm:', this.props)
@@ -57,7 +70,7 @@ export class DynamicForm extends React.Component {
     }
 
     return (
-      <form>
+      <form ref={ el => { this.ref = el } }>
         {
           conditionalField && (
             <ConditionalQuestion field={fields[0]} conditionQuestion={section.conditionQuestion} readOnly={readOnly}/>

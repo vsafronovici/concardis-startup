@@ -1,7 +1,7 @@
 import { createReducer } from './../modules/helpers'
 import { APPLICATION_FORM } from './../actions/types'
 import { SectionStatusType } from '../utils/constants'
-import { keys, pickBy, toPairs } from 'ramda'
+import { keys, pickBy, toPairs, isEmpty } from 'ramda'
 
 export const initialState = {
   sections: undefined,
@@ -9,21 +9,6 @@ export const initialState = {
   sectionsState: undefined,
   fieldsValues: undefined,
   submitting: false
-}
-
-const updateFields = (fields, values) => {
-  const updatedFields = [...fields]
-  toPairs(values).forEach(
-    ([key, value]) => {
-      const idx = fields.findIndex(field => field.name === key)
-      const field = fields[idx]
-      updatedFields[idx] = {
-        ...field,
-        value
-      }
-    }
-  )
-  return updatedFields
 }
 
 const goToNextStep = (state, { sectionId, values }) => {
@@ -45,7 +30,7 @@ const goToNextStep = (state, { sectionId, values }) => {
     (val, key) => val.status === SectionStatusType.WAITING || val.status === SectionStatusType.PAUSED
   )(sectionsState)
 
-  if (nextSectionPair) {
+  if (!isEmpty(nextSectionPair)) {
     const nextSectionId = keys(nextSectionPair)[0]
     console.log('goToNextStep nextSectionId=', {nextSectionPair, nextSectionId})
     const nextSectionState = {
@@ -80,22 +65,6 @@ const editSection = (state, id) => {
       }
     }
   )
-
-    /*sections.forEach(s => {
-    if (s.id === id) {
-      updatedSections.push({
-        ...s,
-        status: SectionStatusType.IN_PROGRESS
-      })
-    } else if (s.status === SectionStatusType.IN_PROGRESS) {
-      updatedSections.push({
-        ...s,
-        status: SectionStatusType.PAUSED
-      })
-    } else {
-      updatedSections.push(s)
-    }
-  })*/
 
   return newState
 }

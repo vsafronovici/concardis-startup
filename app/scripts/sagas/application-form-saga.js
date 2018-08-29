@@ -10,20 +10,42 @@ import {
   getFieldsSectionsReq, getFieldsSectionsResp, goToNextStep, saveFieldsSectionReq,
   saveFieldsSectionResp
 } from '../actions/application-form-action'
+import { SFAction } from './../modules/client'
+import {
+  transformFieldsMeta, transformFieldsValues, transformSectionsMeta,
+  transformSectionsState
+} from '../transformers/application-form-transformer'
 
 
 function* initDataSaga() {
   yield put(getFieldsSectionsReq())
 
-  // TODO remove
-  yield call(delay, 600)
-  yield put(getFieldsSectionsResp({
-    sections: mockSectionsMeta,
-    fields: mockFieldsMeta,
-    sectionsState: mockSectionsState,
-    fieldsValues: mockFieldsValues,
-  }))
+  if (window.configSettings) {
+    const { getSectionsMetadata, getSectionFieldsMetadata } = configSettings.remoteActions
 
+    const [sections, fields] = yield all([
+      call(SFAction, getSectionsMetadata),
+      call(SFAction, getSectionFieldsMetadata, { buffer: true, escape: false })
+    ])
+
+    console.log('applicationFormSaga', {sections, fields})
+
+    yield put(getFieldsSectionsResp({
+      sections: transformSectionsMeta(sections.data),
+      fields: transformFieldsMeta(fields.data, sections.data),
+      sectionsState: transformSectionsState(sections.data),
+      fieldsValues: transformFieldsValues(sections.data),
+    }))
+  } else {
+    // load mocks
+    yield call(delay, 600)
+    yield put(getFieldsSectionsResp({
+      sections: mockSectionsMeta,
+      fields: mockFieldsMeta,
+      sectionsState: mockSectionsState,
+      fieldsValues: mockFieldsValues,
+    }))
+  }
 }
 
 function* saveAppFormSaga({ payload }) {
@@ -37,7 +59,6 @@ function* saveAppFormSaga({ payload }) {
 
 
 export default function* root() {
-  console.log('application form saga root')
   yield all([
     takeLatest(APPLICATION_FORM.INIT_DATA, initDataSaga),
     takeEvery(APPLICATION_FORM.SAVE_FIELDS_SECTION_REQ, saveAppFormSaga)

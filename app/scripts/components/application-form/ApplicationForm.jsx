@@ -1,14 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import { Button, Row, Col } from 'antd'
 
 import FormSection from './FormSection'
 import StepsForm from './StepsForm'
 import { translate } from './../../i18n/i18n'
 import {
   applicationFormSubmittingSelector,
-  currentSectionsSelector,
-  sectionsSelector,
+  currentSectionsSelector, isFormCompletedSelector,
+  sectionsSelector
 } from '../../selectors/application-form-selector'
 
 export class ApplicationForm extends React.Component {
@@ -16,8 +17,12 @@ export class ApplicationForm extends React.Component {
     sections: PropTypes.array
   }
 
+  submitForms = () => {
+    alert('submited')
+  }
+
   render() {
-    const { current, sections, submitting } = this.props
+    const { sections, submitting, isFormCompleted } = this.props
     //const sections = objectToArray(sectionsObj, 'id')
     console.log('ApplicationForm=', this.props)
     return (
@@ -38,6 +43,7 @@ export class ApplicationForm extends React.Component {
             )
           }
         </div>
+        { isFormCompleted && <Button className="form-btn" type="primary" onClick={this.submitForms}>Submit</Button>}
       </div>
     )
   }
@@ -45,7 +51,8 @@ export class ApplicationForm extends React.Component {
 
 const mapStateToProps = state => ({
   sections: sectionsSelector(state),
-  submitting: applicationFormSubmittingSelector(state)
+  submitting: applicationFormSubmittingSelector(state),
+  isFormCompleted: isFormCompletedSelector(state)
 })
 
 export default connect(mapStateToProps)(ApplicationForm)

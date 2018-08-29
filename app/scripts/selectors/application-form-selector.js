@@ -1,6 +1,7 @@
 import { createSelector } from 'reselect'
 import { all, compose, isNil, findIndex, not, prop, propEq, pickBy, toPairs, keys } from 'ramda'
 import { SectionStatusType } from '../utils/constants'
+import { objectToArray } from '../utils/function-utils'
 
 const isNotNil = compose(not, isNil)
 const pickSectionByStatus = status => pickBy(
@@ -15,13 +16,11 @@ export const fieldsSelector = compose(prop('fields'), applicationFormSelector)
 export const sectionsStateSelector = compose(prop('sectionsState'), applicationFormSelector)
 export const fieldsValuesSelector = compose(prop('fieldsValues'), applicationFormSelector)
 
-export const sectionStateSelector = (state, props) => {
-  console.log('sectionStateSelector', props)
-  return prop(props.section.id, sectionsStateSelector(state))
-}
+export const sectionStateSelector = (state, props) => prop(props.section.id, sectionsStateSelector(state))
 export const sectionFieldsSelector = (state, props) => prop(props.section.id, fieldsSelector(state))
 export const sectionFieldsValuesSelector = (state, props) => prop(props.section.id, fieldsValuesSelector(state))
 
+export const isFormCompletedSelector = compose(all(propEq('status', SectionStatusType.FINISHED)), objectToArray, sectionsStateSelector)
 
 export const applicationFormLoadedSelector = createSelector(
   sectionsSelector,
