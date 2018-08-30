@@ -50,7 +50,7 @@ export class DynamicForm extends React.Component {
     setTimeout(() => {
       console.log('---putFocus', this.ref)
       this.ref && this.ref.scrollIntoView(true)
-    }, 1500)
+    }, 1000)
   }
 
   render() {

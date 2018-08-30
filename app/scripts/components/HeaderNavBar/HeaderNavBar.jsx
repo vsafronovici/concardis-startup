@@ -2,7 +2,7 @@ import React , { Component } from 'react';
 import { Menu } from 'antd'
 
 
-const links = [{title: 'FINDING SOLUTION', id: "10"}, {title: 'OUR PRODUCTIONS', id: "11"}, {title: 'SERVICES', id: "12"}]
+const links = [{title: 'FINDING SOLUTION', id: "10"}, {title: 'OUR PRODUCTS', id: "11"}, {title: 'SERVICES', id: "12"}]
 
 class HeaderNavBar extends Component {
 

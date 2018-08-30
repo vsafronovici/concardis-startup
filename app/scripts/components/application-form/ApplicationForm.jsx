@@ -24,8 +24,7 @@ export class ApplicationForm extends React.Component {
 
   success = () => {
     const modal = Modal.success({
-      title: 'Registration is finished',
-      content: 'Your registration was done with successful',
+      title: 'Registration was successful'
     });
     return <div>{modal}</div>
     
@@ -51,7 +50,12 @@ export class ApplicationForm extends React.Component {
             )
           }
         </div>
-        { isFormCompleted && <div style={{width: '100%', textAlign: 'center'}}><Button className="form-btn" type="primary" onClick={this.success}>Submit</Button></div>}
+        {
+          isFormCompleted &&
+          <div style={{width: '100%', textAlign: 'center'}}>
+            <Button className="form-btn" type="primary" onClick={this.success}>Submit</Button>
+          </div>
+        }
       </div>
     )
   }
