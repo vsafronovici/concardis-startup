@@ -25,32 +25,20 @@
 @import 'modules/transitions';
 
 // *** Components
-@import 'components/alert';
 @import 'components/footer';
 @import 'components/header';
 @import 'components/loader';
-@import 'components/logo';
-@import 'components/system-alerts';
 @import 'components/application-form';
 
 // *** Containers
-@import 'containers/github';
-
-// *** Routes
-@import 'routes/home';
-@import 'routes/private';
-@import 'routes/not-found';
 
 // *** Colors
 @import 'components/_colors';
-@import 'components/Colors/_header_colors';
-
 @import 'components/HeaderMenu/_header_drop_down';
 @import 'components/HeaderMenu/_header_nav_bar';
 @import 'components/Content/Content';
 @import 'components/HeaderMenu/sandwitch/_sandwitch_menu';
 @import 'components/_colors';
-@import 'components/Colors/_header_colors';
 @import 'components/Content/SpecialOffers/SpecialOffers';
 @import 'components/Content/CardsSection/CardsSection';
 @import 'components/Content/CardsSection/Card/Card';
