@@ -1,6 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Translate } from 'react-redux-i18n';
 import { Layout } from 'antd';
 import { Row, Col } from 'antd';
 
@@ -8,7 +6,6 @@ import DropDownMenu from './../components/HeaderMenu/DropDownMenu'
 import HeaderLinks from './../components/HeaderLinks/HeaderLinks'
 import HeaderNavBar from './../components/HeaderNavBar/HeaderNavBar'
 import HeaderNavBarSmall from './HeaderNavBar/HeaderNavBarSmall';
-import Modernizr from 'modernizr';
 import { countries, languages, login} from './HeaderMenu/DropDownMenuItems/DropDownMenuItems'
 
 import Responsive from 'react-responsive';

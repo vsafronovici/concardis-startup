@@ -11,7 +11,7 @@ import { Provider } from 'react-redux'
 import { AppContainer } from 'react-hot-loader'
 import { PersistGate } from 'redux-persist/lib/integration/react'
 
-import { store, persistor } from 'app-store'
+import { store, persistor } from './store'
 import { showAlert } from './actions/app-action'
 
 import App from './containers/App'
@@ -25,7 +25,6 @@ export const init = {
 
   run() {
     const { rootId } = detectRootContainer()
-    console.log('--run', rootId)
     /* istanbul ignore else */
     if (process.env.NODE_ENV !== 'production') {
       this.render(rootId)
