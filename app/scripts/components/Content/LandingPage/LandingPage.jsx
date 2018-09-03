@@ -67,17 +67,6 @@ const marks2 = {
   }
 }
 
-function handleChange(value) {
-  console.log(`selected ${value}`);
-}
-
-function handleBlur() {
-  console.log('blur');
-}
-
-function handleFocus() {
-  console.log('focus');
-}
 class LandingPage extends Component {
 
   state = {
@@ -95,14 +84,12 @@ class LandingPage extends Component {
     this.setState({
       radioMenu1: true
     })
-    console.log(this.state.radioMenu1)
   }
   handleRadioMenuFalse = (e) => {
     e.preventDefault()
     this.setState({
       radioMenu1: false
     })
-    console.log(this.state.radioMenu1)
   }
 
   render() {

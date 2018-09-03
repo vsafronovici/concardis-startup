@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Layout } from 'antd';
 import { Slider } from 'antd';
-import CSSLight from './CSSLight'
 
 const { Footer } = Layout;
 

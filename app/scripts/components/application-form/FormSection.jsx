@@ -34,7 +34,6 @@ const mapDispatchToProps = ({
 //const getInitialValues = fields => fields.reduce(initialValueReducer, {})
 
 const createDynamicReduxForm = ({ section, fields, fieldsValues }) => {
-  console.log('createDynamicReduxForm ', { section, fields, fieldsValues })
   const formId = `form_${section.id}`
   const ReduxForm = reduxForm({
     form: formId,
@@ -59,25 +58,8 @@ export class FormSection extends React.Component {
   }
 
   render() {
-    console.log('FormSection ---', this.props)
     const { section, sectionState, fields, fieldsValues, submitting } = this.props
     const ReduxForm = createDynamicReduxForm({ section, fields, fieldsValues })
-    /*return (
-      <div className="form-section">
-        <Row>
-          <Col span={8}>
-            <div className="section-title">{translate(section.title)}</div>
-          </Col>
-        </Row>
-        <Row>
-          <Col span={8} offset={4}>
-            <div>
-              <ReduxForm section={section} sectionState={sectionState} fields={fields} rSubmitting={submitting} />
-            </div>
-          </Col>
-        </Row>
-      </div>
-    )*/
 
     return <ReduxForm section={section} sectionState={sectionState} fields={fields} rSubmitting={submitting} />
   }
@@ -85,7 +67,6 @@ export class FormSection extends React.Component {
 
 const mapStateToProps = (state, props) => {
   const x = sectionStateSelector(state, props)
-  console.log('FormSection.mapStateToProps sectionState=', x)
 
   return {
     sectionState: sectionStateSelector(state, props),

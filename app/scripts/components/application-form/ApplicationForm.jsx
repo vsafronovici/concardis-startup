@@ -32,7 +32,6 @@ export class ApplicationForm extends React.Component {
 
   render() {
     const { sections, submitting, isFormCompleted } = this.props
-    console.log('ApplicationForm=', this.props)
     return (
       <div className="app__application-form">
         <StepsForm

@@ -14,47 +14,35 @@ export class DynamicForm extends React.Component {
     editSection: PropTypes.func,
   }
 
-  /*constructor(props) {
-    super(props);
-    this.ref = React.createRef();
-  }*/
-
   saveForm = e => {
     const { section, rValues, saveFieldsSectionReq } = this.props
     const payload = {
       sectionId: section.id,
       values: rValues
     }
-    console.log('saving section ', payload)
     saveFieldsSectionReq(payload)
   }
 
   editForm = e => {
     const { section: { id }, editSection } = this.props
-    console.log('edit section ', id)
+   
     editSection(id)
   }
 
   componentDidMount() {
-    console.log('DynamicForm componentDidMount ----')
     if (this.props.sectionState.status === SectionStatusType.IN_PROGRESS) {
       this.putFocus()
     }
   }
 
-  componentDidUpdate() {
-    console.log('DynamicForm componentDidUpdate ----')
-  }
 
   putFocus = () => {
     setTimeout(() => {
-      console.log('---putFocus', this.ref)
       this.ref && this.ref.scrollIntoView(true)
     }, 1000)
   }
 
   render() {
-    console.log('DynamicForm:', this.props)
     const { section, fields, sectionState: {status}, valid, rValues, rSubmitting } = this.props
 
     if (status === SectionStatusType.WAITING) {

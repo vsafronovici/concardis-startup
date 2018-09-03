@@ -9,7 +9,7 @@ const icons = ['  1  ', '  2  ', '  3  ', '  4  ']
 const Panel = Collapse.Panel;
 
 function callback(key) {
-  console.log(key);
+  
 }
 
 const text = `

@@ -10,7 +10,6 @@ const paths = require('../config/paths');
 const run = promisify(exec);
 
 function publish() {
-  console.log(chalk.blue('Publishing...'));
   const rsync = new Rsync()
     .shell('ssh')
     .exclude('.DS_Store')
@@ -20,25 +19,19 @@ function publish() {
 
   rsync.execute((error, code, cmd) => {
     if (error) {
-      console.log(chalk.red('Something went wrong...', error, code, cmd));
       process.exit(1);
     }
 
-    console.log(chalk.green('Published'));
   });
 }
 
 function deploy() {
   const start = Date.now();
-  console.log(chalk.green('Bundling...'));
 
   return exec('npm run build', errBuild => {
     if (errBuild) {
-      console.log(chalk.red(errBuild));
       process.exit(1);
     }
-
-    console.log(`Bundled in ${(Date.now() - start) / 1000} s`);
 
     publish();
   });
@@ -50,11 +43,9 @@ function updateDependencies() {
       run('git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD')
         .then(({ stdout }) => {
           if (stdout.match('package.json')) {
-            console.log(chalk.yellow('▼ Updating...'));
             exec('npm update').stdout.pipe(process.stdout);
           }
           else {
-            console.log(chalk.green('✔ Nothing to update'));
           }
         })
         .catch(err => {
@@ -62,7 +53,6 @@ function updateDependencies() {
         })
     )
     .catch(() => {
-      console.log('not under git');
     });
 }
 
@@ -82,20 +72,16 @@ function checkUpstream() {
               { stdout: $base },
             ]) => {
               if ($local === $remote) {
-                console.log(chalk.green('✔ Repo is up-to-date!'));
               }
               else if ($local === $base) {
-                console.log(chalk.red('⊘ Error'), 'You need to pull, there are new commits.');
                 process.exit(1);
               }
             })
             .catch(err => {
               if (err.message.includes('no upstream configured ')) {
-                console.log(chalk.yellow('⚠ Warning'), 'No upstream. Is this a new branch?');
                 return;
               }
 
-              console.log(chalk.yellow('⚠ Warning'), err.message);
             });
         })
         .catch(err => {
@@ -103,7 +89,6 @@ function checkUpstream() {
         })
     )
     .catch(() => {
-      console.log('not under git');
     });
 }
 
@@ -140,7 +125,6 @@ module.exports = yargs
 
     console.error(`${chalk.red(msg)}
     `);
-    console.log(instance.help());
     process.exit(1);
   })
   .argv;

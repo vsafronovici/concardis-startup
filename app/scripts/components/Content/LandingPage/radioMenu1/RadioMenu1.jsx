@@ -12,7 +12,6 @@ class RadioMenu1 extends Component {
     this.setState({
       radioMenu1: !this.state.radioMenu1
     })
-    console.log(this.state.radioMenu1)
   }
 
   render() {

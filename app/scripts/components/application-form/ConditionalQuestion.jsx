@@ -8,7 +8,6 @@ export class ConditionalQuestion extends React.Component {
   }
 
   render() {
-    console.log('ConditionalQuestion:', this.props)
     const { field, conditionQuestion, readOnly } = this.props
     return (
       <div className="form-section">

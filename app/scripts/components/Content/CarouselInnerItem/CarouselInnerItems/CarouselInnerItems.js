@@ -16,7 +16,6 @@ export const carouselItems = [
 
 export const formatTitle = (obj) => {
   obj.title = obj.title.indexOf('-') ? obj.title.split(':') : obj.title;
-  console.log(obj.title);
 
   return obj.title;
 }

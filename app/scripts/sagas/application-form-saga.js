@@ -28,8 +28,6 @@ function* initDataSaga() {
       call(SFAction, getSectionFieldsMetadata, { buffer: true, escape: false })
     ])
 
-    console.log('applicationFormSaga', {sections, fields})
-
     yield put(getFieldsSectionsResp({
       sections: transformSectionsMeta(sections.data),
       fields: transformFieldsMeta(fields.data, sections.data),
@@ -49,8 +47,6 @@ function* initDataSaga() {
 }
 
 function* saveAppFormSaga({ payload }) {
-  console.log("saveAppFormSaga", payload)
-  // TODO remove
   yield call(delay, 600)
   yield put(saveFieldsSectionResp({}))
 

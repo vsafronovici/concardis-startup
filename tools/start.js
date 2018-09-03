@@ -76,7 +76,6 @@ choosePort(HOST, DEFAULT_PORT)
 
     compiler.plugin('emit', function(compilation, callback) {
       const now = new Date();
-      console.log(chalk.yellow(`Duration: ${dateFns.differenceInSeconds(now, start)}s - ${compilation.hash}`));
 
       if (isAutomationTest) {
         const cypress = spawn(path.join(__dirname, '../node_modules/.bin/cypress'), ['run']);
@@ -101,7 +100,6 @@ choosePort(HOST, DEFAULT_PORT)
     // Launch WebpackDevServer.
     devServer.listen(port, HOST, err => {
       if (err) {
-        console.log(err);
         return;
       }
 
@@ -109,7 +107,6 @@ choosePort(HOST, DEFAULT_PORT)
         clearConsole();
       }
 
-      console.log(chalk.cyan('Starting the development server...'));
 
       if (!isAutomationTest) {
         openBrowser(urls.localUrlForBrowser);
@@ -125,7 +122,6 @@ choosePort(HOST, DEFAULT_PORT)
   })
   .catch(err => {
     if (err && err.message) {
-      console.log(err.message);
     }
     process.exit(1);
   });

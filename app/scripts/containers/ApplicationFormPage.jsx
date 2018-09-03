@@ -20,7 +20,6 @@ export class ApplicationFormPage extends React.Component {
   }
 
   render() {
-    console.log('ApplicationFormPage render props', this.props)
     
     const { i18n, applicationFormLoaded } = this.props
     return (

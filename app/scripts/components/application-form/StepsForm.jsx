@@ -33,7 +33,6 @@ const renderStep = ({ section, sectionsState, submitting }) => {
 
 export const StepsForm = ({ sections, sectionsState, current, submitting }) => {
   const currentIdx = current >= 0 ? current : sections.length
-  console.log('ApplicationForm.StepsForm current=', { sections, current, currentIdx })
   return (
     <div className="step-form">
       <Row>

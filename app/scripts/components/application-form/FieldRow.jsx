@@ -9,7 +9,6 @@ import { objectToArrayKeyValue } from '../../utils/function-utils'
 const Option = Select.Option
 
 const createRenderer = render => ({ input, meta, label, required, help, ...rest }) => {
-  console.log('createRenderer', {label, rest})
   return (
     <div
       className={[
@@ -35,14 +34,12 @@ const createRenderer = render => ({ input, meta, label, required, help, ...rest 
 
 const RenderInput = createRenderer((input, meta, label, { val, readOnly }) => {
   const xxx = meta.dirty ? input.value : val
-  console.log('RenderInput=', {label, input, meta, val, xxx})
   return <Input {...input} onChange={(event) => input.onChange(event)} placeholder={translate(label)} value={input.value} disabled={readOnly}/>
 })
 
 
 const RenderSelect = createRenderer((input, meta, label, { options, val, readOnly }) => {
-  // input.value = val
-  console.log('RenderSelect', { options, val, input })
+ 
   return (
     <Select onChange={(event) => input.onChange(event)} defaultValue={input.value} disabled={readOnly}>
       { objectToArrayKeyValue(options.items).map(entry => <Option key={entry.key} value={entry.key}>{entry.value}</Option>) }
@@ -60,13 +57,10 @@ const renderFieldComponent = ({ field, readOnly }) => {
   }
 
 
-  console.log('fieldProps=', fieldProps)
-
   switch(type) {
     case FieldType.TEXT: {
-      // return <Field {...fieldProps} component={TextField} />
       return <Field {...fieldProps} component={RenderInput} required={required} />
-      //return <Input defaultValue={'2'} value={3}/>
+      
     }
 
     case FieldType.DROPDOWN: {
@@ -80,7 +74,6 @@ const renderFieldComponent = ({ field, readOnly }) => {
 }
 
 export const FieldRow = ({ field, readOnly }) => {
-  console.log('xxx', {field})
   return (
     <div className="field-row">
       { renderFieldComponent({ field, readOnly }) }

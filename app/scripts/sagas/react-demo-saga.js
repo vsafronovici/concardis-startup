@@ -21,7 +21,6 @@ function* getAccount({ payload: { modelName, criteria } }) {
 }
 
 export default function* root() {
-  console.log('react demo saga root')
   yield all([
     takeEvery(REACT_DEMO.SAY_HELLO_REQ, sayHello),
     takeEvery(REACT_DEMO.ACCOUNT_REQ, getAccount)

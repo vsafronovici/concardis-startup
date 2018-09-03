@@ -5,10 +5,6 @@ import { carouselItems, formatTitle } from './CarouselInnerItems/CarouselInnerIt
 
 class CarouselInnerItem extends Component {
 
-  componentDidMount() {
-    //console.log(this.props)
-  }
-
   render() {
     const { id, title, content, buttonTxt } = this.props;
     return(

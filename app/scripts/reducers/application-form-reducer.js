@@ -3,6 +3,7 @@ import { APPLICATION_FORM } from './../actions/types'
 import { SectionStatusType } from '../utils/constants'
 import { keys, pickBy, toPairs, isEmpty } from 'ramda'
 
+
 export const initialState = {
   sections: undefined,
   fields: undefined,
@@ -32,7 +33,6 @@ const goToNextStep = (state, { sectionId, values }) => {
 
   if (!isEmpty(nextSectionPair)) {
     const nextSectionId = keys(nextSectionPair)[0]
-    console.log('goToNextStep nextSectionId=', {nextSectionPair, nextSectionId})
     const nextSectionState = {
       ...sectionsState[nextSectionId],
       status: SectionStatusType.IN_PROGRESS

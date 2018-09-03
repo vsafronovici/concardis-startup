@@ -19,13 +19,14 @@ import 'antd/dist/antd.css'
 import '../styles/main.scss'
 import {detectRootContainer} from "./utils/page-utils";
 
+
+
 export const init = {
   cssRetries: 0,
   fetchRetries: 0,
 
   run() {
     const { rootId } = detectRootContainer()
-    console.log('--run', rootId)
     /* istanbul ignore else */
     if (process.env.NODE_ENV !== 'production') {
       this.render(rootId)
@@ -43,7 +44,6 @@ export const init = {
           this.fetchRetries++
           this.run()
         }
-        console.log(reason) //eslint-disable-line no-console
       })
   },
   loadCSS() {

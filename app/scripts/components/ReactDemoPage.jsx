@@ -29,7 +29,6 @@ export class ReactDemoPage extends React.Component {
 
 
   render() {
-    console.log('props', this.props)
     return (
       <div key="Private" className="app__private app__route">
         <MainContent />
