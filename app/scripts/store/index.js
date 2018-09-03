@@ -1,13 +1,9 @@
 import { applyMiddleware, createStore, compose, combineReducers } from 'redux'
 import createSagaMiddleware from 'redux-saga'
-import { routerReducer, routerMiddleware } from 'react-router-redux'
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
-import thunk from 'redux-thunk'
-import { loadTranslations, setLocale, syncTranslationWithStore, i18nReducer } from 'react-redux-i18n'
 import { reducer as formReducer } from 'redux-form'
 
-import history from 'modules/history'
 import rootSaga from 'sagas'
 import rootReducer from 'reducers'
 import { initI18N } from '../i18n/i18n'
@@ -18,19 +14,16 @@ const reducer = persistReducer(
   {
     key: 'rrsb', // key is required
     storage, // storage is now required
-    whitelist: ['app', 'user']
+    whitelist: [] // local storage
   },
   combineReducers({
     ...rootReducer,
-    router: routerReducer,
     form: formReducer
   })
 )
 
 const middleware = [
-  sagaMiddleware,
-  routerMiddleware(history),
-  thunk
+  sagaMiddleware
 ]
 
 /* istanbul ignore next */

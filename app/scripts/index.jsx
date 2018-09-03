@@ -11,7 +11,7 @@ import { Provider } from 'react-redux'
 import { AppContainer } from 'react-hot-loader'
 import { PersistGate } from 'redux-persist/lib/integration/react'
 
-import { store, persistor } from 'app-store'
+import { store, persistor } from './store'
 import { showAlert } from './actions/app-action'
 
 import App from './containers/App'
@@ -111,9 +111,7 @@ export const init = {
       ReactDOM.render(
         <AppContainer>
           <Provider store={store}>
-            <PersistGate
-              persistor={persistor}
-            >
+            <PersistGate persistor={persistor}>
               <App />
             </PersistGate>
           </Provider>
