@@ -111,9 +111,7 @@ export const init = {
       ReactDOM.render(
         <AppContainer>
           <Provider store={store}>
-            <PersistGate
-              persistor={persistor}
-            >
+            <PersistGate persistor={persistor}>
               <App />
             </PersistGate>
           </Provider>
