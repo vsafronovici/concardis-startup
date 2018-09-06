@@ -1,8 +1,7 @@
-import { createEnum } from './namespace-util'
-
 export const PageContainers = {
   LANDING_PAGE: 'react-landing-page',
-  APPLICATION_FORM_PAGE: 'application-form-page'
+  APPLICATION_FORM_PAGE: 'application-form-page',
+  CONFIGURATOR_PAGE: 'configurator-page'
 }
 
 export const SectionType = {
