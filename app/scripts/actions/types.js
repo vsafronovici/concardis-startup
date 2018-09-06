@@ -30,5 +30,6 @@ export const APPLICATION_FORM = createNamespace('APPLICATION_FORM', {
 export const CONFIGURATOR = createNamespace('CONFIGURATOR', {
   INIT_DATA: undefined,
   GET_META_STEP1_REQ: undefined,
-  GET_META_STEP1_RESP: undefined,
+  GET_META_STEP1_RES: undefined,
+  CHANGE_FIELD_VALUE: undefined,
 })

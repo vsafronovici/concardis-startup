@@ -1,28 +1,33 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import SliderComponent from './slider/Slider'
+import { changeFieldValue  } from '../../actions/configurator-action';
 
-export class Step1 extends React.Component {
+const Step1 = props => {
 
-  static propTypes = {
-    sections: PropTypes.array
-  }
+    const { fields, changeFieldValue } = props
 
-  render() {
-    const { } = this.props
     return (
       <div>
-        Step1
+        {fields.map( (field, index) => {
+          return(
+            <SliderComponent field={field} key={index} changeFieldValue={changeFieldValue}/>
+          )
+        })}
       </div>
     )
   }
-}
 
 const mapStateToProps = state => ({
+  fields: state.configurator.fields
 })
 
-export default connect(mapStateToProps)(Step1)
+const mapDispatchToProps = dispatch => ({
+  changeFieldValue: (value) => {
+    console.log(value)
+    dispatch(changeFieldValue(value))
+  }
+})
 
-
-
-
+export default connect(mapStateToProps, mapDispatchToProps)(Step1)
