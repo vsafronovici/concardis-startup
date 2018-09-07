@@ -86,13 +86,12 @@
   }
 
   .sc-content {
-    width: 378px;
     padding: 24px 24px;
+    padding-right: 24px;
   }
 
   .sc-title {
     height: 32px;
-    width: 328px;
     h1 {
       font-family: Montserrat;
       font-size: $sc-title-size;
@@ -106,7 +105,6 @@
   
   .sc-label {
     height: 48px;
-    width: 328px;
     h2 {
       font-family: Montserrat;
       font-size: $sc-label-size;
@@ -122,7 +120,6 @@
   .sc-slider-slider {
     margin-top: 30px;
     height: 75px;
-    width: 270px;
     padding-left: 13px;
     padding-right: 25px;
     background-color: #fff;
@@ -133,11 +130,9 @@
   .sc-slider-select {
     margin-top: 30px;
     height: 75px;
-    width: 328px;
     background-color: #fff;
     margin: none;
     .ant-select.ant-select-enabled {
-      width: 328px !important;
     }
   }
 
