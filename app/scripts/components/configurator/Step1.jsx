@@ -3,24 +3,29 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import SliderComponent from './slider/Slider'
 import { changeFieldValue  } from '../../actions/configurator-action';
+import { Row, Col } from 'antd'
 
 const Step1 = props => {
 
-    const { step1_meta_data, changeFieldValue } = props
+    const { step1MetaData, changeFieldValue } = props
 
     return (
       <div>
-        {step1_meta_data.map( (field, index) => {
+        <Row>
+        {step1MetaData.map( (field, index) => {
           return(
-            <SliderComponent field_meta_data={field} key={index} changeFieldValue={changeFieldValue}/>
+            <Col lg={{span: '11', offset: '1'}}>
+              <SliderComponent fieldMetaData={field} key={index} changeFieldValue={changeFieldValue}/>
+            </Col>
           )
         })}
+        </Row>
       </div>
     )
   }
 
 const mapStateToProps = state => ({
-  step1_meta_data: state.configurator.step1_meta_data
+  step1MetaData: state.configurator.step1MetaData
 })
 
 const mapDispatchToProps = dispatch => ({

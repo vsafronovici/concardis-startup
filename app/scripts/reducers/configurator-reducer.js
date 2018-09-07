@@ -7,7 +7,7 @@ export const initialState = {
   fields: {},
   step: 1,
   submitting: false,
-  step1_meta_data: undefined
+  step1MetaData: undefined
 
 }
 
@@ -21,7 +21,7 @@ export default {
     [CONFIGURATOR.GET_META_STEP1_RES](state, { payload }) {
       return {
         ...state,
-        step1_meta_data: payload
+        step1MetaData: payload
       }
     },
     [CONFIGURATOR.CHANGE_FIELD_VALUE](state, { payload: { value, name }}) {
