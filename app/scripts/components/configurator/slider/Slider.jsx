@@ -19,19 +19,19 @@ const SliderComponent = props =>  {
     }
 
     return(
-      <div>
-          <div>
+        <div className="sc-content">
+          <div className="sc-title">
             <h1>{title}</h1>
           </div>
-          <div>
+          <div className="sc-label">
             <h2>{label}</h2>
           </div>
-          <div>
+          <div className={(type === FieldType.DROPDOWN) ? 'sc-slider-select' : 'sc-slider-slider'}>
             {(type === FieldType.DROPDOWN)
               ? <RenderSelect selectItems={checkOptions} title={title} handleChangeField={handleChangeField} />
               : <RenderSlider sliderItems={checkOptions} name={name} defaultValue={defaultValue} handleChangeField={handleChangeField}/> }
           </div>
-      </div>
+        </div>
     )
   
 

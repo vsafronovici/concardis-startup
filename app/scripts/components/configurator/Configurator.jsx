@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import Step1 from './Step1'
 import Step2 from './Step2'
+import { Row, Col } from 'antd'
 
 export class Configurator extends React.Component {
 
@@ -10,7 +11,7 @@ export class Configurator extends React.Component {
   }
 
   getStep = () => {
-    return Step2
+    return Step1
   }
 
   render() {

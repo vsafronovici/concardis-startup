@@ -11,6 +11,9 @@ $app-easing: cubic-bezier(0.35, 0.01, 0.77, 0.34);
 // *** Colors
 
 // *** Font colors
+$sc-title-color: #000000;
+$sc-label-color: #888888;
+
 $font-main-color: #6b7072;
 $font-active-color: #dc4405;
 
@@ -27,3 +30,7 @@ $grey300: #E0E0E0;
 $grey400: #BDBDBD;
 $grey500: #9E9E9E;
 $grey600: #757575;
+
+// *** Font sizes
+$sc-title-size: 24px;
+$sc-label-size: 16px;

@@ -10,17 +10,23 @@ const Step1 = props => {
     const { step1MetaData, changeFieldValue } = props
 
     return (
-      <div>
-        <Row>
-        {step1MetaData.map( (field, index) => {
-          return(
-            <Col lg={{span: '11', offset: '1'}}>
-              <SliderComponent fieldMetaData={field} key={index} changeFieldValue={changeFieldValue}/>
+        <div>
+          <Row>
+            <Col lg={{span: '10', offset: '7'}}>
+              <div className="sc-row-wrapper">
+                <Row>
+                  {step1MetaData.map( (field, index) => {
+                    return(                      
+                        <Col lg={{span: '12'}}>
+                          <SliderComponent fieldMetaData={field} key={index * index} changeFieldValue={changeFieldValue}/>
+                        </Col>
+                    )
+                  })}
+                </Row>
+              </div>
             </Col>
-          )
-        })}
-        </Row>
-      </div>
+          </Row>
+        </div>
     )
   }
 

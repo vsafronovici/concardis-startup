@@ -9,7 +9,7 @@ export const page1MetaMock = [
     options: {
       sliderValues: [2000, 4000, 6000, 8000, 10000]
     },
-    defaultValue: 2000
+    defaultValue: 6000
   },
   { 
     name: 'page1.f2',
@@ -19,7 +19,7 @@ export const page1MetaMock = [
     options: {
       sliderValues: [2000, 4000, 6000, 8000, 10000]
     },
-    defaultValue: 2000
+    defaultValue: 6000
   },
   { 
     name: 'page1.f3',
@@ -29,7 +29,7 @@ export const page1MetaMock = [
     options: {
       sliderValues: [2000, 4000, 6000, 8000, 10000]
     },
-    defaultValue: 2000
+    defaultValue: 6000
   },
   { 
     name: 'page1.f4',

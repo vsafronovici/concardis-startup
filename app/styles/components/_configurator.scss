@@ -75,4 +75,76 @@
     margin-top: 154px;
   }
 
+  .sc-field {
+    padding: 24px 28px;
+    background-color: #fff;
+  }
+  
+  .sc-row-wrapper {
+    background-color: #fff;
+    border-radius: 5px;
+  }
+
+  .sc-content {
+    width: 378px;
+    padding: 24px 24px;
+  }
+
+  .sc-title {
+    height: 32px;
+    width: 328px;
+    h1 {
+      font-family: Montserrat;
+      font-size: $sc-title-size;
+      color: $sc-title-color;
+      line-height: 1.33;
+      font-weight: bold;
+      letter-spacing: normal;
+      font-stretch: normal;
+    }
+  }
+  
+  .sc-label {
+    height: 48px;
+    width: 328px;
+    h2 {
+      font-family: Montserrat;
+      font-size: $sc-label-size;
+      color: $sc-label-color;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.5;
+      letter-spacing: normal;
+    }
+  }
+
+  .sc-slider-slider {
+    margin-top: 30px;
+    height: 75px;
+    width: 270px;
+    padding-left: 13px;
+    padding-right: 25px;
+    background-color: #fff;
+    margin: none;
+    
+  }
+
+  .sc-slider-select {
+    margin-top: 30px;
+    height: 75px;
+    width: 328px;
+    background-color: #fff;
+    margin: none;
+    .ant-select.ant-select-enabled {
+      width: 328px !important;
+    }
+  }
+
+  .sc-mark-item {
+    position: absolute;
+    top: -40px;
+    left: -2px;
+  }
+
 }
