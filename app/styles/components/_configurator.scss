@@ -6,8 +6,9 @@
   .option-card {
     width: 328px;
     height: 564px;
+    //margin: 0px 60px;
     background-color: #ffffff;
-    font-family: Montserrat;
+    font-family: 'Montserrat', sans-serif;
     border: 1px solid black;
     text-align: center;
 
@@ -45,12 +46,16 @@
           display: flex;
           direction: row;
 
-          &-icon {
-            //width: 34px;
+          &-icon:before {
+            content: "\E632";
+            display: block;
+            font-family: "anticon";
+            font-size: 34px;
+            font-weight: 100;
+            width: 34px;
           }
           &-content {
             width: 100%;
-            padding-left: 20px;
           }
         }
       }
@@ -63,6 +68,11 @@
       }
     }
 
+  }
+
+  .oc-summary {
+    border: 1px solid green;
+    margin-top: 154px;
   }
 
 }

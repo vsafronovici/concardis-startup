@@ -26,6 +26,14 @@ export class Step1 extends React.Component {
             <OptionCard />
           </Col>
         </Row>
+        <div className="oc-summary">
+          <Row type="flex" justify="space-around" align="middle">
+            <Col span={12}>
+              <div className="oc-s-row"></div>
+            </Col>
+            <Col span={6} offset={2}>y</Col>
+          </Row>
+        </div>
       </div>
     )
   }

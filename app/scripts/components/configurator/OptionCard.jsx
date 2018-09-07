@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import { Icon } from 'antd'
+
 
 export class OptionCard extends React.Component {
 
@@ -22,11 +24,11 @@ export class OptionCard extends React.Component {
           <div className="oc-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
           <div className="oc-items">
             <div className="oc-item">
-              <div className="oc-item-icon">V</div>
+              <i className="oc-item-icon"></i>
               <div className="oc-item-content">Lorem ipsum dolor</div>
             </div>
             <div className="oc-item">
-              <div className="oc-item-icon">V</div>
+              <i className="oc-item-icon"></i>
               <div className="oc-item-content">Lorem ipsum dolor</div>
             </div>
           </div>
