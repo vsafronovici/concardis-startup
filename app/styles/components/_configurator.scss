@@ -152,7 +152,23 @@
     padding-right: 25px;
     background-color: #fff;
     margin: none;
-    
+    .ant-slider-dot.ant-slider-dot-active {
+      background-color: #ff5252;
+      border-color: #ff5252;
+    }
+    // .ant-slider-track {
+    //   background-color: #ff5252 !important;
+    // }
+    // .ant-slider-step {
+    //   background-color: #ff5252;
+    // }
+    .ant-slider-track {
+      background-color: #ff5252;
+  }
+    .ant-slider-handle {
+      border: solid 2px #ff5252 !important;
+      background-color: #ff5252;
+    }
   }
 
   .sc-slider-select {
@@ -162,6 +178,7 @@
     margin: none;
     .ant-select.ant-select-enabled {
     }
+    
   }
 
   .sc-mark-item {
