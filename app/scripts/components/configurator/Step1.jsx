@@ -6,13 +6,13 @@ import { changeFieldValue  } from '../../actions/configurator-action';
 
 const Step1 = props => {
 
-    const { fields, changeFieldValue } = props
+    const { step1_meta_data, changeFieldValue } = props
 
     return (
       <div>
-        {fields.map( (field, index) => {
+        {step1_meta_data.map( (field, index) => {
           return(
-            <SliderComponent field={field} key={index} changeFieldValue={changeFieldValue}/>
+            <SliderComponent field_meta_data={field} key={index} changeFieldValue={changeFieldValue}/>
           )
         })}
       </div>
@@ -20,12 +20,11 @@ const Step1 = props => {
   }
 
 const mapStateToProps = state => ({
-  fields: state.configurator.fields
+  step1_meta_data: state.configurator.step1_meta_data
 })
 
 const mapDispatchToProps = dispatch => ({
   changeFieldValue: (value) => {
-    console.log(value)
     dispatch(changeFieldValue(value))
   }
 })

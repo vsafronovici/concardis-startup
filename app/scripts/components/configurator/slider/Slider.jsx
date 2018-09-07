@@ -5,11 +5,14 @@ import { Slider, Select } from 'antd';
 
 const SliderComponent = props =>  {
 
-    const { field: { name, type, title, label, options : { items }, defaultValue }, changeFieldValue } = props;
+    const { field_meta_data: { name, type, title, label, defaultValue, options }, changeFieldValue } = props;
     
-    const handleChangeField = data => {
-      changeFieldValue({data, name});
+    const checkOptions = (type === 'drop_down') ? options.dropdownItems : options.sliderValues
+    
+    const handleChangeField = value => {
+      changeFieldValue({value, name});
     }
+
     return(
       <div>
           <div>
