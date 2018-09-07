@@ -11,15 +11,17 @@ export class OptionCard extends React.Component {
     sections: PropTypes.array
   }
 
+  chooseOption = e => {
+    const { id, onChooseOption } = this.props
+    console.log('clicked', id)
+    onChooseOption(id)
+  }
+
   render() {
-    const { active } = this.props
+    const { active, id, price, items } = this.props
     return (
-      <div className={cn('option-card', { active })}>
+      <div className={cn('option-card', { active })} onClick={this.chooseOption}>
         <div className="oc-top"></div>
-
-
-        <div style={{justifyContent: 'center'}}>
-
         <div className="oc-content">
           <div className="oc-title">Option A</div>
           <div className="oc-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
@@ -35,9 +37,6 @@ export class OptionCard extends React.Component {
           </div>
           <div className="oc-price">€5 / a month</div>
         </div>
-
-        </div>
-
       </div>
     )
   }

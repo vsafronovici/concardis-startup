@@ -4,6 +4,8 @@ import { connect } from 'react-redux'
 import SliderComponent from './slider/Slider'
 import { changeFieldValue  } from '../../actions/configurator-action';
 import { Row, Col } from 'antd'
+import { step1MetaSelector } from '../../selectors/configurator-selector'
+import { initData } from '../../actions/application-form-action'
 
 const Step1 = props => {
 
@@ -31,13 +33,10 @@ const Step1 = props => {
   }
 
 const mapStateToProps = state => ({
-  step1MetaData: state.configurator.step1MetaData
+  step1MetaData: step1MetaSelector(state)
 })
 
-const mapDispatchToProps = dispatch => ({
-  changeFieldValue: (value) => {
-    dispatch(changeFieldValue(value))
-  }
+const mapDispatchToProps = ({
+  changeFieldValue
 })
-
 export default connect(mapStateToProps, mapDispatchToProps)(Step1)

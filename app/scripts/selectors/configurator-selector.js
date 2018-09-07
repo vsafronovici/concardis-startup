@@ -1,5 +1,22 @@
-import { path } from 'ramda'
+import { all, compose, path, prop } from 'ramda'
+import { createSelector } from "reselect"
 
-export const fieldsSelector = path(['i18n', 'items'])
+export const configuratorSelector = prop('configurator')
+export const step1MetaSelector = compose(prop('step1MetaData'), configuratorSelector)
+export const fieldsSelector = compose(prop('fields'), configuratorSelector)
+export const cardOptionValueSelector = compose(prop('cardOption'), fieldsSelector)
+
+export const step2SummarySelector = createSelector(
+  step1MetaSelector,
+  fieldsSelector,
+  (step1Meta, fields) => {
+    return step1Meta.map(meta => ({
+      name: meta.name,
+      title: meta.title,
+      value: fields[name] || '56,000'
+    }))
+  }
+)
+
 
 
