@@ -16,7 +16,7 @@ export class ConfiguratorPage extends React.Component {
   render() {
     const { } = this.props
     return (
-      <div className="configurator">
+      <div className="app__configurator">
         <Configurator />
       </div>
     )

@@ -25,7 +25,6 @@ export class App extends React.Component {
     return (
       <ConnectedRouter history={history}>
         <div>
-          <MainHeader />
           <Container />
         </div>
       </ConnectedRouter>
