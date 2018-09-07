@@ -1,15 +1,14 @@
 .app__configurator {
   background-color: #FAFAFA;
   padding: 30px 30px;
-  border: 1px solid red;
 
   .option-card {
     width: 328px;
     height: 564px;
-    //margin: 0px 60px;
     background-color: #ffffff;
     font-family: 'Montserrat', sans-serif;
-    border: 1px solid black;
+    border: 1px solid #d8d8d8;
+    border-radius: 3px;
     text-align: center;
 
     .oc-top {
@@ -18,7 +17,6 @@
     }
 
     .oc-content {
-      //padding: 0px 42px;
       width: 242px;
       margin: 0 auto;
 
@@ -31,7 +29,6 @@
       }
 
       .oc-subtitle {
-        //text-align: center;
         height: 38px;
         font-size: 16px;
         margin-top: 32px;
@@ -39,12 +36,11 @@
       }
 
       .oc-items {
-        //height: 300px;
         text-align: left;
 
         .oc-item {
           display: flex;
-          direction: row;
+          align-items: center;
 
           &-icon:before {
             content: "\E632";
@@ -56,6 +52,7 @@
           }
           &-content {
             width: 100%;
+            margin-left: 20px;
           }
         }
       }
@@ -70,9 +67,40 @@
 
   }
 
+  .option-card.active {
+    border-radius: 4px;
+    border: solid 5px #ff9797
+  }
+
   .oc-summary {
-    border: 1px solid green;
-    margin-top: 154px;
+    margin: 154px 30px 30px 30px;
+    font-family: 'Montserrat', sans-serif;
+
+    .oc-s-row {
+      display: flex;
+      flex-direction: row;
+      margin: 28px 0px;
+
+      .oc-s-col {
+        width: 250px;
+        font-size: 16px;
+        height: 19px;
+      }
+
+      .oc-s-value {
+        font-weight: bold;
+      }
+    }
+
+    .oc-s-btns {
+      display: flex;
+      justify-content: flex-end;
+      flex-direction: row;
+
+      button {
+        width: 200px;
+      }
+    }
   }
 
   .sc-field {

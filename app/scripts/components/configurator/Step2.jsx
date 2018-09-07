@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { Button, Row, Col } from 'antd'
 import { OptionCard } from './OptionCard'
 
+const SUMMARY_SPAN = 5
 
 export class Step1 extends React.Component {
 
@@ -20,7 +21,7 @@ export class Step1 extends React.Component {
             <OptionCard />
           </Col>
           <Col span={4} offset={2}>
-            <OptionCard />
+            <OptionCard active />
           </Col>
           <Col span={4} offset={2}>
             <OptionCard />
@@ -28,10 +29,26 @@ export class Step1 extends React.Component {
         </Row>
         <div className="oc-summary">
           <Row type="flex" justify="space-around" align="middle">
-            <Col span={12}>
-              <div className="oc-s-row"></div>
+            <Col span={16}>
+              <div className="oc-s-row">
+                <div className="oc-s-col oc-s-label">label</div>
+                <div className="oc-s-col oc-s-value">€56,000</div>
+                <div className="oc-s-col oc-s-label">label</div>
+                <div className="oc-s-col oc-s-value">value</div>
+              </div>
+              <div className="oc-s-row">
+                <div className="oc-s-col oc-s-label">label</div>
+                <div className="oc-s-col oc-s-value">value</div>
+                <div className="oc-s-col oc-s-label">label</div>
+                <div className="oc-s-col oc-s-value">value</div>
+              </div>
             </Col>
-            <Col span={6} offset={2}>y</Col>
+            <Col span={8}>
+              <div className="oc-s-btns">
+                <Button>Back</Button>
+                <Button style={{ marginLeft: 30 }}>Continue</Button>
+              </div>
+            </Col>
           </Row>
         </div>
       </div>

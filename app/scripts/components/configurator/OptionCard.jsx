@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Icon } from 'antd'
+import cn from 'classnames'
 
 
 export class OptionCard extends React.Component {
@@ -11,9 +12,9 @@ export class OptionCard extends React.Component {
   }
 
   render() {
-    const { } = this.props
+    const { active } = this.props
     return (
-      <div className="option-card">
+      <div className={cn('option-card', { active })}>
         <div className="oc-top"></div>
 
 
