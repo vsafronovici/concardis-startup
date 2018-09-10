@@ -10,11 +10,7 @@ import { ConfiguratorPageStep } from '../../utils/constants'
 import { Loader } from '../Loader'
 
 const Step1 = props => {
-
     const { step1MetaData, changeFieldValue } = props
-
-    console.log('Step1', props)
-
     return (
       !step1MetaData
         ? <Loader />

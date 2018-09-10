@@ -17,6 +17,16 @@ export const getMetaStep1Res = payload => ({
   payload
 })
 
+export const getMetaStep2Req = payload => ({
+  type: CONFIGURATOR.GET_META_STEP2_REQ,
+  payload
+})
+
+export const getMetaStep2Res = payload => ({
+  type: CONFIGURATOR.GET_META_STEP2_RES,
+  payload
+})
+
 export const getMetaStep3Req = () => ({
   type: CONFIGURATOR.GET_META_STEP3_REQ
 })

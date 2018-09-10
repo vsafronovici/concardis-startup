@@ -37,4 +37,6 @@ export const CONFIGURATOR = createNamespace('CONFIGURATOR', {
   GET_META_STEP3_RES: undefined,
   CHANGE_FIELD_VALUE: undefined,
   GO_TO_STEP: undefined,
+  GET_META_STEP2_REQ: undefined,
+  GET_META_STEP2_RES: undefined,
 })
