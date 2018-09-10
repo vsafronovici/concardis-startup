@@ -5,7 +5,7 @@ import { keys, pickBy, toPairs, isEmpty } from 'ramda'
 
 export const initialState = {
   fields: {},
-  step: ConfiguratorPageStep.STEP2,
+  step: ConfiguratorPageStep.STEP1,
   submitting: false,
   step1MetaData: undefined,
   step3MedaData: undefined,
@@ -36,10 +36,15 @@ export default {
         step3MetaData: payload
       }
     },
-    [CONFIGURATOR.CHANGE_FIELD_VALUE](state, { payload: { value, name }}) {
+    [CONFIGURATOR.CHANGE_FIELD_VALUE](state, { payload: { value, name, step }}) {
       return {
         ...state,
-        fields: {...state.fields, [name]: value}
+        fields: {...state.fields,
+          [step] : {
+            ...state.fields[step],
+            [name]: value
+          }
+        }
       }
     },
     [CONFIGURATOR.GO_TO_STEP](state, { payload }) {

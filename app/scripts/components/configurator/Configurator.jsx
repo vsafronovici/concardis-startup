@@ -23,7 +23,7 @@ export class Configurator extends React.Component {
       case ConfiguratorPageStep.STEP3:
         return Step3;
       default:
-        return Step3;
+        return Step1;
     }
   }
 

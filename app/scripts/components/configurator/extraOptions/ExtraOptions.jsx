@@ -20,8 +20,8 @@ class ExtraOptions extends Component {
                 <div className="eo-ef-container">                    
                         {meta3MockData.extraFields.map( exField => {
                             return(
-                                <div> 
-                                    <ExtraField exField={exField} key={exField.id} changeFieldValue={changeFieldValue}/>
+                                <div key={exField.id}> 
+                                    <ExtraField exField={exField} changeFieldValue={changeFieldValue}/>
                                 </div>
                             )   
                         })} 

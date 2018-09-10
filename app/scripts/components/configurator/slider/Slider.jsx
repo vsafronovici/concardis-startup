@@ -6,16 +6,17 @@ import { FieldType } from '../../../utils/constants';
 import { values } from 'ramda';
 import RenderSelect from './RenderSelect'
 import RenderSlider from './RenderSlider'
+import { stepSelector } from '../../../selectors/configurator-selector';
 
 
 const SliderComponent = props =>  {
 
-    const { fieldMetaData: { name, type, title, label, defaultValue, options }, changeFieldValue } = props;
+    const { fieldMetaData: { name, type, title, label, defaultValue, options }, changeFieldValue, step } = props;
     
     const checkOptions = (type === FieldType.DROPDOWN) ? values(options.dropdownItems) : options.sliderValues
     
     const handleChangeField = value => {
-      changeFieldValue({value, name});
+      changeFieldValue({value, name, step});
     }
 
     return(
@@ -37,4 +38,8 @@ const SliderComponent = props =>  {
 
 }
 
-export default SliderComponent;
+const mapStateToProps = state => ({
+  step: stepSelector(state)
+})
+
+export default connect(mapStateToProps)(SliderComponent);

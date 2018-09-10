@@ -22,9 +22,11 @@ const Step1 = props => {
                 <Row>
                   {step1MetaData.map( (field, index) => {
                     return(                      
-                        <Col lg={{span: '12'}}>
-                          <SliderComponent fieldMetaData={field} key={index * index} changeFieldValue={changeFieldValue}/>
-                        </Col>
+                        <div key={index}>
+                          <Col lg={{span: '12'}}>
+                            <SliderComponent fieldMetaData={field} key={index * index} changeFieldValue={changeFieldValue}/>
+                          </Col>
+                        </div>
                     )
                   })}
                 </Row>

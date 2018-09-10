@@ -1,11 +1,14 @@
 import React , { Component } from 'react';
 import { Checkbox } from 'antd';
+import { connect } from 'react-redux';
+import { stepSelector } from '../../../../selectors/configurator-selector';
 
 class ExtraField extends Component {
 
     handleChange = value => {
-        const name = this.props.exField.name
-        this.props.changeFieldValue({value, name})
+        const name = this.props.exField.name;
+        const step = this.props.step;
+        this.props.changeFieldValue({value, name, step});
     }
 
     render() {
@@ -33,6 +36,8 @@ class ExtraField extends Component {
     }
 }
 
+const mapStateToProps = state => ({
+    step: stepSelector(state)
+})
 
-
-export default ExtraField;
+export default connect(mapStateToProps)(ExtraField);

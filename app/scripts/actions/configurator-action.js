@@ -36,10 +36,10 @@ export const getMetaStep3Res = payload => ({
   payload
 })
 
-export const changeFieldValue = (payload, name) => ({
+export const changeFieldValue = (payload) => ({
   type: CONFIGURATOR.CHANGE_FIELD_VALUE,
-  payload,
-  name
+  payload
+  
 })
 
 export const goToStep = payload => ({
