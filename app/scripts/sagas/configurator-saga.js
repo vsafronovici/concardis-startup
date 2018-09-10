@@ -10,12 +10,28 @@ import {
   transformFieldsMeta, transformFieldsValues, transformSectionsMeta,
   transformSectionsState
 } from '../transformers/application-form-transformer'
+import { mockTranslations } from '../mock-data/mock-translations'
+import { loadTranslationsResp } from '../actions/app-action'
+import { ConfiguratorPageStep } from '../utils/constants'
 
 
 
 function* initDataSaga() {
-  yield put(getMetaStep1Req())
-  yield put(getMetaStep1Res(page1MetaMock))
+
+  if (window.configSettings) {
+    const action = {
+      actionName: configSettings.remoteActions.getFieldsMetadata,
+      args: ConfiguratorPageStep.STEP1
+    }
+    const response = yield call(SFAction, action, { buffer: true, escape: false })
+    yield put(getMetaStep1Res(response.data.fields))
+  } else {
+    // load mocks
+    yield call(delay, 600)
+    yield put(getMetaStep1Req())
+    yield put(getMetaStep1Res(page1MetaMock))
+  }
+
 
 }
 

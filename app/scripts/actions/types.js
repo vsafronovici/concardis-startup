@@ -2,6 +2,7 @@ import { createNamespace } from '../utils/namespace-util'
 
 export const APP = createNamespace('APP', {
   INIT_PAGE: undefined,
+  CHANGE_LANGUAGE: undefined,
   LOAD_TRANSLATIONS_REQ: undefined,
   LOAD_TRANSLATIONS_RESP: undefined,
   SHOW_ALERT: undefined,
