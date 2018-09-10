@@ -55,8 +55,14 @@ export const initPage = () => ({
   type: APP.INIT_PAGE
 })
 
-export const loadTranslationsReq = () => ({
-  type: APP.LOAD_TRANSLATIONS_REQ
+export const changeLanguage = lang => ({
+  type: APP.CHANGE_LANGUAGE,
+  payload: { lang }
+})
+
+export const loadTranslationsReq = lang => ({
+  type: APP.LOAD_TRANSLATIONS_REQ,
+  payload: { lang }
 })
 
 export const loadTranslationsResp = payload => ({

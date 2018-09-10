@@ -14,7 +14,7 @@ const reducer = persistReducer(
   {
     key: 'rrsb', // key is required
     storage, // storage is now required
-    whitelist: [] // local storage
+    whitelist: ['i18n'] // local storage
   },
   combineReducers({
     ...rootReducer,

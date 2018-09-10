@@ -6,13 +6,22 @@ import { changeFieldValue, goToStep  } from '../../actions/configurator-action';
 import { Row, Col, Button } from 'antd';
 import { step1MetaSelector } from '../../selectors/configurator-selector';
 import { initData } from '../../actions/application-form-action';
+<<<<<<< HEAD
 import { ConfiguratorPageStep } from '../../utils/constants'
+=======
+import { Loader } from '../Loader'
+>>>>>>> 755b93f3a9ecb3d2e543edcdd8f5dd36231a85ba
 
 const Step1 = props => {
 
     const { step1MetaData, changeFieldValue } = props
 
+    console.log('Step1', props)
+
     return (
+      !step1MetaData
+        ? <Loader />
+        : (
         <div>
           <Row>
             <Col lg={{span: '10', offset: '7'}}>
@@ -39,6 +48,7 @@ const Step1 = props => {
             </Col>
           </Row>
         </div>
+      )
     )
   }
 
