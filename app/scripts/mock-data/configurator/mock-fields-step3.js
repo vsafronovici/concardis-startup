@@ -17,6 +17,7 @@ export const page3MetaMock = {
         }
     ],
     question: 'Do you have a discount code ?',
+    placeHolder: 'Enter discount code here',
     recalcButton: 'Recalculate Quote',
     totalQuote: 'Total Quote',
     monthly: '€5 / a month',

@@ -11,12 +11,69 @@
             letter-spacing: normal;
             margin-bottom: 15px;
         }
+        .eo-question {
+            font-size: 16px;
+            line-height: 1.5;
+            font-weight: normal;
+        }
+        .eo-input {
+            width: 320px !important;
+            margin-bottom: 40px;
+            .ant-input {
+                height: 48px;
+                border: solid 1px #888888;
+                outline: none;
+            }
+        }
+        .eo-recalc-button {
+            .ant-btn {
+                border-radius: 24px;
+                color: #9b9b9b;
+                font-size: 14px;
+                font-family: Montserrat;
+                height: 48px;
+                width: 208px;
+                border: solid 1px #979797;
+
+            }
+            margin-bottom: 40px;
+        }
+        .eo-bottom-container {
+            display: flex;
+            direction: row;
+            font-family: Montserrat;
+            color: $black;                    
+            font-weight: bold;
+            width: 100%;
+            .eo-bottom-titles {
+                margin-right: 140px;
+                .eo-bottom-totalquote {
+                    font-size: 16px;
+                }
+                .eo-bottom-monthly {
+                    font-size: 21px;
+
+                }
+            }
+            .eo-bottom-navbutton {
+                .ant-btn {
+                    background-color: #9b9b9b;
+                    height: 48px;
+                    width: 208px;
+                    border-radius: 48px;
+                    color: $white;
+                    font-size: 14px;
+                    font-weight: normal;
+                }
+            }
+        }
         .eo-ef-container {
             display: flex;
             direction: row;
             .ef-container {
                 display: flex;
                 direction: row;
+                
                 .ef-content {
                     margin-left: 15px;
                     .ef-content-title {
@@ -38,6 +95,7 @@
                         font-size: 16px;
                         color: $black;
                         margin-top: 10px;
+                        margin-bottom: 20px;
                     }
                 }
                 .ef-checkbox {
@@ -52,7 +110,7 @@
                             border: 2px solid $black !important;
                         }
                         .ant-checkbox-inner:after {
-                            border-bottom-color: 2px solid $black !important;
+                            border-right-color: 2px solid $black !important;
                         }
                     }
                 
