@@ -4,6 +4,11 @@ export const PageContainers = {
   CONFIGURATOR_PAGE: 'configurator-page'
 }
 
+export const LanguageType = {
+  EN: 'en_US',
+  DE: 'de'
+}
+
 export const SectionType = {
   SIMPLE: 'Simple',
   CONDITIONAL: 'Conditional'
@@ -20,4 +25,10 @@ export const SectionStatusType = {
   IN_PROGRESS: 'IN_PROGRESS',
   WAITING: 'WAITING',
   PAUSED: 'PAUSED'
+}
+
+export const ConfiguratorPageStep = {
+  STEP1: 'Landing_Page_1',
+  STEP2: 'Landing_Page_2',
+  STEP3: 'Landing_Page_3',
 }
