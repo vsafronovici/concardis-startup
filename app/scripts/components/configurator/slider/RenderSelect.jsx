@@ -7,7 +7,7 @@ const RenderSelect = ({selectItems, title, handleChangeField}) => {
     <Select
             onChange={value => handleChangeField(value)}
             showSearch
-            style={{ width: 200 }}
+            style={{ width: '100%' }}
             placeholder={title}
             optionFilterProp="children"
             filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}

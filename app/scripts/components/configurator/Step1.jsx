@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import SliderComponent from './slider/Slider'
 import { changeFieldValue  } from '../../actions/configurator-action';
-import { Row, Col } from 'antd'
-import { step1MetaSelector } from '../../selectors/configurator-selector'
-import { initData } from '../../actions/application-form-action'
+import { Row, Col, Button } from 'antd';
+import { step1MetaSelector } from '../../selectors/configurator-selector';
+import { initData } from '../../actions/application-form-action';
 
 const Step1 = props => {
 
@@ -24,6 +24,15 @@ const Step1 = props => {
                         </Col>
                     )
                   })}
+                </Row>
+                <Row>
+                  <Col span={8} offset={14}>
+                    <div className="sc-wrapper-button">
+                      <Button className="sc-nav-button">
+                        show me the products
+                      </Button>
+                    </div>
+                  </Col>
                 </Row>
               </div>
             </Col>

@@ -35,14 +35,12 @@ class MainContent extends Component {
           {
             !this.state.landingPage 
           ? <ShowSolutionPage toggleLandingPage={this.toggleLandinPage}/>
-          :<Row>
-            <Col lg={{span: 24 }} xs={{span: 24}} sm={{span: 24}} md={{span: 24}} xl={{span: 16, offset: 4}}>
-              <LandingPage toggleLandingPage={this.toggleLandinPage}/>
-            </Col>
-            </Row> 
+          : <Row>
+              <Col lg={{span: 24 }} xs={{span: 24}} sm={{span: 24}} md={{span: 24}} xl={{span: 16, offset: 4}}>
+                <LandingPage toggleLandingPage={this.toggleLandinPage}/>
+              </Col>
+            </Row>
           }
-          
-          
         </Content>
     )
   }
