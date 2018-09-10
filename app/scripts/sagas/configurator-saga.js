@@ -56,7 +56,7 @@ function* initDataSaga() {
 
   } else {
     // load mocks
-    yield call(delay, 600)
+    //yield call(delay, 600)
     yield put(getMetaStep1Req())
     yield put(getMetaStep1Res(page1MetaMock))
   }
@@ -73,6 +73,7 @@ function* initDataSaga3() {
 export default function* root() {
   yield all([
     takeLatest(CONFIGURATOR.INIT_DATA, initDataSaga),
+    takeLatest(CONFIGURATOR.INIT_DATA3, initDataSaga3),
     takeLatest(CONFIGURATOR.GET_META_STEP2_REQ, getMetaStep2Saga)
   ])
 }

@@ -5,7 +5,7 @@ import { keys, pickBy, toPairs, isEmpty } from 'ramda'
 
 export const initialState = {
   fields: {},
-  step: ConfiguratorPageStep.STEP3,
+  step: ConfiguratorPageStep.STEP2,
   submitting: false,
   step1MetaData: undefined,
   step3MedaData: undefined,
