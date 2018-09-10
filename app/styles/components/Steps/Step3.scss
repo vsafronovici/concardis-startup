@@ -1,0 +1,64 @@
+.step3-container {
+    padding-top: 73px; 
+    .eo-container {
+        .eo-title {
+            font-family: Montserrat;
+            color: $black;
+            font-size: 16px;
+            font-weight: bold;
+            font-style: normal;
+            font-stretch: normal;
+            letter-spacing: normal;
+            margin-bottom: 15px;
+        }
+        .eo-ef-container {
+            display: flex;
+            direction: row;
+            .ef-container {
+                display: flex;
+                direction: row;
+                .ef-content {
+                    margin-left: 15px;
+                    .ef-content-title {
+                        font-size: 16px;
+                        font-weight: 300;
+                        color: $black;
+                        font-family: Montserrat;
+                    }
+                    .ef-content-subtitle {
+                        font-family: Montserrat;
+                        font-weight: 300;
+                        font-size: 14px;
+                        color: #676568;
+                        margin-top: 10px;
+                    }
+                    .ef-content-monthly {
+                        font-weight: bold;
+                        font-family: Montserrat;
+                        font-size: 16px;
+                        color: $black;
+                        margin-top: 10px;
+                    }
+                }
+                .ef-checkbox {
+                    span.ant-checkbox-inner {
+                        width: 30px !important;
+                        height: 30px !important;
+                        border-color: $black;
+                        .ant-checkbox-checked.ant-checkbox-inner:after {
+                            width: 15px !important;
+                            height: 30px !important;
+                            color: $black;
+                            border: 2px solid $black !important;
+                        }
+                        .ant-checkbox-inner:after {
+                            border-bottom-color: 2px solid $black !important;
+                        }
+                    }
+                
+                }
+            }
+        }
+
+    }
+}

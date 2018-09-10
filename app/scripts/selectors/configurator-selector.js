@@ -3,8 +3,10 @@ import { createSelector } from "reselect"
 
 export const configuratorSelector = prop('configurator')
 export const step1MetaSelector = compose(prop('step1MetaData'), configuratorSelector)
+export const step3MetaSelector = compose(prop('step3MetaData'), configuratorSelector)
 export const fieldsSelector = compose(prop('fields'), configuratorSelector)
 export const cardOptionValueSelector = compose(prop('cardOption'), fieldsSelector)
+export const stepSelector = compose(prop('step'), configuratorSelector)
 
 export const step2SummarySelector = createSelector(
   step1MetaSelector,

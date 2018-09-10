@@ -4,7 +4,8 @@ import { connect } from 'react-redux'
 import { Button, Row, Col } from 'antd'
 import { OptionCard } from './OptionCard'
 import { cardOptionValueSelector, step2SummarySelector } from '../../selectors/configurator-selector'
-import { changeFieldValue } from '../../actions/configurator-action'
+import { changeFieldValue, goToStep } from '../../actions/configurator-action'
+import { ConfiguratorPageStep } from '../../utils/constants'
 
 export class Step2 extends React.Component {
 
@@ -17,7 +18,7 @@ export class Step2 extends React.Component {
   }
 
   render() {
-    const { cardOption, summary } = this.props
+    const { cardOption, summary, goToStep } = this.props
     const [f1, f2, f3, f4] = summary
     console.log('--sum', summary)
     return (
@@ -51,8 +52,8 @@ export class Step2 extends React.Component {
             </Col>
             <Col span={8}>
               <div className="oc-s-btns">
-                <Button>Back</Button>
-                <Button style={{ marginLeft: 30 }}>Continue</Button>
+                <Button onClick={() => goToStep(ConfiguratorPageStep.STEP1)}>Back</Button>
+                <Button onClick={() => goToStep(ConfiguratorPageStep.STEP3)} style={{ marginLeft: 30 }}>Continue</Button>
               </div>
             </Col>
           </Row>
@@ -68,7 +69,8 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = ({
-  changeFieldValue
+  changeFieldValue,
+  goToStep
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Step2)

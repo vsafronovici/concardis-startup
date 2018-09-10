@@ -3,8 +3,10 @@ import { delay } from 'redux-saga'
 
 import { CONFIGURATOR } from '../actions/types'
 import { page1MetaMock } from '../mock-data/configurator/mock-fields-step1'
+import { page3MetaMock } from '../mock-data/configurator/mock-fields-step3'
 
-import { getMetaStep1Req, getMetaStep1Res } from '../actions/configurator-action'
+
+import { getMetaStep1Req, getMetaStep1Res, getMetaStep3Req, getMetaStep3Res, } from '../actions/configurator-action'
 import { SFAction } from './../modules/client'
 import {
   transformFieldsMeta, transformFieldsValues, transformSectionsMeta,
@@ -19,8 +21,15 @@ function* initDataSaga() {
 
 }
 
+function* initDataSaga3() {
+  yield put(getMetaStep3Req())
+  yield put(getMetaStep3Res(page3MetaMock))
+
+}
+
 export default function* root() {
   yield all([
-    takeLatest(CONFIGURATOR.INIT_DATA, initDataSaga)
+    takeLatest(CONFIGURATOR.INIT_DATA, initDataSaga),
+    takeLatest(CONFIGURATOR.INIT_DATA3, initDataSaga3)
   ])
 }

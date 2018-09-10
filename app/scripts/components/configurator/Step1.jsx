@@ -2,10 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import SliderComponent from './slider/Slider'
-import { changeFieldValue  } from '../../actions/configurator-action';
+import { changeFieldValue, goToStep  } from '../../actions/configurator-action';
 import { Row, Col, Button } from 'antd';
 import { step1MetaSelector } from '../../selectors/configurator-selector';
 import { initData } from '../../actions/application-form-action';
+import { ConfiguratorPageStep } from '../../utils/constants'
 
 const Step1 = props => {
 
@@ -28,7 +29,7 @@ const Step1 = props => {
                 <Row>
                   <Col span={8} offset={14}>
                     <div className="sc-wrapper-button">
-                      <Button className="sc-nav-button">
+                      <Button className="sc-nav-button" onClick={() => props.goToStep(ConfiguratorPageStep.STEP2)}>
                         show me the products
                       </Button>
                     </div>
@@ -46,6 +47,8 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = ({
-  changeFieldValue
+  changeFieldValue,
+  goToStep
+  
 })
 export default connect(mapStateToProps, mapDispatchToProps)(Step1)
