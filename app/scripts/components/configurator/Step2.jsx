@@ -3,9 +3,10 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Button, Row, Col } from 'antd'
 import { OptionCard } from './OptionCard'
-import { cardOptionValueSelector, step2SummarySelector } from '../../selectors/configurator-selector'
+import { cardOptionValueSelector, productsSelector, step2SummarySelector } from '../../selectors/configurator-selector'
 import { changeFieldValue, goToStep } from '../../actions/configurator-action'
 import { ConfiguratorPageStep } from '../../utils/constants'
+import { Loader } from '../Loader'
 
 export class Step2 extends React.Component {
 
@@ -18,21 +19,28 @@ export class Step2 extends React.Component {
   }
 
   render() {
-    const { cardOption, summary, goToStep } = this.props
+    console.log('Step1', this.props)
+    const { products, cardOption, summary, goToStep } = this.props
     const [f1, f2, f3, f4] = summary
-    console.log('--sum', summary)
-    return (
+    return !products
+      ? <Loader />
+      : (
       <div>
         <Row type="flex" justify="center">
-          <Col span={4}>
-            <OptionCard id={1} active={cardOption === 1} onChooseOption={this.onChooseOption} />
-          </Col>
-          <Col span={4} offset={2}>
-            <OptionCard id={2} active={cardOption === 2} onChooseOption={this.onChooseOption} />
-          </Col>
-          <Col span={4} offset={2}>
-            <OptionCard id={3} active={cardOption === 3} onChooseOption={this.onChooseOption} />
-          </Col>
+          {
+            products.map(p => (
+              <Col span={4} offset={1}>
+                <OptionCard
+                  id={p.Id}
+                  name={p.name}
+                  description={p.description}
+                  price={p.price}
+                  items={p.items}
+                  active={cardOption === p.Id}
+                  onChooseOption={this.onChooseOption} />
+              </Col>
+            ))
+          }
         </Row>
         <div className="oc-summary">
           <Row type="flex" justify="space-around" align="middle">
@@ -66,6 +74,7 @@ export class Step2 extends React.Component {
 const mapStateToProps = state => ({
   cardOption: cardOptionValueSelector(state),
   summary: step2SummarySelector(state),
+  products: productsSelector(state)
 })
 
 const mapDispatchToProps = ({

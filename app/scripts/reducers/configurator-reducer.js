@@ -8,6 +8,7 @@ export const initialState = {
   step: ConfiguratorPageStep.STEP1,
   submitting: false,
   step1MetaData: undefined,
+  step2MetaData: undefined,
   step3MedaData: undefined,
 
 }
@@ -51,6 +52,18 @@ export default {
       return {
         ...state,
         step: payload
+      }
+    },
+    [CONFIGURATOR.GET_META_STEP2_REQ](state, { payload }) {
+      return {
+        ...state,
+        submitting: true,
+      }
+    },
+    [CONFIGURATOR.GET_META_STEP2_RES](state, { payload }) {
+      return {
+        ...state,
+        step2MetaData: payload,
       }
     }
   })
