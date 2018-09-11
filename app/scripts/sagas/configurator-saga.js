@@ -4,22 +4,12 @@ import { memoize } from 'ramda'
 
 import { CONFIGURATOR } from '../actions/types'
 import { page1MetaMock } from '../mock-data/configurator/mock-fields-step1'
-import { page3MetaMock } from '../mock-data/configurator/mock-fields-step3'
+import { page2MetaMock } from '../mock-data/configurator/mock-fields-step2'
 
 import { getMetaStep1Req, getMetaStep1Res, getMetaStep2Req, getMetaStep2Res, getMetaStep3Req, getMetaStep3Res, changeFieldValue } from '../actions/configurator-action'
 import { SFAction } from './../modules/client'
 import { ConfiguratorPageStep } from '../utils/constants'
-import { page2MetaMock } from '../mock-data/configurator/mock-fields-step2'
 
-
-/*function* memoizedGetProductsRequest(payload) {
-  const action = {
-    actionName: configSettings.remoteActions.getProducts,
-    args: JSON.stringify(payload)
-  }
-
-  return yield call(SFAction, action, { buffer: true, escape: false })
-}*/
 
 const memoizedGetProductsRequest = memoize(function*(payload) {
   const action = {
@@ -53,11 +43,10 @@ function* initDataSaga() {
   } else {
     // load mocks
     //yield call(delay, 600)
-    
+
 
     yield put(getMetaStep1Req())
     yield put(getMetaStep1Res(page1MetaMock))
-
   }
 
 
@@ -78,17 +67,10 @@ function* goToStepSaga({ payload }) {
 }
 
 
-function* initDataSaga3() {
-  yield put(getMetaStep3Req())
-  yield put(getMetaStep3Res(page3MetaMock))
-
-}
-
 export default function* root() {
   yield all([
     takeLatest(CONFIGURATOR.INIT_DATA, initDataSaga),
     takeLatest(CONFIGURATOR.GO_TO_STEP, goToStepSaga),
-    takeLatest(CONFIGURATOR.INIT_DATA3, initDataSaga3),
     takeLatest(CONFIGURATOR.GET_META_STEP2_REQ, getMetaStep2Saga)
   ])
 }

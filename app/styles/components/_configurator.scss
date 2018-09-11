@@ -73,6 +73,10 @@
     border: solid 5px #ff9797
   }
 
+  .option-card.readonly {
+    cursor: auto;
+  }
+
   .oc-summary {
     margin: 154px 30px 30px 30px;
     font-family: 'Montserrat', sans-serif;

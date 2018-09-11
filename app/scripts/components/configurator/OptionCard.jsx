@@ -3,12 +3,18 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Icon } from 'antd'
 import cn from 'classnames'
+import { translate } from './../../i18n/i18n'
+
 
 
 export class OptionCard extends React.Component {
 
   static propTypes = {
-    sections: PropTypes.array
+    readonly: PropTypes.bool
+  }
+
+  static defaultProps = {
+    readonly: false
   }
 
   chooseOption = e => {
@@ -18,9 +24,14 @@ export class OptionCard extends React.Component {
   }
 
   render() {
-    const { active, name, description, price, items } = this.props
+    const { active, name, description, price, items, readonly } = this.props
+    const elProps = {
+      className: cn('option-card', { active, readonly })
+    }
+    !readonly && (elProps.onClick = this.chooseOption)
+
     return (
-      <div className={cn('option-card', { active })} onClick={this.chooseOption}>
+      <div {...elProps}>
         <div className="oc-top"></div>
         <div className="oc-content">
           <div className="oc-title">{name}</div>
@@ -35,7 +46,7 @@ export class OptionCard extends React.Component {
               ))
             }
           </div>
-          <div className="oc-price">€{price} / a month</div>
+          <div className="oc-price">€{price} / {translate('configurator.AMonth')}</div>
         </div>
       </div>
     )

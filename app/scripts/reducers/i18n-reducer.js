@@ -16,7 +16,7 @@ export default {
         lang
       }
     },
-    [APP.LOAD_TRANSLATIONS_RESP](state, payload) {
+    [APP.LOAD_TRANSLATIONS_RESP](state, { payload }) {
       return {
         ...state,
         loaded: true,

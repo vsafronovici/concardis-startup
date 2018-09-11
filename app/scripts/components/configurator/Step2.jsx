@@ -15,7 +15,7 @@ export class Step2 extends React.Component {
   }
 
   onChooseOption = id => {
-    this.props.changeFieldValue({ name: 'cardOption', value: id, step: ConfiguratorPageStep.STEP1 })
+    this.props.changeFieldValue({ name: 'cardOption', value: id, step: ConfiguratorPageStep.STEP2 })
   }
 
   render() {

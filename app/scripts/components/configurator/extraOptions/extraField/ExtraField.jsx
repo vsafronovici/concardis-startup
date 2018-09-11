@@ -1,50 +1,36 @@
-import React , { Component } from 'react';
+import React, { Component } from 'react';
 import { Checkbox } from 'antd';
-import { connect } from 'react-redux';
-import { stepSelector } from '../../../../selectors/configurator-selector';
+import { ConfiguratorPageStep } from '../../../../utils/constants'
+import { translate } from './../../../../i18n/i18n'
 
-class ExtraField extends Component {
+export class ExtraField extends Component {
 
-    componentWillMount() {
-        const name = this.props.exField.name;
-        const step = this.props.step;
-        const value = false;
-        this.props.changeFieldValue({ value, name, step })
-    }
+  handleChange = value => {
+    const { exField: { Id: name } } = this.props
+    this.props.changeFieldValue({ value, name, step: ConfiguratorPageStep.STEP3 })
+  }
 
-    handleChange = value => {
-        const name = this.props.exField.name;
-        const step = this.props.step;
-        this.props.changeFieldValue({ value, name, step });
-    }
+  render() {
+    console.log('ExtraField', this.props)
+    const { exField: { name, description, price } } = this.props
+    return (
+      <div className="ef-container">
+        <div className="ef-checkbox">
+          <Checkbox onChange={(e) => this.handleChange(e.target.checked)}/>
+        </div>
+        <div className="ef-content">
+          <div className="ef-content-title">
+            {name}
+          </div>
+          <div className="ef-content-subtitle">
+            {description}
+          </div>
+          <div className="ef-content-monthly">
+            + €{price} / {translate('configurator.AMonth')}
+          </div>
+        </div>
 
-    render() {
-
-        const { exField: { exTitle, exSubTitle, monthly, name }} = this.props;
-        return (
-            <div className="ef-container">
-                <div className="ef-checkbox">
-                    <Checkbox onChange={(e) => this.handleChange(e.target.checked)} />
-                </div>
-                <div className="ef-content">
-                    <div className="ef-content-title">
-                        {exTitle}
-                    </div>
-                    <div className="ef-content-subtitle">
-                        {exSubTitle}
-                    </div>
-                    <div className="ef-content-monthly">
-                        {monthly}
-                    </div>
-                </div>
-
-            </div>
-        )
-    }
+      </div>
+    )
+  }
 }
-
-const mapStateToProps = state => ({
-    step: stepSelector(state)
-})
-
-export default connect(mapStateToProps)(ExtraField);
