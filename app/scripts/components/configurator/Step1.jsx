@@ -1,32 +1,31 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import SliderComponent from './slider/Slider'
-import { changeFieldValue, goToStep  } from '../../actions/configurator-action';
+import { changeFieldValue, goToStep } from '../../actions/configurator-action';
 import { Row, Col, Button } from 'antd';
 import { step1MetaSelector } from '../../selectors/configurator-selector';
-import { initData } from '../../actions/application-form-action';
 import { ConfiguratorPageStep } from '../../utils/constants'
 import { Loader } from '../Loader'
+import { translate } from './../../i18n/i18n'
 
 const Step1 = props => {
-    const { step1MetaData, changeFieldValue } = props
-    return (
-      !step1MetaData
-        ? <Loader />
-        : (
+  const { step1MetaData, changeFieldValue } = props
+  return (
+    !step1MetaData
+      ? <Loader />
+      : (
         <div>
           <Row>
-            <Col lg={{span: '10', offset: '7'}}>
+            <Col lg={{ span: '10', offset: '7' }}>
               <div className="sc-row-wrapper">
                 <Row>
-                  {step1MetaData.map( (field, index) => {
-                    return(                      
-                        <div key={index}>
-                          <Col lg={{span: '12'}}>
-                            <SliderComponent fieldMetaData={field} key={index * index} changeFieldValue={changeFieldValue}/>
-                          </Col>
-                        </div>
+                  {step1MetaData.map((field, index) => {
+                    return (
+                      <div key={index}>
+                        <Col lg={{ span: '12' }}>
+                          <SliderComponent fieldMetaData={field} key={index * index} changeFieldValue={changeFieldValue}/>
+                        </Col>
+                      </div>
                     )
                   })}
                 </Row>
@@ -34,7 +33,7 @@ const Step1 = props => {
                   <Col span={8} offset={14}>
                     <div className="sc-wrapper-button">
                       <Button className="sc-nav-button" onClick={() => props.goToStep(ConfiguratorPageStep.STEP2)}>
-                        show me the products
+                        {translate('btn.ShowProducts')}
                       </Button>
                     </div>
                   </Col>
@@ -44,8 +43,8 @@ const Step1 = props => {
           </Row>
         </div>
       )
-    )
-  }
+  )
+}
 
 const mapStateToProps = state => ({
   step1MetaData: step1MetaSelector(state)
@@ -54,6 +53,6 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = ({
   changeFieldValue,
   goToStep
-  
 })
+
 export default connect(mapStateToProps, mapDispatchToProps)(Step1)

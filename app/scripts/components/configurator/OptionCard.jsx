@@ -1,11 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
-import { Icon } from 'antd'
 import cn from 'classnames'
 import { translate } from './../../i18n/i18n'
-
-
 
 export class OptionCard extends React.Component {
 
