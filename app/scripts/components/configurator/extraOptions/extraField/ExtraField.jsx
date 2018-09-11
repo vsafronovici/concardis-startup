@@ -1,23 +1,41 @@
 import React, { Component } from 'react';
-import { Checkbox } from 'antd';
-import { ConfiguratorPageStep } from '../../../../utils/constants'
+import { Checkbox, Icon } from 'antd';
 import { translate } from './../../../../i18n/i18n'
 
+import { ConfiguratorPageStep } from '../../../../utils/constants'
+
 export class ExtraField extends Component {
+
+    state = {
+        checked: true
+    }
 
   handleChange = value => {
     const { exField: { Id: name } } = this.props
     this.props.changeFieldValue({ value, name, step: ConfiguratorPageStep.STEP3 })
   }
 
+  handleCheckBox = () => {
+    this.setState({
+      checked: !this.state.checked
+    })
+    console.log(this.state.checked)
+    const { exField: { Id: name } } = this.props
+    this.props.changeFieldValue({ value: this.state.checked, name, step: ConfiguratorPageStep.STEP3 })
+  }
+
   render() {
-    console.log('ExtraField', this.props)
+    const { checked } = this.state
+    //console.log('ExtraField', this.props)
     const { exField: { name, description, price } } = this.props
     return (
       <div className="ef-container">
-        <div className="ef-checkbox">
-          <Checkbox onChange={(e) => this.handleChange(e.target.checked)}/>
+        <div className="ef-checkbox-container" onClick={this.handleCheckBox}>
+          {!checked ? <Icon type="check" theme="outlined" className="ef-checkbox-check"/> : null}
         </div>
+        {/* <div className="ef-checkbox">
+          <Checkbox onChange={(e) => this.handleChange(e.target.checked)}/>
+        </div> */}
         <div className="ef-content">
           <div className="ef-content-title">
             {name}

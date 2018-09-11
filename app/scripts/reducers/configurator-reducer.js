@@ -18,6 +18,7 @@ const createDefaultValues = (state, payload, step) => {
   const { fields } = state
 
   payload.map( item => {
+    
     fields[step] = {
       ...fields[step],
       [item.name]: item.defaultValue

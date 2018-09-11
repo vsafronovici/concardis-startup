@@ -74,6 +74,18 @@
                 display: flex;
                 direction: row;
                 width: 250px;
+                .ef-checkbox-container {
+                    width: 30px;
+                    height: 30px;
+                    border: 1px solid #000;
+                    border-radius: 2px;
+                    i {
+                        font-size: 30px;
+                    }
+                    .ef-checkbox-check {
+                        width: 100%;
+                    }
+                }
                 
                 .ef-content {
                     margin-left: 15px;

@@ -6,7 +6,7 @@ import { step1FieldsSelector } from '../../../selectors/configurator-selector'
 class RenderSlider extends Component  {
 
     state = {
-      activeMark: this.props.defaultValue
+      activeMark: this.props.values[this.props.name] || this.props.defaultValue
     }
 
     handleChangeSlider = (value) => {
