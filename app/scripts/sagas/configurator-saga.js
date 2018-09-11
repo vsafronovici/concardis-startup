@@ -6,7 +6,7 @@ import { CONFIGURATOR } from '../actions/types'
 import { page1MetaMock } from '../mock-data/configurator/mock-fields-step1'
 import { page3MetaMock } from '../mock-data/configurator/mock-fields-step3'
 
-import { getMetaStep1Req, getMetaStep1Res, getMetaStep2Req, getMetaStep2Res, getMetaStep3Req, getMetaStep3Res } from '../actions/configurator-action'
+import { getMetaStep1Req, getMetaStep1Res, getMetaStep2Req, getMetaStep2Res, getMetaStep3Req, getMetaStep3Res, changeFieldValue } from '../actions/configurator-action'
 import { SFAction } from './../modules/client'
 import { ConfiguratorPageStep } from '../utils/constants'
 import { page2MetaMock } from '../mock-data/configurator/mock-fields-step2'
@@ -32,7 +32,7 @@ const memoizedGetProductsRequest = memoize(function*(payload) {
 function* getMetaStep2Saga({ payload }) {
   if (window.configSettings) {
     const response = yield memoizedGetProductsRequest(payload)
-    console.log('getMetaStep2Saga ', response)
+    //console.log('getMetaStep2Saga ', response)
     yield put(getMetaStep2Res(response.data))
   } else {
     // load mocks
@@ -53,8 +53,11 @@ function* initDataSaga() {
   } else {
     // load mocks
     //yield call(delay, 600)
+    
+
     yield put(getMetaStep1Req())
     yield put(getMetaStep1Res(page1MetaMock))
+
   }
 
 

@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import { Slider } from 'antd';
+import { connect } from 'react-redux';
+import { step1FieldsSelector } from '../../../selectors/configurator-selector'
 
 class RenderSlider extends Component  {
 
     state = {
       activeMark: this.props.defaultValue
-    }
-
-    componentWillMount() {
-      this.props.handleChangeField(this.props.defaultValue)
     }
 
     handleChangeSlider = (value) => {
@@ -38,26 +36,28 @@ class RenderSlider extends Component  {
   }
 
  render() {
-  
-  const { sliderItems, name, defaultValue } = this.props;
-  const marks = this.createMarksValues(sliderItems);
 
+  const { sliderItems, name, defaultValue, values } = this.props;
+  const marks = this.createMarksValues(sliderItems);
   return(
-    <Slider
-          dots={true}
-          defaultValue={defaultValue}
-          marks={marks}
-          min={sliderItems[0]}
-          max={sliderItems[sliderItems.length - 1]}
-          step={2000}
-          style={{touchAction: 'none'}}
-          onChange={(value) => this.handleChangeSlider(value)}
-          name={name}
-    >
-    </Slider>
+      <Slider
+            dots={true}
+            defaultValue={(values[name] || defaultValue)}
+            marks={marks}
+            min={sliderItems[0]}
+            max={sliderItems[sliderItems.length - 1]}
+            step={2000}
+            style={{touchAction: 'none'}}
+            onChange={(value) => this.handleChangeSlider(value)}
+            name={name}
+      />
   )
  }
   
 }
 
-export default RenderSlider;
+const mapStateToProps = (state, ownProps) => ({
+  values: step1FieldsSelector(state)
+})
+
+export default connect(mapStateToProps)(RenderSlider);

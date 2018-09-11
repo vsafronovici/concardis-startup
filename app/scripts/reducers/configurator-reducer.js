@@ -13,6 +13,21 @@ export const initialState = {
 
 }
 
+const createDefaultValues = (state, payload, step) => {
+  
+  const { fields } = state
+
+  payload.map( item => {
+    fields[step] = {
+      ...fields[step],
+      [item.name]: item.defaultValue
+    }
+    
+  })
+
+  return fields
+}
+
 export default {
   ['configurator']: createReducer(initialState, {
     [CONFIGURATOR.GET_META_STEP1_REQ](state) {
@@ -21,9 +36,11 @@ export default {
       }
     },
     [CONFIGURATOR.GET_META_STEP1_RES](state, { payload }) {
+     
       return {
         ...state,
-        step1MetaData: payload
+        step1MetaData: payload,
+        fields: createDefaultValues(state, payload, ConfiguratorPageStep.STEP1)
       }
     },
     [CONFIGURATOR.GET_META_STEP3_REQ](state) {

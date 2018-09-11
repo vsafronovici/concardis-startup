@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { Slider, Select } from 'antd';
 import { FieldType } from '../../../utils/constants';
 import { values } from 'ramda';
 import RenderSelect from './RenderSelect'
 import RenderSlider from './RenderSlider'
-import { stepSelector } from '../../../selectors/configurator-selector';
+import { stepSelector, step1FieldsSelector } from '../../../selectors/configurator-selector';
 
 
 const SliderComponent = props =>  {
@@ -29,13 +28,11 @@ const SliderComponent = props =>  {
           </div>
           <div className={(type === FieldType.DROPDOWN) ? 'sc-slider-select' : 'sc-slider-slider'}>
             {(type === FieldType.DROPDOWN)
-              ? <RenderSelect selectItems={checkOptions} title={title} handleChangeField={handleChangeField} defaultValue={defaultValue}/>
-              : <RenderSlider sliderItems={checkOptions} name={name} defaultValue={defaultValue} handleChangeField={handleChangeField}/> }
+              ? <RenderSelect selectItems={checkOptions} name={name} title={title} handleChangeField={handleChangeField} defaultValue={defaultValue}/>
+              : <RenderSlider sliderItems={checkOptions}  name={name} defaultValue={defaultValue} handleChangeField={handleChangeField}/> }
           </div>
         </div>
     )
-  
-
 }
 
 const mapStateToProps = state => ({

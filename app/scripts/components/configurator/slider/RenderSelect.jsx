@@ -1,18 +1,16 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { Select } from 'antd' 
+import { connect } from 'react-redux'
+import { step1FieldsSelector } from '../../../selectors/configurator-selector'
 
 class RenderSelect extends Component {
 
-  componentWillMount() {
-    console.log(this.props)
-    this.props.handleChangeField(this.props.defaultValue)
-  }
-
   render() {
-    const {selectItems, title, handleChangeField} = this.props;
+    const { selectItems, title, handleChangeField, values, name, defaultValue } = this.props;
     const Option = Select.Option
     return(
-      <Select
+      <Select 
+              defaultValue={(values[name] || defaultValue)}            
               onChange={value => handleChangeField(value)}
               showSearch
               style={{ width: '100%' }}
@@ -31,4 +29,8 @@ class RenderSelect extends Component {
    
 }
 
-export default RenderSelect
+const mapStateToProps = state => ({
+  values: step1FieldsSelector(state)
+})
+
+export default connect(mapStateToProps)(RenderSelect)
