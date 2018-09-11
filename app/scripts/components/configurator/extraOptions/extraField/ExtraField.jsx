@@ -5,10 +5,17 @@ import { stepSelector } from '../../../../selectors/configurator-selector';
 
 class ExtraField extends Component {
 
+    componentWillMount() {
+        const name = this.props.exField.name;
+        const step = this.props.step;
+        const value = false;
+        this.props.changeFieldValue({ value, name, step })
+    }
+
     handleChange = value => {
         const name = this.props.exField.name;
         const step = this.props.step;
-        this.props.changeFieldValue({value, name, step});
+        this.props.changeFieldValue({ value, name, step });
     }
 
     render() {

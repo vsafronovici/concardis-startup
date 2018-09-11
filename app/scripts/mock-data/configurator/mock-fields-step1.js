@@ -47,7 +47,7 @@ export const page1MetaMock = [
      }
 
     },
-    defaultValue: 2000
+    defaultValue: 'Hotel'
   },
 
 

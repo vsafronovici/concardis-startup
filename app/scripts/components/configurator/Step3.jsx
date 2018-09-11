@@ -18,7 +18,7 @@ class Step3 extends Component {
                     <Col xl={{span: '14', offset: '5'}}>
                         <Row>
                             <Col xl={{span: '9', offset: '1'}}>
-                                <OptionCard />
+                                {/* <OptionCard /> */}
                             </Col>
                             <Col xl={{span:'11', offset: '1'}}>
                                 <ExtraOptions />

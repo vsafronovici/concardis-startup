@@ -7,6 +7,10 @@ class RenderSlider extends Component  {
       activeMark: this.props.defaultValue
     }
 
+    componentWillMount() {
+      this.props.handleChangeField(this.props.defaultValue)
+    }
+
     handleChangeSlider = (value) => {
       this.setState({
         activeMark: value

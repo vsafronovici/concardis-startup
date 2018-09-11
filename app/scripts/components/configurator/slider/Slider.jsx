@@ -15,7 +15,7 @@ const SliderComponent = props =>  {
     
     const checkOptions = (type === FieldType.DROPDOWN) ? values(options.dropdownItems) : options.sliderValues
     
-    const handleChangeField = value => {
+    const handleChangeField = (value) => {
       changeFieldValue({value, name, step});
     }
 
@@ -29,7 +29,7 @@ const SliderComponent = props =>  {
           </div>
           <div className={(type === FieldType.DROPDOWN) ? 'sc-slider-select' : 'sc-slider-slider'}>
             {(type === FieldType.DROPDOWN)
-              ? <RenderSelect selectItems={checkOptions} title={title} handleChangeField={handleChangeField} />
+              ? <RenderSelect selectItems={checkOptions} title={title} handleChangeField={handleChangeField} defaultValue={defaultValue}/>
               : <RenderSlider sliderItems={checkOptions} name={name} defaultValue={defaultValue} handleChangeField={handleChangeField}/> }
           </div>
         </div>
