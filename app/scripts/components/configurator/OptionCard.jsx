@@ -27,8 +27,8 @@ export class OptionCard extends React.Component {
           <div className="oc-subtitle">{description}</div>
           <div className="oc-items">
             {
-              items.map(item => (
-                <div className="oc-item">
+              items.map((item, idx) => (
+                <div className="oc-item" key={idx}>
                   <i className="oc-item-icon"></i>
                   <div className="oc-item-content">{item}</div>
                 </div>

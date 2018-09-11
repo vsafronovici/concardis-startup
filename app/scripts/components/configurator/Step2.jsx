@@ -15,11 +15,11 @@ export class Step2 extends React.Component {
   }
 
   onChooseOption = id => {
-    this.props.changeFieldValue({ name: 'cardOption', value: id })
+    this.props.changeFieldValue({ name: 'cardOption', value: id, step: ConfiguratorPageStep.STEP1 })
   }
 
   render() {
-    console.log('Step1', this.props)
+    console.log('Step2', this.props)
     const { products, cardOption, summary, goToStep } = this.props
     const [f1, f2, f3, f4] = summary
     return !products
@@ -29,7 +29,7 @@ export class Step2 extends React.Component {
         <Row type="flex" justify="center">
           {
             products.map(p => (
-              <Col span={4} offset={1}>
+              <Col span={4} offset={1} key={p.Id}>
                 <OptionCard
                   id={p.Id}
                   name={p.name}
@@ -61,7 +61,7 @@ export class Step2 extends React.Component {
             <Col span={8}>
               <div className="oc-s-btns">
                 <Button onClick={() => goToStep(ConfiguratorPageStep.STEP1)}>Back</Button>
-                <Button onClick={() => goToStep(ConfiguratorPageStep.STEP3)} style={{ marginLeft: 30 }}>Continue</Button>
+                <Button onClick={() => goToStep(ConfiguratorPageStep.STEP3)} style={{ marginLeft: 30 }} disabled={!cardOption}>Continue</Button>
               </div>
             </Col>
           </Row>
