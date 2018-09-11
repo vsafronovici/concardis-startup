@@ -1,3 +1,8 @@
+export const NodeProcess = {
+  DEV: 'development',
+  PROD: 'production'
+}
+
 export const PageContainers = {
   LANDING_PAGE: 'react-landing-page',
   APPLICATION_FORM_PAGE: 'application-form-page',
@@ -32,3 +37,4 @@ export const ConfiguratorPageStep = {
   STEP2: 'Landing_Page_2',
   STEP3: 'Landing_Page_3',
 }
+

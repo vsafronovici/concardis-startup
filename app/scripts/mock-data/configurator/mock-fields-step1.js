@@ -1,5 +1,5 @@
 
-export const page1MetaMock = [
+export default [
 
    { 
     name: 'page1.f1',
