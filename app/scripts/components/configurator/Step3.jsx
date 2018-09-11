@@ -8,7 +8,6 @@ import { selectedProductSelector } from '../../selectors/configurator-selector'
 
 class Step3 extends Component {
 
-
   render() {
     const { selectedProduct: { prod, extras } } = this.props
     return (

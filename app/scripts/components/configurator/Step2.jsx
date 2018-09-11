@@ -2,11 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Button, Row, Col } from 'antd'
+
 import { OptionCard } from './OptionCard'
 import { cardOptionValueSelector, productsSelector, step2SummarySelector } from '../../selectors/configurator-selector'
 import { changeFieldValue, goToStep } from '../../actions/configurator-action'
 import { ConfiguratorPageStep } from '../../utils/constants'
 import { Loader } from '../Loader'
+import { translate } from './../../i18n/i18n'
+
 
 export class Step2 extends React.Component {
 
@@ -22,8 +25,8 @@ export class Step2 extends React.Component {
     console.log('Step2', this.props)
     const { products, cardOption, summary, goToStep } = this.props
     const [f1, f2, f3, f4] = summary
-    return !products
-      ? <Loader />
+    return !products || !summary
+      ? test
       : (
       <div>
         <Row type="flex" justify="center">
@@ -60,8 +63,12 @@ export class Step2 extends React.Component {
             </Col>
             <Col span={8}>
               <div className="oc-s-btns">
-                <Button onClick={() => goToStep(ConfiguratorPageStep.STEP1)}>Back</Button>
-                <Button onClick={() => goToStep(ConfiguratorPageStep.STEP3)} style={{ marginLeft: 30 }} disabled={!cardOption}>Continue</Button>
+                <Button onClick={() => goToStep(ConfiguratorPageStep.STEP1)}>
+                  {translate('btn.Back')}
+                </Button>
+                <Button onClick={() => goToStep(ConfiguratorPageStep.STEP3)} style={{ marginLeft: 30 }} disabled={!cardOption}>
+                  {translate('btn.Continue')}
+                </Button>
               </div>
             </Col>
           </Row>

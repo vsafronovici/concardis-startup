@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
-import { Input, Button } from 'antd';
-import { connect } from 'react-redux';
+import React, { Component } from 'react'
+import { Input, Button } from 'antd'
+import { connect } from 'react-redux'
+
 import { ExtraField } from './extraField/ExtraField'
 import { changeFieldValue } from '../../../actions/configurator-action'
 import { goToStep } from '../../../actions/configurator-action'
@@ -10,11 +11,11 @@ import { translate } from './../../../i18n/i18n'
 class ExtraOptions extends Component {
 
   render() {
-    const { items, price, changeFieldValue, goToStep } = this.props;
+    const { items, price, changeFieldValue, goToStep } = this.props
     return (
       <div className="eo-container">
         <div className="eo-title">
-          Select Extras
+          {translate('configurator.SelectExtras')}
         </div>
         <div className="eo-ef-container">
           {items.map(exField => {
@@ -34,7 +35,7 @@ class ExtraOptions extends Component {
         </div>
         <div className="eo-recalc-button">
           <Button>
-            recalcButton
+            {translate('btn.RecalculateQuote')}
           </Button>
         </div>
         <div className="eo-bottom-container">
@@ -48,7 +49,7 @@ class ExtraOptions extends Component {
           </div>
           <div className="eo-bottom-navbutton">
             <Button onClick={() => goToStep(ConfiguratorPageStep.STEP1)}>
-              navButton
+              {translate('btn.Complete')}
             </Button>
           </div>
         </div>
@@ -62,4 +63,4 @@ const mapDispatchToProps = ({
   goToStep
 })
 
-export default connect(null, mapDispatchToProps)(ExtraOptions);
+export default connect(null, mapDispatchToProps)(ExtraOptions)

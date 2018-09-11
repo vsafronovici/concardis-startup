@@ -1,14 +1,13 @@
-import { all, call, put, takeEvery, takeLatest } from 'redux-saga/effects'
+import { all, call, put, select, takeEvery, takeLatest } from 'redux-saga/effects'
 import { delay } from 'redux-saga'
 import { memoize } from 'ramda'
 
 import { CONFIGURATOR } from '../actions/types'
-import { page1MetaMock } from '../mock-data/configurator/mock-fields-step1'
-import { page2MetaMock } from '../mock-data/configurator/mock-fields-step2'
 
-import { getMetaStep1Req, getMetaStep1Res, getMetaStep2Req, getMetaStep2Res, getMetaStep3Req, getMetaStep3Res, changeFieldValue } from '../actions/configurator-action'
+import { getMetaStep1Req, getMetaStep1Res, getMetaStep2Req, getMetaStep2Res } from '../actions/configurator-action'
 import { SFAction } from './../modules/client'
-import { ConfiguratorPageStep } from '../utils/constants'
+import { ConfiguratorPageStep, NodeProcess } from '../utils/constants'
+import { step1FieldsSelector } from '../selectors/configurator-selector'
 
 
 const memoizedGetProductsRequest = memoize(function*(payload) {
@@ -20,52 +19,42 @@ const memoizedGetProductsRequest = memoize(function*(payload) {
 })
 
 function* getMetaStep2Saga({ payload }) {
-  if (window.configSettings) {
+  if (process.env.NODE_ENV === NodeProcess.DEV) {
+    // load mocks
+    const page2MetaMock = require('./../mock-data/configurator/mock-fields-step2')
+    yield call(delay, 600)
+    yield put(getMetaStep2Res(page2MetaMock.default))
+  } else {
     const response = yield memoizedGetProductsRequest(payload)
     //console.log('getMetaStep2Saga ', response)
     yield put(getMetaStep2Res(response.data))
-  } else {
-    // load mocks
-    yield put(getMetaStep2Res(page2MetaMock))
   }
 }
 
 function* initDataSaga() {
 
-  if (window.configSettings) {
+  if (process.env.NODE_ENV === NodeProcess.DEV) {
+    // load mocks
+    const page1MetaMock = require('./../mock-data/configurator/mock-fields-step1')
+    yield call(delay, 600)
+    yield put(getMetaStep1Req())
+    yield put(getMetaStep1Res(page1MetaMock.default))
+  } else {
     const action = {
       actionName: configSettings.remoteActions.getFieldsMetadata,
       args: ConfiguratorPageStep.STEP1
     }
     const response = yield call(SFAction, action, { buffer: true, escape: false })
     yield put(getMetaStep1Res(response.data.fields))
-
-  } else {
-    // load mocks
-    //yield call(delay, 600)
-
-
-    yield put(getMetaStep1Req())
-    yield put(getMetaStep1Res(page1MetaMock))
   }
-
-
 }
 
 function* goToStepSaga({ payload }) {
   if (payload === ConfiguratorPageStep.STEP2) {
-    //TODO remove
-    const fields = {
-      'pag1.f1': 2000,
-      'pag1.f2': 2000,
-      'pag1.f3': 2000,
-      'pag1.f4': 'Hotel'
-    }
+    const fields = yield select(step1FieldsSelector)
     yield put(getMetaStep2Req(fields))
   }
-
 }
-
 
 export default function* root() {
   yield all([

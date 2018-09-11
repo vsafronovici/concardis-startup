@@ -15,7 +15,6 @@ export class OptionCard extends React.Component {
 
   chooseOption = e => {
     const { id, onChooseOption } = this.props
-    console.log('clicked', id)
     onChooseOption(id)
   }
 

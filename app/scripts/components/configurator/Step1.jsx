@@ -1,9 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import SliderComponent from './slider/Slider'
-import { changeFieldValue, goToStep } from '../../actions/configurator-action';
-import { Row, Col, Button } from 'antd';
-import { step1MetaSelector } from '../../selectors/configurator-selector';
+import { changeFieldValue, goToStep } from '../../actions/configurator-action'
+import { Row, Col, Button } from 'antd'
+import { step1MetaSelector } from '../../selectors/configurator-selector'
 import { ConfiguratorPageStep } from '../../utils/constants'
 import { Loader } from '../Loader'
 import { translate } from './../../i18n/i18n'
@@ -32,7 +32,7 @@ const Step1 = props => {
                 <Row>
                   <Col span={8} offset={14}>
                     <div className="sc-wrapper-button">
-                      <Button className="sc-nav-button" onClick={() => props.goToStep(ConfiguratorPageStep.STEP2)}>
+                      <Button onClick={() => props.goToStep(ConfiguratorPageStep.STEP2)}>
                         {translate('btn.ShowProducts')}
                       </Button>
                     </div>

@@ -44,21 +44,11 @@ export default {
         fields: createDefaultValues(state, payload, ConfiguratorPageStep.STEP1)
       }
     },
-    [CONFIGURATOR.GET_META_STEP3_REQ](state) {
-      return {
-        ...state
-      }
-    },
-    [CONFIGURATOR.GET_META_STEP3_RES](state, { payload }) {
-      return {
-        ...state,
-        step3MetaData: payload
-      }
-    },
     [CONFIGURATOR.CHANGE_FIELD_VALUE](state, { payload: { value, name, step }}) {
       return {
         ...state,
-        fields: {...state.fields,
+        fields: {
+          ...state.fields,
           [step] : {
             ...state.fields[step],
             [name]: value
@@ -81,6 +71,11 @@ export default {
     [CONFIGURATOR.GET_META_STEP2_RES](state, { payload }) {
       return {
         ...state,
+        fields: {
+          ...state.fields,
+          [ConfiguratorPageStep.STEP2] : {},
+          [ConfiguratorPageStep.STEP3] : {}
+        },
         step2MetaData: payload,
       }
     }
