@@ -30,8 +30,8 @@ class RenderSlider extends Component  {
           ((i === this.state.activeMark) ? '25%' : '22.5%') 
         },
         
-        label: (((i === 0 || (i === items.length - 1) ) ? <span>€ {items[i]} </span>: null) || 
-        (i === this.state.activeMark) ? <span className="sc-mark-item">€ {items[i]} </span> : null)
+        label: ((i === 0 || (i === items.length - 1) ) && i !== this.state.activeMark) ? <span>€ {items[i]} </span> : null || 
+        (i === this.state.activeMark) ? <span className="sc-mark-item">€ {items[i]} </span> : null
       }
     }
     return obj
