@@ -1,7 +1,8 @@
+import { omit } from 'ramda'
+
 import { createReducer } from './../modules/helpers'
 import { CONFIGURATOR } from './../actions/types'
 import { ConfiguratorPageStep } from '../utils/constants'
-import { keys, pickBy, toPairs, isEmpty } from 'ramda'
 
 import { translate } from '../i18n/i18n'
 import { translateToNumber } from './../transformers/configurator-transformer'
@@ -11,10 +12,6 @@ export const initialState = {
   fields: {},
   step: ConfiguratorPageStep.STEP1,
   submitting: false,
-  step1MetaData: undefined,
-  step2MetaData: undefined,
-  step3MedaData: undefined,
-
 }
 
 const createDefaultValues = (state, payload, step) => {
@@ -68,18 +65,18 @@ export default {
     },
     [CONFIGURATOR.GET_META_STEP2_REQ](state, { payload }) {
       return {
-        ...state,
+        ...omit(['step2MetaData'], state),
         submitting: true,
-      }
-    },
-    [CONFIGURATOR.GET_META_STEP2_RES](state, { payload }) {
-      return {
-        ...state,
         fields: {
           ...state.fields,
           [ConfiguratorPageStep.STEP2] : {},
           [ConfiguratorPageStep.STEP3] : {}
         },
+      }
+    },
+    [CONFIGURATOR.GET_META_STEP2_RES](state, { payload }) {
+      return {
+        ...state,
         step2MetaData: payload,
       }
     }

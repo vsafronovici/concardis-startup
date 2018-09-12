@@ -41,7 +41,7 @@ class ExtraOptions extends Component {
         <div className="eo-bottom-container">
           <div className="eo-bottom-titles">
             <div className="eo-bottom-totalquote">
-              totalQuote
+              {translate('configurator.TotalQuote')}
             </div>
             <div className="eo-bottom-monhtly">
               €{price} / {translate('configurator.AMonth')}

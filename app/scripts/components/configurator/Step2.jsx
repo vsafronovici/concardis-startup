@@ -29,8 +29,8 @@ export class Step2 extends React.Component {
     console.log('Step2', this.props)
     const { products, cardOption, summary, goToStep } = this.props
     const [f1, f2, f3, f4] = summary
-    return !products || !summary
-      ? test
+    return !products.length
+      ? <Loader />
       : (
       <div>
         <Row type="flex" justify="center">
