@@ -38,6 +38,11 @@ export const goToStep = payload => ({
   payload
 })
 
+export const validateDiscountCode = payload => ({
+  type: CONFIGURATOR.VALIDATE_DISCOUNT_CODE,
+  payload
+})
+
 export const recalculateQuote = payload => ({
   type: CONFIGURATOR.RECALCULATE_QUOTE,
   payload

@@ -1,21 +1,31 @@
 import React, { Component } from 'react'
-import { Input, Button } from 'antd'
+import { Input, Icon } from 'antd'
 import { reduxForm, Field } from 'redux-form'
 import cn from 'classnames'
 
-
-import { ConfiguratorPageStep } from '../../../utils/constants'
 import { translate } from './../../../i18n/i18n'
 
 export const DISCOUNT = 'discount'
 
-const Validator = values => {
+export const Validator = values => {
   const err = {}
   const discount = values[DISCOUNT]
   if (!discount || discount.trim() === '') {
-    err[DISCOUNT] = 'Required'
+    err[DISCOUNT] = translate('Requir')
   }
   return err
+}
+
+// TODO
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
+
+export const AsyncValidator = (values/*, dispatch */) => {
+  return sleep(1000) // simulate server latency
+    .then(() => {
+      if (['123'].includes(values[DISCOUNT])) {
+        throw { [DISCOUNT]: 'Invalid discount code' }
+      }
+    })
 }
 
 const createRenderer = render => ({ input, meta, label, placeholder }) => {
@@ -27,6 +37,7 @@ const createRenderer = render => ({ input, meta, label, placeholder }) => {
       </div>
       <div className="eo-input">
         { render(input, meta, label, placeholder) }
+        { meta.asyncValidating && <Icon type="loading" theme="outlined" /> }
         <div>{ meta.error && meta.touched && <span>{meta.error}</span> }</div>
       </div>
 
@@ -35,17 +46,10 @@ const createRenderer = render => ({ input, meta, label, placeholder }) => {
 }
 
 const RenderInput = createRenderer((input, meta, label, placeholder) => {
-  //const xxx = meta.dirty ? input.value : val
   return <Input {...input} onChange={(event) => input.onChange(event)} placeholder={translate(placeholder)} value={input.value} />
 })
 
-
-const DiscountField = props => {
+export const DiscountField = props => {
+  console.log('DiscountField', props)
   return <Field name={DISCOUNT} component={RenderInput} label="configurator.discount.label" placeholder="configurator.discount.placeholder"/>
 }
-
-
-export default reduxForm({
-  form: ConfiguratorPageStep.STEP3,
-  validate: Validator,
-})(DiscountField)
