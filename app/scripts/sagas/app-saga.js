@@ -5,7 +5,7 @@ import { APP } from './../actions/types'
 import { loadTranslationsReq, loadTranslationsResp } from '../actions/app-action'
 import { SFAction } from '../modules/client'
 import { LanguageType, NodeProcess } from '../utils/constants'
-import { i18nLangSelector, i18nSelector } from '../selectors/i18n-selector'
+import { i18nLangSelector } from '../selectors/i18n-selector'
 
 
 function* loadTranslationsSaga({ payload: { lang } }) {

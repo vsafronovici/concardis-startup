@@ -27,15 +27,6 @@ export const getMetaStep2Res = payload => ({
   payload
 })
 
-export const getMetaStep3Req = () => ({
-  type: CONFIGURATOR.GET_META_STEP3_REQ
-})
-
-export const getMetaStep3Res = payload => ({
-  type: CONFIGURATOR.GET_META_STEP3_RES,
-  payload
-})
-
 export const changeFieldValue = (payload) => ({
   type: CONFIGURATOR.CHANGE_FIELD_VALUE,
   payload
@@ -44,5 +35,10 @@ export const changeFieldValue = (payload) => ({
 
 export const goToStep = payload => ({
   type: CONFIGURATOR.GO_TO_STEP,
+  payload
+})
+
+export const recalculateQuote = payload => ({
+  type: CONFIGURATOR.RECALCULATE_QUOTE,
   payload
 })

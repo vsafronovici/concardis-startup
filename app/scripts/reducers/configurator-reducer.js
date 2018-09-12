@@ -79,6 +79,11 @@ export default {
         ...state,
         step2MetaData: payload,
       }
+    },
+    [CONFIGURATOR.RECALCULATE_QUOTE](state, { payload }) {
+      return {
+        ...state,
+      }
     }
   })
 }

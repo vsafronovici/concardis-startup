@@ -1,17 +1,31 @@
 import React, { Component } from 'react'
-import { Input, Button } from 'antd'
+import { Button } from 'antd'
 import { connect } from 'react-redux'
+import { getFormValues, isValid } from 'redux-form'
 
 import { ExtraField } from './extraField/ExtraField'
-import { changeFieldValue } from '../../../actions/configurator-action'
+import DiscountField, { DISCOUNT } from './DiscountField'
+import { changeFieldValue, recalculateQuote } from '../../../actions/configurator-action'
 import { goToStep } from '../../../actions/configurator-action'
 import { ConfiguratorPageStep } from '../../../utils/constants'
 import { translate } from './../../../i18n/i18n'
+import { step3FieldsSelector } from '../../../selectors/configurator-selector'
 
 class ExtraOptions extends Component {
 
+  handleRecalculate = e => {
+    console.log('handleRecalculate', this.props)
+    const { productId, step3Fields, formValues: { [DISCOUNT]: discount }, recalculateQuote } = this.props
+    recalculateQuote({
+      ...step3Fields,
+      productId,
+      discount
+    })
+  }
+
   render() {
-    const { items, price, changeFieldValue, goToStep } = this.props
+    console.log('ExtraOptions render ', this.props)
+    const { items, price, changeFieldValue, goToStep, validForm } = this.props
     return (
       <div className="eo-container">
         <div className="eo-title">
@@ -25,16 +39,10 @@ class ExtraOptions extends Component {
               </div>
             )
           })}
-
         </div>
-        <div className="eo-question">
-          question
-        </div>
-        <div className="eo-input">
-          <Input placeholder="placeHolder"/>
-        </div>
+        <DiscountField />
         <div className="eo-recalc-button">
-          <Button>
+          <Button disabled={!validForm} onClick={this.handleRecalculate}>
             {translate('btn.RecalculateQuote')}
           </Button>
         </div>
@@ -58,9 +66,16 @@ class ExtraOptions extends Component {
   }
 }
 
+const mapStateToProps = state => ({
+  step3Fields: step3FieldsSelector(state),
+  validForm: isValid(ConfiguratorPageStep.STEP3)(state),
+  formValues: getFormValues(ConfiguratorPageStep.STEP3)(state)
+})
+
 const mapDispatchToProps = ({
   changeFieldValue,
+  recalculateQuote,
   goToStep
 })
 
-export default connect(null, mapDispatchToProps)(ExtraOptions)
+export default connect(mapStateToProps, mapDispatchToProps)(ExtraOptions)

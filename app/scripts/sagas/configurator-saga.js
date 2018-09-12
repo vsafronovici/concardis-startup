@@ -21,7 +21,7 @@ function* getMetaStep2Saga({ payload }) {
   if (process.env.NODE_ENV === NodeProcess.DEV) {
     // load mocks
     const page2MetaMock = require('./../mock-data/configurator/mock-fields-step2')
-    yield call(delay, 600)
+    yield call(delay, 100)
     yield put(getMetaStep2Res(page2MetaMock.default))
   } else {
     const response = yield memoizedGetProductsRequest(payload)

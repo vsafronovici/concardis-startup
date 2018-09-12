@@ -10,6 +10,7 @@ export const step2MetaSelector = compose(propOrEmptyArr('step2MetaData'), config
 export const fieldsSelector = compose(prop('fields'), configuratorSelector)
 export const step1FieldsSelector = compose(propOrEmptyObj(ConfiguratorPageStep.STEP1), fieldsSelector)
 export const step2FieldsSelector = compose(propOrEmptyObj(ConfiguratorPageStep.STEP2), fieldsSelector)
+export const step3FieldsSelector = compose(propOrEmptyObj(ConfiguratorPageStep.STEP3), fieldsSelector)
 export const cardOptionValueSelector = compose(prop('cardOption'), step2FieldsSelector)
 export const stepSelector = compose(prop('step'), configuratorSelector)
 export const productsSelector = compose(map(prop(['prod'])), step2MetaSelector)

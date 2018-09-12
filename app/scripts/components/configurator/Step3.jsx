@@ -25,7 +25,7 @@ class Step3 extends Component {
                  />
               </Col>
               <Col xl={{ span: '11', offset: '1' }}>
-                <ExtraOptions items={extras} price={prod.price} />
+                <ExtraOptions items={extras} price={prod.price} productId={prod.Id} />
               </Col>
             </Row>
           </Col>
@@ -39,7 +39,4 @@ const mapStateToProps = state => ({
   selectedProduct: selectedProductSelector(state)
 })
 
-const mapDispatchToProps = ({
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(Step3);
+export default connect(mapStateToProps)(Step3);
