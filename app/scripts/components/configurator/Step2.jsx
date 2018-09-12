@@ -17,6 +17,10 @@ export class Step2 extends React.Component {
     sections: PropTypes.array
   }
 
+  componentDidMount() {
+    console.log('DidMount' , this.props)
+  }
+
   onChooseOption = id => {
     this.props.changeFieldValue({ name: 'cardOption', value: id, step: ConfiguratorPageStep.STEP2 })
   }

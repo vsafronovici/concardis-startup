@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
-import { Slider } from 'antd';
-import { connect } from 'react-redux';
+import React, { Component } from 'react'
+import { Slider } from 'antd'
+import { connect } from 'react-redux'
+
 import { step1FieldsSelector } from '../../../selectors/configurator-selector'
 
 class RenderSlider extends Component  {
@@ -13,51 +14,59 @@ class RenderSlider extends Component  {
       this.setState({
         activeMark: value
       })
-      this.props.handleChangeField(value)
+      this.props.handleChangeField(this.props.sliderItems[value])
     }
 
     createMarksValues = items => {
     const obj = {}
 
     for (let i = 0; i < items.length; i++) {
-      obj[items[i]] = {
+
+      obj[i] = {
         style: {
           color: (items[i] === this.state.activeMark) ? '#ff5252' : '#9E9E9E',
-          width: ((i === 0 || (i === items.length - 1) ) ? '25%': '22.5%') || 
+          width: ((i === 0 || (i === items.length - 1) ) ? '25%' : '22.5%') || 
           ((items[i] === this.state.activeMark) ? '25%' : '22.5%') 
         },
         
         label: ((i === 0 || (i === items.length - 1) ) ? <span>€ {items[i]} </span>: null) || 
-              ((items[i] === this.state.activeMark) ? <span className="sc-mark-item">€ {items[i]} </span> : null) 
+        ((items[i] === this.state.activeMark) ? <span className="sc-mark-item">€ {items[i]} </span> : null) 
       }
     }
-
     return obj
   }
 
- render() {
+  checkDefaultValue = (items, defValue) => {
+    
+    const checkedDefaultValue = items.indexOf(defValue)
+    
+    return checkedDefaultValue
+  }
 
-  const { sliderItems, name, defaultValue, values } = this.props;
-  const marks = this.createMarksValues(sliderItems);
+ render() {
+   console.log(this.props)
+  const { sliderItems, name, defaultValue } = this.props
+  const marks = this.createMarksValues(sliderItems)
+  const checkedDefaultValue = this.checkDefaultValue(sliderItems, defaultValue)
+ 
   return(
       <Slider
             dots={true}
-            defaultValue={(values[name] || defaultValue)}
+            defaultValue={checkedDefaultValue}
             marks={marks}
-            min={sliderItems[0]}
-            max={sliderItems[sliderItems.length - 1]}
-            step={2000}
+            min={0}
+            max={sliderItems.length - 1}
+            step={1}
             style={{touchAction: 'none'}}
             onChange={(value) => this.handleChangeSlider(value)}
             name={name}
       />
   )
  }
-  
 }
 
 const mapStateToProps = (state, ownProps) => ({
   values: step1FieldsSelector(state)
 })
 
-export default connect(mapStateToProps)(RenderSlider);
+export default connect(mapStateToProps)(RenderSlider)

@@ -6,15 +6,16 @@ import { step1FieldsSelector } from '../../../selectors/configurator-selector'
 class RenderSelect extends Component {
 
   render() {
-    const { selectItems, title, handleChangeField, values, name, defaultValue } = this.props;
+
+    const { selectItems, handleChangeField, fieldHint } = this.props;
     const Option = Select.Option
+    
     return(
-      <Select 
-              defaultValue={(values[name] || defaultValue)}            
+      <Select          
               onChange={value => handleChangeField(value)}
               showSearch
               style={{ width: '100%' }}
-              placeholder={title}
+              placeholder={fieldHint}
               optionFilterProp="children"
               filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
             >
@@ -24,7 +25,7 @@ class RenderSelect extends Component {
           )
         })}
       </Select>
-  )
+    )
   }
    
 }

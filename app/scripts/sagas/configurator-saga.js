@@ -9,7 +9,6 @@ import { SFAction } from './../modules/client'
 import { ConfiguratorPageStep, NodeProcess } from '../utils/constants'
 import { step1FieldsSelector } from '../selectors/configurator-selector'
 
-
 const memoizedGetProductsRequest = memoize(function*(payload) {
   const action = {
     actionName: configSettings.remoteActions.getProducts,
@@ -35,10 +34,13 @@ function* initDataSaga() {
 
   if (process.env.NODE_ENV === NodeProcess.DEV) {
     // load mocks
-    const page1MetaMock = require('./../mock-data/configurator/mock-fields-step1')
+   
+    const _page1MetaMock = require('./../mock-data/configurator/_mock-fields-step1')
+   
+
     yield call(delay, 600)
     yield put(getMetaStep1Req())
-    yield put(getMetaStep1Res(page1MetaMock.default))
+    yield put(getMetaStep1Res(_page1MetaMock.default))
   } else {
     const action = {
       actionName: configSettings.remoteActions.getFieldsMetadata,

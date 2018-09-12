@@ -7,9 +7,12 @@ import { step1MetaSelector } from '../../selectors/configurator-selector'
 import { ConfiguratorPageStep } from '../../utils/constants'
 import { Loader } from '../Loader'
 import { translate } from './../../i18n/i18n'
+import { step1FieldsSelector } from './../../selectors/configurator-selector'
+import { notEmptyValues } from './../../utils/function-utils'
 
 const Step1 = props => {
-  const { step1MetaData, changeFieldValue } = props
+  const { step1MetaData, changeFieldValue, values } = props
+  
   return (
     !step1MetaData
       ? <Loader />
@@ -32,7 +35,7 @@ const Step1 = props => {
                 <Row>
                   <Col span={8} offset={14}>
                     <div className="sc-wrapper-button">
-                      <Button onClick={() => props.goToStep(ConfiguratorPageStep.STEP2)}>
+                      <Button onClick={() => props.goToStep(ConfiguratorPageStep.STEP2)} disabled={notEmptyValues(values)}>
                         {translate('btn.ShowProducts')}
                       </Button>
                     </div>
@@ -47,7 +50,8 @@ const Step1 = props => {
 }
 
 const mapStateToProps = state => ({
-  step1MetaData: step1MetaSelector(state)
+  step1MetaData: step1MetaSelector(state),
+  values: step1FieldsSelector(state)
 })
 
 const mapDispatchToProps = ({

@@ -3,6 +3,10 @@ import { CONFIGURATOR } from './../actions/types'
 import { ConfiguratorPageStep } from '../utils/constants'
 import { keys, pickBy, toPairs, isEmpty } from 'ramda'
 
+import { translate } from '../i18n/i18n'
+import { translateToNumber } from './../transformers/configurator-transformer'
+import { FieldType } from './../utils/constants'
+
 export const initialState = {
   fields: {},
   step: ConfiguratorPageStep.STEP1,
@@ -16,12 +20,12 @@ export const initialState = {
 const createDefaultValues = (state, payload, step) => {
   
   const { fields } = state
-
+  
   payload.map( item => {
     
     fields[step] = {
       ...fields[step],
-      [item.name]: item.defaultValue
+      [item.name]: (item.type === FieldType.DROPDOWN) ? null : translateToNumber(item.defaultValue)
     }
     
   })
