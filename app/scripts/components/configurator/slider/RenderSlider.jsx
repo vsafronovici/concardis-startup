@@ -3,11 +3,12 @@ import { Slider } from 'antd'
 import { connect } from 'react-redux'
 
 import { step1FieldsSelector } from '../../../selectors/configurator-selector'
+import { checkCurrentValue } from './../../../utils/function-utils'
 
 class RenderSlider extends Component  {
 
     state = {
-      activeMark: this.props.values[this.props.name] || this.props.defaultValue
+      activeMark: checkCurrentValue(this.props.sliderItems, this.props.values[this.props.name])
     }
 
     handleChangeSlider = (value) => {
@@ -24,38 +25,26 @@ class RenderSlider extends Component  {
 
       obj[i] = {
         style: {
-          color: (items[i] === this.state.activeMark) ? '#ff5252' : '#9E9E9E',
+          color: (i === this.state.activeMark) ? '#ff5252' : '#9E9E9E',
           width: ((i === 0 || (i === items.length - 1) ) ? '25%' : '22.5%') || 
-          ((items[i] === this.state.activeMark) ? '25%' : '22.5%') 
+          ((i === this.state.activeMark) ? '25%' : '22.5%') 
         },
         
-        label: ((i === 0 || (i === items.length - 1) ) ? <span>€ {items[i]} </span>: null) || 
-        ((items[i] === this.state.activeMark) ? <span className="sc-mark-item">€ {items[i]} </span> : null) 
+        label: (((i === 0 || (i === items.length - 1) ) ? <span>€ {items[i]} </span>: null) || 
+        (i === this.state.activeMark) ? <span className="sc-mark-item">€ {items[i]} </span> : null)
       }
     }
     return obj
   }
 
-  checkDefaultValue = (items, defValue) => {
-    
-    const checkedDefaultValue = items.indexOf(defValue)
-    
-    return checkedDefaultValue
-  }
 
-  checkCurrentValue = (items, currentValue) => {
 
-    const checkedCurrentValue = items.indexOf(currentValue)
-
-    return checkedCurrentValue
-  }
 
  render() {
-  
+  console.log('this.state.activemark', this.state.activeMark)
   const { sliderItems, name, defaultValue, values } = this.props
   const marks = this.createMarksValues(sliderItems)
-  const checkedDefaultValue = this.checkDefaultValue(sliderItems, defaultValue)
-  const checkedCurrentValue = this.checkCurrentValue(sliderItems, values[name])
+  const checkedCurrentValue = checkCurrentValue(sliderItems, values[name])
   return(
       <Slider
             dots={true}
@@ -67,6 +56,7 @@ class RenderSlider extends Component  {
             style={{touchAction: 'none'}}
             onChange={(value) => this.handleChangeSlider(value)}
             name={name}
+            tipFormatter={null}
       />
   )
  }

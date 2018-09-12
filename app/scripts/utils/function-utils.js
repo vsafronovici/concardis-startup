@@ -23,3 +23,10 @@ export const objectToArrayKeyValue = obj =>
     return !all(isTrue)(detectedKeys)
     
   }
+
+  export const checkCurrentValue = (items, currentValue) => {
+
+    const checkedCurrentValue = items.indexOf(currentValue)
+
+    return checkedCurrentValue
+  }
