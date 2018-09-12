@@ -1,6 +1,7 @@
-import { toPairs } from 'ramda'
-import { ConfiguratorPageStep } from './constants'
-import { Step2 } from '../components/configurator/Step2';
+import { propOr, toPairs } from 'ramda'
+
+export const propOrEmptyObj = propOr({})
+export const propOrEmptyArr = propOr([])
 
 export const objectToArray = (obj, prop) =>
   toPairs(obj).map(
