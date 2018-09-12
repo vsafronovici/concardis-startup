@@ -43,16 +43,23 @@ class RenderSlider extends Component  {
     return checkedDefaultValue
   }
 
+  checkCurrentValue = (items, currentValue) => {
+
+    const checkedCurrentValue = items.indexOf(currentValue)
+
+    return checkedCurrentValue
+  }
+
  render() {
-   console.log(this.props)
-  const { sliderItems, name, defaultValue } = this.props
+  
+  const { sliderItems, name, defaultValue, values } = this.props
   const marks = this.createMarksValues(sliderItems)
   const checkedDefaultValue = this.checkDefaultValue(sliderItems, defaultValue)
- 
+  const checkedCurrentValue = this.checkCurrentValue(sliderItems, values[name])
   return(
       <Slider
             dots={true}
-            defaultValue={checkedDefaultValue}
+            defaultValue={checkedCurrentValue}
             marks={marks}
             min={0}
             max={sliderItems.length - 1}

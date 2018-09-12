@@ -7,7 +7,7 @@ class RenderSelect extends Component {
 
   render() {
 
-    const { selectItems, handleChangeField, fieldHint } = this.props;
+    const { selectItems, handleChangeField, fieldHint, values, name } = this.props
     const Option = Select.Option
     
     return(
@@ -15,7 +15,7 @@ class RenderSelect extends Component {
               onChange={value => handleChangeField(value)}
               showSearch
               style={{ width: '100%' }}
-              placeholder={fieldHint}
+              placeholder={(values[name] || fieldHint)}
               optionFilterProp="children"
               filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
             >
