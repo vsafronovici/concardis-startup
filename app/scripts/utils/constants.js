@@ -14,6 +14,12 @@ export const LanguageType = {
   DE: 'de'
 }
 
+export const RESPONSE_STATUS = {
+  OK: 'ok',
+  ERR: 'err'
+}
+
+
 export const SectionType = {
   SIMPLE: 'Simple',
   CONDITIONAL: 'Conditional'

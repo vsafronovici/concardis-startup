@@ -2,11 +2,21 @@ import { all, call, put, select, takeEvery, takeLatest } from 'redux-saga/effect
 import { delay } from 'redux-saga'
 
 import { CONFIGURATOR } from '../actions/types'
-import { getMetaStep1Req, getMetaStep1Res, getMetaStep2Req, getMetaStep2Res } from '../actions/configurator-action'
+import { getMetaStep1Req, getMetaStep1Res, getMetaStep2Req, getMetaStep2Res, recalculateQuoteRes } from '../actions/configurator-action'
 import { SFAction } from './../modules/client'
 import { ConfiguratorPageStep, NodeProcess } from '../utils/constants'
 import { step1FieldsSelector } from '../selectors/configurator-selector'
 import { memoizedSFAction } from '../modules/client'
+
+
+function* recalculateQuoteSaga({ payload }) {
+  const action = {
+    actionName: configSettings.remoteActions.recalculatePrice,
+    args: JSON.stringify(payload)
+  }
+  const response = yield call(memoizedSFAction, action, { buffer: true, escape: false })
+  yield put(recalculateQuoteRes(response.data))
+}
 
 function* getMetaStep2Saga({ payload }) {
   if (process.env.NODE_ENV === NodeProcess.DEV) {
@@ -53,6 +63,7 @@ export default function* root() {
   yield all([
     takeLatest(CONFIGURATOR.INIT_DATA, initDataSaga),
     takeLatest(CONFIGURATOR.GO_TO_STEP, goToStepSaga),
-    takeLatest(CONFIGURATOR.GET_META_STEP2_REQ, getMetaStep2Saga)
+    takeLatest(CONFIGURATOR.GET_META_STEP2_REQ, getMetaStep2Saga),
+    takeLatest(CONFIGURATOR.RECALCULATE_QUOTE, recalculateQuoteSaga)
   ])
 }

@@ -47,3 +47,8 @@ export const recalculateQuote = payload => ({
   type: CONFIGURATOR.RECALCULATE_QUOTE,
   payload
 })
+
+export const recalculateQuoteRes = payload => ({
+  type: CONFIGURATOR.RECALCULATE_QUOTE_RES,
+  payload
+})

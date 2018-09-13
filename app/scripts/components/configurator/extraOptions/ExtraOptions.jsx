@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Button, Modal } from 'antd'
 import { connect } from 'react-redux'
 import { getFormValues, isValid, reduxForm } from 'redux-form'
+import { keys, pipe, filter, join } from 'ramda'
+
 
 import { ExtraField } from './extraField/ExtraField'
 import { DiscountField, DISCOUNT, Validator, AsyncValidator } from './DiscountField'
@@ -12,15 +14,17 @@ import { translate } from './../../../i18n/i18n'
 import { step3FieldsSelector, recalculateQuoteSelector } from '../../../selectors/configurator-selector'
 import { step3ActiveElementSelector } from '../../../selectors/redux-form-selector'
 
+const extraFields = pipe(filter(o => o), keys, join(','))
+
 class ExtraOptions extends Component {
 
   handleRecalculate = e => {
     console.log('handleRecalculate', this.props)
     const { productId, step3Fields, formValues: { [DISCOUNT]: discount }, recalculateQuote } = this.props
     recalculateQuote({
-      ...step3Fields,
       productId,
-      discount
+      discount,
+      extraFields: extraFields(step3Fields)
     })
   }
 
