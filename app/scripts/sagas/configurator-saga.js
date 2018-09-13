@@ -1,21 +1,12 @@
 import { all, call, put, select, takeEvery, takeLatest } from 'redux-saga/effects'
 import { delay } from 'redux-saga'
-import { memoize } from 'ramda'
 
 import { CONFIGURATOR } from '../actions/types'
-
 import { getMetaStep1Req, getMetaStep1Res, getMetaStep2Req, getMetaStep2Res } from '../actions/configurator-action'
 import { SFAction } from './../modules/client'
 import { ConfiguratorPageStep, NodeProcess } from '../utils/constants'
 import { step1FieldsSelector } from '../selectors/configurator-selector'
-
-const memoizedGetProductsRequest = memoize(function*(payload) {
-  const action = {
-    actionName: configSettings.remoteActions.getProducts,
-    args: JSON.stringify(payload)
-  }
-  return yield call(SFAction, action, { buffer: true, escape: false })
-})
+import { memoizedSFAction } from '../modules/client'
 
 function* getMetaStep2Saga({ payload }) {
   if (process.env.NODE_ENV === NodeProcess.DEV) {
@@ -24,8 +15,11 @@ function* getMetaStep2Saga({ payload }) {
     yield call(delay, 100)
     yield put(getMetaStep2Res(page2MetaMock.default))
   } else {
-    const response = yield memoizedGetProductsRequest(payload)
-    //console.log('getMetaStep2Saga ', response)
+    const action = {
+      actionName: configSettings.remoteActions.getProducts,
+      args: JSON.stringify(payload)
+    }
+    const response = yield call(memoizedSFAction, action, { buffer: true, escape: false })
     yield put(getMetaStep2Res(response.data))
   }
 }
@@ -34,13 +28,10 @@ function* initDataSaga() {
 
   if (process.env.NODE_ENV === NodeProcess.DEV) {
     // load mocks
-   
-    const _page1MetaMock = require('./../mock-data/configurator/_mock-fields-step1')
-   
-
+    const page1MetaMock = require('./../mock-data/configurator/mock-fields-step1')
     yield call(delay, 600)
     yield put(getMetaStep1Req())
-    yield put(getMetaStep1Res(_page1MetaMock.default))
+    yield put(getMetaStep1Res(page1MetaMock.default))
   } else {
     const action = {
       actionName: configSettings.remoteActions.getFieldsMetadata,

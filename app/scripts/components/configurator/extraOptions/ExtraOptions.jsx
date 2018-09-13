@@ -57,7 +57,7 @@ class ExtraOptions extends Component {
             </div>
           </div>
           <div className="eo-bottom-navbutton">
-            <Button disabled={active || invalid || asyncValidating} onClick={() => goToStep(ConfiguratorPageStep.STEP1)}>
+            <Button onClick={() => goToStep(ConfiguratorPageStep.STEP1)}>
               {translate('btn.Complete')}
             </Button>
           </div>

@@ -100,8 +100,25 @@ export function request(url: string, options: Object = {}): Promise<*> {
     })
 }
 
+function memoize(method) {
+  let cache = {};
+
+  return async function() {
+    const [action] = arguments
+    const key = JSON.stringify(action)
+    cache[key] = cache[key] || method.apply(this, arguments)
+    return cache[key]
+  }
+}
+
+export const memoizedSFAction = memoize(async function(action, options) {
+  return await SFAction(action, options)
+})
+
 export const SFAction = (action, options = { buffer: true, escape: true }) => {
   const { actionName, args } = action
+
+  console.log('SFAction invoked')
 
   const invokeActionArgs = [actionName]
   if (args) {
