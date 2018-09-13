@@ -30,8 +30,6 @@ class CheckBoxField extends Component {
 }
 
 const mapStateToProps = state => ({
- changeFieldValue,
- step: stepSelector(state)
 })
 
 const mapDispatchToProps = state => ({
