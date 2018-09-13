@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Row, Col } from 'antd';
+import { Row, Col, Modal } from 'antd';
 import { OptionCard } from './OptionCard';
 import ExtraOptions from './extraOptions/ExtraOptions'
 import { initData3 } from '../../actions/configurator-action'

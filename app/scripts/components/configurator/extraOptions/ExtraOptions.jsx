@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button } from 'antd'
+import { Button, Modal } from 'antd'
 import { connect } from 'react-redux'
 import { getFormValues, isValid, reduxForm } from 'redux-form'
 
@@ -22,6 +22,14 @@ class ExtraOptions extends Component {
       productId,
       discount
     })
+  }
+
+  success = () => {
+    const modal = Modal.success({
+      title: 'Work in progress'
+    });
+    return <div>{modal}</div>
+    
   }
 
   render() {
@@ -57,7 +65,7 @@ class ExtraOptions extends Component {
             </div>
           </div>
           <div className="eo-bottom-navbutton">
-            <Button onClick={() => goToStep(ConfiguratorPageStep.STEP1)}>
+            <Button onClick={this.success}>
               {translate('btn.Complete')}
             </Button>
           </div>
