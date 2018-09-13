@@ -16,13 +16,21 @@
             line-height: 1.5;
             font-weight: normal;
         }
-        .eo-input {
-            width: 320px !important;
-            margin-bottom: 40px;
-            .ant-input {
-                height: 48px;
-                border: solid 1px #888888;
-                outline: none;
+        .eo-input-container {
+            margin-bottom: 30px;
+            .eo-input {
+                display: flex;
+                direction: row;
+                width: 320px !important;
+                i {
+                    font-size: 40px;
+                    margin-left: 20px;
+                }
+                .ant-input {
+                    height: 48px;
+                    border: solid 1px #888888;
+                    outline: none;
+                }
             }
         }
         /*.eo-recalc-button {
@@ -45,10 +53,15 @@
             color: $black;                    
             font-weight: bold;
             width: 100%;
+            margin-top: 30px;
+            .ant-btn {
+                margin-top: 10px;
+            }
             .eo-bottom-titles {
                 margin-right: 140px;
                 .eo-bottom-totalquote {
                     font-size: 16px;
+                    margin-bottom: 10px;
                 }
                 .eo-bottom-monthly {
                     font-size: 21px;

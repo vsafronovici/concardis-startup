@@ -5,7 +5,7 @@ import { CardSSPItems } from './CardSSP/CardSSPItems/CardSSPItems';
 
 class ShowSolutionPage extends Component {
 
-    render(){
+    render() {
       return(
         <div>
           <Row>

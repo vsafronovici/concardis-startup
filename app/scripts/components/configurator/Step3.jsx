@@ -9,6 +9,7 @@ import { selectedProductSelector } from '../../selectors/configurator-selector'
 class Step3 extends Component {
 
   render() {
+    console.log('step3', this.props)
     const { selectedProduct: { prod, extras } } = this.props
     return (
       <div className="step3-container">

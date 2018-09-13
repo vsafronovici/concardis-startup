@@ -3,6 +3,7 @@ import { Checkbox, Icon } from 'antd';
 import { translate } from './../../../../i18n/i18n'
 
 import { ConfiguratorPageStep } from '../../../../utils/constants'
+import CheckBoxField from './CheckBoxField'
 
 export class ExtraField extends Component {
 
@@ -30,9 +31,10 @@ export class ExtraField extends Component {
     const { exField: { name, description, price } } = this.props
     return (
       <div className="ef-container">
-        <div className="ef-checkbox-container" onClick={this.handleCheckBox}>
+        {/* <div className="ef-checkbox-container" onClick={this.handleCheckBox}>
           {!checked ? <Icon type="check" theme="outlined" className="ef-checkbox-check"/> : null}
-        </div>
+        </div> */}
+        <CheckBoxField handleChange={this.handleCheckBox} checked={checked}/>
         {/* <div className="ef-checkbox">
           <Checkbox onChange={(e) => this.handleChange(e.target.checked)}/>
         </div> */}

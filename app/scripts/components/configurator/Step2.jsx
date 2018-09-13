@@ -33,21 +33,25 @@ export class Step2 extends React.Component {
       ? <Loader />
       : (
       <div>
-        <Row type="flex" justify="center">
-          {
-            products.map(p => (
-              <Col span={4} offset={1} key={p.Id}>
-                <OptionCard
-                  id={p.Id}
-                  name={p.name}
-                  description={p.description}
-                  price={p.price}
-                  items={p.items}
-                  active={cardOption === p.Id}
-                  onChooseOption={this.onChooseOption} />
-              </Col>
-            ))
-          }
+        <Row>
+          <Col xxl={{span: 18, offset: 3}}>
+            <Row type="flex" justify="center">
+            {
+              products.map(p => (
+                <Col span={7} offset={1} key={p.Id}>
+                  <OptionCard
+                    id={p.Id}
+                    name={p.name}
+                    description={p.description}
+                    price={p.price}
+                    items={p.items}
+                    active={cardOption === p.Id}
+                    onChooseOption={this.onChooseOption} />
+                </Col>
+              ))
+            }
+          </Row>
+          </Col>
         </Row>
         <div className="oc-summary">
           <Row type="flex" justify="space-around" align="middle">

@@ -35,12 +35,13 @@ const createRenderer = render => ({ input, meta, label, placeholder }) => {
       <div className="eo-question">
         {translate(label)}
       </div>
-      <div className="eo-input">
-        { render(input, meta, label, placeholder) }
-        { meta.asyncValidating && <Icon type="loading" theme="outlined" /> }
+      <div className="eo-input-container">
+        <div className="eo-input">
+          { render(input, meta, label, placeholder) }
+          { meta.asyncValidating && <Icon type="loading" theme="outlined" /> }
+        </div>
         <div>{ meta.error && meta.touched && <span>{meta.error}</span> }</div>
       </div>
-
     </div>
   )
 }
