@@ -9,6 +9,7 @@ import { changeFieldValue, goToStep } from '../../actions/configurator-action'
 import { ConfiguratorPageStep } from '../../utils/constants'
 import { Loader } from '../Loader'
 import { translate } from './../../i18n/i18n'
+import { valuesFormatter } from './../../transformers/configurator-transformer'
 
 
 export class Step2 extends React.Component {
@@ -58,13 +59,13 @@ export class Step2 extends React.Component {
             <Col span={16}>
               <div className="oc-s-row">
                 <div className="oc-s-col oc-s-label">{translate(f1.title)}</div>
-                <div className="oc-s-col oc-s-value">€{f1.value}</div>
+                <div className="oc-s-col oc-s-value">€{valuesFormatter(f1.value)}</div>
                 <div className="oc-s-col oc-s-label">{translate(f2.title)}</div>
-                <div className="oc-s-col oc-s-value">€{f2.value}</div>
+                <div className="oc-s-col oc-s-value">€{valuesFormatter(f2.value)}</div>
               </div>
               <div className="oc-s-row">
                 <div className="oc-s-col oc-s-label">{translate(f3.title)}</div>
-                <div className="oc-s-col oc-s-value">€{f3.value}</div>
+                <div className="oc-s-col oc-s-value">€{valuesFormatter(f3.value)}</div>
                 <div className="oc-s-col oc-s-label">{translate(f4.title)}</div>
                 <div className="oc-s-col oc-s-value">{f4.value}</div>
               </div>
