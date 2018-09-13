@@ -9,7 +9,7 @@ import { changeFieldValue, recalculateQuote, validateDiscountCode } from '../../
 import { goToStep } from '../../../actions/configurator-action'
 import { ConfiguratorPageStep } from '../../../utils/constants'
 import { translate } from './../../../i18n/i18n'
-import { step3FieldsSelector } from '../../../selectors/configurator-selector'
+import { step3FieldsSelector, recalculateQuoteSelector } from '../../../selectors/configurator-selector'
 import { step3ActiveElementSelector } from '../../../selectors/redux-form-selector'
 
 class ExtraOptions extends Component {
@@ -34,7 +34,9 @@ class ExtraOptions extends Component {
 
   render() {
     console.log('ExtraOptions render ', this.props)
-    const { items, price, changeFieldValue, goToStep, active, invalid, asyncValidating } = this.props
+    const { items, price, changeFieldValue, goToStep, active, invalid, asyncValidating, recalculatedQuote } = this.props
+     
+    
     return (
       <div className="eo-container">
         <div className="eo-title">
@@ -49,7 +51,7 @@ class ExtraOptions extends Component {
             )
           })}
         </div>
-        <DiscountField />
+        <DiscountField handleRecalculate={this.handleRecalculate}/>
         <div className="eo-recalc-button">
           <Button disabled={active || invalid || asyncValidating} onClick={this.handleRecalculate}>
             {translate('btn.RecalculateQuote')}
@@ -61,7 +63,7 @@ class ExtraOptions extends Component {
               {translate('configurator.TotalQuote')}
             </div>
             <div className="eo-bottom-monhtly">
-              €{price} / {translate('configurator.AMonth')}
+            € {recalculatedQuote || price} / {translate('configurator.AMonth')}
             </div>
           </div>
           <div className="eo-bottom-navbutton">
@@ -78,7 +80,8 @@ class ExtraOptions extends Component {
 const mapStateToProps = state => ({
   step3Fields: step3FieldsSelector(state),
   active: step3ActiveElementSelector(state),
-  formValues: getFormValues(ConfiguratorPageStep.STEP3)(state)
+  formValues: getFormValues(ConfiguratorPageStep.STEP3)(state),
+  recalculatedQuote: recalculateQuoteSelector(state),
 })
 
 const mapDispatchToProps = ({

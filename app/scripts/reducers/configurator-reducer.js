@@ -12,6 +12,7 @@ export const initialState = {
   fields: {},
   step: ConfiguratorPageStep.STEP1,
   submitting: false,
+  recalculateQuote: undefined
 }
 
 const createDefaultValues = (state, payload, step) => {
@@ -83,6 +84,7 @@ export default {
     [CONFIGURATOR.RECALCULATE_QUOTE](state, { payload }) {
       return {
         ...state,
+        recalculateQuote: 99.9
       }
     }
   })

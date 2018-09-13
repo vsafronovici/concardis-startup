@@ -51,6 +51,7 @@ const RenderInput = createRenderer((input, meta, label, placeholder) => {
 })
 
 export const DiscountField = props => {
+  const { handleRecalculate } = props
   console.log('DiscountField', props)
-  return <Field name={DISCOUNT} component={RenderInput} label="configurator.discount.label" placeholder="configurator.discount.placeholder"/>
+  return <Field name={DISCOUNT} component={RenderInput} label="configurator.discount.label" placeholder="configurator.discount.placeholder" />
 }
