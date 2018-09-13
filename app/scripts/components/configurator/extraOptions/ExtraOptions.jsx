@@ -11,7 +11,7 @@ import { changeFieldValue, recalculateQuote, validateDiscountCode } from '../../
 import { goToStep } from '../../../actions/configurator-action'
 import { ConfiguratorPageStep } from '../../../utils/constants'
 import { translate } from './../../../i18n/i18n'
-import { step3FieldsSelector, recalculateQuoteSelector } from '../../../selectors/configurator-selector'
+import { step3FieldsSelector, recalculatedQuoteSelector } from '../../../selectors/configurator-selector'
 import { step3ActiveElementSelector } from '../../../selectors/redux-form-selector'
 
 const extraFields = pipe(filter(o => o), keys, join(','))
@@ -67,7 +67,7 @@ class ExtraOptions extends Component {
               {translate('configurator.TotalQuote')}
             </div>
             <div className="eo-bottom-monhtly">
-            € {recalculatedQuote || price} / {translate('configurator.AMonth')}
+            €{recalculatedQuote || price} / {translate('configurator.AMonth')}
             </div>
           </div>
           <div className="eo-bottom-navbutton">
@@ -85,7 +85,7 @@ const mapStateToProps = state => ({
   step3Fields: step3FieldsSelector(state),
   active: step3ActiveElementSelector(state),
   formValues: getFormValues(ConfiguratorPageStep.STEP3)(state),
-  recalculatedQuote: recalculateQuoteSelector(state),
+  recalculatedQuote: recalculatedQuoteSelector(state),
 })
 
 const mapDispatchToProps = ({

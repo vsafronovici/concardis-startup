@@ -18,18 +18,6 @@ export const Validator = values => {
   return err
 }
 
-// TODO
-const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
-
-export const AsyncValidator2 = (values/*, dispatch */) => {
-  return sleep(1000) // simulate server latency
-    .then(() => {
-      if (['123'].includes(values[DISCOUNT])) {
-        throw { [DISCOUNT]: 'Invalid discount code' }
-      }
-    })
-}
-
 export const AsyncValidator = (values/*, dispatch */) => {
   const action = {
     actionName: configSettings.remoteActions.getDiscount,

@@ -14,7 +14,7 @@ export const step3FieldsSelector = compose(propOrEmptyObj(ConfiguratorPageStep.S
 export const cardOptionValueSelector = compose(prop('cardOption'), step2FieldsSelector)
 export const stepSelector = compose(prop('step'), configuratorSelector)
 export const productsSelector = compose(map(prop(['prod'])), step2MetaSelector)
-export const recalculateQuoteSelector = compose(prop('recalculateQuote'), configuratorSelector)
+export const recalculatedQuoteSelector = compose(prop('recalculatedQuote'), configuratorSelector)
 
 export const step2SummarySelector = createSelector(
   step1MetaSelector,

@@ -12,7 +12,6 @@ export const initialState = {
   fields: {},
   step: ConfiguratorPageStep.STEP1,
   submitting: false,
-  recalculateQuote: undefined
 }
 
 const createDefaultValues = (state, payload, step) => {
@@ -78,13 +77,21 @@ export default {
     [CONFIGURATOR.GET_META_STEP2_RES](state, { payload }) {
       return {
         ...state,
+        submitting: false,
         step2MetaData: payload,
       }
     },
-    [CONFIGURATOR.RECALCULATE_QUOTE](state, { payload }) {
+    [CONFIGURATOR.RECALCULATE_QUOTE_REQ](state, { payload }) {
       return {
         ...state,
-        recalculateQuote: 99.9
+        submitting: true,
+      }
+    },
+    [CONFIGURATOR.RECALCULATE_QUOTE_RES](state, { payload }) {
+      return {
+        ...state,
+        submitting: false,
+        recalculatedQuote: payload
       }
     }
   })

@@ -64,6 +64,6 @@ export default function* root() {
     takeLatest(CONFIGURATOR.INIT_DATA, initDataSaga),
     takeLatest(CONFIGURATOR.GO_TO_STEP, goToStepSaga),
     takeLatest(CONFIGURATOR.GET_META_STEP2_REQ, getMetaStep2Saga),
-    takeLatest(CONFIGURATOR.RECALCULATE_QUOTE, recalculateQuoteSaga)
+    takeLatest(CONFIGURATOR.RECALCULATE_QUOTE_REQ, recalculateQuoteSaga)
   ])
 }

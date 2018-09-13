@@ -44,7 +44,7 @@ export const validateDiscountCode = payload => ({
 })
 
 export const recalculateQuote = payload => ({
-  type: CONFIGURATOR.RECALCULATE_QUOTE,
+  type: CONFIGURATOR.RECALCULATE_QUOTE_REQ,
   payload
 })
 
