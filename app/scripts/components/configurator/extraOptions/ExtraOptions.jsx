@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import { Button, Modal } from 'antd'
 import { connect } from 'react-redux'
 import { getFormValues, isValid, reduxForm } from 'redux-form'
-import { keys, pipe, filter, join } from 'ramda'
-
+import { keys, pipe, filter, join, isEmpty, not } from 'ramda'
 
 import { ExtraField } from './extraField/ExtraField'
 import { DiscountField, DISCOUNT, Validator, AsyncValidator } from './DiscountField'
@@ -14,18 +13,22 @@ import { translate } from './../../../i18n/i18n'
 import { step3FieldsSelector, recalculatedQuoteSelector } from '../../../selectors/configurator-selector'
 import { step3ActiveElementSelector } from '../../../selectors/redux-form-selector'
 
-const extraFields = pipe(filter(o => o), keys, join(','))
+const checkedExtraFields = pipe(filter(o => o), keys)
+const existCheckedExtraField = pipe(checkedExtraFields, isEmpty, not)
 
 class ExtraOptions extends Component {
 
   handleRecalculate = e => {
     console.log('handleRecalculate', this.props)
-    const { productId, step3Fields, formValues: { [DISCOUNT]: discount }, recalculateQuote } = this.props
-    recalculateQuote({
+    const { productId, step3Fields, formValues, recalculateQuote } = this.props
+    const discount = formValues && formValues[DISCOUNT]
+    const payload = {
       productId,
-      discount,
-      extraFields: extraFields(step3Fields)
-    })
+      extraFields: pipe(checkedExtraFields, join(','))(step3Fields)
+    }
+    discount && (payload[DISCOUNT] = discount)
+
+    recalculateQuote(payload)
   }
 
   success = () => {
@@ -33,12 +36,22 @@ class ExtraOptions extends Component {
       title: 'Work in progress'
     });
     return <div>{modal}</div>
-    
+  }
+
+  isDisabledRecalculateBtn = () => {
+    console.log('isDisabledRecalculateBtn', this.props)
+    const { step3Fields, active, invalid, asyncValidating, formValues } = this.props
+    const anyChecked = existCheckedExtraField(step3Fields)
+    const discount = formValues && formValues[DISCOUNT]
+    console.log('isDisabledRecalculateBtn step3Fields', step3Fields)
+    console.log('isDisabledRecalculateBtn checkedExtraFields', checkedExtraFields(step3Fields))
+    console.log('isDisabledRecalculateBtn existCheckedExtraField', existCheckedExtraField(step3Fields))
+    return invalid || active || asyncValidating || !anyChecked && !discount
   }
 
   render() {
     console.log('ExtraOptions render ', this.props)
-    const { items, price, changeFieldValue, goToStep, active, invalid, asyncValidating, recalculatedQuote } = this.props
+    const { items, price, changeFieldValue, active, invalid, asyncValidating, recalculatedQuote } = this.props
      
     
     return (
@@ -57,7 +70,7 @@ class ExtraOptions extends Component {
         </div>
         <DiscountField handleRecalculate={this.handleRecalculate}/>
         <div className="eo-recalc-button">
-          <Button disabled={active || invalid || asyncValidating} onClick={this.handleRecalculate}>
+          <Button disabled={this.isDisabledRecalculateBtn()} onClick={this.handleRecalculate}>
             {translate('btn.RecalculateQuote')}
           </Button>
         </div>
@@ -95,12 +108,15 @@ const mapDispatchToProps = ({
   goToStep
 })
 
-const ExtraOptionsReduxForm = reduxForm({
-  form: ConfiguratorPageStep.STEP3,
-  validate: Validator,
-  asyncValidate: AsyncValidator,
-  asyncBlurFields: [DISCOUNT]
-})(ExtraOptions)
+const ExtraOptionsConnected = connect(mapStateToProps, mapDispatchToProps)(ExtraOptions)
 
+export default props => {
+  const Form = reduxForm({
+    form: ConfiguratorPageStep.STEP3,
+    validate: Validator,
+    asyncValidate: AsyncValidator(props.productId),
+    asyncBlurFields: [DISCOUNT]
+  })(ExtraOptionsConnected)
 
-export default connect(mapStateToProps, mapDispatchToProps)(ExtraOptionsReduxForm)
+  return <Form {...props} />
+}

@@ -7,21 +7,24 @@ import { translate } from './../../../i18n/i18n'
 import { ConfiguratorPageStep, RESPONSE_STATUS } from '../../../utils/constants'
 import { memoizedSFAction } from '../../../modules/client'
 
-export const DISCOUNT = 'discount'
+export const DISCOUNT = 'discountCode'
 
 export const Validator = values => {
   const err = {}
   const discount = values[DISCOUNT]
-  if (!discount || discount.trim() === '') {
-    err[DISCOUNT] = 'Requir'
+  if (discount && !new RegExp('^([a-zA-Z0-9]{6})$').test(discount)) {
+    err[DISCOUNT] = 'page3.discounterror'
   }
   return err
 }
 
-export const AsyncValidator = (values/*, dispatch */) => {
+export const AsyncValidator = productId => (values/*, dispatch */) => {
   const action = {
     actionName: configSettings.remoteActions.getDiscount,
-    args: values[DISCOUNT]
+    args: JSON.stringify({
+      productId: productId,
+      [DISCOUNT]: values[DISCOUNT]
+    })
   }
 
   return memoizedSFAction(action, { buffer: true, escape: false }).then(res => {
