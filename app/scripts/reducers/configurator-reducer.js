@@ -2,11 +2,8 @@ import { omit } from 'ramda'
 
 import { createReducer } from './../modules/helpers'
 import { CONFIGURATOR } from './../actions/types'
-import { ConfiguratorPageStep } from '../utils/constants'
-
-import { translate } from '../i18n/i18n'
+import { ConfiguratorPageStep, FieldType } from '../utils/constants'
 import { translateToNumber } from './../transformers/configurator-transformer'
-import { FieldType } from './../utils/constants'
 
 export const initialState = {
   fields: {},
@@ -14,10 +11,10 @@ export const initialState = {
   submitting: false,
 }
 
-const createDefaultValues = (state, payload, step) => {
-  const { fields } = state
+const createDefaultValues = (payload, step) => {
+  const fields = {}
 
-  payload.map(item => {
+  payload.forEach(item => {
     fields[step] = {
       ...fields[step],
       [item.name]: (item.type === FieldType.DROPDOWN) ? null : translateToNumber(item.defaultValue)
@@ -38,7 +35,7 @@ export default {
       return {
         ...state,
         step1MetaData: payload,
-        fields: createDefaultValues(state, payload, ConfiguratorPageStep.STEP1)
+        fields: createDefaultValues(payload, ConfiguratorPageStep.STEP1)
       }
     },
     [CONFIGURATOR.CHANGE_FIELD_VALUE](state, { payload: { value, name, step } }) {

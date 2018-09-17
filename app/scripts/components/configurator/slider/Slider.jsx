@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { values } from 'ramda'
@@ -39,12 +39,19 @@ const SliderComponent = props => {
             defaultValue={translate(defaultValue)} fieldHint={translate(fieldHint)}
           />
           : <RenderSlider
-            sliderItems={checkOptions} name={name} title={translate(title)} defaultValue={Number(translate(defaultValue))}
+            sliderItems={checkOptions} name={name} title={translate(title)}
+            defaultValue={Number(translate(defaultValue))}
             handleChangeField={handleChangeField}
-          /> }
+          />}
       </div>
     </div>
   )
+}
+
+SliderComponent.propTypes = {
+  fieldMetaData: PropTypes.object,
+  changeFieldValue: PropTypes.string,
+  step: PropTypes.number
 }
 
 const mapStateToProps = state => ({

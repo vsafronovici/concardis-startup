@@ -2,8 +2,17 @@ import React, { Component } from 'react'
 import { Select } from 'antd'
 import { connect } from 'react-redux'
 import { step1FieldsSelector } from '../../../selectors/configurator-selector'
+import PropTypes from 'prop-types'
 
 class RenderSelect extends Component {
+  static propTypes = {
+    values: PropTypes.object,
+    fieldHint: PropTypes.string,
+    name: PropTypes.string,
+    selectItems: PropTypes.array,
+    handleChangeField: PropTypes.func,
+  }
+
   render() {
     const { selectItems, handleChangeField, fieldHint, values, name } = this.props
     const Option = Select.Option

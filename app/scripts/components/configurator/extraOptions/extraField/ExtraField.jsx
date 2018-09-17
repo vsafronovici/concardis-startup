@@ -1,11 +1,16 @@
 import React, { Component } from 'react'
-import { Checkbox, Icon } from 'antd'
 import { translate } from './../../../../i18n/i18n'
 
 import { ConfiguratorPageStep } from '../../../../utils/constants'
 import CheckBoxField from './../../../common/CheckBoxField'
+import PropTypes from 'prop-types'
 
 export class ExtraField extends Component {
+  static propTypes = {
+    changeFieldValue: PropTypes.func,
+    exField: PropTypes.object
+  }
+
   handleCheckBox = (value) => {
     const { exField: { Id: name } } = this.props
     this.props.changeFieldValue({ value, name, step: ConfiguratorPageStep.STEP3 })

@@ -2,9 +2,12 @@ dist/
 node_modules/
 app/scripts/vendor
 app/scripts/mock-data
+app/scripts/modules
 app/scripts/components/application-form
 app/scripts/components/Content
 app/scripts/components/HeaderLinks
 app/scripts/components/HeaderMenu
 app/scripts/components/HeaderNavBar
 app/scripts/components/WithResponsive
+app/scripts/components/configurator
+app/scripts/components/Main*.jsx

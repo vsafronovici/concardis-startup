@@ -1,12 +1,10 @@
-import { all, call, put, takeLatest, select } from 'redux-saga/effects'
+import { all, call, put, takeLatest } from 'redux-saga/effects'
 import { delay } from 'redux-saga'
 
 import { APP } from './../actions/types'
 import { loadTranslationsReq, loadTranslationsResp } from '../actions/app-action'
 import { SFAction } from '../modules/client'
 import { LanguageType, NodeProcess } from '../utils/constants'
-import { i18nLangSelector } from '../selectors/i18n-selector'
-
 
 function* loadTranslationsSaga({ payload: { lang } }) {
   if (process.env.NODE_ENV === NodeProcess.DEV) {
@@ -16,7 +14,7 @@ function* loadTranslationsSaga({ payload: { lang } }) {
     yield put(loadTranslationsResp(mockTranslations.default))
   } else {
     const action = {
-      actionName: configSettings.remoteActions.getDictionaryMetadata,
+      actionName: window.configSettings.remoteActions.getDictionaryMetadata,
       args: lang
     }
     const response = yield call(SFAction, action)
@@ -27,7 +25,7 @@ function* loadTranslationsSaga({ payload: { lang } }) {
 function* initPageSaga() {
   let lang
   if (process.env.NODE_ENV === NodeProcess.PROD) {
-    lang = configSettings.lang
+    lang = window.configSettings.lang
   }
 
   // lang = lang || (yield select(i18nLangSelector))

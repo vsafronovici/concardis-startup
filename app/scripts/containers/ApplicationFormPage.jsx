@@ -1,12 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import { Col, Row } from 'antd'
+
 import { applicationFormLoadedSelector } from '../selectors/application-form-selector'
 import { i18nSelector } from '../selectors/i18n-selector'
 import { initData } from '../actions/application-form-action'
 import ApplicationForm from '../components/application-form/ApplicationForm'
 import { Loader } from '../components/Loader'
-import { Col, Row } from 'antd'
 
 export class ApplicationFormPage extends React.Component {
   static propTypes = {

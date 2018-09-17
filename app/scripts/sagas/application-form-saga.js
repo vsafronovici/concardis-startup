@@ -7,8 +7,7 @@ import { mockFieldsMeta } from '../mock-data/mock-fields-meta'
 import { mockFieldsValues } from '../mock-data/mock-fields-values'
 import { mockSectionsState } from '../mock-data/mock-sections-state'
 import {
-  getFieldsSectionsReq, getFieldsSectionsResp, goToNextStep, saveFieldsSectionReq,
-  saveFieldsSectionResp
+  getFieldsSectionsReq, getFieldsSectionsResp, goToNextStep, saveFieldsSectionResp
 } from '../actions/application-form-action'
 import { SFAction } from './../modules/client'
 import {
@@ -21,7 +20,7 @@ function* initDataSaga() {
   yield put(getFieldsSectionsReq())
 
   if (window.configSettings) {
-    const { getSectionsMetadata, getSectionFieldsMetadata } = configSettings.remoteActions
+    const { getSectionsMetadata, getSectionFieldsMetadata } = window.configSettings.remoteActions
 
     const [sections, fields] = yield all([
       call(SFAction, getSectionsMetadata),

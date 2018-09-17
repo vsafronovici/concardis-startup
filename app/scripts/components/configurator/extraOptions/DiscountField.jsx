@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Input, Icon } from 'antd'
-import { reduxForm, Field } from 'redux-form'
+import { Field } from 'redux-form'
 import cn from 'classnames'
 
 import { translate } from './../../../i18n/i18n'
-import { ConfiguratorPageStep, RESPONSE_STATUS } from '../../../utils/constants'
+import { RESPONSE_STATUS } from '../../../utils/constants'
 import { memoizedSFAction } from '../../../modules/client'
 
 export const DISCOUNT = 'discountCode'
@@ -20,7 +20,7 @@ export const Validator = values => {
 
 export const AsyncValidator = productId => (values/* , dispatch */) => {
   const action = {
-    actionName: configSettings.remoteActions.getDiscount,
+    actionName: window.configSettings.remoteActions.getDiscount,
     args: JSON.stringify({
       productId,
       [DISCOUNT]: values[DISCOUNT]
@@ -28,7 +28,6 @@ export const AsyncValidator = productId => (values/* , dispatch */) => {
   }
 
   return memoizedSFAction(action, { buffer: true, escape: false }).then(res => {
-    console.log('AsyncValidator', res)
     const { data } = res
     if (data.status === RESPONSE_STATUS.ERR) {
       throw { [DISCOUNT]: data.errorCode }

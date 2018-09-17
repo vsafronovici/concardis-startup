@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import { Button, Modal } from 'antd'
 import { connect } from 'react-redux'
-import { getFormValues, isValid, reduxForm } from 'redux-form'
+import PropTypes from 'prop-types'
+import { getFormValues, reduxForm } from 'redux-form'
 import { keys, pipe, filter, join, isEmpty, not } from 'ramda'
 
 import { ExtraField } from './extraField/ExtraField'
 import { DiscountField, DISCOUNT, Validator, AsyncValidator } from './DiscountField'
 import { changeFieldValue, recalculateQuote, validateDiscountCode } from '../../../actions/configurator-action'
-import { goToStep } from '../../../actions/configurator-action'
 import { ConfiguratorPageStep } from '../../../utils/constants'
 import { translate } from './../../../i18n/i18n'
 import { step3FieldsSelector, recalculatedQuoteSelector } from '../../../selectors/configurator-selector'
@@ -17,8 +17,20 @@ const checkedExtraFields = pipe(filter(o => o), keys)
 const existCheckedExtraField = pipe(checkedExtraFields, isEmpty, not)
 
 class ExtraOptions extends Component {
+
+  static propTypes = {
+    recalculateQuote: PropTypes.func,
+    changeFieldValue: PropTypes.func,
+    validateDiscountCode: PropTypes.func,
+    productId: PropTypes.string,
+    step3Fields: PropTypes.object,
+    formValues: PropTypes.object,
+    active: PropTypes.bool,
+    invalid: PropTypes.bool,
+    asyncValidating: PropTypes.bool,
+  }
+
   handleRecalculate = e => {
-    console.log('handleRecalculate', this.props)
     const { productId, step3Fields, formValues, recalculateQuote } = this.props
     const discount = formValues && formValues[DISCOUNT]
     const payload = {
@@ -42,16 +54,12 @@ class ExtraOptions extends Component {
     const { step3Fields, active, invalid, asyncValidating, formValues } = this.props
     const anyChecked = existCheckedExtraField(step3Fields)
     const discount = formValues && formValues[DISCOUNT]
-    console.log('isDisabledRecalculateBtn step3Fields', step3Fields)
-    console.log('isDisabledRecalculateBtn checkedExtraFields', checkedExtraFields(step3Fields))
-    console.log('isDisabledRecalculateBtn existCheckedExtraField', existCheckedExtraField(step3Fields))
     return invalid || active || asyncValidating || !anyChecked && !discount
   }
 
   render() {
     console.log('ExtraOptions render ', this.props)
-    const { items, price, changeFieldValue, active, invalid, asyncValidating, recalculatedQuote } = this.props
-
+    const { items, price, changeFieldValue, recalculatedQuote } = this.props
 
     return (
       <div className="eo-container">
@@ -102,7 +110,6 @@ const mapDispatchToProps = ({
   changeFieldValue,
   recalculateQuote,
   validateDiscountCode,
-  goToStep
 })
 
 const ExtraOptionsConnected = connect(mapStateToProps, mapDispatchToProps)(ExtraOptions)

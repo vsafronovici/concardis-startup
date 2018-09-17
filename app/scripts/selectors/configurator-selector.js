@@ -1,4 +1,4 @@
-import { all, compose, path, prop, map, pick, propOr } from 'ramda'
+import { compose, prop, map } from 'ramda'
 import { createSelector } from 'reselect'
 
 import { ConfiguratorPageStep } from '../utils/constants'

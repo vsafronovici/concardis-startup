@@ -1,15 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+
 import Step1 from './Step1'
 import Step2 from './Step2'
 import Step3 from './Step3'
-import { Row, Col } from 'antd'
 import { stepSelector } from '../../selectors/configurator-selector'
 import { ConfiguratorPageStep } from '../../utils/constants'
 
 export class Configurator extends React.Component {
   static propTypes = {
+    step: PropTypes.number
   }
 
   getStep = () => {

@@ -1,4 +1,4 @@
-import { all, compose, path, prop, map, pick, propOr } from 'ramda'
+import { compose, prop } from 'ramda'
 import { ConfiguratorPageStep } from '../utils/constants'
 
 export const formSelector = prop('form')

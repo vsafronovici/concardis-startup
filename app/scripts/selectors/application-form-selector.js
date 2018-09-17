@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect'
-import { all, compose, isNil, findIndex, not, prop, propEq, pickBy, toPairs, keys } from 'ramda'
+import { all, compose, isNil, not, prop, propEq, pickBy, keys } from 'ramda'
 import { SectionStatusType } from '../utils/constants'
 import { objectToArray } from '../utils/function-utils'
 
@@ -7,7 +7,6 @@ const isNotNil = compose(not, isNil)
 const pickSectionByStatus = status => pickBy(
   (val, key) => val.status === status
 )
-
 
 export const applicationFormSelector = prop('application-form')
 export const applicationFormSubmittingSelector = compose(prop('submitting'), applicationFormSelector)

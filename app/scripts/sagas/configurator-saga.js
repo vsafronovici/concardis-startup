@@ -1,17 +1,15 @@
-import { all, call, put, select, takeEvery, takeLatest } from 'redux-saga/effects'
+import { all, call, put, select, takeLatest } from 'redux-saga/effects'
 import { delay } from 'redux-saga'
 
 import { CONFIGURATOR } from '../actions/types'
 import { getMetaStep1Req, getMetaStep1Res, getMetaStep2Req, getMetaStep2Res, recalculateQuoteRes } from '../actions/configurator-action'
-import { SFAction } from './../modules/client'
+import { SFAction, memoizedSFAction } from './../modules/client'
 import { ConfiguratorPageStep, NodeProcess } from '../utils/constants'
 import { step1FieldsSelector } from '../selectors/configurator-selector'
-import { memoizedSFAction } from '../modules/client'
-
 
 function* recalculateQuoteSaga({ payload }) {
   const action = {
-    actionName: configSettings.remoteActions.recalculatePrice,
+    actionName: window.configSettings.remoteActions.recalculatePrice,
     args: JSON.stringify(payload)
   }
   const response = yield call(memoizedSFAction, action, { buffer: true, escape: false })
@@ -26,7 +24,7 @@ function* getMetaStep2Saga({ payload }) {
     yield put(getMetaStep2Res(page2MetaMock.default))
   } else {
     const action = {
-      actionName: configSettings.remoteActions.getProducts,
+      actionName: window.configSettings.remoteActions.getProducts,
       args: JSON.stringify(payload)
     }
     const response = yield call(memoizedSFAction, action, { buffer: true, escape: false })
@@ -43,7 +41,7 @@ function* initDataSaga() {
     yield put(getMetaStep1Res(page1MetaMock.default))
   } else {
     const action = {
-      actionName: configSettings.remoteActions.getFieldsMetadata,
+      actionName: window.configSettings.remoteActions.getFieldsMetadata,
       args: ConfiguratorPageStep.STEP1
     }
     const response = yield call(SFAction, action, { buffer: true, escape: false })

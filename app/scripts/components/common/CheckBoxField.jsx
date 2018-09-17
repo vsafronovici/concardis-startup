@@ -4,12 +4,12 @@ import { Icon } from 'antd'
 import PropTypes from 'prop-types'
 
 class CheckBoxField extends Component {
-  static propTypes = {
-    handleChange: PropTypes.func
-  }
-
   state = {
     checked: true
+  }
+
+  static propTypes = {
+    handleChange: PropTypes.func
   }
 
   handleCheckBox = (value) => {
@@ -25,7 +25,7 @@ class CheckBoxField extends Component {
     return (
       <div>
         <div className="ef-checkbox-container" onClick={() => this.handleCheckBox(checked)}>
-          {!checked ? <Icon type="check" theme="outlined" className="ef-checkbox-check"/> : null}
+          {!checked ? <Icon type="check" theme="outlined" className="ef-checkbox-check" /> : null}
         </div>
       </div>
     )

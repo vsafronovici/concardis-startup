@@ -156,7 +156,7 @@
     "react/prefer-stateless-function": "off",
     "react/prop-types": "error",
     "react/require-default-props": "off",
-    "react/sort-prop-types": "warn",
+    "react/sort-prop-types": "off",
     "react/sort-comp": [
       "warn",
       {
@@ -188,7 +188,7 @@
     ],
     "redux-saga/no-yield-in-race": "error",
     "redux-saga/yield-effects": "error",
-    "linebreak-style": ["error", "windows"],
+    "linebreak-style": ["off", "windows"],
     "react/jsx-wrap-multilines": ["error", {
       "declaration": false,
       "assignment": false,

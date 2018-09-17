@@ -1,4 +1,3 @@
-// @flow
 /**
  * Client
  * @module Client
@@ -23,18 +22,7 @@ export function parseError(error: string): string {
   return error || 'Something went wrong'
 }
 
-/**
- * Fetch data
- *
- * @param {string} url
- * @param {Object} options
- * @param {string} [options.method] - Request method ( GET, POST, PUT, ... ).
- * @param {string} [options.payload] - Request body.
- * @param {Object} [options.headers]
- *
- * @returns {Promise}
- */
-export function request(url: string, options: Object = {}): Promise<*> {
+export function request(url, options = {}) {
   const config = {
     method: 'GET',
     ...options
@@ -109,8 +97,6 @@ function memoize(method) {
   }
 }
 
-export const memoizedSFAction = memoize(async (action, options) => await SFAction(action, options))
-
 export const SFAction = (action, options = { buffer: true, escape: true }) => {
   const { actionName, args } = action
 
@@ -122,7 +108,7 @@ export const SFAction = (action, options = { buffer: true, escape: true }) => {
   }
 
   return new Promise((resolve, reject) => {
-    Visualforce.remoting.Manager.invokeAction(
+    window.Visualforce.remoting.Manager.invokeAction(
       ...invokeActionArgs,
       (result, event) => {
         if (event.status) {
@@ -138,6 +124,8 @@ export const SFAction = (action, options = { buffer: true, escape: true }) => {
     )
   })
 }
+
+export const memoizedSFAction = memoize(async (action, options) => await SFAction(action, options))
 
 export const SFRemoteObject = (modelName, criteria) => new Promise((resolve, reject) => {
   const modelCtx = new SObjectModel[modelName]()

@@ -11,14 +11,14 @@ import { Provider } from 'react-redux'
 import { AppContainer } from 'react-hot-loader'
 import { PersistGate } from 'redux-persist/lib/integration/react'
 
+import 'antd/dist/antd.css'
+
 import { store, persistor } from './store'
 import { showAlert } from './actions/app-action'
 
 import App from './containers/App'
-import 'antd/dist/antd.css'
 import '../styles/main.scss'
 import { detectRootContainer } from './utils/page-utils'
-
 
 export const init = {
   cssRetries: 0,
