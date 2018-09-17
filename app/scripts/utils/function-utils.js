@@ -6,7 +6,7 @@ export const propOrEmptyArr = propOr([])
 
 export const objectToArray = (obj, prop) =>
   toPairs(obj).map(
-    ([key, value]) => prop ? { [prop]: key, ...value } : value
+    ([key, value]) => (prop ? { [prop]: key, ...value } : value)
   )
 
 export const objectToArrayKeyValue = obj =>
@@ -14,19 +14,15 @@ export const objectToArrayKeyValue = obj =>
     ([key, value]) => ({ key, value })
   )
 
-  export const notEmptyValues = obj => {
-      const detectedKeys = values(obj).map( key => {
-        return !isNil(key) || (isNil(key) && isNaN(key) && !isEmpty(key))
-      })
-      const isTrue = equals(true)
+export const notEmptyValues = obj => {
+  const detectedKeys = values(obj).map(key => !isNil(key) || (isNil(key) && isNaN(key) && !isEmpty(key)))
+  const isTrue = equals(true)
 
-    return !all(isTrue)(detectedKeys)
-    
-  }
+  return !all(isTrue)(detectedKeys)
+}
 
-  export const checkCurrentValue = (items, currentValue) => {
+export const checkCurrentValue = (items, currentValue) => {
+  const checkedCurrentValue = items.indexOf(currentValue)
 
-    const checkedCurrentValue = items.indexOf(currentValue)
-
-    return checkedCurrentValue
-  }
+  return checkedCurrentValue
+}

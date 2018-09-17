@@ -6,7 +6,6 @@ import { i18nSelector } from '../selectors/i18n-selector'
 import { Loader } from '../components/Loader'
 
 export class ConfiguratorPage extends React.Component {
-
   static propTypes = {
   }
 
@@ -19,10 +18,10 @@ export class ConfiguratorPage extends React.Component {
     return !i18n
       ? <Loader />
       : (
-      <div className="app__configurator">
-        <Configurator />
-      </div>
-    )
+        <div className="app__configurator">
+          <Configurator />
+        </div>
+      )
   }
 }
 
@@ -35,7 +34,4 @@ const mapDispatchToProps = ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ConfiguratorPage)
-
-
-
 

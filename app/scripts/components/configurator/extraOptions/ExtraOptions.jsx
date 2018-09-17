@@ -17,7 +17,6 @@ const checkedExtraFields = pipe(filter(o => o), keys)
 const existCheckedExtraField = pipe(checkedExtraFields, isEmpty, not)
 
 class ExtraOptions extends Component {
-
   handleRecalculate = e => {
     console.log('handleRecalculate', this.props)
     const { productId, step3Fields, formValues, recalculateQuote } = this.props
@@ -34,7 +33,7 @@ class ExtraOptions extends Component {
   success = () => {
     const modal = Modal.success({
       title: 'Work in progress'
-    });
+    })
     return <div>{modal}</div>
   }
 
@@ -52,23 +51,21 @@ class ExtraOptions extends Component {
   render() {
     console.log('ExtraOptions render ', this.props)
     const { items, price, changeFieldValue, active, invalid, asyncValidating, recalculatedQuote } = this.props
-     
-    
+
+
     return (
       <div className="eo-container">
         <div className="eo-title">
           {translate('configurator.SelectExtras')}
         </div>
         <div className="eo-ef-container">
-          {items.map(exField => {
-            return (
-              <div key={exField.Id}>
-                <ExtraField exField={exField} changeFieldValue={changeFieldValue}/>
-              </div>
-            )
-          })}
+          {items.map(exField => (
+            <div key={exField.Id}>
+              <ExtraField exField={exField} changeFieldValue={changeFieldValue} />
+            </div>
+          ))}
         </div>
-        <DiscountField handleRecalculate={this.handleRecalculate}/>
+        <DiscountField handleRecalculate={this.handleRecalculate} />
         <div className="eo-recalc-button">
           <Button disabled={this.isDisabledRecalculateBtn()} onClick={this.handleRecalculate}>
             {translate('btn.RecalculateQuote')}

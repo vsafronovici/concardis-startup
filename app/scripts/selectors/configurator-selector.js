@@ -1,5 +1,5 @@
 import { all, compose, path, prop, map, pick, propOr } from 'ramda'
-import { createSelector } from "reselect"
+import { createSelector } from 'reselect'
 
 import { ConfiguratorPageStep } from '../utils/constants'
 import { propOrEmptyObj, propOrEmptyArr } from '../utils/function-utils'
@@ -19,21 +19,16 @@ export const recalculatedQuoteSelector = compose(prop('recalculatedQuote'), conf
 export const step2SummarySelector = createSelector(
   step1MetaSelector,
   step1FieldsSelector,
-  (step1Meta, step1Fields) => {
-    return step1Meta.map(meta => ({
-      name: meta.name,
-      label: meta.label,
-      value: step1Fields[meta.name]
-    }))
-  }
+  (step1Meta, step1Fields) => step1Meta.map(meta => ({
+    name: meta.name,
+    label: meta.label,
+    value: step1Fields[meta.name]
+  }))
 )
 
 export const selectedProductSelector = createSelector(
   step2MetaSelector,
   cardOptionValueSelector,
-  (step2Meta, cardOption) => {
-    return step2Meta.find(meta => meta.prod.Id === cardOption)
-  }
+  (step2Meta, cardOption) => step2Meta.find(meta => meta.prod.Id === cardOption)
 )
-
 

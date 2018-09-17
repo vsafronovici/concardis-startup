@@ -25,7 +25,7 @@ export class DynamicForm extends React.Component {
 
   editForm = e => {
     const { section: { id }, editSection } = this.props
-   
+
     editSection(id)
   }
 
@@ -43,7 +43,7 @@ export class DynamicForm extends React.Component {
   }
 
   render() {
-    const { section, fields, sectionState: {status}, valid, rValues, rSubmitting } = this.props
+    const { section, fields, sectionState: { status }, valid, rValues, rSubmitting } = this.props
 
     if (status === SectionStatusType.WAITING) {
       return null
@@ -51,7 +51,8 @@ export class DynamicForm extends React.Component {
 
     const readOnly = status === SectionStatusType.FINISHED || status === SectionStatusType.PAUSED
 
-    let conditionalField, otherFields
+    let conditionalField,
+      otherFields
     let showOtherFields = true
     if (section.type === SectionType.CONDITIONAL) {
       [conditionalField, ...otherFields] = fields
@@ -63,10 +64,10 @@ export class DynamicForm extends React.Component {
     }
 
     return (
-      <form ref={ el => { this.ref = el } } className={this.props.sectionState.status === "IN_PROGRESS" ? "active-section" : ''}>
+      <form ref={el => { this.ref = el }} className={this.props.sectionState.status === 'IN_PROGRESS' ? 'active-section' : ''}>
         {
           conditionalField && (
-            <ConditionalQuestion field={fields[0]} conditionQuestion={section.conditionQuestion} readOnly={readOnly}/>
+            <ConditionalQuestion field={fields[0]} conditionQuestion={section.conditionQuestion} readOnly={readOnly} />
           )
         }
         {
@@ -81,7 +82,7 @@ export class DynamicForm extends React.Component {
                 <Col span={10} offset={12}>
                   <div>
                     <div className="form-fields">
-                      { otherFields.map(field => <FieldRow key={field.id} field={field} readOnly={readOnly}/>) }
+                      { otherFields.map(field => <FieldRow key={field.id} field={field} readOnly={readOnly} />) }
                     </div>
                   </div>
                 </Col>
@@ -103,5 +104,4 @@ export class DynamicForm extends React.Component {
     )
   }
 }
-
 

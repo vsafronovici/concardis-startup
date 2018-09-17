@@ -1,7 +1,7 @@
 import { FieldType, SectionStatusType } from '../utils/constants'
 
 export const mockFieldsMeta = {
-  '1': [
+  1: [
     {
       id: '1',
       type: FieldType.TEXT,
@@ -27,7 +27,7 @@ export const mockFieldsMeta = {
         requiredError: 'err.required',
       },
       options: {
-        items: { 'No': 'No', 'Yes': 'Yes' }
+        items: { No: 'No', Yes: 'Yes' }
       }
     },
     {
@@ -55,7 +55,7 @@ export const mockFieldsMeta = {
       }
     }
   ],
-  '2': [
+  2: [
     {
       id: '21',
       type: FieldType.DROPDOWN,
@@ -68,7 +68,7 @@ export const mockFieldsMeta = {
         requiredError: 'err.required',
       },
       options: {
-        items: { 'No': 'No', 'Yes': 'Yes' }
+        items: { No: 'No', Yes: 'Yes' }
       }
     },
     {
@@ -95,5 +95,4 @@ export const mockFieldsMeta = {
     }
   ]
 }
-
 

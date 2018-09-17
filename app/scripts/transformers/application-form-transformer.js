@@ -1,7 +1,7 @@
 import { pickAll } from 'ramda'
 import { SectionStatusType } from '../utils/constants'
 
-//export const transformI18N = payload =>
+// export const transformI18N = payload =>
 
 
 export const transformSectionsMeta = payload =>

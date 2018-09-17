@@ -13,21 +13,16 @@ import {
 } from '../../selectors/application-form-selector'
 
 export class ApplicationForm extends React.Component {
-
-
   static propTypes = {
     sections: PropTypes.array
   }
 
 
- 
-
   success = () => {
     const modal = Modal.success({
       title: 'Registration was successful'
-    });
+    })
     return <div>{modal}</div>
-    
   }
 
   render() {
@@ -51,7 +46,7 @@ export class ApplicationForm extends React.Component {
         </div>
         {
           isFormCompleted &&
-          <div style={{width: '100%', textAlign: 'center'}}>
+          <div style={{ width: '100%', textAlign: 'center' }}>
             <Button className="form-btn" type="primary" onClick={this.success}>Submit</Button>
           </div>
         }
@@ -67,7 +62,4 @@ const mapStateToProps = state => ({
 })
 
 export default connect(mapStateToProps)(ApplicationForm)
-
-
-
 

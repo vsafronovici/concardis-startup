@@ -5,7 +5,7 @@ import { ConnectedRouter } from 'react-router-redux'
 import history from './../modules/history'
 import { detectRootContainer } from '../utils/page-utils'
 import { initPage } from './../actions/app-action'
-import MainHeader from '../components/MainHeader';
+import MainHeader from '../components/MainHeader'
 
 export class App extends React.Component {
   static propTypes = {
@@ -19,7 +19,6 @@ export class App extends React.Component {
   }
 
   render() {
-
     const Container = this.Container
 
     return (

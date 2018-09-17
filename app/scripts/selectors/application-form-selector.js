@@ -27,9 +27,7 @@ export const applicationFormLoadedSelector = createSelector(
   fieldsSelector,
   sectionsStateSelector,
   fieldsValuesSelector,
-  (sections, fields, sectionsState, fieldsValues) => {
-    return all(isNotNil, [sections, fields, sectionsState, fieldsValues])
-  }
+  (sections, fields, sectionsState, fieldsValues) => all(isNotNil, [sections, fields, sectionsState, fieldsValues])
 )
 
 export const currentSectionsSelector = createSelector(

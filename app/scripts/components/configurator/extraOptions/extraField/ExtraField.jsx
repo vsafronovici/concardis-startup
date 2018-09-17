@@ -6,7 +6,6 @@ import { ConfiguratorPageStep } from '../../../../utils/constants'
 import CheckBoxField from './../../../common/CheckBoxField'
 
 export class ExtraField extends Component {
-
   handleCheckBox = (value) => {
     const { exField: { Id: name } } = this.props
     this.props.changeFieldValue({ value, name, step: ConfiguratorPageStep.STEP3 })

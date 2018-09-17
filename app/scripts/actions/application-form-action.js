@@ -1,4 +1,4 @@
-import { APPLICATION_FORM } from "./types";
+import { APPLICATION_FORM } from './types'
 
 export const initData = () => ({
   type: APPLICATION_FORM.INIT_DATA

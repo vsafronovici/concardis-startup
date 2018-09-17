@@ -70,7 +70,7 @@ const editSection = (state, id) => {
 }
 
 export default {
-  ['application-form']: createReducer(initialState, {
+  'application-form': createReducer(initialState, {
     [APPLICATION_FORM.GET_FIELDS_SECTIONS_REQ](state) {
       return initialState
     },

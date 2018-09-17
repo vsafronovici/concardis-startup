@@ -12,7 +12,7 @@ import { notEmptyValues } from './../../utils/function-utils'
 
 const Step1 = props => {
   const { step1MetaData, changeFieldValue, values } = props
-  
+
   return (
     !step1MetaData
       ? <Loader />
@@ -22,15 +22,13 @@ const Step1 = props => {
             <Col lg={{ span: '10', offset: '7' }}>
               <div className="sc-row-wrapper">
                 <Row>
-                  {step1MetaData.map((field, index) => {
-                    return (
-                      <div key={index}>
-                        <Col lg={{ span: '12' }}>
-                          <SliderComponent fieldMetaData={field} key={index * index} changeFieldValue={changeFieldValue}/>
-                        </Col>
-                      </div>
-                    )
-                  })}
+                  {step1MetaData.map((field, index) => (
+                    <div key={index}>
+                      <Col lg={{ span: '12' }}>
+                        <SliderComponent fieldMetaData={field} key={index * index} changeFieldValue={changeFieldValue} />
+                      </Col>
+                    </div>
+                  ))}
                 </Row>
                 <Row>
                   <Col span={8} offset={14}>

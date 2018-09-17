@@ -17,8 +17,7 @@ import { showAlert } from './actions/app-action'
 import App from './containers/App'
 import 'antd/dist/antd.css'
 import '../styles/main.scss'
-import {detectRootContainer} from "./utils/page-utils";
-
+import { detectRootContainer } from './utils/page-utils'
 
 
 export const init = {
@@ -52,8 +51,7 @@ export const init = {
       this.retryCSS = () => {
         if (this.isCSSLoaded() || this.cssRetries > 2) {
           resolve()
-        }
-        else {
+        } else {
           this.cssRetries++
           setTimeout(() => {
             this.retryCSS()
@@ -96,8 +94,7 @@ export const init = {
           }
         }
       }
-    }
-    catch (e) {
+    } catch (e) {
       // error
     }
 

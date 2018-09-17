@@ -15,42 +15,38 @@ export const initialState = {
 }
 
 const createDefaultValues = (state, payload, step) => {
-  
   const { fields } = state
-  
-  payload.map( item => {
-    
+
+  payload.map(item => {
     fields[step] = {
       ...fields[step],
       [item.name]: (item.type === FieldType.DROPDOWN) ? null : translateToNumber(item.defaultValue)
     }
-    
   })
 
   return fields
 }
 
 export default {
-  ['configurator']: createReducer(initialState, {
+  configurator: createReducer(initialState, {
     [CONFIGURATOR.GET_META_STEP1_REQ](state) {
       return {
         ...state
       }
     },
     [CONFIGURATOR.GET_META_STEP1_RES](state, { payload }) {
-     
       return {
         ...state,
         step1MetaData: payload,
         fields: createDefaultValues(state, payload, ConfiguratorPageStep.STEP1)
       }
     },
-    [CONFIGURATOR.CHANGE_FIELD_VALUE](state, { payload: { value, name, step }}) {
+    [CONFIGURATOR.CHANGE_FIELD_VALUE](state, { payload: { value, name, step } }) {
       return {
         ...state,
         fields: {
           ...state.fields,
-          [step] : {
+          [step]: {
             ...state.fields[step],
             [name]: value
           }
@@ -69,8 +65,8 @@ export default {
         submitting: true,
         fields: {
           ...state.fields,
-          [ConfiguratorPageStep.STEP2] : {},
-          [ConfiguratorPageStep.STEP3] : {}
+          [ConfiguratorPageStep.STEP2]: {},
+          [ConfiguratorPageStep.STEP3]: {}
         },
       }
     },

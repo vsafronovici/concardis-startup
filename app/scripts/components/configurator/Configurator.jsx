@@ -9,26 +9,23 @@ import { stepSelector } from '../../selectors/configurator-selector'
 import { ConfiguratorPageStep } from '../../utils/constants'
 
 export class Configurator extends React.Component {
-
   static propTypes = {
   }
 
   getStep = () => {
-
-    switch(this.props.step) {
+    switch (this.props.step) {
       case ConfiguratorPageStep.STEP1:
-        return Step1;
+        return Step1
       case ConfiguratorPageStep.STEP2:
-        return Step2;
+        return Step2
       case ConfiguratorPageStep.STEP3:
-        return Step3;
+        return Step3
       default:
-        return Step1;
+        return Step1
     }
   }
 
   render() {
-
     const { } = this.props
     const Step = this.getStep()
     return (
@@ -44,7 +41,4 @@ const mapStateToProps = state => ({
 })
 
 export default connect(mapStateToProps)(Configurator)
-
-
-
 

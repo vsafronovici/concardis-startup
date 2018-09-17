@@ -1,13 +1,12 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { Row, Col, Modal } from 'antd';
-import { OptionCard } from './OptionCard';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { Row, Col, Modal } from 'antd'
+import { OptionCard } from './OptionCard'
 import ExtraOptions from './extraOptions/ExtraOptions'
 import { initData3 } from '../../actions/configurator-action'
 import { selectedProductSelector } from '../../selectors/configurator-selector'
 
 class Step3 extends Component {
-
   render() {
     console.log('step3', this.props)
     const { selectedProduct: { prod, extras } } = this.props
@@ -23,7 +22,7 @@ class Step3 extends Component {
                   price={prod.price}
                   items={prod.items}
                   readonly
-                 />
+                />
               </Col>
               <Col xl={{ span: '11', offset: '1' }}>
                 <ExtraOptions items={extras} price={prod.price} productId={prod.Id} />
@@ -40,4 +39,4 @@ const mapStateToProps = state => ({
   selectedProduct: selectedProductSelector(state)
 })
 
-export default connect(mapStateToProps)(Step3);
+export default connect(mapStateToProps)(Step3)

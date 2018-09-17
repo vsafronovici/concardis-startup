@@ -1,6 +1,6 @@
 import { i18nSelector } from '../selectors/i18n-selector'
 
-let store;
+let store
 
 export const initI18N = _store => {
   store = _store

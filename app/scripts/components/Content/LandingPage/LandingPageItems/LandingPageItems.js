@@ -1,8 +1,8 @@
 
 export const landingPageItems = {
-    title:'Configure your individual solution',
-    subTitle: [{title: 'Credit card payments, e-commerce or mobile payments –', id: '300'}, {title: 'Concardis accompanies you into the future of cashless payments', id: '301'}]
-  ,
+  title: 'Configure your individual solution',
+  subTitle: [{ title: 'Credit card payments, e-commerce or mobile payments –', id: '300' }, { title: 'Concardis accompanies you into the future of cashless payments', id: '301' }],
+
   radioMenu1: {
     title: 'YOUR SALES CHANNEL',
     field1: 'Face-to-face',
@@ -44,14 +44,14 @@ export const landingPageItems = {
       title: 'Petrol',
       id: '316'
     },
-  ]},
-    slider1: {
-      title: 'YOUR TURNOVER',
-      subTitle: 'Average annual turnover',
-    },
-    slider2: {
-      title: 'NUMBER OF TRANSACTIONS',
-      subTitle: 'Average monthly number of transactions'
-    },
-    link: 'Show solution'
-  }
+    ] },
+  slider1: {
+    title: 'YOUR TURNOVER',
+    subTitle: 'Average annual turnover',
+  },
+  slider2: {
+    title: 'NUMBER OF TRANSACTIONS',
+    subTitle: 'Average monthly number of transactions'
+  },
+  link: 'Show solution'
+}

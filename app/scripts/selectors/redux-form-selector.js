@@ -6,4 +6,3 @@ export const step3FormSelector = compose(prop(ConfiguratorPageStep.STEP3), formS
 export const step3AsyncValidatingSelector = compose(prop('asyncValidating'), step3FormSelector)
 export const step3ActiveElementSelector = compose(prop('active'), step3FormSelector)
 
-

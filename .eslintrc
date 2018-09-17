@@ -39,10 +39,10 @@
     ],
     "arrow-parens": "off",
     "block-spacing": "warn",
-    "brace-style": ["warn", "stroustrup", { "allowSingleLine": true }],
+//    "brace-style": ["warn", "stroustrup", { "allowSingleLine": true }],
     "camelcase": "off",
     "class-methods-use-this": "off",
-    "comma-dangle": ["error", "never"],
+    "comma-dangle": ["error", "only-multiline"],
     "dot-notation": "warn",
     "function-paren-newline": "off",
     "generator-star-spacing": "off",
@@ -187,6 +187,17 @@
       }
     ],
     "redux-saga/no-yield-in-race": "error",
-    "redux-saga/yield-effects": "error"
+    "redux-saga/yield-effects": "error",
+    "linebreak-style": ["error", "windows"],
+    "react/jsx-wrap-multilines": ["error", {
+      "declaration": false,
+      "assignment": false,
+      "return": false,
+      "arrow": false,
+      "condition": "ignore",
+      "logical": "ignore",
+      "prop": "ignore"
+    }]
+
   }
 }

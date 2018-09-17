@@ -6,7 +6,7 @@ export const cardItems = [{
   subTitleBold: 'Card acceptance for credit- and debitcards',
   titleList: 'Diversity of cards for your customers',
   checkedImg: 'https://image.flaticon.com/icons/svg/291/291200.svg',
-  listItems: [{title: 'All creditcards, e.g. Mastercard or VISA', id: '210'}, {title: 'International debitcards, e.g. Maestro or V PAY', id: '211'}],
+  listItems: [{ title: 'All creditcards, e.g. Mastercard or VISA', id: '210' }, { title: 'International debitcards, e.g. Maestro or V PAY', id: '211' }],
   euro: 'up to 0 €',
   perMonth: ['per month'],
   button: 'View the offer'
@@ -18,7 +18,7 @@ export const cardItems = [{
   subTitleBold: 'Concardis iCT250 with credit card acceptance',
   titleList: 'Professional terminal package for international customers',
   checkedImg: 'https://image.flaticon.com/icons/svg/291/291200.svg',
-  listItems: [{title: 'All important international credit cards', id: '212'}, {title: 'Accepts digital wallet payments (Apple Pay-ready)', id: '213'}, {title: 'Integrated contactless reader (NFC)', id: '214'}],
+  listItems: [{ title: 'All important international credit cards', id: '212' }, { title: 'Accepts digital wallet payments (Apple Pay-ready)', id: '213' }, { title: 'Integrated contactless reader (NFC)', id: '214' }],
   euro: '0 €',
   perMonth: ['per month* ', 'For the first six months, then €14.95'],
   button: 'View the offer',
@@ -30,7 +30,7 @@ export const cardItems = [{
   subTitleBold: 'Concardis Payengine',
   titleList: 'All common payment methods',
   checkedImg: 'https://image.flaticon.com/icons/svg/291/291200.svg',
-  listItems: [{title: 'Integration and technology - Easy to integration with plug-in an restful API', id: '215'}, {title: 'Mobile - full responsive plus SDK for in Aps', id: '216'}, {title: 'Payment reconciliation', id: '217'}, {title: 'VIP check out', id: '218'}],
+  listItems: [{ title: 'Integration and technology - Easy to integration with plug-in an restful API', id: '215' }, { title: 'Mobile - full responsive plus SDK for in Aps', id: '216' }, { title: 'Payment reconciliation', id: '217' }, { title: 'VIP check out', id: '218' }],
   euro: '0 €',
   perMonth: ['per month*', 'Valid for the first 12 months, after that 9,95 €'],
   button: 'View the offer'
@@ -42,7 +42,7 @@ export const cardItems = [{
   subTitleBold: 'Concardis Terminal + orderbird cash point',
   titleList: 'Save up to 537 €*',
   checkedImg: 'https://image.flaticon.com/icons/svg/291/291200.svg',
-  listItems: [{title: 'Acceptance of all credit- and debitcards', id: '218'}, {title: 'Contactless payments (including Apple Pay and Android Pay)', id: '219'}, {title: 'Starterpackage of orderbird with receipt printer and WIFI-Router', id: '220'}],
+  listItems: [{ title: 'Acceptance of all credit- and debitcards', id: '218' }, { title: 'Contactless payments (including Apple Pay and Android Pay)', id: '219' }, { title: 'Starterpackage of orderbird with receipt printer and WIFI-Router', id: '220' }],
   euro: 'only 29.95 €',
   perMonth: ['per month', 'for the rent of the terminal'],
   button: 'View the offer'

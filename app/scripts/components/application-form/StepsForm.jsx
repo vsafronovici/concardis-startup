@@ -9,7 +9,7 @@ import { connect } from 'react-redux'
 
 const Step = Steps.Step
 
-const Loading = <Icon type="loading" className="step_loading"  />
+const Loading = <Icon type="loading" className="step_loading" />
 
 const getStepTitle = status => {
   switch (status) {
@@ -52,6 +52,4 @@ const mapStateToProps = state => ({
 })
 
 export default connect(mapStateToProps)(StepsForm)
-
-
 

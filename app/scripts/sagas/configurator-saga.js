@@ -35,7 +35,6 @@ function* getMetaStep2Saga({ payload }) {
 }
 
 function* initDataSaga() {
-
   if (process.env.NODE_ENV === NodeProcess.DEV) {
     // load mocks
     const page1MetaMock = require('./../mock-data/configurator/mock-fields-step1')

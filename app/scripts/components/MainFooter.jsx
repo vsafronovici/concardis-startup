@@ -1,19 +1,17 @@
-import React, { Component } from 'react';
-import { Layout } from 'antd';
-import { Slider } from 'antd';
+import React, { Component } from 'react'
+import { Layout } from 'antd'
+import { Slider } from 'antd'
 
-const { Footer } = Layout;
+const { Footer } = Layout
 
 class MainFooter extends Component {
-
   render() {
-    return(
-        <Footer>
-            <div style={{display: 'flex', direction: 'row'}}>
-          </div>
-        </Footer>
+    return (
+      <Footer>
+        <div style={{ display: 'flex', direction: 'row' }} />
+      </Footer>
     )
   }
 }
 
-export default MainFooter;
+export default MainFooter

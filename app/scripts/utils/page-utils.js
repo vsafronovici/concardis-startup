@@ -1,5 +1,5 @@
-import LandingPage from '../containers/LandingPage';
-import { PageContainers } from './constants';
+import LandingPage from '../containers/LandingPage'
+import { PageContainers } from './constants'
 import ApplicationFormPage from '../containers/ApplicationFormPage'
 import ConfiguratorPage from '../containers/ConfiguratorPage'
 
@@ -15,7 +15,7 @@ const rootComponent = rootId => ({
 })
 
 export const detectRootContainer = () => {
-  switch(true) {
+  switch (true) {
     case (document.getElementById(PageContainers.LANDING_PAGE) !== null):
       return rootComponent(PageContainers.LANDING_PAGE)
 
@@ -24,7 +24,7 @@ export const detectRootContainer = () => {
 
     case (document.getElementById(PageContainers.CONFIGURATOR_PAGE) !== null):
       return rootComponent(PageContainers.CONFIGURATOR_PAGE)
-    
+
     default:
       return {
         rootId: 'react',

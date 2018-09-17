@@ -58,41 +58,41 @@ export const CardSSPItems = [
       id: '450',
       title: 'Acceptance of all card types'
     },
-  {
-    id: '451',
-    title: 'Contactless payments (including Apple Pay)'
-  },
-  {
-    id: '452',
-    title: 'KontoPlus Klassik: Save costs'
-  },
-  {
-    id: '453',
-    title: 'Mobile GPRS connection plus SIM card'
-  },
-  {
-    id: '454',
-    title: 'Colour touchscreen with signature pad'
-  }],
-  whiteCard: {
-    euro: '30,95 €',
-    perMoth: 'per month*',
-    titles: [{
-      id: '461',
-      title: 'plus 9 cent per Transaction'
+    {
+      id: '451',
+      title: 'Contactless payments (including Apple Pay)'
     },
     {
-      id: '471',
-      title: 'as well as Card specific Transaction '
+      id: '452',
+      title: 'KontoPlus Klassik: Save costs'
     },
     {
-      id: '472',
-      title: 'fees**'
+      id: '453',
+      title: 'Mobile GPRS connection plus SIM card'
     },
     {
-      id: '473',
-      title: 'No set-up fee of €57.45'
-    }]
+      id: '454',
+      title: 'Colour touchscreen with signature pad'
+    }],
+    whiteCard: {
+      euro: '30,95 €',
+      perMoth: 'per month*',
+      titles: [{
+        id: '461',
+        title: 'plus 9 cent per Transaction'
+      },
+      {
+        id: '471',
+        title: 'as well as Card specific Transaction '
+      },
+      {
+        id: '472',
+        title: 'fees**'
+      },
+      {
+        id: '473',
+        title: 'No set-up fee of €57.45'
+      }]
     }
   },
   { id: '1001',
@@ -152,38 +152,38 @@ export const CardSSPItems = [
       id: '550',
       title: 'Acceptance of all card types'
     },
-  {
-    id: '551',
-    title: 'Contactless payments (including Apple Pay)'
-  },
-  {
-    id: '552',
-    title: 'Mobile GPRS connection (including SIM card)'
-  },
-  {
-    id: '553',
-    title: 'Colour touchscreen with signature pad'
-  },
-  ],
-  whiteCard: {
-    euro: '26,95 €',
-    perMoth: 'per month*',
-    titles: [{
-      id: '561',
-      title: 'plus 9 cent per Transaction'
+    {
+      id: '551',
+      title: 'Contactless payments (including Apple Pay)'
     },
     {
-      id: '571',
-      title: 'as well as Card specific Transaction '
+      id: '552',
+      title: 'Mobile GPRS connection (including SIM card)'
     },
     {
-      id: '572',
-      title: 'fees**'
+      id: '553',
+      title: 'Colour touchscreen with signature pad'
     },
-    {
-      id: '573',
-      title: 'No set-up fee of €49.95'
-    }]
+    ],
+    whiteCard: {
+      euro: '26,95 €',
+      perMoth: 'per month*',
+      titles: [{
+        id: '561',
+        title: 'plus 9 cent per Transaction'
+      },
+      {
+        id: '571',
+        title: 'as well as Card specific Transaction '
+      },
+      {
+        id: '572',
+        title: 'fees**'
+      },
+      {
+        id: '573',
+        title: 'No set-up fee of €49.95'
+      }]
     }
   },
   { id: '1002',
@@ -243,39 +243,39 @@ export const CardSSPItems = [
       id: '650',
       title: 'Acceptance of all card types'
     },
-  {
-    id: '651',
-    title: 'Range up to 25m'
-  },
-  {
-    id: '652',
-    title: 'Colour Touchscreen with integrated signature pad'
-  },
-  {
-    id: '653',
-    title: 'Compact and light'
-  },
-  ],
-  whiteCard: {
-    euro: '26,95 €',
-    perMoth: 'per month*',
-    titles: [{
-      id: '661',
-      title: 'plus 9 cent per Transaction'
+    {
+      id: '651',
+      title: 'Range up to 25m'
     },
     {
-      id: '671',
-      title: 'as well as Card specific Transaction '
+      id: '652',
+      title: 'Colour Touchscreen with integrated signature pad'
     },
     {
-      id: '672',
-      title: 'fees**'
+      id: '653',
+      title: 'Compact and light'
     },
-    {
-      id: '673',
-      title: '.'
-    }
-    ]
+    ],
+    whiteCard: {
+      euro: '26,95 €',
+      perMoth: 'per month*',
+      titles: [{
+        id: '661',
+        title: 'plus 9 cent per Transaction'
+      },
+      {
+        id: '671',
+        title: 'as well as Card specific Transaction '
+      },
+      {
+        id: '672',
+        title: 'fees**'
+      },
+      {
+        id: '673',
+        title: '.'
+      }
+      ]
     }
   },
 ]

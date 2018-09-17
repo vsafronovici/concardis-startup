@@ -18,7 +18,7 @@ const mapDispatchToProps = ({
   editSection
 })
 
-/*const initialValueReducer = (acc, field) => {
+/* const initialValueReducer = (acc, field) => {
   const { name, value } = field
   if (!value) {
     return acc
@@ -31,7 +31,7 @@ const mapDispatchToProps = ({
 }*/
 
 
-//const getInitialValues = fields => fields.reduce(initialValueReducer, {})
+// const getInitialValues = fields => fields.reduce(initialValueReducer, {})
 
 const createDynamicReduxForm = ({ section, fields, fieldsValues }) => {
   const formId = `form_${section.id}`

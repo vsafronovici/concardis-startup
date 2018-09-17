@@ -13,13 +13,12 @@ import { valuesFormatter } from './../../transformers/configurator-transformer'
 
 
 export class Step2 extends React.Component {
-
   static propTypes = {
     sections: PropTypes.array
   }
 
   componentDidMount() {
-    console.log('DidMount' , this.props)
+    console.log('DidMount', this.props)
   }
 
   onChooseOption = id => {
@@ -33,57 +32,58 @@ export class Step2 extends React.Component {
     return !products.length
       ? <Loader />
       : (
-      <div>
-        <Row>
-          <Col xxl={{span: 18, offset: 3}}>
-            <Row type="flex" justify="center">
-            {
-              products.map(p => (
-                <Col span={7} offset={1} key={p.Id}>
-                  <OptionCard
-                    id={p.Id}
-                    name={p.name}
-                    description={p.description}
-                    price={p.price}
-                    items={p.items}
-                    active={cardOption === p.Id}
-                    onChooseOption={this.onChooseOption} />
-                </Col>
-              ))
-            }
-          </Row>
-          </Col>
-        </Row>
-        <div className="oc-summary">
-          <Row type="flex" justify="space-around" align="middle">
-            <Col span={16}>
-              <div className="oc-s-row">
-                <div className="oc-s-col oc-s-label">{translate(f1.label)}</div>
-                <div className="oc-s-col oc-s-value">€{valuesFormatter(f1.value)}</div>
-                <div className="oc-s-col oc-s-label">{translate(f2.label)}</div>
-                <div className="oc-s-col oc-s-value">€{valuesFormatter(f2.value)}</div>
-              </div>
-              <div className="oc-s-row">
-                <div className="oc-s-col oc-s-label">{translate(f3.label)}</div>
-                <div className="oc-s-col oc-s-value">€{valuesFormatter(f3.value)}</div>
-                <div className="oc-s-col oc-s-label">{translate(f4.label)}</div>
-                <div className="oc-s-col oc-s-value">{f4.value}</div>
-              </div>
-            </Col>
-            <Col span={8}>
-              <div className="oc-s-btns">
-                <Button onClick={() => goToStep(ConfiguratorPageStep.STEP1)}>
-                  {translate('btn.Back')}
-                </Button>
-                <Button onClick={() => goToStep(ConfiguratorPageStep.STEP3)} style={{ marginLeft: 30 }} disabled={!cardOption}>
-                  {translate('btn.Continue')}
-                </Button>
-              </div>
+        <div>
+          <Row>
+            <Col xxl={{ span: 18, offset: 3 }}>
+              <Row type="flex" justify="center">
+                {
+                  products.map(p => (
+                    <Col span={7} offset={1} key={p.Id}>
+                      <OptionCard
+                        id={p.Id}
+                        name={p.name}
+                        description={p.description}
+                        price={p.price}
+                        items={p.items}
+                        active={cardOption === p.Id}
+                        onChooseOption={this.onChooseOption}
+                      />
+                    </Col>
+                  ))
+                }
+              </Row>
             </Col>
           </Row>
+          <div className="oc-summary">
+            <Row type="flex" justify="space-around" align="middle">
+              <Col span={16}>
+                <div className="oc-s-row">
+                  <div className="oc-s-col oc-s-label">{translate(f1.label)}</div>
+                  <div className="oc-s-col oc-s-value">€{valuesFormatter(f1.value)}</div>
+                  <div className="oc-s-col oc-s-label">{translate(f2.label)}</div>
+                  <div className="oc-s-col oc-s-value">€{valuesFormatter(f2.value)}</div>
+                </div>
+                <div className="oc-s-row">
+                  <div className="oc-s-col oc-s-label">{translate(f3.label)}</div>
+                  <div className="oc-s-col oc-s-value">€{valuesFormatter(f3.value)}</div>
+                  <div className="oc-s-col oc-s-label">{translate(f4.label)}</div>
+                  <div className="oc-s-col oc-s-value">{f4.value}</div>
+                </div>
+              </Col>
+              <Col span={8}>
+                <div className="oc-s-btns">
+                  <Button onClick={() => goToStep(ConfiguratorPageStep.STEP1)}>
+                    {translate('btn.Back')}
+                  </Button>
+                  <Button onClick={() => goToStep(ConfiguratorPageStep.STEP3)} style={{ marginLeft: 30 }} disabled={!cardOption}>
+                    {translate('btn.Continue')}
+                  </Button>
+                </div>
+              </Col>
+            </Row>
+          </div>
         </div>
-      </div>
-    )
+      )
   }
 }
 
@@ -99,7 +99,4 @@ const mapDispatchToProps = ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Step2)
-
-
-
 

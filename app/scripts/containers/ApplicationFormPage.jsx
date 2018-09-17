@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { applicationFormLoadedSelector  } from '../selectors/application-form-selector'
+import { applicationFormLoadedSelector } from '../selectors/application-form-selector'
 import { i18nSelector } from '../selectors/i18n-selector'
 import { initData } from '../actions/application-form-action'
 import ApplicationForm from '../components/application-form/ApplicationForm'
@@ -20,13 +20,12 @@ export class ApplicationFormPage extends React.Component {
   }
 
   render() {
-    
     const { i18n, applicationFormLoaded } = this.props
     return (
       <Loader loading={!i18n || !applicationFormLoaded}>
         <div className="application-form-bgc">
           <Row>
-            <Col lg={{span: 16, offset: 4}}>
+            <Col lg={{ span: 16, offset: 4 }}>
               <ApplicationForm />
             </Col>
           </Row>

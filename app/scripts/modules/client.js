@@ -79,8 +79,7 @@ export function request(url: string, options: Object = {}): Promise<*> {
             status: response.status,
             data: await response.json()
           }
-        }
-        else {
+        } else {
           error.response = {
             status: response.status,
             data: await response.text()
@@ -88,8 +87,7 @@ export function request(url: string, options: Object = {}): Promise<*> {
         }
 
         throw error
-      }
-      else {
+      } else {
         const contentType = response.headers.get('content-type')
         if (contentType && contentType.includes('application/json')) {
           return response.json()
@@ -101,7 +99,7 @@ export function request(url: string, options: Object = {}): Promise<*> {
 }
 
 function memoize(method) {
-  let cache = {};
+  const cache = {}
 
   return async function() {
     const [action] = arguments
@@ -111,9 +109,7 @@ function memoize(method) {
   }
 }
 
-export const memoizedSFAction = memoize(async function(action, options) {
-  return await SFAction(action, options)
-})
+export const memoizedSFAction = memoize(async (action, options) => await SFAction(action, options))
 
 export const SFAction = (action, options = { buffer: true, escape: true }) => {
   const { actionName, args } = action
@@ -143,17 +139,15 @@ export const SFAction = (action, options = { buffer: true, escape: true }) => {
   })
 }
 
-export const SFRemoteObject = (modelName, criteria) => {
-  return new Promise((resolve, reject) => {
-    const modelCtx = new SObjectModel[modelName]()
-    modelCtx.retrieve(
-      criteria,
-      (err, records, event) => {
-        if (err) {
-          return reject({ err: err.message, status: 400 })
-        }
-        return resolve({ data: { records } })
+export const SFRemoteObject = (modelName, criteria) => new Promise((resolve, reject) => {
+  const modelCtx = new SObjectModel[modelName]()
+  modelCtx.retrieve(
+    criteria,
+    (err, records, event) => {
+      if (err) {
+        return reject({ err: err.message, status: 400 })
       }
-    )
-  })
-}
+      return resolve({ data: { records } })
+    }
+  )
+})

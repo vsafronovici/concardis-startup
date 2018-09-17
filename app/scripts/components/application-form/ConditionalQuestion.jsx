@@ -19,7 +19,7 @@ export class ConditionalQuestion extends React.Component {
         <Row>
           <Col span={10} offset={12}>
             <div className="form-fields">
-              <FieldRow key={field.id} field={field} readOnly={readOnly}/>
+              <FieldRow key={field.id} field={field} readOnly={readOnly} />
             </div>
           </Col>
         </Row>
@@ -27,5 +27,4 @@ export class ConditionalQuestion extends React.Component {
     )
   }
 }
-
 
