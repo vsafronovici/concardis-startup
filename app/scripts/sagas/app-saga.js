@@ -25,7 +25,12 @@ function* loadTranslationsSaga({ payload: { lang } }) {
 }
 
 function* initPageSaga() {
-  const lang = yield select(i18nLangSelector)
+  let lang
+  if (process.env.NODE_ENV === NodeProcess.PROD) {
+    lang = configSettings.lang
+  }
+
+  // lang = lang || (yield select(i18nLangSelector))
   yield put(loadTranslationsReq(lang || LanguageType.EN))
 }
 

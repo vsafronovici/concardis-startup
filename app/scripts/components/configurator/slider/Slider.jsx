@@ -31,10 +31,10 @@ const SliderComponent = props =>  {
 
     return(
         <div className="sc-content">
-          <div className="sc-label">
-            {translate(label)}            
-          </div>
           <div className="sc-title">
+            {translate(label)}
+          </div>
+          <div className="sc-label">
             {translate(title)}
           </div>
           <div className={(type === FieldType.DROPDOWN) ? 'sc-slider-select' : 'sc-slider-slider'}>

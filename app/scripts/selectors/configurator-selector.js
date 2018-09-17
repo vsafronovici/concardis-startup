@@ -22,7 +22,7 @@ export const step2SummarySelector = createSelector(
   (step1Meta, step1Fields) => {
     return step1Meta.map(meta => ({
       name: meta.name,
-      title: meta.title,
+      label: meta.label,
       value: step1Fields[meta.name]
     }))
   }

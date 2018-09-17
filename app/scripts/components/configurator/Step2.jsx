@@ -58,15 +58,15 @@ export class Step2 extends React.Component {
           <Row type="flex" justify="space-around" align="middle">
             <Col span={16}>
               <div className="oc-s-row">
-                <div className="oc-s-col oc-s-label">{translate(f1.title)}</div>
+                <div className="oc-s-col oc-s-label">{translate(f1.label)}</div>
                 <div className="oc-s-col oc-s-value">€{valuesFormatter(f1.value)}</div>
-                <div className="oc-s-col oc-s-label">{translate(f2.title)}</div>
+                <div className="oc-s-col oc-s-label">{translate(f2.label)}</div>
                 <div className="oc-s-col oc-s-value">€{valuesFormatter(f2.value)}</div>
               </div>
               <div className="oc-s-row">
-                <div className="oc-s-col oc-s-label">{translate(f3.title)}</div>
+                <div className="oc-s-col oc-s-label">{translate(f3.label)}</div>
                 <div className="oc-s-col oc-s-value">€{valuesFormatter(f3.value)}</div>
-                <div className="oc-s-col oc-s-label">{translate(f4.title)}</div>
+                <div className="oc-s-col oc-s-label">{translate(f4.label)}</div>
                 <div className="oc-s-col oc-s-value">{f4.value}</div>
               </div>
             </Col>
