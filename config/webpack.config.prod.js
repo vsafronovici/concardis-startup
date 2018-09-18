@@ -58,6 +58,7 @@ module.exports = merge.smart(webpackConfig, {
         keep_fnames: true,
       },
     }),
+    new webpack.IgnorePlugin(/mock-data/)
     // new OfflinePlugin({
     //   autoUpdate: true,
     //   safeToUseOptionalCaches: true,
