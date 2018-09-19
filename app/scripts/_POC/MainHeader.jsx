@@ -2,9 +2,9 @@ import React from 'react'
 import { Layout } from 'antd'
 import { Row, Col } from 'antd'
 
-import DropDownMenu from './../components/HeaderMenu/DropDownMenu'
-import HeaderLinks from './../components/HeaderLinks/HeaderLinks'
-import HeaderNavBar from './../components/HeaderNavBar/HeaderNavBar'
+import DropDownMenu from './HeaderMenu/DropDownMenu'
+import HeaderLinks from './HeaderLinks/HeaderLinks'
+import HeaderNavBar from './HeaderNavBar/HeaderNavBar'
 import HeaderNavBarSmall from './HeaderNavBar/HeaderNavBarSmall'
 import { countries, languages, login } from './HeaderMenu/DropDownMenuItems/DropDownMenuItems'
 

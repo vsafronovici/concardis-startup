@@ -3,9 +3,9 @@ import { Menu, Icon } from 'antd'
 import findSolutionItems from './items/FindSolutionItem'
 import ourProducts from './items/ourProducts'
 import services from './items/services'
-import { links } from './../../HeaderLinks/HeaderLinks'
-import DropDownMenu from './../../HeaderMenu/DropDownMenu'
-import { countries, languages, login } from './../../HeaderMenu/DropDownMenuItems/DropDownMenuItems'
+import { links } from '../../HeaderLinks/HeaderLinks'
+import DropDownMenu from '../../HeaderMenu/DropDownMenu'
+import { countries, languages, login } from '../../HeaderMenu/DropDownMenuItems/DropDownMenuItems'
 
 const SubMenu = Menu.SubMenu
 SubMenu.className = 'submenu_title'

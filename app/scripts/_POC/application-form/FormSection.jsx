@@ -5,7 +5,7 @@ import { reduxForm } from 'redux-form'
 import { connect } from 'react-redux'
 import { getFormValues, getFormSyncErrors } from 'redux-form'
 
-import { translate } from './../../i18n/i18n'
+import { translate } from '../../i18n/i18n'
 import { DynamicForm } from './DynamicForm'
 import { Validator } from './form-validator'
 import { editSection, saveFieldsSectionReq } from '../../actions/application-form-action'

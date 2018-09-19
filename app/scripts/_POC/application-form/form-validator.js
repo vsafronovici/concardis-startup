@@ -1,4 +1,4 @@
-import { translate } from './../../i18n/i18n'
+import { translate } from '../../i18n/i18n'
 
 const createReducer = values => (acc, field) => {
   const { name, validation } = field

@@ -80,6 +80,8 @@ module.exports = {
       failOnError: true,
       cwd: process.cwd(),
     }),
+    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+    new webpack.IgnorePlugin(/_POC/)
   ],
   module: {
     rules: [

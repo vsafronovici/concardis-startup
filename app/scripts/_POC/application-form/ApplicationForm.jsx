@@ -5,7 +5,7 @@ import { Button, Row, Col, Modal } from 'antd'
 
 import FormSection from './FormSection'
 import StepsForm from './StepsForm'
-import { translate } from './../../i18n/i18n'
+import { translate } from '../../i18n/i18n'
 import {
   applicationFormSubmittingSelector,
   currentSectionsSelector, isFormCompletedSelector,

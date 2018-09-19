@@ -2,7 +2,7 @@ import React from 'react'
 import { Input, Icon, Tooltip, Button, Select, FormItem } from 'antd'
 import { Field } from 'redux-form'
 import { pickAll } from 'ramda'
-import { translate } from './../../i18n/i18n'
+import { translate } from '../../i18n/i18n'
 import { FieldType } from '../../utils/constants'
 import { objectToArrayKeyValue } from '../../utils/function-utils'
 

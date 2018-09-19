@@ -6,7 +6,7 @@ import { Col, Row } from 'antd'
 import { applicationFormLoadedSelector } from '../selectors/application-form-selector'
 import { i18nSelector } from '../selectors/i18n-selector'
 import { initData } from '../actions/application-form-action'
-import ApplicationForm from '../components/application-form/ApplicationForm'
+import ApplicationForm from './application-form/ApplicationForm'
 import { Loader } from '../components/Loader'
 
 export class ApplicationFormPage extends React.Component {
