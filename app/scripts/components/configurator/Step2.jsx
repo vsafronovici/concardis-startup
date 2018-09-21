@@ -11,23 +11,13 @@ import { Loader } from '../Loader'
 import { translate } from './../../i18n/i18n'
 import { valuesFormatter } from './../../transformers/configurator-transformer'
 
-
 export class Step2 extends React.Component {
-  static propTypes = {
-    sections: PropTypes.array
-  }
-
-  componentDidMount() {
-    console.log('DidMount', this.props)
-  }
-
   onChooseOption = id => {
     this.props.changeFieldValue({ name: 'cardOption', value: id, step: ConfiguratorPageStep.STEP2 })
   }
 
   render() {
-    console.log('Step2', this.props)
-    const { products, cardOption, summary, goToStep } = this.props
+    const { products, cardOption, summary } = this.props
     const [f1, f2, f3, f4] = summary
     return !products.length
       ? <Loader />
@@ -72,10 +62,10 @@ export class Step2 extends React.Component {
               </Col>
               <Col span={8}>
                 <div className="oc-s-btns">
-                  <Button onClick={() => goToStep(ConfiguratorPageStep.STEP1)}>
+                  <Button onClick={() => this.props.goToStep(ConfiguratorPageStep.STEP1)}>
                     {translate('btn.Back')}
                   </Button>
-                  <Button onClick={() => goToStep(ConfiguratorPageStep.STEP3)} style={{ marginLeft: 30 }} disabled={!cardOption}>
+                  <Button onClick={() => this.props.goToStep(ConfiguratorPageStep.STEP3)} style={{ marginLeft: 30 }} disabled={!cardOption}>
                     {translate('btn.Continue')}
                   </Button>
                 </div>
@@ -85,6 +75,14 @@ export class Step2 extends React.Component {
         </div>
       )
   }
+}
+
+Step2.propTypes = {
+  cardOption: PropTypes.object,
+  summary: PropTypes.object,
+  products: PropTypes.array,
+  changeFieldValue: PropTypes.func,
+  goToStep: PropTypes.func,
 }
 
 const mapStateToProps = state => ({
@@ -99,4 +97,3 @@ const mapDispatchToProps = ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Step2)
-

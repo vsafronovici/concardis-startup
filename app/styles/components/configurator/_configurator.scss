@@ -1,0 +1,84 @@
+.app__configurator {
+  background-color: #FAFAFA;
+  padding: 30px 30px;
+
+  .option-card {
+    width: 328px;
+    //height: 564px;
+    background-color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    border: 1px solid #d8d8d8;
+    border-radius: 3px;
+    text-align: center;
+    cursor: pointer;
+    height: 612px;
+
+    .oc-top {
+      height: 166px;
+      background-color: #9b9b9b;
+    }
+
+    .oc-content {
+      width: 242px;
+      margin: 0 auto;
+
+      .oc-title {
+        text-align: center;
+        height: 34px;
+        font-size: 28px;
+        font-weight: bold;
+        margin-top: 22px;
+      }
+
+      .oc-subtitle {
+        height: 38px;
+        font-size: 16px;
+        margin-top: 32px;
+        margin-bottom: 42px;
+      }
+
+      .oc-items {
+        text-align: left;
+
+        .oc-item {
+          display: flex;
+          align-items: center;
+
+          &-icon:before {
+            content: "\E632";
+            display: block;
+            font-family: "anticon";
+            font-size: 34px;
+            font-weight: 100;
+            width: 34px;
+          }
+          &-content {
+            width: 100%;
+            margin-left: 20px;
+          }
+        }
+      }
+
+      .oc-price {
+        text-align: center;
+        font-size: 21px;
+        font-weight: bold;
+        margin: 46px 0px;
+      }
+    }
+
+  }
+
+  .option-card.active {
+    border-radius: 4px;
+    border: solid 5px #ff9797;
+    outline: none;
+  }
+
+  .option-card.readonly {
+    cursor: auto;
+  }
+
+
+
+}

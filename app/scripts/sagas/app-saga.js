@@ -23,13 +23,13 @@ function* loadTranslationsSaga({ payload: { lang } }) {
 }
 
 function* initPageSaga() {
-  let lang
+  let language
   if (process.env.NODE_ENV === NodeProcess.PROD) {
-    lang = window.configSettings.lang
+    language = window.configSettings.lang
   }
 
   // lang = lang || (yield select(i18nLangSelector))
-  yield put(loadTranslationsReq(lang || LanguageType.EN))
+  yield put(loadTranslationsReq(language || LanguageType.EN))
 }
 
 export default function* root() {

@@ -1,0 +1,43 @@
+.app__configurator {
+
+  .con-signup {
+    padding: 40px 20px 20px 20px;
+    background-color: white;
+
+    .title1 {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .title2 {
+      //font-size: 14px;
+      width: 80%;
+      font-weight: bold;
+      margin: 20px 0px;
+    }
+
+    input[type=text] {
+      width: 50%;
+    }
+
+    .gdpr {
+      width: 80%;
+      margin: 16px 0px 10px 0px;
+      display: flex;
+      flex-direction: row;
+
+      &-label {
+        font-size: 11px;
+        color: #9b9b9b;
+        margin-left: 8px;
+
+        a {
+          color: #dc3545;
+          text-decoration-line: underline;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+}

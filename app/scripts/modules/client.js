@@ -22,7 +22,7 @@ export function parseError(error: string): string {
   return error || 'Something went wrong'
 }
 
-export function request(url, options = {}) {
+export function request2(url, options = {}) {
   const config = {
     method: 'GET',
     ...options
@@ -97,7 +97,7 @@ function memoize(method) {
   }
 }
 
-export const SFAction = (action, options = { buffer: true, escape: true }) => {
+export const SFAction = (action, options = {}) => {
   const { actionName, args } = action
 
   console.log('SFAction invoked')
@@ -107,12 +107,18 @@ export const SFAction = (action, options = { buffer: true, escape: true }) => {
     invokeActionArgs.push(args)
   }
 
+
+  let { buffer, escape, parseToJSON } = options
+  buffer = (buffer !== undefined) ? buffer : true
+  escape = (escape !== undefined) ? escape : false
+  parseToJSON = (parseToJSON !== undefined) ? parseToJSON : false
+
   return new Promise((resolve, reject) => {
     window.Visualforce.remoting.Manager.invokeAction(
       ...invokeActionArgs,
       (result, event) => {
         if (event.status) {
-          if (!options.escape) {
+          if (parseToJSON) {
             result = JSON.parse(result)
           }
           return resolve({ data: result })
@@ -120,7 +126,7 @@ export const SFAction = (action, options = { buffer: true, escape: true }) => {
 
         return reject({ err: result })
       },
-      options
+      { buffer, escape }
     )
   })
 }
@@ -139,3 +145,34 @@ export const SFRemoteObject = (modelName, criteria) => new Promise((resolve, rej
     }
   )
 })
+
+export function request(url, options = {}) {
+  const config = {
+    method: 'GET',
+    ...options
+  }
+
+  const headers = {
+    Accept: 'application/json',
+    'Content-Type': 'application/json',
+    ...config.headers
+  }
+
+  const params = {
+    //headers,
+    method: config.method
+  }
+
+  return fetch(url)
+    .then(res => {
+      console.log('Request ', {res})
+      const { status } = res
+      if (status === 200) {
+        //console.log('Request text=', res.text())
+        return res.text()
+      } else {
+        return ({ err: 'error' })
+      }
+    }).then(res => ({ data: res }))
+}
+

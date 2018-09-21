@@ -32,8 +32,11 @@
 @import 'components/header';
 @import 'components/loader';
 @import 'components/application-form';
-@import 'components/configurator';
-@import 'components/Steps/Step3';
+@import 'components/configurator/configurator';
+@import 'components/configurator/step1';
+@import 'components/configurator/step2';
+@import 'components/configurator/step3';
+//@import 'components/Steps/Step3';
 
 // *** Containers
 

@@ -86,6 +86,12 @@ export default {
         submitting: false,
         recalculatedQuote: payload
       }
-    }
+    },
+    [CONFIGURATOR.SIGNUP_RES](state, { payload }) {
+      return {
+        ...state,
+        signupCode: payload.code
+      }
+    },
   })
 }

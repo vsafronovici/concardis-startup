@@ -4,10 +4,6 @@ export const initData = () => ({
   type: CONFIGURATOR.INIT_DATA
 })
 
-export const initData3 = () => ({
-  type: CONFIGURATOR.INIT_DATA3
-})
-
 export const getMetaStep1Req = () => ({
   type: CONFIGURATOR.GET_META_STEP1_REQ
 })
@@ -50,5 +46,15 @@ export const recalculateQuote = payload => ({
 
 export const recalculateQuoteRes = payload => ({
   type: CONFIGURATOR.RECALCULATE_QUOTE_RES,
+  payload
+})
+
+export const signupReq = payload => ({
+  type: CONFIGURATOR.SIGNUP_REQ,
+  payload
+})
+
+export const signupRes = payload => ({
+  type: CONFIGURATOR.SIGNUP_RES,
   payload
 })

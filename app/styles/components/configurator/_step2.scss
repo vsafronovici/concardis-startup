@@ -1,0 +1,34 @@
+.app__configurator {
+
+  .oc-summary {
+    margin: 154px 30px 30px 30px;
+    font-family: 'Montserrat', sans-serif;
+
+    .oc-s-row {
+      display: flex;
+      flex-direction: row;
+      margin: 28px 0px;
+
+      .oc-s-col {
+        width: 250px;
+        font-size: 16px;
+        height: 19px;
+      }
+
+      .oc-s-value {
+        font-weight: bold;
+      }
+    }
+
+    .oc-s-btns {
+      display: flex;
+      justify-content: flex-end;
+      flex-direction: row;
+
+      button {
+        width: 200px;
+      }
+    }
+  }
+
+}

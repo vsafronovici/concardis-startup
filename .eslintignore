@@ -4,4 +4,5 @@ app/scripts/vendor
 app/scripts/mock-data
 app/scripts/modules
 app/scripts/_POC
-app/scripts/components/configurator
+app/scripts/components/configurator/extraOptions
+app/scripts/components/configurator/slider

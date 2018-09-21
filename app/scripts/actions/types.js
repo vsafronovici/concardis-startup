@@ -40,4 +40,6 @@ export const CONFIGURATOR = createNamespace('CONFIGURATOR', {
   VALIDATE_DISCOUNT_CODE: undefined,
   RECALCULATE_QUOTE_REQ: undefined,
   RECALCULATE_QUOTE_RES: undefined,
+  SIGNUP_REQ: undefined,
+  SIGNUP_RES: undefined,
 })
