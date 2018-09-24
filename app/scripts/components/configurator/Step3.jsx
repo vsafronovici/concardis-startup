@@ -12,7 +12,7 @@ import { ConfiguratorPageStep } from '../../utils/constants'
 import { email as emailReg } from '../../utils/regexps'
 import TermsAndConditions from '../common/modal/TermsAndConditions'
 import VoidLink from '../common/VoidLink'
-import { signupReq } from '../../actions/configurator-action'
+import { signupReq, goToStep } from '../../actions/configurator-action'
 
 export const EMAIL = 'email'
 
@@ -87,6 +87,7 @@ class Step3 extends Component {
         ...step1Fields
       }
     })
+    this.props.goToStep(ConfiguratorPageStep.STEP4)
   }
 
   render() {
@@ -141,7 +142,8 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = ({
-  signupReq
+  signupReq,
+  goToStep
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Form)
