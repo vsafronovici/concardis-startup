@@ -2,7 +2,10 @@ import { all, call, put, select, takeLatest } from 'redux-saga/effects'
 import { delay } from 'redux-saga'
 
 import { CONFIGURATOR } from '../actions/types'
-import { getMetaStep1Req, getMetaStep1Res, getMetaStep2Req, getMetaStep2Res, recalculateQuoteRes, signupRes } from '../actions/configurator-action'
+import {
+  changeFieldValue, getMetaStep1Req, getMetaStep1Res, getMetaStep2Req, getMetaStep2Res, recalculateQuoteRes,
+  signupRes
+} from '../actions/configurator-action'
 import { SFAction, memoizedSFAction } from './../modules/client'
 import { ConfiguratorPageStep, NodeProcess } from '../utils/constants'
 import { step1FieldsSelector } from '../selectors/configurator-selector'
@@ -47,6 +50,12 @@ function* goToStepSaga({ payload }) {
 }
 
 function* signupSaga({ payload }) {
+  yield put(changeFieldValue({
+    name: 'email',
+    value: payload.email,
+    step: ConfiguratorPageStep.STEP3
+  }))
+
   if (process.env.NODE_ENV === NodeProcess.DEV) {
     yield call(delay, 600)
     yield put(signupRes({ code: '1' }))

@@ -29,7 +29,9 @@ export class OptionCard extends React.Component {
     const elProps = {
       className: cn('option-card', { active, readonly })
     }
-    !readonly && (elProps.onClick = this.chooseOption)
+    if (!readonly) {
+      elProps.onClick = this.chooseOption
+    }
 
     return (
       <div {...elProps}>
