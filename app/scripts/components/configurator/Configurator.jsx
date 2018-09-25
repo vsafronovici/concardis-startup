@@ -30,7 +30,6 @@ export class Configurator extends React.Component {
   }
 
   render() {
-    console.log('Configurator props', this.props)
     const Step = this.getStep()
     return (
       <div className="">

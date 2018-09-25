@@ -1,12 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import PropTypes from 'prop-types'
 import { Col, Row } from 'antd'
 import { goToStep } from '../../actions/configurator-action'
 import ScenarioComponent from './step4-scenario/ScenarioComponent'
 
 class Step4 extends Component {
-
   render() {
     return (
       <div>
