@@ -3,6 +3,7 @@ import { PACKAGE_CONFIGURE } from './../actions/types'
 
 export const initialState = {
   submitting: false,
+
 }
 
 export default {
@@ -15,6 +16,7 @@ export default {
     [PACKAGE_CONFIGURE.GET_META_PACKAGE_RES](state, { payload }) {
       return {
         ...state,
+        quote: payload
       }
     },
   })
