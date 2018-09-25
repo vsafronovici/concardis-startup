@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Row, Col, Icon, Button } from 'antd'
 import { translate } from './../../../i18n/i18n'
-import { signUpCodeSelector, userSelector } from './../../../selectors/configurator-selector'
+import { signUpCodeSelector, userSelector, emailSelector } from './../../../selectors/configurator-selector'
 import { SignUpCode } from './../../../utils/constants'
 import { withButton, getButtonTitle, getTitle, withTitle3, getTitle2, getTitle3, withName } from './utils/step4-utils'
 
@@ -11,9 +11,24 @@ const ATScenario = props => <div className="scenario-at-check"><Icon type="check
 
 const BTNScenario = props => <div><Button className="ant-btn">{props.btnText}</Button></div>
 
+const title2WithEmail = (str, email) => {
+  const idx1 = str.indexOf('{0')
+  console.log('idx1 = ',idx1)
+  const idx2 = str.indexOf('}')
+  console.log('idx2 = ',idx2)
+
+  return (
+    <div className="gdpr-label">
+      {str.substring(0, idx1)}
+      <a href="#"><span style={{color: 'red'}}>{email}</span></a>
+      {str.substring(idx2 + 1)}
+    </div>
+  )
+}
+
 const ScenarioComponent = props => {
 
-  const { signupCode, user } = props
+  const { signupCode, user, email } = props
 
   return (
     <Row>
@@ -26,7 +41,7 @@ const ScenarioComponent = props => {
             {(signupCode === SignUpCode.SCEN1) ? <ATScenario /> : null}
             <div className="scenario-content">
               <div className="scenario-title2">
-                {getTitle2(signupCode)}
+                {signupCode === SignUpCode.SCEN3 ? title2WithEmail(getTitle2(signupCode), email) : getTitle2(signupCode)}
               </div>
               {withTitle3(signupCode) && <div className="scenario-title3">{getTitle3(signupCode)}</div>}
             </div>
@@ -40,7 +55,8 @@ const ScenarioComponent = props => {
 
 const mapStateToProps = state => ({
   signupCode: signUpCodeSelector(state),
-  user: userSelector(state)
+  user: userSelector(state),
+  email: emailSelector(state)
 })
 
 const mapDispatchToProps = ({
@@ -49,7 +65,8 @@ const mapDispatchToProps = ({
 
 ScenarioComponent.propTypes = {
   signupCode: PropTypes.string,
-  user: PropTypes.object
+  user: PropTypes.object,
+  email: PropTypes.string
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ScenarioComponent)

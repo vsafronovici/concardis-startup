@@ -58,7 +58,7 @@ function* signupSaga({ payload }) {
 
   if (process.env.NODE_ENV === NodeProcess.DEV) {
     yield call(delay, 600)
-    yield put(signupRes({ lastName: 'Gucci', firstName: 'Mr.Safronovici', code: '3' }))
+    yield put(signupRes({ lastName: 'Gucci', firstName: 'Mr.Safronovici', code: '5' }))
   } else {
     const action = {
       actionName: window.configSettings.remoteActions.submitEmailGDPR,
