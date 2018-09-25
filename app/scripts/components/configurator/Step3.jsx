@@ -127,7 +127,8 @@ Step3.propTypes = {
   selectedProduct: PropTypes.object,
   step1Fields: PropTypes.object,
   invalid: PropTypes.bool,
-  signupReq: PropTypes.func
+  signupReq: PropTypes.func,
+  goToStep: PropTypes.func
 }
 
 const Form = reduxForm({
