@@ -12,7 +12,7 @@ import { ConfiguratorPageStep } from '../../utils/constants'
 import { email as emailReg } from '../../utils/regexps'
 import TermsAndConditions from '../common/modal/TermsAndConditions'
 import VoidLink from '../common/VoidLink'
-import { signupReq } from '../../actions/configurator-action'
+import { signupReq, goToStep } from '../../actions/configurator-action'
 
 export const EMAIL = 'email'
 
@@ -87,6 +87,7 @@ class Step3 extends Component {
         ...step1Fields
       }
     })
+    this.props.goToStep(ConfiguratorPageStep.STEP4)
   }
 
   render() {
@@ -126,7 +127,8 @@ Step3.propTypes = {
   selectedProduct: PropTypes.object,
   step1Fields: PropTypes.object,
   invalid: PropTypes.bool,
-  signupReq: PropTypes.func
+  signupReq: PropTypes.func,
+  goToStep: PropTypes.func
 }
 
 const Form = reduxForm({
@@ -141,7 +143,8 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = ({
-  signupReq
+  signupReq,
+  goToStep
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Form)

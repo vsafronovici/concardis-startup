@@ -1,17 +1,17 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Row, Col, Button } from 'antd'
+import PropTypes from 'prop-types'
 import SliderComponent from './slider/Slider'
 import { changeFieldValue, goToStep } from '../../actions/configurator-action'
-import { Row, Col, Button } from 'antd'
-import { step1MetaSelector } from '../../selectors/configurator-selector'
+import { step1MetaSelector, step1FieldsSelector } from '../../selectors/configurator-selector'
 import { ConfiguratorPageStep } from '../../utils/constants'
 import { Loader } from '../Loader'
 import { translate } from './../../i18n/i18n'
-import { step1FieldsSelector } from './../../selectors/configurator-selector'
 import { notEmptyValues } from './../../utils/function-utils'
 
 const Step1 = props => {
-  const { step1MetaData, changeFieldValue, values } = props
+  const { step1MetaData, values } = props
 
   return (
     !step1MetaData
@@ -25,7 +25,7 @@ const Step1 = props => {
                   {step1MetaData.map((field, index) => (
                     <div key={index}>
                       <Col lg={{ span: '12' }}>
-                        <SliderComponent fieldMetaData={field} key={index * index} changeFieldValue={changeFieldValue} />
+                        <SliderComponent fieldMetaData={field} key={index * index} changeFieldValue={props.changeFieldValue} />
                       </Col>
                     </div>
                   ))}
@@ -56,5 +56,12 @@ const mapDispatchToProps = ({
   changeFieldValue,
   goToStep
 })
+
+Step1.propTypes = {
+  values: PropTypes.object,
+  step1MetaData: PropTypes.array,
+  goToStep: PropTypes.func,
+  changeFieldValue: PropTypes.func
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(Step1)

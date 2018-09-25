@@ -10,7 +10,7 @@ class RenderSlider extends Component {
 
   static propTypes = {
     values: PropTypes.object,
-    defaultValue: PropTypes.string,
+    defaultValue: PropTypes.number,
     name: PropTypes.string,
     sliderItems: PropTypes.array,
     handleChangeField: PropTypes.func

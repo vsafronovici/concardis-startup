@@ -42,5 +42,13 @@ export const ConfiguratorPageStep = {
   STEP1: 'Landing_Page_1',
   STEP2: 'Landing_Page_2',
   STEP3: 'Landing_Page_3',
+  STEP4: 'Landing_Page_4'
 }
 
+export const SignUpCode = {
+  SCEN1: '1',
+  SCEN2: '2',
+  SCEN3: '3',
+  SCEN4: '4',
+  SCEN5: '5'
+}

@@ -1,0 +1,33 @@
+.app__configurator {
+
+ .scenario-wrapper {
+  background-color: #fff;
+  padding: 50px 50px;
+  .scenario-title {
+   font-size: 27px;
+   font-weight: 800;
+   margin-bottom: 30px;
+  }
+  .scenario-container-content {
+   display: flex;
+   direction: row;
+   .scenario-at-check {
+    margin-right: 25px;
+    text-align: center;
+   }
+   .scenario-content {
+    margin-bottom: 50px;
+    .scenario-title2 {
+     margin-bottom: 30px;
+     .scenario-email {
+       color: red;
+     }
+    }
+    .scenario-title3 {
+
+    }
+   }
+  }
+ }
+
+}

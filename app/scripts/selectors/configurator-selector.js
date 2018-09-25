@@ -15,7 +15,10 @@ export const cardOptionValueSelector = compose(prop('cardOption'), step2FieldsSe
 export const stepSelector = compose(prop('step'), configuratorSelector)
 export const productsSelector = compose(map(prop(['prod'])), step2MetaSelector)
 export const recalculatedQuoteSelector = compose(prop('recalculatedQuote'), configuratorSelector)
+export const signUpCodeSelector = compose(prop('signupCode'), configuratorSelector)
 export const emailSelector = compose(prop('email'), step3FieldsSelector)
+export const userSelector = compose(prop('user'), configuratorSelector)
+
 
 export const step2SummarySelector = createSelector(
   step1MetaSelector,

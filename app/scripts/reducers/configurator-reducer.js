@@ -90,7 +90,11 @@ export default {
     [CONFIGURATOR.SIGNUP_RES](state, { payload }) {
       return {
         ...state,
-        signupCode: payload.code
+        signupCode: payload.code,
+        user: {
+          firstName: payload.firstName,
+          lastName: payload.lastName
+        }
       }
     },
   })

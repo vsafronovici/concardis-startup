@@ -50,8 +50,8 @@ const SliderComponent = props => {
 
 SliderComponent.propTypes = {
   fieldMetaData: PropTypes.object,
-  changeFieldValue: PropTypes.string,
-  step: PropTypes.number
+  changeFieldValue: PropTypes.func,
+  step: PropTypes.string
 }
 
 const mapStateToProps = state => ({
