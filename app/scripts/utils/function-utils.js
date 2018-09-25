@@ -21,8 +21,16 @@ export const notEmptyValues = obj => {
   return !all(isTrue)(detectedKeys)
 }
 
+// TODO remove use contains() instead
 export const checkCurrentValue = (items, currentValue) => {
   const checkedCurrentValue = items.indexOf(currentValue)
 
   return checkedCurrentValue
 }
+
+export const format = (text, ...vals) =>
+  vals.reduce((acc, obj, idx) => acc.replace(`{${idx}}`, obj), text)
+
+
+
+

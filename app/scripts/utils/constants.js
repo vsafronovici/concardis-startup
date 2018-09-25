@@ -6,7 +6,8 @@ export const NodeProcess = {
 export const PageContainers = {
   LANDING_PAGE: 'react-landing-page',
   APPLICATION_FORM_PAGE: 'application-form-page',
-  CONFIGURATOR_PAGE: 'configurator-page'
+  CONFIGURATOR_PAGE: 'configurator-page',
+  PACKAGE_CONFIGURE_PAGE: 'package-configure-page'
 }
 
 export const LanguageType = {
