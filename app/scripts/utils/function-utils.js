@@ -30,7 +30,3 @@ export const checkCurrentValue = (items, currentValue) => {
 
 export const format = (text, ...vals) =>
   vals.reduce((acc, obj, idx) => acc.replace(`{${idx}}`, obj), text)
-
-
-
-

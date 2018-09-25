@@ -30,7 +30,6 @@ export const APPLICATION_FORM = createNamespace('APPLICATION_FORM', {
 
 export const CONFIGURATOR = createNamespace('CONFIGURATOR', {
   INIT_DATA: undefined,
-  INIT_DATA3: undefined,
   GET_META_STEP1_REQ: undefined,
   GET_META_STEP1_RES: undefined,
   CHANGE_FIELD_VALUE: undefined,
@@ -42,4 +41,10 @@ export const CONFIGURATOR = createNamespace('CONFIGURATOR', {
   RECALCULATE_QUOTE_RES: undefined,
   SIGNUP_REQ: undefined,
   SIGNUP_RES: undefined,
+})
+
+export const PACKAGE_CONFIGURE = createNamespace('PACKAGE_CONFIGURE', {
+  INIT_DATA: undefined,
+  GET_META_PACKAGE_REQ: undefined,
+  GET_META_PACKAGE_RES: undefined,
 })
