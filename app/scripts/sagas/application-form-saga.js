@@ -1,4 +1,4 @@
-import { all, call, put, takeEvery, takeLatest } from 'redux-saga/effects'
+/*import { all, call, put, takeEvery, takeLatest } from 'redux-saga/effects'
 import { delay } from 'redux-saga'
 
 import { APPLICATION_FORM } from '../actions/types'
@@ -58,4 +58,4 @@ export default function* root() {
     takeLatest(APPLICATION_FORM.INIT_DATA, initDataSaga),
     takeEvery(APPLICATION_FORM.SAVE_FIELDS_SECTION_REQ, saveAppFormSaga)
   ])
-}
+}*/

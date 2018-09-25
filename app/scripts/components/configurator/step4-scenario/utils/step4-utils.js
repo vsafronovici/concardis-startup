@@ -4,9 +4,7 @@ import { translate } from './../../../../i18n/i18n'
 export const withButton = (code) => {
   switch (code) {
     case SignUpCode.SCEN2:
-      return true
     case SignUpCode.SCEN3:
-      return true
     case SignUpCode.SCEN5:
       return true
     default:
@@ -32,11 +30,9 @@ export const getTitle = code => {
     case SignUpCode.SCEN1:
       return translate('configurator.msgPage.1.title')
     case SignUpCode.SCEN2:
-      return translate('configurator.msgPage.2.title')
     case SignUpCode.SCEN3:
       return translate('configurator.msgPage.2.title')
     case SignUpCode.SCEN4:
-      return translate('global.hello')
     case SignUpCode.SCEN5:
       return translate('global.hello')
     default:
@@ -64,9 +60,7 @@ export const getTitle2 = code => {
 export const withTitle3 = code => {
   switch (code) {
     case SignUpCode.SCEN2:
-      return true
     case SignUpCode.SCEN3:
-      return true
     case SignUpCode.SCEN4:
       return true
     default:
@@ -90,7 +84,6 @@ export const getTitle3 = code => {
 export const withName = code => {
   switch (code) {
     case SignUpCode.SCEN4:
-      return true
     case SignUpCode.SCEN5:
       return true
     default:

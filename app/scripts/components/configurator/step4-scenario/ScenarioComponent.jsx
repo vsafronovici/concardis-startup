@@ -6,7 +6,11 @@ import { signUpCodeSelector, userSelector, emailSelector } from './../../../sele
 import { SignUpCode } from './../../../utils/constants'
 import { withButton, getButtonTitle, getTitle, withTitle3, getTitle2, getTitle3, withName } from './utils/step4-utils'
 
-const ATScenario = props => <div className="scenario-at-check"><Icon type="check-circle" theme="outlined" style={{ fontSize: '26px', color: '#7CB342' }} /></div>  
+const ATScenario = props => (
+  <div className="scenario-at-check">
+    <Icon type="check-circle" theme="outlined" style={{ fontSize: '26px', color: '#7CB342' }} />
+  </div>
+)
 
 const BTNScenario = props => <div><Button className="ant-btn">{props.btnText}</Button></div>
 
@@ -21,7 +25,7 @@ const title2WithEmail = (str, email) => {
   return (
     <div className="gdpr-label">
       {str.substring(0, idx1)}
-      <a href="#"><span style={{ color: 'red' }}>{email}</span></a>
+      <span className="scenario-email">{email}</span>
       {str.substring(idx2 + 1)}
     </div>
   )
@@ -38,7 +42,7 @@ const ScenarioComponent = props => {
             {getTitle(signupCode)} {(withName(signupCode) && user) ? user.firstName : null}
           </div>
           <div className="scenario-container-content">
-            {(signupCode === SignUpCode.SCEN1) ? <ATScenario /> : null}
+            {(signupCode === SignUpCode.SCEN1) && <ATScenario />}
             <div className="scenario-content">
               <div className="scenario-title2">
                 {signupCode === SignUpCode.SCEN3 ? title2WithEmail(getTitle2(signupCode), email) : getTitle2(signupCode)}
