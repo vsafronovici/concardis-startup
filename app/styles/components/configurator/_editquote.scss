@@ -1,0 +1,36 @@
+.eq-wrapper {
+  .eq-flex-container {
+    display: flex;
+    direction: row;
+    .eq-content-pq {
+      color: #BDBDBD;
+      font-size: 12px;
+      margin-right: 20px;
+    }
+  }
+  border: 1px solid #BDBDBD;
+  padding: 30px 30px;
+  .eq-container-top {
+    border-bottom: 1px dashed #BDBDBD;
+    .eq-top-title {
+
+    }
+    .eq-top-subtitle {
+      color: #BDBDBD;
+      font-style: italic;
+      font-size: 12px;
+      margin-bottom: 15px;
+    }
+  }
+  .eq-container-content {
+    .eq-content-title {
+      margin-top: 15px;
+    }
+    .eq-content-subtitle {
+      color: #BDBDBD;
+      font-style: italic;
+      font-size: 12px;
+      margin-bottom: 15px;
+    }
+  }
+}

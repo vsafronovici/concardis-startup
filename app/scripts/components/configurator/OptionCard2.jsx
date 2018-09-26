@@ -14,8 +14,8 @@ export class OptionCard extends React.Component {
   }
 
   render() {
-    const { } = this.props
-    const mock = ['Product feature 1', 'Product feature 2','Product feature 3','Product feature 4']
+    console.log('Option Card2 ', this.props)
+    const { quote: { description, name, features, includedItems } } = this.props
     return (
       <div className="option-card2">
         <div className="oc-top">
@@ -25,34 +25,36 @@ export class OptionCard extends React.Component {
         </div>
         <div className="oc-content">
           <div className="oc-title">
-            Mobile package A
+            {name}
           </div>
           <div className="oc-subtitle">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-          Ut enim ad minim veniam, quis nostrud 
+            {description}
           </div>
           <div className="oc-items">
-          {mock.map((item, index) => {
+          {features.map((item, index) => {
             return(
-              <div key={index} className="oc-item">
-              {item}
+              <div key={item.name} className="oc-item">
+              {item.description}
               </div>
             )
           })}
             </div>
           </div>
-
           <hr/>
           <div className="oc-footer">
             <div className="oc-footer-title">
               Footer Title
             </div>
             <div>
-              Footer description
+              {includedItems.map(item => {
+                return(
+                  <div key={item.name}>
+                    {item.description}
+                  </div>
+                )
+              })}
             </div>
           </div>
-        
       </div>
     )
   }
