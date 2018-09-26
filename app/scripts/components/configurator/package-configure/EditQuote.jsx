@@ -2,12 +2,22 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Row, Col, InputNumber, Button, Input } from 'antd'
 import { translate } from './../../../i18n/i18n'
-import { OptionCard } from '../OptionCard2'
-import { selectedProductSelector } from '../../../selectors/configurator-selector'
+import { quantitySelector } from '../../../selectors/package-configure-selector'
+import { changePackageQnty } from '../../../actions/package-configure-action'
+import { formatNumber } from '../../../utils/function-utils'
 
-export default class EditQuote extends Component {
+
+const calculateTotalPackageCost = (unitPrice, quantity) => formatNumber(unitPrice * quantity)
+
+class EditQuote extends Component {
+
+  onChangeQty = value => {
+    this.props.changePackageQnty({ qty: value })
+  }
+
+
   render() {
-    const { quote: { unitPrice, totalPriceBeforeDiscount, totalPriceWithDiscount} } = this.props
+    const { quote: { unitPrice, totalPriceBeforeDiscount, totalPriceWithDiscount}, quantity } = this.props
     return (
       <div className="eq-container">
         <div className="eq-name">
@@ -49,7 +59,7 @@ export default class EditQuote extends Component {
                         {translate('configurator.packagePage.packageQuantity.abreviated')}
                       </div>
                       <div className="eq-content-numbers">
-                        <InputNumber />
+                        <InputNumber min={1} max={10} defaultValue={quantity} onChange={value => this.onChangeQty(value)}/>
                       </div>
                     </div>
                   </Col>
@@ -58,7 +68,7 @@ export default class EditQuote extends Component {
                       {translate('configurator.packagePage.TotalPackageCostPerMonth')}
                     </div>
                     <div className="eq-content-price">
-                      {totalPriceBeforeDiscount.valuePerMonth} {totalPriceBeforeDiscount.currencySymbol}
+                      {calculateTotalPackageCost(unitPrice.valuePerMonth, quantity)} {totalPriceBeforeDiscount.currencySymbol}
                     </div>
                   </Col>
                 </Row>
@@ -118,3 +128,14 @@ export default class EditQuote extends Component {
     )
   }
 }
+
+const mapStateToProps = state => ({
+  quantity: quantitySelector(state)
+})
+
+const mapDispatchToProps = ({
+  changePackageQnty
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(EditQuote)
+

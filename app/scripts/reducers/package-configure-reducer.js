@@ -32,5 +32,11 @@ export default {
         extraFields: createExtraFields(payload)
       }
     },
+    [PACKAGE_CONFIGURE.CHANGE_PACKAGE_QNTY](state, { payload }) {
+      return {
+        ...state,
+        quantity: payload.qty,
+      }
+    },
   })
 }
