@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Row, Col } from 'antd'
+import { Row, Col, InputNumber } from 'antd'
 import { translate } from './../../../i18n/i18n'
 import { OptionCard } from '../OptionCard2'
 import { selectedProductSelector } from '../../../selectors/configurator-selector'
