@@ -28,6 +28,10 @@ export const init = {
     const { rootId } = detectRootContainer()
     /* istanbul ignore else */
     if (process.env.NODE_ENV !== 'production') {
+      // put salesforce config data
+      const { mockVisualForceConfig } = require('./mock-data/mock-utils')
+      window.configSettings = mockVisualForceConfig
+
       this.render(rootId)
       return Promise.resolve()
     }

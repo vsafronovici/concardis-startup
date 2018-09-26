@@ -17,7 +17,7 @@ class PackageConfigure extends Component {
           </Col>
           <Col span={14}>
             <EditQuote quote={quote} />
-            <Extras quote={quote} />
+            <Extras extras={quote.extraItems} />
           </Col>
         </Row>
       </div>

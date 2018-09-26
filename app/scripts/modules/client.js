@@ -1,3 +1,6 @@
+import { NodeProcess } from '../utils/constants'
+import { delayResponse } from '../utils/function-utils'
+
 /**
  * Client
  * @module Client
@@ -100,9 +103,15 @@ function memoize(method) {
 export const SFAction = (action, options = {}) => {
   const { actionName, args } = action
 
-  console.log('SFAction invoked')
+  console.log('SFAction invoked', action)
 
-  const invokeActionArgs = [actionName]
+  if (process.env.NODE_ENV === NodeProcess.DEV) {
+    const { mockResponse } = require('./../mock-data/mock-utils')
+    const resp = mockResponse(actionName)
+    return delayResponse(resp)
+  }
+
+    const invokeActionArgs = [actionName]
   if (args) {
     invokeActionArgs.push(args)
   }

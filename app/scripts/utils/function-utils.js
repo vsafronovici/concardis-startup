@@ -30,3 +30,6 @@ export const checkCurrentValue = (items, currentValue) => {
 
 export const format = (text, ...vals) =>
   vals.reduce((acc, obj, idx) => acc.replace(`{${idx}}`, obj), text)
+
+export const delayResponse = resp =>
+  new Promise(resolve => setTimeout(resolve({ data: resp }), 1000))

@@ -47,4 +47,13 @@ export const PACKAGE_CONFIGURE = createNamespace('PACKAGE_CONFIGURE', {
   INIT_DATA: undefined,
   GET_META_PACKAGE_REQ: undefined,
   GET_META_PACKAGE_RES: undefined,
+  CHANGE_PACKAGE_QNTY: undefined,
+  APPLY_DISCOUNT: undefined,
+  VALIDATE_DISCOUNT_CODE_REQ: undefined,
+  VALIDATE_DISCOUNT_CODE_RES: undefined,
+  APPLY_DISCOUNT_REQ: undefined,
+  APPLY_DISCOUNT_RES: undefined,
+  CHANGE_EXTRA_QNTY: undefined,
+  SUBMIT_QUOTE_REQ: undefined,
+  SUBMIT_QUOTE_RES: undefined,
 })

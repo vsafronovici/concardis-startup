@@ -6,6 +6,14 @@ export const initialState = {
 
 }
 
+const createExtraFields = ({ extraItems }) =>
+  extraItems.reduce((acc, obj) => {
+    return {
+      ...acc,
+      [obj.name]: obj.quantity.value
+    }
+  }, {})
+
 export default {
   packageConfigure: createReducer(initialState, {
     [PACKAGE_CONFIGURE.GET_META_PACKAGE_REQ](state) {
@@ -16,7 +24,8 @@ export default {
     [PACKAGE_CONFIGURE.GET_META_PACKAGE_RES](state, { payload }) {
       return {
         ...state,
-        quote: payload
+        quote: payload,
+        extraFields: createExtraFields(payload)
       }
     },
   })
