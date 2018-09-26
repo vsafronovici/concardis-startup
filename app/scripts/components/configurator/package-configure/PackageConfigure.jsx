@@ -12,10 +12,10 @@ class PackageConfigure extends Component {
     return (
       <div className="package-configure">
         <Row type="flex" justify="center">
-          <Col span={10}>
+          <Col span={9} offset={1}>
             <OptionCard quote={quote} />
           </Col>
-          <Col span={14}>
+          <Col span={12} offset={1}>
             <EditQuote quote={quote} />
             <Extras extras={quote.extraItems} />
           </Col>
