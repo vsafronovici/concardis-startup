@@ -1,27 +1,74 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { curry } from 'ramda'
-import { InputNumber } from 'antd'
+import { InputNumber, Row, Col } from 'antd'
 
 import { changeExtraQnty } from '../../../actions/package-configure-action'
 import { extraFieldsSelector } from '../../../selectors/package-configure-selector'
+import { translate } from '../../../i18n/i18n';
 
 const onChangeQtyCurried = curry((action, fieldName, fieldValue) => {
   action({ [fieldName]: fieldValue })
 })
 
 const Extras = props => {
-  console.log('Extras', props)
+    console.log('Extras', props)
     const { extras, extraFields } = props
     const onChangeQty = onChangeQtyCurried(props.changeExtraQnty)
     return (
-      <div className="">
-        { extras.map(item =>
-            <div key={item.name}>
-              <InputNumber min={1} max={10} defaultValue={extraFields[item.name]} onChange={value => onChangeQty(item.name, value)} />
-            </div>
+      <div className="ex-container">
+        <div className="ex-name">
+         {translate('configurator.packagePage.extras')}
+        </div>
+        <div className="ex-wrapper">
+          <Row>
+          { extras.map(item =>
+            <Col span={24} key={item.name} className="ex-main-item">
+              <div className="ex-container-item">
+                <Row>
+                  <Col span={14}>
+                    <div className="ex-item-name">
+                      {item.name}
+                    </div>
+                    <div className="ex-item-description">
+                      {item.description}
+                    </div>
+                  </Col>
+                  <Col span={10}>
+                    <div className="ex-flex-container">
+                      <div className="ex-item-counter-container">
+                        <div className="ex-item-counter-price">
+                          + {item.price.formattedValue}
+                        </div>
+                        <div className="ex-item-counter-subtitle">
+                          ({translate('configurator.packagePage.OneOffCost')})
+                        </div>
+                      </div>
+                      <div key={item.name}>
+                        <InputNumber min={1} max={10} defaultValue={extraFields[item.name]} onChange={value => onChangeQty(item.name, value)} />
+                      </div>
+                    </div>
+                  </Col>
+                </Row>
+              </div>
+            </Col>
         )}
-      </div>
+          </Row>
+          <Row>
+            <div className="ex-wrapper-total-bottom">
+              <Col span={14}>
+                <div className="ex-total-cost">
+                  {translate('configurator.packagePage.TotalOneOffCost')}
+                </div>
+              </Col>
+              <Col span={10}>
+                <div className="ex-total-price">
+                </div>
+              </Col>
+            </div>
+          </Row>
+        </div>
+    </div>
     )
 }
 

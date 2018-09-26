@@ -47,7 +47,7 @@ export class OptionCard extends React.Component {
             <hr/>
             <div className="oc-footer">
               <div className="oc-footer-title">
-                Footer Title
+                {translate('configurator.packagePage.package.accessories')}
               </div>
               <div>
                 {includedItems.map(item => {

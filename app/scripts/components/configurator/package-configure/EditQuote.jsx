@@ -107,7 +107,7 @@ export default class EditQuote extends Component {
                 <Row>
                   <Col span={24}>
                     <div className="eq-total-cost-features">
-                      {translate('configurator.packagePage.TotalCostPerMonth.features')}
+                      {translate('configurator.packagePage.TotalCostPerMonth.feature')}
                     </div>
                   </Col>
                 </Row>
