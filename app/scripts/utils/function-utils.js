@@ -32,15 +32,11 @@ export const format = (text, ...vals) =>
   vals.reduce((acc, obj, idx) => acc.replace(`{${idx}}`, obj), text)
 
 export const delayResponse = resp =>
-  new Promise(resolve => setTimeout(resolve({ data: resp }), 1000))
+  new Promise(resolve =>
+    setTimeout(() => resolve({ data: resp } ), 1000)
+  )
 
-/*export const formatNumber = (value, formatter = '0,0') => {
-  const number = numeral(value)
-  const formattedNumber = number.format(formatter)
-  return formattedNumber
-}*/
-
-export const formatNumber = (formatter,value) => {
+export const formatNumber = (formatter, value) => {
   const number = numeral(value)
   const formattedNumber = number.format(formatter)
   return formattedNumber

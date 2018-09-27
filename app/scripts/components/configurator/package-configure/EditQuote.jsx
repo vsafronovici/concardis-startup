@@ -1,13 +1,17 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Row, Col, InputNumber, Button, Input } from 'antd'
+import cn from 'classnames'
+
 import { translate } from './../../../i18n/i18n'
 import {
+  applyDiscountSelector,
   discountCodeSelector, quantitySelector,
   totalPriceWithDiscountSelector
 } from '../../../selectors/package-configure-selector'
 import { changePackageQnty, changeDiscountCode, applyDiscount } from '../../../actions/package-configure-action'
-import { generalFormatNumber, format } from '../../../utils/function-utils'
+import { generalFormatNumber } from '../../../utils/function-utils'
+import { RESPONSE_STATUS_CODE } from '../../../utils/constants'
 
 
 const calculateTotalPackageCost = (unitPrice, quantity) => generalFormatNumber(unitPrice * quantity)
@@ -19,7 +23,11 @@ class EditQuote extends Component {
   }
 
   render() {
-    const { quote: { unitPrice, totalPriceBeforeDiscount}, quantity, discountCode, totalPriceWithDiscount } = this.props
+    const { quote: { unitPrice, totalPriceBeforeDiscount}, quantity, discountCode, totalPriceWithDiscount, applyDiscountStatus } = this.props
+    const { code: applyDiscountCode, message: applyDiscountMsg } = applyDiscountStatus
+
+    console.log('EditQuote', {props: this.props, applyDiscountCode, applyDiscountMsg})
+
     return (
       <div className="eq-container">
         <div className="eq-name">
@@ -88,15 +96,15 @@ class EditQuote extends Component {
                 </div>
               </Col>
               <Col span={24}>
-                <div className="eq-flex-container">
-                  <div className="eq-bottom-input-disc">
+                <div className="eq-flex-container form-field">
+                  <div className={cn('eq-bottom-input-disc', { error: applyDiscountCode && applyDiscountCode !== RESPONSE_STATUS_CODE.OK })}>
                     <Input
                       className="eq-bottom-input-item"
                       placeholder={translate('configurator.packagePage.field.Discount.placeholder')}
                       value={discountCode}
                       onChange={e => this.props.changeDiscountCode(e.target.value)}
                     />
-                      
+                    <div>{applyDiscountMsg}</div>
                   </div>
                   <div className="eq-bottom-button-disc">
                     <Button onClick={() => this.props.applyDiscount()}>
@@ -124,7 +132,7 @@ class EditQuote extends Component {
                 <Row>
                   <Col span={24}>
                     <div className="eq-total-cost-features">
-                      {format(translate('configurator.packagePage.TotalCostPerMonth.feature'), 1, '0x', 12)}
+                      {translate('configurator.packagePage.TotalCostPerMonth.feature')}
                     </div>
                   </Col>
                 </Row>
@@ -139,7 +147,8 @@ class EditQuote extends Component {
 const mapStateToProps = state => ({
   quantity: quantitySelector(state),
   discountCode: discountCodeSelector(state),
-  totalPriceWithDiscount: totalPriceWithDiscountSelector(state)
+  totalPriceWithDiscount: totalPriceWithDiscountSelector(state),
+  applyDiscountStatus: applyDiscountSelector(state)
 })
 
 const mapDispatchToProps = ({
