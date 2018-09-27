@@ -45,7 +45,7 @@ export default {
         ...state,
         extraFields: {
           ...state.extraFields,
-          ...payload
+          [payload.id]: payload.value
         }
       }
     },

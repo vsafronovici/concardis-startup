@@ -1,0 +1,13 @@
+.pkg-footer-container {
+  background-color: #F5F5F5;
+  margin-top: 20px;
+  padding: 15px 25px;
+  .pkg-flex-container {
+    display: flex;
+    direction: row;
+    justify-content: space-between;
+    .pkg-footer-date {
+      font-weight: 700;
+    }
+  }
+}

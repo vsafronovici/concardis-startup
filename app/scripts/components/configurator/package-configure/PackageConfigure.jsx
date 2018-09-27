@@ -5,6 +5,7 @@ import { OptionCard } from '../OptionCard2'
 import { selectedProductSelector } from '../../../selectors/configurator-selector'
 import EditQuote from './EditQuote'
 import Extras from './Extras'
+import PackageFooter from './PackageFooter'
 
 class PackageConfigure extends Component {
   render() {
@@ -18,6 +19,11 @@ class PackageConfigure extends Component {
           <Col span={12} offset={1}>
             <EditQuote quote={quote} />
             <Extras extras={quote.extraItems} />
+          </Col>
+        </Row>
+        <Row type="flex" justify="center">
+          <Col span={22} offset={1}>
+            <PackageFooter />
           </Col>
         </Row>
       </div>

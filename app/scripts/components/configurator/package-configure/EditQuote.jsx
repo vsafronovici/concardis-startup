@@ -7,10 +7,10 @@ import {
   totalPriceWithDiscountSelector
 } from '../../../selectors/package-configure-selector'
 import { changePackageQnty, changeDiscountCode, applyDiscount } from '../../../actions/package-configure-action'
-import { formatNumber } from '../../../utils/function-utils'
+import { generalFormatNumber } from '../../../utils/function-utils'
 
 
-const calculateTotalPackageCost = (unitPrice, quantity) => formatNumber(unitPrice * quantity)
+const calculateTotalPackageCost = (unitPrice, quantity) => generalFormatNumber(unitPrice * quantity)
 
 class EditQuote extends Component {
 
@@ -38,7 +38,7 @@ class EditQuote extends Component {
               </Col>
               <Col span={10}>
                 <div className="eq-top-price">
-                  {unitPrice.valuePerMonth} {unitPrice.currencySymbol}
+                  {generalFormatNumber(unitPrice.valuePerMonth)} {unitPrice.currencySymbol}
                 </div>
               </Col>
             </Row>
@@ -115,7 +115,7 @@ class EditQuote extends Component {
                 </Col>
                 <Col span={10}>
                   <div className="eq-total-price">
-                    {totalPriceWithDiscount.valuePerMonth} {totalPriceWithDiscount.currencySymbol}
+                    {generalFormatNumber(totalPriceWithDiscount.valuePerMonth)} {totalPriceWithDiscount.currencySymbol}
                   </div>
                 </Col>
               </Row>
