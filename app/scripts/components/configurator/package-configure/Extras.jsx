@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { curry } from 'ramda'
+import { curry, pluck } from 'ramda'
 import { InputNumber, Row, Col } from 'antd'
 
 import { changeExtraQnty } from '../../../actions/package-configure-action'
@@ -10,6 +10,12 @@ import { translate } from '../../../i18n/i18n';
 const onChangeQtyCurried = curry((action, fieldName, fieldValue) => {
   action({ [fieldName]: fieldValue })
 })
+
+const getExtraValues = array => {
+  const values = pluck('price')(array)
+  const prices = pluck('value')(values)
+  console.log(prices)
+}
 
 const Extras = props => {
     console.log('Extras', props)
@@ -45,7 +51,7 @@ const Extras = props => {
                         </div>
                       </div>
                       <div key={item.name}>
-                        <InputNumber min={1} max={10} defaultValue={extraFields[item.name]} onChange={value => onChangeQty(item.name, value)} />
+                        <InputNumber min={1} max={10} defaultValue={extraFields[item.quoteItemId]} onChange={value => onChangeQty(item.quoteItemId, value)} />
                       </div>
                     </div>
                   </Col>
@@ -63,6 +69,7 @@ const Extras = props => {
               </Col>
               <Col span={10}>
                 <div className="ex-total-price">
+                  {getExtraValues(extras)}
                 </div>
               </Col>
             </div>

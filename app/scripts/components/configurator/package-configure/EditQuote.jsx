@@ -18,7 +18,6 @@ class EditQuote extends Component {
     this.props.changePackageQnty({ qty: value })
   }
 
-
   render() {
     const { quote: { unitPrice, totalPriceBeforeDiscount}, quantity, discountCode, totalPriceWithDiscount } = this.props
     return (

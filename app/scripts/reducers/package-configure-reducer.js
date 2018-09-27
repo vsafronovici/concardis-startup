@@ -14,7 +14,7 @@ const createExtraFields = ({ extraItems }) =>
   extraItems.reduce((acc, obj) => {
     return {
       ...acc,
-      [obj.name]: getQuantity(obj)
+      [obj.quoteItemId]: getQuantity(obj)
     }
   }, {})
 
@@ -38,6 +38,15 @@ export default {
       return {
         ...state,
         quantity: payload.qty,
+      }
+    },
+    [PACKAGE_CONFIGURE.CHANGE_EXTRA_QNTY](state, { payload }) {
+      return {
+        ...state,
+        extraFields: {
+          ...state.extraFields,
+          ...payload
+        }
       }
     },
     [PACKAGE_CONFIGURE.CHANGE_DISCOUNT_CODE](state, { payload }) {
