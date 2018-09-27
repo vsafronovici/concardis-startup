@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { InputNumber, Row, Col } from 'antd'
 
-import { changeExtraQnty } from '../../../actions/package-configure-action'
+import { changeExtraQnty, goToRoot } from '../../../actions/package-configure-action'
 import { extraFieldsSelector, extraItemsSelector, extraFieldsTotalSelector } from '../../../selectors/package-configure-selector'
 import { translate } from '../../../i18n/i18n';
 import { generalFormatNumber } from './../../../utils/function-utils'

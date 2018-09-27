@@ -7,6 +7,7 @@ import { i18nSelector } from '../selectors/i18n-selector'
 import { Loader } from '../components/Loader'
 import PackageConfigure from '../components/configurator/package-configure/PackageConfigure'
 import { quoteSelector } from '../selectors/package-configure-selector'
+import PackageRouter from './../components/configurator/package-configure/PackageRouter'
 
 export class PackageConfigurePage extends React.Component {
   static propTypes = {
@@ -25,7 +26,7 @@ export class PackageConfigurePage extends React.Component {
       ? <Loader />
       : (
         <div>
-          <PackageConfigure quote={quote}/>
+          <PackageRouter quote={quote} {...this.props}/>
         </div>
       )
   }

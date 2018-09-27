@@ -60,5 +60,6 @@ export const SignUpCode = {
 
 export const PackageRoot = {
   ROOT1: 'Package_Configure',
-  ROOT2: 'Package_Personalise'
+  ROOT2: 'Package_Personalise',
+  ROOT3: 'Temp'
 }

@@ -85,7 +85,8 @@ export default {
     },
     [PACKAGE_CONFIGURE.GO_TO_ROOT](state, { payload }) {
       return {
-        ...state
+        ...state,
+        root: payload
       }
     }
   })
