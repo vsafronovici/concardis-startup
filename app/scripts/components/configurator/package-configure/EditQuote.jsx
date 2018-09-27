@@ -7,7 +7,7 @@ import {
   totalPriceWithDiscountSelector
 } from '../../../selectors/package-configure-selector'
 import { changePackageQnty, changeDiscountCode, applyDiscount } from '../../../actions/package-configure-action'
-import { generalFormatNumber } from '../../../utils/function-utils'
+import { generalFormatNumber, format } from '../../../utils/function-utils'
 
 
 const calculateTotalPackageCost = (unitPrice, quantity) => generalFormatNumber(unitPrice * quantity)
@@ -124,7 +124,7 @@ class EditQuote extends Component {
                 <Row>
                   <Col span={24}>
                     <div className="eq-total-cost-features">
-                      {translate('configurator.packagePage.TotalCostPerMonth.feature')}
+                      {format(translate('configurator.packagePage.TotalCostPerMonth.feature'), 1, '0x', 12)}
                     </div>
                   </Col>
                 </Row>

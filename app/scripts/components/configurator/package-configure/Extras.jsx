@@ -59,7 +59,7 @@ const Extras = (props) =>  {
                 </Col>
                 <Col span={10}>
                   <div className="ex-total-price">
-                  {generalFormatNumber(extraFieldsTotal)} EUR
+                    {generalFormatNumber(extraFieldsTotal)} EUR
                   </div>
                 </Col>
               </div>
