@@ -2,8 +2,11 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Row, Col, InputNumber, Button, Input } from 'antd'
 import { translate } from './../../../i18n/i18n'
-import { quantitySelector } from '../../../selectors/package-configure-selector'
-import { changePackageQnty } from '../../../actions/package-configure-action'
+import {
+  discountCodeSelector, quantitySelector,
+  totalPriceWithDiscountSelector
+} from '../../../selectors/package-configure-selector'
+import { changePackageQnty, changeDiscountCode, applyDiscount } from '../../../actions/package-configure-action'
 import { formatNumber } from '../../../utils/function-utils'
 
 
@@ -17,7 +20,7 @@ class EditQuote extends Component {
 
 
   render() {
-    const { quote: { unitPrice, totalPriceBeforeDiscount, totalPriceWithDiscount}, quantity } = this.props
+    const { quote: { unitPrice, totalPriceBeforeDiscount}, quantity, discountCode, totalPriceWithDiscount } = this.props
     return (
       <div className="eq-container">
         <div className="eq-name">
@@ -88,11 +91,16 @@ class EditQuote extends Component {
               <Col span={24}>
                 <div className="eq-flex-container">
                   <div className="eq-bottom-input-disc">
-                    <Input className="eq-bottom-input-item" placeholder={translate('configurator.packagePage.field.Discount.placeholder')}/>
+                    <Input
+                      className="eq-bottom-input-item"
+                      placeholder={translate('configurator.packagePage.field.Discount.placeholder')}
+                      value={discountCode}
+                      onChange={e => this.props.changeDiscountCode(e.target.value)}
+                    />
                       
                   </div>
                   <div className="eq-bottom-button-disc">
-                    <Button className="">
+                    <Button onClick={() => this.props.applyDiscount()}>
                       {translate('btn.applyDiscount')}
                     </Button>
                   </div>
@@ -130,11 +138,15 @@ class EditQuote extends Component {
 }
 
 const mapStateToProps = state => ({
-  quantity: quantitySelector(state)
+  quantity: quantitySelector(state),
+  discountCode: discountCodeSelector(state),
+  totalPriceWithDiscount: totalPriceWithDiscountSelector(state)
 })
 
 const mapDispatchToProps = ({
-  changePackageQnty
+  changePackageQnty,
+  changeDiscountCode,
+  applyDiscount
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditQuote)

@@ -5,6 +5,8 @@ import configuratorStep1 from './configurator/mock-fields-step1'
 import configuratorStep2 from './configurator/mock-fields-step2'
 import packageCconfigureQuote from './configurator/mock-package-configurator'
 import packageSaveQuote from './configurator/mock-save-quote'
+import { ok as validateDiscountOk, error as validateDiscountErr } from './configurator/mock-validate-discount'
+import { ok as applyDiscountOk, error as applyDiscountErr } from './configurator/mock-apply-discount'
 
 export const MOCK_REMOTE_ACTIONS = createNamespace('MOCK_REMOTE_ACTIONS', {
   getDictionaryMetadata: undefined,
@@ -15,6 +17,8 @@ export const MOCK_REMOTE_ACTIONS = createNamespace('MOCK_REMOTE_ACTIONS', {
   submitEmailGDPR: undefined,
   getQuote: undefined,
   saveQuote: undefined,
+  validateDiscount: undefined,
+  applyDiscount: undefined,
 })
 
 export const mockResponse = action => {
@@ -34,6 +38,12 @@ export const mockResponse = action => {
     case MOCK_REMOTE_ACTIONS.saveQuote:
       return packageSaveQuote
 
+    case MOCK_REMOTE_ACTIONS.validateDiscount:
+      return validateDiscountOk
+
+    case MOCK_REMOTE_ACTIONS.applyDiscount:
+      return applyDiscountOk
+
     default:
       return undefined
   }
@@ -49,6 +59,8 @@ export const mockVisualForceConfig = {
     submitEmailGDPR: undefined,
     getQuote: MOCK_REMOTE_ACTIONS.getQuote,
     saveQuote: MOCK_REMOTE_ACTIONS.saveQuote,
+    validateDiscount: MOCK_REMOTE_ACTIONS.validateDiscount,
+    applyDiscount: MOCK_REMOTE_ACTIONS.applyDiscount,
   },
   lang: 'en_US',
   XHRs: {

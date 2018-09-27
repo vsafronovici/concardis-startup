@@ -20,6 +20,10 @@ export const RESPONSE_STATUS = {
   ERR: 'err'
 }
 
+export const RESPONSE_STATUS_CODE = {
+  OK: '0',
+  ERR: '1'
+}
 
 export const SectionType = {
   SIMPLE: 'Simple',

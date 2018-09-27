@@ -18,6 +18,11 @@ export const changePackageQnty = payload => ({
   payload
 })
 
+export const changeDiscountCode = payload => ({
+  type: PACKAGE_CONFIGURE.CHANGE_DISCOUNT_CODE,
+  payload
+})
+
 export const applyDiscount = payload => ({
   type: PACKAGE_CONFIGURE.APPLY_DISCOUNT,
   payload
