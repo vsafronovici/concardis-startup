@@ -6,6 +6,18 @@
     display: flex;
     direction: row;
     justify-content: space-between;
+    .pkg-footer-button-back {
+      margin-right: 50px;
+      .ant-btn {
+        width: 340px;
+      }
+      
+      }
+      .pkg-footer-button-next {
+        .ant-btn {
+          width: 340px;
+        }
+    }
     .pkg-footer-date {
       font-weight: 700;
     }

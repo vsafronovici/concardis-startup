@@ -23,7 +23,7 @@ class PackageConfigure extends Component {
         </Row>
         <Row type="flex" justify="center">
           <Col span={22} offset={1}>
-            <PackageFooter />
+            <PackageFooter quote={quote}/>
           </Col>
         </Row>
       </div>

@@ -2,10 +2,11 @@ import { path } from 'ramda'
 
 import { createReducer } from './../modules/helpers'
 import { PACKAGE_CONFIGURE } from './../actions/types'
-import { RESPONSE_STATUS_CODE } from '../utils/constants'
+import { RESPONSE_STATUS_CODE, PackageRoot } from '../utils/constants'
 
 export const initialState = {
   submitting: false,
+  root: PackageRoot.ROOT1
 }
 
 const getQuantity = path(['quantity', 'value'])
@@ -82,5 +83,10 @@ export default {
         totalPriceWithDiscount: payload.code === RESPONSE_STATUS_CODE.OK ? payload.totalPriceWithDiscount : state.totalPriceWithDiscount
       }
     },
+    [PACKAGE_CONFIGURE.GO_TO_ROOT](state, { payload }) {
+      return {
+        ...state
+      }
+    }
   })
 }

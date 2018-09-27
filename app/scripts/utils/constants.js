@@ -57,3 +57,8 @@ export const SignUpCode = {
   SCEN4: '4',
   SCEN5: '5'
 }
+
+export const PackageRoot = {
+  ROOT1: 'Package_Configure',
+  ROOT2: 'Package_Personalise'
+}
