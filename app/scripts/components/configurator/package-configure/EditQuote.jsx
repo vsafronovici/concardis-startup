@@ -6,7 +6,7 @@ import cn from 'classnames'
 import { translate } from './../../../i18n/i18n'
 import {
   applyDiscountSelector,
-  discountCodeSelector, quantitySelector,
+  discountCodeSelector, quantitySelector, submittingSelector,
   totalPriceWithDiscountSelector
 } from '../../../selectors/package-configure-selector'
 import { changePackageQnty, changeDiscountCode, applyDiscount } from '../../../actions/package-configure-action'
@@ -21,6 +21,8 @@ class EditQuote extends Component {
   onChangeQty = value => {
     this.props.changePackageQnty({ qty: value })
   }
+
+  isApplyDiscountBtnDisabled = () => this.props.submitting
 
   render() {
     const { quote: { unitPrice, totalPriceBeforeDiscount}, quantity, discountCode, totalPriceWithDiscount, applyDiscountStatus } = this.props
@@ -107,7 +109,7 @@ class EditQuote extends Component {
                     <div>{applyDiscountMsg}</div>
                   </div>
                   <div className="eq-bottom-button-disc">
-                    <Button onClick={() => this.props.applyDiscount()}>
+                    <Button onClick={() => this.props.applyDiscount()} disabled={this.isApplyDiscountBtnDisabled()}>
                       {translate('btn.applyDiscount')}
                     </Button>
                   </div>
@@ -148,7 +150,8 @@ const mapStateToProps = state => ({
   quantity: quantitySelector(state),
   discountCode: discountCodeSelector(state),
   totalPriceWithDiscount: totalPriceWithDiscountSelector(state),
-  applyDiscountStatus: applyDiscountSelector(state)
+  applyDiscountStatus: applyDiscountSelector(state),
+  submitting: submittingSelector(state)
 })
 
 const mapDispatchToProps = ({

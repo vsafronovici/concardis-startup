@@ -41,7 +41,7 @@ const Extras = (props) =>  {
                           </div>
                         </div>
                         <div key={item.name}>
-                          <InputNumber min={1} max={10} defaultValue={extraFields[item.quoteItemId]} onChange={value => changeExtraQnty({ id: item.quoteItemId, value: value })} />
+                          <InputNumber min={0} max={10} defaultValue={extraFields[item.quoteItemId]} onChange={value => changeExtraQnty({ id: item.quoteItemId, value: value })} />
                         </div>
                       </div>
                     </Col>

@@ -3,6 +3,7 @@ import { createSelector } from 'reselect'
 import { propOrEmptyObj } from '../utils/function-utils'
 
 export const rootSelector = prop('packageConfigure')
+export const submittingSelector = compose(prop('submitting'), rootSelector)
 export const quoteSelector = compose(prop('quote'), rootSelector)
 export const extraFieldsSelector = compose(prop('extraFields'), rootSelector)
 export const quantitySelector = compose(prop('quantity'), rootSelector)
