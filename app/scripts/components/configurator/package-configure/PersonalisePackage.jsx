@@ -1,8 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Row, Col } from 'antd'
-import { OptionCard } from './../OptionCard2'
-import { quoteSelector } from './../../../selectors/package-configure-selector'
+import { OptionCard } from '../OptionCard2'
+import { quoteSelector } from '../../../selectors/package-configure-selector'
 
 const PersonalisePackage = props => {
 

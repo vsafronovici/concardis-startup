@@ -3,31 +3,31 @@ import { connect } from 'react-redux'
 import PackageConfigure from './PackageConfigure';
 import PersonalisePackage from './PersonalisePackage';
 import { quoteSelector, rootRouterSelector } from './../../../selectors/package-configure-selector'
+import { PackageRoot } from './../../../utils/constants'
 
 const PackageRouter = props => {
 
-  const { quote, root } = props
+  const { root } = props
 
   const GetRoot = (root) => {
     switch (root) {
-      case PackageConfigure.ROOT1:
-        return <PackageConfigure {...props}/>
-      case PackageConfigure.ROOT2:
-        return <PersonalisePackage {...props}/>
+      case PackageRoot.ROOT1:
+        return PackageConfigure
+      case PackageRoot.ROOT2:
+        return PersonalisePackage
       default:
-        return <PackageConfigure {...props}/>
+        return PackageConfigure
     }
   }
-  
+  const Route = GetRoot(root)
   return(
     <div>
-      {GetRoot(root)}
+      <Route {...props} />
     </div>
   )
 }
 
 const mapStateToProps = state => ({
-  quote: quoteSelector(state),
   root: rootRouterSelector(state)
 })
 
