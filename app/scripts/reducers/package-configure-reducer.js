@@ -6,7 +6,7 @@ import { RESPONSE_STATUS_CODE, PackageRoot } from '../utils/constants'
 
 export const initialState = {
   submitting: false,
-  root: PackageRoot.ROOT1
+  route: PackageRoot.ROOT2
 }
 
 const getQuantity = path(['quantity', 'value'])
@@ -99,7 +99,7 @@ export default {
     [PACKAGE_CONFIGURE.GO_TO_ROOT](state, { payload }) {
       return {
         ...state,
-        root: payload
+        route: payload
       }
     }
   })

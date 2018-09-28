@@ -1,4 +1,4 @@
-import { all, compose, prop, toPairs } from 'ramda'
+import { compose, prop, toPairs } from 'ramda'
 import { createSelector } from 'reselect'
 import { propOrEmptyObj } from '../utils/function-utils'
 
@@ -16,14 +16,14 @@ export const extraFieldsTotalSelector = createSelector(
     quoteSelector,
     extraFieldsSelector,
     (quote, extraFields) => {
-     const sum = quote.extraItems.reduce((total, item) => {
+     const totalSum = quote.extraItems.reduce((total, item) => {
         const price = item.price.value
         const qty = extraFields[item.quoteItemId]
-        const totalSum = total + price * qty
-        console.log(totalSum)
-        return totalSum
+        const sum = total + price * qty
+        return sum
       }, 0)
-    return sum}
+    return totalSum
+    }
   )
 
 export const applyDiscountPayloadSelector = createSelector(

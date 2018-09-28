@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { Row, Col } from 'antd'
 import { OptionCard } from '../OptionCard2'
 import { quoteSelector } from '../../../selectors/package-configure-selector'
+import PackageDescription from './PackageDescription'
 
 const PersonalisePackage = props => {
 
@@ -10,8 +11,10 @@ const PersonalisePackage = props => {
   return(
     <div className="pp-container">
       <Row>
-        <Col span={8} offset={4}></Col>
         <Col span={8} offset={4}>
+          <PackageDescription />
+        </Col>
+        <Col span={8}>
           <OptionCard quote={quote} />
         </Col>
       </Row>
