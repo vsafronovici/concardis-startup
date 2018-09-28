@@ -53,7 +53,7 @@ export class OptionCard extends React.Component {
                 {includedItems.map(item => {
                   return(
                     <div key={item.name}>
-                      {item.description}
+                      {item.quantity.value > 1 && <span>{item.quantity.value}x</span>} {item.description}
                     </div>
                   )
                 })}
