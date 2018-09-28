@@ -63,7 +63,7 @@ export const submitQuoteRes = payload => ({
   payload
 })
 
-export const goToRoot = payload => ({
+export const goToRoute = payload => ({
   type: PACKAGE_CONFIGURE.GO_TO_ROOT,
   payload
 })

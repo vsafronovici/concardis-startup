@@ -9,7 +9,6 @@ import PackageFooter from './PackageFooter'
 
 class PackageConfigure extends Component {
   render() {
-    console.log(this.props)
     const { quote } = this.props
     return (
       <div className="package-configure">

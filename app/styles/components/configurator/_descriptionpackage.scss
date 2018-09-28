@@ -1,0 +1,42 @@
+.pd-container {
+  margin-top: 50px;
+  .pd-title {
+    font-size: 27px;
+    font-weight: 600;
+  }
+  .pd-description-1 {
+    margin-top: 20px;
+    font-size: 13px;
+  }
+  .pd-description-2 {
+    margin-top: 20px;
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+  .pd-list-container {
+    ul.pd-list {
+      list-style-type: disc;
+      padding: none;
+      margin: none;
+      padding-inline-start: none;
+      li {
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+  .pd-cards-container {
+    border: 1px solid #9E9E9E;
+    padding: 15px 15px;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    .pd-card-description {
+      font-size: 10px;
+      margin-top: 10px;
+    }
+  }
+  .ant-btn {
+    width: 250px;
+  }
+}

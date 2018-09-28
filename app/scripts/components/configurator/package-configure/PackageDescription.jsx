@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { translate } from './../../../i18n/i18n'
-import { Row, Col, Button } from 'antd'
+import { Row, Col, Button, Icon } from 'antd'
 
 const PackageDescription = props => {
 
@@ -22,15 +22,50 @@ const PackageDescription = props => {
           </div>
           <div className="pd-list-container">
             <ul className="pd-list">
-              {['feature1', 'feature2', 'feature3'].map( (feature, index) => {
+              {['Your company information as in Official Register', 'Your VAT information (if applicable)', 'Your payment details'].map( (feature, index) => {
                 return(
-                  <div className="pd-list-item" key={index}>
+                  <li className="pd-list-item" key={index}>
                     {feature}
-                  </div>
+                  </li>
                 )
               })}
             </ul>
           </div>
+          <div className="pd-cards-container">
+            <Row>
+              <Col span={8}>
+                <div className="pd-card-title">
+                  <Icon type="clock-circle" theme="outlined" style={{ fontSize: '30px', color: '#616161' }}/>
+                </div>
+                <div className="pd-card-description">
+                  It should take
+                  less than 10 min
+                  to complete
+                </div>
+              </Col>
+              <Col span={8}>
+                <div className="pd-card-title">
+                  <Icon type="sync" theme="outlined" style={{ fontSize: '30px', color: '#616161' }}/>
+                </div>
+                <div className="pd-card-description">
+                  You can save it
+                  and resume later
+                </div>
+              </Col>
+              <Col span={8}>
+                <div className="pd-card-title">
+                  <Icon type="exclamation-circle" theme="outlined" style={{ fontSize: '30px', color: '#616161' }}/>
+                </div>
+                <div className="pd-card-description">
+                  Remember, your offer
+                  expires on
+                </div>
+              </Col>
+            </Row>
+          </div>
+          <Button>
+            Personalise package & apply
+          </Button>
         </div>
       </Col>
     </Row>

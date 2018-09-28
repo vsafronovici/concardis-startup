@@ -10,7 +10,7 @@ export const extraItemsSelector = compose(prop('extraItems'), quoteSelector)
 export const discountCodeSelector = compose(prop('discountCode'), rootSelector)
 export const totalPriceWithDiscountSelector = compose(prop('totalPriceWithDiscount'), rootSelector)
 export const applyDiscountSelector = compose(propOrEmptyObj('applyDiscount'), rootSelector)
-export const rootRouterSelector = compose(prop('root'), rootSelector)
+export const routeSelector = compose(prop('route'), rootSelector)
 
 export const extraFieldsTotalSelector = createSelector(
     quoteSelector,

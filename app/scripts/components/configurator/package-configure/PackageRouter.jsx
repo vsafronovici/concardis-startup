@@ -2,15 +2,15 @@ import React from 'react'
 import { connect } from 'react-redux'
 import PackageConfigure from './PackageConfigure';
 import PersonalisePackage from './PersonalisePackage';
-import { rootRouterSelector } from './../../../selectors/package-configure-selector'
+import { routeSelector } from './../../../selectors/package-configure-selector'
 import { PackageRoot } from './../../../utils/constants'
 
 const PackageRouter = props => {
 
-  const { root } = props
+  const { route } = props
 
-  const GetRoute = (root) => {
-    switch (root) {
+  const GetRoute = (route) => {
+    switch (route) {
       case PackageRoot.ROOT1:
         return PackageConfigure
       case PackageRoot.ROOT2:
@@ -19,7 +19,7 @@ const PackageRouter = props => {
         return PackageConfigure
     }
   }
-  const PackageRoute = GetRoute(root)
+  const PackageRoute = GetRoute(route)
   return(
     <div>
       <PackageRoute {...props} />
@@ -28,7 +28,7 @@ const PackageRouter = props => {
 }
 
 const mapStateToProps = state => ({
-  root: rootRouterSelector(state)
+  route: routeSelector(state)
 })
 
 export default connect(mapStateToProps)(PackageRouter)

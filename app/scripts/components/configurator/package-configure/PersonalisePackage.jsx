@@ -11,10 +11,10 @@ const PersonalisePackage = props => {
   return(
     <div className="pp-container">
       <Row>
-        <Col span={8} offset={4}>
+        <Col span={6} offset={4}>
           <PackageDescription />
         </Col>
-        <Col span={8}>
+        <Col span={8} offset={1}>
           <OptionCard quote={quote} />
         </Col>
       </Row>
