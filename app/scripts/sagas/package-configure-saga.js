@@ -7,10 +7,14 @@ import {
 import { SFAction, memoizedSFAction } from './../modules/client'
 import { applyDiscountPayloadSelector } from '../selectors/package-configure-selector'
 import { RESPONSE_STATUS_CODE } from '../utils/constants'
+import { i18nLangSelector } from '../selectors/i18n-selector'
 
 function* initDataSaga() {
+  const lang = yield select(i18nLangSelector)
+
   const action = {
     actionName: window.configSettings.remoteActions.getQuote,
+    args: lang
   }
   const response = yield call(SFAction, action, { parseToJSON: true })
   yield put(getMetaPackageRes(response.data))

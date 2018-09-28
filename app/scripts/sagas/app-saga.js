@@ -3,8 +3,10 @@ import { all, call, put, takeLatest } from 'redux-saga/effects'
 import { APP } from './../actions/types'
 import { loadTranslationsReq, loadTranslationsResp } from '../actions/app-action'
 import { SFAction } from '../modules/client'
+import { LanguageType } from '../utils/constants'
 
 function* loadTranslationsSaga({ payload: { lang } }) {
+  console.log('loadTranslationsSaga', lang)
   const action = {
     actionName: window.configSettings.remoteActions.getDictionaryMetadata,
     args: lang
@@ -14,7 +16,7 @@ function* loadTranslationsSaga({ payload: { lang } }) {
 }
 
 function* initPageSaga() {
-  yield put(loadTranslationsReq(window.configSettings.lang))
+  yield put(loadTranslationsReq(window.configSettings.lang || LanguageType.EN))
 }
 
 export default function* root() {

@@ -103,19 +103,20 @@ function memoize(method) {
 export const SFAction = (action, options = {}) => {
   const { actionName, args } = action
 
-  console.log('SFAction invoked', action)
 
   if (process.env.NODE_ENV === NodeProcess.DEV) {
+    console.log('SFAction invoked in DEV', action)
     const { mockResponse } = require('./../mock-data/mock-utils')
     const resp = mockResponse(actionName)
     return delayResponse(resp)
   }
 
-    const invokeActionArgs = [actionName]
+  const invokeActionArgs = [actionName]
   if (args) {
     invokeActionArgs.push(args)
   }
 
+  console.log('SFAction invoked', {action, invokeActionArgs})
 
   let { buffer, escape, parseToJSON } = options
   buffer = (buffer !== undefined) ? buffer : true
