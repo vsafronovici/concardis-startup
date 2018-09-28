@@ -6,7 +6,6 @@ import { SFAction } from '../modules/client'
 import { LanguageType } from '../utils/constants'
 
 function* loadTranslationsSaga({ payload: { lang } }) {
-  console.log('loadTranslationsSaga', lang)
   const action = {
     actionName: window.configSettings.remoteActions.getDictionaryMetadata,
     args: lang
