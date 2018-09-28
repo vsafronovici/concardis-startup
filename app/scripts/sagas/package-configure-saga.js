@@ -48,11 +48,10 @@ function* applyDiscountReqSaga({ payload }) {
   yield put(applyDiscountRes(response.data))
 }
 
-// function* applyDiscountResSaga({ payload }) {}
-
 function* saveQuoteSaga({ payload }) {
   const action = {
     actionName: window.configSettings.remoteActions.saveQuote,
+    args: JSON.stringify(payload)
   }
   const response = yield call(SFAction, action, { parseToJSON: true })
   yield put(submitQuoteRes(response.data))
@@ -65,7 +64,6 @@ export default function* root() {
     takeLatest(PACKAGE_CONFIGURE.VALIDATE_DISCOUNT_CODE_REQ, validateDiscountCodeReqSaga),
     takeLatest(PACKAGE_CONFIGURE.VALIDATE_DISCOUNT_CODE_RES, validateDiscountCodeResSaga),
     takeLatest(PACKAGE_CONFIGURE.APPLY_DISCOUNT_REQ, applyDiscountReqSaga),
-    // takeLatest(PACKAGE_CONFIGURE.APPLY_DISCOUNT_RES, applyDiscountResSaga),
     takeLatest(PACKAGE_CONFIGURE.SUBMIT_QUOTE_REQ, saveQuoteSaga)
   ])
 }
