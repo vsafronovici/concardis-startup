@@ -63,7 +63,7 @@ const PackageDescription = props => {
               </Col>
             </Row>
           </div>
-          <Button onClick={() => props.goToRoute(PackageRoutes.ROUTE_1)}>
+          <Button onClick={() => props.goToRoute(PackageRoutes.ROUTE_2)}>
             {translate('configurator.packagePersonalise.btn.packageApply')}
           </Button>
         </div>
