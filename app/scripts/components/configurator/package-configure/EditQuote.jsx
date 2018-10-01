@@ -7,7 +7,7 @@ import { translate } from './../../../i18n/i18n'
 import {
   applyDiscountSelector,
   discountCodeSelector, quantitySelector, submittingSelector, totalCostPerMonthSelector,
-  totalPriceWithDiscountSelector
+  totalPriceWithDiscountSelector, validDiscountCodeSelector
 } from '../../../selectors/package-configure-selector'
 import { changePackageQnty, changeDiscountCode, applyDiscount } from '../../../actions/package-configure-action'
 import { format, generalFormatNumber } from '../../../utils/function-utils'
@@ -32,10 +32,15 @@ class EditQuote extends Component {
       discountCode,
       totalPriceWithDiscount,
       applyDiscountStatus,
+      validDiscountCode,
       totalCostPerMonth
     } = this.props
 
     const { code: applyDiscountCode, message: applyDiscountMsg } = applyDiscountStatus
+
+    const totalPriceWithDiscountValue = (discountCode && discountCode === validDiscountCode && applyDiscountCode && applyDiscountCode === RESPONSE_STATUS_CODE.OK)
+      ? totalPriceWithDiscount.valuePerMonth
+      : totalCostPerMonth
 
     console.log('EditQuote', {props: this.props, applyDiscountCode, applyDiscountMsg})
 
@@ -134,7 +139,7 @@ class EditQuote extends Component {
                 </Col>
                 <Col span={10}>
                   <div className="eq-total-price">
-                    {generalFormatNumber(totalPriceWithDiscount.valuePerMonth)} {totalPriceWithDiscount.currencySymbol}
+                    {generalFormatNumber(totalPriceWithDiscountValue)} {totalPriceWithDiscount.currencySymbol}
                   </div>
                 </Col>
               </Row>
@@ -161,6 +166,7 @@ const mapStateToProps = state => ({
   totalCostPerMonth: totalCostPerMonthSelector(state),
   totalPriceWithDiscount: totalPriceWithDiscountSelector(state),
   applyDiscountStatus: applyDiscountSelector(state),
+  validDiscountCode: validDiscountCodeSelector(state),
   submitting: submittingSelector(state)
 })
 

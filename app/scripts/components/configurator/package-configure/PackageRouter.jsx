@@ -11,9 +11,9 @@ const PackageRouter = props => {
 
   const GetRoute = (route) => {
     switch (route) {
-      case PackageRoutes.ROUTE_1:
-        return PackageConfigure
       case PackageRoutes.ROUTE_2:
+        return PackageConfigure
+      case PackageRoutes.ROUTE_1:
         return PersonalisePackage
       default:
         return PackageConfigure

@@ -42,7 +42,7 @@ export const mockResponse = action => {
       return validateDiscountOk
 
     case MOCK_REMOTE_ACTIONS.applyDiscount:
-      return applyDiscountErr
+      return applyDiscountOk
 
     default:
       return undefined

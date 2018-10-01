@@ -80,7 +80,8 @@ export default {
         ...state,
         submitting: false,
         applyDiscount: payload,
-        totalPriceWithDiscount: payload.code === RESPONSE_STATUS_CODE.OK ? payload.totalPriceWithDiscount : state.totalPriceWithDiscount
+        totalPriceWithDiscount: payload.code === RESPONSE_STATUS_CODE.OK ? payload.totalPriceWithDiscount : state.totalPriceWithDiscount,
+        validDiscountCode: state.discountCode
       }
     },
     [PACKAGE_CONFIGURE.SUBMIT_QUOTE_REQ](state) {

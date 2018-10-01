@@ -2,11 +2,12 @@ import { all, call, put, select, takeLatest } from 'redux-saga/effects'
 
 import { PACKAGE_CONFIGURE } from '../actions/types'
 import {
-  getMetaPackageRes, validateDiscountCodeReq, validateDiscountCodeRes, applyDiscountReq, applyDiscountRes, submitQuoteRes
+  getMetaPackageRes, validateDiscountCodeReq, validateDiscountCodeRes, applyDiscountReq, applyDiscountRes,
+  submitQuoteRes, goToRoute
 } from '../actions/package-configure-action'
 import { SFAction, memoizedSFAction } from './../modules/client'
 import { applyDiscountPayloadSelector } from '../selectors/package-configure-selector'
-import { RESPONSE_STATUS_CODE } from '../utils/constants'
+import { PackageRoutes, RESPONSE_STATUS_CODE } from '../utils/constants'
 import { i18nLangSelector } from '../selectors/i18n-selector'
 
 function* initDataSaga() {
@@ -61,6 +62,10 @@ function* saveQuoteSaga({ payload }) {
   yield put(submitQuoteRes(response.data))
 }
 
+function* saveQuoteResSaga() {
+  yield put(goToRoute(PackageRoutes.ROUTE_1))
+}
+
 export default function* root() {
   yield all([
     takeLatest(PACKAGE_CONFIGURE.INIT_DATA, initDataSaga),
@@ -68,6 +73,7 @@ export default function* root() {
     takeLatest(PACKAGE_CONFIGURE.VALIDATE_DISCOUNT_CODE_REQ, validateDiscountCodeReqSaga),
     takeLatest(PACKAGE_CONFIGURE.VALIDATE_DISCOUNT_CODE_RES, validateDiscountCodeResSaga),
     takeLatest(PACKAGE_CONFIGURE.APPLY_DISCOUNT_REQ, applyDiscountReqSaga),
-    takeLatest(PACKAGE_CONFIGURE.SUBMIT_QUOTE_REQ, saveQuoteSaga)
+    takeLatest(PACKAGE_CONFIGURE.SUBMIT_QUOTE_REQ, saveQuoteSaga),
+    takeLatest(PACKAGE_CONFIGURE.SUBMIT_QUOTE_RES, saveQuoteResSaga)
   ])
 }

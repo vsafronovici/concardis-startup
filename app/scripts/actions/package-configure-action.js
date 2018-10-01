@@ -64,6 +64,6 @@ export const submitQuoteRes = payload => ({
 })
 
 export const goToRoute = payload => ({
-  type: PACKAGE_CONFIGURE.GO_TO_ROOT,
+  type: PACKAGE_CONFIGURE.GO_TO_ROUTE,
   payload
 })
