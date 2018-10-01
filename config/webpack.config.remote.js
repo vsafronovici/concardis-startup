@@ -24,18 +24,18 @@ module.exports = merge.smart(webpackConfig, {
     'scripts/app': paths.appIndexJs,
   },
   output: {
-    chunkFilename: 'scripts/[name].[git-hash].js',
-    filename: '[name].[git-hash].js',
+    chunkFilename: 'scripts/[name].js',
+    filename: '[name].js',
     path: paths.destination,
     publicPath: '/',
   },
   devtool: 'source-map',
   plugins: [
-    new CleanPlugin(['dist/scripts/app.*.js', 'dist/scripts/app.*.js.map'], { root: paths.root }),
+    new CleanPlugin(['dist/scripts/app.js', 'dist/scripts/app.js.map'], { root: paths.root }),
     /*new CopyPlugin([
       { from: '../assets/manifest.json' }
     ]),*/
-    new ExtractText('styles/app.[git-hash].css'),
+    new ExtractText('styles/app.css'),
     /*new HtmlPlugin({
       githash: GITHASH,
       inject: false,
