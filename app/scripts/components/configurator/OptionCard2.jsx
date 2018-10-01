@@ -4,14 +4,8 @@ import { translate } from './../../i18n/i18n'
 
 export class OptionCard extends React.Component {
   static propTypes = {
-    readonly: PropTypes.bool,
-    product: PropTypes.object
+    quote: PropTypes.object
   }
-
-  static defaultProps = {
-    readonly: false
-  }
-
   render() {
     const { quote: { description, name, features, includedItems } } = this.props
     return (

@@ -44,8 +44,6 @@ class EditQuote extends Component {
       ? totalPriceWithDiscount.valuePerMonth
       : totalCostPerMonth
 
-    console.log('EditQuote', { props: this.props, applyDiscountCode, applyDiscountMsg })
-
     return (
       <div className="eq-container">
         <div className="eq-name">
@@ -187,7 +185,9 @@ EditQuote.propTypes = {
   changePackageQnty: PropTypes.func,
   changeDiscountCode: PropTypes.func,
   applyDiscount: PropTypes.func,
-  quote: PropTypes.object
+  quote: PropTypes.object,
+  validDiscountCode: PropTypes.string,
+  totalCostPerMonth: PropTypes.number
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditQuote)

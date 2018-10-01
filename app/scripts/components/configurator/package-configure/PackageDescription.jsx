@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Row, Col, Button, Icon } from 'antd'
 import { translate } from './../../../i18n/i18n'
@@ -77,5 +78,9 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = ({
   goToRoute
 })
+
+PackageDescription.propTypes = {
+  goToRoute: PropTypes.func
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(PackageDescription)

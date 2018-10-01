@@ -14,24 +14,23 @@ export const validDiscountCodeSelector = compose(prop('validDiscountCode'), root
 export const applyDiscountSelector = compose(propOrEmptyObj('applyDiscount'), rootSelector)
 export const routeSelector = compose(prop('route'), rootSelector)
 
-export const totalCostPerMonthSelector = createSelector(
+export const totalCostPerMonthSelector = createSelector(
   quoteSelector,
   quantitySelector,
-  (quote, quantity) => quote.unitPrice.valuePerMonth * quantity
+  (quote, quantity) => quote.unitPrice.valuePerMonth * quantity
 )
 
 
-export const extraFieldsTotalSelector = createSelector(
+export const extraFieldsTotalSelector = createSelector(
   quoteSelector,
   extraFieldsSelector,
-  (quote, extraFields) => {
-    const totalSum = quote.extraItems.reduce((total, item) => {
-      const price = item.price.value
-      const qty = extraFields[item.quoteItemId]
-      const sum = total + price * qty
-      return sum
-    }, 0)
-    console.log(totalSum)
+  (quote, extraFields) => {
+    const totalSum = quote.extraItems.reduce((total, item) => {
+      const price = item.price.value
+      const qty = extraFields[item.quoteItemId]
+      const sum = total + (price * qty)
+      return sum
+    }, 0)
     return totalSum
   }
 )

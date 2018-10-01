@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { InputNumber, Row, Col } from 'antd'
 
-import { changeExtraQnty, goToRoute } from '../../../actions/package-configure-action'
+import { changeExtraQnty } from '../../../actions/package-configure-action'
 import { extraFieldsSelector, extraFieldsTotalSelector } from '../../../selectors/package-configure-selector'
 import { translate } from '../../../i18n/i18n'
 import { generalFormatNumber } from './../../../utils/function-utils'

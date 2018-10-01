@@ -36,7 +36,7 @@ export const getTitle = code => {
     case SignUpCode.SCEN5:
       return translate('global.hello')
     default:
-      return translate('configurator.msgPage.1.title')
+      return `wrong code ${code}`
   }
 }
 
