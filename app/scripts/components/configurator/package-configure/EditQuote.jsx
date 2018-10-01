@@ -27,7 +27,7 @@ class EditQuote extends Component {
 
   render() {
     const {
-      quote: { unitPrice, totalPriceBeforeDiscount},
+      quote: { unitPrice, totalPriceBeforeDiscount },
       quantity,
       discountCode,
       totalPriceWithDiscount,
@@ -42,7 +42,7 @@ class EditQuote extends Component {
       ? totalPriceWithDiscount.valuePerMonth
       : totalCostPerMonth
 
-    console.log('EditQuote', {props: this.props, applyDiscountCode, applyDiscountMsg})
+    console.log('EditQuote', { props: this.props, applyDiscountCode, applyDiscountMsg })
 
     return (
       <div className="eq-container">

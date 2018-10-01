@@ -26,13 +26,11 @@ const PackageDescription = props => {
           </div>
           <div className="pd-list-container">
             <ul className="pd-list">
-              {FEATURES.map((feature, index) => {
-                return (
-                  <li className="pd-list-item" key={index}>
-                    {feature}
-                  </li>
-                )
-              })}
+              {FEATURES.map((feature, index) => (
+                <li className="pd-list-item" key={index}>
+                  {feature}
+                </li>
+              ))}
             </ul>
           </div>
           <div className="pd-cards-container">

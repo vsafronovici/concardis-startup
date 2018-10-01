@@ -22,19 +22,19 @@ export const totalCostPerMonthSelector = createSelector(
 
 
 export const extraFieldsTotalSelector = createSelector(
-    quoteSelector,
-    extraFieldsSelector,
-    (quote, extraFields) => {
-     const totalSum = quote.extraItems.reduce((total, item) => {
-        const price = item.price.value
-        const qty = extraFields[item.quoteItemId]
-        const sum = total + price * qty
-        return sum
-      }, 0)
-  console.log(totalSum)
-    return totalSum
-    }
-  )
+  quoteSelector,
+  extraFieldsSelector,
+  (quote, extraFields) => {
+    const totalSum = quote.extraItems.reduce((total, item) => {
+      const price = item.price.value
+      const qty = extraFields[item.quoteItemId]
+      const sum = total + price * qty
+      return sum
+    }, 0)
+    console.log(totalSum)
+    return totalSum
+  }
+)
 
 export const applyDiscountPayloadSelector = createSelector(
   quoteSelector,

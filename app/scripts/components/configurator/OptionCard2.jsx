@@ -33,13 +33,11 @@ export class OptionCard extends React.Component {
               {description}
             </div>
             <div className="oc-items">
-              {features.map((item, index) => {
-                return (
-                  <div key={item.name} className="oc-item">
-                    {item.description}
-                  </div>
-                )
-              })}
+              {features.map((item, index) => (
+                <div key={item.name} className="oc-item">
+                  {item.description}
+                </div>
+              ))}
             </div>
           </div>
           <hr />
@@ -48,13 +46,11 @@ export class OptionCard extends React.Component {
               {translate('configurator.packagePage.package.accessories')}
             </div>
             <div>
-              {includedItems.map(item => {
-                return (
-                  <div key={item.name}>
-                    {item.quantity.value > 1 && <span>{item.quantity.value}x</span>} {item.description}
-                  </div>
-                )
-              })}
+              {includedItems.map(item => (
+                <div key={item.name}>
+                  {item.quantity.value > 1 && <span>{item.quantity.value}x</span>} {item.description}
+                </div>
+              ))}
             </div>
           </div>
         </div>

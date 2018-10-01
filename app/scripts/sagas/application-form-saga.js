@@ -1,4 +1,4 @@
-/*import { all, call, put, takeEvery, takeLatest } from 'redux-saga/effects'
+/* import { all, call, put, takeEvery, takeLatest } from 'redux-saga/effects'
 import { delay } from 'redux-saga'
 
 import { APPLICATION_FORM } from '../actions/types'
