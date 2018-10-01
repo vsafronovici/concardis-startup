@@ -13,11 +13,13 @@ import {
 import { changePackageQnty, changeDiscountCode, applyDiscount } from '../../../actions/package-configure-action'
 import { format, generalFormatNumber } from '../../../utils/function-utils'
 import { RESPONSE_STATUS_CODE } from '../../../utils/constants'
-import { isAlphaNumeric } from '../../../utils/regexps'
+import { isAlphaNumeric, isInteger } from '../../../utils/regexps'
 
 class EditQuote extends Component {
   onChangeQty = value => {
-    this.props.changePackageQnty({ qty: value })
+    if (isInteger(value)) {
+      this.props.changePackageQnty({ qty: value })
+    }
   }
 
   isApplyDiscountBtnDisabled = () => {
@@ -85,7 +87,7 @@ class EditQuote extends Component {
                         {translate('configurator.packagePage.packageQuantity.abreviated')}
                       </div>
                       <div className="eq-content-numbers">
-                        <InputNumber min={1} max={10} defaultValue={quantity} onChange={value => this.onChangeQty(value)} />
+                        <InputNumber min={1} max={10} defaultValue={quantity} value={quantity} onChange={value => this.onChangeQty(value)} />
                       </div>
                     </div>
                   </Col>

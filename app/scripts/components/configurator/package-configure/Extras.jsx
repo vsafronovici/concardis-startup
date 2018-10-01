@@ -7,6 +7,13 @@ import { changeExtraQnty, goToRoute } from '../../../actions/package-configure-a
 import { extraFieldsSelector, extraFieldsTotalSelector } from '../../../selectors/package-configure-selector'
 import { translate } from '../../../i18n/i18n'
 import { generalFormatNumber } from './../../../utils/function-utils'
+import { isInteger } from '../../../utils/regexps'
+
+const onChangeExtraQty = (action, { id, value }) => {
+  if (isInteger(value)) {
+    action({ id, value })
+  }
+}
 
 const Extras = (props) => {
   const { extras, extraFields, changeExtraQnty, extraFieldsTotal } = props
@@ -40,7 +47,7 @@ const Extras = (props) => {
                         </div>
                       </div>
                       <div key={item.name}>
-                        <InputNumber min={0} max={10} defaultValue={extraFields[item.quoteItemId]} onChange={value => changeExtraQnty({ id: item.quoteItemId, value })} />
+                        <InputNumber min={0} max={10} defaultValue={extraFields[item.quoteItemId]} value={extraFields[item.quoteItemId]} onChange={value => onChangeExtraQty(changeExtraQnty, { id: item.quoteItemId, value })} />
                       </div>
                     </div>
                   </Col>
