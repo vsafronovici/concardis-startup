@@ -1,12 +1,12 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import PackageConfigure from './PackageConfigure';
-import PersonalisePackage from './PersonalisePackage';
+import PackageConfigure from './PackageConfigure'
+import PersonalisePackage from './PersonalisePackage'
 import { routeSelector } from './../../../selectors/package-configure-selector'
 import { PackageRoutes } from './../../../utils/constants'
 
 const PackageRouter = props => {
-
   const { route } = props
 
   const GetRoute = (route) => {
@@ -20,7 +20,7 @@ const PackageRouter = props => {
     }
   }
   const PackageRoute = GetRoute(route)
-  return(
+  return (
     <div>
       <PackageRoute {...props} />
     </div>
@@ -30,5 +30,9 @@ const PackageRouter = props => {
 const mapStateToProps = state => ({
   route: routeSelector(state)
 })
+
+PackageRouter.propTypes = {
+  route: PropTypes.string
+}
 
 export default connect(mapStateToProps)(PackageRouter)

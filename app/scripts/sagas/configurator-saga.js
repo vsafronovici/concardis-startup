@@ -16,8 +16,8 @@ function* initDataSaga() {
   }
   const response = yield call(SFAction, action, { parseToJSON: true })
   yield put(getMetaStep1Res(response.data.fields))
-
 }
+
 function* getMetaStep2Saga({ payload }) {
   const action = {
     actionName: window.configSettings.remoteActions.getProducts,
@@ -25,7 +25,6 @@ function* getMetaStep2Saga({ payload }) {
   }
   const response = yield call(memoizedSFAction, action, { parseToJSON: true })
   yield put(getMetaStep2Res(response.data))
-
 }
 
 function* goToStepSaga({ payload }) {

@@ -12,12 +12,10 @@ export const initialState = {
 const getQuantity = path(['quantity', 'value'])
 
 const createExtraFields = ({ extraItems }) =>
-  extraItems.reduce((acc, obj) => {
-    return {
-      ...acc,
-      [obj.quoteItemId]: getQuantity(obj)
-    }
-  }, {})
+  extraItems.reduce((acc, obj) => ({
+    ...acc,
+    [obj.quoteItemId]: getQuantity(obj)
+  }), {})
 
 export default {
   packageConfigure: createReducer(initialState, {

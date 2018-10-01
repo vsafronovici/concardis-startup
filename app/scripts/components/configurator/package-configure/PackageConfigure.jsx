@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Row, Col } from 'antd'
 import { OptionCard } from '../OptionCard2'
@@ -23,7 +24,7 @@ class PackageConfigure extends Component {
         </Row>
         <Row type="flex" justify="center">
           <Col span={22} offset={1}>
-            <PackageFooter quote={quote}/>
+            <PackageFooter quote={quote} />
           </Col>
         </Row>
       </div>
@@ -34,5 +35,9 @@ class PackageConfigure extends Component {
 const mapStateToProps = state => ({
   selectedProduct: selectedProductSelector(state)
 })
+
+PackageConfigure.propTypes = {
+  quote: PropTypes.object
+}
 
 export default connect(mapStateToProps)(PackageConfigure)

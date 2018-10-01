@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Row, Col, InputNumber, Button, Input } from 'antd'
 import cn from 'classnames'
@@ -15,7 +16,6 @@ import { RESPONSE_STATUS_CODE } from '../../../utils/constants'
 import { isAlphaNumeric } from '../../../utils/regexps'
 
 class EditQuote extends Component {
-
   onChangeQty = value => {
     this.props.changePackageQnty({ qty: value })
   }
@@ -85,7 +85,7 @@ class EditQuote extends Component {
                         {translate('configurator.packagePage.packageQuantity.abreviated')}
                       </div>
                       <div className="eq-content-numbers">
-                        <InputNumber min={1} max={10} defaultValue={quantity} onChange={value => this.onChangeQty(value)}/>
+                        <InputNumber min={1} max={10} defaultValue={quantity} onChange={value => this.onChangeQty(value)} />
                       </div>
                     </div>
                   </Col>
@@ -101,7 +101,7 @@ class EditQuote extends Component {
               </Col>
             </Row>
           </div>
-          <div className='eq-container-bottom'>
+          <div className="eq-container-bottom">
             <Row>
               <Col span={24}>
                 <div className="eq-bottom-title">
@@ -144,14 +144,14 @@ class EditQuote extends Component {
                 </Col>
               </Row>
             </div>
-              <div className="eq-features-container">
-                <Row>
-                  <Col span={24}>
-                    <div className="eq-total-cost-features">
-                      {format(translate('configurator.packagePage.TotalCostPerMonth.feature'), 1, '0x', 12)}
-                    </div>
-                  </Col>
-                </Row>
+            <div className="eq-features-container">
+              <Row>
+                <Col span={24}>
+                  <div className="eq-total-cost-features">
+                    {format(translate('configurator.packagePage.TotalCostPerMonth.feature'), 1, '0x', 12)}
+                  </div>
+                </Col>
+              </Row>
             </div>
           </div>
         </div>
@@ -175,6 +175,18 @@ const mapDispatchToProps = ({
   changeDiscountCode,
   applyDiscount
 })
+
+EditQuote.propTypes = {
+  quantity: PropTypes.number,
+  discountCode: PropTypes.string,
+  totalPriceWithDiscount: PropTypes.object,
+  applyDiscountStatus: PropTypes.object,
+  submitting: PropTypes.bool,
+  changePackageQnty: PropTypes.func,
+  changeDiscountCode: PropTypes.func,
+  applyDiscount: PropTypes.func,
+  quote: PropTypes.object
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditQuote)
 

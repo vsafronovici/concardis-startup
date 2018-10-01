@@ -5,7 +5,6 @@ import { connect } from 'react-redux'
 import { initData } from '../actions/package-configure-action'
 import { i18nSelector } from '../selectors/i18n-selector'
 import { Loader } from '../components/Loader'
-import PackageConfigure from '../components/configurator/package-configure/PackageConfigure'
 import { quoteSelector } from '../selectors/package-configure-selector'
 import PackageRouter from './../components/configurator/package-configure/PackageRouter'
 
@@ -26,7 +25,7 @@ export class PackageConfigurePage extends React.Component {
       ? <Loader />
       : (
         <div>
-          <PackageRouter quote={quote} {...this.props}/>
+          <PackageRouter quote={quote} {...this.props} />
         </div>
       )
   }

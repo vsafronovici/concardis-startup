@@ -33,14 +33,13 @@ export const format = (text, ...vals) =>
 
 export const delayResponse = resp =>
   new Promise(resolve =>
-    setTimeout(() => resolve({ data: resp } ), 1000)
+    setTimeout(() => resolve({ data: resp }), 1000)
   )
 
 export const formatNumber = (formatter, value) => {
   const number = numeral(value)
   const formattedNumber = number.format(formatter)
   return formattedNumber
-
 }
 
 export const generalFormatNumber = curry(formatNumber)('00.00')
