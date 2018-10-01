@@ -2,11 +2,11 @@ import { path } from 'ramda'
 
 import { createReducer } from './../modules/helpers'
 import { PACKAGE_CONFIGURE } from './../actions/types'
-import { RESPONSE_STATUS_CODE, PackageRoot } from '../utils/constants'
+import { RESPONSE_STATUS_CODE, PackageRoutes } from '../utils/constants'
 
 export const initialState = {
   submitting: false,
-  route: PackageRoot.ROOT2
+  route: PackageRoutes.ROUTE_2
 }
 
 const getQuantity = path(['quantity', 'value'])
@@ -96,7 +96,7 @@ export default {
         saveQuoteStatus: payload
       }
     },
-    [PACKAGE_CONFIGURE.GO_TO_ROOT](state, { payload }) {
+    [PACKAGE_CONFIGURE.GO_TO_ROUTE](state, { payload }) {
       return {
         ...state,
         route: payload

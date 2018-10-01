@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import PackageConfigure from './PackageConfigure';
 import PersonalisePackage from './PersonalisePackage';
 import { routeSelector } from './../../../selectors/package-configure-selector'
-import { PackageRoot } from './../../../utils/constants'
+import { PackageRoutes } from './../../../utils/constants'
 
 const PackageRouter = props => {
 
@@ -11,9 +11,9 @@ const PackageRouter = props => {
 
   const GetRoute = (route) => {
     switch (route) {
-      case PackageRoot.ROOT1:
+      case PackageRoutes.ROUTE_1:
         return PackageConfigure
-      case PackageRoot.ROOT2:
+      case PackageRoutes.ROUTE_2:
         return PersonalisePackage
       default:
         return PackageConfigure

@@ -57,5 +57,5 @@ export const PACKAGE_CONFIGURE = createNamespace('PACKAGE_CONFIGURE', {
   CHANGE_EXTRA_QNTY: undefined,
   SUBMIT_QUOTE_REQ: undefined,
   SUBMIT_QUOTE_RES: undefined,
-  GO_TO_ROOT: undefined,
+  GO_TO_ROUTE: undefined,
 })

@@ -23,6 +23,7 @@ export const extraFieldsTotalSelector = createSelector(
         const sum = total + price * qty
         return sum
       }, 0)
+  console.log(totalSum)
     return totalSum
     }
   )
