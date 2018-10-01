@@ -15,10 +15,15 @@ import { format, generalFormatNumber } from '../../../utils/function-utils'
 import { RESPONSE_STATUS_CODE } from '../../../utils/constants'
 import { isAlphaNumeric, isInteger } from '../../../utils/regexps'
 
+const MAX_VALUE = 10
+
 class EditQuote extends Component {
   onChangeQty = value => {
-    if (isInteger(value)) {
+    if (isInteger(value) && (value <= MAX_VALUE)) {
       this.props.changePackageQnty({ qty: value })
+    }
+    else if (isInteger(value) && (value > MAX_VALUE)) {
+      this.props.changePackageQnty({ qty: value = 10 })
     }
   }
 

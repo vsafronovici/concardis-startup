@@ -5,10 +5,10 @@ import { Button } from 'antd'
 
 import { translate } from './../../../i18n/i18n'
 import { submitQuoteReq } from './../../../actions/package-configure-action'
-import { applyDiscountPayloadSelector } from '../../../selectors/package-configure-selector'
+import { applyDiscountPayloadSelector, submittingSelector } from '../../../selectors/package-configure-selector'
 
 const PackageFooter = props => {
-  const { quote: { quoteValidTill }, applyDiscountPayload } = props
+  const { quote: { quoteValidTill }, applyDiscountPayload, submitting } = props
   return (
     <div className="pkg-footer-container">
       <div className="pkg-flex-container">
@@ -17,7 +17,7 @@ const PackageFooter = props => {
         </div>
         <div className="pkg-flex-container">
           <div className="pkg-footer-button-back">
-            <Button onClick={() => props.submitQuoteReq(applyDiscountPayload)}>
+            <Button onClick={() => props.submitQuoteReq(applyDiscountPayload)} disabled={submitting}>
               {translate('configurator.packagePage.btn.saveOffer')}
             </Button>
           </div>
@@ -33,7 +33,8 @@ const PackageFooter = props => {
 }
 
 const mapStateToProps = state => ({
-  applyDiscountPayload: applyDiscountPayloadSelector(state)
+  applyDiscountPayload: applyDiscountPayloadSelector(state),
+  submitting: submittingSelector(state)
 })
 
 const mapDispatchToProps = ({
@@ -43,7 +44,8 @@ const mapDispatchToProps = ({
 PackageFooter.propTypes = {
   quote: PropTypes.object,
   applyDiscountPayload: PropTypes.object,
-  submitQuoteReq: PropTypes.func
+  submitQuoteReq: PropTypes.func,
+  submitting: PropTypes.bool
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PackageFooter)

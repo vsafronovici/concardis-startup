@@ -9,9 +9,13 @@ import { translate } from '../../../i18n/i18n'
 import { generalFormatNumber } from './../../../utils/function-utils'
 import { isInteger } from '../../../utils/regexps'
 
+const MAX_VALUE = 10
+
 const onChangeExtraQty = (action, { id, value }) => {
-  if (isInteger(value)) {
+  if (isInteger(value) && (value <= MAX_VALUE)) {
     action({ id, value })
+  } else if (isInteger(value) && (value > MAX_VALUE)) {
+    action({ id, value: MAX_VALUE })
   }
 }
 
@@ -47,7 +51,7 @@ const Extras = (props) => {
                         </div>
                       </div>
                       <div key={item.name}>
-                        <InputNumber min={0} max={10} defaultValue={extraFields[item.quoteItemId]} value={extraFields[item.quoteItemId]} onChange={value => onChangeExtraQty(changeExtraQnty, { id: item.quoteItemId, value })} />
+                        <InputNumber min={0} max={MAX_VALUE} defaultValue={extraFields[item.quoteItemId]} value={extraFields[item.quoteItemId]} onChange={value => onChangeExtraQty(changeExtraQnty, { id: item.quoteItemId, value })} />
                       </div>
                     </div>
                   </Col>
