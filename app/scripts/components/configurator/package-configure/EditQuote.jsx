@@ -6,15 +6,13 @@ import cn from 'classnames'
 import { translate } from './../../../i18n/i18n'
 import {
   applyDiscountSelector,
-  discountCodeSelector, quantitySelector, submittingSelector,
+  discountCodeSelector, quantitySelector, submittingSelector, totalCostPerMonthSelector,
   totalPriceWithDiscountSelector
 } from '../../../selectors/package-configure-selector'
 import { changePackageQnty, changeDiscountCode, applyDiscount } from '../../../actions/package-configure-action'
 import { format, generalFormatNumber } from '../../../utils/function-utils'
 import { RESPONSE_STATUS_CODE } from '../../../utils/constants'
-
-
-const calculateTotalPackageCost = (unitPrice, quantity) => generalFormatNumber(unitPrice * quantity)
+import { isAlphaNumeric } from '../../../utils/regexps'
 
 class EditQuote extends Component {
 
@@ -22,10 +20,21 @@ class EditQuote extends Component {
     this.props.changePackageQnty({ qty: value })
   }
 
-  isApplyDiscountBtnDisabled = () => this.props.submitting
+  isApplyDiscountBtnDisabled = () => {
+    const { submitting, discountCode } = this.props
+    return submitting || !(discountCode && isAlphaNumeric(discountCode))
+  }
 
   render() {
-    const { quote: { unitPrice, totalPriceBeforeDiscount}, quantity, discountCode, totalPriceWithDiscount, applyDiscountStatus } = this.props
+    const {
+      quote: { unitPrice, totalPriceBeforeDiscount},
+      quantity,
+      discountCode,
+      totalPriceWithDiscount,
+      applyDiscountStatus,
+      totalCostPerMonth
+    } = this.props
+
     const { code: applyDiscountCode, message: applyDiscountMsg } = applyDiscountStatus
 
     console.log('EditQuote', {props: this.props, applyDiscountCode, applyDiscountMsg})
@@ -80,7 +89,7 @@ class EditQuote extends Component {
                       {translate('configurator.packagePage.TotalPackageCostPerMonth')}
                     </div>
                     <div className="eq-content-price">
-                      {calculateTotalPackageCost(unitPrice.valuePerMonth, quantity)} {totalPriceBeforeDiscount.currencySymbol}
+                      {generalFormatNumber(totalCostPerMonth)} {totalPriceBeforeDiscount.currencySymbol}
                     </div>
                   </Col>
                 </Row>
@@ -149,6 +158,7 @@ class EditQuote extends Component {
 const mapStateToProps = state => ({
   quantity: quantitySelector(state),
   discountCode: discountCodeSelector(state),
+  totalCostPerMonth: totalCostPerMonthSelector(state),
   totalPriceWithDiscount: totalPriceWithDiscountSelector(state),
   applyDiscountStatus: applyDiscountSelector(state),
   submitting: submittingSelector(state)
