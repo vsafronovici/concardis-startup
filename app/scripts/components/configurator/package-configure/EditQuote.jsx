@@ -21,9 +21,8 @@ class EditQuote extends Component {
   onChangeQty = value => {
     if (isInteger(value) && (value <= MAX_VALUE)) {
       this.props.changePackageQnty({ qty: value })
-    }
-    else if (isInteger(value) && (value > MAX_VALUE)) {
-      this.props.changePackageQnty({ qty: value = MAX_VALUE })
+    } else if (isInteger(value) && (value > MAX_VALUE)) {
+      this.props.changePackageQnty({ qty: MAX_VALUE })
     }
   }
 
@@ -90,7 +89,10 @@ class EditQuote extends Component {
                         {translate('configurator.packagePage.packageQuantity.abreviated')}
                       </div>
                       <div className="eq-content-numbers">
-                        <InputNumber min={1} max={MAX_VALUE} defaultValue={quantity} value={quantity} onChange={value => this.onChangeQty(value)} />
+                        <InputNumber
+                          min={1} max={MAX_VALUE} defaultValue={quantity} value={quantity}
+                          onChange={value => this.onChangeQty(value)}
+                        />
                       </div>
                     </div>
                   </Col>

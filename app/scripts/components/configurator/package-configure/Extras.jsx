@@ -20,7 +20,7 @@ const onChangeExtraQty = (action, { id, value }) => {
 }
 
 const Extras = (props) => {
-  const { extras, extraFields, changeExtraQnty, extraFieldsTotal } = props
+  const { extras, extraFields, extraFieldsTotal } = props
   return (
     <div className="ex-container">
       <div className="ex-name">
@@ -51,7 +51,10 @@ const Extras = (props) => {
                         </div>
                       </div>
                       <div key={item.name}>
-                        <InputNumber min={0} max={MAX_VALUE} defaultValue={extraFields[item.quoteItemId]} value={extraFields[item.quoteItemId]} onChange={value => onChangeExtraQty(changeExtraQnty, { id: item.quoteItemId, value })} />
+                        <InputNumber
+                          min={0} max={MAX_VALUE} defaultValue={extraFields[item.quoteItemId]} value={extraFields[item.quoteItemId]}
+                          onChange={value => onChangeExtraQty(props.changeExtraQnty, { id: item.quoteItemId, value })}
+                        />
                       </div>
                     </div>
                   </Col>
@@ -91,7 +94,6 @@ const mapDispatchToProps = ({
 Extras.propTypes = {
   extraFields: PropTypes.object,
   extraFieldsTotal: PropTypes.number,
-  changeExtraQnty: PropTypes.func,
   extras: PropTypes.array
 }
 

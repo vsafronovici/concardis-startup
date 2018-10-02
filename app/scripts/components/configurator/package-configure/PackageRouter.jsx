@@ -9,7 +9,7 @@ import { PackageRoutes } from './../../../utils/constants'
 const PackageRouter = props => {
   const { route } = props
 
-  const GetRoute = (route) => {
+  const GetRoute = () => {
     switch (route) {
       case PackageRoutes.ROUTE_2:
         return PackageConfigure
