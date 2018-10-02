@@ -38,8 +38,8 @@ function* validateDiscountCodeReqSaga({ payload }) {
 
 function* validateDiscountCodeResSaga({ payload }) {
   if (payload.code === RESPONSE_STATUS_CODE.OK) {
-    const payload = yield select(applyDiscountPayloadSelector)
-    yield put(applyDiscountReq(payload))
+    const applyDiscountPayload = yield select(applyDiscountPayloadSelector)
+    yield put(applyDiscountReq(applyDiscountPayload))
   }
 }
 

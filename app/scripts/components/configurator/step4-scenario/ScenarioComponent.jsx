@@ -36,26 +36,29 @@ const ScenarioComponent = props => {
   const { signupCode, user, email } = props
 
   return (
-    !signupCode ? <Loader />
-    : <Row>
-        <Col span={24}>
-          <div>
-            <div className="scenario-title">
-              {getTitle(signupCode)} {(withName(signupCode) && user) ? user.firstName : null}
-            </div>
-            <div className="scenario-container-content">
-              {(signupCode === SignUpCode.SCEN1) && <ATScenario />}
-              <div className="scenario-content">
-                <div className="scenario-title2">
-                  {signupCode === SignUpCode.SCEN3 ? title2WithEmail(getTitle2(signupCode), email) : getTitle2(signupCode)}
-                </div>
-                {withTitle3(signupCode) && <div className="scenario-title3">{getTitle3(signupCode)}</div>}
+    !signupCode
+      ? <Loader />
+      : (
+        <Row>
+          <Col span={24}>
+            <div>
+              <div className="scenario-title">
+                {getTitle(signupCode)} {(withName(signupCode) && user) ? user.firstName : null}
               </div>
+              <div className="scenario-container-content">
+                {(signupCode === SignUpCode.SCEN1) && <ATScenario />}
+                <div className="scenario-content">
+                  <div className="scenario-title2">
+                    {signupCode === SignUpCode.SCEN3 ? title2WithEmail(getTitle2(signupCode), email) : getTitle2(signupCode)}
+                  </div>
+                  {withTitle3(signupCode) && <div className="scenario-title3">{getTitle3(signupCode)}</div>}
+                </div>
+              </div>
+              {withButton(signupCode) && <BTNScenario btnText={getButtonTitle(signupCode)} />}
             </div>
-            {withButton(signupCode) && <BTNScenario btnText={getButtonTitle(signupCode)} />}
-          </div>
-        </Col>
-      </Row>
+          </Col>
+        </Row>
+      )
   )
 }
 
