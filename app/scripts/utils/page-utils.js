@@ -1,10 +1,12 @@
 import { PageContainers } from './constants'
 import ConfiguratorPage from '../containers/ConfiguratorPage'
 import PackageConfigurePage from '../containers/PackageConfigurePage'
+import ApplicationFormPage from '../containers/ApplicationFormPage'
 
 const RootContainers = {
   [PageContainers.CONFIGURATOR_PAGE]: ConfiguratorPage,
   [PageContainers.PACKAGE_CONFIGURE_PAGE]: PackageConfigurePage,
+  [PageContainers.APPLICATION_FORM_PAGE]: ApplicationFormPage
 }
 
 const rootComponent = rootId => ({

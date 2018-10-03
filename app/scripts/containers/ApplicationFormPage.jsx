@@ -4,16 +4,19 @@ import { connect } from 'react-redux'
 
 import { i18nSelector } from '../selectors/i18n-selector'
 import { Loader } from '../components/Loader'
+import ApplicationForm from '../components/application-form/ApplicationForm'
 
 class ApplicationFormPage extends Component {
 
   render() {
     const { i18n } = this.props
-    return (
-      <div>
-        ApplicationFormPage Container
-      </div>
-    )
+    return !i18n 
+        ? <Loader /> 
+        : (
+            <div>
+              <ApplicationForm />
+            </div>
+          )
   }
 }
 

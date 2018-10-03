@@ -7,6 +7,19 @@ const Step = Steps.Step
 
 const Loading = <Icon type="loading" className="step_loading" />
 
+const getStepTitle = status => {
+  switch (status) {
+    case SectionStatusType.FINISHED:
+      return 'Finished'
+    case SectionStatusType.IN_PROGRESS:
+      return 'In Progress'
+    case SectionStatusType.PAUSED:
+      return 'Paused'
+    default:
+      return 'Waiting'
+  }
+}
+
 const StepsForm = props => {
 
   return(
