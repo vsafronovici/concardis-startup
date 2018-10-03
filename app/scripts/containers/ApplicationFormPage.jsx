@@ -5,8 +5,13 @@ import { connect } from 'react-redux'
 import { i18nSelector } from '../selectors/i18n-selector'
 import { Loader } from '../components/Loader'
 import ApplicationForm from '../components/application-form/ApplicationForm'
+import { initData } from './../actions/application-form-action'
 
 class ApplicationFormPage extends Component {
+
+  componentWillMount() {
+    this.props.initData()
+  }
 
   render() {
     const { i18n } = this.props
@@ -25,7 +30,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = ({
-
+  initData
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ApplicationFormPage)

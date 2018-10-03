@@ -3,6 +3,7 @@ import { all, fork } from 'redux-saga/effects'
 import app from './app-saga'
 import configurator from './configurator-saga'
 import packageConfigure from './package-configure-saga'
+import applicationForm from './application-form-saga'
 
 /**
  * rootSaga
@@ -12,5 +13,6 @@ export default function* root() {
     fork(app),
     fork(configurator),
     fork(packageConfigure),
+    fork(applicationForm)
   ])
 }

@@ -16,7 +16,7 @@ export const REACT_DEMO = createNamespace('REACT_DEMO', {
   ACCOUNT_RESP: undefined
 })
 
-export const APPLICATION_FORM = createNamespace('APPLICATION_FORM', {
+export const APPLICATION_FORM_DEMO = createNamespace('APPLICATION_FORM', {
   INIT_DATA: undefined,
   GET_FIELDS_SECTIONS_REQ: undefined,
   GET_FIELDS_SECTIONS_RESP: undefined,
@@ -58,4 +58,16 @@ export const PACKAGE_CONFIGURE = createNamespace('PACKAGE_CONFIGURE', {
   SUBMIT_QUOTE_REQ: undefined,
   SUBMIT_QUOTE_RES: undefined,
   GO_TO_ROUTE: undefined,
+})
+
+export const APPLICATION_FORM = createNamespace('APPLICATION_FORM', {
+  INIT_DATA: undefined,
+  GET_FIELDS_SECTIONS_REQ: undefined,
+  GET_FIELDS_SECTIONS_RESP: undefined,
+  SAVE_FIELDS_SECTION_REQ: undefined,
+  SAVE_FIELDS_SECTION_RESP: undefined,
+  GO_TO_NEXT_STEP: undefined,
+  EDIT_SECTION: undefined,
+  SUBMIT_ALL_REQ: undefined,
+  SUBMIT_ALL_RESP: undefined
 })
