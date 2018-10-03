@@ -20,6 +20,9 @@ export const detectRootContainer = () => {
     case (document.getElementById(PageContainers.PACKAGE_CONFIGURE_PAGE) !== null):
       return rootComponent(PageContainers.PACKAGE_CONFIGURE_PAGE)
 
+    case (document.getElementById(PageContainers.APPLICATION_FORM_PAGE) !== null):
+      return rootComponent(PageContainers.APPLICATION_FORM_PAGE)
+
     default:
       return {
         rootId: 'react',
