@@ -62,3 +62,12 @@ export const PackageRoutes = {
   ROUTE_1: 'Package_Configure',
   ROUTE_2: 'Package_Personalise'
 }
+
+export const StepsBar = {
+  STEP_1: 'ABOUT_YOU',
+  STEP_2: 'COMPANY_LEGAL_DETAILS',
+  STEP_3: 'COMPANY_CONTACT_DETAILS',
+  STEP_4: 'COMPANY_BUSINESS_MODEL',
+  STEP_5: 'CUSTOMISE_YOUR_PRODUCT',
+  STEP_6: 'PAYMENT_DETAILS'
+}

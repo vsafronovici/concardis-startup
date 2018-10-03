@@ -1,0 +1,44 @@
+.steps-pop-wrapper {
+  padding: 30px 30px;
+  border: 1px solid #BDBDBD;
+  .steps-btn {
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+  .steps-app-name {
+    font-weight: 700;
+    margin-bottom: 40px;
+  }
+  .sf-container {
+    .ant-steps-item-wait {
+      .ant-steps-item-icon {
+        background-color: #fff!important;
+        border: 1px solid #BDBDBD;
+      }
+      .ant-steps-item-title {
+        font-size: 12px;
+        width: 100%;
+        color: #000;
+        font-weight: 500;
+      }
+    }
+    .ant-steps-item-process {
+      .ant-steps-item-content {
+        height: 30px;
+        .ant-steps-item-title {
+          font-size: 12px;
+          border-bottom: 1px solid #BDBDBD;
+          width: 100%;
+        }
+      }
+      .ant-steps-item-icon {
+        border: 2px solid #9E9E9E;
+        background-color: #fff!important;
+        .ant-steps-icon {
+          color: #BDBDBD;
+        }
+      }
+    }
+  }
+}
