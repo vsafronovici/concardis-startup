@@ -25,10 +25,15 @@
     }
     .ant-steps-item-finish {
       .ant-steps-item-icon {
-        background-color: #fff !important;
+        background-color: #BDBDBD !important;
         border: 1px solid #BDBDBD;
         .anticon-check {
-          color: #BDBDBD !important;
+          color: #FFFFFF !important;
+        }
+      }
+      .ant-steps-item-tail {
+        &:after {
+          background-color: #BDBDBD;
         }
       }
     }

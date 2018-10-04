@@ -2,8 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Row, Col, Button } from 'antd'
-
+import BoxedRadioBtns from './../../components/common/BoxedRadioBtns'
 import StepsBar from './StepsBar'
+import { options } from './../../mock-data/application-form/mock-radio-group'
 
 const ApplicationForm = props => {
 
@@ -17,11 +18,11 @@ const ApplicationForm = props => {
                 Your Application:
               </div>
               <StepsBar />
-              <Button className="steps-btn">Temrs & Conditions</Button>
+              <Button className="steps-btn">Terms & Conditions</Button>
             </div>
           </Col>
           <Col span={13} offset={1}>
-            Forms
+            <BoxedRadioBtns name="radio_groups" type="radio" options={options}/> 
           </Col>
         </Row>
       </Col>

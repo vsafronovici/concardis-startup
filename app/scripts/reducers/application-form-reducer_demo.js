@@ -1,6 +1,6 @@
 import { keys, pickBy, toPairs, isEmpty } from 'ramda'
-import { createReducer } from './../modules/helpers'
-import { APPLICATION_FORM } from './../actions/types'
+import { createReducer } from '../modules/helpers'
+import { APPLICATION_FORM } from '../actions/types'
 import { SectionStatusType } from '../utils/constants'
 
 export const initialState = {

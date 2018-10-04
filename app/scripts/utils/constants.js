@@ -34,6 +34,7 @@ export const FieldType = {
   TEXT: 'text',
   DROPDOWN: 'drop_down',
   TEXT_WITH_SEARCH: undefined,
+  RADIO: 'radio'
 }
 
 export const SectionStatusType = {
