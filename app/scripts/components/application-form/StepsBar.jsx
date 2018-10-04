@@ -3,8 +3,8 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { Col, Row, Steps, Icon } from 'antd'
 
-import { StepsBar } from '../../utils/constants'
-import { sections } from './../../mock-data/application-form/mock-steps-bar'
+import { ApplicationFormSteps } from '../../utils/constants'
+import { sectionsSelector, currentSectionsSelector, sectionsStateSelector } from '../../selectors/application-form-selector'
 
 const Step = Steps.Step
 
@@ -12,24 +12,24 @@ const Loading = <Icon type="loading" className="step_loading" />
 
 const getStepTitle = status => {
   switch (status) {
-    case StepsBar.STEP_1:
+    case ApplicationFormSteps.STEP_1:
       return 'About you'
-    case StepsBar.STEP_2:
+    case ApplicationFormSteps.STEP_2:
       return 'Company legal details'
-    case StepsBar.STEP_3:
+    case ApplicationFormSteps.STEP_3:
       return 'Company contact details'
-    case StepsBar.STEP_4:
+    case ApplicationFormSteps.STEP_4:
       return 'Company business model'
-    case StepsBar.STEP_5:
+    case ApplicationFormSteps.STEP_5:
       return 'Customise your product'
-    case StepsBar.STEP_6:
+    case ApplicationFormSteps.STEP_6:
       return 'Payment details'
     default:
       return 'About you'
   }
 }
 
-//console.log(getStepTitle(StepsBar.STEP_5))
+//console.log(getStepTitle(ApplicationFormSteps.STEP_5))
 
 const renderStep = ({ section }) => {
   const status = section.title
@@ -37,16 +37,18 @@ const renderStep = ({ section }) => {
   //const status = sectionsState[section.id].status
   //const extraProps = (submitting && status === SectionStatusType.IN_PROGRESS) ? { status: 'process', icon: Loading } : {}
   
-  return <Step key={section.id} title={title}  />
+  return <Step key={section.id} title={title} />
 }
 
-export const StepsForm = () => {
+export const StepsBar = (props) => {
   // const currentIdx = current >= 0 ? current : sections.length
+  const { sections, current } = props
+  console.log(props)
   return (
     <div className="sf-container">
       <Row>
         <Col span={20}>
-          <Steps direction="vertical" size="small">
+          <Steps direction="vertical" size="small" current={current}>
             { sections.map(section => renderStep({ section })) }
           </Steps>
         </Col>
@@ -56,11 +58,13 @@ export const StepsForm = () => {
 }
 
 const mapStateToProps = state => ({
-
+  sections: sectionsSelector(state),
+  current: currentSectionsSelector(state),
+  sectionsState: sectionsStateSelector(state)
 })
 
 const mapDispatchToProps = ({
 
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(StepsForm)
+export default connect(mapStateToProps, mapDispatchToProps)(StepsBar)

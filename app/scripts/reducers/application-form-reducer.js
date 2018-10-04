@@ -2,8 +2,9 @@ import { createReducer } from '../modules/helpers'
 import { APPLICATION_FORM } from '../actions/types'
 
 const initialState = {
-  current: undefined,
-  sections: undefined
+  current: 0,
+  sections: undefined,
+  sectionsState: undefined
 }
 
 export default {
@@ -14,7 +15,7 @@ export default {
     [APPLICATION_FORM.GET_FIELDS_SECTIONS_RESP](state, { payload }) {
       return {
         ...state,
-        sections: payload,
+        ...payload
       }
     }
   })

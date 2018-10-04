@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Row, Col, Button } from 'antd'
 
-import StepsForm from '../application-form/StepsForm'
+import StepsBar from './StepsBar'
 
 const ApplicationForm = props => {
 
@@ -16,7 +16,7 @@ const ApplicationForm = props => {
               <div className="steps-app-name">
                 Your Application:
               </div>
-              <StepsForm />
+              <StepsBar />
               <Button className="steps-btn">Temrs & Conditions</Button>
             </div>
           </Col>
