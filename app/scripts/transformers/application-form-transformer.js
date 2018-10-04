@@ -26,7 +26,7 @@ export const transformFieldsMeta = (payload, sections) =>
           options: {
             items: p.options.items
           },
-          validation: pickAll(['validate', 'required', 'requiredError', 'regEx'], p.validation)
+          validation: pickAll(['validate', 'required', 'requiredError', 'regexp'], p.validation)
         })
       ).sort((a, b) => (a.sequence - b.sequence))
     }), {})

@@ -32,9 +32,15 @@ export const SectionType = {
 
 export const FieldType = {
   TEXT: 'text',
+  TEXT_BOLD: 'text_bold',
+  DATE: 'date',
   DROPDOWN: 'drop_down',
-  TEXT_WITH_SEARCH: undefined,
-  RADIO: 'radio'
+  HORIZONTAL_RADIO_BTNS: 'horizontal_radio_btns',
+  VERTICAL_RADIO_BTNS: 'vertical_radio_btns',
+  BOXED_RADIO_BTNS: 'boxed_radio_btns',
+  CHECKBOX: 'checkbox',
+  BOXED_CHECKBOX: 'boxed_checkbox',
+  BOXED_CHECKBOX_GROUP: 'boxed_checkbox_group'
 }
 
 export const SectionStatusType = {

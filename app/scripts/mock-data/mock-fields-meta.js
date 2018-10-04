@@ -12,7 +12,7 @@ export const mockFieldsMeta = {
         validate: true, // if needed, otherwise false
         required: true, // if needed, otherwise false or don't provide this property
         requiredError: 'err.required',
-        regEx: '^[0-9]+$', // if needed, otherwise don't provide this property
+        regexp: '^[0-9]+$', // if needed, otherwise don't provide this property
       }
     },
     {

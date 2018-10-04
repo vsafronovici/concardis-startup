@@ -1,7 +1,14 @@
 .form-field {
-  .form-label {
+  label, .form-label {
     font-weight: bold;
   }
+
+  &-text {
+    input{
+      width: 90%;
+    }
+  }
+
   .error {
     color: red;
     input {
