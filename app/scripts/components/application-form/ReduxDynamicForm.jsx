@@ -7,7 +7,7 @@ import { DynamicForm } from './DynamicForm'
 import { Validator } from './form-validator'
 
 // TODO remove
-const initialValues = { f1: 'x1', f3: '1', f4: '2', f5: true }
+const initialValues = { f1: 'x1', f3: '2', f4: '2', f5: true }
 
 export class ReduxDynamicForm extends React.Component {
   static propTypes = {

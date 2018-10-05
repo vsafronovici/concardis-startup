@@ -48,6 +48,7 @@ const RenderVerticalRadioBtns = createRenderer((input, meta, rest) => {
 const RenderBoxedRadioBtns = createRenderer((input, meta, rest) => {
   return <FieldBoxedRadioBtns
     onChange={(event) => input.onChange(event)}
+    value={input.value}
     {...rest}
   />
 })

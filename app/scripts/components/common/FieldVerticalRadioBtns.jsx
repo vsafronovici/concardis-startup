@@ -26,7 +26,7 @@ export const FieldVerticalRadioBtns = props => {
           {tooltip && <FieldTooltip title={tooltip} />}
         </div>
       </div>
-      <RadioGroup onChange={(value) => onChange(value)}>
+      <RadioGroup onChange={(value) => onChange(value)} value={value}>
         {options.map((radio, index) => (
           <div className="bottom-container"  key={index}>
             <Radio value={radio.value} style={radioStyle} />

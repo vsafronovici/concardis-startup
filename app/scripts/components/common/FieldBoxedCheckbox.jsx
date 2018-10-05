@@ -10,7 +10,7 @@ export const FieldBoxedCheckbox = props => {
       <div className="container-titles">
         <label>
           {translate(label)} {optional && <span>{('optional')}</span>}
-        </label>label>
+        </label>
         <div className="help">
           {translate(help)}
         </div>
