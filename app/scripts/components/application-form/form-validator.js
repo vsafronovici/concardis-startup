@@ -8,6 +8,7 @@ const createReducer = values => (acc, field) => {
   }
 
   const { regexp } = validation
+  console.log('createReducer regexp=', regexp)
 
   if (!optional && (!values[name] || values[name].trim() === '')) {
     return {

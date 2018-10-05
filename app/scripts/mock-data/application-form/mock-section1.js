@@ -22,11 +22,11 @@ export default {
     {
       name: 'f2',
       type: FieldType.TEXT,
-      label: 'f1.label',
-      help: 'f1.help',
-      tooltip: 'tooltip',
+      label: 'f2.label',
+      help: 'f2.help',
+      tooltip: 'tooltip2',
       placeholder: 'placeholder',
-      optional: true,
+      optional: false,
       validation: {
         regexp: '^([0-9]{1,})$',
         err: 'err f1'

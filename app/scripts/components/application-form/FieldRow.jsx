@@ -1,30 +1,21 @@
 import React from 'react'
-import { Input, Icon, Tooltip, Button, Select, FormItem } from 'antd'
+import { Input, Button, Select } from 'antd'
 import { Field } from 'redux-form'
 import { pickAll } from 'ramda'
 import { translate } from '../../i18n/i18n'
 import { FieldType } from '../../utils/constants'
 import { objectToArrayKeyValue } from '../../utils/function-utils'
 import cn from 'classnames'
+import { FieldInputText } from '../common/FieldInputText'
 
 const Option = Select.Option
 
-const FieldTooltip = ({ title }) =>
-  <Tooltip placement="rightTop" trigger="click" title={translate(title)}>
-    <Icon type="info-circle" style={{ fontSize: '0.8em', color: '#08c' }} />
-  </Tooltip>
-
-const createRenderer = render => ({ input, meta, type, label, optional, help, tooltip, ...rest }) => (
+const createRenderer = render => ({ input, meta, type, ...rest }) => (
   <div className="form-field">
     <div className={cn(`form-field-${type}`)}>
       <div className={cn({ error: meta.error && meta.touched, active: meta.active })}>
-        <label>
-          <strong>{translate(label)}</strong> { optional && <span> {'(optional)'}</span> }
-        </label>
-        { help && <div className="form-help">{help}</div> }
-        <div className="form-input">
+        <div>
           { render(input, meta, rest) }
-          { tooltip && <FieldTooltip title={tooltip} /> }
         </div>
         <div>{ meta.error && meta.touched && <span>{translate(meta.error)}</span> }</div>
       </div>
@@ -32,15 +23,13 @@ const createRenderer = render => ({ input, meta, type, label, optional, help, to
   </div>
 )
 
-const RenderInput = createRenderer((input, meta, { placeholder }) => {
-  console.log('RenderInput', placeholder)
-  //const xxx = meta.dirty ? input.value : val
-  return <Input
-    {...input}
+
+const RenderInput = createRenderer((input, meta, rest) => {
+  return <FieldInputText
+    input={input}
     onChange={(event) => input.onChange(event)}
-    placeholder={placeholder ? translate(placeholder) : ''}
     value={input.value}
-    disabled={false}
+    {...rest}
   />
 })
 
