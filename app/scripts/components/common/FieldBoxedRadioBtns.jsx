@@ -1,26 +1,27 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Radio } from 'antd'
+import { translate } from './../../i18n/i18n'
 
 const RadioGroup = Radio.Group
 
 export const FieldBoxedRadioBtns = (props) => {
-  const { options, onChange } = props
-  console.log('BoxedRadioGroup', )
+  const { options, onChange, optional } = props
+
   return (
     <RadioGroup onChange={(value) => onChange(value)}>
       {options.map( (radio, index) => (
-        <div className="bxd-radio-container"  key={index}>
-          <div className="bxd-container-titles">
-            <div className="bxd-radio-label">
-              {radio.label}
-            </div>
-            <div className="bxd-radio-label2">
-              {radio.label2}
+        <div className="radio-container"  key={index}>
+          <div className="container-titles">
+            <label>
+              {translate(radio.label)}
+            </label>
+            <div className="radio-label2">
+              {translate(radio.label2)}
             </div>
           </div>
-          <div className="bxd-radio-container-field">
-            <div className="bxd-radio-input">
+          <div className="radio-container-field">
+            <div className="radio-input">
               <Radio value={radio.value} />
             </div>
           </div>

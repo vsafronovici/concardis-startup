@@ -1,19 +1,22 @@
-.bxd-checkbox {
+.field-boxed-checkbox {
   border: 1px solid #BDBDBD;
-  padding: 15px 15px;
+  padding: 15px 20px;
   font-size: 12px !important;
   display: flex;
   direction: row;
+  max-width: 411px;
+  .help {
+    color: #BDBDBD;
+    max-width: 330px;
+    font-size: 11px;
+  }
   //&-container-titles {
   //  display: flex;
   //  direction: column;
   //}
-  &-title {
-    font-weight: 700;
-    margin-bottom: 15px;
-  }
-  &-field {
+  .field {
     display: flex;
     align-items: center;
+    margin-left: 15px;
   }
 }

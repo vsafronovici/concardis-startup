@@ -1,16 +1,17 @@
-.vrb {
+.field-vertical-radio {
   max-width: 411px;
   border: 1px solid #BDBDBD;
   padding: 15px 15px;
   font-size: 12px !important;
-  &-bottom-container {
+  .bottom-container {
     display: flex;
     direction: row;
-    .vrb-bottom-label {
+    .bottom-label {
       font-size: 12px;
     }
   }
-  &-title-container {
+  .label-container {
+    margin-bottom: 10px;
     display: flex;
     direction: row;
     i {
@@ -21,8 +22,9 @@
   }
   .anticon-info-circle {
     font-size: 20px;
+    margin-left: 10px;
   }
-  &-title {
+  .title {
     font-weight: 700;
     margin-bottom: 15px;
     margin-right: 10px;

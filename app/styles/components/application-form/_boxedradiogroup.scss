@@ -1,28 +1,43 @@
-.bxd-radio-container {
+.radio-container {
   padding: 0px 20px;
   border: 1px solid #BDBDBD;
   display: flex;
   direction: row;
-  &-field {
+  .ant-radio-group {
+    label {
+      font-size: 12px;
+    }
+  }
+  label {
+    margin-top: 10px;
+  }
+  .radio-container-field {
     display: flex;
     height: 80px;
     align-items: center;
   }
-  .bxd-container-titles {
-    .bxd-radio-label {
+  .container-titles {
+    .radio-label {
       font-size: 12px;
       display:flex;
       direction: row;
       margin-bottom: 10px;
       margin-top: 10px;
     }
-    .bxd-radio-label2 {
+    .radio-label2 {
       color: #BDBDBD;
       max-width: 330px;
       font-size: 11px;
     }
   }
-    .bxd-radio-input {
+    .radio-input {
       margin-left: 15px;
     }
+}
+.form-field {
+  .ant-radio-group {
+    label {
+      font-size: 12px;
+    }
+  }
 }

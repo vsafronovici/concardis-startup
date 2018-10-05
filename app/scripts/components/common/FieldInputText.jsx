@@ -15,7 +15,7 @@ export class FieldInputText extends React.Component {
           <strong>{translate(label)}</strong> { optional && <span> {'(optional)'}</span> }
         </label>
         { help && <div className="form-help">{translate(help)}</div> }
-        <div>
+        <div className="container">
           <Input
             {...input}
             onChange={onChange}
