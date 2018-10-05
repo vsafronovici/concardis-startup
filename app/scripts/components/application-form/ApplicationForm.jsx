@@ -5,9 +5,9 @@ import { Row, Col, Button } from 'antd'
 
 import StepsBar from './StepsBar'
 import SectionFormWrapper from './SectionFormWrapper'
-import { VerticalRadioBtns } from '../common/VerticalRadioBtns'
+import { FieldVerticalRadioBtns } from '../common/FieldVerticalRadioBtns'
 import { verticalRadioBtnsMock} from "../../mock-data/application-form/mock-radio-group";
-import { BoxedCheckbox} from '../common/BoxedCheckbox'
+import { FieldBoxedCheckbox} from '../common/FieldBoxedCheckbox'
 
 const ApplicationForm = props => {
 
@@ -26,8 +26,6 @@ const ApplicationForm = props => {
           </Col>
           <Col span={13} offset={1}>
             <SectionFormWrapper />
-            <VerticalRadioBtns options={verticalRadioBtnsMock} onChange={() => console.log('vertical radio group')} title='Your role in the company' />
-            <BoxedCheckbox title="title" description="description" onChange={() => console.log('checkbox')}/>
           </Col>
         </Row>
       </Col>

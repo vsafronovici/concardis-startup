@@ -1,10 +1,26 @@
 .vrb {
+  max-width: 411px;
   border: 1px solid #BDBDBD;
   padding: 15px 15px;
   font-size: 12px !important;
+  &-bottom-container {
+    display: flex;
+    direction: row;
+    .vrb-bottom-label {
+      font-size: 12px;
+    }
+  }
   &-title-container {
     display: flex;
     direction: row;
+    i {
+      font-size: 22px !important;
+      background-color: none;
+      color: #BDBDBD !important;
+    }
+  }
+  .anticon-info-circle {
+    font-size: 20px;
   }
   &-title {
     font-weight: 700;

@@ -7,6 +7,9 @@ import { FieldType } from '../../utils/constants'
 import { objectToArrayKeyValue } from '../../utils/function-utils'
 import cn from 'classnames'
 import { FieldInputText } from '../common/FieldInputText'
+import { FieldVerticalRadioBtns } from '../common/FieldVerticalRadioBtns'
+import { FieldBoxedRadioBtns } from '../common/FieldBoxedRadioBtns'
+import { FieldBoxedCheckbox } from '../common/FieldBoxedCheckbox'
 
 const Option = Select.Option
 
@@ -33,6 +36,27 @@ const RenderInput = createRenderer((input, meta, rest) => {
   />
 })
 
+const RenderVerticalRadioBtns = createRenderer((input, meta, rest) => {
+  return <FieldVerticalRadioBtns
+    onChange={(event) => input.onChange(event)}
+    {...rest}
+  />
+})
+
+const RenderBoxedRadioBtns = createRenderer((input, meta, rest) => {
+  return <FieldBoxedRadioBtns
+    onChange={(event) => input.onChange(event)}
+    {...rest}
+  />
+})
+
+const RenderBoxedCheckbox = createRenderer((input, meta, rest) => {
+  return <FieldBoxedCheckbox
+    onChange={(event) => input.onChange(event)}
+    input={input}
+    {...rest}
+  />
+})
 
 const RenderSelect = createRenderer((input, meta, label, { options, val, readOnly }) => (
   <Select onChange={(event) => input.onChange(event)} defaultValue={input.value} disabled={readOnly}>
@@ -52,7 +76,15 @@ const renderFieldComponent = ({ idx, field }) => {
     case FieldType.TEXT: {
       return <Field {...fieldProps} component={RenderInput} />
     }
-
+    case FieldType.VERTICAL_RADIO_BTNS: {
+      return <Field {...fieldProps} component={RenderVerticalRadioBtns} />
+    }
+    case FieldType.BOXED_RADIO_BTNS: {
+      return <Field {...fieldProps} component={RenderBoxedRadioBtns} />
+    }
+    case FieldType.BOXED_CHECKBOX: {
+      return <Field {...fieldProps} component={RenderBoxedCheckbox} />
+    }
     default: {
       return null
     }

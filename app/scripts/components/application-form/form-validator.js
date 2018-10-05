@@ -3,7 +3,7 @@ import { translate } from '../../i18n/i18n'
 const createReducer = values => (acc, field) => {
   const { name, optional, validation } = field
   console.log('createReducer field=', field)
-  if (optional && !validation.validate) {
+  if (optional || !validation) {
     return acc
   }
 
