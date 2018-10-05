@@ -1,26 +1,38 @@
 import { translate } from '../../i18n/i18n'
+import { FieldType } from '../../utils/constants'
+
+const isTextualComponent = ({ type }) => type === FieldType.TEXT || type === FieldType.TEXT_BOLD
 
 const createReducer = values => (acc, field) => {
   const { name, optional, validation } = field
-  console.log('createReducer field=', field)
-  if (optional || !validation) {
+  const validate = !!validation
+  const value = values[name]
+
+  console.log('createReducer field=', { field, value })
+
+  if (optional && !isTextualComponent(field)) {
     return acc
   }
 
-  const { regexp } = validation
-  console.log('createReducer regexp=', regexp)
+  if (optional && !validate) {
+    return acc
+  }
 
-  if (!optional && (!values[name] || values[name].trim() === '')) {
+  if (!optional && (value === undefined || value === '')) {
     return {
       ...acc,
       [name]: 'Requir'
     }
   }
 
-  if (regexp && !new RegExp(regexp).test(values[name])) {
-    return {
-      ...acc,
-      [name]: 'Bad Regex'
+  if (validate) {
+    const { regexp } = validation
+
+    if (regexp && !new RegExp(regexp).test(value)) {
+      return {
+        ...acc,
+        [name]: 'Bad Regex'
+      }
     }
   }
 

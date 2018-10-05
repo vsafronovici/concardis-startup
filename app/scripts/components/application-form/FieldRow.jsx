@@ -37,8 +37,10 @@ const RenderInput = createRenderer((input, meta, rest) => {
 })
 
 const RenderVerticalRadioBtns = createRenderer((input, meta, rest) => {
+  console.log('RenderVerticalRadioBtns', {input, meta})
   return <FieldVerticalRadioBtns
     onChange={(event) => input.onChange(event)}
+    value={input.value}
     {...rest}
   />
 })
@@ -51,9 +53,11 @@ const RenderBoxedRadioBtns = createRenderer((input, meta, rest) => {
 })
 
 const RenderBoxedCheckbox = createRenderer((input, meta, rest) => {
+  console.log('RenderBoxedCheckbox', {input, meta})
   return <FieldBoxedCheckbox
     onChange={(event) => input.onChange(event)}
     input={input}
+    value={input.value}
     {...rest}
   />
 })
