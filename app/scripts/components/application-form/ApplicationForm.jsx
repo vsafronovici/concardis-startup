@@ -5,9 +5,14 @@ import { Row, Col, Button } from 'antd'
 
 import StepsBar from './StepsBar'
 import SectionFormWrapper from './SectionFormWrapper'
-import { FieldVerticalRadioBtns } from '../common/FieldVerticalRadioBtns'
-import { verticalRadioBtnsMock} from "../../mock-data/application-form/mock-radio-group";
-import { FieldBoxedCheckbox} from '../common/FieldBoxedCheckbox'
+import { FieldCheckbox } from '../common/FieldCheckbox'
+
+const label = ' authorise - if not already done - Concardis GmbH (hereinafter referred to as "Concardis") to\n' +
+  'collect payments from my account by direct debit. At the same time, I instruct my bank to\n' +
+  'redeem the direct debits drawn into my account by Concardis.\n' +
+  'Please note: I can request a refund of the debited amount within 8 weeks of the debit date.\n' +
+  'The terms and conditions agreed with my bank shall apply. Concardis will give advance notice\n' +
+  'of the direct debit with due date and amount at least 1 day before the direct debit is collected'
 
 const ApplicationForm = props => {
 
@@ -26,6 +31,7 @@ const ApplicationForm = props => {
           </Col>
           <Col span={13} offset={1}>
             <SectionFormWrapper />
+            <FieldCheckbox value={false} onChange={() => console.log('CheckBox')} label={label}/>
           </Col>
         </Row>
       </Col>
