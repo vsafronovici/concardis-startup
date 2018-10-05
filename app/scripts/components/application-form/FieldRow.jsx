@@ -76,6 +76,9 @@ const renderFieldComponent = ({ idx, field }) => {
     ...field
   }
 
+  if (idx === 0) {
+    fieldProps.autoFocus = true
+  }
 
   switch (type) {
     case FieldType.TEXT: {

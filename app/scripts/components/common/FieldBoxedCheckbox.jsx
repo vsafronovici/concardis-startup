@@ -3,7 +3,7 @@ import { Checkbox } from 'antd'
 import { translate } from './../../i18n/i18n'
 
 export const FieldBoxedCheckbox = props => {
-  const { label, help, onChange, value, optional } = props
+  const { label, help, onChange, value, optional, autoFocus } = props
 
   return (
     <div className="field-boxed-checkbox">
@@ -16,7 +16,7 @@ export const FieldBoxedCheckbox = props => {
         </div>
       </div>
       <div className="field">
-        <Checkbox checked={value} onChange={e => onChange(e.target.checked)}/>
+        <Checkbox checked={value} onChange={e => onChange(e.target.checked)} autoFocus={!!autoFocus} />
       </div>
     </div>
   )

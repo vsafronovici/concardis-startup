@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { getFormSyncErrors, getFormValues, reduxForm } from 'redux-form'
+import { getFormSyncErrors, getFormValues, reduxForm, focus } from 'redux-form'
 import { connect } from 'react-redux'
 
 import { DynamicForm } from './DynamicForm'
@@ -33,7 +33,16 @@ export class ReduxDynamicForm extends React.Component {
       rSyncErrors: getFormSyncErrors(formId)(state)
     })
 
-    const ConnectedReduxForm = connect(mapStateToProps)(RForm)
+    const mapDispatchToProps = (dispatch) => {
+      return {
+        // This will be passed as a property to this component
+        rFocus: (field) => {
+          dispatch(focus(formId, field))
+        }
+      }
+    }
+
+    const ConnectedReduxForm = connect(mapStateToProps, mapDispatchToProps)(RForm)
 
     return <ConnectedReduxForm section={section} />
   }

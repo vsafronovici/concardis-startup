@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Button, Row, Col } from 'antd'
-import {  map, prop } from 'ramda'
+import { map, prop } from 'ramda'
 
 import { FieldRow } from './FieldRow'
 import { translate } from '../../i18n/i18n'
