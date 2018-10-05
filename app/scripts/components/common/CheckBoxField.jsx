@@ -3,9 +3,16 @@ import { connect } from 'react-redux'
 import { Icon } from 'antd'
 import PropTypes from 'prop-types'
 
+const style = {
+  border: '1px solid #000',
+  borderRadius: '2px',
+  width: '30px',
+  heigth: '30px'
+}
+
 class CheckBoxField extends Component {
   state = {
-    checked: true
+    checked: false
   }
 
   static propTypes = {
@@ -16,15 +23,15 @@ class CheckBoxField extends Component {
     this.setState({
       checked: !this.state.checked
     })
-    this.props.handleChange(value)
+    this.props.onChange(value)
   }
 
   render() {
-    const { checked } = this.state
+    const { checked, onChange } = this.state
 
     return (
       <div>
-        <div className="ef-checkbox-container" onClick={() => this.handleCheckBox(checked)}>
+        <div className={style} onClick={() => this.handleCheckBox(checked)}>
           {!checked ? <Icon type="check" theme="outlined" className="ef-checkbox-check" /> : null}
         </div>
       </div>

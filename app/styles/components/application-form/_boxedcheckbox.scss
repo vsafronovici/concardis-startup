@@ -1,0 +1,15 @@
+.bxd-checkbox {
+  border: 1px solid #BDBDBD;
+  padding: 15px 15px;
+  font-size: 12px !important;
+  display: flex;
+  direction: row;
+  //&-container-titles {
+  //  display: flex;
+  //  direction: column;
+  //}
+  &-title {
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+}

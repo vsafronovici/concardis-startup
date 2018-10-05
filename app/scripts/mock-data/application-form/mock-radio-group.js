@@ -6,3 +6,8 @@ export const options = [
   my business` },
 
 ]
+
+export const verticalRadioBtnsMock = [
+  {value: 'value1', label: 'Owner'},
+  {value: 'value2', label: `I'm not the owner but I have the power of attorney`}
+]
