@@ -49,4 +49,12 @@
     direction: row;
     padding: 0px 0px;
   }
+  .flex-container-row {
+    display: flex !important;
+    direction: row !important;
+  }
+}
+.flex-row {
+  display: flex;
+  direction: row;
 }

@@ -45,6 +45,7 @@ export default {
     {
       name: 'f4',
       type: FieldType.BOXED_RADIO_BTNS,
+      value: '2',
       label: 'f4.label',
       help: 'f4.help',
       tooltip: 'tooltip2',
@@ -70,6 +71,119 @@ export default {
         {value:'3', label:'Other owners own less than 25%', label2: 'There is one or more additional owners but they owe less than 25% of\n' +
             'my business'}],
       value: false,
+      validation: {
+        regexp: null,
+        err: 'err f1'
+      }
+    },
+    {
+      name: 'f6',
+      type: FieldType.CHECKBOX,
+      label: ' authorise - if not already done - Concardis GmbH (hereinafter referred to as "Concardis") to\n' +
+        'collect payments from my account by direct debit. At the same time, I instruct my bank to\n' +
+        'redeem the direct debits drawn into my account by Concardis.\n' +
+        'Please note: I can request a refund of the debited amount within 8 weeks of the debit date.\n' +
+        'The terms and conditions agreed with my bank shall apply. Concardis will give advance notice\n' +
+        'of the direct debit with due date and amount at least 1 day before the direct debit is collected',
+      help: 'Provide it if you\'re going to use a terminal at a different address\n' +
+        'than registered or correspondence addresses.',
+      tooltip: 'tooltip2',
+      placeholder: 'placeholder',
+      optional: false,
+      value: false,
+      validation: {
+        regexp: null,
+        err: 'err f1'
+      }
+    },
+    {
+      name: 'f7',
+      type: FieldType.BOXED_CHECKBOX_GROUP,
+      label: 'f4.label',
+      help: 'f4.help',
+      tooltip: 'tooltip2',
+      placeholder: 'placeholder',
+      optional: false,
+      fields: [
+        {
+          name: 'f999',
+          value: false,
+          label: 'some label',
+          help: 'help text'
+        },
+        {
+          name: 'f888',
+          value: true,
+          label: 'some label',
+          help: 'help text'
+        }
+      ]
+,
+      validation: {
+        regexp: '^([0-9]{1,})$',
+        err: 'err f1'
+      }
+    },
+    {
+      name: 'f8',
+      type: FieldType.DROPDOWN,
+      value: '1',
+      label: 'f4.label',
+      help: 'f4.help',
+      tooltip: 'tooltip2',
+      placeholder: 'placeholder',
+      optional: false,
+      options: {
+        items: [
+          {value: 'value1', label: 'label1'},
+          {value: 'value2', label: 'label2'}
+        ]
+      }
+      ,
+      validation: {
+        regexp: '^([0-9]{1,})$',
+        err: 'err f1'
+      }
+    },
+    {
+      name: 'f9',
+      type: FieldType.HORIZONTAL_RADIO_BTNS,
+      value: '1',
+      label: 'f4.label',
+      title: 'title',
+      help: 'f4.help',
+      tooltip: 'tooltip2',
+      placeholder: 'placeholder',
+      optional: false,
+      options: [
+        {value: 'value1', label: 'label1'},
+        {value: 'value2', label: 'label2'}
+      ]
+      ,
+      validation: {
+        regexp: '^([0-9]{1,})$',
+        err: 'err f1'
+      }
+    },
+    {
+      name: 'f10',
+      type: FieldType.DATE,
+      value: '1',
+      label: 'f4.label',
+      title: 'title',
+      help: 'f4.help',
+      tooltip: 'tooltip2',
+      placeholder: 'placeholder',
+      optional: false,
+      options: [
+        {value: 'value1', label: 'label1'},
+        {value: 'value2', label: 'label2'}
+      ]
+      ,
+      validation: {
+        regexp: '^([0-9]{1,})$',
+        err: 'err f1'
+      }
     }
   ]
 }

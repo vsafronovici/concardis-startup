@@ -22,7 +22,6 @@ SectionFormWrapper.defaultProps = {
   section: section1
 }
 
-
 const mapStateToProps = state => ({
 
 })

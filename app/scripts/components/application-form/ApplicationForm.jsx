@@ -5,9 +5,7 @@ import { Row, Col, Button } from 'antd'
 
 import StepsBar from './StepsBar'
 import SectionFormWrapper from './SectionFormWrapper'
-import { FieldVerticalRadioBtns } from '../common/FieldVerticalRadioBtns'
-import { verticalRadioBtnsMock} from "../../mock-data/application-form/mock-radio-group";
-import { FieldBoxedCheckbox} from '../common/FieldBoxedCheckbox'
+import { FieldDropDown } from '../common/FieldDropDown';
 
 const ApplicationForm = props => {
 
