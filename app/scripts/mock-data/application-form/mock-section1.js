@@ -18,20 +18,6 @@ export default {
       options: [{value: '1', label: 'Yes'},{value:'2', label:'I\'m not the owner but I have the power of attorney'}],
     },
     {
-      name: 'f4',
-      type: FieldType.BOXED_RADIO_BTNS,
-      label: 'f4.label',
-      help: 'f4.help',
-      tooltip: 'tooltip2',
-      placeholder: 'placeholder',
-      optional: true,
-      options: [{value: '1', label: 'Sole owner', label2: 'I own 100% of the company, and there\'s no other beneficial owners.'},
-        {value:'2', label:'Other owners have more than 25%', label2: 'There is one or more additional owners who own more than 25% of\n' +
-          'my business'},
-        {value:'3', label:'Other owners own less than 25%', label2: 'There is one or more additional owners but they owe less than 25% of\n' +
-          'my business'}],
-    },
-    {
       name: 'f1',
       type: FieldType.TEXT,
       label: 'f1.label',
@@ -76,31 +62,6 @@ export default {
       tooltip: 'tooltip2',
       placeholder: 'placeholder',
       optional: true,
-      options: [{value: '1', label: 'Sole owner', label2: 'I own 100% of the company, and there\'s no other beneficial owners.'},
-        {value:'2', label:'Other owners have more than 25%', label2: 'There is one or more additional owners who own more than 25% of\n' +
-            'my business'},
-        {value:'3', label:'Other owners own less than 25%', label2: 'There is one or more additional owners but they owe less than 25% of\n' +
-            'my business'}],
-      value: false,
-      validation: {
-        regexp: null,
-        err: 'err f1'
-      }
-    },
-    {
-      name: 'f6',
-      type: FieldType.CHECKBOX,
-      label: ' authorise - if not already done - Concardis GmbH (hereinafter referred to as "Concardis") to\n' +
-        'collect payments from my account by direct debit. At the same time, I instruct my bank to\n' +
-        'redeem the direct debits drawn into my account by Concardis.\n' +
-        'Please note: I can request a refund of the debited amount within 8 weeks of the debit date.\n' +
-        'The terms and conditions agreed with my bank shall apply. Concardis will give advance notice\n' +
-        'of the direct debit with due date and amount at least 1 day before the direct debit is collected',
-      help: 'Provide it if you\'re going to use a terminal at a different address\n' +
-        'than registered or correspondence addresses.',
-      tooltip: 'tooltip2',
-      placeholder: 'placeholder',
-      optional: false,
       options: [{value: '1', label: 'Sole owner', label2: 'I own 100% of the company, and there\'s no other beneficial owners.'},
         {value:'2', label:'Other owners have more than 25%', label2: 'There is one or more additional owners who own more than 25% of\n' +
             'my business'},
@@ -217,32 +178,20 @@ export default {
       ]
     },
     {
-      name: 'f7',
-      type: FieldType.BOXED_CHECKBOX_GROUP,
+      name: 'f11',
+      type: FieldType.TEXT_BOLD,
+      value: '1',
+      helpBold: 'max 12 characters in bold',
       label: 'f4.label',
+      title: 'Trading name',
       help: 'f4.help',
       tooltip: 'tooltip2',
       placeholder: 'placeholder',
       optional: false,
-      fields: [
-        {
-          name: 'section2.field3',
-          value: false,
-          label: 'some label',
-          help: 'help text'
-        },
-        {
-          name: 'section2.field4',
-          value: false,
-          label: 'some label',
-          help: 'help text'
-        }
+      options: [
+        {value: 'value1', label: 'label1'},
+        {value: 'value2', label: 'label2'}
       ]
-,
-      validation: {
-        regexp: '^([0-9]{1,})$',
-        err: 'err f1'
-      }
-    }
+    },
   ]
 }

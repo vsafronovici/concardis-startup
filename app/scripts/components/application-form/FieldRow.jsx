@@ -15,6 +15,8 @@ import { FieldBoxedCheckboxGroup} from '../common/FieldBoxedCheckboxGroup'
 import { FieldDropDown} from '../common/FieldDropDown'
 import { FieldHorizontalRadioBtns } from '../common/FieldHorizontalRadioBtns'
 import { FieldDate } from '../common/FieldDate'
+import { FieldTextBold } from '../common/FieldTextBold'
+
 
 const Option = Select.Option
 
@@ -34,6 +36,14 @@ const createRenderer = render => ({ input, meta, type, ...rest }) => (
 
 const RenderInput = createRenderer((input, meta, rest) => {
   return <FieldInputText
+    input={input}
+    onChange={(event) => input.onChange(event)}
+    value={input.value}
+    {...rest}
+  />
+})
+const RenderTextBold = createRenderer((input, meta, rest) => {
+  return <FieldTextBold
     input={input}
     onChange={(event) => input.onChange(event)}
     value={input.value}
@@ -151,6 +161,9 @@ const renderFieldComponent = ({ idx, field }) => {
     }
     case FieldType.DATE: {
       return <Field {...fieldProps} component={RenderDate}/>
+    }
+    case FieldType.TEXT_BOLD: {
+      return <Field {...fieldProps} component={RenderTextBold}/>
     }
     default: {
       return null

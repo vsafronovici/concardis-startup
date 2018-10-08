@@ -17,7 +17,7 @@ export const FieldBoxedCheckbox = props => {
         </div>
       </div>
       <div className="field">
-        <Checkbox checked={value} onChange={e => onChange(e.target.checked)} autoFocus={!!autoFocus} />
+        <Checkbox checked={value} onChange={e => handleChange(e.target.checked)} autoFocus={!!autoFocus} />
       </div>
     </div>
   )
