@@ -3,8 +3,9 @@ import { Checkbox } from 'antd'
 import { translate } from './../../i18n/i18n'
 
 export const FieldBoxedCheckbox = props => {
-  const { label, help, onChange, value, optional, autoFocus } = props
-
+  const { label, help, onChange, value, optional, input, autoFocus } = props
+  const handleChange = input ? input.onChange : onChange
+  //console.log('BOXEDCHECKBOX', props)
   return (
     <div className="field-boxed-checkbox">
       <div className="container-titles">

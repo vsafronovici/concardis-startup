@@ -12,7 +12,7 @@ export const FieldBoxedRadioBtns = (props) => {
   return (
     <RadioGroup onChange={(value) => onChange(value)} value={value}>
       {options.map((radio, index) => (
-        <div className="radio-container" key={index}>
+        <div className="radio-container"  key={index}>
           <div className="container-titles">
             <label>
               {translate(radio.label)}

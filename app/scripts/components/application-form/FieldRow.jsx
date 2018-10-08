@@ -10,6 +10,11 @@ import { FieldInputText } from '../common/FieldInputText'
 import { FieldVerticalRadioBtns } from '../common/FieldVerticalRadioBtns'
 import { FieldBoxedRadioBtns } from '../common/FieldBoxedRadioBtns'
 import { FieldBoxedCheckbox } from '../common/FieldBoxedCheckbox'
+import { FieldCheckbox} from '../common/FieldCheckbox'
+import { FieldBoxedCheckboxGroup} from '../common/FieldBoxedCheckboxGroup'
+import { FieldDropDown} from '../common/FieldDropDown'
+import { FieldHorizontalRadioBtns } from '../common/FieldHorizontalRadioBtns'
+import { FieldDate } from '../common/FieldDate'
 
 const Option = Select.Option
 
@@ -63,11 +68,50 @@ const RenderBoxedCheckbox = createRenderer((input, meta, rest) => {
   />
 })
 
-const RenderSelect = createRenderer((input, meta, label, { options, val, readOnly }) => (
-  <Select onChange={(event) => input.onChange(event)} defaultValue={input.value} disabled={readOnly}>
-    { objectToArrayKeyValue(options.items).map(entry => <Option key={entry.key} value={entry.key}>{entry.value}</Option>) }
-  </Select>
-))
+const RenderCheckbox = createRenderer((input, meta, rest) => {
+  return <FieldCheckbox
+    onChange={(event) => input.onChange(event)}
+    input={input}
+    value={input.value}
+    {...rest}
+  />
+})
+
+const RenderBoxedCheckboxGroup = createRenderer((input, meta, rest) => {
+  return <FieldBoxedCheckboxGroup
+    onChange={(event) => input.onChange(event)}
+    input={input}
+    value={input.value}
+    {...rest}
+  />
+})
+
+const RenderDropDown = createRenderer((input, meta, rest) => {
+  return <FieldDropDown
+        onChange={(event) => input.onChange(event)}
+        value={input.value}
+        input={input}
+        {...rest}
+  />
+})
+
+const RenderHorizontalRadioBtns = createRenderer((input, meta, rest) => {
+  return <FieldHorizontalRadioBtns
+    onChange={event => input.onChange(event)}
+    input={input}
+    value={input.value}
+    {...rest}
+  />
+})
+
+const RenderDate = createRenderer((input, meta, rest) => {
+  return <FieldDate
+    onChange={event => input.onChange(event)}
+    input={input}
+    value={input.value}
+    {...rest}
+  />
+})
 
 const renderFieldComponent = ({ idx, field }) => {
   const { type } = field
@@ -92,6 +136,21 @@ const renderFieldComponent = ({ idx, field }) => {
     }
     case FieldType.BOXED_CHECKBOX: {
       return <Field {...fieldProps} component={RenderBoxedCheckbox} />
+    }
+    case FieldType.CHECKBOX: {
+      return <Field {...fieldProps} component={RenderCheckbox} />
+    }
+    case FieldType.DROPDOWN: {
+      return <Field {...fieldProps} component={RenderDropDown} />
+    }
+    case FieldType.BOXED_CHECKBOX_GROUP: {
+      return <FieldBoxedCheckboxGroup {...fieldProps} />
+    }
+    case FieldType.HORIZONTAL_RADIO_BTNS: {
+      return <Field {...fieldProps} component={RenderHorizontalRadioBtns}/>
+    }
+    case FieldType.DATE: {
+      return <Field {...fieldProps} component={RenderDate}/>
     }
     default: {
       return null
