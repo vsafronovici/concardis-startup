@@ -70,7 +70,7 @@ export const PackageRoutes = {
   ROUTE_2: 'Package_Personalise'
 }
 
-export const ApplicationFormSteps = {
+export const ApplicationFormStepsTitles = {
   STEP_1: 'ABOUT_YOU',
   STEP_2: 'COMPANY_LEGAL_DETAILS',
   STEP_3: 'COMPANY_CONTACT_DETAILS',

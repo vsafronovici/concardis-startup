@@ -19,7 +19,7 @@ const ApplicationForm = props => {
               <div className="steps-app-name">
                 Your Application:
               </div>
-              {/*<StepsBar />*/}
+              <StepsBar />
               <TAC />
             </div>
           </Col>

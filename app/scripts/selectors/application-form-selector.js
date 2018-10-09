@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect'
-import { all, compose, isNil, not, prop, propEq, pickBy, keys, values } from 'ramda'
+import { all, compose, isNil, not, prop, propEq, pickBy, keys, values, pluck, contains } from 'ramda'
 import { SectionStatusType } from './../utils/constants'
 
 const isNotNil = compose(not, isNil)
@@ -15,11 +15,25 @@ export const sectionsStateSelector = compose(prop('sectionsState'), applicationF
 export const tacSelector = compose(prop('TAC'), applicationFormSelector)
 
 // TODO remove
-export const currentIndexSectionSelector = state => 0
+export const currentIndexSectionSelector = createSelector(
+  sectionsSelector,
+  (sections = []) => {
+    const states = sections && (pluck('status')(sections))
+    console.log('states', states)
+    const index = states && contains(SectionStatusType.IN_PROGRESS, states)
+      ? states.findIndex( status => status === SectionStatusType.IN_PROGRESS )
+      : states.findIndex( status => status === SectionStatusType.WAITING )
+    console.log('currentIndex', index)
+    return index
+  }
+)
 export const currentSectionSelector = createSelector(
   sectionsSelector,
   currentIndexSectionSelector,
-  (sections = [], idx) => sections[idx]
+  (sections = [], index) => {
+    console.log('CurrentSection', sections[index])
+    return sections[index]
+  }
 )
 
 /*export const currentSectionsSelector = createSelector(

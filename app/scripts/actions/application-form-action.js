@@ -24,3 +24,8 @@ export const getFormMetaRes = payload => ({
   type: APPLICATION_FORM.GET_FORM_META_RES,
   payload
 })
+
+export const goToSection = payload => ({
+  type: APPLICATION_FORM.GO_TO_SECTION,
+  payload
+})
