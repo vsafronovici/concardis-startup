@@ -5,6 +5,7 @@ import { Row, Col, Button } from 'antd'
 
 import section1 from './../../mock-data/application-form/mock-section1'
 import SectionForm from './SectionForm'
+import { currentSectionSelector } from '../../selectors/application-form-selector'
 
 class SectionFormWrapper extends React.Component {
 
@@ -12,7 +13,7 @@ class SectionFormWrapper extends React.Component {
     const { section } = this.props
     return (
       <div className="section-form-wrapper">
-        <SectionForm section={section} />
+        {/*<SectionForm section={section} />*/}
       </div>
     )
   }
@@ -23,7 +24,7 @@ SectionFormWrapper.defaultProps = {
 }
 
 const mapStateToProps = state => ({
-
+  currentSection: currentSectionSelector(state),
 })
 
 const mapDispatchToProps = ({

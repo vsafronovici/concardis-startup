@@ -14,8 +14,15 @@ export const sectionsStateSelector = compose(prop('sectionsState'), applicationF
 
 export const tacSelector = compose(prop('TAC'), applicationFormSelector)
 
+// TODO remove
+export const currentIndexSectionSelector = state => 0
+export const currentSectionSelector = createSelector(
+  sectionsSelector,
+  currentIndexSectionSelector,
+  (sections = [], idx) => sections[idx]
+)
 
-export const currentSectionsSelector = createSelector(
+/*export const currentSectionsSelector = createSelector(
   sectionsSelector,
   sectionsStateSelector,
   (sections, sectionsState) => {
@@ -31,4 +38,4 @@ export const currentSectionsSelector = createSelector(
 
     return sections.findIndex(s => s.id === section[keys(section)[0]].id)
   }
-)
+)*/
