@@ -4,7 +4,7 @@ import { Input } from 'antd'
 import { translate } from './../../i18n/i18n'
 
 export const FieldTextBold = props => {
-  const { title, onChange, helpBold, placeholder } = props
+  const { title, onChange, helpBold, placeholder, value } = props
 
   return (
     <div className="field-text-bold">
@@ -13,7 +13,9 @@ export const FieldTextBold = props => {
         {translate(helpBold)}
       </div>
       <div className="field">
-        <Input />
+        <label data-b="B">
+          <Input className="input-bold" maxLength={12} value={value} placholder={placeholder} onChange={event => onChange(event)}/>
+        </label>
       </div>
     </div>
   )

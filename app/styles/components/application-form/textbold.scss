@@ -4,4 +4,28 @@
     color: #BDBDBD;
     margin-bottom: 10px;
   }
+  input {
+    font-weight: bold;
+    font-size: 12px;
+  }
+  .field {
+    label, input {
+      position: relative;
+      display: block;
+      padding-right: 76px;
+      width: 250px;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+    label::after {
+      content: attr(data-b);
+      position: absolute;
+      top: 7px;
+      left: 230px;
+      font-size: 12px;
+      display: block;
+      font-weight: bold;
+    }
+  }
 }
