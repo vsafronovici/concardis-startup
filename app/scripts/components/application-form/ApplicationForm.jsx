@@ -6,6 +6,7 @@ import { Row, Col, Button } from 'antd'
 import StepsBar from './StepsBar'
 import SectionFormWrapper from './SectionFormWrapper'
 import { FieldDropDown } from '../common/FieldDropDown';
+import TAC from './TAC'
 
 const ApplicationForm = props => {
 
@@ -19,7 +20,7 @@ const ApplicationForm = props => {
                 Your Application:
               </div>
               <StepsBar />
-              <Button className="steps-btn">Temrs & Conditions</Button>
+              <TAC />
             </div>
           </Col>
           <Col span={13} offset={1}>

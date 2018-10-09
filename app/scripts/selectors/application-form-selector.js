@@ -12,6 +12,9 @@ export const applicationFormSubmittingSelector = compose(prop('submitting'), app
 export const sectionsSelector = compose(prop('sections'), applicationFormSelector)
 export const sectionsStateSelector = compose(prop('sectionsState'), applicationFormSelector)
 
+export const tacSelector = compose(prop('TAC'), applicationFormSelector)
+
+
 export const currentSectionsSelector = createSelector(
   sectionsSelector,
   sectionsStateSelector,

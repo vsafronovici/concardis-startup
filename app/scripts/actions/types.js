@@ -69,5 +69,8 @@ export const APPLICATION_FORM = createNamespace('APPLICATION_FORM', {
   GO_TO_NEXT_STEP: undefined,
   EDIT_SECTION: undefined,
   SUBMIT_ALL_REQ: undefined,
-  SUBMIT_ALL_RESP: undefined
+  SUBMIT_ALL_RESP: undefined,
+  OPEN_TAC_MODAL: undefined,
+  CLOSE_TAC_MODAL: undefined,
+  AGREE_TAC: undefined,
 })

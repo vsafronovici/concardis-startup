@@ -1,0 +1,13 @@
+.tac-footer {
+
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+
+  &-l {
+    text-align: left;
+  }
+  &-r {
+    text-align: right;
+  }
+}
