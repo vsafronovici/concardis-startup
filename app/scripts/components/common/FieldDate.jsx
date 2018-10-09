@@ -24,8 +24,11 @@ export class FieldDate extends Component  {
     if (this.inputYear.input.value.length === 4) {
       this.inputYear.blur()
     }
-    const date = `${this.state.dd}/${this.state.mm}/${this.state.yy}`
-    this.props.onChange(date)
+    const DAY = this.state.dd
+    const MOUNTH = this.state.mm
+    const YEAR = this.inputYear.input.value
+    const DATE = `${DAY}/${MOUNTH}/${YEAR}`
+    this.props.onChange(DATE)
   }
 
   render() {
