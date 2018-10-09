@@ -62,15 +62,9 @@ export const PACKAGE_CONFIGURE = createNamespace('PACKAGE_CONFIGURE', {
 
 export const APPLICATION_FORM = createNamespace('APPLICATION_FORM', {
   INIT_DATA: undefined,
-  GET_FIELDS_SECTIONS_REQ: undefined,
-  GET_FIELDS_SECTIONS_RESP: undefined,
-  SAVE_FIELDS_SECTION_REQ: undefined,
-  SAVE_FIELDS_SECTION_RESP: undefined,
-  GO_TO_NEXT_STEP: undefined,
-  EDIT_SECTION: undefined,
-  SUBMIT_ALL_REQ: undefined,
-  SUBMIT_ALL_RESP: undefined,
   OPEN_TAC_MODAL: undefined,
   CLOSE_TAC_MODAL: undefined,
   AGREE_TAC: undefined,
+  GET_FORM_META_REQ: undefined,
+  GET_FORM_META_RES: undefined,
 })

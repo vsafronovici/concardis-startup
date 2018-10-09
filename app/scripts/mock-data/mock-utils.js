@@ -8,6 +8,10 @@ import packageSaveQuote from './configurator/mock-save-quote'
 import { ok as validateDiscountOk, error as validateDiscountErr } from './configurator/mock-validate-discount'
 import { ok as applyDiscountOk, error as applyDiscountErr } from './configurator/mock-apply-discount'
 
+import app_form_translations from './application-form/mock-app-form-translations'
+import appForm_metadata from './application-form/mock-appForm-metadata'
+
+
 export const MOCK_REMOTE_ACTIONS = createNamespace('MOCK_REMOTE_ACTIONS', {
   getDictionaryMetadata: undefined,
   getFieldsMetadata: undefined,
@@ -19,6 +23,9 @@ export const MOCK_REMOTE_ACTIONS = createNamespace('MOCK_REMOTE_ACTIONS', {
   saveQuote: undefined,
   validateDiscount: undefined,
   applyDiscount: undefined,
+
+  getApplicationFormDictionaryMetadata: undefined,
+  getAppFormMetadata: undefined,
 })
 
 export const mockResponse = action => {
@@ -44,6 +51,12 @@ export const mockResponse = action => {
     case MOCK_REMOTE_ACTIONS.applyDiscount:
       return applyDiscountOk
 
+    case MOCK_REMOTE_ACTIONS.getApplicationFormDictionaryMetadata:
+      return app_form_translations
+
+    case MOCK_REMOTE_ACTIONS.getAppFormMetadata:
+      return appForm_metadata
+
     default:
       return undefined
   }
@@ -61,6 +74,9 @@ export const mockVisualForceConfig = {
     saveQuote: MOCK_REMOTE_ACTIONS.saveQuote,
     validateDiscount: MOCK_REMOTE_ACTIONS.validateDiscount,
     applyDiscount: MOCK_REMOTE_ACTIONS.applyDiscount,
+
+    getApplicationFormDictionaryMetadata: MOCK_REMOTE_ACTIONS.getApplicationFormDictionaryMetadata,
+    getAppFormMetadata: MOCK_REMOTE_ACTIONS.getAppFormMetadata,
   },
   lang: 'en_US',
   XHRs: {

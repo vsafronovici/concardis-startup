@@ -16,11 +16,11 @@ export const agreeTAC = () => ({
   type: APPLICATION_FORM.AGREE_TAC
 })
 
-export const getFieldsSectionsReq = () => ({
-  type: APPLICATION_FORM.GET_FIELDS_SECTIONS_REQ
+export const getFormMetaReq = () => ({
+  type: APPLICATION_FORM.GET_FORM_META_REQ
 })
 
-export const getFieldsSectionsResp = payload => ({
-  type: APPLICATION_FORM.GET_FIELDS_SECTIONS_RESP,
+export const getFormMetaRes = payload => ({
+  type: APPLICATION_FORM.GET_FORM_META_RES,
   payload
 })

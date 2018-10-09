@@ -40,13 +40,10 @@ export default {
         }
       }
     },
-    [APPLICATION_FORM.GET_FIELDS_SECTIONS_REQ](state) {
-      return initialState
-    },
-    [APPLICATION_FORM.GET_FIELDS_SECTIONS_RESP](state, { payload }) {
+    [APPLICATION_FORM.GET_FORM_META_RES](state, { payload }) {
       return {
         ...state,
-        ...payload
+        sections: payload
       }
     },
   })
