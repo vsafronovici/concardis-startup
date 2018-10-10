@@ -4,21 +4,24 @@ import { FieldType } from '../../utils/constants'
 const isTextualComponent = ({ type }) => type === FieldType.TEXT || type === FieldType.TEXT_BOLD
 
 const createReducer = values => (acc, field) => {
-  const { name, optional, validation } = field
+  const { name, required, validation } = field
+  // TODO
+  //const name = field.name.split('.').join('_')
+
   const validate = !!validation
   const value = values[name]
 
   console.log('createReducer field=', { field, value })
 
-  if (optional && !isTextualComponent(field)) {
+  if (!required && !isTextualComponent(field)) {
     return acc
   }
 
-  if (optional && !validate) {
+  if (!required && !validate) {
     return acc
   }
 
-  if (!optional && (value === undefined || value === '')) {
+  if (required && (value === undefined || value === '')) {
     return {
       ...acc,
       [name]: 'Requir'

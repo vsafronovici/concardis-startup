@@ -4,9 +4,8 @@ import { connect } from 'react-redux'
 import { Row, Col, Button } from 'antd'
 
 import StepsBar from './StepsBar'
-import SectionFormWrapper from './SectionFormWrapper'
-import { FieldDropDown } from '../common/FieldDropDown';
 import TAC from './TAC'
+import SectionForm from './SectionForm'
 
 const ApplicationForm = props => {
 
@@ -24,7 +23,7 @@ const ApplicationForm = props => {
             </div>
           </Col>
           <Col span={13} offset={1}>
-            <SectionFormWrapper />
+            <SectionForm />
           </Col>
         </Row>
       </Col>

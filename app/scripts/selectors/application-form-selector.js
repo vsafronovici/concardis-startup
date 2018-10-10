@@ -57,3 +57,18 @@ export const currentSectionSelector = createSelector(
     return sections.findIndex(s => s.id === section[keys(section)[0]].id)
   }
 )*/
+
+export const fieldsSelector = createSelector(
+  currentSectionSelector,
+  (chapter = {}) => {
+    if (!chapter.sections) {
+      return []
+    }
+
+    return chapter.sections.reduce((acc, section) => {
+      acc.push(...section.fields)
+      return acc
+    }, [])
+  }
+)
+

@@ -20,7 +20,8 @@ import { FieldTextBold } from '../common/FieldTextBold'
 
 const Option = Select.Option
 
-const createRenderer = render => ({ input, meta, type, ...rest }) => (
+const createRenderer = render => ({ input, meta, type, ...rest }) => { console.log('createRenderer ', meta); return (
+
   <div className="form-field">
     <div className={cn(`form-field-${type}`)}>
       <div className={cn({ error: meta.error && meta.touched, active: meta.active })}>
@@ -31,7 +32,7 @@ const createRenderer = render => ({ input, meta, type, ...rest }) => (
       </div>
     </div>
   </div>
-)
+)}
 
 
 const RenderInput = createRenderer((input, meta, rest) => {
@@ -126,9 +127,7 @@ const RenderDate = createRenderer((input, meta, rest) => {
 const renderFieldComponent = ({ idx, field }) => {
   const { type } = field
 
-  const fieldProps = {
-    ...field
-  }
+  const fieldProps = { ...field }
 
   if (idx === 0) {
     fieldProps.autoFocus = true
@@ -138,7 +137,7 @@ const renderFieldComponent = ({ idx, field }) => {
     case FieldType.TEXT: {
       return <Field {...fieldProps} component={RenderInput} />
     }
-    case FieldType.VERTICAL_RADIO_BTNS: {
+    /*case FieldType.VERTICAL_RADIO_BTNS: {
       return <Field {...fieldProps} component={RenderVerticalRadioBtns} />
     }
     case FieldType.BOXED_RADIO_BTNS: {
@@ -164,7 +163,7 @@ const renderFieldComponent = ({ idx, field }) => {
     }
     case FieldType.TEXT_BOLD: {
       return <Field {...fieldProps} component={RenderTextBold}/>
-    }
+    }*/
     default: {
       return null
     }

@@ -3,28 +3,24 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Row, Col, Button } from 'antd'
 
-import section1 from './../../mock-data/application-form/mock-section1'
 import SectionForm from './SectionForm'
-import { currentSectionSelector } from '../../selectors/application-form-selector'
+import { currentSectionSelector, fieldsSelector } from '../../selectors/application-form-selector'
 
 class SectionFormWrapper extends React.Component {
 
   render() {
-    const { section } = this.props
+    const { section, fields } = this.props
     return (
       <div className="section-form-wrapper">
-        {/*<SectionForm section={section} />*/}
+        <SectionForm section={section} fields={fields} />
       </div>
     )
   }
 }
 
-SectionFormWrapper.defaultProps = {
-  section: section1
-}
-
 const mapStateToProps = state => ({
-  currentSection: currentSectionSelector(state),
+  section: currentSectionSelector(state),
+  fields: fieldsSelector(state),
 })
 
 const mapDispatchToProps = ({

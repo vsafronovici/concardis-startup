@@ -16,13 +16,13 @@ export class ReduxDynamicForm extends React.Component {
 
   render() {
     console.log('ReduxDynamicForm', this.props)
-    const { section } = this.props
+    const { section, fields } = this.props
 
-    const formId = `dynamicForm`
+    const formId = `dynamicForm_${section.sequence}`
     const RForm = reduxForm({
       form: formId,
-      initialValues,
-      validate: Validator(section.fields),
+      // initialValues,
+      validate: Validator(fields),
       // enableReinitialize: true,
       // keepDirtyOnReinitialize: true,
       //destroyOnUnmount: false
@@ -44,7 +44,7 @@ export class ReduxDynamicForm extends React.Component {
 
     const ConnectedReduxForm = connect(mapStateToProps, mapDispatchToProps)(RForm)
 
-    return <ConnectedReduxForm section={section} />
+    return <ConnectedReduxForm section={section} fields={fields} />
   }
 }
 
