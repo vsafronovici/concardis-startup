@@ -4,7 +4,7 @@ import { Modal, Button } from 'antd'
 import PropTypes from 'prop-types'
 import { translate } from '../../../i18n/i18n'
 import { i18nLangSelector } from '../../../selectors/i18n-selector'
-import { TADContent } from './TADContent'
+import { TACContent } from './TADContent'
 
 const Footer = props => (
   <div className="tac-footer">
@@ -41,7 +41,7 @@ export class TermsAndConditionsModal extends Component {
         bodyStyle={{ height , padding: 0 }}
         centered
       >
-        <TADContent id={id} height={height} enableBtn={this.enableBtn} lang={lang} />
+        <TACContent id={id} height={height} enableBtn={this.enableBtn} lang={lang} />
       </Modal>
     )
   }

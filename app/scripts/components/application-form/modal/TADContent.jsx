@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 
-export class TADContent extends Component {
+export class TACContent extends Component {
   componentDidMount() {
     const { id, enableBtn } = this.props
     const iframe = document.getElementById(`${id}-iframe`).contentWindow

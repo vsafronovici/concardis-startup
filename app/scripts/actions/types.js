@@ -65,6 +65,8 @@ export const APPLICATION_FORM = createNamespace('APPLICATION_FORM', {
   OPEN_TAC_MODAL: undefined,
   CLOSE_TAC_MODAL: undefined,
   AGREE_TAC: undefined,
+  UPDATE_COMMERCIALS_TC_REQ: undefined,
+  UPDATE_COMMERCIALS_TC_RES: undefined,
   GET_FORM_META_REQ: undefined,
   GET_FORM_META_RES: undefined,
   GO_TO_SECTION: undefined,

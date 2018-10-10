@@ -16,6 +16,16 @@ export const agreeTAC = () => ({
   type: APPLICATION_FORM.AGREE_TAC
 })
 
+export const updateCommercialsTCReq = payload => ({
+  type: APPLICATION_FORM.UPDATE_COMMERCIALS_TC_REQ,
+  payload
+})
+
+export const updateCommercialsTCRes = payload => ({
+  type: APPLICATION_FORM.UPDATE_COMMERCIALS_TC_RES,
+  payload
+})
+
 export const getFormMetaReq = () => ({
   type: APPLICATION_FORM.GET_FORM_META_REQ
 })
