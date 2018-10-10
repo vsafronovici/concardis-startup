@@ -4,7 +4,7 @@ import { Modal, Button } from 'antd'
 import PropTypes from 'prop-types'
 import { translate } from '../../../i18n/i18n'
 import { i18nLangSelector } from '../../../selectors/i18n-selector'
-import { TACContent } from './TADContent'
+import { TACContent } from './TACContent'
 
 const Footer = props => (
   <div className="tac-footer">
