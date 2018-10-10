@@ -11,28 +11,32 @@ export const applicationFormSelector = prop('application-form')
 export const applicationFormSubmittingSelector = compose(prop('submitting'), applicationFormSelector)
 export const sectionsSelector = compose(prop('sections'), applicationFormSelector)
 export const sectionsStateSelector = compose(prop('sectionsState'), applicationFormSelector)
-
+export const currentSelector = compose(prop('current'), applicationFormSelector)
 export const tacSelector = compose(prop('TAC'), applicationFormSelector)
 
 // TODO remove
-export const currentIndexSectionSelector = createSelector(
-  sectionsSelector,
-  (sections = []) => {
-    const states = sections && (pluck('status')(sections))
-    console.log('states', states)
-    const index = states && contains(SectionStatusType.IN_PROGRESS, states)
-      ? states.findIndex( status => status === SectionStatusType.IN_PROGRESS )
-      : states.findIndex( status => status === SectionStatusType.WAITING )
-    console.log('currentIndex', index)
-    return index
-  }
-)
+// export const currentIndexSectionSelector = createSelector(
+//   sectionsSelector,
+//   (sections = []) => {
+//     const states = sections && (pluck('status')(sections))
+//     const states2 = pickSectionByStatus(SectionStatusType.IN_PROGRESS)(sections)
+//     const index2 = sections.findIndex( section => section.status === states2)
+//     console.log('index2', index2)
+//     const index = states && contains(SectionStatusType.IN_PROGRESS, states)
+//       ? states.findIndex( status => status === SectionStatusType.IN_PROGRESS )
+//       : states.findIndex( status => status === SectionStatusType.WAITING )
+//     //console.log('currentIndex', index)
+//     return index
+//   }
+// )
+export const currentIndexSelector = state => 0
+
 export const currentSectionSelector = createSelector(
   sectionsSelector,
-  currentIndexSectionSelector,
-  (sections = [], index) => {
-    console.log('CurrentSection', sections[index])
-    return sections[index]
+  currentSelector,
+  (sections = [], current) => {
+    console.log(sections[current])
+    return sections[current]
   }
 )
 

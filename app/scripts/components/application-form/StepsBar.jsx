@@ -3,9 +3,8 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { Col, Row, Steps, Icon } from 'antd'
 import { translate } from './../../i18n/i18n'
-import { ApplicationFormStepsTitles } from '../../utils/constants'
-import { sectionsSelector, currentIndexSectionSelector, sectionsStateSelector } from '../../selectors/application-form-selector'
-import VoidLink from './../common/VoidLink'
+import { ApplicationFormStepsTitles, SectionStatusType } from '../../utils/constants'
+import { currentSelector, sectionsSelector, sectionsStateSelector } from '../../selectors/application-form-selector'
 import { goToSection } from './../../actions/application-form-action'
 
 const Step = Steps.Step
@@ -30,22 +29,53 @@ const getStepTitle = status => {
       return 'About you'
   }
 }
+const RenderStepLink = (props) => {
+  const { title, disabled, goToSectionAction, stepIndex } = props
+  return (
+    <a href="javascript:void(0)" className="field-step-link" disabled={disabled} onClick={() => goToSectionAction(stepIndex)}>
+      {translate(title)}
+    </a>
+  )
+}
 
-//console.log(getStepTitle(ApplicationFormStepsTitles.STEP_5))
+const renderStep = (props) => {
+  const { section, stepIndex, goToSectionAction, currentIndex } = props
+  const isFinishedOrProgress = (status) => {
+    switch (section.status) {
+      case SectionStatusType.IN_PROGRESS:
+      case SectionStatusType.FINISHED:
+        return true
+      default:
+        return false
+    }
+  }
 
-const renderStep = ({ section, stepIndex, goToSectionAction, currentIndex }) => {
+  const checkStepStatus = () => {
+    switch (section.status) {
+      case (stepIndex === currentIndex ):
+        return 'process'
+      case SectionStatusType.WAITING:
+        return 'wait'
+      case SectionStatusType.FINISHED:
+        return 'finish'
+      default:
+        return 'wait'
+    }
+  }
+  const canGoToStep = isFinishedOrProgress(section.status)
+  const checkNewCurrent =  ((stepIndex === currentIndex ) ? 'process' : checkStepStatus(section.status)) ||
+    ((stepIndex !== currentIndex ) ? 'wait' : checkStepStatus(section.status))
 
-  const title = section.title
-  //const status = sectionsState[section.id].status
-  //const extraProps = (submitting && status === SectionStatusType.IN_PROGRESS) ? { status: 'process', icon: Loading } : {}
-  
-  return <Step key={stepIndex} title={translate(title)} style={{cursor: 'pointer'}} onClick={() => goToSectionAction({ stepIndex, currentIndex })}/>
+  return <Step
+    key={stepIndex}
+    status={checkNewCurrent}
+    title={<RenderStepLink {...props} disabled={!canGoToStep} title={section.title}/>}
+    style={canGoToStep ? {cursor: 'pointer'} : {cursor: 'normal'}}
+  />
 }
 
 export const StepsBar = (props) => {
-  // const currentIdx = current >= 0 ? current : sections.length
   const { sections = [], current, goToSectionAction } = props
-  console.log('CURRENT',current)
   return (
     <div className="sf-container">
       <Row>
@@ -61,7 +91,7 @@ export const StepsBar = (props) => {
 
 const mapStateToProps = state => ({
   sections: sectionsSelector(state),
-  current: currentIndexSectionSelector(state),
+  current: currentSelector(state),
   sectionsState: sectionsStateSelector(state)
 })
 

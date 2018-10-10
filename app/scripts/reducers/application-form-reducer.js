@@ -49,7 +49,10 @@ export default {
       }
     },
     [APPLICATION_FORM.GO_TO_SECTION](state, { payload }) {
-      return goToSectionChange(state, payload)
+      return {
+        ...state,
+        current: payload
+      }
       // return {
       //   ...state,
       //   ...state.sections.set(payload.stepIndex, {

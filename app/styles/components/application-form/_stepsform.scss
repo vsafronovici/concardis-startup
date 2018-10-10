@@ -11,6 +11,14 @@
     margin-bottom: 40px;
   }
   .sf-container {
+    .field-step-link {
+      color: #BDBDBD;
+      transition: 0.5s ease;
+      &:hover {
+        text-decoration: none;
+        color: #9E9E9E;
+      }
+    }
     .ant-steps-item-wait {
       .ant-steps-item-icon {
         background-color: #fff!important;
@@ -24,6 +32,10 @@
       }
     }
     .ant-steps-item-finish {
+      a {
+        font-size: 12px !important;
+        font-weight: 600;
+      }
       .ant-steps-item-icon {
         background-color: #BDBDBD !important;
         border: 1px solid #BDBDBD;

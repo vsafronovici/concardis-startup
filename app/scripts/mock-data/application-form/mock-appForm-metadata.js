@@ -1,7 +1,7 @@
 export default [{
   "title": "chapterMetadata.Title__c",
   "subtitle": "chapterMetadata.Sub_Title__c",
-  "status": "WAITING",
+  "status": "FINISHED",
   "sequence": 1,
   "sections": [{
     "sequence": 1,
@@ -26,7 +26,7 @@ export default [{
   , {
     "title": "chapterMetadata.Title__c",
     "subtitle": "chapterMetadata.Sub_Title__c",
-    "status": "WAITING",
+    "status": "FINISHED",
     "sequence": 2,
     "sections": [{
       "type": "Simple",
@@ -100,7 +100,7 @@ export default [{
   {
     "title": "chapterMetadata.Title__c",
     "subtitle": "chapterMetadata.Sub_Title__c",
-    "status": "IN_PROGRESS",
+    "status": "FINISHED",
     "sequence": 3,
     "sections": [{
       "sequence": 5,
@@ -138,7 +138,7 @@ export default [{
   {
     "title": "chapterMetadata.Title__c",
     "subtitle": "chapterMetadata.Sub_Title__c",
-    "status": "WAITING",
+    "status": "FINISHED",
     "sequence": 4,
     "sections": [{
       "type": "Simple",
@@ -161,7 +161,7 @@ export default [{
   , {
     "title": "chapterMetadata.Title__c",
     "subtitle": "chapterMetadata.Sub_Title__c",
-    "status": "WAITING",
+    "status": "IN_PROGRESS",
     "sequence": 5,
     "sections": [{
       "type": "Conditional",
