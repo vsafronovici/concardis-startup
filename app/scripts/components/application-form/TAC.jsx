@@ -6,6 +6,8 @@ import { Row, Col, Button } from 'antd'
 import { closeTACModal, openTACModal, agreeTAC } from '../../actions/application-form-action'
 import { tacSelector } from '../../selectors/application-form-selector'
 import TermsAndConditionsModal from './modal/TermsAndConditionsModal'
+import { translate } from './../../i18n/i18n'
+
 
 const TAC = props => {
 
@@ -14,8 +16,8 @@ const TAC = props => {
 
   return(
     <div>
-      <Button className="steps-btn" onClick={openTACModalAction}>Temrs & Conditions</Button>
-      <TermsAndConditionsModal show={show} onClose={closeTACModalAction} onOk={agreeTACAction} />
+      <Button className="steps-btn" onClick={openTACModalAction}>{translate('appForm.btn.TAD')}</Button>
+      <TermsAndConditionsModal id="TAC_1" show={show} onClose={closeTACModalAction} onOk={agreeTACAction} />
     </div>
   )
 }

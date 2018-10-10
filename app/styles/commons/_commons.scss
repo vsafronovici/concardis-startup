@@ -32,7 +32,8 @@
   background-color: #dc3545;
   color: $white;
   border-radius: 24px;
-  width: 208px;
+  width: auto;
+  min-width: 208px;
   font-family: Montserrat;
   height: 48px;
 }
