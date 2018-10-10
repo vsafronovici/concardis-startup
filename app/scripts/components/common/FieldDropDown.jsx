@@ -11,15 +11,15 @@ const style = {
 }
 
 export const FieldDropDown = props => {
-  const { title, label, subtitle, onChange, placeholder, value, options, tooltip  } = props
+  const { title, label, subtitle, onChange, placeholder, value, listOfValues, tooltip, required  } = props
   //console.log('DROPDOWN', props)
   return (
     <div className="field-drop-down">
       <div className="flex-row label">
         <label>{translate(label)}</label> {tooltip && <FieldTooltip tooltip={tooltip} />}
       </div>
-      <Select onChange={event => onChange(event)} style={style} defaultValue={value} value={value} placeholder={placeholder}>
-        {options.items.map( (item, index) => {
+      <Select onChange={event => onChange(event)} style={style} defaultValue={value} value={value} placeholder={placeholder} required={required}>
+        {listOfValues.map( (item, index) => {
           return (
             <Option key={index} value={item.value} className="item">{translate(item.label)}</Option>
           )

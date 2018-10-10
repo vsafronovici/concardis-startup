@@ -7,6 +7,7 @@ import { currentSectionSelector, fieldsSelector } from '../../selectors/applicat
 
 const SectionForm = props => {
   const { section, fields } = props
+  console.log('SectionForm', props)
   return <ReduxDynamicForm section={section} fields={fields} />
 }
 

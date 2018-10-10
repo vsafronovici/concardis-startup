@@ -29,3 +29,8 @@ export const goToSection = payload => ({
   type: APPLICATION_FORM.GO_TO_SECTION,
   payload
 })
+
+export const goToNextSection = payload => ({
+  type: APPLICATION_FORM.GO_TO_NEXT_SECTION,
+  payload
+})

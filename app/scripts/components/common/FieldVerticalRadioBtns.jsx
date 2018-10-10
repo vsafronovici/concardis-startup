@@ -13,7 +13,7 @@ const radioStyle = {
 }
 
 export const FieldVerticalRadioBtns = props => {
-  const { name, optional, placeholder, help, value, onChange, label, tooltip, options, autoFocus } = props
+  const { name, optional, placeholder, help, value, onChange, label, tooltip, listOfValues, autoFocus, required } = props
   const input = propOrEmptyObj('input', this.props)
 
   return(
@@ -26,9 +26,9 @@ export const FieldVerticalRadioBtns = props => {
           {tooltip && <FieldTooltip title={tooltip} />}
         </div>
       </div>
-      <RadioGroup onChange={(value) => onChange(value)} value={value}>
-        {options.map((radio, index) => (
-          <div className="bottom-container"     key={index}>
+      <RadioGroup onChange={(value) => onChange(value)} value={value} required={required}>
+        {listOfValues.map((radio, index) => (
+          <div className="bottom-container" key={index}>
             <Radio value={radio.value} style={radioStyle} autoFocus={index === 0 && autoFocus} />
             <div className="bottom-label">{translate(radio.label)}</div>
           </div>

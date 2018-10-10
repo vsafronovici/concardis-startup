@@ -48,10 +48,13 @@ export default {
         sections: payload
       }
     },
+    [APPLICATION_FORM.GO_TO_NEXT_SECTION](state, { payload }) {
+      return goToNextSection(state, payload)
+    },
     [APPLICATION_FORM.GO_TO_SECTION](state, { payload }) {
       return {
         ...state,
-        current: payload
+        current: payload,
       }
       // return {
       //   ...state,
@@ -64,33 +67,33 @@ export default {
   })
 }
 
-const goToSectionChange = (state, payload) => {
+const goToNextSection = (state, payload) => {
   const { sections } = state
-  const { currentIndex, stepIndex} = payload
   const sectionToProgress = {
-    ...sections[stepIndex],
+    ...sections[payload],
     status: SectionStatusType.IN_PROGRESS
   }
-  //sections.splice(stepIndex, 1, sectionToProgress)
-  const sectionToWaiting = {
-    ...sections[currentIndex],
-    status: SectionStatusType.WAITING
+  sections.splice(payload, 1, sectionToProgress)
+  const sectionToFinished = {
+    ...sections[payload - 1],
+    status: SectionStatusType.FINISHED
   }
-  //sections.splice(currentIndex, 1, sectionToWaiting)
+  sections.splice(payload - 1, 1, sectionToFinished)
   //console.log('newsections', newSections)
-  for ( let i = 0; i <= sections.length; i++ ) {
-    if (sections[i] === sections[stepIndex]) {
-      sections[i] = sectionToProgress
-    }
-    if (sections[i] === sections[currentIndex]) {
-      sections[i] = sectionToWaiting
-    }
-    console.log(sections)
-  }
-  console.log('sections', sections)
+  // for ( let i = 0; i <= sections.length; i++ ) {
+  //   if (sections[i] === sections[stepIndex]) {
+  //     sections[i] = sectionToProgress
+  //   }
+  //   if (sections[i] === sections[currentIndex]) {
+  //     sections[i] = sectionToWaiting
+  //   }
+  //   console.log(sections)
+  // }
+  // console.log('sections', sections)
 
   const newState = {
     ...state,
+    current: payload,
     sections: sections
   }
   return newState

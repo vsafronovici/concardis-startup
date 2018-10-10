@@ -12,13 +12,20 @@
       width: 350px;
     }
   }
-
   .error {
     color: red;
+    &.active {
+      input {
+        background-color: #fff !important;
+        border: 1px solid red !important;
+      }
+    }
     input {
       border: 1px solid red !important;
+      background-color: #EF9A9A !important;
     }
   }
+
 }
 
 .ant-btn {

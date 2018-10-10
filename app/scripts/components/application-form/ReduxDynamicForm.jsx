@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 
 import { DynamicForm } from './DynamicForm'
 import { Validator } from './form-validator'
+import { ConnectedDynamicForm} from "./DynamicForm";
 
 // TODO remove
 const initialValues = { f1: 'x1', f3: '2', f4: '2', f5: true, f8: 'value1', f9: 'value2' }
@@ -26,7 +27,7 @@ export class ReduxDynamicForm extends React.Component {
       // enableReinitialize: true,
       // keepDirtyOnReinitialize: true,
       //destroyOnUnmount: false
-    })(DynamicForm)
+    })(ConnectedDynamicForm)
 
     const mapStateToProps = state => ({
       rValues: getFormValues(formId)(state),
