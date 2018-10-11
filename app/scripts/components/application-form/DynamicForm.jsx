@@ -9,7 +9,7 @@ import { translate } from '../../i18n/i18n'
 import VoidLink from '../common/VoidLink'
 import { FieldTitle } from '../common/FieldTitle'
 import { goToNextSection } from '../../actions/application-form-action'
-import { currentSelector } from '../../selectors/application-form-selector'
+import { currentSelector, fieldsToDisplaySelector } from "../../selectors/application-form-selector";
 
 const fieldNames = map(prop('name'))
 
@@ -25,7 +25,7 @@ export class DynamicForm extends React.Component {
   }
 
   render() {
-    const { section, fields, current } = this.props
+    const { section, fields, fieldsToDisplay, current } = this.props
     console.log('DynamicForm', this.props)
 
     return (
@@ -37,7 +37,7 @@ export class DynamicForm extends React.Component {
           <div>
             <FieldTitle title={section.title} subtitle={section.subtitle}/>
             <div>
-              { fields.map((field, idx) => <FieldRow key={field.name} field={field} idx={idx} />) }
+              { fieldsToDisplay.map((field, idx) => <FieldRow key={field.name} field={field} idx={idx} />) }
             </div>
 
           </div>
@@ -50,10 +50,12 @@ export class DynamicForm extends React.Component {
   }
 }
 const mapStateToProps = state => ({
-  current: currentSelector(state)
+  current: currentSelector(state),
+  fieldsToDisplay: fieldsToDisplaySelector(state)
 })
 
 const mapDispatchToProps = ({
   goToNextSectionAction: goToNextSection
 })
-export const ConnectedDynamicForm = connect(mapStateToProps, mapDispatchToProps)(DynamicForm)
+
+export default connect(mapStateToProps, mapDispatchToProps)(DynamicForm)

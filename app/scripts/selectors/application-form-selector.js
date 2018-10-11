@@ -1,6 +1,10 @@
 import { createSelector } from 'reselect'
 import { all, compose, isNil, not, prop, propEq, pickBy, keys, values, pluck, contains } from 'ramda'
+import { getFormValues as getReduxFormValues } from 'redux-form'
+
 import { SectionStatusType } from './../utils/constants'
+import { checkSectionCondition, isNilOrEmpty } from '../utils/function-utils'
+import { DYNAMIC_FORM_PREFIX } from '../utils/constants'
 
 const isNotNil = compose(not, isNil)
 const pickSectionByStatus = status => pickBy(
@@ -29,7 +33,6 @@ export const tacSelector = compose(prop('TAC'), applicationFormSelector)
 //     return index
 //   }
 // )
-export const currentIndexSelector = state => 0
 
 export const currentSectionSelector = createSelector(
   sectionsSelector,
@@ -66,9 +69,53 @@ export const fieldsSelector = createSelector(
     }
 
     return chapter.sections.reduce((acc, section) => {
-      acc.push(...section.fields)
+      const { fields } = section
+
+      if (isNilOrEmpty(fields)) {
+        return acc
+      }
+
       return acc
     }, [])
   }
 )
+
+export const getFormValuesSelector = state => {
+  const section = currentSectionSelector(state)
+  const formId = `${DYNAMIC_FORM_PREFIX}${section.sequence}`
+  const result = getReduxFormValues(formId)(state)
+  console.log('getFormValuesSelector', {formId, result})
+  return result
+}
+
+
+
+
+
+export const fieldsToDisplaySelector = createSelector(
+  currentSectionSelector,
+  getFormValuesSelector,
+  (chapter = {}, formValues = {}) => {
+    console.log('fieldsToDisplaySelector', {formValues})
+    if (!chapter.sections) {
+      return []
+    }
+
+    return chapter.sections.reduce((acc, section) => {
+      const { condition, fields } = section
+
+      if (isNilOrEmpty(fields)) {
+        return acc
+      }
+
+
+      if (isNilOrEmpty(condition) || checkSectionCondition(condition, formValues)) {
+        acc.push(...fields)
+      }
+
+      return acc
+    }, [])
+  }
+)
+
 

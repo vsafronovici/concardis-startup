@@ -78,3 +78,13 @@ export const ApplicationFormStepsTitles = {
   STEP_5: 'CUSTOMISE_YOUR_PRODUCT',
   STEP_6: 'PAYMENT_DETAILS'
 }
+
+export const DYNAMIC_FORM_PREFIX = 'dynamicForm_'
+
+export const CONDITIONAL_OPERATORS = {
+  EQUAL: '=',
+  INCLUDES: '<=',
+  AND: 'AND',
+}
+
+
