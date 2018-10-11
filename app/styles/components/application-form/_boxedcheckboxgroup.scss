@@ -1,0 +1,31 @@
+.field-boxed-checkbox-group {
+  .field-checkbox-item {
+    justify-content: space-between;
+    display: flex;
+    direction: row;
+    max-width: 411px;
+    border: 1px solid #BDBDBD;
+    padding: 15px 20px;
+    font-size: 12px !important;
+    .container-labels {
+      max-width: 311px;
+      .label {
+      }
+      .description {
+        color: #BDBDBD;
+        max-width: 311px;
+        font-size: 11px;
+        word-wrap: break-word;
+      }
+    }
+
+    .field {
+      margin-left: 15px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      margin-left: 15px;
+      position: relative;
+    }
+  }
+}

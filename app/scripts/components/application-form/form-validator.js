@@ -1,3 +1,4 @@
+import { pickBy, pluck, isEmpty } from 'ramda'
 import { translate } from '../../i18n/i18n'
 import { FieldType } from '../../utils/constants'
 import { checkDate} from '../../utils/function-utils'
@@ -5,15 +6,19 @@ import { checkDate} from '../../utils/function-utils'
 const isTextualComponent = ({ type }) => type === FieldType.TEXT || type === FieldType.TEXT_BOLD
 
 const createReducer = values => (acc, field) => {
-  const { name, required, validation } = field
+  const { name,  validationRules } = field
+  if (!validationRules || isEmpty(validationRules)) {
+    return acc
+  }
+  const required = pluck('required')(validationRules)
+  const maximum = pluck('maximum')(validationRules)
   // TODO
   //const name = field.name.split('.').join('_')
-  const validate = !!validation
+  const validate = !!validationRules
   const value = values[name]
 
   console.log('createReducer field=', { field, value })
-  console.log('values', values)
-  console.log('value', values[name])
+
   if (!required && !isTextualComponent(field)) {
     return acc
   }
@@ -26,7 +31,16 @@ const createReducer = values => (acc, field) => {
     return acc
   }
 
-  if (required && (value === undefined || value === '')) {
+ if (validate) {
+   if (maximum && value && (value.length > maximum)) {
+     return {
+       ...acc,
+       [name]: `More then ${maximum}`
+     }
+   }
+ }
+
+  if (required && (value === undefined || value === '' || isEmpty(value))) {
     return {
       ...acc,
       [name]: 'Requir'
@@ -34,7 +48,7 @@ const createReducer = values => (acc, field) => {
   }
 
   if (validate) {
-    const { regexp } = validation
+    const { regexp } = pluck('regexp')(validationRules)
 
     if (regexp && !new RegExp(regexp).test(value)) {
       return {
@@ -43,7 +57,6 @@ const createReducer = values => (acc, field) => {
       }
     }
   }
-
   return acc
 }
 

@@ -1353,7 +1353,7 @@ export default [{
       "tooltip": "ch3_s1_field7_hint",
       "sequence": 7,
       "name": "ch3_s1_field7",
-      "listOfValues": [{"value": "TBD", "label": "address_option_1"}, {"value": "TBD", "label": "address_option_2"}],
+      "listOfValues": [{"value": "TBD1", "label": "address_option_1"}, {"value": "TBD2", "label": "address_option_2"}],
       "label": "ch3_s1_field7_label",
       "helpText": "ch3_s1_field7_tooltip",
       "description": "ch3_s1_field7_description"

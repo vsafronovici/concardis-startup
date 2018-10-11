@@ -5,16 +5,20 @@
   display: flex;
   direction: row;
   max-width: 411px;
+  justify-content: space-between;
+  margin-bottom: 15px;
   .help {
     color: #BDBDBD;
     max-width: 330px;
     font-size: 11px;
+    word-wrap: break-word;
   }
   //&-container-titles {
   //  display: flex;
   //  direction: column;
   //}
   .field {
+
     display: flex;
     align-items: center;
     margin-left: 15px;

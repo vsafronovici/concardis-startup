@@ -25,7 +25,7 @@ export class DynamicForm extends React.Component {
   }
 
   render() {
-    const { section, fields } = this.props
+    const { section, fields, current } = this.props
     console.log('DynamicForm', this.props)
 
     return (
@@ -42,7 +42,7 @@ export class DynamicForm extends React.Component {
 
           </div>
           <div>
-            <Button onClick={this.saveForm}>save</Button>
+            {(current > 4 ) ? <Button onClick={this.saveForm} style={{marginLeft: '250px'}}>review</Button> : <Button onClick={this.saveForm}>save</Button>}
           </div>
         </form>
       </div>
