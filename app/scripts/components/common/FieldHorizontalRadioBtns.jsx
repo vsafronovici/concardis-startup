@@ -15,7 +15,7 @@ export const FieldHorizontalRadioBtns = props => {
         <label>{translate(label)}</label> {tooltip && <FieldTooltip tooltip={tooltip}/>}
       </div>
       <RadioGroup onChange={event => onChange(event)} value={value} className="flex-row" required={required}>
-        {listOfValues.map((radio, index) => {
+        {listOfValues && listOfValues.map((radio, index) => {
           return (
             <Radio key={index} value={radio.value} className="item">
               {translate(radio.label)}

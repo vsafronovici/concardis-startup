@@ -134,15 +134,15 @@ const renderFieldComponent = ({ idx, field }) => {
   }
 
   switch (type) {
-    case FieldType.TEXT: {
-      return <Field {...fieldProps} component={RenderInput} />
-    }
+    // case FieldType.TEXT: {
+    //   return <Field {...fieldProps} component={RenderInput} />
+    // }
     // case FieldType.VERTICAL_RADIO_BTNS: {
     //   return <Field {...fieldProps} component={RenderVerticalRadioBtns} />
     // }
-    // case FieldType.BOXED_RADIO_BTNS: {
-    //   return <Field {...fieldProps} component={RenderBoxedRadioBtns} />
-    // }
+    case FieldType.BOXED_RADIO_BTNS: {
+      return <Field {...fieldProps} component={RenderBoxedRadioBtns} />
+    }
     // case FieldType.BOXED_CHECKBOX: {
     //   return <Field {...fieldProps} component={RenderBoxedCheckbox} />
     // }
@@ -158,9 +158,9 @@ const renderFieldComponent = ({ idx, field }) => {
     // case FieldType.HORIZONTAL_RADIO_BTNS: {
     //   return <Field {...fieldProps} component={RenderHorizontalRadioBtns}/>
     // }
-    case FieldType.DATE: {
-      return <Field {...fieldProps} component={RenderDate}/>
-    }
+    // case FieldType.DATE: {
+    //   return <Field {...fieldProps} component={RenderDate}/>
+    // }
     // case FieldType.TEXT_BOLD: {
     //   return <Field {...fieldProps} component={RenderTextBold}/>
     // }

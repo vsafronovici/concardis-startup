@@ -12,9 +12,8 @@ const createReducer = values => (acc, field) => {
   const value = values[name]
 
   console.log('createReducer field=', { field, value })
-  console.log('acc', acc)
   console.log('values', values)
-
+  console.log('value', values[name])
   if (!required && !isTextualComponent(field)) {
     return acc
   }

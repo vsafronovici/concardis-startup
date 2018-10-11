@@ -6,12 +6,12 @@ import { translate } from './../../i18n/i18n'
 const RadioGroup = Radio.Group
 
 export const FieldBoxedRadioBtns = (props) => {
-  const { options, onChange, value, autoFocus } = props
+  const { listOfValues, onChange, value, autoFocus } = props
   console.log('FieldBoxedRadioBtns', props)
 
   return (
     <RadioGroup onChange={(value) => onChange(value)} value={value}>
-      {options.map((radio, index) => (
+      {listOfValues && listOfValues.map((radio, index) => (
         <div className="radio-container"  key={index}>
           <div className="container-titles">
             <label>

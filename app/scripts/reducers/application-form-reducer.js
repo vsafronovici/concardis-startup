@@ -56,19 +56,19 @@ export default {
         ...state,
         current: payload,
       }
-      // return {
-      //   ...state,
-      //   ...state.sections.set(payload.stepIndex, {
-      //     ...state.sections[payload.stepIndex],
-      //     status: SectionStatusType.IN_PROGRESS
-      //   })
-      // }
     }
   })
 }
 
 const goToNextSection = (state, payload) => {
   const { sections } = state
+  const MAX = sections.length -1
+  if (payload > MAX) {
+    return {
+      ...state
+    }
+  }
+
   const sectionToProgress = {
     ...sections[payload],
     status: SectionStatusType.IN_PROGRESS
@@ -87,13 +87,19 @@ const goToNextSection = (state, payload) => {
   //   if (sections[i] === sections[currentIndex]) {
   //     sections[i] = sectionToWaiting
   //   }
-  //   console.log(sections)
-  // }
-  // console.log('sections', sections)
+  const maxCurrent = current => {
+    const max = sections.length - 1
+    if (current > max) {
+      console.log('Current is more than 5')
+      return max
+    } else {
+      return current
+    }
+  }
 
   const newState = {
     ...state,
-    current: payload,
+    current: maxCurrent(payload),
     sections: sections
   }
   return newState

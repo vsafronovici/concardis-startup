@@ -19,7 +19,7 @@ export const FieldDropDown = props => {
         <label>{translate(label)}</label> {tooltip && <FieldTooltip tooltip={tooltip} />}
       </div>
       <Select onChange={event => onChange(event)} style={style} defaultValue={value} value={value} placeholder={placeholder} required={required}>
-        {listOfValues.map( (item, index) => {
+        {listOfValues && listOfValues.map( (item, index) => {
           return (
             <Option key={index} value={item.value} className="item">{translate(item.label)}</Option>
           )

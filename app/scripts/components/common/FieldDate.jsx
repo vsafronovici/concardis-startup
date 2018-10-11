@@ -39,13 +39,13 @@ export class FieldDate extends Component  {
         <label>{translate(label)}</label>
         <div className="flex-row date-container">
           <div className="day">
-            <Input min={1} max={31} ref={input => this.inputDay = input} placeholder="DD" onChange={e => this.handleChange('dd', e.target.value)} id="dd"/>
+            <Input min={1} max={31} ref={input => this.inputDay = input} placeholder="DD" onChange={e => this.handleChange('dd', e.target.value)} id="dd" required={required} />
           </div>
           <div className="mounth">
-            <Input min={1} max={12} ref={input => this.inputMounth = input} placeholder="MM" onChange={e => this.handleChange('mm', e.target.value)} id="mm"/>
+            <Input min={1} max={12} ref={input => this.inputMounth = input} placeholder="MM" onChange={e => this.handleChange('mm', e.target.value)} id="mm" required={required} />
           </div>
           <div className="year">
-            <Input maxLength={4} ref={input => this.inputYear = input} placeholder="YY" onChange={e => this.handleChange('yy', e.target.value)} id="yy"/>
+            <Input maxLength={4} ref={input => this.inputYear = input} placeholder="YY" onChange={e => this.handleChange('yy', e.target.value)} id="yy" required={required} />
           </div>
         </div>
       </div>

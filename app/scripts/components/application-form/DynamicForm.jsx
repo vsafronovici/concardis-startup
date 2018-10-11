@@ -9,7 +9,7 @@ import { translate } from '../../i18n/i18n'
 import VoidLink from '../common/VoidLink'
 import { FieldTitle } from '../common/FieldTitle'
 import { goToNextSection } from '../../actions/application-form-action'
-import {currentSelector} from "../../selectors/application-form-selector";
+import { currentSelector } from '../../selectors/application-form-selector'
 
 const fieldNames = map(prop('name'))
 
