@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Input } from 'antd'
 import { translate } from './../../i18n/i18n'
+import { checkDate} from "../../utils/function-utils";
 
 export class FieldDate extends Component  {
   state = {
@@ -32,7 +33,7 @@ export class FieldDate extends Component  {
   }
 
   render() {
-    const { label } = this.props
+    const { label, required } = this.props
     return (
       <div className="field-date">
         <label>{translate(label)}</label>

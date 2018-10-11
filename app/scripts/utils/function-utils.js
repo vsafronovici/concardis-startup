@@ -1,5 +1,6 @@
 import { toPairs, values, isNil, equals, all, isEmpty, propOr, curry } from 'ramda'
 import numeral from 'numeral'
+import moment from 'moment'
 
 export const propOrEmptyObj = propOr({})
 export const propOrEmptyArr = propOr([])
@@ -44,3 +45,6 @@ export const formatNumber = (formatter, value) => {
 
 export const generalFormatNumber = curry(formatNumber)('00.00')
 
+export const checkDate = (date) => {
+  return moment(date, 'DD-MM-YYYY').isValid()
+}
