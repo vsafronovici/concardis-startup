@@ -70,3 +70,21 @@
   display: flex;
   direction: row;
 }
+
+.spin-align {
+    text-align: center;
+    font-size: 35px;
+    position: relative;
+    height: 300px;
+}
+
+.spin-relative {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  font-size: 50px;
+}
+
+.ant-spin-dot i {
+  background-color: #dc4405 !important;
+}

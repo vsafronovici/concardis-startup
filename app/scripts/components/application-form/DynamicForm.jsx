@@ -30,6 +30,11 @@ export class DynamicForm extends React.Component {
 
     return (
       <div className="dynamic-form">
+        {current === 4 && (
+          <div className="dynamic-form-receipt">
+            <img src={window.configSettings.resources.imgs.receipt} />
+          </div>)
+        }
         <form>
           <div>
             <VoidLink onClick={this.saveForm}>save & close</VoidLink>

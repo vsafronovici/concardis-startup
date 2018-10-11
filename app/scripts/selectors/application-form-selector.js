@@ -75,6 +75,8 @@ export const fieldsSelector = createSelector(
         return acc
       }
 
+      acc.push(...fields)
+
       return acc
     }, [])
   }

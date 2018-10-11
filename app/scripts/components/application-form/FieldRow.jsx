@@ -134,36 +134,36 @@ const renderFieldComponent = ({ idx, field }) => {
   }
 
   switch (type) {
-    // case FieldType.TEXT: {
-    //   return <Field {...fieldProps} component={RenderInput} />
-    // }
-    // case FieldType.VERTICAL_RADIO_BTNS: {
-    //   return <Field {...fieldProps} component={RenderVerticalRadioBtns} />
-    // }
-    // case FieldType.BOXED_RADIO_BTNS: {
-    //   return <Field {...fieldProps} component={RenderBoxedRadioBtns} />
-    // }
+    case FieldType.TEXT: {
+      return <Field {...fieldProps} component={RenderInput} />
+    }
+    case FieldType.VERTICAL_RADIO_BTNS: {
+      return <Field {...fieldProps} component={RenderVerticalRadioBtns} />
+    }
+    case FieldType.BOXED_RADIO_BTNS: {
+      return <Field {...fieldProps} component={RenderBoxedRadioBtns} />
+    }
     case FieldType.BOXED_CHECKBOX: {
       return <Field {...fieldProps} component={RenderBoxedCheckbox} />
     }
-    // case FieldType.CHECKBOX: {
-    //   return <Field {...fieldProps} component={RenderCheckbox} />
-    // }
-    // case FieldType.DROPDOWN: {
-    //   return <Field {...fieldProps} component={RenderDropDown} />
-    // }
+    case FieldType.CHECKBOX: {
+      return <Field {...fieldProps} component={RenderCheckbox} />
+    }
+    case FieldType.DROPDOWN: {
+      return <Field {...fieldProps} component={RenderDropDown} />
+    }
     case FieldType.BOXED_CHECKBOX_GROUP: {
       return <Field {...fieldProps} component={RenderBoxedCheckboxGroup}/>
     }
-    // case FieldType.HORIZONTAL_RADIO_BTNS: {
-    //   return <Field {...fieldProps} component={RenderHorizontalRadioBtns}/>
-    // }
-    // case FieldType.DATE: {
-    //   return <Field {...fieldProps} component={RenderDate}/>
-    // }
-    // case FieldType.TEXT_BOLD: {
-    //   return <Field {...fieldProps} component={RenderTextBold}/>
-    // }
+    case FieldType.HORIZONTAL_RADIO_BTNS: {
+      return <Field {...fieldProps} component={RenderHorizontalRadioBtns}/>
+    }
+    case FieldType.DATE: {
+      return <Field {...fieldProps} component={RenderDate}/>
+    }
+    case FieldType.TEXT_BOLD: {
+      return <Field {...fieldProps} component={RenderTextBold}/>
+    }
     default: {
       return null
     }

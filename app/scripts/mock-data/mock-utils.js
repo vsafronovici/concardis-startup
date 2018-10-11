@@ -95,6 +95,9 @@ export const mockVisualForceConfig = {
     TAD: {
       en_US: 'https://concardis--smejoindev--c.cs109.visual.force.com/resource/1538657587000/POS_Service',
       de: 'https://concardis--smejoindev--c.cs109.visual.force.com/resource/1538657587000/POS_Service'
+    },
+    imgs: {
+      receipt: 'https://concardis--smejoindev--c.cs109.visual.force.com/resource/1538637322000/ReceiptPreview'
     }
   },
 }

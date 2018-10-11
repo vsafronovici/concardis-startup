@@ -6,6 +6,7 @@ import { checkDate} from '../../utils/function-utils'
 const isTextualComponent = ({ type }) => type === FieldType.TEXT || type === FieldType.TEXT_BOLD
 
 const createReducer = values => (acc, field) => {
+  console.log('Validator field=', { field })
   const { name,  validationRules } = field
   if (!validationRules || isEmpty(validationRules)) {
     return acc

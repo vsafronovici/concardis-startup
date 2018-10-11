@@ -22,7 +22,7 @@ const ApplicationForm = props => {
               <TAC />
             </div>
           </Col>
-          <Col span={13} offset={1}>
+          <Col span={16} offset={1}>
             <SectionForm />
           </Col>
         </Row>

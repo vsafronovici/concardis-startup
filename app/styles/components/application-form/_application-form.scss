@@ -1,0 +1,9 @@
+.dynamic-form {
+  position: relative;
+  &-receipt {
+    width: 300px;
+    position: absolute;
+    top:100px;
+    right: 30px;
+  }
+}
