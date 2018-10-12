@@ -74,6 +74,7 @@ const goToNextSection = (state, payload) => {
     status: SectionStatusType.IN_PROGRESS
   }
   sections.splice(payload, 1, sectionToProgress)
+
   const sectionToFinished = {
     ...sections[payload - 1],
     status: SectionStatusType.FINISHED

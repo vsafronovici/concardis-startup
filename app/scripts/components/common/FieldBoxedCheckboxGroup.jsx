@@ -31,24 +31,16 @@ const CheckBoxItem = props => {
 export class FieldBoxedCheckboxGroup extends Component {
 
   state = {
-    values: []
+    values: ''
   }
 
   handleChange = (value, label, index) => {
     const { values } = this.state
     const changeValue = () => {
-      if (contains(value, values)) {
-        this.setState({
-          values: [...this.state.values].splice(index, 1, value)
-        })
-      }
-      else {
-        this.setState({
-          values: [...this.state.values, value]
-        })
+      if (values) {
+
       }
     }
-    changeValue()
     const fieldsValues = this.state.values
     this.props.onChange(fieldsValues)
     console.log('STATE = ', fieldsValues)

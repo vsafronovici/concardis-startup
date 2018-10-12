@@ -7,7 +7,7 @@ const RadioGroup = Radio.Group
 
 export const FieldBoxedRadioBtns = (props) => {
   const { listOfValues, onChange, value, autoFocus } = props
-  console.log('FieldBoxedRadioBtns', props)
+  //console.log('FieldBoxedRadioBtns', props)
 
   return (
     <RadioGroup onChange={(value) => onChange(value)} value={value}>

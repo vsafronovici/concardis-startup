@@ -1,7 +1,7 @@
-import { pickBy, pluck, isEmpty } from 'ramda'
+import { pickBy, pluck, isEmpty, toPairs, contains } from 'ramda'
 import { translate } from '../../i18n/i18n'
 import { FieldType } from '../../utils/constants'
-import { checkDate} from '../../utils/function-utils'
+import { checkDate, propOrEmptyArr } from '../../utils/function-utils'
 
 const isTextualComponent = ({ type }) => type === FieldType.TEXT || type === FieldType.TEXT_BOLD
 
@@ -11,14 +11,13 @@ const createReducer = values => (acc, field) => {
   if (!validationRules || isEmpty(validationRules)) {
     return acc
   }
+
   const required = pluck('required')(validationRules)
   const maximum = pluck('maximum')(validationRules)
   // TODO
   //const name = field.name.split('.').join('_')
   const validate = !!validationRules
   const value = values[name]
-
-  console.log('createReducer field=', { field, value })
 
   if (!required && !isTextualComponent(field)) {
     return acc
@@ -33,10 +32,10 @@ const createReducer = values => (acc, field) => {
   }
 
  if (validate) {
-   if (maximum && value && (value.length > maximum)) {
+   if (maximum[0] && value && (value.length > maximum[0])) {
      return {
        ...acc,
-       [name]: `More then ${maximum}`
+       [name]: `More then ${maximum[0]}`
      }
    }
  }
