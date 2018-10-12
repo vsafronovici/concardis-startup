@@ -5,7 +5,7 @@ import { contains, keys, findIndex, pluck } from 'ramda'
 import { Field } from 'redux-form'
 import { translate } from './../../i18n/i18n'
 import { FieldBoxedCheckbox } from './FieldBoxedCheckbox'
-import { valuesToString } from '../../utils/function-utils'
+import { optionValuesToString } from '../../utils/application-form-utils'
 
 const CheckboxGroup = Checkbox.Group
 
@@ -45,7 +45,7 @@ export class FieldBoxedCheckboxGroup extends Component {
     }
 
     this.setState(newState)
-    this.props.onChange(valuesToString(newState))
+    this.props.onChange(optionValuesToString(newState))
   }
 
   render() {

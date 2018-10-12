@@ -5,79 +5,64 @@ import { checkDate, isNilOrEmpty, propOrEmptyArr } from '../../utils/function-ut
 
 const isTextualComponent = ({ type }) => type === FieldType.TEXT || type === FieldType.TEXT_BOLD
 
-const createReducer = values => (acc, field) => {
+const createReducer = values => (errors, field) => {
   console.log('Validator field=', { field })
   const { name,  type, validationRules } = field
 
+  if (isNilOrEmpty(validationRules)) {
+    return errors
+  }
+
+  const rules = validationRules[0]
+
+  if (isNilOrEmpty(rules)) {
+    return errors
+  }
+
+
+  const { required, maximum, regexp, requiredError, validationError } = rules
+
   const value = values[name]
 
-  //const { required, maximum } = validationRules[0]
-
+  // Validate date
   if (type === FieldType.DATE && !isNilOrEmpty(value) ) {
     console.log('Validator DATE=', { field, value, valid: checkDate(value) })
     if (!checkDate(value)) {
       return {
-        ...acc,
-        [name]: `Invalid date format`
+        ...errors,
+        [name]: validationError
       }
     }
   }
 
-
-  if (!validationRules || isNilOrEmpty(validationRules)) {
-    return acc
-  }
-
-  const validate = !!validationRules[0]
-
-  const rules = validationRules[0]
-
-  const required = pluck('required')(validationRules)
-  const maximum = pluck('maximum')(validationRules)
-
-  // TODO
-  //const name = field.name.split('.').join('_')
-
   if (!required && !isTextualComponent(field)) {
-    return acc
+    return errors
   }
 
-  if (checkDate(value)) {
-    return acc
-  }
 
-  if (!required && !validate) {
-    return acc
+  if (maximum && value && value.length > maximum) {
+    return {
+      ...errors,
+      [name]: `More then ${maximum}`
+    }
   }
-
- if (validate) {
-   if (maximum[0] && value && (value.length > maximum[0])) {
-     return {
-       ...acc,
-       [name]: `More then ${maximum[0]}`
-     }
-   }
- }
 
   if (required && (value === undefined || value === '' || isEmpty(value))) {
     return {
-      ...acc,
-      [name]: 'Requir'
+      ...errors,
+      [name]: requiredError
     }
   }
 
 
-  if (validate) {
-    const { regexp } = pluck('regexp')(validationRules)
-
-    if (regexp && !new RegExp(regexp).test(value)) {
-      return {
-        ...acc,
-        [name]: 'Bad Regex'
-      }
+  if (regexp && !new RegExp(regexp).test(value)) {
+    return {
+      ...errors,
+      [name]: 'Bad Regex'
     }
   }
-  return acc
+
+  return errors
 }
 
 export const Validator = fields => values => {

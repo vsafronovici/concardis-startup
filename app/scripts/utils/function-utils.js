@@ -65,13 +65,3 @@ export const checkDate = (date) => {
   }*/
 }
 
- export const valuesToString = values => {
-  const arr = []
-  for (let keyOpt in values) {
-    if (values[keyOpt]) {
-      arr.push(keyOpt)
-    }
-  }
-    const string = arr.join(';')
-  return string
-}
