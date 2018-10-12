@@ -1,7 +1,7 @@
 import React from 'react'
 import { Input, Button, Select } from 'antd'
 import { Field } from 'redux-form'
-import { pickAll } from 'ramda'
+import { pickAll, without, prop, remove, compose } from 'ramda'
 import { translate } from '../../i18n/i18n'
 import { FieldType } from '../../utils/constants'
 import { objectToArrayKeyValue } from '../../utils/function-utils'
@@ -124,10 +124,19 @@ const RenderDate = createRenderer((input, meta, rest) => {
   />
 })
 
-const renderFieldComponent = ({ idx, field }) => {
+const renderFieldComponent = ({ idx, field, i18n }) => {
   const { type } = field
 
   const fieldProps = { ...field }
+  if (!i18n[fieldProps.description]) {
+    fieldProps.description = null
+  }
+  if (!i18n[fieldProps.hint]) {
+    fieldProps.hint = null
+  }
+  if (!i18n[fieldProps.helpText]) {
+    fieldProps.helpText = null
+  }
 
   if (idx === 0) {
     fieldProps.autoFocus = true
@@ -170,9 +179,9 @@ const renderFieldComponent = ({ idx, field }) => {
   }
 }
 
-export const FieldRow = ({ idx, field }) => (
+export const FieldRow = ({ idx, field, i18n }) => (
   <div className="form-field-row">
-    { renderFieldComponent({ idx, field }) }
+    { renderFieldComponent({ idx, field, i18n }) }
   </div>
 )
 

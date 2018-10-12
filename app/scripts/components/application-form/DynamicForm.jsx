@@ -10,6 +10,7 @@ import VoidLink from '../common/VoidLink'
 import { FieldTitle } from '../common/FieldTitle'
 import { goToNextSection } from '../../actions/application-form-action'
 import { currentSelector, fieldsToDisplaySelector } from "../../selectors/application-form-selector";
+import { i18nSelector} from '../../selectors/i18n-selector'
 
 const fieldNames = map(prop('name'))
 
@@ -20,12 +21,12 @@ export class DynamicForm extends React.Component {
 
   saveForm = e => {
     const { section: { fieldsToDisplay }, touch, goToNextSectionAction, current } = this.props
-    touch(...fieldNames(fieldsToDisplay))
+    //touch(...fieldNames(fieldsToDisplay))
     goToNextSectionAction(current + 1)
   }
 
   render() {
-    const { section, fields, fieldsToDisplay, current } = this.props
+    const { section, fields, fieldsToDisplay, current, i18n } = this.props
     console.log('DynamicForm', this.props)
 
     return (
@@ -36,18 +37,22 @@ export class DynamicForm extends React.Component {
           </div>)
         }
         <form>
-          <div>
-            <VoidLink onClick={this.saveForm}>save & close</VoidLink>
+          <div className="flex-row-justify-end">
+            <div ><VoidLink onClick={this.saveForm}>{translate('link_applicationForm_saveAndClose')}</VoidLink></div>
           </div>
           <div>
             <FieldTitle title={section.title} subtitle={section.subtitle}/>
             <div>
-              { fieldsToDisplay.map((field, idx) => <FieldRow key={field.name} field={field} idx={idx} />) }
+              { fieldsToDisplay.map((field, idx) => <FieldRow key={field.name} field={field} idx={idx} i18n={i18n}/>) }
             </div>
 
           </div>
           <div>
-            {(current === 5 ) ? <Button onClick={this.saveForm} style={{marginLeft: '250px'}}>review</Button> : <Button onClick={this.saveForm}>save</Button>}
+            {
+              (current === 5 )
+              ? <Button onClick={this.saveForm} style={{marginLeft: '250px'}}>{translate('btn_applicationForm_reviewApplication')}</Button>
+              : <Button onClick={this.saveForm}>{translate('btn_applicationForm_nextSection')}</Button>
+            }
           </div>
         </form>
       </div>
@@ -56,7 +61,8 @@ export class DynamicForm extends React.Component {
 }
 const mapStateToProps = state => ({
   current: currentSelector(state),
-  fieldsToDisplay: fieldsToDisplaySelector(state)
+  fieldsToDisplay: fieldsToDisplaySelector(state),
+  i18n: i18nSelector(state)
 })
 
 const mapDispatchToProps = ({

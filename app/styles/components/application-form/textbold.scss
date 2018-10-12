@@ -4,6 +4,10 @@
     color: #BDBDBD;
     margin-bottom: 10px;
   }
+  .container-labels {
+    display: flex;
+    direction: row;
+  }
   input {
     font-weight: bold;
     font-size: 12px;

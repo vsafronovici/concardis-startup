@@ -30,7 +30,7 @@ export class FieldDate extends Component  {
     const YEAR = this.inputYear.input.value
     const DATE = `${DAY}/${MOUNTH}/${YEAR}`
     this.props.onChange(DATE)
-  }
+}
 
   render() {
     const { label, required } = this.props

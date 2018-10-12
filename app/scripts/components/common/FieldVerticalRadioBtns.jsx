@@ -13,8 +13,7 @@ const radioStyle = {
 }
 
 export const FieldVerticalRadioBtns = props => {
-  const { name, optional, placeholder, help, value, onChange, label, tooltip, listOfValues, autoFocus, required } = props
-  const input = propOrEmptyObj('input', this.props)
+  const { name, optional, placeholder, help, value, onChange, label, tooltip, listOfValues, autoFocus, required, helpText, description } = props
 
   return(
     <div className="field-vertical-radio">
@@ -23,7 +22,7 @@ export const FieldVerticalRadioBtns = props => {
           {translate(label)} {optional && <span>{'(optional)'}</span>}
         </label>
         <div>
-          {tooltip && <FieldTooltip title={tooltip} />}
+          {helpText && <FieldTooltip title={helpText} />}
         </div>
       </div>
       <RadioGroup onChange={(value) => onChange(value)} value={value} required={required}>

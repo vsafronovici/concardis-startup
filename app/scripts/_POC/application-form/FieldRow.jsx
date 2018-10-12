@@ -52,7 +52,7 @@ const RenderSelect = createRenderer((input, meta, label, { options, val, readOnl
   </Select>
 ))
 
-const renderFieldComponent = ({ field, readOnly }) => {
+const renderFieldComponent = ({ field, readOnly, i18n }) => {
   const { type, name, label, validation: { required }, value } = field
 
   const fieldProps = pickAll(['name', 'label', 'required', 'help'], field)
@@ -85,9 +85,9 @@ const renderFieldComponent = ({ field, readOnly }) => {
   }
 }
 
-export const FieldRow = ({ field, readOnly }) => (
+export const FieldRow = ({ field, readOnly, i18n  }) => (
   <div className="field-row">
-    { renderFieldComponent({ field, readOnly }) }
+    { renderFieldComponent({ field, readOnly, i18n }) }
   </div>
 )
 

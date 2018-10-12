@@ -6,6 +6,8 @@ import { Row, Col, Button } from 'antd'
 import StepsBar from './StepsBar'
 import TAC from './TAC'
 import SectionForm from './SectionForm'
+import { translate } from '../../i18n/i18n'
+import {ReviewYourApplication} from "./ReviewYourApplicaiton";
 
 const ApplicationForm = props => {
 
@@ -16,7 +18,7 @@ const ApplicationForm = props => {
           <Col span={6} offset={1}>
             <div className="steps-pop-wrapper">
               <div className="steps-app-name">
-                Your Application:
+                {translate('steps_applicationForm_title')}
               </div>
               <StepsBar />
               <TAC />
@@ -24,6 +26,7 @@ const ApplicationForm = props => {
           </Col>
           <Col span={16} offset={1}>
             <SectionForm />
+            {/*<ReviewYourApplication/>*/}
           </Col>
         </Row>
       </Col>
