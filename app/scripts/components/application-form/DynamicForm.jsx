@@ -19,8 +19,8 @@ export class DynamicForm extends React.Component {
   }
 
   saveForm = e => {
-    const { section: { fields }, touch, goToNextSectionAction, current } = this.props
-    //touch(...fieldNames(fields))
+    const { section: { fieldsToDisplay }, touch, goToNextSectionAction, current } = this.props
+    touch(...fieldNames(fieldsToDisplay))
     goToNextSectionAction(current + 1)
   }
 
@@ -47,7 +47,7 @@ export class DynamicForm extends React.Component {
 
           </div>
           <div>
-            {(current > 4 ) ? <Button onClick={this.saveForm} style={{marginLeft: '250px'}}>review</Button> : <Button onClick={this.saveForm}>save</Button>}
+            {(current === 5 ) ? <Button onClick={this.saveForm} style={{marginLeft: '250px'}}>review</Button> : <Button onClick={this.saveForm}>save</Button>}
           </div>
         </form>
       </div>

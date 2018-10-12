@@ -62,19 +62,3 @@ export const checkDate = (date) => {
     return false
   }
 }
-
-export const checkSectionCondition = (conditions, values) => {
-  console.log('checkSectionCondition', {conditions, values})
-  return conditions.split('AND').reduce((acc, condition) => {
-    if (condition.includes('<=')) {
-      const [field, value] = condition.trim().split('=')
-
-    } else {
-      const [field, value] = condition.trim().split('=')
-      console.log('checkSectionCondition', {condition, field, value})
-      console.log('checkSectionCondition result=', acc && values[field.trim()] === value.trim())
-      return acc && values[field.trim()] === value.trim()
-    }
-  }, true)
-
-}

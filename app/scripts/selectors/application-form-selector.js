@@ -3,8 +3,8 @@ import { all, compose, isNil, not, prop, propEq, pickBy, keys, values, pluck, co
 import { getFormValues as getReduxFormValues } from 'redux-form'
 
 import { SectionStatusType } from './../utils/constants'
-import { checkSectionCondition, isNilOrEmpty } from '../utils/function-utils'
-import { DYNAMIC_FORM_PREFIX } from '../utils/constants'
+import { isNilOrEmpty } from '../utils/function-utils'
+import { checkSectionCondition, DYNAMIC_FORM_PREFIX } from '../utils/application-form-utils'
 
 const isNotNil = compose(not, isNil)
 const pickSectionByStatus = status => pickBy(

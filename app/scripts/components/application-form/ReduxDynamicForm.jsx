@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 
 import DynamicForm from './DynamicForm'
 import { Validator } from './form-validator'
-import { DYNAMIC_FORM_PREFIX } from '../../utils/constants'
+import { DYNAMIC_FORM_PREFIX } from '../../utils/application-form-utils'
 
 // TODO remove
 const initialValues = { f1: 'x1', f3: '2', f4: '2', f5: true, f8: 'value1', f9: 'value2' }
