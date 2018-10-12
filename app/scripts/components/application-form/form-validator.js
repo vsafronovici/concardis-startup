@@ -1,23 +1,40 @@
 import { pickBy, pluck, isEmpty, toPairs, contains } from 'ramda'
 import { translate } from '../../i18n/i18n'
 import { FieldType } from '../../utils/constants'
-import { checkDate, propOrEmptyArr } from '../../utils/function-utils'
+import { checkDate, isNilOrEmpty, propOrEmptyArr } from '../../utils/function-utils'
 
 const isTextualComponent = ({ type }) => type === FieldType.TEXT || type === FieldType.TEXT_BOLD
 
 const createReducer = values => (acc, field) => {
   console.log('Validator field=', { field })
-  const { name,  validationRules } = field
-  if (!validationRules || isEmpty(validationRules)) {
+  const { name,  type, validationRules } = field
+
+  const value = values[name]
+
+  // Validate date
+  if (type === FieldType.DATE && !isNilOrEmpty(value) ) {
+    console.log('Validator DATE=', { field, value, valid: checkDate(value) })
+    if (!checkDate(value)) {
+      return {
+        ...acc,
+        [name]: `Invalid date format`
+      }
+    }
+  }
+
+
+  if (!validationRules || isNilOrEmpty(validationRules)) {
     return acc
   }
+
+  const validate = !!validationRules
+
+  const rules = validationRules[0]
 
   const required = pluck('required')(validationRules)
   const maximum = pluck('maximum')(validationRules)
   // TODO
   //const name = field.name.split('.').join('_')
-  const validate = !!validationRules
-  const value = values[name]
 
   if (!required && !isTextualComponent(field)) {
     return acc

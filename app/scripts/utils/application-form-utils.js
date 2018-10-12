@@ -16,13 +16,14 @@ export const checkSectionCondition = (conditions, values) => {
   console.log('checkSectionCondition', {conditions, values})
   return conditions.split(AND).reduce((acc, condition) => {
     if (condition.includes(INCLUDES)) {
-      const [field, value] = condition.trim().split(EQUAL)
+      const [field, value] = condition.trim().split(INCLUDES)
 
     } else {
-      const [field, value] = condition.trim().split(EQUAL)
-      console.log('checkSectionCondition', {condition, field, value})
-      console.log('checkSectionCondition result=', acc && values[field.trim()] === value.trim())
-      return acc && values[field.trim()] === value.trim()
+      const [cFieldName, cValue] = condition.trim().split(EQUAL)
+      const value = values[cFieldName.trim()]
+      console.log('checkSectionCondition', {condition, cFieldName, cValue, value})
+      console.log('checkSectionCondition result=', acc && value && value.toString() === cValue.trim())
+      return acc && value && value.toString() === cValue.trim()
     }
   }, true)
 

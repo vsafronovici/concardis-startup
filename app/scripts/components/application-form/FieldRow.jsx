@@ -20,7 +20,7 @@ import { FieldTextBold } from '../common/FieldTextBold'
 
 const Option = Select.Option
 
-const createRenderer = render => ({ input, meta, type, ...rest }) => { console.log('createRenderer ', meta); return (
+const createRenderer = render => ({ input, meta, type, ...rest }) => { if (type === ) console.log('createRenderer ', {meta, rest}); return (
 
   <div className="form-field">
     <div className={cn(`form-field-${type}`)}>
