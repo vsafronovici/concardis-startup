@@ -44,12 +44,11 @@ export class FieldBoxedCheckboxGroup extends Component {
     }
 
     this.setState(newState)
-
+    this.props.onChange(valuesToString(newState))
   }
 
   render() {
     const { label, fields, onChange, listOfValues, description } = this.props
-    {this.props.onChange(valuesToString(this.state))}
     return (
       <div className="field-boxed-checkbox-group">
         <label>
