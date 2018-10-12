@@ -8,7 +8,7 @@ import { FieldRow } from './FieldRow'
 import { translate } from '../../i18n/i18n'
 import VoidLink from '../common/VoidLink'
 import { FieldTitle } from '../common/FieldTitle'
-import { goToNextSection } from '../../actions/application-form-action'
+import { goToNextSection, getReview } from '../../actions/application-form-action'
 import { currentSelector, fieldsToDisplaySelector } from "../../selectors/application-form-selector";
 import { i18nSelector} from '../../selectors/i18n-selector'
 
@@ -26,7 +26,7 @@ export class DynamicForm extends React.Component {
   }
 
   render() {
-    const { section, fields, fieldsToDisplay, current, i18n } = this.props
+    const { section, fields, fieldsToDisplay, current, i18n, getReviewAction } = this.props
     console.log('DynamicForm', this.props)
 
     return (
@@ -50,7 +50,7 @@ export class DynamicForm extends React.Component {
           <div>
             {
               (current === 5 )
-              ? <Button onClick={this.saveForm} style={{marginLeft: '250px'}}>{translate('btn_applicationForm_reviewApplication')}</Button>
+              ? <Button onClick={() => getReviewAction(true)} style={{marginLeft: '250px'}}>{translate('btn_applicationForm_reviewApplication')}</Button>
               : <Button onClick={this.saveForm}>{translate('btn_applicationForm_nextSection')}</Button>
             }
           </div>
@@ -66,7 +66,8 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = ({
-  goToNextSectionAction: goToNextSection
+  goToNextSectionAction: goToNextSection,
+  getReviewAction: getReview
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(DynamicForm)

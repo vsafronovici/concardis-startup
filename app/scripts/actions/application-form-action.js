@@ -44,3 +44,8 @@ export const goToNextSection = payload => ({
   type: APPLICATION_FORM.GO_TO_NEXT_SECTION,
   payload
 })
+
+export const getReview = payload => ({
+  type: APPLICATION_FORM.GET_REVIEW,
+  payload
+})

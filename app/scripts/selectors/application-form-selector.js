@@ -17,6 +17,7 @@ export const sectionsSelector = compose(prop('sections'), applicationFormSelecto
 export const sectionsStateSelector = compose(prop('sectionsState'), applicationFormSelector)
 export const currentSelector = compose(prop('current'), applicationFormSelector)
 export const tacSelector = compose(prop('TAC'), applicationFormSelector)
+export const finishedSelector = compose(prop('finished'), applicationFormSelector)
 
 // TODO remove
 // export const currentIndexSectionSelector = createSelector(

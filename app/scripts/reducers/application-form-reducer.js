@@ -56,7 +56,13 @@ export default {
         ...state,
         current: payload,
       }
-    }
+    },
+    [APPLICATION_FORM.GET_REVIEW](state, { payload }) {
+      return {
+        ...state,
+        finished: payload
+      }
+    },
   })
 }
 
@@ -80,14 +86,7 @@ const goToNextSection = (state, payload) => {
     status: SectionStatusType.FINISHED
   }
   sections.splice(payload - 1, 1, sectionToFinished)
-  //console.log('newsections', newSections)
-  // for ( let i = 0; i <= sections.length; i++ ) {
-  //   if (sections[i] === sections[stepIndex]) {
-  //     sections[i] = sectionToProgress
-  //   }
-  //   if (sections[i] === sections[currentIndex]) {
-  //     sections[i] = sectionToWaiting
-  //   }
+
   const maxCurrent = current => {
     const max = sections.length - 1
     if (current > max) {

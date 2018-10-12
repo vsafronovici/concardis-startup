@@ -26,7 +26,6 @@ const ApplicationForm = props => {
           </Col>
           <Col span={16} offset={1}>
             <SectionForm />
-            {/*<ReviewYourApplication/>*/}
           </Col>
         </Row>
       </Col>
