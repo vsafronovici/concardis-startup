@@ -24,6 +24,8 @@ export class ReduxDynamicForm extends React.Component {
       form: formId,
       // initialValues,
       validate: Validator(fields),
+      touchOnChange: true,
+      touchOnBlur: true
       // enableReinitialize: true,
       // keepDirtyOnReinitialize: true,
       //destroyOnUnmount: false

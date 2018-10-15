@@ -70,7 +70,7 @@ const renderStep = (props) => {
     key={stepIndex}
     status={checkNewCurrent}
     title={<RenderStepLink {...props} disabled={!canGoToStep} title={section.title}/>}
-    style={canGoToStep ? {cursor: 'pointer'} : {cursor: 'normal'}}
+    style={canGoToStep ? {cursor: 'pointer', lineHeight: '24px'} : {cursor: 'normal', lineHeight: '24px'}}
   />
 }
 

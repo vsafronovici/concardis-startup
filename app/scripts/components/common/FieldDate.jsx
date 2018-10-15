@@ -35,7 +35,8 @@ export class FieldDate extends Component  {
 }
 
   render() {
-    const { label, required } = this.props
+    const { label, required, meta } = this.props
+    //console.log('DATEPROPS', this.props)
     return (
       <div className="field-date">
         <label>{translate(label)}</label>

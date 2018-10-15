@@ -7,7 +7,7 @@ import { FieldTooltip } from './FieldTooltip'
 export class FieldInputText extends React.Component {
   render() {
     console.log('FieldInputText', this.props)
-    const { value, placeholder, tooltip, help, label, onChange, optional, disabled, autoFocus, hint,helpText, description } = this.props
+    const { value, tooltip, help, label, onChange, optional, disabled, autoFocus, hint, helpText, description } = this.props
     const input = propOrEmptyObj('input', this.props)
 
     return (
@@ -23,7 +23,7 @@ export class FieldInputText extends React.Component {
             {...input}
             autoFocus={!!autoFocus}
             onChange={onChange}
-            placeholder={hint ? translate(hint) : ''}
+            placeholder={hint && translate(hint)}
             value={value}
             disabled={disabled}
           />

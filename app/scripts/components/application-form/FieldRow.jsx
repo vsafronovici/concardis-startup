@@ -20,7 +20,7 @@ import { FieldTextBold } from '../common/FieldTextBold'
 
 const Option = Select.Option
 
-const createRenderer = render => ({ input, meta, type, ...rest }) => { if (type === FieldType.DATE) console.log('createRenderer ', {meta, rest}); return (
+const createRenderer = render => ({ input, meta, type, ...rest }) => { console.log('createRenderer FIELD', {meta, rest, type}); return (
 
   <div className="form-field">
     <div className={cn(`form-field-${type}`)}>
@@ -102,6 +102,7 @@ const RenderDropDown = createRenderer((input, meta, rest) => {
         onChange={(event) => input.onChange(event)}
         value={input.value}
         input={input}
+        meta={meta}
         {...rest}
   />
 })
@@ -120,6 +121,7 @@ const RenderDate = createRenderer((input, meta, rest) => {
     onChange={event => input.onChange(event)}
     input={input}
     value={input.value}
+    meta={meta}
     {...rest}
   />
 })

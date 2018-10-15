@@ -6,7 +6,11 @@
     top:100px;
     right: 30px;
   }
-  .ant-steps-item-icon>.ant-steps-icon {
-    line-height: 24px !important;
-  }
+
+}
+.ant-steps-item-icon>.ant-steps-icon {
+  line-height: 24px !important;
+}
+.ant-steps-item-icon {
+  line-height: 24px;
 }

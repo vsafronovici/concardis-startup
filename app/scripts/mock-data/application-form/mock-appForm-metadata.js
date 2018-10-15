@@ -38,7 +38,7 @@ export default [{
         "required": true,
         "maximum": 40
       }],
-      "type": "text",
+      "type": "text_bold",
       "sequence": 2,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch1_s1_field2Section_01",

@@ -10,7 +10,7 @@ export const FieldBoxedRadioBtns = (props) => {
   //console.log('FieldBoxedRadioBtns', props)
 
   return (
-    <div className="field-boxed-radio-group">
+    <div className="field-boxed_radio_group">
       <div className="label">
         <label>
           {label && translate(label)}
