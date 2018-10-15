@@ -49,3 +49,19 @@ export const getReview = payload => ({
   type: APPLICATION_FORM.GET_REVIEW,
   payload
 })
+
+export const save = payload => ({
+  type: APPLICATION_FORM.SAVE,
+  payload
+})
+
+export const saveReq = payload => ({
+  type: APPLICATION_FORM.SAVE_REQ,
+  payload
+})
+
+export const saveRes = payload => ({
+  type: APPLICATION_FORM.SAVE_RES,
+  payload
+})
+

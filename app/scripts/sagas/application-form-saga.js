@@ -1,8 +1,11 @@
-import { all, call, put, takeEvery, takeLatest } from 'redux-saga/effects'
+import { all, call, put, select, takeEvery, takeLatest } from 'redux-saga/effects'
 import { APPLICATION_FORM } from '../actions/types'
 import { getFormMetaRes } from './../actions/application-form-action'
 import { SFAction } from '../modules/client'
-import { updateCommercialsTCReq, updateCommercialsTCRes } from '../actions/application-form-action'
+import { updateCommercialsTCReq, updateCommercialsTCRes, saveReq, saveRes } from '../actions/application-form-action'
+import { applyDiscountPayloadSelector } from '../selectors/package-configure-selector'
+import { sectionsSelector } from '../selectors/application-form-selector'
+import { buildSaveRequest } from '../utils/application-form-utils'
 
 function* initDataSaga() {
   const action = {
@@ -23,9 +26,26 @@ function* agreeTACSaga() {
   yield put(updateCommercialsTCRes(response.data))
 }
 
+function* saveSaga({ payload: { formValues, currentChapterIdx } }) {
+
+  const chapters = yield select(sectionsSelector)
+
+  const req = buildSaveRequest({ formValues, chapters, currentChapterIdx })
+  yield put(saveReq(req))
+
+  /*const action = {
+    actionName: window.configSettings.remoteActions.validateForm,
+    args: JSON.stringify(payload)
+  }
+
+  const response = yield call(SFAction, action, { parseToJSON: true })
+  yield put(saveRes(response.data))*/
+}
+
 export default function* root() {
   yield all([
     takeLatest(APPLICATION_FORM.INIT_DATA, initDataSaga),
     takeLatest(APPLICATION_FORM.AGREE_TAC, agreeTACSaga),
+    takeLatest(APPLICATION_FORM.SAVE, saveSaga),
   ])
 }

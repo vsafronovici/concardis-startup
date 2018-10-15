@@ -4,7 +4,7 @@ import { getFormValues as getReduxFormValues } from 'redux-form'
 
 import { SectionStatusType } from './../utils/constants'
 import { isNilOrEmpty } from '../utils/function-utils'
-import { checkSectionCondition, DYNAMIC_FORM_PREFIX } from '../utils/application-form-utils'
+import { checkSectionCondition, DYNAMIC_FORM_PREFIX, createField } from '../utils/application-form-utils'
 
 const isNotNil = compose(not, isNil)
 const pickSectionByStatus = status => pickBy(
@@ -76,6 +76,7 @@ export const fieldsSelector = createSelector(
         return acc
       }
 
+      // acc.push(...fields.map(field => createField(section.name, field)))
       acc.push(...fields)
 
       return acc
