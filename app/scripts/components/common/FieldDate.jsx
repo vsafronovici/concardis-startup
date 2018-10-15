@@ -12,10 +12,11 @@ export class FieldDate extends Component  {
   }
 
   handleChange = (type, value) => {
-    this.setState({
+    const newState = {
       ...this.state,
       [type]: value
-    })
+    }
+    this.setState(newState)
     if (this.inputDay.input.value.length >= 2) {
       this.inputMounth.focus()
     }
@@ -25,10 +26,11 @@ export class FieldDate extends Component  {
     if (this.inputYear.input.value.length === 4) {
       this.inputYear.blur()
     }
-    const DAY = this.state.dd
-    const MOUNTH = this.state.mm
+    const DAY = this.inputDay.input.value
+    const MOUNTH = this.inputMounth.input.value
     const YEAR = this.inputYear.input.value
     const DATE = `${DAY}/${MOUNTH}/${YEAR}`
+
     this.props.onChange(DATE)
 }
 

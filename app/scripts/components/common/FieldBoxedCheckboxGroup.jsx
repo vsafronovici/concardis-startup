@@ -35,9 +35,8 @@ export class FieldBoxedCheckboxGroup extends Component {
 
   }
 
-  handleChange = (optionKey) => (value, label, index) => {
-    console.log('optionKey', optionKey)
-    console.log('value', value)
+  handleChange = (optionKey) => (value) => {
+
     const newState = {
       ...this.state,
       [optionKey]: value

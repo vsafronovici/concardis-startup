@@ -11,7 +11,8 @@ const createReducer = values => (acc, field) => {
 
   const value = values[name]
 
-  // Validate date
+  //const { required, maximum } = validationRules[0]
+
   if (type === FieldType.DATE && !isNilOrEmpty(value) ) {
     console.log('Validator DATE=', { field, value, valid: checkDate(value) })
     if (!checkDate(value)) {
@@ -27,12 +28,13 @@ const createReducer = values => (acc, field) => {
     return acc
   }
 
-  const validate = !!validationRules
+  const validate = !!validationRules[0]
 
   const rules = validationRules[0]
 
   const required = pluck('required')(validationRules)
   const maximum = pluck('maximum')(validationRules)
+
   // TODO
   //const name = field.name.split('.').join('_')
 
@@ -63,6 +65,7 @@ const createReducer = values => (acc, field) => {
       [name]: 'Requir'
     }
   }
+
 
   if (validate) {
     const { regexp } = pluck('regexp')(validationRules)
