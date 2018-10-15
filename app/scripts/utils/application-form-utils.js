@@ -1,7 +1,7 @@
 import { toPairs, values, isNil, equals, all, isEmpty, propOr, curry, anyPass } from 'ramda'
 import numeral from 'numeral'
 import moment from 'moment'
-import { objectToArrayKeyValue } from './function-utils'
+import { isNilOrEmpty, objectToArrayKeyValue } from './function-utils'
 import { SectionStatusType } from './constants'
 
 export const DYNAMIC_FORM_PREFIX = 'dynamicForm_'
@@ -54,7 +54,13 @@ export const buildSaveRequest = ({ formValues, chapters, currentChapterIdx }) =>
   chapter.status = SectionStatusType.IN_PROGRESS
 
   chapter.sections.forEach(section => {
-    const serverValues = section.fields.reduce((acc, { name }) => {
+    if (isNilOrEmpty(section.fields)) {
+      return
+    }
+
+    const serverValues = isNilOrEmpty(formValues)
+      ? []
+      : section.fields.reduce((acc, { name }) => {
       const value = formValues[name]
       if (value) {
         acc.push({ fieldCode: name, fieldValue: value })
@@ -62,9 +68,7 @@ export const buildSaveRequest = ({ formValues, chapters, currentChapterIdx }) =>
       return acc
     }, [])
 
-    if (!isEmpty(serverValues)) {
-      section.serverValues = serverValues
-    }
+    section.serverValues = serverValues
   })
 
   return chapters

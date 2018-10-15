@@ -13,6 +13,46 @@ const initialState = {
   sectionsState: undefined,
 }
 
+const goToNextSection = (state, payload) => {
+  const { sections } = state
+  const MAX = sections.length -1
+  if (payload > MAX) {
+    return {
+      ...state
+    }
+  }
+
+  const sectionToProgress = {
+    ...sections[payload],
+    status: SectionStatusType.IN_PROGRESS
+  }
+  sections.splice(payload, 1, sectionToProgress)
+
+  const sectionToFinished = {
+    ...sections[payload - 1],
+    status: SectionStatusType.FINISHED
+  }
+  sections.splice(payload - 1, 1, sectionToFinished)
+
+  const maxCurrent = current => {
+    const max = sections.length - 1
+    if (current > max) {
+      console.log('Current is more than 5')
+      return max
+    } else {
+      return current
+    }
+  }
+
+  const newState = {
+    ...state,
+    current: maxCurrent(payload),
+    sections: sections
+  }
+  return newState
+}
+
+
 export default {
   'application-form': createReducer(initialState, {
     [APPLICATION_FORM.OPEN_TAC_MODAL](state) {
@@ -63,44 +103,18 @@ export default {
         finished: payload
       }
     },
+    [APPLICATION_FORM.SAVE_REQ](state, { payload }) {
+      return {
+        ...state,
+        submitting: true
+      }
+    },
+    [APPLICATION_FORM.SAVE_RES](state, { payload }) {
+      return {
+        ...state,
+        submitting: false
+      }
+    },
   })
 }
 
-const goToNextSection = (state, payload) => {
-  const { sections } = state
-  const MAX = sections.length -1
-  if (payload > MAX) {
-    return {
-      ...state
-    }
-  }
-
-  const sectionToProgress = {
-    ...sections[payload],
-    status: SectionStatusType.IN_PROGRESS
-  }
-  sections.splice(payload, 1, sectionToProgress)
-
-  const sectionToFinished = {
-    ...sections[payload - 1],
-    status: SectionStatusType.FINISHED
-  }
-  sections.splice(payload - 1, 1, sectionToFinished)
-
-  const maxCurrent = current => {
-    const max = sections.length - 1
-    if (current > max) {
-      console.log('Current is more than 5')
-      return max
-    } else {
-      return current
-    }
-  }
-
-  const newState = {
-    ...state,
-    current: maxCurrent(payload),
-    sections: sections
-  }
-  return newState
-}

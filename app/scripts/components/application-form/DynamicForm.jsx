@@ -8,7 +8,7 @@ import { FieldRow } from './FieldRow'
 import { translate } from '../../i18n/i18n'
 import VoidLink from '../common/VoidLink'
 import { FieldTitle } from '../common/FieldTitle'
-import { goToNextSection, getReview, save } from '../../actions/application-form-action'
+import { getReview, save } from '../../actions/application-form-action'
 import { currentSelector, fieldsToDisplaySelector } from "../../selectors/application-form-selector";
 import { i18nSelector} from '../../selectors/i18n-selector'
 
@@ -20,10 +20,9 @@ export class DynamicForm extends React.Component {
   }
 
   saveForm = e => {
-    const { section: { fieldsToDisplay }, touch, goToNextSectionAction, rValues, current, saveAction } = this.props
+    const { section: { fieldsToDisplay }, touch, rValues, current, saveAction } = this.props
     //touch(...fieldNames(fieldsToDisplay))
-    goToNextSectionAction(current + 1)
-    //saveAction({ currentChapterIdx: current, formValues: rValues})
+    saveAction({ currentChapterIdx: current, formValues: rValues})
   }
 
   render() {
@@ -67,7 +66,6 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = ({
-  goToNextSectionAction: goToNextSection,
   getReviewAction: getReview,
   saveAction: save
 })

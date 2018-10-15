@@ -11,6 +11,7 @@ import { ok as applyDiscountOk, error as applyDiscountErr } from './configurator
 import app_form_translations from './application-form/mock-app-form-translations'
 import appForm_metadata from './application-form/mock-appForm-metadata'
 import { ok as updateComercialsTAC_OK, error as updateComercialsTAC_ERR } from './application-form/mock-update-comercials'
+import { ok as validateForm_OK, error as validateForm_ERR } from './application-form/mock-validate-form'
 
 
 export const MOCK_REMOTE_ACTIONS = createNamespace('MOCK_REMOTE_ACTIONS', {
@@ -28,6 +29,7 @@ export const MOCK_REMOTE_ACTIONS = createNamespace('MOCK_REMOTE_ACTIONS', {
   getApplicationFormDictionaryMetadata: undefined,
   getAppFormMetadata: undefined,
   updateCommercialsTC: undefined,
+  validateForm: undefined,
 })
 
 export const mockResponse = action => {
@@ -62,6 +64,9 @@ export const mockResponse = action => {
     case MOCK_REMOTE_ACTIONS.updateCommercialsTC:
       return updateComercialsTAC_OK
 
+    case MOCK_REMOTE_ACTIONS.validateForm:
+      return validateForm_OK
+
     default:
       return undefined
   }
@@ -83,6 +88,7 @@ export const mockVisualForceConfig = {
     getApplicationFormDictionaryMetadata: MOCK_REMOTE_ACTIONS.getApplicationFormDictionaryMetadata,
     getAppFormMetadata: MOCK_REMOTE_ACTIONS.getAppFormMetadata,
     updateCommercialsTC: MOCK_REMOTE_ACTIONS.updateCommercialsTC,
+    validateForm: MOCK_REMOTE_ACTIONS.validateForm,
   },
   lang: 'en_US',
   XHRs: {
