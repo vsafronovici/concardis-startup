@@ -1,43 +1,58 @@
-.radio-container {
-  padding: 0px 20px;
-  border: 1px solid #BDBDBD;
-  display: flex;
-  direction: row;
-  .ant-radio-group {
-    label {
-      font-size: 12px;
-    }
+
+.field-boxed-radio-group {
+  margin-bottom: 20px;
+  .description {
+    margin-bottom: 20px;
+    font-size: 12px;
+    color: #BDBDBD;
   }
-  label {
-    margin-top: 10px;
-  }
-  .radio-container-field {
+  .radio-container {
+    min-height: 80px;
+    padding: 0px 20px;
+    border: 1px solid #BDBDBD;
     display: flex;
-    height: 80px;
-    align-items: center;
-  }
-  .container-titles {
-    .radio-label {
-      font-size: 12px;
-      display:flex;
-      direction: row;
-      margin-bottom: 10px;
+    direction: row;
+    .ant-radio-group {
+      label {
+        font-size: 12px;
+      }
+    }
+    label {
       margin-top: 10px;
     }
-    .radio-label2 {
-      color: #BDBDBD;
-      max-width: 330px;
-      font-size: 11px;
+    .radio-container-field {
+      display: flex;
+      max-height: 100px;
+      align-items: center;
     }
-  }
+    .container-titles {
+      .radio-label {
+        font-size: 12px;
+        display:flex;
+        direction: row;
+        margin-bottom: 10px;
+        margin-top: 10px;
+      }
+      .radio-label2 {
+        color: #BDBDBD;
+        max-width: 330px;
+        font-size: 11px;
+        margin-bottom: 10px;
+      }
+    }
     .radio-input {
       margin-left: 15px;
     }
-}
-.form-field {
-  .ant-radio-group {
-    label {
-      font-size: 12px;
+  }
+  .form-field {
+    .ant-radio-group {
+      label {
+        font-size: 12px;
+      }
     }
+  }
+  label.ant-radio-wrapper {
+    margin: 0px 0px;
+    margin-top: 0px !important;
   }
 }

@@ -1,4 +1,5 @@
 .field-boxed-checkbox-group {
+  margin-bottom: 20px;
   .field-checkbox-item {
     justify-content: space-between;
     display: flex;
@@ -18,14 +19,11 @@
         word-wrap: break-word;
       }
     }
-
     .field {
       margin-left: 15px;
-      height: 20px;
-      display: flex;
-      align-items: center;
+      display: flex !important;
+      align-items: center !important;
       margin-left: 15px;
-      position: relative;
     }
   }
 }

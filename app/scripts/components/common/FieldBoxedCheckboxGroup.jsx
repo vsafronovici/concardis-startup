@@ -22,8 +22,10 @@ const CheckBoxItem = props => {
           {description && translate(description)}
         </div>
       </div>
-      <div clsasName="field">
-        <Checkbox onChange={e => onChange(e.target.checked, label, index)} />
+      <div clsasName="field" style={{display: 'flex', alignItems: 'center'}}>
+        <div className="field-item">
+          <Checkbox onChange={e => onChange(e.target.checked, label, index)} />
+        </div>
       </div>
     </div>
   )
@@ -51,12 +53,15 @@ export class FieldBoxedCheckboxGroup extends Component {
     return (
       <div className="field-boxed-checkbox-group">
         <label>
-          {translate(label)}
+          {label && translate(label)}
         </label>
+        <div className="description">
+          {description && translate(description)}
+        </div>
         {listOfValues && listOfValues.map((field, index) => {
           return (
             <div key={index}>
-              <CheckBoxItem  {...field} name={field.name} value={field.value} label={field.label} help={field.help} onChange={this.handleChange(field.value)} description={description} index={index}/>
+              <CheckBoxItem  {...field} name={field.name} value={field.value} label={field.label} help={field.help} onChange={this.handleChange(field.value)} description={field.description} index={index}/>
             </div>
           )
         })}

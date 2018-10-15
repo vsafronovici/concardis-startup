@@ -5,13 +5,13 @@ export default [{
   "sequence": 1,
   "sections": [{
     "type": "Simple",
-    "serverValues": [{"fieldValue": "", "fieldCode": "ch1_s1_field1"}, {
+    "serverValues": [{"fieldValue": "", "fieldCode": "ch1_s1_field1Section_01"}, {
       "fieldValue": "",
-      "fieldCode": "ch1_s1_field2"
-    }, {"fieldValue": "", "fieldCode": "ch1_s1_field3"}, {
+      "fieldCode": "ch1_s1_field2Section_01"
+    }, {"fieldValue": "", "fieldCode": "ch1_s1_field3Section_01"}, {
       "fieldValue": "",
-      "fieldCode": "ch1_s1_field4"
-    }, {"fieldValue": "", "fieldCode": "ch1_s1_field5"}],
+      "fieldCode": "ch1_s1_field4Section_01"
+    }, {"fieldValue": "", "fieldCode": "ch1_s1_field5Section_01"}],
     "sequence": 1,
     "name": "Section_01",
     "fields": [{
@@ -23,7 +23,7 @@ export default [{
       "type": "horizontal_radio_btns",
       "sequence": 1,
       "objectApi": "ccApplication_Form_Contact__c",
-      "name": "ch1_s1_field1",
+      "name": "ch1_s1_field1Section_01",
       "listOfValues": [{"value": "title_option_2", "label": "title_option_2"}, {
         "value": "title_option_1",
         "label": "title_option_1"
@@ -41,7 +41,7 @@ export default [{
       "type": "text",
       "sequence": 2,
       "objectApi": "ccApplication_Form_Contact__c",
-      "name": "ch1_s1_field2",
+      "name": "ch1_s1_field2Section_01",
       "label": "ch1_s1_field2_label",
       "fieldApi": "Name__c",
       "description": "ch1_s1_field2_description"
@@ -55,7 +55,7 @@ export default [{
       "type": "text",
       "sequence": 3,
       "objectApi": "ccApplication_Form_Contact__c",
-      "name": "ch1_s1_field3",
+      "name": "ch1_s1_field3Section_01",
       "label": "ch1_s1_field3_label",
       "fieldApi": "Surname__c",
       "description": "ch1_s1_field3_description"
@@ -68,7 +68,7 @@ export default [{
       "type": "text",
       "sequence": 4,
       "objectApi": "ccApplication_Form_Contact__c",
-      "name": "ch1_s1_field4",
+      "name": "ch1_s1_field4Section_01",
       "label": "ch1_s1_field4_label",
       "helpText": "ch1_s1_field4_tooltip",
       "fieldApi": "E_Mail__c",
@@ -82,7 +82,7 @@ export default [{
       "type": "vertical_radio_btns",
       "sequence": 5,
       "objectApi": "ccApplication_Form_Contact__c",
-      "name": "ch1_s1_field5",
+      "name": "ch1_s1_field5Section_01",
       "listOfValues": [{"value": "role_option_2", "label": "role_option_2"}, {
         "value": "role_option_1",
         "label": "role_option_1"
@@ -101,10 +101,10 @@ export default [{
   "sequence": 2,
   "sections": [{
     "type": "Simple",
-    "serverValues": [{"fieldValue": "adasd1", "fieldCode": "ch2_s1_field1"}, {
+    "serverValues": [{"fieldValue": "adasd1", "fieldCode": "ch2_s1_field1Section_02"}, {
       "fieldValue": "GbR",
-      "fieldCode": "ch2_s1_field2"
-    }, {"fieldValue": "asdasd", "fieldCode": "ch2_s1_field3"}],
+      "fieldCode": "ch2_s1_field2Section_02"
+    }, {"fieldValue": "asdasd", "fieldCode": "ch2_s1_field3Section_02"}],
     "sequence": 2,
     "name": "Section_02",
     "fields": [{
@@ -117,7 +117,7 @@ export default [{
       "type": "text",
       "sequence": 1,
       "objectApi": "ccApplication_Form__c",
-      "name": "ch2_s1_field1",
+      "name": "ch2_s1_field1Section_02",
       "label": "ch2_s1_field1_label",
       "helpText": "ch2_s1_field1_tooltip",
       "fieldApi": "Company_Name__c",
@@ -131,7 +131,7 @@ export default [{
       "type": "drop_down",
       "sequence": 2,
       "objectApi": "ccApplication_Form__c",
-      "name": "ch2_s1_field2",
+      "name": "ch2_s1_field2Section_02",
       "listOfValues": [{
         "value": "structure_option_1",
         "label": "structure_option_1",
@@ -165,7 +165,7 @@ export default [{
       "type": "text",
       "sequence": 3,
       "objectApi": "ccApplication_Form__c",
-      "name": "ch2_s1_field3",
+      "name": "ch2_s1_field3Section_02",
       "label": "ch2_s1_field3_label",
       "helpText": "ch2_s1_field3_tooltip",
       "fieldApi": "Company_Trading_Name__c",
@@ -178,7 +178,7 @@ export default [{
       }],
       "type": "drop_down",
       "sequence": 4,
-      "name": "ch2_s1_field4",
+      "name": "ch2_s1_field4Section_02",
       "listOfValues": [{"value": "reg_state_option_1", "label": "reg_state_option_1"}, {
         "value": "reg_state_option_3",
         "label": "reg_state_option_3"
@@ -196,7 +196,7 @@ export default [{
       }],
       "type": "drop_down",
       "sequence": 5,
-      "name": "ch2_s1_field5",
+      "name": "ch2_s1_field5Section_02",
       "listOfValues": [{"value": "reg_court_option_1", "label": "reg_court_option_1"}, {
         "value": "reg_court_option_2",
         "label": "reg_court_option_2"
@@ -211,7 +211,7 @@ export default [{
       }],
       "type": "text",
       "sequence": 6,
-      "name": "ch2_s1_field6",
+      "name": "ch2_s1_field6Section_02",
       "label": "ch2_s1_field6_label",
       "fieldHint": "ch2_s1_field6_hint",
       "description": "ch2_s1_field6_description"
@@ -221,9 +221,9 @@ export default [{
         "requiredError": "ch2_s1_field7_ReqErr",
         "required": true
       }],
-      "type": "vertical_radio_btns",
+      "type": "boxed_radio_btns",
       "sequence": 7,
-      "name": "ch2_s1_field7",
+      "name": "ch2_s1_field7Section_02",
       "listOfValues": [{
         "value": "owner_option_3",
         "label": "owner_option_3",
@@ -238,7 +238,7 @@ export default [{
     }]
   }, {
     "type": "Conditional",
-    "serverValues": [{"fieldValue": "Alin", "fieldCode": "ch1_s1_field1"}],
+    "serverValues": [{"fieldValue": "Alin", "fieldCode": "ch1_s1_field1Section_03_1"}],
     "sequence": 3,
     "name": "Section_03_1",
     "fields": [{
@@ -250,7 +250,7 @@ export default [{
       "type": "horizontal_radio_btns",
       "sequence": 8,
       "objectApi": "ccApplication_Form_Contact__c",
-      "name": "ch1_s1_field1",
+      "name": "ch1_s1_field1Section_03_1",
       "listOfValues": [{"value": "title_option_1", "label": "title_option_1"}, {
         "value": "title_option_2",
         "label": "title_option_2"
@@ -267,7 +267,7 @@ export default [{
       }],
       "type": "text",
       "sequence": 9,
-      "name": "ch1_s1_field2",
+      "name": "ch1_s1_field2Section_03_1",
       "label": "ch1_s1_field2_label",
       "description": "ch1_s1_field2_description"
     }, {
@@ -279,7 +279,7 @@ export default [{
       }],
       "type": "text",
       "sequence": 10,
-      "name": "ch1_s1_field3",
+      "name": "ch1_s1_field3Section_03_1",
       "label": "ch1_s1_field3_label",
       "description": "ch1_s1_field3_description"
     }, {
@@ -291,7 +291,7 @@ export default [{
       }],
       "type": "text",
       "sequence": 11,
-      "name": "ch2_s2_field4",
+      "name": "ch2_s2_field4Section_03_1",
       "label": "ch2_s2_field4_label",
       "description": "ch2_s2_field4_description"
     }, {
@@ -302,7 +302,7 @@ export default [{
       }],
       "type": "date",
       "sequence": 12,
-      "name": "ch2_s2_field5",
+      "name": "ch2_s2_field5Section_03_1",
       "label": "ch2_s2_field5_label",
       "description": "ch2_s2_field5_description"
     }, {
@@ -313,7 +313,7 @@ export default [{
       }],
       "type": "drop_down",
       "sequence": 13,
-      "name": "ch2_s2_field6",
+      "name": "ch2_s2_field6Section_03_1",
       "listOfValues": [{"value": "country_option_70", "label": "country_option_70"}, {
         "value": "country_option_174",
         "label": "country_option_174"
@@ -703,7 +703,7 @@ export default [{
       }],
       "type": "drop_down",
       "sequence": 14,
-      "name": "ch2_s2_field7",
+      "name": "ch2_s2_field7Section_03_1",
       "listOfValues": [{"value": "country_option_85", "label": "country_option_85"}, {
         "value": "country_option_148",
         "label": "country_option_148"
@@ -1093,14 +1093,14 @@ export default [{
       }],
       "type": "boxed_checkbox",
       "sequence": 15,
-      "name": "ch2_s2_field8",
+      "name": "ch2_s2_field8Section_03_1",
       "label": "ch2_s2_field8_label",
       "description": "ch2_s2_field8_description"
     }],
-    "condition": "ch2_s1_field7=owner_option_1"
+    "condition": "ch2_s1_field7Section_02=owner_option_1"
   }, {
     "type": "Conditional",
-    "serverValues": [{"fieldValue": "Alin", "fieldCode": "ch1_s1_field2"}],
+    "serverValues": [{"fieldValue": "Alin", "fieldCode": "ch1_s1_field2Section_03_2"}],
     "sequence": 4,
     "name": "Section_03_2",
     "fields": [{
@@ -1111,7 +1111,7 @@ export default [{
       }],
       "type": "horizontal_radio_btns",
       "sequence": 8,
-      "name": "ch1_s1_field1",
+      "name": "ch1_s1_field1Section_03_2",
       "listOfValues": [{"value": "title_option_1", "label": "title_option_1"}, {
         "value": "title_option_2",
         "label": "title_option_2"
@@ -1128,7 +1128,7 @@ export default [{
       "type": "text",
       "sequence": 9,
       "objectApi": "ccApplication_Form_Contact__c",
-      "name": "ch1_s1_field2",
+      "name": "ch1_s1_field2Section_03_2",
       "label": "ch1_s1_field2_label",
       "fieldApi": "Name__c",
       "description": "ch1_s1_field2_description"
@@ -1141,7 +1141,7 @@ export default [{
       }],
       "type": "text",
       "sequence": 10,
-      "name": "ch1_s1_field3",
+      "name": "ch1_s1_field3Section_03_2",
       "label": "ch1_s1_field3_label",
       "description": "ch1_s1_field3_description"
     }, {
@@ -1153,7 +1153,7 @@ export default [{
       }],
       "type": "text",
       "sequence": 11,
-      "name": "ch2_s2_field4",
+      "name": "ch2_s2_field4Section_03_2",
       "label": "ch2_s2_field4_label",
       "description": "ch2_s2_field4_description"
     }, {
@@ -1164,7 +1164,7 @@ export default [{
       }],
       "type": "date",
       "sequence": 12,
-      "name": "ch2_s2_field5",
+      "name": "ch2_s2_field5Section_03_2",
       "label": "ch2_s2_field5_label",
       "description": "ch2_s2_field5_description"
     }, {
@@ -1175,7 +1175,7 @@ export default [{
       }],
       "type": "drop_down",
       "sequence": 13,
-      "name": "ch2_s2_field6",
+      "name": "ch2_s2_field6Section_03_2",
       "listOfValues": [{"value": "country_option_85", "label": "country_option_85"}, {
         "value": "country_option_148",
         "label": "country_option_148"
@@ -1565,7 +1565,7 @@ export default [{
       }],
       "type": "drop_down",
       "sequence": 14,
-      "name": "ch2_s2_field7",
+      "name": "ch2_s2_field7Section_03_2",
       "listOfValues": [{"value": "country_option_85", "label": "country_option_85"}, {
         "value": "country_option_148",
         "label": "country_option_148"
@@ -1952,11 +1952,11 @@ export default [{
       }],
       "type": "boxed_checkbox",
       "sequence": 15,
-      "name": "ch2_s2_field8",
+      "name": "ch2_s2_field8Section_03_2",
       "label": "ch2_s2_field8_label",
       "description": "ch2_s2_field8_description"
     }],
-    "condition": "ch2_s1_field7=owner_option_3"
+    "condition": "ch2_s1_field7Section_02=owner_option_3"
   }, {
     "type": "Conditional",
     "serverValues": [],
@@ -1970,7 +1970,7 @@ export default [{
       }],
       "type": "horizontal_radio_btns",
       "sequence": 8,
-      "name": "ch1_s1_field1",
+      "name": "ch1_s1_field1Section_03_3",
       "listOfValues": [{"value": "title_option_1", "label": "title_option_1"}, {
         "value": "title_option_2",
         "label": "title_option_2"
@@ -1986,7 +1986,7 @@ export default [{
       }],
       "type": "text",
       "sequence": 9,
-      "name": "ch1_s1_field2",
+      "name": "ch1_s1_field2Section_03_3",
       "label": "ch1_s1_field2_label",
       "description": "ch1_s1_field2_description"
     }, {
@@ -1998,7 +1998,7 @@ export default [{
       }],
       "type": "text",
       "sequence": 10,
-      "name": "ch1_s1_field3",
+      "name": "ch1_s1_field3Section_03_3",
       "label": "ch1_s1_field3_label",
       "description": "ch1_s1_field3_description"
     }, {
@@ -2010,7 +2010,7 @@ export default [{
       }],
       "type": "text",
       "sequence": 11,
-      "name": "ch2_s2_field4",
+      "name": "ch2_s2_field4Section_03_3",
       "label": "ch2_s2_field4_label",
       "description": "ch2_s2_field4_description"
     }, {
@@ -2021,7 +2021,7 @@ export default [{
       }],
       "type": "date",
       "sequence": 12,
-      "name": "ch2_s2_field5",
+      "name": "ch2_s2_field5Section_03_3",
       "label": "ch2_s2_field5_label",
       "description": "ch2_s2_field5_description"
     }, {
@@ -2032,7 +2032,7 @@ export default [{
       }],
       "type": "drop_down",
       "sequence": 13,
-      "name": "ch2_s2_field6",
+      "name": "ch2_s2_field6Section_03_3",
       "listOfValues": [{"value": "country_option_85", "label": "country_option_85"}, {
         "value": "country_option_148",
         "label": "country_option_148"
@@ -2422,7 +2422,7 @@ export default [{
       }],
       "type": "drop_down",
       "sequence": 14,
-      "name": "ch2_s2_field7",
+      "name": "ch2_s2_field7Section_03_3",
       "listOfValues": [{"value": "country_option_85", "label": "country_option_85"}, {
         "value": "country_option_148",
         "label": "country_option_148"
@@ -2812,11 +2812,11 @@ export default [{
       }],
       "type": "boxed_checkbox",
       "sequence": 15,
-      "name": "ch2_s2_field8",
+      "name": "ch2_s2_field8Section_03_3",
       "label": "ch2_s2_field8_label",
       "description": "ch2_s2_field8_description"
     }],
-    "condition": "ch2_s1_field7=owner_option_2"
+    "condition": "ch2_s1_field7Section_02=owner_option_2"
   }, {
     "type": "Conditional",
     "serverValues": [],
@@ -2830,7 +2830,7 @@ export default [{
       }],
       "type": "horizontal_radio_btns",
       "sequence": 16,
-      "name": "ch1_s1_field1",
+      "name": "ch1_s1_field1Section_04_1",
       "listOfValues": [{"value": "title_option_2", "label": "title_option_2"}, {
         "value": "title_option_1",
         "label": "title_option_1"
@@ -2846,7 +2846,7 @@ export default [{
       }],
       "type": "text",
       "sequence": 17,
-      "name": "ch1_s1_field2",
+      "name": "ch1_s1_field2Section_04_1",
       "label": "ch1_s1_field2_label",
       "description": "ch1_s1_field2_description"
     }, {
@@ -2858,7 +2858,7 @@ export default [{
       }],
       "type": "text",
       "sequence": 18,
-      "name": "ch1_s1_field3",
+      "name": "ch1_s1_field3Section_04_1",
       "label": "ch1_s1_field3_label",
       "description": "ch1_s1_field3_description"
     }, {
@@ -2870,7 +2870,7 @@ export default [{
       }],
       "type": "text",
       "sequence": 19,
-      "name": "ch2_s2_field4",
+      "name": "ch2_s2_field4Section_04_1",
       "label": "ch2_s2_field4_label",
       "description": "ch2_s2_field4_description"
     }, {
@@ -2881,7 +2881,7 @@ export default [{
       }],
       "type": "date",
       "sequence": 20,
-      "name": "ch2_s2_field5",
+      "name": "ch2_s2_field5Section_04_1",
       "label": "ch2_s2_field5_label",
       "description": "ch2_s2_field5_description"
     }, {
@@ -2892,7 +2892,7 @@ export default [{
       }],
       "type": "drop_down",
       "sequence": 21,
-      "name": "ch2_s2_field6",
+      "name": "ch2_s2_field6Section_04_1",
       "listOfValues": [{"value": "country_option_85", "label": "country_option_85"}, {
         "value": "country_option_148",
         "label": "country_option_148"
@@ -3282,7 +3282,7 @@ export default [{
       }],
       "type": "drop_down",
       "sequence": 22,
-      "name": "ch2_s2_field7",
+      "name": "ch2_s2_field7Section_04_1",
       "listOfValues": [{"value": "country_option_31", "label": "country_option_31"}, {
         "value": "country_option_43",
         "label": "country_option_43"
@@ -4047,7 +4047,7 @@ export default [{
       }],
       "type": "boxed_checkbox",
       "sequence": 23,
-      "name": "ch2_s2_field8",
+      "name": "ch2_s2_field8Section_04_1",
       "label": "ch2_s2_field8_label",
       "description": "ch2_s2_field8_description"
     }, {
@@ -4058,11 +4058,12 @@ export default [{
       }],
       "type": "boxed_checkbox",
       "sequence": 24,
-      "name": "ch2_s2_field9",
+      "name": "ch2_s2_field9Section_04_1",
       "label": "ch2_s2_field9_label",
       "description": "ch2_s2_field9_description"
     }],
-    "condition": "ch2_s1_field7=owner_option_2"
+    "description": "(must owne more than 25% of the business)",
+    "condition": "ch2_s1_field7Section_02=owner_option_2"
   }, {
     "type": "Conditional",
     "serverValues": [],
@@ -4076,7 +4077,7 @@ export default [{
       }],
       "type": "horizontal_radio_btns",
       "sequence": 16,
-      "name": "ch1_s1_field1",
+      "name": "ch1_s1_field1Section_04_2",
       "listOfValues": [{"value": "title_option_2", "label": "title_option_2"}, {
         "value": "title_option_1",
         "label": "title_option_1"
@@ -4092,7 +4093,7 @@ export default [{
       }],
       "type": "text",
       "sequence": 17,
-      "name": "ch1_s1_field2",
+      "name": "ch1_s1_field2Section_04_2",
       "label": "ch1_s1_field2_label",
       "description": "ch1_s1_field2_description"
     }, {
@@ -4104,7 +4105,7 @@ export default [{
       }],
       "type": "text",
       "sequence": 18,
-      "name": "ch1_s1_field3",
+      "name": "ch1_s1_field3Section_04_2",
       "label": "ch1_s1_field3_label",
       "description": "ch1_s1_field3_description"
     }, {
@@ -4116,7 +4117,7 @@ export default [{
       }],
       "type": "text",
       "sequence": 19,
-      "name": "ch2_s2_field4",
+      "name": "ch2_s2_field4Section_04_2",
       "label": "ch2_s2_field4_label",
       "description": "ch2_s2_field4_description"
     }, {
@@ -4127,7 +4128,7 @@ export default [{
       }],
       "type": "date",
       "sequence": 20,
-      "name": "ch2_s2_field5",
+      "name": "ch2_s2_field5Section_04_2",
       "label": "ch2_s2_field5_label",
       "description": "ch2_s2_field5_description"
     }, {
@@ -4138,7 +4139,7 @@ export default [{
       }],
       "type": "drop_down",
       "sequence": 21,
-      "name": "ch2_s2_field6",
+      "name": "ch2_s2_field6Section_04_2",
       "listOfValues": [{"value": "country_option_85", "label": "country_option_85"}, {
         "value": "country_option_148",
         "label": "country_option_148"
@@ -4525,7 +4526,7 @@ export default [{
       }],
       "type": "drop_down",
       "sequence": 22,
-      "name": "ch2_s2_field7",
+      "name": "ch2_s2_field7Section_04_2",
       "listOfValues": [{"value": "country_option_107", "label": "country_option_107"}, {
         "value": "country_option_197",
         "label": "country_option_197"
@@ -5290,7 +5291,7 @@ export default [{
       }],
       "type": "boxed_checkbox",
       "sequence": 23,
-      "name": "ch2_s2_field8",
+      "name": "ch2_s2_field8Section_04_2",
       "label": "ch2_s2_field8_label",
       "description": "ch2_s2_field8_description"
     }, {
@@ -5301,11 +5302,12 @@ export default [{
       }],
       "type": "boxed_checkbox",
       "sequence": 24,
-      "name": "ch2_s2_field10",
+      "name": "ch2_s2_field10Section_04_2",
       "label": "ch2_s2_field10_label",
       "description": "ch2_s2_field10_description"
     }],
-    "condition": "ch2_s2_field9=true"
+    "description": "(must owne more than 25% of the business)",
+    "condition": "ch2_s2_field9Section_04_1=true"
   }, {
     "type": "Conditional",
     "serverValues": [],
@@ -5319,7 +5321,7 @@ export default [{
       }],
       "type": "horizontal_radio_btns",
       "sequence": 16,
-      "name": "ch1_s1_field1",
+      "name": "ch1_s1_field1Section_04_3",
       "listOfValues": [{"value": "title_option_1", "label": "title_option_1"}, {
         "value": "title_option_2",
         "label": "title_option_2"
@@ -5335,7 +5337,7 @@ export default [{
       }],
       "type": "text",
       "sequence": 17,
-      "name": "ch1_s1_field2",
+      "name": "ch1_s1_field2Section_04_3",
       "label": "ch1_s1_field2_label",
       "description": "ch1_s1_field2_description"
     }, {
@@ -5347,7 +5349,7 @@ export default [{
       }],
       "type": "text",
       "sequence": 18,
-      "name": "ch1_s1_field3",
+      "name": "ch1_s1_field3Section_04_3",
       "label": "ch1_s1_field3_label",
       "description": "ch1_s1_field3_description"
     }, {
@@ -5359,7 +5361,7 @@ export default [{
       }],
       "type": "text",
       "sequence": 19,
-      "name": "ch2_s2_field4",
+      "name": "ch2_s2_field4Section_04_3",
       "label": "ch2_s2_field4_label",
       "description": "ch2_s2_field4_description"
     }, {
@@ -5370,7 +5372,7 @@ export default [{
       }],
       "type": "date",
       "sequence": 20,
-      "name": "ch2_s2_field5",
+      "name": "ch2_s2_field5Section_04_3",
       "label": "ch2_s2_field5_label",
       "description": "ch2_s2_field5_description"
     }, {
@@ -5381,7 +5383,7 @@ export default [{
       }],
       "type": "drop_down",
       "sequence": 21,
-      "name": "ch2_s2_field6",
+      "name": "ch2_s2_field6Section_04_3",
       "listOfValues": [{"value": "country_option_85", "label": "country_option_85"}, {
         "value": "country_option_148",
         "label": "country_option_148"
@@ -5771,7 +5773,7 @@ export default [{
       }],
       "type": "drop_down",
       "sequence": 22,
-      "name": "ch2_s2_field7",
+      "name": "ch2_s2_field7Section_04_3",
       "listOfValues": [{"value": "country_option_85", "label": "country_option_85"}, {
         "value": "country_option_148",
         "label": "country_option_148"
@@ -6161,11 +6163,12 @@ export default [{
       }],
       "type": "boxed_checkbox",
       "sequence": 23,
-      "name": "ch2_s2_field8",
+      "name": "ch2_s2_field8Section_04_3",
       "label": "ch2_s2_field8_label",
       "description": "ch2_s2_field8_description"
     }],
-    "condition": "ch2_s2_field10=true"
+    "description": "(must owne more than 25% of the business)",
+    "condition": "ch2_s2_field10Section_04_2=true"
   }],
   "code": "Chapter_2"
 }, {
@@ -6187,7 +6190,7 @@ export default [{
       }],
       "type": "text",
       "sequence": 1,
-      "name": "ch3_s1_field1",
+      "name": "ch3_s1_field1Section_05",
       "label": "ch3_s1_field1_label",
       "description": "ch3_s1_field1_description"
     }, {
@@ -6199,7 +6202,7 @@ export default [{
       }],
       "type": "text",
       "sequence": 2,
-      "name": "ch3_s1_field2",
+      "name": "ch3_s1_field2Section_05",
       "label": "ch3_s1_field2_label",
       "fieldHint": "ch3_s1_field2_hint",
       "description": "ch3_s1_field2_description"
@@ -6212,7 +6215,7 @@ export default [{
       }],
       "type": "text",
       "sequence": 3,
-      "name": "ch3_s1_field3",
+      "name": "ch3_s1_field3Section_05",
       "label": "ch3_s1_field3_label",
       "description": "ch3_s1_field3_description"
     }, {
@@ -6223,7 +6226,7 @@ export default [{
       }],
       "type": "drop_down",
       "sequence": 4,
-      "name": "ch3_s1_field4",
+      "name": "ch3_s1_field4Section_05",
       "listOfValues": [{"value": "country_option_85", "label": "country_option_85"}, {
         "value": "country_option_148",
         "label": "country_option_148"
@@ -6613,7 +6616,7 @@ export default [{
       }],
       "type": "text",
       "sequence": 5,
-      "name": "ch3_s1_field5",
+      "name": "ch3_s1_field5Section_05",
       "label": "ch3_s1_field5_label",
       "description": "ch3_s1_field5_description"
     }, {
@@ -6624,7 +6627,7 @@ export default [{
       }],
       "type": "text",
       "sequence": 6,
-      "name": "ch3_s1_field6",
+      "name": "ch3_s1_field6Section_05",
       "label": "ch3_s1_field6_label",
       "fieldHint": "ch3_s1_field6_hint",
       "description": "ch3_s1_field6_description"
@@ -6636,7 +6639,7 @@ export default [{
       }],
       "type": "boxed_checkbox_group",
       "sequence": 7,
-      "name": "ch3_s1_field7",
+      "name": "ch3_s1_field7Section_05",
       "listOfValues": [{
         "value": "address_option_2",
         "label": "address_option_2",
@@ -6659,7 +6662,7 @@ export default [{
       }],
       "type": "text",
       "sequence": 8,
-      "name": "ch3_s1_field1",
+      "name": "ch3_s1_field1Section_06_1",
       "label": "ch3_s1_field1_label",
       "description": "ch3_s1_field1_description"
     }, {
@@ -6671,7 +6674,7 @@ export default [{
       }],
       "type": "text",
       "sequence": 9,
-      "name": "ch3_s1_field2",
+      "name": "ch3_s1_field2Section_06_1",
       "label": "ch3_s1_field2_label",
       "fieldHint": "ch3_s1_field2_hint",
       "description": "ch3_s1_field2_description"
@@ -6684,7 +6687,7 @@ export default [{
       }],
       "type": "text",
       "sequence": 10,
-      "name": "ch3_s1_field3",
+      "name": "ch3_s1_field3Section_06_1",
       "label": "ch3_s1_field3_label",
       "description": "ch3_s1_field3_description"
     }, {
@@ -6695,7 +6698,7 @@ export default [{
       }],
       "type": "drop_down",
       "sequence": 11,
-      "name": "ch3_s1_field4",
+      "name": "ch3_s1_field4Section_06_1",
       "listOfValues": [{"value": "country_option_85", "label": "country_option_85"}, {
         "value": "country_option_148",
         "label": "country_option_148"
@@ -7075,7 +7078,7 @@ export default [{
       "label": "ch3_s1_field4_label",
       "description": "ch3_s1_field4_description"
     }],
-    "condition": "ch3_s1_field7<=address_option_1"
+    "condition": "ch3_s1_field7Section_05<=address_option_1"
   }, {
     "type": "Conditional",
     "serverValues": [],
@@ -7090,7 +7093,7 @@ export default [{
       }],
       "type": "text",
       "sequence": 8,
-      "name": "ch3_s1_field1",
+      "name": "ch3_s1_field1Section_06_2",
       "label": "ch3_s1_field1_label",
       "description": "ch3_s1_field1_description"
     }, {
@@ -7102,7 +7105,7 @@ export default [{
       }],
       "type": "text",
       "sequence": 9,
-      "name": "ch3_s1_field2",
+      "name": "ch3_s1_field2Section_06_2",
       "label": "ch3_s1_field2_label",
       "fieldHint": "ch3_s1_field2_hint",
       "description": "ch3_s1_field2_description"
@@ -7115,7 +7118,7 @@ export default [{
       }],
       "type": "text",
       "sequence": 10,
-      "name": "ch3_s1_field3",
+      "name": "ch3_s1_field3Section_06_2",
       "label": "ch3_s1_field3_label",
       "description": "ch3_s1_field3_description"
     }, {
@@ -7126,7 +7129,7 @@ export default [{
       }],
       "type": "drop_down",
       "sequence": 11,
-      "name": "ch3_s1_field4",
+      "name": "ch3_s1_field4Section_06_2",
       "listOfValues": [{"value": "country_option_85", "label": "country_option_85"}, {
         "value": "country_option_148",
         "label": "country_option_148"
@@ -7509,7 +7512,7 @@ export default [{
       "label": "ch3_s1_field4_label",
       "description": "ch3_s1_field4_description"
     }],
-    "condition": "ch3_s1_field7<=address_option_2"
+    "condition": "ch3_s1_field7Section_05<=address_option_2"
   }],
   "code": "Chapter_3"
 }, {
@@ -7530,7 +7533,7 @@ export default [{
       }],
       "type": "drop_down",
       "sequence": 1,
-      "name": "ch4_s1_field1",
+      "name": "ch4_s1_field1Section_07",
       "listOfValues": [{"value": "industry_option_8", "label": "industry_option_8"}, {
         "value": "industry_option_1",
         "label": "industry_option_1"
@@ -7554,7 +7557,7 @@ export default [{
       }],
       "type": "drop_down",
       "sequence": 2,
-      "name": "ch4_s1_field2",
+      "name": "ch4_s1_field2Section_07",
       "listOfValues": [{"value": "activity_option_39", "label": "activity_option_39"}, {
         "value": "activity_option_31",
         "label": "activity_option_31"
@@ -7632,7 +7635,7 @@ export default [{
       }],
       "type": "drop_down",
       "sequence": 3,
-      "name": "ch4_s1_field3",
+      "name": "ch4_s1_field3Section_07",
       "listOfValues": [{
         "value": "subactivity_option_188",
         "label": "subactivity_option_188"
@@ -8064,7 +8067,7 @@ export default [{
       }],
       "type": "vertical_radio_btns",
       "sequence": 4,
-      "name": "ch4_s1_field4",
+      "name": "ch4_s1_field4Section_07",
       "listOfValues": [{"value": "vat_option_2", "label": "vat_option_2"}, {
         "value": "vat_option_1",
         "label": "vat_option_1"
@@ -8086,11 +8089,11 @@ export default [{
       }],
       "type": "text",
       "sequence": 5,
-      "name": "ch4_s2_field1",
+      "name": "ch4_s2_field1Section_08",
       "label": "ch4_s2_field1_label",
       "description": "ch4_s2_field1_description"
     }],
-    "condition": "ch4_s1_field4=vat_option_1"
+    "condition": "ch4_s1_field4Section_07=vat_option_1"
   }],
   "code": "Chapter_4"
 }, {
@@ -8113,7 +8116,7 @@ export default [{
       }],
       "type": "text",
       "sequence": 1,
-      "name": "ch5_s1_field1",
+      "name": "ch5_s1_field1Section_09",
       "label": "ch5_s1_field1_label",
       "helpText": "ch5_s1_field1_tooltip",
       "description": "ch5_s1_field1_description"
@@ -8127,7 +8130,7 @@ export default [{
       }],
       "type": "text",
       "sequence": 2,
-      "name": "ch5_s1_field2",
+      "name": "ch5_s1_field2Section_09",
       "label": "ch5_s1_field2_label",
       "description": "ch5_s1_field2_description"
     }, {
@@ -8140,7 +8143,7 @@ export default [{
       }],
       "type": "text",
       "sequence": 3,
-      "name": "ch5_s1_field3",
+      "name": "ch5_s1_field3Section_09",
       "label": "ch5_s1_field3_label",
       "description": "ch5_s1_field3_description"
     }, {
@@ -8153,7 +8156,7 @@ export default [{
       }],
       "type": "text",
       "sequence": 4,
-      "name": "ch5_s1_field4",
+      "name": "ch5_s1_field4Section_09",
       "label": "ch5_s1_field4_label",
       "description": "ch5_s1_field4_description"
     }, {
@@ -8166,7 +8169,7 @@ export default [{
       }],
       "type": "text",
       "sequence": 5,
-      "name": "ch5_s1_field5",
+      "name": "ch5_s1_field5Section_09",
       "label": "ch5_s1_field5_label",
       "description": "ch5_s1_field5_description"
     }]
@@ -8183,7 +8186,7 @@ export default [{
       }],
       "type": "drop_down",
       "sequence": 6,
-      "name": "ch5_s2_field1",
+      "name": "ch5_s2_field1Section_10",
       "listOfValues": [{"value": "deadline_option_3", "label": "deadline_option_3"}, {
         "value": "deadline_option_1",
         "label": "deadline_option_1"
@@ -8211,7 +8214,7 @@ export default [{
       }],
       "type": "text",
       "sequence": 1,
-      "name": "ch6_s1_field1",
+      "name": "ch6_s1_field1Section_11",
       "label": "ch6_s1_field1_label",
       "description": "ch6_s1_field1_description"
     }, {
@@ -8223,7 +8226,7 @@ export default [{
       }],
       "type": "text",
       "sequence": 2,
-      "name": "ch6_s1_field2",
+      "name": "ch6_s1_field2Section_11",
       "label": "ch6_s1_field2_label",
       "helpText": "ch6_s1_field2_tooltip",
       "fieldHint": "ch6_s1_field2_hint",
@@ -8237,7 +8240,7 @@ export default [{
       }],
       "type": "text",
       "sequence": 3,
-      "name": "ch6_s1_field3",
+      "name": "ch6_s1_field3Section_11",
       "label": "ch6_s1_field3_label",
       "helpText": "ch6_s1_field3_tooltip",
       "fieldHint": "ch6_s1_field3_hint",
@@ -8247,7 +8250,7 @@ export default [{
         "validationError": "ch6_s1_field4_ValidErr",
         "requiredError": "ch6_s1_field4_ReqErr",
         "required": true
-      }], "type": "boxed_checkbox", "sequence": 4, "name": "ch6_s1_field4", "label": "ch6_s1_field4_label"
+      }], "type": "boxed_checkbox", "sequence": 4, "name": "ch6_s1_field4Section_11", "label": "ch6_s1_field4_label"
     }]
   }],
   "code": "Chapter_6"
