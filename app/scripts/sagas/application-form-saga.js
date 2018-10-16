@@ -8,6 +8,8 @@ import { chaptersSelector } from '../selectors/application-form-selector'
 import { buildSaveRequest } from '../utils/application-form-utils'
 import { RESPONSE_STATUS } from '../utils/constants'
 
+import {SubmissionError} from 'redux-form'
+
 function* initDataSaga() {
   const action = {
     actionName: window.configSettings.remoteActions.getAppFormMetadata

@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Button, Row, Col } from 'antd'
-import { map, prop } from 'ramda'
 import { connect } from 'react-redux'
 
 import { FieldRow } from './FieldRow'
@@ -13,21 +12,18 @@ import { currentSelector } from "../../selectors/application-form-selector";
 import { i18nSelector} from '../../selectors/i18n-selector'
 import { fieldsToShow } from '../../utils/application-form-utils'
 
-const fieldNames = map(prop('name'))
-
 export class DynamicForm extends React.Component {
   static propTypes = {
     section: PropTypes.object,
   }
 
-  saveForm = e => {
-    const { touch, rValues, current, saveAction } = this.props
-    //touch(...fieldNames(fieldsToDisplay))
-    saveAction({ currentChapterIdx: current, formValues: rValues})
+  submitForm = values  => {
+    const { current, saveAction } = this.props
+    return saveAction({ currentChapterIdx: current, formValues: values})
   }
 
   render() {
-    const { chapter, rValues, current, i18n, getReviewAction, touch } = this.props
+    const { chapter, rValues, current, i18n, getReviewAction, touch, handleSubmit } = this.props
     console.log('DynamicForm', this.props)
 
     const fieldsToDisplay = fieldsToShow(chapter, rValues)
@@ -39,9 +35,9 @@ export class DynamicForm extends React.Component {
             <img src={window.configSettings.resources.imgs.receipt} />
           </div>)
         }
-        <form>
+        <form onSubmit={handleSubmit(this.submitForm)}>
           <div className="flex-row-justify-end">
-            <div ><VoidLink onClick={this.saveForm}>{translate('link_applicationForm_saveAndClose')}</VoidLink></div>
+            <div><VoidLink onClick={this.saveForm}>{translate('link_applicationForm_saveAndClose')}</VoidLink></div>
           </div>
           <div>
             <FieldTitle title={chapter.title} subtitle={chapter.subtitle}/>
@@ -54,7 +50,7 @@ export class DynamicForm extends React.Component {
             {
               (current === 5 )
               ? <Button onClick={() => getReviewAction(true)} style={{marginLeft: '250px'}}>{translate('btn_applicationForm_reviewApplication')}</Button>
-              : <Button onClick={this.saveForm}>{translate('btn_applicationForm_nextSection')}</Button>
+              : <button type="submit">{translate('btn_applicationForm_nextSection')}</button>
             }
           </div>
         </form>
