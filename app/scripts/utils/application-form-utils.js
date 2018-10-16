@@ -59,7 +59,7 @@ export const createInitialValues = chapter => {
   }, {})
 }
 
-export const fieldsToShow = (chapter, formValues) => {
+export const fieldsToShow = (chapter, formValues = {}) => {
   if (isNilOrEmpty(chapter.sections)) {
     return []
   }

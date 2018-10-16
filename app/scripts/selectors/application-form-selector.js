@@ -75,7 +75,6 @@ export const fieldsSelector = createSelector(
         return acc
       }
 
-      // acc.push(...fields.map(field => createField(section.name, field)))
       acc.push(...fields)
 
       return acc
@@ -90,35 +89,3 @@ export const getFormValuesSelector = state => {
   console.log('getFormValuesSelector', {formId, result})
   return result
 }
-
-
-
-
-
-export const fieldsToDisplaySelector = createSelector(
-  currentChapterSelector,
-  getFormValuesSelector,
-  (chapter = {}, formValues = {}) => {
-    console.log('fieldsToDisplaySelector', {formValues})
-    if (!chapter.sections) {
-      return []
-    }
-
-    return chapter.sections.reduce((acc, section) => {
-      const { condition, fields } = section
-
-      if (isNilOrEmpty(fields)) {
-        return acc
-      }
-
-
-      if (isNilOrEmpty(condition) || checkSectionCondition(condition, formValues)) {
-        acc.push(...fields)
-      }
-
-      return acc
-    }, [])
-  }
-)
-
-

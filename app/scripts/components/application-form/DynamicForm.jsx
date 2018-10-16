@@ -9,8 +9,9 @@ import { translate } from '../../i18n/i18n'
 import VoidLink from '../common/VoidLink'
 import { FieldTitle } from '../common/FieldTitle'
 import { getReview, save } from '../../actions/application-form-action'
-import { currentSelector, fieldsToDisplaySelector } from "../../selectors/application-form-selector";
+import { currentSelector } from "../../selectors/application-form-selector";
 import { i18nSelector} from '../../selectors/i18n-selector'
+import { fieldsToShow } from '../../utils/application-form-utils'
 
 const fieldNames = map(prop('name'))
 
@@ -26,8 +27,10 @@ export class DynamicForm extends React.Component {
   }
 
   render() {
-    const { chapter, fieldsToDisplay, current, i18n, getReviewAction } = this.props
+    const { chapter, rValues, current, i18n, getReviewAction } = this.props
     console.log('DynamicForm', this.props)
+
+    const fieldsToDisplay = fieldsToShow(chapter, rValues)
 
     return (
       <div className="dynamic-form">
@@ -61,7 +64,6 @@ export class DynamicForm extends React.Component {
 }
 const mapStateToProps = state => ({
   current: currentSelector(state),
-  fieldsToDisplay: fieldsToDisplaySelector(state),
   i18n: i18nSelector(state)
 })
 
