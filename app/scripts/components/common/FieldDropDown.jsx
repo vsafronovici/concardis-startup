@@ -11,20 +11,41 @@ const style = {
 }
 
 export const FieldDropDown = props => {
-  const { title, label, subtitle, onChange, placeholder, value, listOfValues, helpText, required  } = props
+  const { label, onChange, value, listOfValues, helpText, required, onFocus, hint } = props
   //console.log('DROPDOWN', props)
   return (
     <div className="field-drop-down">
       <div className="flex-row label">
         <label>{translate(label)}</label> {helpText && <FieldTooltip title={helpText} />}
       </div>
-      <Select onChange={event => onChange(event)} style={style} defaultValue={value} value={value} placeholder={placeholder} required={required}>
-        {listOfValues && listOfValues.map( (item, index) => {
+      <Select
+        onChange={event => onChange(event)}
+        style={style}
+        defaultValue={value}
+        value={value}
+        placeholder={hint && translate(hint)}
+        required={required}
+        onFocus={onFocus}
+      >
+        {listOfValues && listOfValues.map(({ value, label , ...rest}, index) => {
           return (
-            <Option key={index} value={item.value} className="item">{translate(item.label)}</Option>
+            <Option key={index} value={value} className="item">
+              {translate(label)}
+            </Option>
           )
         })}
       </Select>
     </div>
   )
+}
+
+FieldDropDown.propTypes = {
+  label: PropTypes.string,
+  onChange: PropTypes.func,
+  value: PropTypes.any,
+  listOfValues: PropTypes.array,
+  helpText: PropTypes.string,
+  required: PropTypes.bool,
+  onFocus: PropTypes.func,
+  hint: PropTypes.string
 }

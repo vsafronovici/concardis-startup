@@ -6,8 +6,7 @@ import { translate } from './../../i18n/i18n'
 const RadioGroup = Radio.Group
 
 export const FieldBoxedRadioBtns = (props) => {
-  const { listOfValues, onChange, value, autoFocus, label, description } = props
-  //console.log('FieldBoxedRadioBtns', props)
+  const { listOfValues, onChange, value, autoFocus, label, description, onFocus } = props
 
   return (
     <div className="field-boxed_radio_group">
@@ -19,20 +18,25 @@ export const FieldBoxedRadioBtns = (props) => {
       <div className="description">
         {description && translate(description)}
       </div>
-      <RadioGroup onChange={(value) => onChange(value)} value={value}>
-        {listOfValues && listOfValues.map((radio, index) => (
+      <RadioGroup onChange={(value) => onChange(value)} value={value} >
+        {listOfValues && listOfValues.map(({ label, description, value, ...rest }, index) => (
           <div className="radio-container"  key={index}>
             <div className="container-titles">
               <label>
-                {translate(radio.label)}
+                {translate(label)}
               </label>
               <div className="radio-label2">
-                {translate(radio.description)}
+                {translate(description)}
               </div>
             </div>
             <div className="radio-container-field">
               <div className="radio-input">
-                <Radio value={radio.value} autoFocus={index === 0 && autoFocus}/>
+                <Radio
+                  {...rest}
+                  value={value}
+                  autoFocus={index === 0 && autoFocus}
+                  onFocus={onFocus}
+                />
               </div>
             </div>
           </div>
@@ -42,3 +46,12 @@ export const FieldBoxedRadioBtns = (props) => {
     )
   }
 
+FieldBoxedRadioBtns.propTypes = {
+  listOfValues: PropTypes.array,
+  onChange: PropTypes.func,
+  value: PropTypes.any,
+  autoFocus: PropTypes.any,
+  label: PropTypes.string,
+  description: PropTypes.string,
+  onFocus: PropTypes.func
+}

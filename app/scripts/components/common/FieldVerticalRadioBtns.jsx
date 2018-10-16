@@ -1,5 +1,6 @@
 import React from 'react'
 import { Radio } from 'antd'
+import PropTypes from 'prop-types'
 import { translate } from '../../i18n/i18n'
 import { propOrEmptyObj } from '../../utils/function-utils'
 import { FieldTooltip } from './FieldTooltip'
@@ -13,7 +14,7 @@ const radioStyle = {
 }
 
 export const FieldVerticalRadioBtns = props => {
-  const { name, optional, placeholder, help, value, onChange, label, tooltip, listOfValues, autoFocus, required, helpText, onFocus } = props
+  const { optional, value, onChange, label, listOfValues, autoFocus, required, helpText, onFocus } = props
 
   return(
     <div className="field-vertical-radio">
@@ -26,13 +27,31 @@ export const FieldVerticalRadioBtns = props => {
         </div>
       </div>
       <RadioGroup onChange={(value) => onChange(value)} value={value} required={required}>
-        {listOfValues.map((radio, index) => (
+        {listOfValues.map(({ value, label, ...rest }, index) => (
           <div className="bottom-container" key={index}>
-            <Radio value={radio.value} style={radioStyle} autoFocus={index === 0 && autoFocus} onFocus={onFocus}/>
-            <div className="bottom-label">{translate(radio.label)}</div>
+            <Radio
+              value={value}
+              style={radioStyle}
+              autoFocus={index === 0 && autoFocus}
+              onFocus={onFocus}
+              {...rest}
+            />
+            <div className="bottom-label">{translate(label)}</div>
           </div>
         ))}
       </RadioGroup>
     </div>
   )
+}
+
+FieldVerticalRadioBtns.propTypes = {
+  optional: PropTypes.any,
+  value: PropTypes.any,
+  onChange: PropTypes.func,
+  label: PropTypes.string,
+  listOfValues: PropTypes.array,
+  autoFocus: PropTypes.func,
+  required: PropTypes.bool,
+  helpText: PropTypes.string,
+  onFocus: PropTypes.func
 }

@@ -44,9 +44,11 @@ const RenderInput = createRenderer((input, meta, rest) => {
   />
 })
 const RenderTextBold = createRenderer((input, meta, rest) => {
+  const { touch } = rest
   return <FieldTextBold
     input={input}
     onChange={(event) => input.onChange(event)}
+    onFocus={event => { touch(input.name) }}
     value={input.value}
     {...rest}
   />
@@ -64,9 +66,11 @@ const RenderVerticalRadioBtns = createRenderer((input, meta, rest) => {
 })
 
 const RenderBoxedRadioBtns = createRenderer((input, meta, rest) => {
+  const { touch } = rest
   return <FieldBoxedRadioBtns
     onChange={(event) => input.onChange(event)}
     value={input.value}
+    onFocus={event => {touch(input.name)} }
     {...rest}
   />
 })
@@ -91,38 +95,46 @@ const RenderCheckbox = createRenderer((input, meta, rest) => {
 })
 
 const RenderBoxedCheckboxGroup = createRenderer((input, meta, rest) => {
+  const { touch } = rest
   return <FieldBoxedCheckboxGroup
     onChange={(event) => input.onChange(event)}
     input={input}
     value={input.value}
+    onFocus={event => { touch(input.name)} }
     {...rest}
   />
 })
 
 const RenderDropDown = createRenderer((input, meta, rest) => {
+  const { touch } = rest
   return <FieldDropDown
         onChange={(event) => input.onChange(event)}
         value={input.value}
         input={input}
+        onFocus={event => {touch(input.name)} }
         meta={meta}
         {...rest}
   />
 })
 
 const RenderHorizontalRadioBtns = createRenderer((input, meta, rest) => {
+  const { touch } = rest
   return <FieldHorizontalRadioBtns
     onChange={event => input.onChange(event)}
     input={input}
     value={input.value}
+    onFocus={event => {touch(input.name)} }
     {...rest}
   />
 })
 
 const RenderDate = createRenderer((input, meta, rest) => {
+  const { touch } = rest
   return <FieldDate
     onChange={event => input.onChange(event)}
     input={input}
     value={input.value}
+    onFocus={event => {touch(input.name)} }
     meta={meta}
     {...rest}
   />
@@ -155,7 +167,7 @@ const renderFieldComponent = ({ idx, field, i18n, touch }) => {
       return <Field {...fieldProps} component={RenderVerticalRadioBtns} touch={touch} />
     }
     case FieldType.BOXED_RADIO_BTNS: {
-      return <Field {...fieldProps} component={RenderBoxedRadioBtns} />
+      return <Field {...fieldProps} component={RenderBoxedRadioBtns} touch={touch} />
     }
     case FieldType.BOXED_CHECKBOX: {
       return <Field {...fieldProps} component={RenderBoxedCheckbox} />
@@ -164,19 +176,19 @@ const renderFieldComponent = ({ idx, field, i18n, touch }) => {
       return <Field {...fieldProps} component={RenderCheckbox} />
     }
     case FieldType.DROPDOWN: {
-      return <Field {...fieldProps} component={RenderDropDown} />
+      return <Field {...fieldProps} component={RenderDropDown} touch={touch}/>
     }
     case FieldType.BOXED_CHECKBOX_GROUP: {
-      return <Field {...fieldProps} component={RenderBoxedCheckboxGroup}/>
+      return <Field {...fieldProps} component={RenderBoxedCheckboxGroup} touch={touch}/>
     }
     case FieldType.HORIZONTAL_RADIO_BTNS: {
-      return <Field {...fieldProps} component={RenderHorizontalRadioBtns}/>
+      return <Field {...fieldProps} component={RenderHorizontalRadioBtns} touch={touch}/>
     }
     case FieldType.DATE: {
-      return <Field {...fieldProps} component={RenderDate}/>
+      return <Field {...fieldProps} component={RenderDate} touch={touch}/>
     }
     case FieldType.TEXT_BOLD: {
-      return <Field {...fieldProps} component={RenderTextBold}/>
+      return <Field {...fieldProps} component={RenderTextBold} touch={touch}/>
     }
     default: {
       return null

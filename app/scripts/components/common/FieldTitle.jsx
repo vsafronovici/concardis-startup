@@ -16,3 +16,8 @@ export const FieldTitle = props => {
     </div>
   )
 }
+
+FieldTitle.propTypes = {
+  title: PropTypes.string,
+  subtitle: PropTypes.string
+}

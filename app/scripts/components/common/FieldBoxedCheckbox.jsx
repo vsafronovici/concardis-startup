@@ -1,11 +1,12 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Checkbox } from 'antd'
 import { translate } from './../../i18n/i18n'
 
 export const FieldBoxedCheckbox = props => {
-  const { label, help, onChange, value, optional, input, autoFocus, description } = props
+  const { label, onChange, value, optional, input, autoFocus, description } = props
   const handleChange = input ? input.onChange : onChange
-  //console.log('BOXEDCHECKBOX', props)
+
   return (
     <div className="field-boxed-checkbox">
       <div className="container-titles">
@@ -17,8 +18,22 @@ export const FieldBoxedCheckbox = props => {
         </div>
       </div>
       <div className="field">
-        <Checkbox checked={value} onChange={e => handleChange(e.target.checked)} autoFocus={!!autoFocus} />
+        <Checkbox
+          checked={value}
+          onChange={e => handleChange(e.target.checked)}
+          autoFocus={!!autoFocus}
+        />
       </div>
     </div>
   )
+}
+
+FieldBoxedCheckbox.propTypes = {
+  label: PropTypes.string,
+  onChange: PropTypes.func,
+  value: PropTypes.any,
+  optional: PropTypes.any,
+  input: PropTypes.object,
+  onFocus: PropTypes.func,
+  description: PropTypes.string
 }
