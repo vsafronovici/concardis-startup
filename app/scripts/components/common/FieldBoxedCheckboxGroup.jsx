@@ -11,7 +11,7 @@ const CheckboxGroup = Checkbox.Group
 
 const CheckBoxItem = props => {
   const { onChange, index, label, value, description, helpText } = props
-  console.log('index', index)
+  //console.log('index', index)
   return (
     <div className="field-checkbox-item">
       <div className="container-labels">

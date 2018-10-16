@@ -6,12 +6,26 @@ import { FieldTooltip } from './FieldTooltip'
 
 export class FieldTextBold extends Component{
 
+  state = {
+    bold: true
+  }
 
+  handleChange = value => {
+    if(value.length > 12) {
+      this.setState({
+        bold: false
+      })
+    } else {
+      this.setState({
+        bold: true
+      })
+    }
+    this.props.onChange(value)
+  }
 
-  //const regular = checkBold(this.inputBold.value) ? {fontWeight: '300'} : {fontWeight: '800'}
   render() {
     const { label, onChange, helpText, placeholder, value, hint, description } = this.props
-    console.log('BOLD INPUT', this.refs)
+
     return (
       <div className="field-text-bold">
         <div className="container-labels">
@@ -21,13 +35,13 @@ export class FieldTextBold extends Component{
           {description && translate(description)}
         </div>
         <div className="field">
-          <label data-b="B">
+          <label data-b={this.state.bold ? "B" : ''}>
             <Input
-              //style={regular}
+              style={this.state.bold ? {fontWeight: '800'} : {fontWeight: 'normal'}}
               value={value}
               placholder={hint}
-              onChange={event => onChange(event)}
-              ref={input => this.inputBold = input}
+              maxLength={24}
+              onChange={event => this.handleChange(event.target.value)}
             />
           </label>
         </div>

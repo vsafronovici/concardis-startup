@@ -20,7 +20,7 @@ import { FieldTextBold } from '../common/FieldTextBold'
 
 const Option = Select.Option
 
-const createRenderer = render => ({ input, meta, type, ...rest }) => { console.log('createRenderer FIELD', {meta, rest, type}); return (
+const createRenderer = render => ({ input, meta, type, ...rest }) => {  return (
 
   <div className="form-field">
     <div className={cn(`form-field-${type}`)}>
@@ -53,7 +53,7 @@ const RenderTextBold = createRenderer((input, meta, rest) => {
 })
 
 const RenderVerticalRadioBtns = createRenderer((input, meta, rest) => {
-  console.log('RenderVerticalRadioBtns', {input, meta})
+  //console.log('RenderVerticalRadioBtns', {input, meta})
   return <FieldVerticalRadioBtns
     onChange={(event) => input.onChange(event)}
     value={input.value}

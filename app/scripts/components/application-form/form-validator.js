@@ -26,11 +26,10 @@ const createReducer = values => (errors, field) => {
 
   // Validate date
   if (type === FieldType.DATE && !isNilOrEmpty(value) ) {
-    //console.log('Validator DATE=', { field, value, valid: checkDate(value) })
+    console.log('Validator DATE=', { field, value, valid: checkDate(value) })
     if (!checkDate(value)) {
-      //console.log('checkDate(value', !checkDate(value))
       console.log('NAME', name)
-      console.log('ERRORRRR', {...errors, [name]: validationError})
+      //console.log('ERRORRRR', {...errors, [name]: validationError})
       return {
         ...errors,
         [name]: validationError
