@@ -39,7 +39,7 @@ FieldInputText.propTypes = {
   label: PropTypes.string,
   onChange: PropTypes.func,
   disabled: PropTypes.bool,
-  autoFocus: PropTypes.func,
+  autoFocus: PropTypes.bool,
   hint: PropTypes.string,
   helpText: PropTypes.string,
   description: PropTypes.string,
