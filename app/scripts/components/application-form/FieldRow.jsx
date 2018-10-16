@@ -53,9 +53,11 @@ const RenderTextBold = createRenderer((input, meta, rest) => {
 })
 
 const RenderVerticalRadioBtns = createRenderer((input, meta, rest) => {
-  //console.log('RenderVerticalRadioBtns', {input, meta})
+  // console.log('RenderVerticalRadioBtns', {input, meta, rest})
+  const { touch } = rest
   return <FieldVerticalRadioBtns
     onChange={(event) => input.onChange(event)}
+    onFocus={e => { touch(input.name) }}
     value={input.value}
     {...rest}
   />
@@ -126,7 +128,7 @@ const RenderDate = createRenderer((input, meta, rest) => {
   />
 })
 
-const renderFieldComponent = ({ idx, field, i18n }) => {
+const renderFieldComponent = ({ idx, field, i18n, touch }) => {
   const { type } = field
 
   const fieldProps = { ...field }
@@ -150,7 +152,7 @@ const renderFieldComponent = ({ idx, field, i18n }) => {
       return <Field {...fieldProps} component={RenderInput} />
     }
     case FieldType.VERTICAL_RADIO_BTNS: {
-      return <Field {...fieldProps} component={RenderVerticalRadioBtns} />
+      return <Field {...fieldProps} component={RenderVerticalRadioBtns} touch={touch} />
     }
     case FieldType.BOXED_RADIO_BTNS: {
       return <Field {...fieldProps} component={RenderBoxedRadioBtns} />
@@ -182,9 +184,9 @@ const renderFieldComponent = ({ idx, field, i18n }) => {
   }
 }
 
-export const FieldRow = ({ idx, field, i18n }) => (
+export const FieldRow = ({ idx, field, i18n, touch }) => (
   <div className="form-field-row">
-    { renderFieldComponent({ idx, field, i18n }) }
+    { renderFieldComponent({ idx, field, i18n, touch }) }
   </div>
 )
 

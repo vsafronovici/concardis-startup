@@ -27,7 +27,7 @@ export class DynamicForm extends React.Component {
   }
 
   render() {
-    const { chapter, rValues, current, i18n, getReviewAction } = this.props
+    const { chapter, rValues, current, i18n, getReviewAction, touch } = this.props
     console.log('DynamicForm', this.props)
 
     const fieldsToDisplay = fieldsToShow(chapter, rValues)
@@ -46,7 +46,7 @@ export class DynamicForm extends React.Component {
           <div>
             <FieldTitle title={chapter.title} subtitle={chapter.subtitle}/>
             <div>
-              { fieldsToDisplay.map((field, idx) => <FieldRow key={field.name} field={field} idx={idx} i18n={i18n}/>) }
+              { fieldsToDisplay.map((field, idx) => <FieldRow key={field.name} field={field} idx={idx} i18n={i18n} touch={touch} />) }
             </div>
 
           </div>
