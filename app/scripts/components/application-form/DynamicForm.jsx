@@ -20,13 +20,13 @@ export class DynamicForm extends React.Component {
   }
 
   saveForm = e => {
-    const { section: { fieldsToDisplay }, touch, rValues, current, saveAction } = this.props
+    const { touch, rValues, current, saveAction } = this.props
     //touch(...fieldNames(fieldsToDisplay))
     saveAction({ currentChapterIdx: current, formValues: rValues})
   }
 
   render() {
-    const { section, fields, fieldsToDisplay, current, i18n, getReviewAction } = this.props
+    const { chapter, fieldsToDisplay, current, i18n, getReviewAction } = this.props
     console.log('DynamicForm', this.props)
 
     return (
@@ -41,7 +41,7 @@ export class DynamicForm extends React.Component {
             <div ><VoidLink onClick={this.saveForm}>{translate('link_applicationForm_saveAndClose')}</VoidLink></div>
           </div>
           <div>
-            <FieldTitle title={section.title} subtitle={section.subtitle}/>
+            <FieldTitle title={chapter.title} subtitle={chapter.subtitle}/>
             <div>
               { fieldsToDisplay.map((field, idx) => <FieldRow key={field.name} field={field} idx={idx} i18n={i18n}/>) }
             </div>

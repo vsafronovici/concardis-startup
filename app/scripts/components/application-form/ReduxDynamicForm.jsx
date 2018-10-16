@@ -5,25 +5,22 @@ import { connect } from 'react-redux'
 
 import DynamicForm from './DynamicForm'
 import { Validator } from './form-validator'
-import { DYNAMIC_FORM_PREFIX } from '../../utils/application-form-utils'
-
-// TODO remove
-const initialValues = { f1: 'x1', f3: '2', f4: '2', f5: true, f8: 'value1', f9: 'value2' }
+import { createInitialValues, DYNAMIC_FORM_PREFIX } from '../../utils/application-form-utils'
 
 export class ReduxDynamicForm extends React.Component {
   static propTypes = {
-    section: PropTypes.object,
+    chapter: PropTypes.object,
   }
 
   render() {
     console.log('ReduxDynamicForm', this.props)
-    const { section, fields } = this.props
+    const { chapter } = this.props
 
-    const formId = `${DYNAMIC_FORM_PREFIX}${section.sequence}`
+    const formId = `${DYNAMIC_FORM_PREFIX}${chapter.sequence}`
     const RForm = reduxForm({
       form: formId,
-      // initialValues,
-      validate: Validator(fields),
+      initialValues: createInitialValues(chapter),
+      validate: Validator(chapter),
 
       // enableReinitialize: true,
       // keepDirtyOnReinitialize: true,
@@ -46,7 +43,7 @@ export class ReduxDynamicForm extends React.Component {
 
     const ConnectedReduxForm = connect(mapStateToProps, mapDispatchToProps)(RForm)
 
-    return <ConnectedReduxForm section={section} fields={fields} />
+    return <ConnectedReduxForm chapter={chapter} />
   }
 }
 

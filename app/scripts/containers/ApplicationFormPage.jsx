@@ -6,7 +6,7 @@ import { i18nSelector } from '../selectors/i18n-selector'
 import { Loader } from '../components/Loader'
 import ApplicationForm from '../components/application-form/ApplicationForm'
 import { initData } from './../actions/application-form-action'
-import { sectionsSelector, finishedSelector } from '../selectors/application-form-selector'
+import { chaptersSelector, finishedSelector } from '../selectors/application-form-selector'
 import { ReviewYourApplication } from '../components/application-form/ReviewYourApplicaiton'
 
 class ApplicationFormPage extends Component {
@@ -29,7 +29,7 @@ class ApplicationFormPage extends Component {
 
 const mapStateToProps = state => ({
   i18n: i18nSelector(state),
-  sections: sectionsSelector(state),
+  sections: chaptersSelector(state),
   finished: finishedSelector(state)
 })
 

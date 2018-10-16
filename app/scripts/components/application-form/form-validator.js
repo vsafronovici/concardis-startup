@@ -2,6 +2,7 @@ import { pickBy, pluck, isEmpty, toPairs, contains } from 'ramda'
 import { translate } from '../../i18n/i18n'
 import { FieldType } from '../../utils/constants'
 import { checkDate, isNilOrEmpty, propOrEmptyArr } from '../../utils/function-utils'
+import { fieldsToShow } from '../../utils/application-form-utils'
 
 const isTextualComponent = ({ type }) => type === FieldType.TEXT || type === FieldType.TEXT_BOLD
 
@@ -18,7 +19,6 @@ const createReducer = values => (errors, field) => {
   if (isNilOrEmpty(rules)) {
     return errors
   }
-
 
   const { required, maximum, regexp, requiredError, validationError } = rules
 
@@ -41,7 +41,6 @@ const createReducer = values => (errors, field) => {
     return errors
   }
 
-
   if (maximum && value && value.length > maximum) {
     return {
       ...errors,
@@ -56,7 +55,6 @@ const createReducer = values => (errors, field) => {
     }
   }
 
-
   if (regexp && !new RegExp(regexp).test(value)) {
     return {
       ...errors,
@@ -67,7 +65,8 @@ const createReducer = values => (errors, field) => {
   return errors
 }
 
-export const Validator = fields => values => {
-  const reducer = createReducer(values)
-  return fields.reduce(reducer, {})
+export const Validator = chapter => values => {
+  const fields = fieldsToShow(chapter, values)
+  console.log('Validator', {chapter, values, fields})
+  return fields.reduce(createReducer(values), {})
 }

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { Col, Row, Steps, Icon } from 'antd'
 import { translate } from './../../i18n/i18n'
 import { ApplicationFormStepsTitles, SectionStatusType } from '../../utils/constants'
-import { currentSelector, sectionsSelector, sectionsStateSelector } from '../../selectors/application-form-selector'
+import { currentSelector, chaptersSelector } from '../../selectors/application-form-selector'
 import { goToSection } from './../../actions/application-form-action'
 
 const Step = Steps.Step
@@ -90,9 +90,8 @@ export const StepsBar = (props) => {
 }
 
 const mapStateToProps = state => ({
-  sections: sectionsSelector(state),
+  sections: chaptersSelector(state),
   current: currentSelector(state),
-  sectionsState: sectionsStateSelector(state)
 })
 
 const mapDispatchToProps = ({

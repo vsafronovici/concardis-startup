@@ -9,13 +9,12 @@ const initialState = {
     agree: false
   },
   current: 0,
-  sections: undefined,
-  sectionsState: undefined,
+  chapters: undefined
 }
 
 const goToNextSection = (state, payload) => {
-  const { sections } = state
-  const MAX = sections.length -1
+  const { chapters } = state
+  const MAX = chapters.length -1
   if (payload > MAX) {
     return {
       ...state
@@ -23,19 +22,19 @@ const goToNextSection = (state, payload) => {
   }
 
   const sectionToProgress = {
-    ...sections[payload],
+    ...chapters[payload],
     status: SectionStatusType.IN_PROGRESS
   }
-  sections.splice(payload, 1, sectionToProgress)
+  chapters.splice(payload, 1, sectionToProgress)
 
   const sectionToFinished = {
-    ...sections[payload - 1],
+    ...chapters[payload - 1],
     status: SectionStatusType.FINISHED
   }
-  sections.splice(payload - 1, 1, sectionToFinished)
+  chapters.splice(payload - 1, 1, sectionToFinished)
 
   const maxCurrent = current => {
-    const max = sections.length - 1
+    const max = chapters.length - 1
     if (current > max) {
       console.log('Current is more than 5')
       return max
@@ -47,7 +46,7 @@ const goToNextSection = (state, payload) => {
   const newState = {
     ...state,
     current: maxCurrent(payload),
-    sections: sections
+    chapters: chapters
   }
   return newState
 }
@@ -85,7 +84,7 @@ export default {
     [APPLICATION_FORM.GET_FORM_META_RES](state, { payload }) {
       return {
         ...state,
-        sections: payload
+        chapters: payload
       }
     },
     [APPLICATION_FORM.GO_TO_NEXT_SECTION](state, { payload }) {

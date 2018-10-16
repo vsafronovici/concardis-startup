@@ -13,15 +13,14 @@ const pickSectionByStatus = status => pickBy(
 
 export const applicationFormSelector = prop('application-form')
 export const applicationFormSubmittingSelector = compose(prop('submitting'), applicationFormSelector)
-export const sectionsSelector = compose(prop('sections'), applicationFormSelector)
-export const sectionsStateSelector = compose(prop('sectionsState'), applicationFormSelector)
+export const chaptersSelector = compose(prop('chapters'), applicationFormSelector)
 export const currentSelector = compose(prop('current'), applicationFormSelector)
 export const tacSelector = compose(prop('TAC'), applicationFormSelector)
 export const finishedSelector = compose(prop('finished'), applicationFormSelector)
 
 // TODO remove
 // export const currentIndexSectionSelector = createSelector(
-//   sectionsSelector,
+//   chaptersSelector,
 //   (sections = []) => {
 //     const states = sections && (pluck('status')(sections))
 //     const states2 = pickSectionByStatus(SectionStatusType.IN_PROGRESS)(sections)
@@ -35,17 +34,17 @@ export const finishedSelector = compose(prop('finished'), applicationFormSelecto
 //   }
 // )
 
-export const currentSectionSelector = createSelector(
-  sectionsSelector,
+export const currentChapterSelector = createSelector(
+  chaptersSelector,
   currentSelector,
-  (sections = [], current) => {
-    console.log(sections[current])
-    return sections[current]
+  (chapters = [], current) => {
+    console.log(chapters[current])
+    return chapters[current]
   }
 )
 
 /*export const currentSectionsSelector = createSelector(
-  sectionsSelector,
+  chaptersSelector,
   sectionsStateSelector,
   (sections, sectionsState) => {
     const section = pickSectionByStatus(SectionStatusType.IN_PROGRESS)(sectionsState)
@@ -63,7 +62,7 @@ export const currentSectionSelector = createSelector(
 )*/
 
 export const fieldsSelector = createSelector(
-  currentSectionSelector,
+  currentChapterSelector,
   (chapter = {}) => {
     if (!chapter.sections) {
       return []
@@ -85,7 +84,7 @@ export const fieldsSelector = createSelector(
 )
 
 export const getFormValuesSelector = state => {
-  const section = currentSectionSelector(state)
+  const section = currentChapterSelector(state)
   const formId = `${DYNAMIC_FORM_PREFIX}${section.sequence}`
   const result = getReduxFormValues(formId)(state)
   console.log('getFormValuesSelector', {formId, result})
@@ -97,7 +96,7 @@ export const getFormValuesSelector = state => {
 
 
 export const fieldsToDisplaySelector = createSelector(
-  currentSectionSelector,
+  currentChapterSelector,
   getFormValuesSelector,
   (chapter = {}, formValues = {}) => {
     console.log('fieldsToDisplaySelector', {formValues})

@@ -9,7 +9,7 @@ import { translate } from '../../i18n/i18n'
 import {
   applicationFormSubmittingSelector,
   currentSectionsSelector, isFormCompletedSelector,
-  sectionsSelector
+  chaptersSelector
 } from '../../selectors/application-form-selector'
 
 export class ApplicationForm extends React.Component {
@@ -56,7 +56,7 @@ export class ApplicationForm extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  sections: sectionsSelector(state),
+  sections: chaptersSelector(state),
   submitting: applicationFormSubmittingSelector(state),
   isFormCompleted: isFormCompletedSelector(state)
 })

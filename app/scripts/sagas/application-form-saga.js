@@ -4,7 +4,7 @@ import { getFormMetaRes } from './../actions/application-form-action'
 import { SFAction } from '../modules/client'
 import { updateCommercialsTCReq, updateCommercialsTCRes, saveReq, saveRes, goToNextSection } from '../actions/application-form-action'
 import { applyDiscountPayloadSelector } from '../selectors/package-configure-selector'
-import { sectionsSelector } from '../selectors/application-form-selector'
+import { chaptersSelector } from '../selectors/application-form-selector'
 import { buildSaveRequest } from '../utils/application-form-utils'
 import { RESPONSE_STATUS } from '../utils/constants'
 
@@ -28,7 +28,7 @@ function* agreeTACSaga() {
 }
 
 function* saveSaga({ payload: { formValues, currentChapterIdx } }) {
-  const chapters = yield select(sectionsSelector)
+  const chapters = yield select(chaptersSelector)
 
   const req = buildSaveRequest({ formValues, chapters, currentChapterIdx })
   yield put(saveReq(req))

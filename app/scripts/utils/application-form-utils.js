@@ -47,6 +47,38 @@ export const checkSectionCondition = (conditions, values) => {
 
 export const createField = (sectionCode, field) => ({ ...field, name: `${sectionCode}${FIELD_NAME_SEPARATOR}${field.name}`})
 
+export const createInitialValues = chapter => {
+  return chapter.sections.reduce((acc, section) => {
+    if (isNilOrEmpty(section.serverValues)) {
+      return acc
+    }
+
+    return section.serverValues.reduce((acc2, serverValue) => {
+      return { ...acc2, [serverValue.fieldCode]: serverValue.fieldValue }
+    }, acc)
+  }, {})
+}
+
+export const fieldsToShow = (chapter, formValues) => {
+  if (isNilOrEmpty(chapter.sections)) {
+    return []
+  }
+
+  return chapter.sections.reduce((acc, section) => {
+    const { condition, fields } = section
+
+    if (isNilOrEmpty(fields)) {
+      return acc
+    }
+
+    if (isNilOrEmpty(condition) || checkSectionCondition(condition, formValues)) {
+      acc.push(...fields)
+    }
+
+    return acc
+  }, [])
+}
+
 export const buildSaveRequest = ({ formValues, chapters, currentChapterIdx }) => {
   console.log('buildSaveRequest', { formValues, chapters, currentChapterIdx })
 
