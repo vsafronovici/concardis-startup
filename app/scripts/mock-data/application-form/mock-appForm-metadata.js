@@ -238,7 +238,7 @@ export default [{
     }]
   }, {
     "type": "Conditional",
-    "serverValues": [{"fieldValue": "Alin", "fieldCode": "ch1_s1_field1Section_03_1"}],
+    "serverValues": [{"fieldValue": "Alin", "fieldCode": "ch1_s1_field1Section_03_1", ch2_s2_field5Section_03_1: '2000-01-05'}],
     "sequence": 3,
     "name": "Section_03_1",
     "fields": [{
@@ -1100,7 +1100,7 @@ export default [{
     "condition": "ch2_s1_field7Section_02=owner_option_1"
   }, {
     "type": "Conditional",
-    "serverValues": [{"fieldValue": "Alin", "fieldCode": "ch1_s1_field2Section_03_2", "ch2_s2_field5Section_03_2": '1989-09-08'}],
+    "serverValues": [{"fieldValue": "Alin", "fieldCode": "ch1_s1_field2Section_03_2"}, {"fieldCode": "ch2_s2_field5Section_03_2", "fieldValue": '1989-09-08'}],
     "sequence": 4,
     "name": "Section_03_2",
     "fields": [{

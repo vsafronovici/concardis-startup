@@ -119,12 +119,6 @@ export default {
         }
       }
     },
-    [APPLICATION_FORM.GET_REVIEW](state, { payload }) {
-      return {
-        ...state,
-        current: 6
-      }
-    }
   })
 }
 

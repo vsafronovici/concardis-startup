@@ -1,23 +1,14 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Input } from 'antd'
-import moment from 'moment'
+
 import { translate } from './../../i18n/i18n'
-import { DATE_FORMAT } from '../../utils/constants'
 
 export class FieldDate extends Component  {
-  state = {
-    dd: null,
-    mm: null,
-    yy: null
-  }
+
   handleChange = (type, value) => {
-    const newState = {
-      ...this.state,
-      [type]: value
-    }
-    this.setState(newState)
-    if (this.inputDay.input.value.length >= 2) {
+    // TODO bad logic
+    /*if (this.inputDay.input.value.length >= 2) {
       this.inputMonth.focus()
     }
     if (this.inputMonth.input.value.length >= 2) {
@@ -25,26 +16,19 @@ export class FieldDate extends Component  {
     }
     if (this.inputYear.input.value.length === 4) {
       this.inputYear.blur()
-    }
+    }*/
+
     const day = this.inputDay.input.value
     const month = this.inputMonth.input.value
     const year = this.inputYear.input.value
-    const date = `${day}/${month}/${year}`
-    const formatted = moment(date, 'DD/MM/YYYY').format(DATE_FORMAT)
-    //console.log('formatted', formatted)
+    const formatted = `${year}-${month}-${day}`
     this.props.onChange(formatted)
   }
 
   render() {
-    const { label, required, onBlur, serverValues, name, value, input } = this.props
-   // const value = '1312/02/04'
-    console.log(' date_field ', { name: input.name, value, })
-    const date = value && moment(value, DATE_FORMAT)
-    const { dd, mm, yy } = this.state
-    const dayValue = dd || date && date.format('DD')
-    const monthValue = mm || date && date.format('MM')
-    const yearValue = yy || date && date.format('YYYY')
-
+    const { label, required, onBlur, value } = this.props
+    const defaultDate = value || '--'
+    const [yearValue, monthValue, dayValue] = defaultDate.split('-')
 
     return (
       <div className="field-date">
