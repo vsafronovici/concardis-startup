@@ -1,11 +1,11 @@
 import { all, call, put, select, takeEvery, takeLatest } from 'redux-saga/effects'
 import { APPLICATION_FORM } from '../actions/types'
-import { getFormMetaRes } from './../actions/application-form-action'
+import {getFormMetaRes, submitResError} from './../actions/application-form-action'
 import { SFAction } from '../modules/client'
-import { updateCommercialsTCReq, updateCommercialsTCRes, saveReq, saveRes, goToNextSection } from '../actions/application-form-action'
+import { updateCommercialsTCReq, updateCommercialsTCRes, saveReq, saveRes, goToNextSection, submitResSuccess } from '../actions/application-form-action'
 import { applyDiscountPayloadSelector } from '../selectors/package-configure-selector'
 import { chaptersSelector } from '../selectors/application-form-selector'
-import { buildSaveRequest } from '../utils/application-form-utils'
+import { buildSaveRequest, submitDelay } from '../utils/application-form-utils'
 import { RESPONSE_STATUS } from '../utils/constants'
 
 import {SubmissionError} from 'redux-form'
@@ -48,10 +48,20 @@ function* saveSaga({ payload: { formValues, currentChapterIdx } }) {
   }
 }
 
+function* submitSaga() {
+  const response = yield call(submitDelay, 3000)
+  if (response) {
+    yield put(submitResSuccess(response))
+  } else {
+    yield put(submitResError(response))
+  }
+}
+
 export default function* root() {
   yield all([
     takeLatest(APPLICATION_FORM.INIT_DATA, initDataSaga),
     takeLatest(APPLICATION_FORM.AGREE_TAC, agreeTACSaga),
     takeLatest(APPLICATION_FORM.SAVE, saveSaga),
+    takeLatest(APPLICATION_FORM.SUBMIT_REQ, submitSaga),
   ])
 }

@@ -79,5 +79,8 @@ export const ApplicationFormStepsTitles = {
   STEP_6: 'PAYMENT_DETAILS'
 }
 
-
+export const SubmitStatus = {
+  SUCCESS: 'Success',
+  ERROR: 'Error'
+}
 

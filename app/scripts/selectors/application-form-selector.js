@@ -17,6 +17,11 @@ export const chaptersSelector = compose(prop('chapters'), applicationFormSelecto
 export const currentSelector = compose(prop('current'), applicationFormSelector)
 export const tacSelector = compose(prop('TAC'), applicationFormSelector)
 export const finishedSelector = compose(prop('finished'), applicationFormSelector)
+export const finalSubmitSelector = compose(prop('finalSubmit'), applicationFormSelector)
+export const submittingSelector = compose(prop('submitting'), finalSubmitSelector)
+export const statusSelector = compose(prop('status'), finalSubmitSelector)
+
+
 
 // TODO remove
 // export const currentIndexSectionSelector = createSelector(

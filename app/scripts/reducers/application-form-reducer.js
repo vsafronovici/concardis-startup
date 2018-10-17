@@ -1,7 +1,7 @@
 import { toPairs } from 'ramda'
 import { createReducer } from '../modules/helpers'
 import { APPLICATION_FORM } from '../actions/types'
-import { SectionStatusType } from './../utils/constants'
+import { SectionStatusType, SubmitStatus } from './../utils/constants'
 
 const initialState = {
   TAC: {
@@ -9,7 +9,8 @@ const initialState = {
     agree: false
   },
   current: 0,
-  chapters: undefined
+  chapters: undefined,
+  finished: false
 }
 
 const goToNextSection = (state, payload) => {
@@ -114,6 +115,33 @@ export default {
         submitting: false
       }
     },
+    [APPLICATION_FORM.SUBMIT_REQ](state, { payload }) {
+      return {
+        ...state,
+        finalSubmit: {
+          submitting: true,
+          status: undefined,
+        }
+      }
+    },
+    [APPLICATION_FORM.SUBMIT_RES_SUCCESS](state, { payload }) {
+      return {
+        ...state,
+        finalSubmit: {
+          submitting: false,
+          status: SubmitStatus.SUCCESS
+        }
+      }
+    },
+    [APPLICATION_FORM.SUBMIT_RES_ERROR](state, { payload }) {
+      return {
+        ...state,
+        finalSubmit: {
+          submitting: false,
+          status: SubmitStatus.ERROR
+        }
+      }
+    }
   })
 }
 

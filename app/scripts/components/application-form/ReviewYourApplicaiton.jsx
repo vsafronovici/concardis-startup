@@ -2,9 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Row, Col, Button } from 'antd'
+import { translate } from '../../i18n/i18n'
+import { submitReq } from '../../actions/application-form-action'
 
-export const ReviewYourApplication = props => {
-
+const ReviewYourApplication = props => {
+  const { submitReqAction } = props
   return (
     <Row>
       <Col span={16} offset={4}>
@@ -22,7 +24,8 @@ export const ReviewYourApplication = props => {
 
             </Col>
             <Col span={12}>
-              {/*<Button>Submit applicaiton</Button>*/}
+              <Button onClick={submitReqAction}>{translate('btn_applicationForm_submitApplication')}</Button>
+              <Button>{translate('btn_applicationForm_termsAndConditions')}</Button>
             </Col>
           </Row>
         </div>
@@ -30,3 +33,13 @@ export const ReviewYourApplication = props => {
     </Row>
   )
 }
+
+const mapStateToProps = (state) => ({
+
+})
+
+const mapDispatchToProps = ({
+  submitReqAction: submitReq
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(ReviewYourApplication)
