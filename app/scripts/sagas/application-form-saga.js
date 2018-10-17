@@ -11,12 +11,23 @@ import {RESPONSE_STATUS, SubmitStatus} from '../utils/constants'
 
 import {SubmissionError} from 'redux-form'
 
-function* initDataSaga() {
+function* getAppFormMetadataSaga() {
   const action = {
     actionName: window.configSettings.remoteActions.getAppFormMetadata
   }
   const response = yield call(SFAction, action, { parseToJSON: true })
   yield put(getFormMetaRes(response.data))
+}
+
+
+function* initDataSaga() {
+  yield call(getAppFormMetadataSaga)
+
+  /*const action = {
+    actionName: window.configSettings.remoteActions.getAppFormMetadata
+  }
+  const response = yield call(SFAction, action, { parseToJSON: true })
+  yield put(getFormMetaRes(response.data))*/
 }
 
 function* agreeTACSaga() {
@@ -49,6 +60,7 @@ function* saveSaga({ payload: { formValues, currentChapterIdx, callback } }) {
 
   if (response.data.status === RESPONSE_STATUS.OK) {
     yield put(goToNextSection(currentChapterIdx + 1))
+    yield call(getAppFormMetadataSaga)
   }
 
 }
