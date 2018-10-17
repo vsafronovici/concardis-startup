@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Input } from 'antd'
+import moment from 'moment'
 import { translate } from './../../i18n/i18n'
+import { DATE_FORMAT } from '../../utils/constants'
 
 export class FieldDate extends Component  {
   state = {
@@ -16,23 +18,31 @@ export class FieldDate extends Component  {
     }
     this.setState(newState)
     if (this.inputDay.input.value.length >= 2) {
-      this.inputMounth.focus()
+      this.inputMonth.focus()
     }
-    if (this.inputMounth.input.value.length >= 2) {
+    if (this.inputMonth.input.value.length >= 2) {
       this.inputYear.focus()
     }
     if (this.inputYear.input.value.length === 4) {
       this.inputYear.blur()
     }
-    const DAY = this.inputDay.input.value
-    const MOUNTH = this.inputMounth.input.value
-    const YEAR = this.inputYear.input.value
-    const DATE = `${DAY}/${MOUNTH}/${YEAR}`
-    this.props.onChange(DATE)
+    const day = this.inputDay.input.value
+    const month = this.inputMonth.input.value
+    const year = this.inputYear.input.value
+    const date = `${day}/${month}/${year}`
+    const formatted = moment(date, 'DD/MM/YYYY').format(DATE_FORMAT)
+    //console.log('formatted', formatted)
+    this.props.onChange(formatted)
   }
+
   render() {
-    const { label, required, onBlur } = this.props
-    //console.log('DATEPROPS', this.props)
+    const { label, required, onBlur, value } = this.props
+    const date = value && moment(value, DATE_FORMAT)
+    const day =  date && date.format('DD')
+    const month = date && date.format('MM')
+    const year = date && date.format('YYYY')
+    const { dd, mm, yy } = this.state
+
     return (
       <div className="field-date">
         <label>{translate(label)}</label>
@@ -46,27 +56,33 @@ export class FieldDate extends Component  {
               onChange={e => this.handleChange('dd', e.target.value)}
               required={required}
               onBlur={onBlur}
+              defaultValue={day}
+              value={dd}
             />
           </div>
-          <div className="mounth">
+          <div className="month">
             <Input
               min={1}
               max={12}
-              ref={input => this.inputMounth = input}
+              ref={input => this.inputMonth = input}
               placeholder="MM"
               onChange={e => this.handleChange('mm', e.target.value)}
               required={required}
               onBlur={onBlur}
+              value={mm}
+              defaultValue={month}
             />
           </div>
           <div className="year">
             <Input
               maxLength={4}
               ref={input => this.inputYear = input}
-              placeholder="YY"
+              placeholder="YYYY"
               onChange={e => this.handleChange('yy', e.target.value)}
               required={required}
               onBlur={onBlur}
+              value={yy}
+              defaultValue={year}
             />
           </div>
         </div>

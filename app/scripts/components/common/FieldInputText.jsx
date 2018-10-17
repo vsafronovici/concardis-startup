@@ -14,7 +14,7 @@ export class FieldInputText extends React.Component {
     return (
       <div className="field-input-text">
         <label>
-          <div style={{ display:'flex', direction:'row' }}><strong>{translate(label)}</strong> { optional && <span> {'(optional)'}</span> } {helpText && <FieldTooltip title={helpText}/>}</div>
+          <div style={{ display:'flex', direction:'row' }}> {translate(label)} { optional && <span> {'(optional)'}</span> } {helpText && <FieldTooltip title={helpText}/>}</div>
         </label>
         { help && <div className="form-help">{translate(help)}</div> }
 

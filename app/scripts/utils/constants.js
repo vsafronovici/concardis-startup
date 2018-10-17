@@ -84,3 +84,5 @@ export const SubmitStatus = {
   ERROR: 'Error'
 }
 
+export const DATE_FORMAT = 'YYYY-MM-DD'
+

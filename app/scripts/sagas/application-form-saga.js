@@ -1,4 +1,5 @@
 import { all, call, put, select, takeEvery, takeLatest } from 'redux-saga/effects'
+import { delay } from 'redux-saga/utils'
 import { APPLICATION_FORM } from '../actions/types'
 import {getFormMetaRes, submitResError} from './../actions/application-form-action'
 import { SFAction } from '../modules/client'
@@ -6,7 +7,7 @@ import { updateCommercialsTCReq, updateCommercialsTCRes, saveReq, saveRes, goToN
 import { applyDiscountPayloadSelector } from '../selectors/package-configure-selector'
 import { chaptersSelector } from '../selectors/application-form-selector'
 import { buildSaveRequest, submitDelay } from '../utils/application-form-utils'
-import { RESPONSE_STATUS } from '../utils/constants'
+import {RESPONSE_STATUS, SubmitStatus} from '../utils/constants'
 
 import {SubmissionError} from 'redux-form'
 
@@ -53,8 +54,15 @@ function* saveSaga({ payload: { formValues, currentChapterIdx, callback } }) {
 }
 
 function* submitSaga() {
-  const response = yield call(submitDelay, 3000)
-  yield put(submitRes(response))
+
+  const action = {
+    actionName: window.configSettings.remoteActions.submitForm
+  }
+  const response = yield call(SFAction, action, { parseToJSON: true })
+  if (response.data.status === SubmitStatus.SUCCESS) {
+    yield put(submitRes(response.data))
+  }
+
 }
 
 export default function* root() {

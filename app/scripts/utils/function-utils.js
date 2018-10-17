@@ -1,6 +1,7 @@
 import { toPairs, values, isNil, equals, all, isEmpty, propOr, curry, anyPass } from 'ramda'
 import numeral from 'numeral'
 import moment from 'moment'
+import {DATE_FORMAT} from "./constants";
 
 export const isNilOrEmpty = anyPass([isNil, isEmpty])
 export const propOrEmptyObj = propOr({})
@@ -47,21 +48,5 @@ export const formatNumber = (formatter, value) => {
 
 export const generalFormatNumber = curry(formatNumber)('00.00')
 
-export const checkDate = (date) => {
-  // const parseDate = moment('11/11/2011', 'DD-MM-YYYY')
-  // console.log('parseDate', parseDate.format('DD/MM/YYYY'))
-  const FORMAT = 'DD/MM/YYYY'
-  const dateValue  = moment('22-12-2011', FORMAT).format()
-  const nowValue = moment(FORMAT).format()
-
-  return moment(date, FORMAT, true).isValid()
-  //  return moment(date, 'DD-MM-YYYY', true).isValid()
-  /*if ((nowValue > dateValue) && moment('22-12-2011', FORMAT).isValid()) {
-    console.log('Your date is valid')
-    return moment(date, 'DD-MM-YYYY').isValid()
-  } else {
-    console.log('date is invalid')
-    return false
-  }*/
-}
+export const checkDate = (date) => moment(date, DATE_FORMAT, true).isValid()
 

@@ -106,15 +106,15 @@ export const buildSaveRequest = ({ formValues, chapters, currentChapterIdx }) =>
   return chapters
 }
 
-export const submitDelay = (ms) => {
+export const submitDelay = (ms, result) => {
   return new Promise(resolve => {
     setTimeout(() => {
       const random =  Math.random()
       console.log('random', random)
       if (random > 0.5) {
-        resolve(SubmitStatus.SUCCESS)
+        resolve(result)
       } else {
-        return resolve(SubmitStatus.ERROR)
+        return resolve(result)
       }
     }, ms)
   })
