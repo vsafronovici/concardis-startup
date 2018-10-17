@@ -69,12 +69,8 @@ export const submitReq = () => ({
   type: APPLICATION_FORM.SUBMIT_REQ
 })
 
-export const submitResSuccess = payload => ({
-  type: APPLICATION_FORM.SUBMIT_RES_SUCCESS,
+export const submitRes = payload => ({
+  type: APPLICATION_FORM.SUBMIT_RES,
   payload
 })
 
-export const submitResError = payload => ({
-  type: APPLICATION_FORM.SUBMIT_RES_ERROR,
-  payload
-})

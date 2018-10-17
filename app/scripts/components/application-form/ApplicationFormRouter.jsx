@@ -2,15 +2,16 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { SubmitStatus} from "../../utils/constants";
-import { statusSelector, submittingSelector } from '../../selectors/application-form-selector'
+import { finalSubmitSelector } from '../../selectors/application-form-selector'
 import { SuccessSubmitPage } from './SuccessSubmitPage'
 import { ErrorSubmitPage } from './ErrorSubmitPage'
 import ReviewYourApplication from './ReviewYourApplicaiton'
 import { Loader } from '../Loader'
-import {LoadingPage} from "./LoadingPage";
+import { LoadingPage } from './LoadingPage'
 
 const ApplicationFormRouter = props => {
-  const { status, submitting } = props
+  const { finalSubmit: { status, submitting } } = props
+  console.log('ROUTERPROPS', props)
   const getRoute = status => {
     switch (status) {
       case SubmitStatus.SUCCESS:
@@ -23,16 +24,15 @@ const ApplicationFormRouter = props => {
   }
   return (
     <div>
-      <LoadingPage/>
-      {/*{ submitting && <LoadingPage /> }*/}
-      {/*{ !submitting && getRoute(status) }*/}
+      {/*<LoadingPage/>*/}
+      { submitting && <LoadingPage /> }
+      { !submitting && getRoute(status) }
     </div>
   )
 }
 
 const mapStateToProps = state => ({
-  status: statusSelector(state),
-  submitting: submittingSelector(state)
+  finalSubmit: finalSubmitSelector(state)
 })
 
 ApplicationFormRouter.propTypes = {

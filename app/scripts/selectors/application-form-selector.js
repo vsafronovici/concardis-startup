@@ -12,8 +12,6 @@ export const currentSelector = compose(prop('current'), applicationFormSelector)
 export const tacSelector = compose(prop('TAC'), applicationFormSelector)
 export const nrOfChaptersSelector = compose(prop('length'), chaptersSelector)
 export const finalSubmitSelector = compose(prop('finalSubmit'), applicationFormSelector)
-export const submittingSelector = compose(prop('submitting'), finalSubmitSelector)
-export const statusSelector = compose(prop('status'), finalSubmitSelector)
 
 export const finishedSelector = createSelector(
   chaptersSelector,

@@ -2,7 +2,7 @@ import { toPairs, values, isNil, equals, all, isEmpty, propOr, curry, anyPass } 
 import numeral from 'numeral'
 import moment from 'moment'
 import { isNilOrEmpty, objectToArrayKeyValue } from './function-utils'
-import { SectionStatusType } from './constants'
+import {SectionStatusType, SubmitStatus} from './constants'
 
 export const DYNAMIC_FORM_PREFIX = 'dynamicForm_'
 export const MULTIPLE_OPTIONS_SEPARATOR = ';'
@@ -112,9 +112,9 @@ export const submitDelay = (ms) => {
       const random =  Math.random()
       console.log('random', random)
       if (random > 0.5) {
-        resolve(true)
+        resolve(SubmitStatus.SUCCESS)
       } else {
-        return resolve(false)
+        return resolve(SubmitStatus.ERROR)
       }
     }, ms)
   })

@@ -2,7 +2,7 @@ import { all, call, put, select, takeEvery, takeLatest } from 'redux-saga/effect
 import { APPLICATION_FORM } from '../actions/types'
 import {getFormMetaRes, submitResError} from './../actions/application-form-action'
 import { SFAction } from '../modules/client'
-import { updateCommercialsTCReq, updateCommercialsTCRes, saveReq, saveRes, goToNextSection, submitResSuccess } from '../actions/application-form-action'
+import { updateCommercialsTCReq, updateCommercialsTCRes, saveReq, saveRes, goToNextSection, submitRes } from '../actions/application-form-action'
 import { applyDiscountPayloadSelector } from '../selectors/package-configure-selector'
 import { chaptersSelector } from '../selectors/application-form-selector'
 import { buildSaveRequest, submitDelay } from '../utils/application-form-utils'
@@ -54,11 +54,7 @@ function* saveSaga({ payload: { formValues, currentChapterIdx, callback } }) {
 
 function* submitSaga() {
   const response = yield call(submitDelay, 3000)
-  if (response) {
-    yield put(submitResSuccess(response))
-  } else {
-    yield put(submitResError(response))
-  }
+  yield put(submitRes(response))
 }
 
 export default function* root() {

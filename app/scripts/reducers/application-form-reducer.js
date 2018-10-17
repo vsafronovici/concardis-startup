@@ -8,8 +8,12 @@ const initialState = {
     show: false,
     agree: false
   },
-  current: 5,
-  chapters: undefined
+  current: 6,
+  chapters: undefined,
+  finalSubmit: {
+    submitting: false,
+    status: undefined
+  }
 }
 
 const goToNextSection = (state, payload) => {
@@ -106,22 +110,19 @@ export default {
         }
       }
     },
-    [APPLICATION_FORM.SUBMIT_RES_SUCCESS](state, { payload }) {
+    [APPLICATION_FORM.SUBMIT_RES](state, { payload }) {
       return {
         ...state,
         finalSubmit: {
           submitting: false,
-          status: SubmitStatus.SUCCESS
+          status: payload
         }
       }
     },
-    [APPLICATION_FORM.SUBMIT_RES_ERROR](state, { payload }) {
+    [APPLICATION_FORM.GET_REVIEW](state, { payload }) {
       return {
         ...state,
-        finalSubmit: {
-          submitting: false,
-          status: SubmitStatus.ERROR
-        }
+        current: 6
       }
     }
   })
