@@ -36,12 +36,15 @@ export class FieldDate extends Component  {
   }
 
   render() {
-    const { label, required, onBlur, value } = this.props
+    const { label, required, onBlur, serverValues, name, value, input } = this.props
+   // const value = '1312/02/04'
+    console.log(' date_field ', { name: input.name, value, })
     const date = value && moment(value, DATE_FORMAT)
-    const day =  date && date.format('DD')
-    const month = date && date.format('MM')
-    const year = date && date.format('YYYY')
     const { dd, mm, yy } = this.state
+    const dayValue = dd || date && date.format('DD')
+    const monthValue = mm || date && date.format('MM')
+    const yearValue = yy || date && date.format('YYYY')
+
 
     return (
       <div className="field-date">
@@ -56,8 +59,7 @@ export class FieldDate extends Component  {
               onChange={e => this.handleChange('dd', e.target.value)}
               required={required}
               onBlur={onBlur}
-              defaultValue={day}
-              value={dd}
+              value={dayValue}
             />
           </div>
           <div className="month">
@@ -69,8 +71,7 @@ export class FieldDate extends Component  {
               onChange={e => this.handleChange('mm', e.target.value)}
               required={required}
               onBlur={onBlur}
-              value={mm}
-              defaultValue={month}
+              value={monthValue}
             />
           </div>
           <div className="year">
@@ -81,8 +82,7 @@ export class FieldDate extends Component  {
               onChange={e => this.handleChange('yy', e.target.value)}
               required={required}
               onBlur={onBlur}
-              value={yy}
-              defaultValue={year}
+              value={yearValue}
             />
           </div>
         </div>
