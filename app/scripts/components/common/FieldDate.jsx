@@ -31,7 +31,7 @@ export class FieldDate extends Component  {
     this.props.onChange(DATE)
   }
   render() {
-    const { label, required, onFocus } = this.props
+    const { label, required, onBlur } = this.props
     //console.log('DATEPROPS', this.props)
     return (
       <div className="field-date">
@@ -45,7 +45,7 @@ export class FieldDate extends Component  {
               placeholder="DD"
               onChange={e => this.handleChange('dd', e.target.value)}
               required={required}
-              onFocus={onFocus}
+              onBlur={onBlur}
             />
           </div>
           <div className="mounth">
@@ -55,7 +55,8 @@ export class FieldDate extends Component  {
               ref={input => this.inputMounth = input}
               placeholder="MM"
               onChange={e => this.handleChange('mm', e.target.value)}
-              required={required} onFocus={onFocus}
+              required={required}
+              onBlur={onBlur}
             />
           </div>
           <div className="year">
@@ -65,7 +66,7 @@ export class FieldDate extends Component  {
               placeholder="YY"
               onChange={e => this.handleChange('yy', e.target.value)}
               required={required}
-              onFocus={onFocus}
+              onBlur={onBlur}
             />
           </div>
         </div>
@@ -77,5 +78,5 @@ export class FieldDate extends Component  {
 FieldDate.propTypes = {
   label: PropTypes.string,
   required: PropTypes.bool,
-  onFocus: PropTypes.func
+  onBlur: PropTypes.func
 }

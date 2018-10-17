@@ -24,7 +24,7 @@ export class FieldTextBold extends Component{
   }
 
   render() {
-    const { label, helpText, value, hint, description, onFocus } = this.props
+    const { label, helpText, value, hint, description, onBlur } = this.props
     return (
       <div className="field-text-bold">
         <div className="container-labels">
@@ -39,7 +39,7 @@ export class FieldTextBold extends Component{
               style={this.state.bold ? {fontWeight: '800'} : {fontWeight: 'normal'}}
               value={value}
               placholder={hint && translate(hint)}
-              onFocus={onFocus}
+              onBlur={onBlur}
               onChange={event => this.handleChange(event.target.value)}
             />
           </label>
@@ -56,5 +56,5 @@ FieldTextBold.propTypes = {
   value: PropTypes.any,
   hint: PropTypes.string,
   description: PropTypes.string,
-  onFocus: PropTypes.func
+  onBlur: PropTypes.func
 }

@@ -48,7 +48,7 @@ const RenderTextBold = createRenderer((input, meta, rest) => {
   return <FieldTextBold
     input={input}
     onChange={(event) => input.onChange(event)}
-    onFocus={event => { touch(input.name) }}
+    onBlur={event => { touch(input.name) }}
     value={input.value}
     {...rest}
   />
@@ -111,7 +111,7 @@ const RenderDropDown = createRenderer((input, meta, rest) => {
         onChange={(event) => input.onChange(event)}
         value={input.value}
         input={input}
-        onFocus={event => {touch(input.name)} }
+        onBlur={event => {touch(input.name)} }
         meta={meta}
         {...rest}
   />
@@ -134,7 +134,7 @@ const RenderDate = createRenderer((input, meta, rest) => {
     onChange={event => input.onChange(event)}
     input={input}
     value={input.value}
-    onFocus={event => {touch(input.name)} }
+    onBlur={event => {touch(input.name)} }
     meta={meta}
     {...rest}
   />

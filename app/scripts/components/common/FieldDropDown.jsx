@@ -11,7 +11,7 @@ const style = {
 }
 
 export const FieldDropDown = props => {
-  const { label, onChange, value, listOfValues, helpText, required, onFocus, hint } = props
+  const { label, onChange, value, listOfValues, helpText, required, onBlur, hint } = props
   //console.log('DROPDOWN', props)
   return (
     <div className="field-drop-down">
@@ -25,7 +25,7 @@ export const FieldDropDown = props => {
         value={value}
         placeholder={hint && translate(hint)}
         required={required}
-        onFocus={onFocus}
+        onBlur={onBlur}
       >
         {listOfValues && listOfValues.map(({ value, label , ...rest}, index) => {
           return (
@@ -46,6 +46,6 @@ FieldDropDown.propTypes = {
   listOfValues: PropTypes.array,
   helpText: PropTypes.string,
   required: PropTypes.bool,
-  onFocus: PropTypes.func,
+  onBlur: PropTypes.func,
   hint: PropTypes.string
 }
