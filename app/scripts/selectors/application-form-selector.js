@@ -16,6 +16,16 @@ export const applicationFormSubmittingSelector = compose(prop('submitting'), app
 export const chaptersSelector = compose(prop('chapters'), applicationFormSelector)
 export const currentSelector = compose(prop('current'), applicationFormSelector)
 export const tacSelector = compose(prop('TAC'), applicationFormSelector)
+export const nrOfChaptersSelector = compose(prop('length'), chaptersSelector)
+
+export const finishedSelector = createSelector(
+  chaptersSelector,
+  currentSelector,
+  (chapters = [], current) => {
+    console.log('finishedSelector', {chapters, current})
+    return current > chapters.length - 1
+  }
+)
 export const finishedSelector = compose(prop('finished'), applicationFormSelector)
 export const finalSubmitSelector = compose(prop('finalSubmit'), applicationFormSelector)
 export const submittingSelector = compose(prop('submitting'), finalSubmitSelector)

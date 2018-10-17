@@ -8,25 +8,16 @@ const initialState = {
     show: false,
     agree: false
   },
-  current: 0,
-  chapters: undefined,
-  finished: false
+  current: 5,
+  chapters: undefined
 }
 
 const goToNextSection = (state, payload) => {
   const { chapters } = state
-  const MAX = chapters.length -1
-  if (payload > MAX) {
-    return {
-      ...state
-    }
+  if (payload > chapters.length) {
+    return state
   }
 
-  const sectionToProgress = {
-    ...chapters[payload],
-    status: SectionStatusType.IN_PROGRESS
-  }
-  chapters.splice(payload, 1, sectionToProgress)
 
   const sectionToFinished = {
     ...chapters[payload - 1],
@@ -34,22 +25,19 @@ const goToNextSection = (state, payload) => {
   }
   chapters.splice(payload - 1, 1, sectionToFinished)
 
-  const maxCurrent = current => {
-    const max = chapters.length - 1
-    if (current > max) {
-      console.log('Current is more than 5')
-      return max
-    } else {
-      return current
+  if (payload < chapters.length) {
+    const sectionToProgress = {
+      ...chapters[payload],
+      status: SectionStatusType.IN_PROGRESS
     }
+    chapters.splice(payload, 1, sectionToProgress)
   }
 
-  const newState = {
+  return {
     ...state,
-    current: maxCurrent(payload),
+    current: payload,
     chapters: chapters
   }
-  return newState
 }
 
 
@@ -95,12 +83,6 @@ export default {
       return {
         ...state,
         current: payload,
-      }
-    },
-    [APPLICATION_FORM.GET_REVIEW](state, { payload }) {
-      return {
-        ...state,
-        finished: payload
       }
     },
     [APPLICATION_FORM.SAVE_REQ](state, { payload }) {

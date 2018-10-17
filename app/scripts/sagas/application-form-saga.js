@@ -29,7 +29,8 @@ function* agreeTACSaga() {
   yield put(updateCommercialsTCRes(response.data))
 }
 
-function* saveSaga({ payload: { formValues, currentChapterIdx } }) {
+function* saveSaga({ payload: { formValues, currentChapterIdx, callback } }) {
+
   const chapters = yield select(chaptersSelector)
 
   const req = buildSaveRequest({ formValues, chapters, currentChapterIdx })
@@ -43,9 +44,12 @@ function* saveSaga({ payload: { formValues, currentChapterIdx } }) {
   const response = yield call(SFAction, action, { parseToJSON: true })
   yield put(saveRes(response.data))
 
+  callback(response.data)
+
   if (response.data.status === RESPONSE_STATUS.OK) {
     yield put(goToNextSection(currentChapterIdx + 1))
   }
+
 }
 
 function* submitSaga() {

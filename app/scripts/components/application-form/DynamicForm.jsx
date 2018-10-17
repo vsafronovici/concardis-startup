@@ -8,9 +8,11 @@ import { translate } from '../../i18n/i18n'
 import VoidLink from '../common/VoidLink'
 import { FieldTitle } from '../common/FieldTitle'
 import { getReview, save } from '../../actions/application-form-action'
-import { currentSelector } from "../../selectors/application-form-selector";
+import { currentSelector, nrOfChaptersSelector } from "../../selectors/application-form-selector";
 import { i18nSelector} from '../../selectors/i18n-selector'
 import { fieldsToShow } from '../../utils/application-form-utils'
+import {SubmissionError} from 'redux-form'
+import { RESPONSE_STATUS } from '../../utils/constants'
 
 export class DynamicForm extends React.Component {
   static propTypes = {
@@ -19,11 +21,26 @@ export class DynamicForm extends React.Component {
 
   submitForm = values  => {
     const { current, saveAction } = this.props
-    return saveAction({ currentChapterIdx: current, formValues: values})
+
+    return new Promise(resolve => {
+      const callback = response => {
+        resolve(response)
+      }
+      saveAction({ currentChapterIdx: current, formValues: values, callback})
+    }).then(res => {
+      if (res.status === RESPONSE_STATUS.ERR) {
+        throw new SubmissionError({ _error: res.errorMessage || 'validation errorMessage missing'})
+      }
+    })
+  }
+
+  getBtnName = () => {
+    const { current, nrOfChapters } = this.props
+    return current === nrOfChapters - 1 ? 'btn_applicationForm_reviewApplication' : 'btn_applicationForm_nextSection'
   }
 
   render() {
-    const { chapter, rValues, current, i18n, getReviewAction, touch, handleSubmit } = this.props
+    const { chapter, rValues, current, i18n, getReviewAction, touch, handleSubmit, error, nrOfChapters } = this.props
     console.log('DynamicForm', this.props)
 
     const fieldsToDisplay = fieldsToShow(chapter, rValues)
@@ -46,12 +63,11 @@ export class DynamicForm extends React.Component {
             </div>
 
           </div>
+
+          { error && <div className="form-field-row form-field"><div className="error">{error}</div></div> }
+
           <div>
-            {
-              (current === 5 )
-              ? <Button onClick={() => getReviewAction(true)} style={{marginLeft: '250px'}}>{translate('btn_applicationForm_reviewApplication')}</Button>
-              : <button type="submit" className="btn-simple">{translate('btn_applicationForm_nextSection')}</button>
-            }
+              <button type="submit" className="ant-btn">{translate(this.getBtnName())}</button>
           </div>
         </form>
       </div>
@@ -60,7 +76,8 @@ export class DynamicForm extends React.Component {
 }
 const mapStateToProps = state => ({
   current: currentSelector(state),
-  i18n: i18nSelector(state)
+  i18n: i18nSelector(state),
+  nrOfChapters: nrOfChaptersSelector(state),
 })
 
 const mapDispatchToProps = ({

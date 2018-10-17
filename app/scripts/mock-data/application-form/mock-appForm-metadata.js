@@ -14,7 +14,7 @@ export default [{
     }, {"fieldValue": "", "fieldCode": "ch1_s1_field5Section_01"}],
     "sequence": 1,
     "name": "Section_01",
-    "fields": [{
+    "fields": [/*{
       "validationRules": [{
         "validationError": "ch1_s1_field1_ValidErr",
         "requiredError": "ch1_s1_field1_ReqErr",
@@ -31,7 +31,7 @@ export default [{
       "label": "ch1_s1_field1_label",
       "fieldApi": "Title__c",
       "description": "ch1_s1_field1_description"
-    }, {
+    },*/ /*{
       "validationRules": [{
         "validationError": "ch1_s1_field2_ValidErr",
         "requiredError": "ch1_s1_field2_ReqErr",
@@ -45,7 +45,7 @@ export default [{
       "label": "ch1_s1_field2_label",
       "fieldApi": "Name__c",
       "description": "ch1_s1_field2_description"
-    }, {
+    },*/ {
       "validationRules": [{
         "validationError": "ch1_s1_field3_ValidErr",
         "requiredError": "ch1_s1_field3_ReqErr",
@@ -59,7 +59,7 @@ export default [{
       "label": "ch1_s1_field3_label",
       "fieldApi": "Surname__c",
       "description": "ch1_s1_field3_description"
-    }, {
+    }/*, {
       "validationRules": [{
         "validationError": "ch1_s1_field4_ValidErr",
         "requiredError": "ch1_s1_field4_ReqErr",
@@ -91,7 +91,7 @@ export default [{
       "helpText": "ch1_s1_field5_tooltip",
       "fieldApi": "Your_Role_in_the_Company__c",
       "description": "ch1_s1_field5_description"
-    }]
+    }*/]
   }],
   "code": "Chapter_1"
 }, {
@@ -5307,7 +5307,7 @@ export default [{
       "description": "ch2_s2_field10_description"
     }],
     "description": "(must owne more than 25% of the business)",
-    "condition": "ch2_s2_field9Section_04_1=true"
+    "condition": "ch2_s1_field7Section_02=owner_option_2 AND ch2_s2_field9Section_04_1=true"
   }, {
     "type": "Conditional",
     "serverValues": [],
@@ -6168,7 +6168,7 @@ export default [{
       "description": "ch2_s2_field8_description"
     }],
     "description": "(must owne more than 25% of the business)",
-    "condition": "ch2_s2_field10Section_04_2=true"
+    "condition": "ch2_s1_field7Section_02=owner_option_2 AND ch2_s2_field10Section_04_2=true"
   }],
   "code": "Chapter_2"
 }, {

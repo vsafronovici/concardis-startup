@@ -24,6 +24,7 @@ class ApplicationFormPage extends Component {
 
   render() {
     const { i18n, sections, finished } = this.props
+    console.log('ApplicationFormPage', this.props)
     return !(i18n && sections)
         ? <Loader /> 
         : (
