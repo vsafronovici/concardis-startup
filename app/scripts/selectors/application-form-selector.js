@@ -1,15 +1,9 @@
 import { createSelector } from 'reselect'
-import { all, compose, isNil, not, prop, propEq, pickBy, keys, values, pluck, contains } from 'ramda'
+import { compose, prop } from 'ramda'
 import { getFormValues as getReduxFormValues } from 'redux-form'
 
-import { SectionStatusType } from './../utils/constants'
 import { isNilOrEmpty } from '../utils/function-utils'
-import { checkSectionCondition, DYNAMIC_FORM_PREFIX, createField } from '../utils/application-form-utils'
-
-const isNotNil = compose(not, isNil)
-const pickSectionByStatus = status => pickBy(
-  (val, key) => val.status === status
-)
+import { DYNAMIC_FORM_PREFIX } from '../utils/application-form-utils'
 
 export const applicationFormSelector = prop('application-form')
 export const applicationFormSubmittingSelector = compose(prop('submitting'), applicationFormSelector)
@@ -17,6 +11,9 @@ export const chaptersSelector = compose(prop('chapters'), applicationFormSelecto
 export const currentSelector = compose(prop('current'), applicationFormSelector)
 export const tacSelector = compose(prop('TAC'), applicationFormSelector)
 export const nrOfChaptersSelector = compose(prop('length'), chaptersSelector)
+export const finalSubmitSelector = compose(prop('finalSubmit'), applicationFormSelector)
+export const submittingSelector = compose(prop('submitting'), finalSubmitSelector)
+export const statusSelector = compose(prop('status'), finalSubmitSelector)
 
 export const finishedSelector = createSelector(
   chaptersSelector,
@@ -26,12 +23,6 @@ export const finishedSelector = createSelector(
     return current > chapters.length - 1
   }
 )
-export const finishedSelector = compose(prop('finished'), applicationFormSelector)
-export const finalSubmitSelector = compose(prop('finalSubmit'), applicationFormSelector)
-export const submittingSelector = compose(prop('submitting'), finalSubmitSelector)
-export const statusSelector = compose(prop('status'), finalSubmitSelector)
-
-
 
 // TODO remove
 // export const currentIndexSectionSelector = createSelector(
