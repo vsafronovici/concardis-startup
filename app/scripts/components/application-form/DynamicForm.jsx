@@ -50,7 +50,7 @@ export class DynamicForm extends React.Component {
             {
               (current === 5 )
               ? <Button onClick={() => getReviewAction(true)} style={{marginLeft: '250px'}}>{translate('btn_applicationForm_reviewApplication')}</Button>
-              : <button type="submit">{translate('btn_applicationForm_nextSection')}</button>
+              : <button type="submit" className="btn-simple">{translate('btn_applicationForm_nextSection')}</button>
             }
           </div>
         </form>

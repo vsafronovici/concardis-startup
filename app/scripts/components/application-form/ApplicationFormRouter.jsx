@@ -22,8 +22,8 @@ const ApplicationFormRouter = props => {
   }
   return (
     <div>
-      { submitting && <Loader />}
-      {!submitting && getRoute(status)}
+      { submitting && <Loader /> }
+      { !submitting && getRoute(status) }
     </div>
   )
 }

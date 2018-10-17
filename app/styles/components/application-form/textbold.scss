@@ -12,6 +12,9 @@
     font-weight: bold;
     font-size: 12px;
   }
+  input:focus {
+    background-color: #fff !important;
+  }
   .field {
     label, input {
       position: relative;
