@@ -7,6 +7,7 @@ import { SuccessSubmitPage } from './SuccessSubmitPage'
 import { ErrorSubmitPage } from './ErrorSubmitPage'
 import ReviewYourApplication from './ReviewYourApplicaiton'
 import { Loader } from '../Loader'
+import {LoadingPage} from "./LoadingPage";
 
 const ApplicationFormRouter = props => {
   const { status, submitting } = props
@@ -22,8 +23,9 @@ const ApplicationFormRouter = props => {
   }
   return (
     <div>
-      { submitting && <Loader /> }
-      { !submitting && getRoute(status) }
+      <LoadingPage/>
+      {/*{ submitting && <LoadingPage /> }*/}
+      {/*{ !submitting && getRoute(status) }*/}
     </div>
   )
 }
