@@ -122,5 +122,6 @@ export const submitDelay = (ms, result) => {
 
 export const getNotRequired = array => {
   const required = pluck('required')(array)
-  return !isNil(required[0]) && !required[0] ? true : false
+  console.log('ISNIL', isNil(required[0]))
+  return isNil(required[0]) || !required[0] ? true : false
 }

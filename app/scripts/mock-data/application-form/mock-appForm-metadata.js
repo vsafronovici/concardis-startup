@@ -18,7 +18,7 @@ export default [{
       "validationRules": [{
         "validationError": "ch1_s1_field1_ValidErr",
         "requiredError": "ch1_s1_field1_ReqErr",
-        "required": false
+        "required": undefined
       }],
       "type": "horizontal_radio_btns",
       "sequence": 1,
