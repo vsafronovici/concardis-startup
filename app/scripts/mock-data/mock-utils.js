@@ -70,7 +70,7 @@ export const mockResponse = action => {
       return validateForm_OK
 
     case MOCK_REMOTE_ACTIONS.submitForm:
-      return submitSuccess
+      return submitError
 
     default:
       return undefined
