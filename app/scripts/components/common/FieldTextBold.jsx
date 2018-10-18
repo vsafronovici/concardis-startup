@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { Input } from 'antd'
 import { translate } from './../../i18n/i18n'
 import { FieldTooltip } from './FieldTooltip'
+import { getNotRequired } from '../../utils/application-form-utils'
 
 export class FieldTextBold extends Component{
 
@@ -24,11 +25,11 @@ export class FieldTextBold extends Component{
   }
 
   render() {
-    const { label, helpText, value, hint, description, onBlur } = this.props
+    const { label, helpText, value, hint, description, onBlur, validationRules } = this.props
     return (
       <div className="field-text-bold">
         <div className="container-labels">
-          <label>{label}</label> {helpText && <div><FieldTooltip title={helpText}/></div>}
+          <label>{label}</label> {getNotRequired(validationRules) && <span>{translate('(optional)')}</span>} {helpText && <div><FieldTooltip title={helpText}/></div>}
         </div>
         <div className="help">
           {description && translate(description)}

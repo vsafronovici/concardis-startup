@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import { Input } from 'antd'
 
 import { translate } from './../../i18n/i18n'
+import { getNotRequired } from '../../utils/application-form-utils'
+import { Optional } from './Optional'
 
 export class FieldDate extends Component  {
 
@@ -26,13 +28,13 @@ export class FieldDate extends Component  {
   }
 
   render() {
-    const { label, required, onBlur, value } = this.props
+    const { label, required, onBlur, value, validationRules } = this.props
     const defaultDate = value || '--'
     const [yearValue, monthValue, dayValue] = defaultDate.split('-')
 
     return (
       <div className="field-date">
-        <label>{translate(label)}</label>
+        <label>{translate(label)}</label>{getNotRequired(validationRules) && <Optional />}
         <div className="flex-row date-container">
           <div className="day">
             <Input

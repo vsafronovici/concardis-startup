@@ -4,6 +4,8 @@ import PropTypes from 'prop-types'
 import { translate } from '../../i18n/i18n'
 import { propOrEmptyObj } from '../../utils/function-utils'
 import { FieldTooltip } from './FieldTooltip'
+import { getNotRequired } from '../../utils/application-form-utils'
+import { Optional } from './Optional'
 
 const RadioGroup = Radio.Group
 
@@ -14,13 +16,13 @@ const radioStyle = {
 }
 
 export const FieldVerticalRadioBtns = props => {
-  const { optional, value, onChange, label, listOfValues, autoFocus, required, helpText, onFocus } = props
+  const { value, onChange, label, listOfValues, autoFocus, required, helpText, onFocus, validationRules } = props
 
   return(
     <div className="field-vertical-radio">
       <div className="label-container">
         <label>
-          {translate(label)} {optional && <span>{'(optional)'}</span>}
+          {translate(label)} {getNotRequired(validationRules) && <Optional />}
         </label>
         <div>
           {helpText && <FieldTooltip title={helpText} />}

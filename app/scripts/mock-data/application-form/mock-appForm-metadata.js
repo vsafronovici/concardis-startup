@@ -5,20 +5,20 @@ export default [{
   "sequence": 1,
   "sections": [{
     "type": "Simple",
-    "serverValues": [{"fieldValue": "", "fieldCode": "ch1_s1_field1Section_01"}, {
-      "fieldValue": "",
+    "serverValues": [{"fieldValue": "test@test.com", "fieldCode": "ch1_s1_field3Section_01"}, {
+      "fieldValue": "ttt",
       "fieldCode": "ch1_s1_field2Section_01"
     }, {"fieldValue": "", "fieldCode": "ch1_s1_field3Section_01"}, {
-      "fieldValue": "",
+      "fieldValue": "test@ta",
       "fieldCode": "ch1_s1_field4Section_01"
     }, {"fieldValue": "", "fieldCode": "ch1_s1_field5Section_01"}],
     "sequence": 1,
     "name": "Section_01",
-    "fields": [/*{
+    "fields": [{
       "validationRules": [{
         "validationError": "ch1_s1_field1_ValidErr",
         "requiredError": "ch1_s1_field1_ReqErr",
-        "required": true
+        "required": false
       }],
       "type": "horizontal_radio_btns",
       "sequence": 1,
@@ -31,7 +31,7 @@ export default [{
       "label": "ch1_s1_field1_label",
       "fieldApi": "Title__c",
       "description": "ch1_s1_field1_description"
-    },*/ /*{
+    },{
       "validationRules": [{
         "validationError": "ch1_s1_field2_ValidErr",
         "requiredError": "ch1_s1_field2_ReqErr",
@@ -45,7 +45,7 @@ export default [{
       "label": "ch1_s1_field2_label",
       "fieldApi": "Name__c",
       "description": "ch1_s1_field2_description"
-    },*/ {
+    },{
       "validationRules": [{
         "validationError": "ch1_s1_field3_ValidErr",
         "requiredError": "ch1_s1_field3_ReqErr",
@@ -59,7 +59,7 @@ export default [{
       "label": "ch1_s1_field3_label",
       "fieldApi": "Surname__c",
       "description": "ch1_s1_field3_description"
-    }/*, {
+    }, {
       "validationRules": [{
         "validationError": "ch1_s1_field4_ValidErr",
         "requiredError": "ch1_s1_field4_ReqErr",
@@ -70,6 +70,7 @@ export default [{
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch1_s1_field4Section_01",
       "label": "ch1_s1_field4_label",
+      "readOnly": "true",
       "helpText": "ch1_s1_field4_tooltip",
       "fieldApi": "E_Mail__c",
       "description": "ch1_s1_field4_description"
@@ -77,7 +78,7 @@ export default [{
       "validationRules": [{
         "validationError": "ch1_s1_field5_ValidErr",
         "requiredError": "ch1_s1_field5_ReqErr",
-        "required": true
+        "required": false
       }],
       "type": "vertical_radio_btns",
       "sequence": 5,
@@ -91,7 +92,7 @@ export default [{
       "helpText": "ch1_s1_field5_tooltip",
       "fieldApi": "Your_Role_in_the_Company__c",
       "description": "ch1_s1_field5_description"
-    }*/]
+    }]
   }],
   "code": "Chapter_1"
 }, {
@@ -120,13 +121,14 @@ export default [{
       "name": "ch2_s1_field1Section_02",
       "label": "ch2_s1_field1_label",
       "helpText": "ch2_s1_field1_tooltip",
+      "readOnly": true,
       "fieldApi": "Company_Name__c",
       "description": "ch2_s1_field1_description"
     }, {
       "validationRules": [{
         "validationError": "ch2_s1_field2_ValidErr",
         "requiredError": "ch2_s1_field2_ReqErr",
-        "required": true
+        "required": false
       }],
       "type": "drop_down",
       "sequence": 2,
@@ -219,7 +221,7 @@ export default [{
       "validationRules": [{
         "validationError": "ch2_s1_field7_ValidErr",
         "requiredError": "ch2_s1_field7_ReqErr",
-        "required": true
+        "required": false
       }],
       "type": "boxed_radio_btns",
       "sequence": 7,
@@ -6185,7 +6187,7 @@ export default [{
       "validationRules": [{
         "validationError": "ch3_s1_field1_ValidErr",
         "requiredError": "ch3_s1_field1_ReqErr",
-        "required": true,
+        "required": false,
         "maximum": 60
       }],
       "type": "text",
@@ -6197,7 +6199,7 @@ export default [{
       "validationRules": [{
         "validationError": "ch3_s1_field2_ValidErr",
         "requiredError": "ch3_s1_field2_ReqErr",
-        "required": true,
+        "required": false,
         "maximum": 5
       }],
       "type": "text",

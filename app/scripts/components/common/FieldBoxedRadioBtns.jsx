@@ -2,17 +2,19 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Radio } from 'antd'
 import { translate } from './../../i18n/i18n'
+import { getNotRequired } from '../../utils/application-form-utils'
+import { Optional } from './Optional'
 
 const RadioGroup = Radio.Group
 
 export const FieldBoxedRadioBtns = (props) => {
-  const { listOfValues, onChange, value, autoFocus, label, description, onFocus } = props
+  const { listOfValues, onChange, value, autoFocus, label, description, onFocus, validationRules } = props
 
   return (
     <div className="field-boxed_radio_group">
       <div className="label">
         <label>
-          {label && translate(label)}
+          {label && translate(label)} {getNotRequired(validationRules) && <Optional />}
         </label>
       </div>
       <div className="description">

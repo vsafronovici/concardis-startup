@@ -1,4 +1,4 @@
-import { toPairs, values, isNil, equals, all, isEmpty, propOr, curry, anyPass } from 'ramda'
+import { toPairs, values, isNil, equals, all, isEmpty, propOr, curry, anyPass, pluck } from 'ramda'
 import numeral from 'numeral'
 import moment from 'moment'
 import { isNilOrEmpty, objectToArrayKeyValue } from './function-utils'
@@ -118,4 +118,9 @@ export const submitDelay = (ms, result) => {
       }
     }, ms)
   })
+}
+
+export const getNotRequired = array => {
+  const required = pluck('required')(array)
+  return !isNil(required[0]) && !required[0] ? true : false
 }

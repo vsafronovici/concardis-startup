@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import { Select } from 'antd'
 import { translate } from '../../i18n/i18n'
 import { FieldTooltip } from "./FieldTooltip";
+import { getNotRequired } from '../../utils/application-form-utils'
+import { Optional } from './Optional'
 
 const Option = Select.Option
 
@@ -11,12 +13,12 @@ const style = {
 }
 
 export const FieldDropDown = props => {
-  const { label, onChange, value, listOfValues, helpText, required, onBlur, hint } = props
+  const { label, onChange, value, listOfValues, helpText, required, onBlur, hint, validationRules } = props
   //console.log('DROPDOWN', props)
   return (
     <div className="field-drop-down">
       <div className="flex-row label">
-        <label>{translate(label)}</label> {helpText && <FieldTooltip title={helpText} />}
+        <label>{translate(label)}</label> {getNotRequired(validationRules) && <Optional />} {helpText && <FieldTooltip title={helpText} />}
       </div>
       <Select
         onChange={event => onChange(event)}

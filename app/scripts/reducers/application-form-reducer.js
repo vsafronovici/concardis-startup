@@ -8,7 +8,7 @@ const initialState = {
     show: false,
     agree: false
   },
-  current: 2,
+  current: 1,
   chapters: undefined,
   finalSubmit: {
     submitting: false,
@@ -110,12 +110,13 @@ export default {
         }
       }
     },
-    [APPLICATION_FORM.SUBMIT_RES](state, { payload: { status } }) {
+    [APPLICATION_FORM.SUBMIT_RES](state, { payload: { status, errorMessage } }) {
       return {
         ...state,
         finalSubmit: {
           submitting: false,
-          status: status
+          status: status,
+          errorMessage: errorMessage
         }
       }
     },

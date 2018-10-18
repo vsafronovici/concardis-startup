@@ -1,20 +1,22 @@
 import React from 'react'
 import { Input } from 'antd'
 import PropTypes from 'prop-types'
+import { pluck, prop, map, isNil } from 'ramda'
 import { translate } from '../../i18n/i18n'
 import { propOrEmptyObj } from '../../utils/function-utils'
 import { FieldTooltip } from './FieldTooltip'
+import { getNotRequired } from "../../utils/application-form-utils";
+import {Optional} from "./Optional";
 
 export class FieldInputText extends React.Component {
   render() {
 
-    const { value, help, label, onChange, optional, disabled, autoFocus, hint, helpText, description } = this.props
+    const { value, help, label, onChange, readOnly, autoFocus, hint, helpText, description, validationRules } = this.props
     const input = propOrEmptyObj('input', this.props)
-
     return (
       <div className="field-input-text">
         <label>
-          <div style={{ display:'flex', direction:'row' }}> {translate(label)} { optional && <span> {'(optional)'}</span> } {helpText && <FieldTooltip title={helpText}/>}</div>
+          <div style={{ display:'flex', direction:'row' }}> {translate(label)} { getNotRequired(validationRules) && <Optional />} {helpText && <FieldTooltip title={helpText}/>}</div>
         </label>
         { help && <div className="form-help">{translate(help)}</div> }
 
@@ -26,7 +28,7 @@ export class FieldInputText extends React.Component {
             onChange={onChange}
             placeholder={hint && translate(hint)}
             value={value}
-            disabled={disabled}
+            disabled={readOnly}
           />
         </div>
       </div>
