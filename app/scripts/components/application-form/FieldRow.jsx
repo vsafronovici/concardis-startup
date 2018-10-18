@@ -199,7 +199,7 @@ const renderFieldComponent = ({ idx, field, i18n, touch }) => {
 
 export const FieldRow = ({ idx, field, i18n, touch }) => (
   <div className="form-field-row">
-    { field.name }
+    <div style={{display:'none'}}>{field.name}</div>
     { renderFieldComponent({ idx, field, i18n, touch }) }
   </div>
 )

@@ -28,7 +28,7 @@ export class FieldInputText extends React.Component {
             onChange={onChange}
             placeholder={hint && translate(hint)}
             value={value}
-            disabled={readOnly}
+            disabled={readOnly && !isNil(readOnly)}
           />
         </div>
       </div>
