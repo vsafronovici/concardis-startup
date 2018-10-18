@@ -1,15 +1,11 @@
-import { all, call, put, select, takeEvery, takeLatest } from 'redux-saga/effects'
-import { delay } from 'redux-saga/utils'
+import { all, call, put, select, takeLatest } from 'redux-saga/effects'
 import { APPLICATION_FORM } from '../actions/types'
-import {getFormMetaRes, submitResError} from './../actions/application-form-action'
+import {getFormMetaRes} from './../actions/application-form-action'
 import { SFAction } from '../modules/client'
 import { updateCommercialsTCReq, updateCommercialsTCRes, saveReq, saveRes, goToNextSection, submitRes } from '../actions/application-form-action'
-import { applyDiscountPayloadSelector } from '../selectors/package-configure-selector'
 import { chaptersSelector } from '../selectors/application-form-selector'
-import { buildSaveRequest, submitDelay } from '../utils/application-form-utils'
-import {RESPONSE_STATUS, SubmitStatus} from '../utils/constants'
-
-import {SubmissionError} from 'redux-form'
+import { buildSaveRequest } from '../utils/application-form-utils'
+import { RESPONSE_STATUS } from '../utils/constants'
 
 function* getAppFormMetadataSaga() {
   const action = {
@@ -22,12 +18,6 @@ function* getAppFormMetadataSaga() {
 
 function* initDataSaga() {
   yield call(getAppFormMetadataSaga)
-
-  /*const action = {
-    actionName: window.configSettings.remoteActions.getAppFormMetadata
-  }
-  const response = yield call(SFAction, action, { parseToJSON: true })
-  yield put(getFormMetaRes(response.data))*/
 }
 
 function* agreeTACSaga() {

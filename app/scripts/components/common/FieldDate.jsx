@@ -6,19 +6,31 @@ import { translate } from './../../i18n/i18n'
 import { getNotRequired } from '../../utils/application-form-utils'
 import { Optional } from './Optional'
 
+const DD = 'dd'
+const MM = 'mm'
+const YY = 'yy'
+
 export class FieldDate extends Component  {
 
-  handleChange = (type, value) => {
-    // TODO bad logic
-    /*if (this.inputDay.input.value.length >= 2) {
-      this.inputMonth.focus()
+  handleChange = type => e => {
+    const value = e.target.value
+
+    switch (type) {
+      case DD: {
+        if (value.length >= 2) {
+          this.inputMonth.focus()
+        }
+        break
+      }
+      case MM: {
+        if (value.length >= 2) {
+          this.inputYear.focus()
+        }
+        break
+      }
+      default:
+        // do nothing
     }
-    if (this.inputMonth.input.value.length >= 2) {
-      this.inputYear.focus()
-    }
-    if (this.inputYear.input.value.length === 4) {
-      this.inputYear.blur()
-    }*/
 
     const day = this.inputDay.input.value
     const month = this.inputMonth.input.value
@@ -42,7 +54,7 @@ export class FieldDate extends Component  {
               max={31}
               ref={input => this.inputDay = input}
               placeholder="DD"
-              onChange={e => this.handleChange('dd', e.target.value)}
+              onChange={this.handleChange(DD)}
               required={required}
               onBlur={onBlur}
               value={dayValue}
@@ -54,7 +66,7 @@ export class FieldDate extends Component  {
               max={12}
               ref={input => this.inputMonth = input}
               placeholder="MM"
-              onChange={e => this.handleChange('mm', e.target.value)}
+              onChange={this.handleChange(MM)}
               required={required}
               onBlur={onBlur}
               value={monthValue}
@@ -65,7 +77,7 @@ export class FieldDate extends Component  {
               maxLength={4}
               ref={input => this.inputYear = input}
               placeholder="YYYY"
-              onChange={e => this.handleChange('yy', e.target.value)}
+              onChange={this.handleChange(YY)}
               required={required}
               onBlur={onBlur}
               value={yearValue}

@@ -8,7 +8,7 @@ const initialState = {
     show: false,
     agree: false
   },
-  current: 1,
+  current: 0,
   chapters: undefined,
   finalSubmit: {
     submitting: false,
@@ -115,8 +115,8 @@ export default {
         ...state,
         finalSubmit: {
           submitting: false,
-          status: status,
-          errorMessage: errorMessage
+          status,
+          errorMessage
         }
       }
     },
