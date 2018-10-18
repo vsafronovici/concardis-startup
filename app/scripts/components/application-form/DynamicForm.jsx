@@ -67,7 +67,7 @@ export class DynamicForm extends React.Component {
           { error && <div className="form-field-row form-field"><div className="error">{error}</div></div> }
 
           <div>
-              <button type="submit" className="ant-btn">{translate(this.getBtnName())}</button>
+            <Button htmlType="submit">{translate(this.getBtnName())}</Button>
           </div>
         </form>
       </div>

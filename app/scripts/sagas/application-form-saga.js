@@ -71,9 +71,8 @@ function* submitSaga() {
     actionName: window.configSettings.remoteActions.submitForm
   }
   const response = yield call(SFAction, action, { parseToJSON: true })
-  if (response.data.status === SubmitStatus.SUCCESS) {
-    yield put(submitRes(response.data))
-  }
+
+  yield put(submitRes(response.data))
 
 }
 

@@ -1,94 +1,6 @@
 import { NodeProcess } from '../utils/constants'
 import { delayResponse } from '../utils/function-utils'
 
-/**
- * Client
- * @module Client
- */
-
-export class ServerError extends Error {
-  response: Object;
-
-  constructor(response: Object, ...params: any): Error {
-    super(...params)
-
-    Error.captureStackTrace(this, ServerError)
-
-    this.name = 'ServerError'
-    this.response = {}
-
-    return this
-  }
-}
-
-export function parseError(error: string): string {
-  return error || 'Something went wrong'
-}
-
-export function request2(url, options = {}) {
-  const config = {
-    method: 'GET',
-    ...options
-  }
-  const errors = []
-
-  if (!url) {
-    errors.push('url')
-  }
-
-  if (!config.payload && (config.method !== 'GET' && config.method !== 'DELETE')) {
-    errors.push('payload')
-  }
-
-  if (errors.length) {
-    throw new Error(`Error! You must pass \`${errors.join('`, `')}\``)
-  }
-
-  const headers = {
-    Accept: 'application/json',
-    'Content-Type': 'application/json',
-    ...config.headers
-  }
-
-  const params: Object = {
-    headers,
-    method: config.method
-  }
-
-  if (params.method !== 'GET') {
-    params.body = JSON.stringify(config.payload)
-  }
-
-  return fetch(url, params)
-    .then(async (response) => {
-      if (response.status > 299) {
-        const error: ServerError = new ServerError(response.statusText)
-        const contentType = response.headers.get('content-type')
-
-        if (contentType && contentType.includes('application/json')) {
-          error.response = {
-            status: response.status,
-            data: await response.json()
-          }
-        } else {
-          error.response = {
-            status: response.status,
-            data: await response.text()
-          }
-        }
-
-        throw error
-      } else {
-        const contentType = response.headers.get('content-type')
-        if (contentType && contentType.includes('application/json')) {
-          return response.json()
-        }
-
-        return response.text()
-      }
-    })
-}
-
 function memoize(method) {
   const cache = {}
 
@@ -103,7 +15,6 @@ function memoize(method) {
 export const SFAction = (action, options = {}) => {
   const { actionName, args } = action
 
-
   if (process.env.NODE_ENV === NodeProcess.DEV) {
     console.log('SFAction invoked in DEV', action)
     const { mockResponse } = require('./../mock-data/mock-utils')
@@ -116,7 +27,7 @@ export const SFAction = (action, options = {}) => {
     invokeActionArgs.push(args)
   }
 
-  console.log('SFAction invoked', {action, invokeActionArgs})
+  console.log(`SFAction ${actionName} REQUEST`, {args})
 
   let { buffer, escape, parseToJSON } = options
   buffer = (buffer !== undefined) ? buffer : true
@@ -131,9 +42,11 @@ export const SFAction = (action, options = {}) => {
           if (parseToJSON) {
             result = JSON.parse(result)
           }
+          console.log(`SFAction ${actionName} RESPONSE`, result)
           return resolve({ data: result })
         }
 
+        console.log(`SFAction ${actionName} RESPONSE ERR`, result)
         return reject({ err: result })
       },
       { buffer, escape }
