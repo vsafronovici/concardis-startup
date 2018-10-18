@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Checkbox } from 'antd'
+import { contains } from 'ramda'
 import { translate } from './../../i18n/i18n'
 import { optionValuesToString } from '../../utils/application-form-utils'
+import { MULTIPLE_OPTIONS_SEPARATOR } from '../../utils/application-form-utils'
 
 const CheckBoxItem = props => {
-  const { onChange, index, label, value, description, onFocus } = props
-
+  const { onChange, index, label, value, description, onFocus, checked } = props
+  console.log('CHECKBOX checked', checked)
   return (
     <div className="field-checkbox-item">
       <div className="container-labels">
@@ -23,6 +25,7 @@ const CheckBoxItem = props => {
             onChange={e => onChange(e.target.checked, label, index)}
             onFocus={onFocus}
             value={value}
+            defaultChecked={checked}
           />
         </div>
       </div>
@@ -41,17 +44,24 @@ CheckBoxItem.propTypes = {
 
 export class FieldBoxedCheckboxGroup extends Component {
 
-  handleChange = (optionKey) => (value) => {
-    const newState = {
-      ...this.state,
-      [optionKey]: value
+  handleChange = optionKey => value => {
+    const values = this.props.value.split(MULTIPLE_OPTIONS_SEPARATOR)
+    if (value && !contains(optionKey, values)) {
+      values.push(optionKey)
     }
-    this.setState(newState)
-    this.props.onChange(optionValuesToString(newState))
+    if (!value && contains(optionKey, values)) {
+      const indexValue = values.indexOf(optionKey)
+      values.splice(indexValue, 1)
+    }
+    const string = (values.length && values.join(MULTIPLE_OPTIONS_SEPARATOR)) || ''
+
+    this.props.onChange(string)
   }
 
   render() {
-    const { label, fields, listOfValues, description, onFocus } = this.props
+    const { label, fields, listOfValues, description, onFocus, value } = this.props
+    const defaultValues = value.split(';')
+
     return (
       <div className="field-boxed-checkbox-group">
         <label>
@@ -73,6 +83,7 @@ export class FieldBoxedCheckboxGroup extends Component {
                 description={field.description}
                 index={index}
                 onFocus={onFocus}
+                checked={contains(value, defaultValues)}
               />
             </div>
           )

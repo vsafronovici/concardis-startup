@@ -129,13 +129,13 @@ const RenderHorizontalRadioBtns = createRenderer((input, meta, rest) => {
 })
 
 const RenderDate = createRenderer((input, meta, rest) => {
+  console.log('DATE REST', rest)
   const { touch } = rest
   return <FieldDate
     onChange={event => input.onChange(event)}
     input={input}
     value={input.value}
     onBlur={event => {touch(input.name)} }
-    meta={meta}
     {...rest}
   />
 })
@@ -198,6 +198,7 @@ const renderFieldComponent = ({ idx, field, i18n, touch }) => {
 
 export const FieldRow = ({ idx, field, i18n, touch }) => (
   <div className="form-field-row">
+    { field.name }
     { renderFieldComponent({ idx, field, i18n, touch }) }
   </div>
 )
