@@ -20,19 +20,20 @@ import { FieldTextBold } from '../common/FieldTextBold'
 
 const Option = Select.Option
 
-const createRenderer = render => ({ input, meta, type, ...rest }) => {  return (
-
-  <div className="form-field">
-    <div className={cn(`form-field-${type}`)}>
-      <div className={cn({ error: meta.error && meta.touched, active: meta.active })}>
-        <div>
-          { render(input, meta, rest) }
+const createRenderer = render => ({ input, meta, type, ...rest }) => {
+  return (
+    <div className="form-field">
+      <div className={cn(`form-field-${type}`)}>
+        <div className={cn({ error: meta.error && meta.touched, active: meta.active })}>
+          <div>
+            { render(input, meta, rest) }
+          </div>
+          <div>{ meta.error && meta.touched && <span>{translate(meta.error)}</span> }</div>
         </div>
-        <div>{ meta.error && meta.touched && <span>{translate(meta.error)}</span> }</div>
       </div>
     </div>
-  </div>
-)}
+  )
+}
 
 
 const RenderInput = createRenderer((input, meta, rest) => {

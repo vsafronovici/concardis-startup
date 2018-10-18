@@ -59,10 +59,9 @@ function* saveSaga({ payload: { formValues, currentChapterIdx, callback } }) {
   callback(response.data)
 
   if (response.data.status === RESPONSE_STATUS.OK) {
-    yield put(goToNextSection(currentChapterIdx + 1))
     yield call(getAppFormMetadataSaga)
+    yield put(goToNextSection(currentChapterIdx + 1))
   }
-
 }
 
 function* submitSaga() {

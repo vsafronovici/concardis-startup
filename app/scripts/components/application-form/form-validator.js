@@ -20,7 +20,7 @@ const createReducer = values => (errors, field) => {
     return errors
   }
 
-  const { required, maximum, regexp, requiredError, validationError } = rules
+  const { required, requiredError, validation, validationError, maximum } = rules
 
   const value = values[name]
 
@@ -28,8 +28,6 @@ const createReducer = values => (errors, field) => {
   if (type === FieldType.DATE && !isNilOrEmpty(value) ) {
     console.log('Validator DATE=', { field, value, valid: checkDate(value) })
     if (!checkDate(value)) {
-      console.log('NAME', name)
-      //console.log('ERRORRRR', {...errors, [name]: validationError})
       return {
         ...errors,
         [name]: validationError
@@ -55,10 +53,10 @@ const createReducer = values => (errors, field) => {
     }
   }
 
-  if (regexp && !new RegExp(regexp).test(value)) {
+  if (validation && !new RegExp(validation).test(value)) {
     return {
       ...errors,
-      [name]: 'Bad Regex'
+      [name]: validationError
     }
   }
 

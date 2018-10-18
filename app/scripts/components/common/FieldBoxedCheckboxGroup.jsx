@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Checkbox } from 'antd'
-import { contains } from 'ramda'
+import { contains, without, uniq, compose } from 'ramda'
 import { translate } from './../../i18n/i18n'
-import { optionValuesToString } from '../../utils/application-form-utils'
 import { MULTIPLE_OPTIONS_SEPARATOR } from '../../utils/application-form-utils'
+import { isNilOrEmpty } from '../../utils/function-utils'
 
 const CheckBoxItem = props => {
   const { onChange, index, label, value, description, onFocus, checked } = props
@@ -42,25 +42,21 @@ CheckBoxItem.propTypes = {
   onFocus: PropTypes.func
 }
 
+const fromValue = value => isNilOrEmpty(value) ? [] : value.split(MULTIPLE_OPTIONS_SEPARATOR)
+const toValue = valuesArr => isNilOrEmpty(valuesArr) ? '' : valuesArr.join(MULTIPLE_OPTIONS_SEPARATOR)
+
 export class FieldBoxedCheckboxGroup extends Component {
 
-  handleChange = optionKey => value => {
-    const values = this.props.value.split(MULTIPLE_OPTIONS_SEPARATOR)
-    if (value && !contains(optionKey, values)) {
-      values.push(optionKey)
-    }
-    if (!value && contains(optionKey, values)) {
-      const indexValue = values.indexOf(optionKey)
-      values.splice(indexValue, 1)
-    }
-    const string = (values.length && values.join(MULTIPLE_OPTIONS_SEPARATOR)) || ''
-
-    this.props.onChange(string)
+  handleChange = optionKey => checked => {
+    const defaultValuesArr = fromValue(this.props.value)
+    const valuesArr = checked ? uniq([...defaultValuesArr, optionKey]) : without(optionKey, defaultValuesArr)
+    this.props.onChange(toValue(valuesArr))
   }
 
   render() {
-    const { label, fields, listOfValues, description, onFocus, value } = this.props
-    const defaultValues = value.split(';')
+    console.log('FieldBoxedCheckboxGroup render', this.props)
+    const { label, listOfValues, description, onFocus, value } = this.props
+    const defaultValuesArr = fromValue(value)
 
     return (
       <div className="field-boxed-checkbox-group">
@@ -70,20 +66,20 @@ export class FieldBoxedCheckboxGroup extends Component {
         <div className="description">
           {description && translate(description)}
         </div>
-        {listOfValues && listOfValues.map(({ name, value, label, help, ...field }, index) => {
+        {listOfValues && listOfValues.map(({ name, value: optionValue, label, help, ...field }, index) => {
           return (
             <div key={index}>
               <CheckBoxItem
                 {...field}
                 name={name}
-                value={value}
+                value={optionValue}
                 label={label}
                 help={help}
-                onChange={this.handleChange(value)}
+                onChange={this.handleChange(optionValue)}
                 description={field.description}
                 index={index}
                 onFocus={onFocus}
-                checked={contains(value, defaultValues)}
+                checked={contains(optionValue, defaultValuesArr)}
               />
             </div>
           )
