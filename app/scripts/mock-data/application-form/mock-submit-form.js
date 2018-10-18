@@ -1,9 +1,10 @@
-import { SubmitStatus } from '../../utils/constants'
+import { RESPONSE_STATUS } from '../../utils/constants'
 
 export const success = {
-  status: SubmitStatus.SUCCESS
+  status: RESPONSE_STATUS.OK
 }
 
 export const error = {
-  status: SubmitStatus.ERROR
+  status: RESPONSE_STATUS.ERR,
+  errorMessage: 'something bad'
 }

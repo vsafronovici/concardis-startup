@@ -110,12 +110,13 @@ export default {
         }
       }
     },
-    [APPLICATION_FORM.SUBMIT_RES](state, { payload: { status } }) {
+    [APPLICATION_FORM.SUBMIT_RES](state, { payload: { status, errorMessage } }) {
       return {
         ...state,
         finalSubmit: {
           submitting: false,
-          status: status
+          status: status,
+          errorMessage: errorMessage
         }
       }
     },

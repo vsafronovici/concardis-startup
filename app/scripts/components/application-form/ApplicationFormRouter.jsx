@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { SubmitStatus} from "../../utils/constants";
+import { RESPONSE_STATUS } from "../../utils/constants";
 import { finalSubmitSelector } from '../../selectors/application-form-selector'
 import { SuccessSubmitPage } from './SuccessSubmitPage'
 import { ErrorSubmitPage } from './ErrorSubmitPage'
@@ -14,9 +14,9 @@ const ApplicationFormRouter = props => {
   console.log('ROUTERPROPS', props)
   const getRoute = status => {
     switch (status) {
-      case SubmitStatus.SUCCESS:
+      case RESPONSE_STATUS.OK:
         return <SuccessSubmitPage {...props} />
-      case SubmitStatus.ERROR:
+      case RESPONSE_STATUS.ERR:
         return <ErrorSubmitPage {...props} />
       default:
         return <ReviewYourApplication {...props}/>
