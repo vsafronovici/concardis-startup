@@ -23,9 +23,9 @@ class ApplicationFormPage extends Component {
   // }
 
   render() {
-    const { i18n, sections, finished } = this.props
+    const { i18n, chapters, finished } = this.props
     console.log('ApplicationFormPage', this.props)
-    return !(i18n && sections)
+    return !(i18n && chapters)
         ? <Loader /> 
         : (
             <div>
@@ -37,7 +37,7 @@ class ApplicationFormPage extends Component {
 
 const mapStateToProps = state => ({
   i18n: i18nSelector(state),
-  sections: chaptersSelector(state),
+  chapters: chaptersSelector(state),
   finished: finishedSelector(state)
 })
 
