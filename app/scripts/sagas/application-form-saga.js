@@ -2,8 +2,8 @@ import { all, call, put, select, takeLatest } from 'redux-saga/effects'
 import { APPLICATION_FORM } from '../actions/types'
 import {getFormMetaRes} from './../actions/application-form-action'
 import { SFAction } from '../modules/client'
-import { updateCommercialsTCReq, updateCommercialsTCRes, saveReq, saveRes, goToNextSection, submitRes } from '../actions/application-form-action'
-import { chaptersSelector } from '../selectors/application-form-selector'
+import { updateCommercialsTCReq, updateCommercialsTCRes, saveReq, saveRes, goToNextSection, goToSection, goToReviewMode, submitRes } from '../actions/application-form-action'
+import { chaptersSelector, nrOfChaptersSelector, reviewModeSelector } from '../selectors/application-form-selector'
 import { buildSaveRequest } from '../utils/application-form-utils'
 import { RESPONSE_STATUS } from '../utils/constants'
 
@@ -49,8 +49,21 @@ function* saveSaga({ payload: { formValues, currentChapterIdx, callback } }) {
   callback(response.data)
 
   if (response.data.status === RESPONSE_STATUS.OK) {
+    const reviewMode = yield select(reviewModeSelector)
+    const nrOfChapters = yield select(nrOfChaptersSelector)
+
     yield call(getAppFormMetadataSaga)
-    yield put(goToNextSection(currentChapterIdx + 1))
+
+    if (reviewMode) {
+      yield put(goToSection(-1))
+    } else {
+      if (currentChapterIdx < nrOfChapters - 1) {
+        yield put(goToNextSection(currentChapterIdx + 1))
+      } else {
+        yield put(goToReviewMode())
+      }
+    }
+
   }
 }
 

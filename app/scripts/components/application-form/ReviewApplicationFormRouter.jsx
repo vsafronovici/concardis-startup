@@ -9,7 +9,7 @@ import ReviewYourApplication from './ReviewYourApplicaiton'
 import { Loader } from '../Loader'
 import { LoadingPage } from './LoadingPage'
 
-const ApplicationFormRouter = props => {
+const ReviewApplicationFormRouter = props => {
   const { finalSubmit: { status, submitting } } = props
   console.log('ROUTERPROPS', props)
   const getRoute = status => {
@@ -35,7 +35,7 @@ const mapStateToProps = state => ({
   finalSubmit: finalSubmitSelector(state)
 })
 
-ApplicationFormRouter.propTypes = {
+ReviewApplicationFormRouter.propTypes = {
 }
 
-export default connect(mapStateToProps)(ApplicationFormRouter)
+export default connect(mapStateToProps)(ReviewApplicationFormRouter)

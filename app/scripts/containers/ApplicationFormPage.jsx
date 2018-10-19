@@ -6,9 +6,8 @@ import { i18nSelector } from '../selectors/i18n-selector'
 import { Loader } from '../components/Loader'
 import ApplicationForm from '../components/application-form/ApplicationForm'
 import { initData } from './../actions/application-form-action'
-import { chaptersSelector, finishedSelector } from '../selectors/application-form-selector'
-import ReviewYourApplication from '../components/application-form/ReviewYourApplicaiton'
-import ApplicationFormRouter from '../components/application-form/ApplicationFormRouter'
+import { chaptersSelector, reviewModeSelector } from '../selectors/application-form-selector'
+import ReviewApplicationFormRouter from '../components/application-form/ReviewApplicationFormRouter'
 
 class ApplicationFormPage extends Component {
 
@@ -16,20 +15,13 @@ class ApplicationFormPage extends Component {
     this.props.initData()
   }
 
-  // getPage = page => {
-  //   switch (page) {
-  //
-  //   }
-  // }
-
   render() {
-    const { i18n, chapters, finished } = this.props
-    console.log('ApplicationFormPage', this.props)
+    const { i18n, chapters, reviewMode } = this.props
     return !(i18n && chapters)
         ? <Loader /> 
         : (
             <div>
-              {finished ? <ApplicationFormRouter {...this.props} /> : <ApplicationForm />}
+              {reviewMode ? <ReviewApplicationFormRouter {...this.props} /> : <ApplicationForm />}
             </div>
           )
   }
@@ -38,7 +30,7 @@ class ApplicationFormPage extends Component {
 const mapStateToProps = state => ({
   i18n: i18nSelector(state),
   chapters: chaptersSelector(state),
-  finished: finishedSelector(state)
+  reviewMode: reviewModeSelector(state)
 })
 
 const mapDispatchToProps = ({

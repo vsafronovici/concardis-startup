@@ -55,6 +55,11 @@ export const save = payload => ({
   payload
 })
 
+export const goToReviewMode = () => ({
+  type: APPLICATION_FORM.GO_TO_REVIEW_MODE
+})
+
+
 export const saveReq = payload => ({
   type: APPLICATION_FORM.SAVE_REQ,
   payload

@@ -8,8 +8,9 @@ const initialState = {
     show: false,
     agree: false
   },
-  current: 2,
+  current: 4,
   chapters: undefined,
+  reviewMode: false,
   finalSubmit: {
     submitting: false,
     status: undefined
@@ -99,6 +100,13 @@ export default {
       return {
         ...state,
         submitting: false
+      }
+    },
+    [APPLICATION_FORM.GO_TO_REVIEW_MODE](state) {
+      return {
+        ...state,
+        current: -1,
+        reviewMode: true
       }
     },
     [APPLICATION_FORM.SUBMIT_REQ](state, { payload }) {

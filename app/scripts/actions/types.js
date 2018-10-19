@@ -75,6 +75,7 @@ export const APPLICATION_FORM = createNamespace('APPLICATION_FORM', {
   SAVE: undefined,
   SAVE_REQ: undefined,
   SAVE_RES: undefined,
+  GO_TO_REVIEW_MODE: undefined,
   SUBMIT_REQ: undefined,
   SUBMIT_RES: undefined,
 })
