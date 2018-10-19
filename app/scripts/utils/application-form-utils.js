@@ -6,7 +6,6 @@ import {SectionStatusType, SubmitStatus} from './constants'
 
 export const DYNAMIC_FORM_PREFIX = 'dynamicForm_'
 export const MULTIPLE_OPTIONS_SEPARATOR = ';'
-export const FIELD_NAME_SEPARATOR = '$$'
 
 export const CONDITIONAL_OPERATORS = {
   EQUAL: '=',
@@ -15,18 +14,6 @@ export const CONDITIONAL_OPERATORS = {
 }
 
 const { EQUAL, INCLUDES, AND } = CONDITIONAL_OPERATORS
-
-
-export const optionValuesToString = values => {
-  const arr = []
-  for (let keyOpt in values) {
-    if (values[keyOpt]) {
-      arr.push(keyOpt)
-    }
-  }
-  const string = arr.join(MULTIPLE_OPTIONS_SEPARATOR)
-  return string
-}
 
 export const checkSectionCondition = (conditions, values) => {
   console.log('checkSectionCondition', {conditions, values})
@@ -44,8 +31,6 @@ export const checkSectionCondition = (conditions, values) => {
     }
   }, true)
 }
-
-export const createField = (sectionCode, field) => ({ ...field, name: `${sectionCode}${FIELD_NAME_SEPARATOR}${field.name}`})
 
 export const createInitialValues = chapter => {
   return chapter.sections.reduce((acc, section) => {
@@ -86,13 +71,15 @@ export const buildSaveRequest = ({ formValues, chapters, currentChapterIdx }) =>
   chapter.status = SectionStatusType.IN_PROGRESS
 
   chapter.sections.forEach(section => {
-    if (isNilOrEmpty(section.fields)) {
+    const { condition, fields } = section
+
+    if (isNilOrEmpty(fields)) {
       return
     }
 
-    const serverValues = isNilOrEmpty(formValues)
+    const serverValues = isNilOrEmpty(formValues) || !isNilOrEmpty(condition) && !checkSectionCondition(condition, formValues)
       ? []
-      : section.fields.reduce((acc, { name }) => {
+      : fields.reduce((acc, { name }) => {
       const value = formValues[name]
       if (value) {
         acc.push({ fieldCode: name, fieldValue: value })
@@ -106,21 +93,6 @@ export const buildSaveRequest = ({ formValues, chapters, currentChapterIdx }) =>
   return chapters
 }
 
-export const submitDelay = (ms, result) => {
-  return new Promise(resolve => {
-    setTimeout(() => {
-      const random =  Math.random()
-      console.log('random', random)
-      if (random > 0.5) {
-        resolve(result)
-      } else {
-        return resolve(result)
-      }
-    }, ms)
-  })
-}
+export const getNotRequired = validationRules =>
+  isNilOrEmpty(validationRules) || !pluck('required', validationRules)[0]
 
-export const getNotRequired = array => {
-  const required = pluck('required')(array)
-  return isNil(required[0]) || !required[0] ? true : false
-}
