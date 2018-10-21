@@ -1,6 +1,6 @@
 import { all, call, put, select, takeLatest } from 'redux-saga/effects'
 import { APPLICATION_FORM } from '../actions/types'
-import {getFormMetaRes} from './../actions/application-form-action'
+import { getFormMetaRes } from './../actions/application-form-action'
 import { SFAction } from '../modules/client'
 import { updateCommercialsTCReq, updateCommercialsTCRes, saveReq, saveRes, goToNextSection, goToSection, goToReviewMode, submitRes } from '../actions/application-form-action'
 import { chaptersSelector, nrOfChaptersSelector, reviewModeSelector } from '../selectors/application-form-selector'

@@ -109,7 +109,8 @@ export const mockVisualForceConfig = {
       de: 'https://concardis--smejoindev--c.cs109.visual.force.com/resource/1538657587000/POS_Service'
     },
     imgs: {
-      receipt: 'https://concardis--smejoindev--c.cs109.visual.force.com/resource/1538637322000/ReceiptPreview'
+      receipt: 'https://concardis--smejoindev--c.cs109.visual.force.com/resource/1538637322000/ReceiptPreview',
+      product: 'https://concardis--smeondev--c.cs109.visual.force.com/resource/1539938400000/ImageProduct?'
     }
   },
 }

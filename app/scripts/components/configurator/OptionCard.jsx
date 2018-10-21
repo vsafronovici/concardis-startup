@@ -35,7 +35,11 @@ export class OptionCard extends React.Component {
 
     return (
       <div {...elProps}>
-        <div className="oc-top" />
+        <div className="oc-top">
+          <div className="container-image">
+            <img src={window.configSettings.resources.imgs.product} alt=""/>
+          </div>
+        </div>
         <div className="oc-content">
           <div className="oc-title">{name}</div>
           <div className="oc-subtitle">{description}</div>
