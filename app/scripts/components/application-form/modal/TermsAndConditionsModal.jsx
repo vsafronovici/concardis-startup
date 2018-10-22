@@ -16,35 +16,23 @@ const Footer = props => (
 )
 
 export class TermsAndConditionsModal extends Component {
-
   state = {
     seen: false
   }
 
-  componentDidMount() {
-
+  enableBtn = () => {
+    this.setState({ seen: !this.state.seen })
   }
-
-  enableBtn = (enable = true) => {
-    this.setState({ seen: enable })
-  }
-
-  testClose = () => {
-    console.log('i closed')
-    this.props.onClose()
-  }
-
 
   render() {
     const { id, show, onClose, onOk, lang } = this.props
-
     const height = window.innerHeight - 200
 
     return (
       <Modal
         title={translate('appForm.TAD.modal.title')}
         visible={show}
-        onCancel={this.testClose}
+        onCancel={onClose}
         footer={[<Footer key={id} onOk={onOk} disabled={!this.state.seen}/>]}
         width="90%"
         style={{ top: 50 }}
