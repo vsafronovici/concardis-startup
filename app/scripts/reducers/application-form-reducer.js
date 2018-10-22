@@ -8,7 +8,7 @@ const initialState = {
     show: false,
     agree: false
   },
-  current: 4,
+  current: 0,
   chapters: undefined,
   reviewMode: false,
   finalSubmit: {
