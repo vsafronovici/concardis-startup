@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { Row, Col, Button } from 'antd'
 import { translate } from '../../i18n/i18n'
 import { submitReq } from '../../actions/application-form-action'
+import ReviewChapters from './ReviewChapters'
 
 const ReviewYourApplication = props => {
   const { submitReqAction } = props
@@ -18,6 +19,9 @@ const ReviewYourApplication = props => {
             Please ensure all the details below are accurate. Once the application is submitted, it will not be possible to amend the details prior to our
             verifications. Errors and misspellings might result in the applications being rejected or delays in delivering or assisting you with your
             order.
+          </div>
+          <div>
+            <ReviewChapters />
           </div>
           <Row>
             <Col span={12}>

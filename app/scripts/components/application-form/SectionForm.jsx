@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import { ReduxDynamicForm } from './ReduxDynamicForm'
 import { currentChapterSelector } from '../../selectors/application-form-selector'
 
-const SectionForm = ({ chapter }) => <ReduxDynamicForm chapter={chapter} />
+export const SectionForm = ({ chapter }) => <ReduxDynamicForm chapter={chapter} />
 
 const mapStateToProps = state => ({
   chapter: currentChapterSelector(state)
