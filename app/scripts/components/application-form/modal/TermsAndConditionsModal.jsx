@@ -41,7 +41,7 @@ export class TermsAndConditionsModal extends Component {
         bodyStyle={{ height , padding: 0 }}
         centered
       >
-        <TACContent id={id} height={height} enableBtn={this.enableBtn} lang={lang} />
+        <TACContent id={id} height={height} enableBtn={this.enableBtn} lang={lang} show={show} />
       </Modal>
     )
   }

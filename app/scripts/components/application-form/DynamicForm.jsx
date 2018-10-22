@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Button, Row, Col } from 'antd'
+import { Button } from 'antd'
 import { connect } from 'react-redux'
 
 import { FieldRow } from './FieldRow'
@@ -8,7 +8,7 @@ import { translate } from '../../i18n/i18n'
 import VoidLink from '../common/VoidLink'
 import { FieldTitle } from '../common/FieldTitle'
 import { getReview, save } from '../../actions/application-form-action'
-import { currentSelector, nrOfChaptersSelector } from "../../selectors/application-form-selector";
+import { currentSelector, nrOfChaptersSelector, reviewModeSelector } from "../../selectors/application-form-selector";
 import { i18nSelector} from '../../selectors/i18n-selector'
 import { fieldsToShow } from '../../utils/application-form-utils'
 import {SubmissionError} from 'redux-form'
@@ -16,7 +16,6 @@ import { RESPONSE_STATUS } from '../../utils/constants'
 
 export class DynamicForm extends React.Component {
   static propTypes = {
-    section: PropTypes.object,
   }
 
   submitForm = values  => {
@@ -35,12 +34,15 @@ export class DynamicForm extends React.Component {
   }
 
   getBtnName = () => {
-    const { current, nrOfChapters } = this.props
-    return current === nrOfChapters - 1 ? 'btn_applicationForm_reviewApplication' : 'btn_applicationForm_nextSection'
+    const { current, nrOfChapters, reviewMode } = this.props
+    return reviewMode
+      ? 'appForm.btn.saveSection'
+      : current === nrOfChapters - 1 ? 'btn_applicationForm_reviewApplication'
+        : 'btn_applicationForm_nextSection'
   }
 
   render() {
-    const { chapter, rValues, current, i18n, getReviewAction, touch, handleSubmit, error, nrOfChapters } = this.props
+    const { chapter, rValues, current, i18n, touch, handleSubmit, error } = this.props
     console.log('DynamicForm', this.props)
 
     const fieldsToDisplay = fieldsToShow(chapter, rValues)
@@ -78,10 +80,10 @@ const mapStateToProps = state => ({
   current: currentSelector(state),
   i18n: i18nSelector(state),
   nrOfChapters: nrOfChaptersSelector(state),
+  reviewMode: reviewModeSelector(state)
 })
 
 const mapDispatchToProps = ({
-  getReviewAction: getReview,
   saveAction: save
 })
 
