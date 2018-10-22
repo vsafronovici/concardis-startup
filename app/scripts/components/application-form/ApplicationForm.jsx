@@ -5,7 +5,7 @@ import { Row, Col, Button } from 'antd'
 
 import StepsBar from './StepsBar'
 import TAC from './TAC'
-import SectionForm from './SectionForm'
+import SectionForm from './ChapterForm'
 import { translate } from '../../i18n/i18n'
 import {ReviewYourApplication} from "./ReviewYourApplicaiton";
 

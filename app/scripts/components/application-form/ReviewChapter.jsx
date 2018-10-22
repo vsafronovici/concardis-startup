@@ -4,16 +4,16 @@ import { connect } from 'react-redux'
 import cn from 'classnames'
 
 import { chaptersSelector } from '../../selectors/application-form-selector'
-import { SectionForm } from './SectionForm'
-import { ReadSectionForm } from './ReadSectionForm'
+import { ChapterForm } from './ChapterForm'
+import { ReadChapterForm } from './ReadChapterForm'
 
 const ReviewChapter = ({ chapter, editMode }) => editMode
   ? (
     <div className={cn('review-mode', { 'edit-mode': editMode })}>
-      <SectionForm chapter={chapter} />
+      <ChapterForm chapter={chapter} />
     </div>
   )
-  : <ReadSectionForm chapter={chapter} />
+  : <ReadChapterForm chapter={chapter} />
 
 const mapStateToProps = state => ({
   chapters: chaptersSelector(state)
