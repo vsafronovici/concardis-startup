@@ -3,11 +3,13 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Row, Col, Button } from 'antd'
 import { translate } from '../../i18n/i18n'
-import { submitReq } from '../../actions/application-form-action'
+import { agreeTAC, closeTACModal, openTACModal, submitReq } from '../../actions/application-form-action'
 import ReviewChapters from './ReviewChapters'
+import { tacSelector } from '../../selectors/application-form-selector'
+import TermsAndConditionsModal from './modal/TermsAndConditionsModal'
 
 const ReviewYourApplication = props => {
-  const { submitReqAction } = props
+  const { submitReqAction, TAC: { show }, openTACModalAction, closeTACModalAction, agreeTACAction } = props
   return (
     <Row>
       <Col span={16} offset={4}>
@@ -26,7 +28,8 @@ const ReviewYourApplication = props => {
             </Col>
             <Col span={12}>
               <Button onClick={submitReqAction}>{translate('btn_applicationForm_submitApplication')}</Button>
-              <Button>{translate('btn_applicationForm_termsAndConditions')}</Button>
+              <Button onClick={openTACModalAction}>{translate('btn_applicationForm_termsAndConditions')}</Button>
+              <TermsAndConditionsModal id="TAC_2" show={show} onClose={closeTACModalAction} onOk={agreeTACAction} />
             </Col>
           </Row>
         </div>
@@ -36,11 +39,14 @@ const ReviewYourApplication = props => {
 }
 
 const mapStateToProps = (state) => ({
-
+  TAC: tacSelector(state)
 })
 
 const mapDispatchToProps = ({
-  submitReqAction: submitReq
+  submitReqAction: submitReq,
+  openTACModalAction: openTACModal,
+  closeTACModalAction: closeTACModal,
+  agreeTACAction: agreeTAC
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ReviewYourApplication)

@@ -8,17 +8,17 @@ export class TACContent extends Component {
     const iframe = document.getElementById(`${id}-iframe`).contentWindow
     console.log('TermsAndConditionsModal Content2.componentDidMount', iframe)
 
-    jQuery(iframe).scroll(function () {
+    jQuery(iframe).scroll(() => {
       const scrollTop = jQuery(iframe).scrollTop()
       const height = jQuery(iframe).height()
       const innerHeight = jQuery(iframe.document).innerHeight()
       console.log('TermsAndConditionsModal', {scrollTop, height, innerHeight})
 
-      if (scrollTop + height === innerHeight) {
+      if (this.props.show && scrollTop + height === innerHeight) {
         console.log('TermsAndConditionsModal ===============End')
         enableBtn()
       }
-    });
+    })
   }
 
   render() {
