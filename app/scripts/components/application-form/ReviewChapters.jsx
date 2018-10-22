@@ -6,7 +6,7 @@ import { chaptersSelector, currentSelector } from '../../selectors/application-f
 import ReviewChapter from './ReviewChapter'
 
 const ReviewChapters = ({ chapters, current }) =>
-  chapters.map((chapter, idx) => <ReviewChapter chapter={chapter} editMode={current === idx} />)
+  chapters.map((chapter, idx) => <ReviewChapter chapter={chapter} editMode={current === idx} index={idx}/>)
 
 const mapStateToProps = state => ({
   chapters: chaptersSelector(state),
