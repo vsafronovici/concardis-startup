@@ -8,10 +8,10 @@ import { FieldType } from '../../utils/constants'
 
 const renderFieldComponent = ({ idx, field, value }) => {
   const { type } = field
-
+  console.log('renderFieldComponent', translate(value), { field, value })
   const label = translate(field.label)
-  let valueToDisplay
-
+  let valueToDisplay = ''
+  console.log('UP', valueToDisplay)
   switch (type) {
     case FieldType.TEXT: {
       valueToDisplay = value
@@ -25,6 +25,10 @@ const renderFieldComponent = ({ idx, field, value }) => {
     case FieldType.CHECKBOX: {
     }
     case FieldType.DROPDOWN: {
+      console.log('DROPDOWN', translate(value))
+      valueToDisplay = translate(value)
+      console.log('DROPDOWN VALUE TO DISPLAY', valueToDisplay)
+
     }
     case FieldType.BOXED_CHECKBOX_GROUP: {
     }

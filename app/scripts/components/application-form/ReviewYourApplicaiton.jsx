@@ -20,12 +20,9 @@ const ReviewYourApplication = props => {
             verifications. Errors and misspellings might result in the applications being rejected or delays in delivering or assisting you with your
             order.
           </div>
-          <div>
-            <ReviewChapters />
-          </div>
           <Row>
             <Col span={12}>
-
+              <ReviewChapters />
             </Col>
             <Col span={12}>
               <Button onClick={submitReqAction}>{translate('btn_applicationForm_submitApplication')}</Button>

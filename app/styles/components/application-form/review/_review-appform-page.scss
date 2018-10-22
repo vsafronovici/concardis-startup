@@ -1,0 +1,27 @@
+
+  .read-chapter-form {
+    margin-bottom: 5px;
+    background-color: #BDBDBD;
+    .read-field-row-container {
+      padding: 10px 10px;
+      .form-field-row-read {
+        font-size: 14px;
+        font-weight: 600;
+      }
+      .chapter-title {
+        margin-bottom: 5px;
+        font-size: 16px;
+        font-weight: 900;
+      }
+    }
+    .edit-button {
+      button {
+        width: 100%;
+        padding: 0px 0px;
+        height: 100%;
+        background-color: #BDBDBD;
+        border-radius: 0px;
+      }
+    }
+  }
+
