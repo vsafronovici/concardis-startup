@@ -21,9 +21,19 @@ export class TermsAndConditionsModal extends Component {
     seen: false
   }
 
-  enableBtn = () => {
-    this.setState({ seen: true })
+  componentDidMount() {
+
   }
+
+  enableBtn = (enable = true) => {
+    this.setState({ seen: enable })
+  }
+
+  testClose = () => {
+    console.log('i closed')
+    this.props.onClose()
+  }
+
 
   render() {
     const { id, show, onClose, onOk, lang } = this.props
@@ -34,14 +44,14 @@ export class TermsAndConditionsModal extends Component {
       <Modal
         title={translate('appForm.TAD.modal.title')}
         visible={show}
-        onCancel={onClose}
+        onCancel={this.testClose}
         footer={[<Footer key={id} onOk={onOk} disabled={!this.state.seen}/>]}
         width="90%"
         style={{ top: 50 }}
         bodyStyle={{ height , padding: 0 }}
         centered
       >
-        <TACContent id={id} height={height} enableBtn={this.enableBtn} lang={lang} />
+        <TACContent id={id} height={height} enableBtn={this.enableBtn} show={show} lang={lang} />
       </Modal>
     )
   }
