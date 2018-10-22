@@ -15,6 +15,7 @@ export class TACContent extends Component {
       console.log('TermsAndConditionsModal', {scrollTop, height, innerHeight})
 
       if (scrollTop + height === innerHeight) {
+        debugger;
         console.log('TermsAndConditionsModal ===============End')
         enableBtn()
       }
