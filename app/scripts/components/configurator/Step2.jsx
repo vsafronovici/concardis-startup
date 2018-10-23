@@ -46,6 +46,9 @@ export class Step2 extends React.Component {
                         onChooseOption={this.onChooseOption}
                         includedItems={p.includedItems}
                       />
+                      <div className="oc-price">
+                        <span style={{marginLeft: '25%'}}>€ {p.totalPriceBeforeDiscount.valuePerMonth}/{translate('configurator.AMonth')}</span>
+                      </div>
                     </Col>
                   ))
                 }

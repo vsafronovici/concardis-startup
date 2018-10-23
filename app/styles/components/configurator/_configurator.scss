@@ -1,7 +1,14 @@
 .app__configurator {
   background-color: #FAFAFA;
   padding: 30px 30px;
-
+  .oc-price {
+    display: flex;
+    direction: row !important;
+    align-content: center;
+    margin-top: 15px;
+    font-weight: 700;
+    font-size: 20px;
+  }
   .option-card {
     width: 328px;
     //height: 564px;
