@@ -2,7 +2,7 @@ import { toPairs, values, isNil, equals, all, isEmpty, propOr, curry, anyPass, p
 import numeral from 'numeral'
 import moment from 'moment'
 import { isNilOrEmpty, objectToArrayKeyValue } from './function-utils'
-import {SectionStatusType, SubmitStatus} from './constants'
+import { SectionStatusType, SubmitStatus } from './constants'
 
 export const DYNAMIC_FORM_PREFIX = 'dynamicForm_'
 export const MULTIPLE_OPTIONS_SEPARATOR = ';'

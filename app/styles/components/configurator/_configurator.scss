@@ -12,33 +12,37 @@
     text-align: center;
     cursor: pointer;
     height: 612px;
-
+    padding: 10px 15px;
+    .oc-footer {
+      text-align: left;
+      font-size: 13px;
+      font-weight: 500;
+    }
     .oc-top {
-      height: 166px;
-      background-color: #9b9b9b;
+      //padding: 10px 10px;
     }
 
     .oc-content {
-      width: 242px;
+
       margin: 0 auto;
 
       .oc-title {
         text-align: center;
         height: 34px;
-        font-size: 28px;
+        font-size: 20px;
         font-weight: bold;
-        margin-top: 22px;
+        margin-top: 15px;
       }
 
       .oc-subtitle {
         height: 38px;
         font-size: 16px;
-        margin-top: 32px;
-        margin-bottom: 42px;
+        margin-top: 20px;
       }
 
       .oc-items {
         text-align: left;
+        min-height: 85px;
 
         .oc-item {
           display: flex;
@@ -55,6 +59,8 @@
           &-content {
             width: 100%;
             margin-left: 20px;
+            font-style: 16px;
+            font-weight: 600;
           }
         }
       }

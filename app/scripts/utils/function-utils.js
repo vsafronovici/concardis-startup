@@ -2,6 +2,7 @@ import { toPairs, values, isNil, equals, all, isEmpty, propOr, curry, anyPass } 
 import numeral from 'numeral'
 import moment from 'moment'
 import {DATE_FORMAT} from "./constants";
+import { translate } from '../i18n/i18n'
 
 export const isNilOrEmpty = anyPass([isNil, isEmpty])
 export const propOrEmptyObj = propOr({})
@@ -50,3 +51,18 @@ export const generalFormatNumber = curry(formatNumber)('00.00')
 
 export const checkDate = (date) => moment(date, DATE_FORMAT, true).isValid()
 
+export const parseCheckbBoxValues = values => {
+  const splitedValues = values.split(';')
+  const parsedValues = splitedValues.reduce((acc, value) => {
+    if (!value) {
+      return acc
+    }
+    console.log('SPLITED', splitedValues)
+    console.log('parsed', parsedValues)
+    return translate(value) + ' ' +  translate('vat_option_1')
+
+
+  }, [])
+  console.log('PARSEDVALUES', parsedValues)
+  return parsedValues
+}

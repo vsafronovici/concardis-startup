@@ -20,6 +20,7 @@ export const emailSelector = compose(prop('email'), step3FieldsSelector)
 export const userSelector = compose(prop('user'), configuratorSelector)
 
 
+
 export const step2SummarySelector = createSelector(
   step1MetaSelector,
   step1FieldsSelector,
@@ -33,6 +34,6 @@ export const step2SummarySelector = createSelector(
 export const selectedProductSelector = createSelector(
   step2MetaSelector,
   cardOptionValueSelector,
-  (step2Meta, cardOption) => step2Meta.find(meta => meta.prod.Id === cardOption)
+  (step2Meta, cardOption) => step2Meta.find(meta => meta.product2Id === cardOption)
 )
 

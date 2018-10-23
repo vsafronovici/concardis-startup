@@ -110,7 +110,7 @@ export const mockVisualForceConfig = {
     },
     imgs: {
       receipt: 'https://concardis--smejoindev--c.cs109.visual.force.com/resource/1538637322000/ReceiptPreview',
-      product: 'https://concardis--smeondev--c.cs109.visual.force.com/resource/1539938400000/ImageProduct?'
+      product: 'https://concardis--smejoindev--c.cs109.visual.force.com/resource/1540198748000/ImageProduct?'
     }
   },
 }

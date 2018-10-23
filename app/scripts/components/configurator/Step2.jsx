@@ -4,7 +4,12 @@ import { connect } from 'react-redux'
 import { Button, Row, Col } from 'antd'
 
 import { OptionCard } from './OptionCard'
-import { cardOptionValueSelector, productsSelector, step2SummarySelector } from '../../selectors/configurator-selector'
+import {
+  cardOptionValueSelector,
+  productsSelector,
+  step2MetaSelector,
+  step2SummarySelector
+} from '../../selectors/configurator-selector'
 import { changeFieldValue, goToStep } from '../../actions/configurator-action'
 import { ConfiguratorPageStep } from '../../utils/constants'
 import { Loader } from '../Loader'
@@ -17,9 +22,10 @@ export class Step2 extends React.Component {
   }
 
   render() {
-    const { products, cardOption, summary } = this.props
+    const { products, cardOption, summary, productsQ } = this.props
+    console.log('STEP2', this.props)
     const [f1, f2, f3, f4] = summary
-    return !products.length
+    return !productsQ.length
       ? <Loader />
       : (
         <div>
@@ -27,16 +33,17 @@ export class Step2 extends React.Component {
             <Col xxl={{ span: 18, offset: 3 }}>
               <Row type="flex" justify="center">
                 {
-                  products.map(p => (
-                    <Col span={7} offset={1} key={p.Id}>
+                  productsQ.map(p => (
+                    <Col span={7} offset={1} key={p.product2Id}>
                       <OptionCard
-                        id={p.Id}
+                        id={p.product2Id}
                         name={p.name}
                         description={p.description}
-                        price={p.price}
-                        items={p.items}
-                        active={cardOption === p.Id}
+                        //price={p.price}
+                        features={p.features}
+                        active={cardOption === p.product2Id}
                         onChooseOption={this.onChooseOption}
+                        includedItems={p.includedItems}
                       />
                     </Col>
                   ))
@@ -79,7 +86,7 @@ export class Step2 extends React.Component {
 
 Step2.propTypes = {
   cardOption: PropTypes.object,
-  summary: PropTypes.object,
+  summary: PropTypes.array,
   products: PropTypes.array,
   changeFieldValue: PropTypes.func,
   goToStep: PropTypes.func,
@@ -88,7 +95,8 @@ Step2.propTypes = {
 const mapStateToProps = state => ({
   cardOption: cardOptionValueSelector(state),
   summary: step2SummarySelector(state),
-  products: productsSelector(state)
+  products: productsSelector(state),
+  productsQ: step2MetaSelector(state)
 })
 
 const mapDispatchToProps = ({
