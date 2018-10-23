@@ -53,6 +53,11 @@ export const changeExtraQnty = payload => ({
   payload
 })
 
+export const submitQuote = payload => ({
+  type: PACKAGE_CONFIGURE.SUBMIT_QUOTE,
+  payload
+})
+
 export const submitQuoteReq = payload => ({
   type: PACKAGE_CONFIGURE.SUBMIT_QUOTE_REQ,
   payload
@@ -65,5 +70,10 @@ export const submitQuoteRes = payload => ({
 
 export const goToRoute = payload => ({
   type: PACKAGE_CONFIGURE.GO_TO_ROUTE,
+  payload
+})
+
+export const confirmOffer = payload => ({
+  type: PACKAGE_CONFIGURE.CONFIRM_OFFER,
   payload
 })

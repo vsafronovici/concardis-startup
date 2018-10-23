@@ -55,9 +55,11 @@ export const PACKAGE_CONFIGURE = createNamespace('PACKAGE_CONFIGURE', {
   APPLY_DISCOUNT_REQ: undefined,
   APPLY_DISCOUNT_RES: undefined,
   CHANGE_EXTRA_QNTY: undefined,
+  SUBMIT_QUOTE: undefined,
   SUBMIT_QUOTE_REQ: undefined,
   SUBMIT_QUOTE_RES: undefined,
   GO_TO_ROUTE: undefined,
+  CONFIRM_OFFER: undefined,
 })
 
 export const APPLICATION_FORM = createNamespace('APPLICATION_FORM', {

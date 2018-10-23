@@ -70,6 +70,15 @@ export const PackageRoutes = {
   ROUTE_2: 'Package_Personalise'
 }
 
+
+
+
+export const EXTERNAL_LINKS = {
+  domain: 'https://smejoindev-concardis-partners.cs109.force.com',
+  get APPLICATION_FORM() { return this.domain + '/OndoardingSME/apex/ApplicationFormPage' }
+}
+
+
 export const ApplicationFormStepsTitles = {
   STEP_1: 'ABOUT_YOU',
   STEP_2: 'COMPANY_LEGAL_DETAILS',

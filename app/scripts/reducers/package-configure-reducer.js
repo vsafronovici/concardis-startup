@@ -6,7 +6,7 @@ import { RESPONSE_STATUS_CODE, PackageRoutes } from '../utils/constants'
 
 export const initialState = {
   submitting: false,
-  route: PackageRoutes.ROUTE_1
+  route: PackageRoutes.ROUTE_2
 }
 
 const getQuantity = path(['quantity', 'value'])
@@ -92,7 +92,7 @@ export default {
       return {
         ...state,
         submitting: false,
-        saveQuoteStatus: payload
+        saveQuoteResponse: payload
       }
     },
     [PACKAGE_CONFIGURE.GO_TO_ROUTE](state, { payload }) {

@@ -6,8 +6,8 @@ import {
   submitQuoteRes, goToRoute
 } from '../actions/package-configure-action'
 import { SFAction, memoizedSFAction } from './../modules/client'
-import { applyDiscountPayloadSelector } from '../selectors/package-configure-selector'
-import { PackageRoutes, RESPONSE_STATUS_CODE } from '../utils/constants'
+import { applyDiscountPayloadSelector, saveQuoteResponseSelector } from '../selectors/package-configure-selector'
+import { EXTERNAL_LINKS, PackageRoutes, RESPONSE_STATUS_CODE } from '../utils/constants'
 import { i18nLangSelector } from '../selectors/i18n-selector'
 
 function* initDataSaga() {
@@ -53,7 +53,7 @@ function* applyDiscountReqSaga({ payload }) {
   yield put(applyDiscountRes(response.data))
 }
 
-function* saveQuoteSaga({ payload }) {
+function* submitQuoteReqSaga(payload) {
   const action = {
     actionName: window.configSettings.remoteActions.saveQuote,
     args: JSON.stringify(payload)
@@ -62,8 +62,32 @@ function* saveQuoteSaga({ payload }) {
   yield put(submitQuoteRes(response.data))
 }
 
-function* saveQuoteResSaga() {
-  yield put(goToRoute(PackageRoutes.ROUTE_1))
+function* submitQuoteSaga({ payload }) {
+  yield call(submitQuoteReqSaga, payload)
+
+  const { code } = yield select(saveQuoteResponseSelector)
+
+  if (code === RESPONSE_STATUS_CODE.OK) {
+    yield put(goToRoute(PackageRoutes.ROUTE_1))
+  } else {
+    //TODO remove
+    alert('Error when saving Quote')
+  }
+}
+
+
+
+function* confirmOfferSaga({ payload }) {
+  yield call(submitQuoteReqSaga, payload)
+
+  const { code } = yield select(saveQuoteResponseSelector)
+
+  if (code === RESPONSE_STATUS_CODE.OK) {
+    window.location.href = EXTERNAL_LINKS.APPLICATION_FORM
+  } else {
+    //TODO remove
+    alert('Error when saving Quote')
+  }
 }
 
 export default function* root() {
@@ -73,7 +97,7 @@ export default function* root() {
     takeLatest(PACKAGE_CONFIGURE.VALIDATE_DISCOUNT_CODE_REQ, validateDiscountCodeReqSaga),
     takeLatest(PACKAGE_CONFIGURE.VALIDATE_DISCOUNT_CODE_RES, validateDiscountCodeResSaga),
     takeLatest(PACKAGE_CONFIGURE.APPLY_DISCOUNT_REQ, applyDiscountReqSaga),
-    takeLatest(PACKAGE_CONFIGURE.SUBMIT_QUOTE_REQ, saveQuoteSaga),
-    takeLatest(PACKAGE_CONFIGURE.SUBMIT_QUOTE_RES, saveQuoteResSaga)
+    takeLatest(PACKAGE_CONFIGURE.SUBMIT_QUOTE, submitQuoteSaga),
+    takeLatest(PACKAGE_CONFIGURE.CONFIRM_OFFER, confirmOfferSaga),
   ])
 }

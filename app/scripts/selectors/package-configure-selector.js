@@ -13,6 +13,7 @@ export const totalPriceWithDiscountSelector = compose(prop('totalPriceWithDiscou
 export const validDiscountCodeSelector = compose(prop('validDiscountCode'), rootSelector)
 export const applyDiscountSelector = compose(propOrEmptyObj('applyDiscount'), rootSelector)
 export const routeSelector = compose(prop('route'), rootSelector)
+export const saveQuoteResponseSelector = compose(prop('saveQuoteResponse'), rootSelector)
 
 export const totalCostPerMonthSelector = createSelector(
   quoteSelector,

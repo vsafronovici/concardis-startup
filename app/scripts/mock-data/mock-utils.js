@@ -4,7 +4,7 @@ import translations from './mock-translations'
 import configuratorStep1 from './configurator/mock-fields-step1'
 import configuratorStep2 from './configurator/mock-fields-step2'
 import packageCconfigureQuote from './configurator/mock-package-configurator'
-import packageSaveQuote from './configurator/mock-save-quote'
+import { ok as saveQuote_OK, error as saveQuote_ERR } from './configurator/mock-save-quote'
 import { ok as validateDiscountOk, error as validateDiscountErr } from './configurator/mock-validate-discount'
 import { ok as applyDiscountOk, error as applyDiscountErr } from './configurator/mock-apply-discount'
 
@@ -53,7 +53,7 @@ export const mockResponse = action => {
       return packageCconfigureQuote
 
     case MOCK_REMOTE_ACTIONS.saveQuote:
-      return packageSaveQuote
+      return saveQuote_OK
 
     case MOCK_REMOTE_ACTIONS.validateDiscount:
       return validateDiscountOk
@@ -84,6 +84,7 @@ export const mockResponse = action => {
 export const mockVisualForceConfig = {
   remoteActions: {
     getDictionaryMetadata: MOCK_REMOTE_ACTIONS.getDictionaryMetadata,
+    // getDictionaryMetadata: MOCK_REMOTE_ACTIONS.getApplicationFormDictionaryMetadata,
     getFieldsMetadata: MOCK_REMOTE_ACTIONS.getFieldsMetadata,
     getProducts:  MOCK_REMOTE_ACTIONS.getProducts,
     getQProducts:  MOCK_REMOTE_ACTIONS.getQProducts,
@@ -95,7 +96,6 @@ export const mockVisualForceConfig = {
     validateDiscount: MOCK_REMOTE_ACTIONS.validateDiscount,
     applyDiscount: MOCK_REMOTE_ACTIONS.applyDiscount,
 
-    getApplicationFormDictionaryMetadata: MOCK_REMOTE_ACTIONS.getApplicationFormDictionaryMetadata,
     getAppFormMetadata: MOCK_REMOTE_ACTIONS.getAppFormMetadata,
     updateCommercialsTC: MOCK_REMOTE_ACTIONS.updateCommercialsTC,
     validateForm: MOCK_REMOTE_ACTIONS.validateForm,
