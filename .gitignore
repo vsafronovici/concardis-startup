@@ -7,6 +7,6 @@ node_modules/
 reports/
 webpack.stats.json
 .idea
-.package-lock.json
+package-lock.json
 *.iml
 

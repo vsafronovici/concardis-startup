@@ -74,8 +74,19 @@ export const submitReq = () => ({
   type: APPLICATION_FORM.SUBMIT_REQ
 })
 
+export const submit = () => ({
+  type: APPLICATION_FORM.SUBMIT
+})
+
+export const setReadyForSubmit = () => ({
+  type: APPLICATION_FORM.READY_FOR_SUBMIT
+})
+
+export const confirm = () => ({
+  type: APPLICATION_FORM.CONFIRM
+})
+
 export const submitRes = payload => ({
   type: APPLICATION_FORM.SUBMIT_RES,
   payload
 })
-

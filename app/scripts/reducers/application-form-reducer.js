@@ -8,6 +8,7 @@ const initialState = {
     show: false,
     agree: false
   },
+  readyForSubmit: false,
   current: 0,
   chapters: undefined,
   reviewMode: true,
@@ -73,6 +74,12 @@ export default {
           show: false,
           agree: true
         }
+      }
+    },
+    [APPLICATION_FORM.READY_FOR_SUBMIT](state) {
+      return {
+        ...state,
+        readyForSubmit: true
       }
     },
     [APPLICATION_FORM.GET_FORM_META_RES](state, { payload }) {

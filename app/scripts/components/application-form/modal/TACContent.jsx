@@ -14,12 +14,7 @@ export class TACContent extends Component {
       const innerHeight = jQuery(iframe.document).innerHeight()
       console.log('TermsAndConditionsModal', {scrollTop, height, innerHeight})
 
-<<<<<<< HEAD
-      if (scrollTop + height === innerHeight) {
-        debugger;
-=======
       if (this.props.show && scrollTop + height === innerHeight) {
->>>>>>> 9a20b9367ac4e136a6bd1c1ca499659ab0955832
         console.log('TermsAndConditionsModal ===============End')
         enableBtn()
       }
