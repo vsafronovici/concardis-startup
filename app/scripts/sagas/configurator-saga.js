@@ -20,7 +20,7 @@ function* initDataSaga() {
 
 function* getMetaStep2Saga({ payload }) {
   const action = {
-    actionName: window.configSettings.remoteActions.getProducts,
+    actionName: window.configSettings.remoteActions.getQProducts,
     args: JSON.stringify(payload)
   }
   const response = yield call(memoizedSFAction, action, { parseToJSON: true })

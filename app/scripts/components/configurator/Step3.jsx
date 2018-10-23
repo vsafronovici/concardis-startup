@@ -81,7 +81,7 @@ class Step3 extends Component {
   signup = () => {
     const { formValues, selectedProduct, step1Fields } = this.props
     this.props.signupReq({
-      productId: selectedProduct.prod.Id,
+      productId: selectedProduct.product2Id,
       email: formValues[EMAIL],
       filters: {
         ...step1Fields

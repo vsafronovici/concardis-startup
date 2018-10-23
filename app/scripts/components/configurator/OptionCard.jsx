@@ -59,6 +59,7 @@ export class OptionCard extends React.Component {
         </div>
         <hr/>
         <div className="oc-footer">
+          <div style={{marginBottom: '10px'}}><strong >{translate('configurator.optionCards.accIncluded')}</strong></div>
           {includedItems.map(item => (
             <div key={item.name}>
               {item.quantity.value > 1 && <span>{item.quantity.value}x</span>} {item.name}

@@ -7,7 +7,7 @@ import { LanguageType } from '../utils/constants'
 
 function* loadTranslationsSaga({ payload: { lang } }) {
   const action = {
-    actionName: window.configSettings.remoteActions.getApplicationFormDictionaryMetadata,
+    actionName: window.configSettings.remoteActions.getDictionaryMetadata,
     args: lang
   }
   const response = yield call(SFAction, action)

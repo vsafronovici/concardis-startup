@@ -26,6 +26,7 @@ export const MOCK_REMOTE_ACTIONS = createNamespace('MOCK_REMOTE_ACTIONS', {
   saveQuote: undefined,
   validateDiscount: undefined,
   applyDiscount: undefined,
+  qetQProducts: undefined,
 
   getApplicationFormDictionaryMetadata: undefined,
   getAppFormMetadata: undefined,
@@ -43,6 +44,9 @@ export const mockResponse = action => {
       return configuratorStep1
 
     case MOCK_REMOTE_ACTIONS.getProducts:
+      return configuratorStep2
+
+    case MOCK_REMOTE_ACTIONS.getQProducts:
       return configuratorStep2
 
     case MOCK_REMOTE_ACTIONS.getQuote:
@@ -82,6 +86,7 @@ export const mockVisualForceConfig = {
     getDictionaryMetadata: MOCK_REMOTE_ACTIONS.getDictionaryMetadata,
     getFieldsMetadata: MOCK_REMOTE_ACTIONS.getFieldsMetadata,
     getProducts:  MOCK_REMOTE_ACTIONS.getProducts,
+    getQProducts:  MOCK_REMOTE_ACTIONS.getQProducts,
     getDiscount: undefined,
     recalculatePrice: undefined,
     submitEmailGDPR: undefined,

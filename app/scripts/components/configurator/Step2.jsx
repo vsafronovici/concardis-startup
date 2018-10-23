@@ -18,6 +18,7 @@ import { valuesFormatter } from './../../transformers/configurator-transformer'
 
 export class Step2 extends React.Component {
   onChooseOption = id => {
+    console.log('CHANGE_FIELD_VALUES', { name: 'cardOption', value: id, step: ConfiguratorPageStep.STEP2 })
     this.props.changeFieldValue({ name: 'cardOption', value: id, step: ConfiguratorPageStep.STEP2 })
   }
 
