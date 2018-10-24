@@ -62,7 +62,7 @@ export class DynamicForm extends React.Component {
           </div>
         }
 
-        <form onSubmit={handleSubmit(this.submitForm)}>
+        <form onSubmit={handleSubmit(this.submitForm)} className={reviewMode && "form-chapter-review"}>
           <div>
             <FieldMainTitle title={chapter.title} subtitle={chapter.subtitle}/>
             <div>
@@ -72,8 +72,8 @@ export class DynamicForm extends React.Component {
 
           { error && <div className="form-field-row form-field"><div className="error">{error}</div></div> }
 
-          <div>
-            <Button htmlType="submit" loading={submitting} disabled={submitting}>{translate(this.getBtnName())}</Button>
+          <div className={reviewMode && "button-container"}>
+            <div><Button htmlType="submit" loading={submitting} disabled={submitting}>{translate(this.getBtnName())}</Button></div>
           </div>
         </form>
       </div>

@@ -1,11 +1,18 @@
-.field-review-applicaiton {
-  .title {
-    font-weight: 700;
-    font-size: 18px;
-    margin-bottom: 15px;
-  }
-  .description {
-    font-size: 12px;
-    margin-bottom: 15px;
+.review-container {
+  padding: 15px 0px;
+  .field-review-applicaiton {
+    .title {
+      font-weight: 700;
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+    .description {
+      font-size: 12px;
+      margin-bottom: 15px;
+    }
+    .review-buttons-container {
+      display: flex;
+      justify-content: space-around;
+    }
   }
 }
