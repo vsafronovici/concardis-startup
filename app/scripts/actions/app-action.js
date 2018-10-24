@@ -70,3 +70,7 @@ export const loadTranslationsResp = payload => ({
   payload
 })
 
+export const failedApiFetch = payload => ({
+  type: APP.API_FETCH_FAILED,
+  payload
+})

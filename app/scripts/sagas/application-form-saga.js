@@ -1,6 +1,6 @@
 import { all, call, put, select, takeLatest, takeEvery } from 'redux-saga/effects'
 import { APPLICATION_FORM } from '../actions/types'
-import { SFAction } from '../modules/client'
+import { apiFetchSaga } from './app-saga'
 import {
   updateCommercialsTCReq,
   updateCommercialsTCRes,
@@ -30,7 +30,7 @@ function* getAppFormMetadataSaga() {
   const action = {
     actionName: window.configSettings.remoteActions.getAppFormMetadata
   }
-  const response = yield call(SFAction, action, { parseToJSON: true })
+  const response = yield call(apiFetchSaga, action, { parseToJSON: true })
   yield put(getFormMetaRes(response.data))
 }
 
@@ -45,7 +45,7 @@ function* agreeTACSaga() {
   }
   yield put(updateCommercialsTCReq(true))
 
-  const response = yield call(SFAction, action, { parseToJSON: true })
+  const response = yield call(apiFetchSaga, action, { parseToJSON: true })
   yield put(updateCommercialsTCRes(response.data))
 }
 
@@ -60,7 +60,7 @@ function* saveSaga({ payload: { formValues, currentChapterIdx, callback } }) {
     args: JSON.stringify(req)
   }
 
-  const response = yield call(SFAction, action, { parseToJSON: true })
+  const response = yield call(apiFetchSaga, action, { parseToJSON: true })
   yield put(saveRes(response.data))
 
   callback(response.data)
@@ -109,7 +109,7 @@ function* submitReqSaga() {
     actionName: window.configSettings.remoteActions.submitForm
   }
 
-  const response = yield call(SFAction, action, { parseToJSON: true })
+  const response = yield call(apiFetchSaga, action, { parseToJSON: true })
   yield put(submitRes(response.data))
 }
 

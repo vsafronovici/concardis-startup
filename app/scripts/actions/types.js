@@ -6,7 +6,8 @@ export const APP = createNamespace('APP', {
   LOAD_TRANSLATIONS_REQ: undefined,
   LOAD_TRANSLATIONS_RESP: undefined,
   SHOW_ALERT: undefined,
-  HIDE_ALERT: undefined
+  HIDE_ALERT: undefined,
+  API_FETCH_FAILED: undefined
 })
 
 export const REACT_DEMO = createNamespace('REACT_DEMO', {
@@ -82,5 +83,5 @@ export const APPLICATION_FORM = createNamespace('APPLICATION_FORM', {
   SUBMIT_RES: undefined,
   SUBMIT: undefined,
   READY_FOR_SUBMIT: undefined,
-  CONFIRM: undefined,
+  CONFIRM: undefined
 })

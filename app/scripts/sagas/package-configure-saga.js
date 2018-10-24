@@ -5,7 +5,7 @@ import {
   getMetaPackageRes, validateDiscountCodeReq, validateDiscountCodeRes, applyDiscountReq, applyDiscountRes,
   submitQuoteRes, goToRoute
 } from '../actions/package-configure-action'
-import { SFAction, memoizedSFAction } from './../modules/client'
+import { apiFetchSaga } from './app-saga';
 import { applyDiscountPayloadSelector, saveQuoteResponseSelector } from '../selectors/package-configure-selector'
 import { EXTERNAL_LINKS, PackageRoutes, RESPONSE_STATUS_CODE } from '../utils/constants'
 import { i18nLangSelector } from '../selectors/i18n-selector'
@@ -17,7 +17,7 @@ function* initDataSaga() {
     actionName: window.configSettings.remoteActions.getQuote,
     args: lang
   }
-  const response = yield call(SFAction, action, { parseToJSON: true })
+  const response = yield call(apiFetchSaga, action, { parseToJSON: true })
   yield put(getMetaPackageRes(response.data))
 }
 
@@ -32,7 +32,7 @@ function* validateDiscountCodeReqSaga({ payload }) {
     args: JSON.stringify(payload)
   }
 
-  const response = yield call(memoizedSFAction, action, { parseToJSON: true })
+  const response = yield call(apiFetchSaga, action, { parseToJSON: true, memoize: true })
   yield put(validateDiscountCodeRes(response.data))
 }
 
@@ -49,7 +49,7 @@ function* applyDiscountReqSaga({ payload }) {
     args: JSON.stringify(payload)
   }
 
-  const response = yield call(memoizedSFAction, action, { parseToJSON: true })
+  const response = yield call(apiFetchSaga, action, { parseToJSON: true, memoize: true })
   yield put(applyDiscountRes(response.data))
 }
 
@@ -58,7 +58,7 @@ function* submitQuoteReqSaga(payload) {
     actionName: window.configSettings.remoteActions.saveQuote,
     args: JSON.stringify(payload)
   }
-  const response = yield call(SFAction, action, { parseToJSON: true })
+  const response = yield call(apiFetchSaga, action, { parseToJSON: true })
   yield put(submitQuoteRes(response.data))
 }
 
