@@ -5,7 +5,7 @@ import { CONFIGURATOR } from '../actions/types'
 import {
   changeFieldValue, getMetaStep1Res, getMetaStep2Req, getMetaStep2Res, recalculateQuoteRes, signupRes
 } from '../actions/configurator-action'
-import { SFAction, memoizedSFAction } from './../modules/client'
+import { apiFetchSaga } from './app-saga'
 import { ConfiguratorPageStep, NodeProcess } from '../utils/constants'
 import { step1FieldsSelector } from '../selectors/configurator-selector'
 
@@ -14,7 +14,7 @@ function* initDataSaga() {
     actionName: window.configSettings.remoteActions.getFieldsMetadata,
     args: ConfiguratorPageStep.STEP1
   }
-  const response = yield call(SFAction, action, { parseToJSON: true })
+  const response = yield call(apiFetchSaga, action, { parseToJSON: true })
   yield put(getMetaStep1Res(response.data.fields))
 }
 
@@ -23,7 +23,7 @@ function* getMetaStep2Saga({ payload }) {
     actionName: window.configSettings.remoteActions.getQProducts,
     args: JSON.stringify(payload)
   }
-  const response = yield call(memoizedSFAction, action, { parseToJSON: true })
+  const response = yield call(apiFetchSaga, action, { parseToJSON: true, memoize: true })
   yield put(getMetaStep2Res(response.data))
 }
 
@@ -49,7 +49,7 @@ function* signupSaga({ payload }) {
       actionName: window.configSettings.remoteActions.submitEmailGDPR,
       args: JSON.stringify(payload)
     }
-    const response = yield call(memoizedSFAction, action, { parseToJSON: true })
+    const response = yield call(apiFetchSaga, action, { parseToJSON: true, memoize: true })
     yield put(signupRes(response.data))
   }
 }
@@ -59,7 +59,7 @@ function* recalculateQuoteSaga({ payload }) {
     actionName: window.configSettings.remoteActions.recalculatePrice,
     args: JSON.stringify(payload)
   }
-  const response = yield call(memoizedSFAction, action, { parseToJSON: true })
+  const response = yield call(apiFetchSaga, action, { parseToJSON: true, memoize: true })
   yield put(recalculateQuoteRes(response.data))
 }
 
