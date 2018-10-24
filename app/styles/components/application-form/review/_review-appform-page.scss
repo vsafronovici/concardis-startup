@@ -3,10 +3,21 @@
     margin-bottom: 5px;
     background-color: #BDBDBD;
     .read-field-row-container {
-      padding: 10px 10px;
+      padding: 10px 15px;
       .form-field-row-read {
         font-size: 14px;
+        .label {
+          font-weight: 600;
+        }
+        .value {
+          margin-left: 5px;
+        }
+      }
+      .form-field-row-read-title {
+        margin-bottom: 10px;
+        margin-top: 20px;
         font-weight: 600;
+        font-size: 14px;
       }
       .chapter-title {
         margin-bottom: 5px;

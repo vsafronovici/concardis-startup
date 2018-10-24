@@ -6,8 +6,8 @@ import { connect } from 'react-redux'
 import { FieldRow } from './FieldRow'
 import { translate } from '../../i18n/i18n'
 import VoidLink from '../common/VoidLink'
-import { FieldTitle } from '../common/FieldTitle'
-import { save } from '../../actions/application-form-action'
+import { FieldMainTitle } from '../common/FieldMainTitle'
+import { getReview, save } from '../../actions/application-form-action'
 import { currentSelector, nrOfChaptersSelector, reviewModeSelector } from "../../selectors/application-form-selector";
 import { i18nSelector} from '../../selectors/i18n-selector'
 import { fieldsToShow } from '../../utils/application-form-utils'
@@ -64,7 +64,7 @@ export class DynamicForm extends React.Component {
 
         <form onSubmit={handleSubmit(this.submitForm)}>
           <div>
-            <FieldTitle title={chapter.title} subtitle={chapter.subtitle}/>
+            <FieldMainTitle title={chapter.title} subtitle={chapter.subtitle}/>
             <div>
               { fieldsToDisplay.map((field, idx) => <FieldRow key={field.name} field={field} idx={idx} i18n={i18n} touch={touch} />) }
             </div>

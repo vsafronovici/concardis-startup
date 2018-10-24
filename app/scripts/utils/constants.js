@@ -39,7 +39,8 @@ export const FieldType = {
   BOXED_RADIO_BTNS: 'boxed_radio_btns',
   CHECKBOX: 'checkbox',
   BOXED_CHECKBOX: 'boxed_checkbox',
-  BOXED_CHECKBOX_GROUP: 'boxed_checkbox_group'
+  BOXED_CHECKBOX_GROUP: 'boxed_checkbox_group',
+  TITLE: 'title'
 }
 
 export const SectionStatusType = {

@@ -3,11 +3,11 @@ import { Field } from 'redux-form'
 
 import { translate } from '../../i18n/i18n'
 import { FieldType } from '../../utils/constants'
-import { parseCheckbBoxValues } from "../../utils/function-utils";
+import { parseCheckBoxValues } from "../../utils/function-utils";
 
 
 const renderFieldComponent = ({ idx, field, value }) => {
-  const { type } = field
+  const { type, title } = field
   console.log('renderFieldComponent', translate(value), { field, value })
   const label = translate(field.label)
   let valueToDisplay
@@ -23,6 +23,8 @@ const renderFieldComponent = ({ idx, field, value }) => {
     case FieldType.BOXED_RADIO_BTNS: {
     }
     case FieldType.BOXED_CHECKBOX: {
+      valueToDisplay = translate(value)
+      break
     }
     case FieldType.CHECKBOX: {
     }
@@ -32,7 +34,7 @@ const renderFieldComponent = ({ idx, field, value }) => {
     }
     case FieldType.BOXED_CHECKBOX_GROUP: {
       //console.log('BOXED_CHECKBOX_GROUP', value)
-      valueToDisplay = parseCheckbBoxValues(value)
+      valueToDisplay = parseCheckBoxValues(value)
       break
     }
     case FieldType.HORIZONTAL_RADIO_BTNS: {
@@ -42,19 +44,25 @@ const renderFieldComponent = ({ idx, field, value }) => {
     case FieldType.DATE: {
     }
     case FieldType.TEXT_BOLD: {
+      valueToDisplay = value
+      break
+    }
+    case FieldType.TITLE: {
+      valueToDisplay = translate(title)
+      break
     }
     default: {
       valueToDisplay = value
     }
   }
   return <div>
-    <span>{label}:</span>
-    <span>{valueToDisplay}</span>
+    {type !== FieldType.TITLE && <span className="label">{label}:</span>}
+    <span className="value">{valueToDisplay}</span>
   </div>
 }
 
 export const ReadFieldRow = ({ idx, field, value }) => (
-  <div className="form-field-row-read">
+  <div className={field.type === FieldType.TITLE ? "form-field-row-read-title" : "form-field-row-read"}>
     { renderFieldComponent({ idx, field, value }) }
   </div>
 )

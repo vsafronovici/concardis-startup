@@ -15,6 +15,10 @@ export default [{
     "sequence": 1,
     "name": "Section_01",
     "fields": [{
+      "type": "title",
+      "title": "Test title component"
+    },
+      {
       "validationRules": [{
         "validationError": "ch1_s1_field1_ValidErr",
         "requiredError": "ch1_s1_field1_ReqErr",
@@ -109,6 +113,9 @@ export default [{
     "sequence": 2,
     "name": "Section_02",
     "fields": [{
+      "type": "title",
+      "title": "Company details"
+    }, {
       "validationRules": [{
         "validationError": "ch2_s1_field1_ValidErr",
         "requiredError": "ch2_s1_field1_ReqErr",
@@ -172,6 +179,9 @@ export default [{
       "helpText": "ch2_s1_field3_tooltip",
       "fieldApi": "Company_Trading_Name__c",
       "description": "ch2_s1_field3_description"
+    }, {
+      "type": "title",
+      "title": "Registry Court information"
     }, {
       "validationRules": [{
         "validationError": "ch2_s1_field4_ValidErr",
@@ -6180,7 +6190,7 @@ export default [{
   "sequence": 3,
   "sections": [{
     "type": "Simple",
-    "serverValues": [{"fieldValue": "address_option_2", "fieldCode": "ch3_s1_field7Section_05"}],
+    "serverValues": [{"fieldValue": "address_option_2", "fieldCode": ""}],
     "sequence": 9,
     "name": "Section_05",
     "fields": [{

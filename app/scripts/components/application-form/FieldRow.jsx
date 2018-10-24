@@ -17,6 +17,7 @@ import { FieldDropDown} from '../common/FieldDropDown'
 import { FieldHorizontalRadioBtns } from '../common/FieldHorizontalRadioBtns'
 import { FieldDate } from '../common/FieldDate'
 import { FieldTextBold } from '../common/FieldTextBold'
+import { FieldTitle } from '../common/FieldTitle'
 
 
 const Option = Select.Option
@@ -191,6 +192,9 @@ const renderFieldComponent = ({ idx, field, i18n, touch }) => {
     }
     case FieldType.TEXT_BOLD: {
       return <Field {...fieldProps} component={RenderTextBold} touch={touch}/>
+    }
+    case FieldType.TITLE: {
+      return <FieldTitle {...fieldProps} />
     }
     default: {
       return null
