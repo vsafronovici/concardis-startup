@@ -6,22 +6,22 @@ import cn from 'classnames'
 import { chaptersSelector } from '../../selectors/application-form-selector'
 import { ChapterForm } from './ChapterForm'
 import { ReadChapterForm } from './ReadChapterForm'
-import { goToNextSection } from '../../actions/application-form-action'
+import { goToSection } from '../../actions/application-form-action'
 
-const ReviewChapter = ({ chapter, editMode, index, goToNextSectionAction }) => editMode
+const ReviewChapter = ({ chapter, editMode, index, goToSectionAction }) => editMode
   ? (
     <div className={cn('review-mode', { 'edit-mode': editMode })}>
       <ChapterForm chapter={chapter}/>
     </div>
   )
-  : <ReadChapterForm chapter={chapter} index={index} editSection={goToNextSectionAction}/>
+  : <ReadChapterForm chapter={chapter} index={index} editSection={goToSectionAction}/>
 
 const mapStateToProps = state => ({
   chapters: chaptersSelector(state)
 })
 
 const mapDispatchToProps = ({
-  goToNextSectionAction: goToNextSection
+  goToSectionAction: goToSection
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ReviewChapter)

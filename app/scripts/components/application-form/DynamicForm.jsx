@@ -7,7 +7,7 @@ import { FieldRow } from './FieldRow'
 import { translate } from '../../i18n/i18n'
 import VoidLink from '../common/VoidLink'
 import { FieldTitle } from '../common/FieldTitle'
-import { getReview, save } from '../../actions/application-form-action'
+import { save } from '../../actions/application-form-action'
 import { currentSelector, nrOfChaptersSelector, reviewModeSelector } from "../../selectors/application-form-selector";
 import { i18nSelector} from '../../selectors/i18n-selector'
 import { fieldsToShow } from '../../utils/application-form-utils'
@@ -42,34 +42,38 @@ export class DynamicForm extends React.Component {
   }
 
   render() {
-    const { chapter, rValues, current, i18n, touch, handleSubmit, error } = this.props
+    const { chapter, rValues, current, i18n, touch, handleSubmit, error, reviewMode, submitting } = this.props
     console.log('DynamicForm', this.props)
 
     const fieldsToDisplay = fieldsToShow(chapter, rValues)
 
     return (
       <div className="dynamic-form">
-        {current === 4 && (
+
+        { current === 4 && !reviewMode &&
           <div className="dynamic-form-receipt">
             <img src={window.configSettings.resources.imgs.receipt} />
-          </div>)
-        }
-        <form onSubmit={handleSubmit(this.submitForm)}>
-          <div className="flex-row-justify-end">
-            <div><VoidLink onClick={this.saveForm}>{translate('link_applicationForm_saveAndClose')}</VoidLink></div>
           </div>
+        }
+
+        { !reviewMode &&
+          <div className="flex-row-justify-end">
+            <div><VoidLink>{translate('link_applicationForm_saveAndClose')}</VoidLink></div>
+          </div>
+        }
+
+        <form onSubmit={handleSubmit(this.submitForm)}>
           <div>
             <FieldTitle title={chapter.title} subtitle={chapter.subtitle}/>
             <div>
               { fieldsToDisplay.map((field, idx) => <FieldRow key={field.name} field={field} idx={idx} i18n={i18n} touch={touch} />) }
             </div>
-
           </div>
 
           { error && <div className="form-field-row form-field"><div className="error">{error}</div></div> }
 
           <div>
-            <Button htmlType="submit">{translate(this.getBtnName())}</Button>
+            <Button htmlType="submit" loading={submitting} disabled={submitting}>{translate(this.getBtnName())}</Button>
           </div>
         </form>
       </div>
