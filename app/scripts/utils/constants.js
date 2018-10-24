@@ -4,7 +4,6 @@ export const NodeProcess = {
 }
 
 export const PageContainers = {
-  LANDING_PAGE: 'react-landing-page',
   APPLICATION_FORM_PAGE: 'application-form-page',
   CONFIGURATOR_PAGE: 'configurator-page',
   PACKAGE_CONFIGURE_PAGE: 'package-configure-page'
@@ -70,14 +69,9 @@ export const PackageRoutes = {
   ROUTE_2: 'Package_Personalise'
 }
 
-
-
-
 export const EXTERNAL_LINKS = {
-  domain: 'https://smejoindev-concardis-partners.cs109.force.com',
-  get APPLICATION_FORM() { return this.domain + '/OndoardingSME/apex/ApplicationFormPage' }
+  APPLICATION_FORM: '/OndoardingSME/apex/ApplicationFormPage'
 }
-
 
 export const ApplicationFormStepsTitles = {
   STEP_1: 'ABOUT_YOU',
