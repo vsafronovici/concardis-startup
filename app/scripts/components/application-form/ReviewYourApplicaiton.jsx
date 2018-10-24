@@ -3,13 +3,27 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Row, Col, Button } from 'antd'
 import { translate } from '../../i18n/i18n'
-import { agreeTAC, closeTACModal, openTACModal, submitReq } from '../../actions/application-form-action'
+import { agreeTAC, closeTACModal, openTACModal, submitReq, submit, confirm, setReadyForSubmit } from '../../actions/application-form-action'
 import ReviewChapters from './ReviewChapters'
 import { tacSelector } from '../../selectors/application-form-selector'
 import TermsAndConditionsModal from './modal/TermsAndConditionsModal'
 
 const ReviewYourApplication = props => {
-  const { submitReqAction, TAC: { show }, openTACModalAction, closeTACModalAction, agreeTACAction } = props
+  const {
+    submitAction,
+    TAC: { show },
+    openTACModalAction,
+    closeTACModalAction,
+    agreeTACAction,
+    confirmationAction,
+    setReadyForSubmitAction,
+  } = props
+
+  const onSubmit = () => {
+    setReadyForSubmitAction()
+    submitAction()
+  }
+
   return (
     <Row>
       <Col span={16} offset={4}>
@@ -27,9 +41,9 @@ const ReviewYourApplication = props => {
               <ReviewChapters />
             </Col>
             <Col span={12}>
-              <Button onClick={submitReqAction}>{translate('btn_applicationForm_submitApplication')}</Button>
-              <Button onClick={openTACModalAction}>{translate('btn_applicationForm_termsAndConditions')}</Button>
-              <TermsAndConditionsModal id="TAC_2" show={show} onClose={closeTACModalAction} onOk={agreeTACAction} />
+              <Button onClick={onSubmit}>{translate('btn_applicationForm_submitApplication')}</Button>
+              <Button onClick={submitAction}>{translate('btn_applicationForm_termsAndConditions')}</Button>
+              <TermsAndConditionsModal id="TAC_2" show={show} onClose={closeTACModalAction} onOk={confirmationAction} />
             </Col>
           </Row>
         </div>
@@ -43,7 +57,9 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = ({
-  submitReqAction: submitReq,
+  submitAction: submit,
+  confirmationAction: confirm,
+  setReadyForSubmitAction: setReadyForSubmit,
   openTACModalAction: openTACModal,
   closeTACModalAction: closeTACModal,
   agreeTACAction: agreeTAC

@@ -1,9 +1,28 @@
-import { all, call, put, select, takeLatest } from 'redux-saga/effects'
+import { all, call, put, select, takeLatest, takeEvery } from 'redux-saga/effects'
 import { APPLICATION_FORM } from '../actions/types'
-import { getFormMetaRes } from './../actions/application-form-action'
 import { SFAction } from '../modules/client'
-import { updateCommercialsTCReq, updateCommercialsTCRes, saveReq, saveRes, goToNextSection, goToSection, goToReviewMode, submitRes } from '../actions/application-form-action'
-import { chaptersSelector, nrOfChaptersSelector, reviewModeSelector } from '../selectors/application-form-selector'
+import {
+  updateCommercialsTCReq,
+  updateCommercialsTCRes,
+  goToNextSection,
+  getFormMetaRes,
+  goToReviewMode,
+  goToSection,
+  agreeTAC,
+  submitRes,
+  submitReq,
+  openTACModal,
+  setRequestForReady,
+  saveReq,
+  saveRes,
+} from '../actions/application-form-action'
+import {
+  chaptersSelector,
+  nrOfChaptersSelector,
+  reviewModeSelector,
+  tacSelector,
+  readyForSubmitSelector,
+} from '../selectors/application-form-selector'
 import { buildSaveRequest } from '../utils/application-form-utils'
 import { RESPONSE_STATUS } from '../utils/constants'
 
@@ -14,7 +33,6 @@ function* getAppFormMetadataSaga() {
   const response = yield call(SFAction, action, { parseToJSON: true })
   yield put(getFormMetaRes(response.data))
 }
-
 
 function* initDataSaga() {
   yield call(getAppFormMetadataSaga)
@@ -32,7 +50,6 @@ function* agreeTACSaga() {
 }
 
 function* saveSaga({ payload: { formValues, currentChapterIdx, callback } }) {
-
   const chapters = yield select(chaptersSelector)
 
   const req = buildSaveRequest({ formValues, chapters, currentChapterIdx })
@@ -63,15 +80,35 @@ function* saveSaga({ payload: { formValues, currentChapterIdx, callback } }) {
         yield put(goToReviewMode())
       }
     }
-
   }
 }
 
 function* submitSaga() {
+  const isReadyForSubmit = yield select(readyForSubmitSelector)
+  const { agree } = yield select(tacSelector)
+  
+  if (agree && isReadyForSubmit) {
+    yield put(submitReq())
+  } else {
+    yield put(openTACModal())
+  }
+}
 
+function* confirmTAC() {
+  const isReadyForSubmit = yield select(readyForSubmitSelector)
+  
+  if (isReadyForSubmit) {
+    yield put(submitReq())
+  } else {
+    yield put(agreeTAC())
+  }
+}
+
+function* submitReqSaga() {
   const action = {
     actionName: window.configSettings.remoteActions.submitForm
   }
+
   const response = yield call(SFAction, action, { parseToJSON: true })
   yield put(submitRes(response.data))
 }
@@ -81,6 +118,8 @@ export default function* root() {
     takeLatest(APPLICATION_FORM.INIT_DATA, initDataSaga),
     takeLatest(APPLICATION_FORM.AGREE_TAC, agreeTACSaga),
     takeLatest(APPLICATION_FORM.SAVE, saveSaga),
-    takeLatest(APPLICATION_FORM.SUBMIT_REQ, submitSaga),
+    takeLatest(APPLICATION_FORM.SUBMIT, submitSaga),
+    takeLatest(APPLICATION_FORM.SUBMIT_REQ, submitReqSaga),
+    takeLatest(APPLICATION_FORM.CONFIRM, confirmTAC),
   ])
 }
