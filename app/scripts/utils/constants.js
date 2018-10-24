@@ -9,6 +9,12 @@ export const PageContainers = {
   PACKAGE_CONFIGURE_PAGE: 'package-configure-page'
 }
 
+export const ChapterStatuses = {
+  IN_PROGRESS: 'IN_PROGRESS',
+  FINISHED: 'FINISHED',
+  WAITING: 'WAITING',
+}
+
 export const LanguageType = {
   EN: 'en_US',
   DE: 'de'
