@@ -37,7 +37,7 @@ export const format = (text, ...vals) =>
   vals.reduce((acc, obj, idx) => acc.replace(`{${idx}}`, obj), text)
 
 export const delayResponse = resp =>
-  new Promise(resolve =>
+  new Promise((resolve, reject) =>
     setTimeout(() => resolve({ data: resp }), 1000)
   )
 
