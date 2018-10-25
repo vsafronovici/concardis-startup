@@ -1,6 +1,4 @@
-import { toPairs, values, isNil, equals, all, isEmpty, propOr, curry, anyPass, pluck } from 'ramda'
-import numeral from 'numeral'
-import moment from 'moment'
+import { pluck, prop, sortBy, values } from 'ramda'
 import { isNilOrEmpty, objectToArrayKeyValue } from './function-utils'
 import { SectionStatusType, SubmitStatus } from './constants'
 
@@ -96,3 +94,4 @@ export const buildSaveRequest = ({ formValues, chapters, currentChapterIdx }) =>
 export const getNotRequired = validationRules =>
   isNilOrEmpty(validationRules) || !pluck('required', validationRules)[0]
 
+export const sortBySequence = sortBy(prop('sequence'))

@@ -1,13 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Select } from 'antd'
-import { identity, memoizeWith } from 'ramda'
-
+import { map, memoizeWith, pipe } from 'ramda'
 
 import { translate } from '../../i18n/i18n'
 import { FieldTooltip } from "./FieldTooltip";
-import { getNotRequired } from '../../utils/application-form-utils'
+import { getNotRequired, sortBySequence } from '../../utils/application-form-utils'
 import { Optional } from './Optional'
+import { isNilOrEmpty } from '../../utils/function-utils'
 
 const Option = Select.Option
 
@@ -15,7 +15,16 @@ const style = {
   width: '200px'
 }
 
-// const options = memoizeWith(identity)
+const options = memoizeWith(
+  (fieldName, listOfValues) => `${fieldName}_${listOfValues.length}`,
+  (_, listOfValues) => pipe(sortBySequence, map(({ value, label }) => {
+    return (
+      <Option key={value} value={value} className="item">
+        {translate(label)}
+      </Option>
+    )
+  }))(listOfValues)
+)
 
 export const FieldDropDown = props => {
   const { label, onChange, value, listOfValues, helpText, required, onBlur, hint, validationRules, input: { name } } = props
@@ -34,13 +43,7 @@ export const FieldDropDown = props => {
         required={required}
         onBlur={onBlur}
       >
-        {listOfValues && listOfValues.map(({ value, label , ...rest}, index) => {
-          return (
-            <Option key={index} value={value} className="item">
-              {translate(label)}
-            </Option>
-          )
-        })}
+        {!isNilOrEmpty(listOfValues) && options(name, listOfValues)}
       </Select>
     </div>
   )
