@@ -23,11 +23,11 @@ const renderFieldComponent = ({ idx, field, value }) => {
     case FieldType.BOXED_RADIO_BTNS: {
     }
     case FieldType.BOXED_CHECKBOX: {
-      valueToDisplay = translate(value)
+      valueToDisplay = null
       break
     }
-    case FieldType.CHECKBOX: {
-    }
+    // case FieldType.CHECKBOX: {
+    // }
     case FieldType.DROPDOWN: {
       valueToDisplay = translate(value)
       break
