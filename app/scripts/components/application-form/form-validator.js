@@ -24,9 +24,7 @@ const createReducer = values => (errors, field) => {
 
   const value = values[name]
 
-  // Validate date
   if (type === FieldType.DATE && !isNilOrEmpty(value) ) {
-    console.log('Validator DATE=', { field, value, valid: checkDate(value) })
     if (!checkDate(value)) {
       return {
         ...errors,
@@ -35,7 +33,7 @@ const createReducer = values => (errors, field) => {
     }
   }
 
-  if (!required && !isTextualComponent(field)) {
+  if (!required && (!isTextualComponent(field) || isNilOrEmpty(value))) {
     return errors
   }
 
@@ -46,7 +44,7 @@ const createReducer = values => (errors, field) => {
     }
   }
 
-  if (required && (value === undefined || value === '' || isEmpty(value))) {
+  if (required && isNilOrEmpty(value)) {
     return {
       ...errors,
       [name]: requiredError
