@@ -17,6 +17,11 @@
     label {
       color: #000;
     }
+    label.radio-required {
+      span.ant-radio-inner {
+        border-color: red;
+      }
+    }
     &.active {
       input {
         background-color: #fff !important;

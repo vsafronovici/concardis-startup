@@ -65,6 +65,7 @@ const RenderVerticalRadioBtns = createRenderer((input, meta, rest) => {
     onFocus={e => { touch(input.name) }}
     value={input.value}
     {...rest}
+    meta={meta}
   />
 })
 

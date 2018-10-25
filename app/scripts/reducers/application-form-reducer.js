@@ -11,7 +11,7 @@ const initialState = {
   readyForSubmit: false,
   current: 0,
   chapters: undefined,
-  reviewMode: true,
+  reviewMode: false,
   finalSubmit: {
     submitting: false,
     status: undefined

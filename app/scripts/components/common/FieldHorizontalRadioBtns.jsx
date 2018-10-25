@@ -22,7 +22,7 @@ export const FieldHorizontalRadioBtns = props => {
             <Radio
               key={index}
               value={radio.value}
-              className="item"
+              className="item radio-required"
               onFocus={onFocus}
             >
               {translate(radio.label)}

@@ -16,8 +16,8 @@ const radioStyle = {
 }
 
 export const FieldVerticalRadioBtns = props => {
-  const { value, onChange, label, listOfValues, autoFocus, required, helpText, onFocus, validationRules } = props
-
+  const { value, onChange, label, listOfValues, autoFocus, required, helpText, onFocus, validationRules, meta } = props
+  console.log('VERTICAL', props)
   return(
     <div className="field-vertical-radio">
       <div className="label-container">
@@ -32,6 +32,7 @@ export const FieldVerticalRadioBtns = props => {
         {listOfValues.map(({ value, label, ...rest }, index) => (
           <div className="bottom-container" key={index}>
             <Radio
+              className="radio-required"
               value={value}
               style={radioStyle}
               autoFocus={index === 0 && autoFocus}

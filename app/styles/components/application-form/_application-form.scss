@@ -15,7 +15,10 @@
       direction: rtl;
     }
   }
-
+  .button-container {
+    display: flex;
+    direction: rtl;
+  }
 }
 .ant-steps-item-icon>.ant-steps-icon {
   line-height: 24px !important;

@@ -72,7 +72,7 @@ export class DynamicForm extends React.Component {
 
           { error && <div className="form-field-row form-field"><div className="error">{error}</div></div> }
 
-          <div className={reviewMode && "button-container"}>
+          <div className="button-container">
             <div><Button htmlType="submit" loading={submitting} disabled={submitting}>{translate(this.getBtnName())}</Button></div>
           </div>
         </form>

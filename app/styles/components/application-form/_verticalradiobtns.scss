@@ -1,37 +1,42 @@
-.field-vertical-radio {
-  max-width: 411px;
-  border: 1px solid #BDBDBD;
-  padding: 15px 15px;
-  font-size: 12px !important;
-  margin-bottom: 15px;
-  background-color: #fff;
-  .bottom-container {
-    display: flex;
-    direction: row;
-    .bottom-label {
+.form-field-vertical_radio_btns {
+  .field-vertical-radio {
+    max-width: 411px;
+    border: 1px solid #BDBDBD;
+    padding: 15px 15px;
+    font-size: 12px !important;
+    margin-bottom: 15px;
+    background-color: #fff;
+    .bottom-container {
+      display: flex;
+      direction: row;
+      .erorr {
+
+      }
+      .bottom-label {
+        font-size: 12px;
+      }
+    }
+    .label-container {
+      margin-bottom: 10px;
+      display: flex;
+      direction: row;
+      i {
+        font-size: 22px !important;
+        background-color: none;
+        color: #BDBDBD !important;
+      }
+    }
+    .anticon-info-circle {
+      font-size: 20px;
+      margin-left: 10px;
+    }
+    .title {
+      font-weight: 700;
+      margin-bottom: 15px;
+      margin-right: 10px;
+    }
+    .ant-radio-wrapper {
       font-size: 12px;
     }
-  }
-  .label-container {
-    margin-bottom: 10px;
-    display: flex;
-    direction: row;
-    i {
-      font-size: 22px !important;
-      background-color: none;
-      color: #BDBDBD !important;
-    }
-  }
-  .anticon-info-circle {
-    font-size: 20px;
-    margin-left: 10px;
-  }
-  .title {
-    font-weight: 700;
-    margin-bottom: 15px;
-    margin-right: 10px;
-  }
-  .ant-radio-wrapper {
-    font-size: 12px;
   }
 }
