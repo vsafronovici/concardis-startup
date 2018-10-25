@@ -1,5 +1,5 @@
 import { all, call, put, select, takeLatest, takeEvery } from 'redux-saga/effects'
-import { map, findLastIndex } from 'ramda';
+import { map, findLastIndex, propEq } from 'ramda';
 import { APPLICATION_FORM } from '../actions/types'
 import { apiFetchSaga } from './app-saga'
 import {
@@ -25,7 +25,7 @@ import {
   readyForSubmitSelector,
 } from '../selectors/application-form-selector'
 import { buildSaveRequest } from '../utils/application-form-utils'
-import { RESPONSE_STATUS, ChapterStatuses } from '../utils/constants'
+import { RESPONSE_STATUS, SectionStatusType } from '../utils/constants'
 
 function* getAppFormMetadataSaga() {
   const action = {
@@ -38,16 +38,16 @@ function* getAppFormMetadataSaga() {
 function* initDataSaga() {
   yield call(getAppFormMetadataSaga)
   const chapters = yield select(chaptersSelector)
-  const statuses = map((chapter) => chapter.status, chapters)
-  const statusesCount = statuses.length - 1;
-  const finishedStatusIndex = findLastIndex((status) => status === ChapterStatuses.FINISHED, statuses)
 
-  if (finishedStatusIndex < statusesCount) {
-    yield put(goToNextSection(finishedStatusIndex + 1))
-  } else if (finishedStatusIndex === statusesCount) {
-    yield put(goToReviewMode())
-  } else {
-    yield put(goToNextSection(0));
+  const statusesCount = chapters.length - 1
+  const finishedStatusIndex = findLastIndex(propEq('status', SectionStatusType.FINISHED))(chapters)
+
+  switch(true) {
+    case finishedStatusIndex < statusesCount:
+      return yield put(goToNextSection(finishedStatusIndex + 1));
+    case finishedStatusIndex === statusesCount:
+      return yield put(goToReviewMode());
+    default: yield put(goToNextSection(0));
   }
 }
 
