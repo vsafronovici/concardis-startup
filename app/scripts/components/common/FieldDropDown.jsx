@@ -1,6 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Select } from 'antd'
+import { identity, memoizeWith } from 'ramda'
+
+
 import { translate } from '../../i18n/i18n'
 import { FieldTooltip } from "./FieldTooltip";
 import { getNotRequired } from '../../utils/application-form-utils'
@@ -12,9 +15,11 @@ const style = {
   width: '200px'
 }
 
+// const options = memoizeWith(identity)
+
 export const FieldDropDown = props => {
-  const { label, onChange, value, listOfValues, helpText, required, onBlur, hint, validationRules } = props
-  //console.log('DROPDOWN', props)
+  const { label, onChange, value, listOfValues, helpText, required, onBlur, hint, validationRules, input: { name } } = props
+  console.log('DROPDOWN', props)
   return (
     <div className="field-drop-down">
       <div className="flex-row label">

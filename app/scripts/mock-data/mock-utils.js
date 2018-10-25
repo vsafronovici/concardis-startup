@@ -71,7 +71,7 @@ export const mockResponse = action => {
       return updateComercialsTAC_OK
 
     case MOCK_REMOTE_ACTIONS.validateForm:
-      return validateForm_OK
+      return validateForm_ERR
 
     case MOCK_REMOTE_ACTIONS.submitForm:
       return submitError

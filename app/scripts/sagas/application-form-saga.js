@@ -44,10 +44,12 @@ function* initDataSaga() {
 
   switch(true) {
     case finishedStatusIndex < statusesCount:
-      return yield put(goToNextSection(finishedStatusIndex + 1));
+      return yield put(goToSection(finishedStatusIndex + 1))
+
     case finishedStatusIndex === statusesCount:
-      return yield put(goToReviewMode());
-    default: yield put(goToNextSection(0));
+      return yield put(goToReviewMode())
+
+    default: yield put(goToSection(0))
   }
 }
 
