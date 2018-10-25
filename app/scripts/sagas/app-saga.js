@@ -1,5 +1,4 @@
 import { all, call, put, takeLatest } from 'redux-saga/effects'
-
 import { APP } from './../actions/types'
 import { loadTranslationsReq, loadTranslationsResp, failedApiFetch } from '../actions/app-action'
 import { SFAction, memoizedSFAction } from '../modules/client'
@@ -19,13 +18,11 @@ function* initPageSaga() {
 }
 
 export function* apiFetchSaga(action, options = {}) {
-  const { memoize } = options;
+  const { memoize } = options
   try {
-    const sfAction = memoize ? memoizedSFAction : SFAction;
-    return yield call(sfAction, action, options);
+    const sfAction = memoize ? memoizedSFAction : SFAction
+    return yield call(sfAction, action, options)
   } catch(err) {
-    console.error(err)
-    alert('ERROR ON OUR SIDE :(')
     return yield put(failedApiFetch(err));
   }
 }
