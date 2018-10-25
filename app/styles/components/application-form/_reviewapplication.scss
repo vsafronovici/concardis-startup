@@ -12,7 +12,10 @@
     }
     .review-buttons-container {
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
+      button:nth-child(2) {
+        margin-left: 10px;
+      }
     }
   }
 }
