@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Input } from 'antd'
+import { curry } from 'ramda'
 
 import { translate } from './../../i18n/i18n'
 import { getNotRequired } from '../../utils/application-form-utils'
@@ -9,6 +10,11 @@ import { Optional } from './Optional'
 const DD = 'dd'
 const MM = 'mm'
 const YY = 'yy'
+
+const hasLength = curry((length, str) => str.length === length)
+const hasLength2 = hasLength(2)
+const hasLength4 = hasLength(4)
+
 
 export class FieldDate extends Component  {
 
@@ -37,10 +43,14 @@ export class FieldDate extends Component  {
     const year = this.inputYear.input.value
     const formatted = `${year}-${month}-${day}`
     this.props.onChange(formatted)
+
+    if (hasLength2(day) && hasLength2(month) && hasLength4(year)) {
+      this.props.onBlur()
+    }
   }
 
   render() {
-    const { label, required, onBlur, value, validationRules } = this.props
+    const { label, required, value, validationRules } = this.props
     const defaultDate = value || '--'
     const [yearValue, monthValue, dayValue] = defaultDate.split('-')
 
@@ -56,7 +66,6 @@ export class FieldDate extends Component  {
               placeholder="DD"
               onChange={this.handleChange(DD)}
               required={required}
-              onBlur={onBlur}
               value={dayValue}
             />
           </div>
@@ -68,7 +77,6 @@ export class FieldDate extends Component  {
               placeholder="MM"
               onChange={this.handleChange(MM)}
               required={required}
-              onBlur={onBlur}
               value={monthValue}
             />
           </div>
@@ -79,7 +87,6 @@ export class FieldDate extends Component  {
               placeholder="YYYY"
               onChange={this.handleChange(YY)}
               required={required}
-              onBlur={onBlur}
               value={yearValue}
             />
           </div>
