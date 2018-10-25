@@ -14,6 +14,8 @@ export const LanguageType = {
   DE: 'de'
 }
 
+export const API_ERROR_TITLE = 'ERROR'
+
 export const RESPONSE_STATUS = {
   OK: 'ok',
   ERR: 'err'
