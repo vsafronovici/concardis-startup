@@ -9,7 +9,7 @@ import { parseCheckBoxValues } from "../../utils/function-utils";
 const renderFieldComponent = ({ idx, field, value }) => {
   const { type, title } = field
   console.log('renderFieldComponent', translate(value), { field, value })
-  const label = translate(field.label)
+  let label = translate(field.label)
   let valueToDisplay
   switch (type) {
     case FieldType.TEXT: {
@@ -24,10 +24,13 @@ const renderFieldComponent = ({ idx, field, value }) => {
     }
     case FieldType.BOXED_CHECKBOX: {
       valueToDisplay = null
+      label = null
       break
     }
-    // case FieldType.CHECKBOX: {
-    // }
+    case FieldType.CHECKBOX: {
+      label = null
+      break
+    }
     case FieldType.DROPDOWN: {
       valueToDisplay = translate(value)
       break
@@ -55,8 +58,9 @@ const renderFieldComponent = ({ idx, field, value }) => {
       valueToDisplay = value
     }
   }
+
   return <div>
-    {type !== FieldType.TITLE && <span className="label">{label}:</span>}
+    {type !== FieldType.TITLE && label && <span className="label">{label}:</span>}
     <span className="value">{valueToDisplay}</span>
   </div>
 }
