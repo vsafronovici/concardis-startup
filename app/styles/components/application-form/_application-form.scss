@@ -12,12 +12,15 @@
     border: 2px solid #E0E0E0;
     .button-container {
       display: flex;
-      direction: rtl;
     }
   }
   .button-container {
     display: flex;
-    direction: rtl;
+    max-width: 500px;
+
+    .button-submit {
+      margin-left: auto;
+    }
   }
 }
 .ant-steps-item-icon>.ant-steps-icon {

@@ -1,8 +1,12 @@
-.form-field-row {
-  margin-top: 30px;
+.form-field-row .error {
+  color: red;
+  margin-left: 1.5rem;
+  max-width: 210px;
 }
 
 .form-field {
+  margin-top: 30px;
+
   label, .form-label {
     font-weight: bold;
   }
@@ -79,15 +83,6 @@
     direction: row !important;
   }
 }
-.flex-row {
-  display: flex;
-  direction: row;
-  &-justify-end {
-    display: flex;
-    direction: row !important;
-    justify-content: end;
-  }
-}
 
 .spin-align {
     text-align: center;
@@ -106,10 +101,41 @@
 .ant-spin-dot i {
   background-color: #dc4405 !important;
 }
-.flex-row-justify-end {
+
+.flex-row {
   display: flex;
-  direction: row;
-  justify-content: flex-end;
+  flex-direction: row;
+
+  &-justify-end {
+    display: flex;
+    flex-direction: row;
+    justify-content: end !important; 
+  }
+
+  &-space-between {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between !important;
+  }
+
+  &-space-around {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around !important;
+  }
+}
+
+.error-icon-container {
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  background: red;
+  text-align: center;
+  line-height: 32px;
+
+    i {
+      font-size: 26px;
+    }
 }
 
 .btn-simple {

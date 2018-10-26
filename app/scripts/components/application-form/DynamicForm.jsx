@@ -6,19 +6,20 @@ import { connect } from 'react-redux'
 import { FieldRow } from './FieldRow'
 import { translate } from '../../i18n/i18n'
 import VoidLink from '../common/VoidLink'
+import FormError from '../common/FormError';
 import { FieldMainTitle } from '../common/FieldMainTitle'
 import { getReview, save } from '../../actions/application-form-action'
 import { currentSelector, nrOfChaptersSelector, reviewModeSelector } from "../../selectors/application-form-selector";
 import { i18nSelector} from '../../selectors/i18n-selector'
 import { fieldsToShow } from '../../utils/application-form-utils'
-import {SubmissionError} from 'redux-form'
+import { SubmissionError } from 'redux-form'
 import { RESPONSE_STATUS } from '../../utils/constants'
 
 export class DynamicForm extends React.Component {
   static propTypes = {
   }
 
-  submitForm = values  => {
+  submitForm = values => {
     const { current, saveAction } = this.props
 
     return new Promise(resolve => {
@@ -69,11 +70,9 @@ export class DynamicForm extends React.Component {
               { fieldsToDisplay.map((field, idx) => <FieldRow key={field.name} field={field} idx={idx} i18n={i18n} touch={touch} />) }
             </div>
           </div>
-
-          { error && <div className="form-field-row form-field"><div className="error">{error}</div></div> }
-
           <div className="button-container">
-            <div><Button htmlType="submit" loading={submitting} disabled={submitting}>{translate(this.getBtnName())}</Button></div>
+            { error && <FormError error={error} /> }
+            <div className="button-submit"><Button htmlType="submit" loading={submitting} disabled={submitting}>{translate(this.getBtnName())}</Button></div>
           </div>
         </form>
       </div>
