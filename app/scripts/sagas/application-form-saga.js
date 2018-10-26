@@ -78,13 +78,14 @@ function* saveSaga({ payload: { formValues, currentChapterIdx, callback } }) {
   const response = yield call(apiFetchSaga, action, { parseToJSON: true })
   yield put(saveRes(response.data))
 
-  callback(response.data)
 
   if (response.data.status === RESPONSE_STATUS.OK) {
     const reviewMode = yield select(reviewModeSelector)
     const nrOfChapters = yield select(nrOfChaptersSelector)
 
     yield call(getAppFormMetadataSaga)
+
+    callback(response.data)
 
     if (reviewMode) {
       yield put(goToSection(-1))
@@ -95,6 +96,8 @@ function* saveSaga({ payload: { formValues, currentChapterIdx, callback } }) {
         yield put(goToReviewMode())
       }
     }
+  } else {
+    callback(response.data)
   }
 }
 
