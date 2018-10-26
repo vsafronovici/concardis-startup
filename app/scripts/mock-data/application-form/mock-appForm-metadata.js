@@ -13543,7 +13543,7 @@ export default [{
         "requiredError": "ch6_s1_field4_ReqErr",
         "required": true
       }],
-      "type": "boxed_checkbox",
+      "type": "checkbox",
       "sfFieldType": "Checkbox",
       "sequence": 4,
       "objectApi": "ccApplication_Form__c",

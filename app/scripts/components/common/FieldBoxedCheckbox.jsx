@@ -2,10 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Checkbox } from 'antd'
 import { translate } from './../../i18n/i18n'
+import { toBoolean } from '../../utils/application-form-utils'
 
 export const FieldBoxedCheckbox = props => {
-  const { label, onChange, value, optional, input, autoFocus, description } = props
-  const handleChange = input ? input.onChange : onChange
+  const { label, onChange, value, optional, autoFocus, description } = props
+
+  const checked = toBoolean(value)
 
   return (
     <div className="field-boxed-checkbox">
@@ -19,9 +21,9 @@ export const FieldBoxedCheckbox = props => {
       </div>
       <div className="field">
         <Checkbox
-          checked={value}
-          value={value}
-          onChange={e => handleChange(e.target.checked)}
+          checked={checked}
+          value={checked}
+          onChange={e => onChange(e.target.checked.toString())}
           autoFocus={!!autoFocus}
         />
       </div>

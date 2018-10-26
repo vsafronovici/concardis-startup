@@ -95,3 +95,5 @@ export const getNotRequired = validationRules =>
   isNilOrEmpty(validationRules) || !pluck('required', validationRules)[0]
 
 export const sortBySequence = sortBy(prop('sequence'))
+
+export const toBoolean = value => value && value.toString() === 'true'
