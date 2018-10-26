@@ -11683,7 +11683,7 @@ export default [{
 }, {
   "title": "chapter_3_title",
   "subtitle": "chapter_3_sub_title",
-  "status": "FINISHED",
+  "status": "WAITING",
   "sequence": 3,
   "sections": [{
     "type": "Simple",
@@ -11976,7 +11976,7 @@ export default [{
 }, {
   "title": "chapter_4_title",
   "subtitle": "chapter_4_sub_title",
-  "status": "FINISHED",
+  "status": "WAITING",
   "sequence": 4,
   "sections": [{
     "type": "Simple",
@@ -13344,7 +13344,7 @@ export default [{
 }, {
   "title": "chapter_5_title",
   "subtitle": "chapter_5_sub_title",
-  "status": "FINISHED",
+  "status": "WAITING",
   "sequence": 5,
   "sections": [{
     "type": "Simple",
@@ -13474,7 +13474,7 @@ export default [{
 }, {
   "title": "chapter_6_title",
   "subtitle": "chapter_6_sub_title",
-  "status": "FINISHED",
+  "status": "WAITING",
   "sequence": 6,
   "sections": [{
     "type": "Simple",
