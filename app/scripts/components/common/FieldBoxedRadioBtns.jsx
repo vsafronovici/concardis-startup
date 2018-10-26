@@ -5,6 +5,7 @@ import {pipe, map, compose, memoizeWith} from 'ramda'
 import { translate } from './../../i18n/i18n'
 import { getNotRequired, sortBySequence } from '../../utils/application-form-utils'
 import { Optional } from './Optional'
+import { isNilOrEmpty } from '../../utils/function-utils'
 
 const RadioGroup = Radio.Group
 
@@ -50,7 +51,7 @@ export const FieldBoxedRadioBtns = (props) => {
         {description && translate(description)}
       </div>
       <RadioGroup onChange={(value) => onChange(value)} value={value} >
-        {listOfValues && options(name, listOfValues, onFocus, autoFocus)}
+        {!isNilOrEmpty(listOfValues) && options(name, listOfValues, onFocus, autoFocus)}
       </RadioGroup>
     </div>
     )

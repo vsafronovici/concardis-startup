@@ -1,15 +1,33 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Radio } from 'antd'
+import { map, pipe, memoizeWith } from 'ramda'
 import { translate } from '../../i18n/i18n'
 import { FieldTooltip } from './FieldTooltip'
-import { getNotRequired } from '../../utils/application-form-utils'
+import {getNotRequired, sortBySequence} from '../../utils/application-form-utils'
 import { Optional } from './Optional'
+import { isNilOrEmpty } from '../../utils/function-utils'
 
 const RadioGroup = Radio.Group
 
+const options = memoizeWith(
+  (fieldName, listOfValues) => `${fieldName}_${listOfValues.length}`,
+  (_, listOfValues, onFocus) => pipe(sortBySequence, map(({ value, label }, index) => {
+    return (
+      <Radio
+        key={index}
+        value={value}
+        className="item radio-required"
+        onFocus={onFocus}
+      >
+        {translate(label)}
+      </Radio>
+    )
+  }))(listOfValues)
+)
+
 export const FieldHorizontalRadioBtns = props => {
-  const { label, onChange, value, required, listOfValues, helpText, onFocus, validationRules } = props
+  const { label, onChange, value, required, listOfValues, helpText, onFocus, validationRules, input: { name } } = props
 
   return (
     <div className="field-horizontal-radio-btns">
@@ -17,18 +35,7 @@ export const FieldHorizontalRadioBtns = props => {
         <label>{translate(label)}</label>{getNotRequired(validationRules) && <Optional />}{helpText && <FieldTooltip label={helpText}/>}
       </div>
       <RadioGroup onChange={event => onChange(event)} value={value} className="flex-row" required={required}>
-        {listOfValues && listOfValues.map((radio, index) => {
-          return (
-            <Radio
-              key={index}
-              value={radio.value}
-              className="item radio-required"
-              onFocus={onFocus}
-            >
-              {translate(radio.label)}
-            </Radio>
-          )
-        })}
+        {!isNilOrEmpty(listOfValues) && options(name, listOfValues, onFocus)}
       </RadioGroup>
     </div>
   )
