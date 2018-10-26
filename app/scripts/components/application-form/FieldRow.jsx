@@ -74,6 +74,7 @@ const RenderBoxedRadioBtns = createRenderer((input, meta, rest) => {
   return <FieldBoxedRadioBtns
     onChange={(event) => input.onChange(event)}
     value={input.value}
+    input={input}
     onFocus={event => {touch(input.name)} }
     {...rest}
   />
