@@ -11683,11 +11683,7 @@ export default [{
 }, {
   "title": "chapter_3_title",
   "subtitle": "chapter_3_sub_title",
-<<<<<<< HEAD
-  "status": "IN_PROGRESS",
-=======
   "status": "WAITING",
->>>>>>> origin/sprint4
   "sequence": 3,
   "sections": [{
     "type": "Simple",
