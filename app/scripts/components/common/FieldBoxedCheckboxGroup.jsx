@@ -75,7 +75,7 @@ export const FieldBoxedCheckboxGroup = (props) => {
   const handleChange = optionKey => checked => {
     const defaultValuesArr = fromValue(props.value)
     const valuesArr = checked ? uniq([...defaultValuesArr, optionKey]) : without(optionKey, defaultValuesArr)
-    this.props.onChange(toValue(valuesArr))
+    props.onChange(toValue(valuesArr))
   }
   
   return (
