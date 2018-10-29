@@ -4,14 +4,18 @@ import { connect } from 'react-redux'
 import { Row, Col, Button, Icon } from 'antd'
 import { translate } from './../../../i18n/i18n'
 import { goToRoute } from './../../../actions/package-configure-action'
+import { quoteValidDateTillSelector } from '../../../selectors/package-configure-selector'
 import { PackageRoutes } from './../../../utils/constants'
 
+const FEATURES = [
+  'configurator.packagePersonalise.list.Feature1',
+  'configurator.packagePersonalise.list.Feature2',
+  'configurator.packagePersonalise.list.Feature3',
+]
+
 const PackageDescription = props => {
-  const FEATURES = [
-    translate('configurator.packagePersonalise.list.Feature1'),
-    translate('configurator.packagePersonalise.list.Feature2'),
-    translate('configurator.packagePersonalise.list.Feature3')
-  ]
+  const { dateValidTill, goToRoute } = props
+
   return (
     <Row>
       <Col span={24}>
@@ -29,7 +33,7 @@ const PackageDescription = props => {
             <ul className="pd-list">
               {FEATURES.map((feature, index) => (
                 <li className="pd-list-item" key={index}>
-                  {feature}
+                {translate(feature)}
                 </li>
               ))}
             </ul>
@@ -58,11 +62,12 @@ const PackageDescription = props => {
                 </div>
                 <div className="pd-card-description">
                   {translate('configurator.packagePersonalise.card.description3')}
+                  <div>{dateValidTill}</div>
                 </div>
               </Col>
             </Row>
           </div>
-          <Button onClick={() => props.goToRoute(PackageRoutes.ROUTE_2)}>
+          <Button onClick={() => goToRoute(PackageRoutes.ROUTE_2)}>
             {translate('configurator.packagePersonalise.btn.packageApply')}
           </Button>
         </div>
@@ -72,7 +77,7 @@ const PackageDescription = props => {
 }
 
 const mapStateToProps = state => ({
-
+  dateValidTill: quoteValidDateTillSelector(state),
 })
 
 const mapDispatchToProps = ({
@@ -80,7 +85,8 @@ const mapDispatchToProps = ({
 })
 
 PackageDescription.propTypes = {
-  goToRoute: PropTypes.func
+  goToRoute: PropTypes.func,
+  dateValidTill: PropTypes.string,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PackageDescription)

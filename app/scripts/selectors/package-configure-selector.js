@@ -5,6 +5,7 @@ import { propOrEmptyObj } from '../utils/function-utils'
 export const rootSelector = prop('packageConfigure')
 export const submittingSelector = compose(prop('submitting'), rootSelector)
 export const quoteSelector = compose(prop('quote'), rootSelector)
+export const quoteValidDateTillSelector = compose(prop('quoteValidTill'), quoteSelector)
 export const extraFieldsSelector = compose(prop('extraFields'), rootSelector)
 export const quantitySelector = compose(prop('quantity'), rootSelector)
 export const extraItemsSelector = compose(prop('extraItems'), quoteSelector)
@@ -20,7 +21,6 @@ export const totalCostPerMonthSelector = createSelector(
   quantitySelector,
   (quote, quantity) => quote.unitPrice.valuePerMonth * quantity
 )
-
 
 export const extraFieldsTotalSelector = createSelector(
   quoteSelector,
