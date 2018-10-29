@@ -8,7 +8,7 @@ const ErrorForm = ({ error }) => (
       <Icon type="exclamation" theme="outlined" />
     </div>
     <div className="form-field-row">
-      <div className="error">{error}</div>
+      <div className="error" style={{ marginLeft: '1.5em', maxWidth: '210px' }}>{error}</div>
     </div>
   </Row>
 )
