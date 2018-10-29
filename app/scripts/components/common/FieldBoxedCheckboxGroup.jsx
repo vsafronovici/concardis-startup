@@ -77,7 +77,7 @@ export const FieldBoxedCheckboxGroup = (props) => {
     const valuesArr = checked ? uniq([...defaultValuesArr, optionKey]) : without(optionKey, defaultValuesArr)
     props.onChange(toValue(valuesArr))
   }
-  
+
   return (
     <div className="field-boxed-checkbox-group">
       <label>
@@ -86,7 +86,7 @@ export const FieldBoxedCheckboxGroup = (props) => {
       <div className="description">
         {description && translate(description)}
       </div>
-      { listOfValues && renderCheckboxItems(name + '_' + listOfValues.length + '_' + value, listOfValues, onFocus, defaultValuesArr, handleChange) }
+      { listOfValues && renderCheckboxItems(`${name}_${listOfValues.length}_${value}`, listOfValues, onFocus, defaultValuesArr, handleChange) }
     </div>
   )
 }
