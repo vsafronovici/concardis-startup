@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Row, Col, Button, Icon } from 'antd'
-import moment from 'moment'; 
 import { translate } from './../../../i18n/i18n'
 import { goToRoute } from './../../../actions/package-configure-action'
 import { quoteValidDateTillSelector, quoteFeaturesSelector } from '../../../selectors/package-configure-selector'
