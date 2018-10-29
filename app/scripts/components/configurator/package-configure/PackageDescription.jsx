@@ -7,8 +7,15 @@ import { goToRoute } from './../../../actions/package-configure-action'
 import { quoteValidDateTillSelector, quoteFeaturesSelector } from '../../../selectors/package-configure-selector'
 import { PackageRoutes } from './../../../utils/constants'
 
+const FEATURES = [
+  'configurator.packagePersonalise.list.Feature1',
+  'configurator.packagePersonalise.list.Feature2',
+  'configurator.packagePersonalise.list.Feature3',
+]
+
 const PackageDescription = props => {
-  const { features, dateValidTill, goToRoute } = props
+  const { dateValidTill, goToRoute } = props
+
   return (
     <Row>
       <Col span={24}>
@@ -24,9 +31,9 @@ const PackageDescription = props => {
           </div>
           <div className="pd-list-container">
             <ul className="pd-list">
-              {features.map((feature, index) => (
+              {FEATURES.map((feature, index) => (
                 <li className="pd-list-item" key={index}>
-                  {feature.description}
+                {translate(feature)}
                 </li>
               ))}
             </ul>
@@ -38,7 +45,7 @@ const PackageDescription = props => {
                   <Icon type="clock-circle" theme="outlined" style={{ fontSize: '30px', color: '#616161' }} />
                 </div>
                 <div className="pd-card-description">
-                  {translate(features[0].description)}
+                  {translate('configurator.packagePersonalise.card.description1')}
                 </div>
               </Col>
               <Col span={8}>
@@ -46,7 +53,7 @@ const PackageDescription = props => {
                   <Icon type="sync" theme="outlined" style={{ fontSize: '30px', color: '#616161' }} />
                 </div>
                 <div className="pd-card-description">
-                  {translate(features[1].description)}
+                  {translate('configurator.packagePersonalise.card.description2')}
                 </div>
               </Col>
               <Col span={8}>
@@ -54,7 +61,7 @@ const PackageDescription = props => {
                   <Icon type="exclamation-circle" theme="outlined" style={{ fontSize: '30px', color: '#616161' }} />
                 </div>
                 <div className="pd-card-description">
-                  {translate(features[2].description)}
+                  {translate('configurator.packagePersonalise.card.description3')}
                   <div>{dateValidTill}</div>
                 </div>
               </Col>
@@ -71,7 +78,6 @@ const PackageDescription = props => {
 
 const mapStateToProps = state => ({
   dateValidTill: quoteValidDateTillSelector(state),
-  features: quoteFeaturesSelector(state),
 })
 
 const mapDispatchToProps = ({
@@ -81,7 +87,6 @@ const mapDispatchToProps = ({
 PackageDescription.propTypes = {
   goToRoute: PropTypes.func,
   dateValidTill: PropTypes.string,
-  features: PropTypes.array
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PackageDescription)
