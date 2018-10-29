@@ -1,30 +1,28 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { RESPONSE_STATUS } from "../../utils/constants";
+import { RESPONSE_STATUS } from '../../utils/constants'
 import { finalSubmitSelector } from '../../selectors/application-form-selector'
 import { SuccessSubmitPage } from './SuccessSubmitPage'
 import { ErrorSubmitPage } from './ErrorSubmitPage'
 import ReviewYourApplication from './ReviewYourApplicaiton'
-import { Loader } from '../Loader'
 import { LoadingPage } from './LoadingPage'
 
 const ReviewApplicationFormRouter = props => {
   const { finalSubmit: { status, submitting } } = props
-  console.log('ROUTERPROPS', props)
-  const getRoute = status => {
-    switch (status) {
+  const getRoute = stat => {
+    switch (stat) {
       case RESPONSE_STATUS.OK:
         return <SuccessSubmitPage {...props} />
       case RESPONSE_STATUS.ERR:
         return <ErrorSubmitPage {...props} />
       default:
-        return <ReviewYourApplication {...props}/>
+        return <ReviewYourApplication {...props} />
     }
   }
   return (
     <div>
-      {/*<LoadingPage/>*/}
+      {/* <LoadingPage/>*/}
       { submitting && <LoadingPage /> }
       { !submitting && getRoute(status) }
     </div>
@@ -36,6 +34,7 @@ const mapStateToProps = state => ({
 })
 
 ReviewApplicationFormRouter.propTypes = {
+  finalSubmit: PropTypes.object
 }
 
 export default connect(mapStateToProps)(ReviewApplicationFormRouter)

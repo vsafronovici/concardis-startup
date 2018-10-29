@@ -10,7 +10,6 @@ import { chaptersSelector, reviewModeSelector } from '../selectors/application-f
 import ReviewApplicationFormRouter from '../components/application-form/ReviewApplicationFormRouter'
 
 class ApplicationFormPage extends Component {
-
   componentWillMount() {
     this.props.initData()
   }
@@ -18,12 +17,12 @@ class ApplicationFormPage extends Component {
   render() {
     const { i18n, chapters, reviewMode } = this.props
     return !(i18n && chapters)
-        ? <Loader /> 
-        : (
-            <div>
-              {reviewMode ? <ReviewApplicationFormRouter {...this.props} /> : <ApplicationForm />}
-            </div>
-          )
+      ? <Loader />
+      : (
+        <div>
+          {reviewMode ? <ReviewApplicationFormRouter {...this.props} /> : <ApplicationForm />}
+        </div>
+      )
   }
 }
 
@@ -36,5 +35,12 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = ({
   initData
 })
+
+ApplicationFormPage.propTypes = {
+  i18n: PropTypes.any,
+  chapters: PropTypes.array,
+  reviewMode: PropTypes.bool,
+  initData: PropTypes.func
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(ApplicationFormPage)

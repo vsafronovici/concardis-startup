@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Row, Col, Button } from 'antd'
 import { translate } from '../../i18n/i18n'
-import { agreeTAC, closeTACModal, openTACModal, submitReq, submit, confirm, setReadyForSubmit } from '../../actions/application-form-action'
+import { agreeTAC, closeTACModal, openTACModal, submit, confirm, setReadyForSubmit } from '../../actions/application-form-action'
 import ReviewChapters from './ReviewChapters'
 import { tacSelector } from '../../selectors/application-form-selector'
 import TermsAndConditionsModal from './modal/TermsAndConditionsModal'
@@ -12,9 +12,7 @@ const ReviewYourApplication = props => {
   const {
     submitAction,
     TAC: { show },
-    openTACModalAction,
     closeTACModalAction,
-    agreeTACAction,
     confirmationAction,
     setReadyForSubmitAction,
   } = props
@@ -68,3 +66,13 @@ const mapDispatchToProps = ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ReviewYourApplication)
+
+ReviewYourApplication.propTypes = {
+  submitAction: PropTypes.func,
+  TAC: PropTypes.any,
+  openTACModalAction: PropTypes.func,
+  closeTACModalAction: PropTypes.func,
+  agreeTACAction: PropTypes.func,
+  confirmationAction: PropTypes.func,
+  setReadyForSubmitAction: PropTypes.func
+}

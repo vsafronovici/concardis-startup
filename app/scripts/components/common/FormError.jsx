@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Icon, Row } from 'antd'
 
 const ErrorForm = ({ error }) => (
@@ -11,5 +12,9 @@ const ErrorForm = ({ error }) => (
     </div>
   </Row>
 )
+
+ErrorForm.propTypes = {
+  error: PropTypes.any
+}
 
 export default ErrorForm

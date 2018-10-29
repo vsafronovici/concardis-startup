@@ -5,14 +5,14 @@ import { createInitialValues, fieldsToShow } from '../../utils/application-form-
 import { isNilOrEmpty } from '../../utils/function-utils'
 import { ReadFieldRow } from './ReadFieldRow'
 import { translate } from '../../i18n/i18n'
-import { goToNextSection } from "../../actions/application-form-action";
+import { goToNextSection } from '../../actions/application-form-action'
 
 export const ReadChapterForm = ({ chapter, index, editSection }) => {
   const serverValues = createInitialValues(chapter)
   const fieldsToDisplay = fieldsToShow(chapter, serverValues)
   return <div className="read-chapter-form">
 
-    <div className='read-field-row-container'>
+    <div className="read-field-row-container">
       <div className="chapter-title">
         {translate(chapter.title)}
       </div>
@@ -21,6 +21,6 @@ export const ReadChapterForm = ({ chapter, index, editSection }) => {
     <div className="edit-button">
       <Button onClick={() => editSection(index)}>Edit</Button>
     </div>
-    </div>
+         </div>
 }
 

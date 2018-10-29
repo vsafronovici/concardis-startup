@@ -16,7 +16,6 @@ const Footer = props => (
 )
 
 export class TermsAndConditionsModal extends Component {
-
   state = {
     seen: false
   }
@@ -35,13 +34,16 @@ export class TermsAndConditionsModal extends Component {
         title={translate('appForm.TAD.modal.title')}
         visible={show}
         onCancel={onClose}
-        footer={[<Footer key={id} onOk={onOk} disabled={!this.state.seen}/>]}
+        footer={[<Footer key={id} onOk={onOk} disabled={!this.state.seen} />]}
         width="90%"
         style={{ top: 50 }}
-        bodyStyle={{ height , padding: 0 }}
+        bodyStyle={{ height, padding: 0 }}
         centered
       >
-        <TACContent id={id} height={height} enableBtn={this.enableBtn} lang={lang} show={show} />
+        <TACContent
+          id={id} height={height} enableBtn={this.enableBtn} lang={lang}
+          show={show}
+        />
       </Modal>
     )
   }

@@ -41,7 +41,7 @@ function* initDataSaga() {
   const statusesCount = chapters.length - 1
   const finishedStatusIndex = findLastIndex(propEq('status', SectionStatusType.FINISHED))(chapters)
 
-  switch(true) {
+  switch (true) {
     case finishedStatusIndex < statusesCount:
       return yield put(goToSection(finishedStatusIndex + 1))
 
@@ -88,12 +88,10 @@ function* saveSaga({ payload: { formValues, currentChapterIdx, callback } }) {
 
     if (reviewMode) {
       yield put(goToSection(-1))
+    } else if (currentChapterIdx < nrOfChapters - 1) {
+      yield put(goToNextSection(currentChapterIdx + 1))
     } else {
-      if (currentChapterIdx < nrOfChapters - 1) {
-        yield put(goToNextSection(currentChapterIdx + 1))
-      } else {
-        yield put(goToReviewMode())
-      }
+      yield put(goToReviewMode())
     }
   } else {
     callback(response.data)
@@ -103,7 +101,7 @@ function* saveSaga({ payload: { formValues, currentChapterIdx, callback } }) {
 function* submitSaga() {
   const isReadyForSubmit = yield select(readyForSubmitSelector)
   const { agree } = yield select(tacSelector)
-  
+
   if (agree && isReadyForSubmit) {
     yield put(submitReq())
   } else {
@@ -113,7 +111,7 @@ function* submitSaga() {
 
 function* confirmTAC() {
   const isReadyForSubmit = yield select(readyForSubmitSelector)
-  
+
   if (isReadyForSubmit) {
     yield put(submitReq())
   } else {

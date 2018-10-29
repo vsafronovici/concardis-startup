@@ -22,8 +22,8 @@ export function* apiFetchSaga(action, options = {}) {
   try {
     const sfAction = memoize ? memoizedSFAction : SFAction
     return yield call(sfAction, action, options)
-  } catch(err) {
-    return yield put(failedApiFetch(err));
+  } catch (err) {
+    return yield put(failedApiFetch(err))
   }
 }
 

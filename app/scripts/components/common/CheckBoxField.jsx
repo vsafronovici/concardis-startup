@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Icon } from 'antd'
-import PropTypes from 'prop-types'
 
 const style = {
   border: '1px solid #000',
@@ -15,10 +14,6 @@ class CheckBoxField extends Component {
     checked: false
   }
 
-  static propTypes = {
-    handleChange: PropTypes.func
-  }
-
   handleCheckBox = (value) => {
     this.setState({
       checked: !this.state.checked
@@ -27,7 +22,7 @@ class CheckBoxField extends Component {
   }
 
   render() {
-    const { checked, onChange } = this.state
+    const { checked } = this.state
 
     return (
       <div>

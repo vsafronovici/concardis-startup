@@ -11,9 +11,9 @@ import { FieldInputText } from '../common/FieldInputText'
 import { FieldVerticalRadioBtns } from '../common/FieldVerticalRadioBtns'
 import { FieldBoxedRadioBtns } from '../common/FieldBoxedRadioBtns'
 import { FieldBoxedCheckbox } from '../common/FieldBoxedCheckbox'
-import { FieldCheckbox} from '../common/FieldCheckbox'
-import { FieldBoxedCheckboxGroup} from '../common/FieldBoxedCheckboxGroup'
-import { FieldDropDown} from '../common/FieldDropDown'
+import { FieldCheckbox } from '../common/FieldCheckbox'
+import { FieldBoxedCheckboxGroup } from '../common/FieldBoxedCheckboxGroup'
+import { FieldDropDown } from '../common/FieldDropDown'
 import { FieldHorizontalRadioBtns } from '../common/FieldHorizontalRadioBtns'
 import { FieldDate } from '../common/FieldDate'
 import { FieldTextBold } from '../common/FieldTextBold'
@@ -22,30 +22,26 @@ import { FieldTitle } from '../common/FieldTitle'
 
 const Option = Select.Option
 
-const createRenderer = render => ({ input, meta, type, ...rest }) => {
-  return (
-    <div className="form-field">
-      <div className={cn(`form-field-${type}`)}>
-        <div className={cn({ error: meta.error && meta.touched, active: meta.active })}>
-          <div>
-            { render(input, meta, rest) }
-          </div>
-          <div>{ meta.error && meta.touched && <span>{translate(meta.error)}</span> }</div>
+const createRenderer = render => ({ input, meta, type, ...rest }) => (
+  <div className="form-field">
+    <div className={cn(`form-field-${type}`)}>
+      <div className={cn({ error: meta.error && meta.touched, active: meta.active })}>
+        <div>
+          { render(input, meta, rest) }
         </div>
+        <div>{ meta.error && meta.touched && <span>{translate(meta.error)}</span> }</div>
       </div>
     </div>
-  )
-}
+  </div>
+)
 
 
-const RenderInput = createRenderer((input, meta, rest) => {
-  return <FieldInputText
-    input={input}
-    onChange={(event) => input.onChange(event)}
-    value={input.value}
-    {...rest}
-  />
-})
+const RenderInput = createRenderer((input, meta, rest) => <FieldInputText
+  input={input}
+  onChange={(event) => input.onChange(event)}
+  value={input.value}
+  {...rest}
+/>)
 const RenderTextBold = createRenderer((input, meta, rest) => {
   const { touch } = rest
   return <FieldTextBold
@@ -75,13 +71,13 @@ const RenderBoxedRadioBtns = createRenderer((input, meta, rest) => {
     onChange={(event) => input.onChange(event)}
     value={input.value}
     input={input}
-    onFocus={event => {touch(input.name)} }
+    onFocus={event => { touch(input.name) }}
     {...rest}
   />
 })
 
 const RenderBoxedCheckbox = createRenderer((input, meta, rest) => {
-  console.log('RenderBoxedCheckbox', {input, meta})
+  console.log('RenderBoxedCheckbox', { input, meta })
   return <FieldBoxedCheckbox
     onChange={(event) => input.onChange(event)}
     input={input}
@@ -90,14 +86,12 @@ const RenderBoxedCheckbox = createRenderer((input, meta, rest) => {
   />
 })
 
-const RenderCheckbox = createRenderer((input, meta, rest) => {
-  return <FieldCheckbox
-    onChange={(event) => input.onChange(event)}
-    input={input}
-    value={input.value}
-    {...rest}
-  />
-})
+const RenderCheckbox = createRenderer((input, meta, rest) => <FieldCheckbox
+  onChange={(event) => input.onChange(event)}
+  input={input}
+  value={input.value}
+  {...rest}
+/>)
 
 const RenderBoxedCheckboxGroup = createRenderer((input, meta, rest) => {
   const { touch } = rest
@@ -105,7 +99,7 @@ const RenderBoxedCheckboxGroup = createRenderer((input, meta, rest) => {
     onChange={(event) => input.onChange(event)}
     input={input}
     value={input.value}
-    onFocus={event => { touch(input.name)} }
+    onFocus={event => { touch(input.name) }}
     {...rest}
   />
 })
@@ -113,12 +107,12 @@ const RenderBoxedCheckboxGroup = createRenderer((input, meta, rest) => {
 const RenderDropDown = createRenderer((input, meta, rest) => {
   const { touch } = rest
   return <FieldDropDown
-        onChange={(event) => input.onChange(event)}
-        value={input.value}
-        input={input}
-        onBlur={event => {touch(input.name)} }
-        meta={meta}
-        {...rest}
+    onChange={(event) => input.onChange(event)}
+    value={input.value}
+    input={input}
+    onBlur={event => { touch(input.name) }}
+    meta={meta}
+    {...rest}
   />
 })
 
@@ -128,7 +122,7 @@ const RenderHorizontalRadioBtns = createRenderer((input, meta, rest) => {
     onChange={event => input.onChange(event)}
     input={input}
     value={input.value}
-    onFocus={event => {touch(input.name)} }
+    onFocus={event => { touch(input.name) }}
     {...rest}
   />
 })
@@ -140,7 +134,7 @@ const RenderDate = createRenderer((input, meta, rest) => {
     onChange={event => input.onChange(event)}
     input={input}
     value={input.value}
-    onBlur={event => {touch(input.name)} }
+    onBlur={event => { touch(input.name) }}
     {...rest}
   />
 })
@@ -181,19 +175,19 @@ const renderFieldComponent = ({ idx, field, i18n, touch }) => {
       return <Field {...fieldProps} component={RenderCheckbox} />
     }
     case FieldType.DROPDOWN: {
-      return <Field {...fieldProps} component={RenderDropDown} touch={touch}/>
+      return <Field {...fieldProps} component={RenderDropDown} touch={touch} />
     }
     case FieldType.BOXED_CHECKBOX_GROUP: {
-      return <Field {...fieldProps} component={RenderBoxedCheckboxGroup} touch={touch}/>
+      return <Field {...fieldProps} component={RenderBoxedCheckboxGroup} touch={touch} />
     }
     case FieldType.HORIZONTAL_RADIO_BTNS: {
-      return <Field {...fieldProps} component={RenderHorizontalRadioBtns} touch={touch}/>
+      return <Field {...fieldProps} component={RenderHorizontalRadioBtns} touch={touch} />
     }
     case FieldType.DATE: {
-      return <Field {...fieldProps} component={RenderDate} touch={touch}/>
+      return <Field {...fieldProps} component={RenderDate} touch={touch} />
     }
     case FieldType.TEXT_BOLD: {
-      return <Field {...fieldProps} component={RenderTextBold} touch={touch}/>
+      return <Field {...fieldProps} component={RenderTextBold} touch={touch} />
     }
     case FieldType.TITLE: {
       return <FieldTitle {...fieldProps} />
@@ -206,7 +200,7 @@ const renderFieldComponent = ({ idx, field, i18n, touch }) => {
 
 export const FieldRow = ({ idx, field, i18n, touch }) => (
   <div className="form-field-row">
-    <div style={{display:'none'}}>{field.name}</div>
+    <div style={{ display: 'none' }}>{field.name}</div>
     { renderFieldComponent({ idx, field, i18n, touch }) }
   </div>
 )

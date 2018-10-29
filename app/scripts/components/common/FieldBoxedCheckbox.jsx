@@ -13,7 +13,7 @@ export const FieldBoxedCheckbox = props => {
     <div className="field-boxed-checkbox">
       <div className="container-titles">
         <label>
-          {translate(label)} {optional && <span>{('optional')}</span>}
+          {translate(label)} {optional && <span>optional</span>}
         </label>
         <div className="help">
           {description && translate(description)}
@@ -36,7 +36,6 @@ FieldBoxedCheckbox.propTypes = {
   onChange: PropTypes.func,
   value: PropTypes.any,
   optional: PropTypes.any,
-  input: PropTypes.object,
-  onFocus: PropTypes.func,
-  description: PropTypes.string
+  description: PropTypes.string,
+  autoFocus: PropTypes.any
 }

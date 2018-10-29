@@ -13,31 +13,24 @@ export const CONDITIONAL_OPERATORS = {
 
 const { EQUAL, INCLUDES, AND } = CONDITIONAL_OPERATORS
 
-export const checkSectionCondition = (conditions, values) => {
-  return conditions.split(AND).reduce((acc, condition) => {
-    if (condition.includes(INCLUDES)) {
-      const [cFieldName, cValue] = condition.trim().split(INCLUDES)
-      const value = values[cFieldName.trim()]
-      return acc && value && value.split(MULTIPLE_OPTIONS_SEPARATOR).includes(cValue)
-    } else {
-      const [cFieldName, cValue] = condition.trim().split(EQUAL)
-      const value = values[cFieldName.trim()]
-      return acc && value && value.toString() === cValue.trim()
-    }
-  }, true)
-}
+export const checkSectionCondition = (conditions, values) => conditions.split(AND).reduce((acc, condition) => {
+  if (condition.includes(INCLUDES)) {
+    const [cFieldName, cValue] = condition.trim().split(INCLUDES)
+    const value = values[cFieldName.trim()]
+    return acc && value && value.split(MULTIPLE_OPTIONS_SEPARATOR).includes(cValue)
+  }
+  const [cFieldName, cValue] = condition.trim().split(EQUAL)
+  const value = values[cFieldName.trim()]
+  return acc && value && value.toString() === cValue.trim()
+}, true)
 
-export const createInitialValues = chapter => {
-  return chapter.sections.reduce((acc, section) => {
-    if (isNilOrEmpty(section.serverValues)) {
-      return acc
-    }
+export const createInitialValues = chapter => chapter.sections.reduce((acc, section) => {
+  if (isNilOrEmpty(section.serverValues)) {
+    return acc
+  }
 
-    return section.serverValues.reduce((acc2, serverValue) => {
-      return { ...acc2, [serverValue.fieldCode]: serverValue.fieldValue }
-    }, acc)
-  }, {})
-}
+  return section.serverValues.reduce((acc2, serverValue) => ({ ...acc2, [serverValue.fieldCode]: serverValue.fieldValue }), acc)
+}, {})
 
 export const fieldsToShow = (chapter, formValues = {}) => {
   if (isNilOrEmpty(chapter.sections)) {

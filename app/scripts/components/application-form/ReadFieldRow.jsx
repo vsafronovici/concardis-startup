@@ -3,7 +3,7 @@ import { Field } from 'redux-form'
 
 import { translate } from '../../i18n/i18n'
 import { FieldType } from '../../utils/constants'
-import { parseCheckBoxValues } from "../../utils/function-utils";
+import { parseCheckBoxValues } from '../../utils/function-utils'
 
 
 const renderFieldComponent = ({ idx, field, value }) => {
@@ -36,7 +36,7 @@ const renderFieldComponent = ({ idx, field, value }) => {
       break
     }
     case FieldType.BOXED_CHECKBOX_GROUP: {
-      //console.log('BOXED_CHECKBOX_GROUP', value)
+      // console.log('BOXED_CHECKBOX_GROUP', value)
       valueToDisplay = parseCheckBoxValues(value)
       break
     }
@@ -66,7 +66,7 @@ const renderFieldComponent = ({ idx, field, value }) => {
 }
 
 export const ReadFieldRow = ({ idx, field, value }) => (
-  <div className={field.type === FieldType.TITLE ? "form-field-row-read-title" : "form-field-row-read"}>
+  <div className={field.type === FieldType.TITLE ? 'form-field-row-read-title' : 'form-field-row-read'}>
     { renderFieldComponent({ idx, field, value }) }
   </div>
 )

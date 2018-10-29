@@ -1,5 +1,5 @@
 import { all, takeLatest } from 'redux-saga/effects'
-import { Modal } from 'antd';
+import { Modal } from 'antd'
 import { APP } from '../actions/types'
 import { API_ERROR_TITLE } from '../utils/constants'
 

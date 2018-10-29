@@ -6,11 +6,11 @@ import { connect } from 'react-redux'
 import { FieldRow } from './FieldRow'
 import { translate } from '../../i18n/i18n'
 import VoidLink from '../common/VoidLink'
-import FormError from '../common/FormError';
+import FormError from '../common/FormError'
 import { FieldMainTitle } from '../common/FieldMainTitle'
 import { getReview, save } from '../../actions/application-form-action'
-import { currentSelector, nrOfChaptersSelector, reviewModeSelector } from "../../selectors/application-form-selector";
-import { i18nSelector} from '../../selectors/i18n-selector'
+import { currentSelector, nrOfChaptersSelector, reviewModeSelector } from '../../selectors/application-form-selector'
+import { i18nSelector } from '../../selectors/i18n-selector'
 import { fieldsToShow } from '../../utils/application-form-utils'
 import { SubmissionError } from 'redux-form'
 import { RESPONSE_STATUS } from '../../utils/constants'
@@ -26,10 +26,10 @@ export class DynamicForm extends React.Component {
       const callback = response => {
         resolve(response)
       }
-      saveAction({ currentChapterIdx: current, formValues: values, callback})
+      saveAction({ currentChapterIdx: current, formValues: values, callback })
     }).then(res => {
       if (res.status === RESPONSE_STATUS.ERR) {
-        throw new SubmissionError({ _error: res.errorMessage || 'validation errorMessage missing'})
+        throw new SubmissionError({ _error: res.errorMessage || 'validation errorMessage missing' })
       }
     })
   }
@@ -63,11 +63,14 @@ export class DynamicForm extends React.Component {
           </div>
         }
 
-        <form onSubmit={handleSubmit(this.submitForm)} className={reviewMode && "form-chapter-review"}>
+        <form onSubmit={handleSubmit(this.submitForm)} className={reviewMode && 'form-chapter-review'}>
           <div>
-            <FieldMainTitle title={chapter.title} subtitle={chapter.subtitle}/>
+            <FieldMainTitle title={chapter.title} subtitle={chapter.subtitle} />
             <div>
-              { fieldsToDisplay.map((field, idx) => <FieldRow key={field.name} field={field} idx={idx} i18n={i18n} touch={touch} />) }
+              { fieldsToDisplay.map((field, idx) => <FieldRow
+                key={field.name} field={field} idx={idx} i18n={i18n}
+                touch={touch}
+              />) }
             </div>
           </div>
           <div className="button-container">

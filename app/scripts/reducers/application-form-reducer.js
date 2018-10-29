@@ -1,7 +1,6 @@
-import { toPairs } from 'ramda'
 import { createReducer } from '../modules/helpers'
 import { APPLICATION_FORM } from '../actions/types'
-import { SectionStatusType, SubmitStatus } from './../utils/constants'
+import { SectionStatusType } from './../utils/constants'
 
 const initialState = {
   TAC: {
@@ -42,7 +41,7 @@ const goToNextSection = (state, payload) => {
   return {
     ...state,
     current: payload,
-    chapters: chapters
+    chapters
   }
 }
 

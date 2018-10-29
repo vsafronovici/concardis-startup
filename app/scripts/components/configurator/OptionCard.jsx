@@ -13,6 +13,8 @@ export class OptionCard extends React.Component {
     price: PropTypes.string,
     items: PropTypes.array,
     onChooseOption: PropTypes.func,
+    features: PropTypes.array,
+    includedItems: PropTypes.array
   }
 
   static defaultProps = {
@@ -25,19 +27,18 @@ export class OptionCard extends React.Component {
   }
 
   render() {
-    const { active, name, description, price, features, readonly, includedItems } = this.props
+    const { active, name, description, features, readonly, includedItems } = this.props
     const elProps = {
       className: cn('option-card', { active, readonly })
     }
     if (!readonly) {
       elProps.onClick = this.chooseOption
     }
-    console.log('FEATURES', features)
     return (
       <div {...elProps}>
         <div className="oc-top">
           <div className="container-image">
-            <img src={window.configSettings.resources.imgs.product} alt=""/>
+            <img src={window.configSettings.resources.imgs.product} alt="" />
           </div>
         </div>
         <div className="oc-content">
@@ -47,7 +48,7 @@ export class OptionCard extends React.Component {
             {
               features.map((item, idx) => (
                 <div className="oc-item" key={idx}>
-                  {/*<i className="oc-item-icon" />*/}
+                  {/* <i className="oc-item-icon" />*/}
                   <div className="oc-item-content">{item.name}</div>
                 </div>
               ))
@@ -55,11 +56,11 @@ export class OptionCard extends React.Component {
 
           </div>
 
-          {/*<div className="oc-price">€{price} / {translate('configurator.AMonth')}</div>*/}
+          {/* <div className="oc-price">€{price} / {translate('configurator.AMonth')}</div>*/}
         </div>
-        <hr/>
+        <hr />
         <div className="oc-footer">
-          <div style={{marginBottom: '10px'}}><strong >{translate('configurator.optionCards.accIncluded')}</strong></div>
+          <div style={{ marginBottom: '10px' }}><strong >{translate('configurator.optionCards.accIncluded')}</strong></div>
           {includedItems.map(item => (
             <div key={item.name}>
               {item.quantity.value > 1 && <span>{item.quantity.value}x</span>} {item.name}

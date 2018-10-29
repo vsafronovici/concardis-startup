@@ -16,10 +16,9 @@ const hasLength2 = hasLength(2)
 const hasLength4 = hasLength(4)
 
 
-export class FieldDate extends Component  {
-
+export class FieldDate extends Component {
   handleChange = type => e => {
-    const value = e.target.value
+    const { value } = e.target
 
     switch (type) {
       case DD: {
@@ -62,7 +61,7 @@ export class FieldDate extends Component  {
             <Input
               min={1}
               max={31}
-              ref={input => this.inputDay = input}
+              ref={input => { this.inputDay = input }}
               placeholder="DD"
               onChange={this.handleChange(DD)}
               required={required}
@@ -73,7 +72,7 @@ export class FieldDate extends Component  {
             <Input
               min={1}
               max={12}
-              ref={input => this.inputMonth = input}
+              ref={input => { this.inputMonth = input }}
               placeholder="MM"
               onChange={this.handleChange(MM)}
               required={required}
@@ -83,7 +82,7 @@ export class FieldDate extends Component  {
           <div className="year">
             <Input
               maxLength={4}
-              ref={input => this.inputYear = input}
+              ref={input => { this.inputYear = input }}
               placeholder="YYYY"
               onChange={this.handleChange(YY)}
               required={required}
@@ -99,5 +98,8 @@ export class FieldDate extends Component  {
 FieldDate.propTypes = {
   label: PropTypes.string,
   required: PropTypes.bool,
-  onBlur: PropTypes.func
+  onBlur: PropTypes.func,
+  onChange: PropTypes.func,
+  value: PropTypes.any,
+  validationRules: PropTypes.array
 }

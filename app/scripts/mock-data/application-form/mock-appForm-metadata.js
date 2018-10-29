@@ -1,7 +1,7 @@
 export default [{
   "title": "chapter_1_title",
   "subtitle": "chapter_1_sub_title",
-  "status": "FINISHED",
+  "status": "WAITING",
   "sequence": 1,
   "sections": [{
     "type": "Simple",
@@ -108,7 +108,7 @@ export default [{
 }, {
   "title": "chapter_2_title",
   "subtitle": "chapter_2_sub_title",
-  "status": "FINISHED",
+  "status": "WAITING",
   "sequence": 2,
   "sections": [{
     "type": "Simple",

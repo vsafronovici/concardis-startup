@@ -83,8 +83,8 @@ export const mockResponse = action => {
 
 export const mockVisualForceConfig = {
   remoteActions: {
-    getDictionaryMetadata: MOCK_REMOTE_ACTIONS.getDictionaryMetadata,
-    //getDictionaryMetadata: MOCK_REMOTE_ACTIONS.getApplicationFormDictionaryMetadata,
+    //getDictionaryMetadata: MOCK_REMOTE_ACTIONS.getDictionaryMetadata,
+    getDictionaryMetadata: MOCK_REMOTE_ACTIONS.getApplicationFormDictionaryMetadata,
     getFieldsMetadata: MOCK_REMOTE_ACTIONS.getFieldsMetadata,
     getProducts:  MOCK_REMOTE_ACTIONS.getProducts,
     getQProducts:  MOCK_REMOTE_ACTIONS.getQProducts,

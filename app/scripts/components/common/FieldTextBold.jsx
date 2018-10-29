@@ -5,8 +5,7 @@ import { translate } from './../../i18n/i18n'
 import { FieldTooltip } from './FieldTooltip'
 import { getNotRequired } from '../../utils/application-form-utils'
 
-export class FieldTextBold extends Component{
-
+export class FieldTextBold extends Component {
   state = {
     bold: true
   }
@@ -29,15 +28,15 @@ export class FieldTextBold extends Component{
     return (
       <div className="field-text-bold">
         <div className="container-labels">
-          <label>{label}</label> {getNotRequired(validationRules) && <span>{translate('(optional)')}</span>} {helpText && <div><FieldTooltip title={helpText}/></div>}
+          <label>{label}</label> {getNotRequired(validationRules) && <span>{translate('(optional)')}</span>} {helpText && <div><FieldTooltip title={helpText} /></div>}
         </div>
         <div className="help">
           {description && translate(description)}
         </div>
         <div className="field">
-          <label data-b={this.state.bold ? "B" : ''}>
+          <label data-b={this.state.bold ? 'B' : ''}>
             <Input
-              style={this.state.bold ? {fontWeight: '800'} : {fontWeight: 'normal'}}
+              style={this.state.bold ? { fontWeight: '800' } : { fontWeight: 'normal' }}
               value={value}
               placholder={hint && translate(hint)}
               onBlur={onBlur}
@@ -57,5 +56,6 @@ FieldTextBold.propTypes = {
   value: PropTypes.any,
   hint: PropTypes.string,
   description: PropTypes.string,
-  onBlur: PropTypes.func
+  onBlur: PropTypes.func,
+  validationRules: PropTypes.array
 }

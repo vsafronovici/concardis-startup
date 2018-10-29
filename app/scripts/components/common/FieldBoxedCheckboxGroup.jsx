@@ -9,7 +9,6 @@ import { isNilOrEmpty } from '../../utils/function-utils'
 
 const CheckBoxItem = props => {
   const { onChange, index, label, value, description, onFocus, checked } = props
-  console.log('CHECKBOX checked', checked)
   return (
     <div className="field-checkbox-item">
       <div className="container-labels">
@@ -20,7 +19,7 @@ const CheckBoxItem = props => {
           {description && translate(description)}
         </div>
       </div>
-      <div className="field" style={{display: 'flex', alignItems: 'center'}}>
+      <div className="field" style={{ display: 'flex', alignItems: 'center' }}>
         <div className="field-item">
           <Checkbox
             onChange={e => onChange(e.target.checked, label, index)}
@@ -40,7 +39,8 @@ CheckBoxItem.propTypes = {
   label: PropTypes.string,
   value: PropTypes.any,
   description: PropTypes.string,
-  onFocus: PropTypes.func
+  onFocus: PropTypes.func,
+  checked: PropTypes.bool
 }
 
 const fromValue = value => isNilOrEmpty(value) ? [] : value.split(MULTIPLE_OPTIONS_SEPARATOR)
@@ -77,7 +77,7 @@ export const FieldBoxedCheckboxGroup = (props) => {
     const valuesArr = checked ? uniq([...defaultValuesArr, optionKey]) : without(optionKey, defaultValuesArr)
     props.onChange(toValue(valuesArr))
   }
-  
+
   return (
     <div className="field-boxed-checkbox-group">
       <label>
@@ -96,5 +96,7 @@ FieldBoxedCheckboxGroup.propTypes = {
   onChange: PropTypes.func,
   listOfValues: PropTypes.array,
   description: PropTypes.string,
-  onFocus: PropTypes.func
+  onFocus: PropTypes.func,
+  checked: PropTypes.bool,
+  value: PropTypes.any
 }

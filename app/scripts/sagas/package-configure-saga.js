@@ -70,11 +70,10 @@ function* submitQuoteSaga({ payload }) {
   if (code === RESPONSE_STATUS_CODE.OK) {
     yield put(goToRoute(PackageRoutes.ROUTE_1))
   } else {
-    //TODO remove
+    // TODO remove
     alert('Error when saving Quote')
   }
 }
-
 
 
 function* confirmOfferSaga({ payload }) {
@@ -85,7 +84,7 @@ function* confirmOfferSaga({ payload }) {
   if (code === RESPONSE_STATUS_CODE.OK) {
     window.location.href = EXTERNAL_LINKS.APPLICATION_FORM
   } else {
-    //TODO remove
+    // TODO remove
     alert('Error when saving Quote')
   }
 }

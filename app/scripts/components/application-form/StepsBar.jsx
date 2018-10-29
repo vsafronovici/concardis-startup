@@ -7,7 +7,7 @@ import { ApplicationFormStepsTitles, SectionStatusType } from '../../utils/const
 import { currentSelector, chaptersSelector } from '../../selectors/application-form-selector'
 import { goToSection } from './../../actions/application-form-action'
 
-const Step = Steps.Step
+const { Step } = Steps
 
 const Loading = <Icon type="loading" className="step_loading" />
 
@@ -38,8 +38,15 @@ const RenderStepLink = (props) => {
   )
 }
 
+RenderStepLink.propTypes = {
+  title: PropTypes.string,
+  disabled: PropTypes.bool,
+  goToSectionAction: PropTypes.func,
+  stepIndex: PropTypes.any
+}
+
 const renderStep = (props) => {
-  const { section, stepIndex, goToSectionAction, currentIndex } = props
+  const { section, stepIndex, currentIndex } = props
   const isFinishedOrProgress = (status) => {
     switch (section.status) {
       case SectionStatusType.IN_PROGRESS:
@@ -52,7 +59,7 @@ const renderStep = (props) => {
 
   const checkStepStatus = () => {
     switch (section.status) {
-      case (stepIndex === currentIndex ):
+      case (stepIndex === currentIndex):
         return 'process'
       case SectionStatusType.WAITING:
         return 'wait'
@@ -63,15 +70,21 @@ const renderStep = (props) => {
     }
   }
   const canGoToStep = isFinishedOrProgress(section.status)
-  const checkNewCurrent =  ((stepIndex === currentIndex ) ? 'process' : checkStepStatus(section.status)) ||
-    ((stepIndex !== currentIndex ) ? 'wait' : checkStepStatus(section.status))
+  const checkNewCurrent =  ((stepIndex === currentIndex) ? 'process' : checkStepStatus(section.status)) ||
+    ((stepIndex !== currentIndex) ? 'wait' : checkStepStatus(section.status))
 
   return <Step
     key={stepIndex}
     status={checkNewCurrent}
-    title={<RenderStepLink {...props} disabled={!canGoToStep} title={section.title}/>}
-    style={canGoToStep ? {cursor: 'pointer', lineHeight: '24px'} : {cursor: 'normal', lineHeight: '24px'}}
+    title={<RenderStepLink {...props} disabled={!canGoToStep} title={section.title} />}
+    style={canGoToStep ? { cursor: 'pointer', lineHeight: '24px' } : { cursor: 'normal', lineHeight: '24px' }}
   />
+}
+
+renderStep.propTypes = {
+  section: PropTypes.any,
+  stepIndex: PropTypes.any,
+  currentIndex: PropTypes.any
 }
 
 export const StepsBar = (props) => {
@@ -99,3 +112,9 @@ const mapDispatchToProps = ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(StepsBar)
+
+StepsBar.propTypes = {
+  goToSectionAction: PropTypes.func,
+  sections: PropTypes.array,
+  current: PropTypes.any
+}

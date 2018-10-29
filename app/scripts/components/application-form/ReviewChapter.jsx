@@ -8,13 +8,13 @@ import { ChapterForm } from './ChapterForm'
 import { ReadChapterForm } from './ReadChapterForm'
 import { goToSection } from '../../actions/application-form-action'
 
-const ReviewChapter = ({ chapter, editMode, index, goToSectionAction }) => editMode
+const ReviewChapter = ({ chapter, editMode, index, goToSectionAction }) => (editMode
   ? (
     <div className={cn('review-mode', { 'edit-mode': editMode })}>
-      <ChapterForm chapter={chapter}/>
+      <ChapterForm chapter={chapter} />
     </div>
   )
-  : <ReadChapterForm chapter={chapter} index={index} editSection={goToSectionAction}/>
+  : <ReadChapterForm chapter={chapter} index={index} editSection={goToSectionAction} />)
 
 const mapStateToProps = state => ({
   chapters: chaptersSelector(state)
@@ -25,3 +25,10 @@ const mapDispatchToProps = ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ReviewChapter)
+
+ReviewChapter.propTypes = {
+  chapter: PropTypes.object,
+  editMode: PropTypes.bool,
+  index: PropTypes.number,
+  goToSectionAction: PropTypes.func
+}

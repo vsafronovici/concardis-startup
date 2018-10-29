@@ -4,12 +4,12 @@ import { Select } from 'antd'
 import { map, memoizeWith, pipe } from 'ramda'
 
 import { translate } from '../../i18n/i18n'
-import { FieldTooltip } from "./FieldTooltip";
+import { FieldTooltip } from './FieldTooltip'
 import { getNotRequired, sortBySequence } from '../../utils/application-form-utils'
 import { Optional } from './Optional'
 import { isNilOrEmpty } from '../../utils/function-utils'
 
-const Option = Select.Option
+const { Option } = Select
 
 const style = {
   width: '200px'
@@ -17,18 +17,15 @@ const style = {
 
 const options = memoizeWith(
   (fieldName, listOfValues) => `${fieldName}_${listOfValues.length}`,
-  (_, listOfValues) => pipe(sortBySequence, map(({ value, label }) => {
-    return (
-      <Option key={value} value={value} className="item">
-        {translate(label)}
-      </Option>
-    )
-  }))(listOfValues)
+  (_, listOfValues) => pipe(sortBySequence, map(({ value, label }) => (
+    <Option key={value} value={value} className="item">
+      {translate(label)}
+    </Option>
+  )))(listOfValues)
 )
 
 export const FieldDropDown = props => {
   const { label, onChange, value, listOfValues, helpText, required, onBlur, hint, validationRules, input: { name } } = props
-  console.log('DROPDOWN', props)
   return (
     <div className="field-drop-down">
       <div className="flex-row label">
@@ -57,5 +54,7 @@ FieldDropDown.propTypes = {
   helpText: PropTypes.string,
   required: PropTypes.bool,
   onBlur: PropTypes.func,
-  hint: PropTypes.string
+  hint: PropTypes.string,
+  validationRules: PropTypes.array,
+  input: PropTypes.object
 }

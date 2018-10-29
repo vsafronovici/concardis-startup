@@ -18,13 +18,11 @@ import { valuesFormatter } from './../../transformers/configurator-transformer'
 
 export class Step2 extends React.Component {
   onChooseOption = id => {
-    console.log('CHANGE_FIELD_VALUES', { name: 'cardOption', value: id, step: ConfiguratorPageStep.STEP2 })
     this.props.changeFieldValue({ name: 'cardOption', value: id, step: ConfiguratorPageStep.STEP2 })
   }
 
   render() {
-    const { products, cardOption, summary, productsQ } = this.props
-    console.log('STEP2', this.props)
+    const { cardOption, summary, productsQ } = this.props
     const [f1, f2, f3, f4] = summary
     return !productsQ.length
       ? <Loader />
@@ -40,14 +38,14 @@ export class Step2 extends React.Component {
                         id={p.product2Id}
                         name={p.name}
                         description={p.description}
-                        //price={p.price}
+                        // price={p.price}
                         features={p.features}
                         active={cardOption === p.product2Id}
                         onChooseOption={this.onChooseOption}
                         includedItems={p.includedItems}
                       />
                       <div className="oc-price">
-                        <span style={{marginLeft: '25%'}}>€ {p.totalPriceBeforeDiscount.valuePerMonth}/{translate('configurator.AMonth')}</span>
+                        <span style={{ marginLeft: '25%' }}>€ {p.totalPriceBeforeDiscount.valuePerMonth}/{translate('configurator.AMonth')}</span>
                       </div>
                     </Col>
                   ))
@@ -91,7 +89,7 @@ export class Step2 extends React.Component {
 Step2.propTypes = {
   cardOption: PropTypes.object,
   summary: PropTypes.array,
-  products: PropTypes.array,
+  productsQ: PropTypes.array,
   changeFieldValue: PropTypes.func,
   goToStep: PropTypes.func,
 }

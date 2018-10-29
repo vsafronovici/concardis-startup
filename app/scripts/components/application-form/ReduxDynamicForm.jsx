@@ -13,7 +13,6 @@ export class ReduxDynamicForm extends React.Component {
   }
 
   render() {
-    console.log('ReduxDynamicForm', this.props)
     const { chapter } = this.props
 
     const formId = `${DYNAMIC_FORM_PREFIX}${chapter.sequence}`
@@ -24,7 +23,7 @@ export class ReduxDynamicForm extends React.Component {
 
       // enableReinitialize: true,
       // keepDirtyOnReinitialize: true,
-      //destroyOnUnmount: false
+      // destroyOnUnmount: false
     })(DynamicForm)
 
     const mapStateToProps = state => ({
@@ -32,14 +31,12 @@ export class ReduxDynamicForm extends React.Component {
       rSyncErrors: getFormSyncErrors(formId)(state)
     })
 
-    const mapDispatchToProps = (dispatch) => {
-      return {
-        // This will be passed as a property to this component
-        rFocus: (field) => {
-          dispatch(focus(formId, field))
-        }
+    const mapDispatchToProps = (dispatch) => ({
+      // This will be passed as a property to this component
+      rFocus: (field) => {
+        dispatch(focus(formId, field))
       }
-    }
+    })
 
     const ConnectedReduxForm = connect(mapStateToProps, mapDispatchToProps)(RForm)
 

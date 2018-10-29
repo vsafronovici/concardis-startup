@@ -20,7 +20,6 @@ export const emailSelector = compose(prop('email'), step3FieldsSelector)
 export const userSelector = compose(prop('user'), configuratorSelector)
 
 
-
 export const step2SummarySelector = createSelector(
   step1MetaSelector,
   step1FieldsSelector,

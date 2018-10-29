@@ -11,11 +11,17 @@ export const FieldCheckbox = props => {
   return (
     <div className="field-checkbox">
       <div className="field">
-        <Checkbox checked={checked} value={checked} onChange={e => onChange(e.target.checked.toString())}/>
+        <Checkbox checked={checked} value={checked} onChange={e => onChange(e.target.checked.toString())} />
       </div>
       <div className="label">
         {translate(label)}
       </div>
     </div>
   )
+}
+
+FieldCheckbox.propTypes = {
+  onChange: PropTypes.func,
+  label: PropTypes.string,
+  value: PropTypes.any
 }

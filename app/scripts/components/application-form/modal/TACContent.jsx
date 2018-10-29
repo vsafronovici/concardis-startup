@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
+const jQuery = window.jQuery || {}
 
 export class TACContent extends Component {
   componentDidMount() {
@@ -12,7 +13,7 @@ export class TACContent extends Component {
       const scrollTop = jQuery(iframe).scrollTop()
       const height = jQuery(iframe).height()
       const innerHeight = jQuery(iframe.document).innerHeight()
-      console.log('TermsAndConditionsModal', {scrollTop, height, innerHeight})
+      console.log('TermsAndConditionsModal', { scrollTop, height, innerHeight })
 
       if (this.props.show && scrollTop + height === innerHeight) {
         console.log('TermsAndConditionsModal ===============End')
@@ -28,9 +29,11 @@ export class TACContent extends Component {
         src={window.configSettings.resources.TAD[lang]}
         id={`${id}-iframe`}
         height={height}
-        width={'100%'}
+        width="100%"
         scrolling="true"
-        frameBorder="0">Loading...</iframe>
+        frameBorder="0"
+      >Loading...
+      </iframe>
     )
   }
 }

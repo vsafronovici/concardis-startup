@@ -8,7 +8,7 @@ const isTextualComponent = ({ type }) => type === FieldType.TEXT || type === Fie
 
 const createReducer = values => (errors, field) => {
   console.log('Validator field=', { field })
-  const { name,  type, validationRules } = field
+  const { name, type, validationRules } = field
 
   if (isNilOrEmpty(validationRules)) {
     return errors
@@ -24,7 +24,7 @@ const createReducer = values => (errors, field) => {
 
   const value = values[name]
 
-  if (type === FieldType.DATE && !isNilOrEmpty(value) ) {
+  if (type === FieldType.DATE && !isNilOrEmpty(value)) {
     if (!checkDate(value)) {
       return {
         ...errors,
@@ -63,6 +63,6 @@ const createReducer = values => (errors, field) => {
 
 export const Validator = chapter => values => {
   const fields = fieldsToShow(chapter, values)
-  console.log('Validator', {chapter, values, fields})
+  console.log('Validator', { chapter, values, fields })
   return fields.reduce(createReducer(values), {})
 }
