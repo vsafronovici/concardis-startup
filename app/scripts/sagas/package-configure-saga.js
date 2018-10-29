@@ -5,7 +5,7 @@ import {
   getMetaPackageRes, validateDiscountCodeReq, validateDiscountCodeRes, applyDiscountReq, applyDiscountRes,
   submitQuoteRes, goToRoute
 } from '../actions/package-configure-action'
-import { apiFetchSaga } from './app-saga';
+import { apiFetchSaga } from './app-saga'
 import { applyDiscountPayloadSelector, saveQuoteResponseSelector } from '../selectors/package-configure-selector'
 import { EXTERNAL_LINKS, PackageRoutes, RESPONSE_STATUS_CODE } from '../utils/constants'
 import { i18nLangSelector } from '../selectors/i18n-selector'

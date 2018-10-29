@@ -1,5 +1,5 @@
-import { all, call, put, select, takeLatest, takeEvery } from 'redux-saga/effects'
-import { map, findLastIndex, propEq } from 'ramda';
+import { all, call, put, select, takeLatest } from 'redux-saga/effects'
+import { findLastIndex, propEq } from 'ramda'
 import { APPLICATION_FORM } from '../actions/types'
 import { apiFetchSaga } from './app-saga'
 import {
@@ -13,7 +13,6 @@ import {
   submitRes,
   submitReq,
   openTACModal,
-  setRequestForReady,
   saveReq,
   saveRes,
 } from '../actions/application-form-action'

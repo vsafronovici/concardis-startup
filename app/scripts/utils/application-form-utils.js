@@ -1,6 +1,6 @@
-import { pluck, prop, sortBy, values } from 'ramda'
-import { isNilOrEmpty, objectToArrayKeyValue } from './function-utils'
-import { SectionStatusType, SubmitStatus } from './constants'
+import { pluck, prop, sortBy } from 'ramda'
+import { isNilOrEmpty } from './function-utils'
+import { SectionStatusType } from './constants'
 
 export const DYNAMIC_FORM_PREFIX = 'dynamicForm_'
 export const MULTIPLE_OPTIONS_SEPARATOR = ';'
@@ -14,17 +14,14 @@ export const CONDITIONAL_OPERATORS = {
 const { EQUAL, INCLUDES, AND } = CONDITIONAL_OPERATORS
 
 export const checkSectionCondition = (conditions, values) => {
-  console.log('checkSectionCondition', {conditions, values})
   return conditions.split(AND).reduce((acc, condition) => {
     if (condition.includes(INCLUDES)) {
       const [cFieldName, cValue] = condition.trim().split(INCLUDES)
       const value = values[cFieldName.trim()]
-      console.log('checkSectionCondition includes', {condition, cFieldName, cValue, value, result: (acc && value && value.split(MULTIPLE_OPTIONS_SEPARATOR).includes(cValue))})
       return acc && value && value.split(MULTIPLE_OPTIONS_SEPARATOR).includes(cValue)
     } else {
       const [cFieldName, cValue] = condition.trim().split(EQUAL)
       const value = values[cFieldName.trim()]
-      console.log('checkSectionCondition equal', {condition, cFieldName, cValue, value, result: (acc && value && value.toString() === cValue.trim())})
       return acc && value && value.toString() === cValue.trim()
     }
   }, true)
@@ -63,8 +60,6 @@ export const fieldsToShow = (chapter, formValues = {}) => {
 }
 
 export const buildSaveRequest = ({ formValues, chapters, currentChapterIdx }) => {
-  console.log('buildSaveRequest', { formValues, chapters, currentChapterIdx })
-
   const chapter = chapters[currentChapterIdx]
   chapter.status = SectionStatusType.IN_PROGRESS
 
@@ -78,12 +73,12 @@ export const buildSaveRequest = ({ formValues, chapters, currentChapterIdx }) =>
     const serverValues = isNilOrEmpty(formValues) || !isNilOrEmpty(condition) && !checkSectionCondition(condition, formValues)
       ? []
       : fields.reduce((acc, { name }) => {
-      const value = formValues[name]
-      if (value) {
-        acc.push({ fieldCode: name, fieldValue: value })
-      }
-      return acc
-    }, [])
+        const value = formValues[name]
+        if (value) {
+          acc.push({ fieldCode: name, fieldValue: value })
+        }
+        return acc
+      }, [])
 
     section.serverValues = serverValues
   })

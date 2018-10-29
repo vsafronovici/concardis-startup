@@ -1,7 +1,7 @@
 import { toPairs, values, isNil, equals, all, isEmpty, propOr, curry, anyPass } from 'ramda'
 import numeral from 'numeral'
 import moment from 'moment'
-import {DATE_FORMAT} from "./constants";
+import { DATE_FORMAT } from './constants'
 import { translate } from '../i18n/i18n'
 
 export const isNilOrEmpty = anyPass([isNil, isEmpty])
@@ -51,10 +51,10 @@ export const generalFormatNumber = curry(formatNumber)('00.00')
 
 export const checkDate = (date) => moment(date, DATE_FORMAT, true).isValid()
 
-export const parseCheckBoxValues = values => {
-  if (!values) {
+export const parseCheckBoxValues = vals => {
+  if (!vals) {
     return null
   }
-  const parsedValues = values.split(';').map(value => ` ${translate(value)} ${translate('vat_option_1')} `)
+  const parsedValues = vals.split(';').map(value => ` ${translate(value)} ${translate('vat_option_1')} `)
   return parsedValues
 }
