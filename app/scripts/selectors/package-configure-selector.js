@@ -21,6 +21,16 @@ export const totalCostPerMonthSelector = createSelector(
   (quote, quantity) => quote.unitPrice.valuePerMonth * quantity
 )
 
+export const quoteValidDateTillSelector = createSelector(
+  quoteSelector,
+  quote => quote.quoteValidTill,
+)
+
+export const quoteFeaturesSelector = createSelector(
+  quoteSelector,
+  quote => quote.features || [],
+)
+
 
 export const extraFieldsTotalSelector = createSelector(
   quoteSelector,
