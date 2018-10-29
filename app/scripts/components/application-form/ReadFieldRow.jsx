@@ -36,8 +36,8 @@ const renderFieldComponent = ({ idx, field, value }) => {
       break
     }
     case FieldType.BOXED_CHECKBOX_GROUP: {
-      // console.log('BOXED_CHECKBOX_GROUP', value)
-      valueToDisplay = parseCheckBoxValues(value)
+      label = null
+      valueToDisplay = null
       break
     }
     case FieldType.HORIZONTAL_RADIO_BTNS: {
@@ -45,13 +45,15 @@ const renderFieldComponent = ({ idx, field, value }) => {
       break
     }
     case FieldType.DATE: {
+      valueToDisplay = value
+      break
     }
     case FieldType.TEXT_BOLD: {
       valueToDisplay = value
       break
     }
     case FieldType.TITLE: {
-      valueToDisplay = translate(title)
+      valueToDisplay = label
       break
     }
     default: {

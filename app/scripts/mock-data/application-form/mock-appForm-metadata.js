@@ -1,20 +1,11 @@
 export default [{
   "title": "chapter_1_title",
   "subtitle": "chapter_1_sub_title",
-  "status": "WAITING",
+  "status": "FINISHED",
   "sequence": 1,
   "sections": [{
     "type": "Simple",
-    "serverValues": [{ "fieldCode": "ch1_s1_field1Section_01" }, {
-      "fieldValue": "gfdg",
-      "fieldCode": "ch1_s1_field2Section_01"
-    }, {
-      "fieldValue": "gdfg",
-      "fieldCode": "ch1_s1_field3Section_01"
-    }, {
-      "fieldValue": "vitaliesafronovici@endava.com",
-      "fieldCode": "ch1_s1_field4Section_01"
-    }, { "fieldCode": "ch1_s1_field5Section_01" }],
+    "serverValues": [{"fieldCode": "ch1_s1_field1Section_01"}, {"fieldCode": "ch1_s1_field2Section_01"}, {"fieldCode": "ch1_s1_field3Section_01"}, {"fieldCode": "ch1_s1_field4Section_01"}, {"fieldCode": "ch1_s1_field5Section_01"}],
     "sequence": 1,
     "name": "Section_01",
     "fields": [{
@@ -32,7 +23,7 @@ export default [{
         "value": "title_option_2",
         "sequence": 2,
         "label": "title_option_2"
-      }, { "value": "title_option_1", "sequence": 1, "label": "title_option_1" }],
+      }, {"value": "title_option_1", "sequence": 1, "label": "title_option_1"}],
       "label": "ch1_s1_field1_label",
       "fieldApi": "Title__c",
       "description": "ch1_s1_field1_description"
@@ -93,11 +84,11 @@ export default [{
       "sequence": 5,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch1_s1_field5Section_01",
-      "listOfValues": [{
-        "value": "role_option_2",
-        "sequence": 2,
-        "label": "role_option_2"
-      }, { "value": "role_option_1", "sequence": 1, "label": "role_option_1" }],
+      "listOfValues": [{"value": "role_option_2", "sequence": 2, "label": "role_option_2"}, {
+        "value": "role_option_1",
+        "sequence": 1,
+        "label": "role_option_1"
+      }],
       "label": "ch1_s1_field5_label",
       "helpText": "ch1_s1_field5_tooltip",
       "fieldApi": "Your_Role_in_the_Company__c",
@@ -108,7 +99,7 @@ export default [{
 }, {
   "title": "chapter_2_title",
   "subtitle": "chapter_2_sub_title",
-  "status": "WAITING",
+  "status": "FINISHED",
   "sequence": 2,
   "sections": [{
     "type": "Simple",
@@ -119,16 +110,22 @@ export default [{
     }, {
       "fieldValue": "structure_option_8",
       "fieldCode": "ch2_s1_field2Section_02"
-    }, { "fieldCode": "ch2_s1_field3Section_02" }, {
+    }, {"fieldCode": "ch2_s1_field3Section_02"}, {
       "fieldValue": "reg_state_option_3",
       "fieldCode": "ch2_s1_field4Section_02"
-    }, { "fieldValue": "reg_court_option_2", "fieldCode": "ch2_s1_field5Section_02" }, {
+    }, {"fieldValue": "reg_court_option_2", "fieldCode": "ch2_s1_field5Section_02"}, {
       "fieldValue": "fsdfsdf",
       "fieldCode": "ch2_s1_field6Section_02"
-    }, { "fieldCode": "ch2_s1_field7Section_02" }],
+    }, {"fieldCode": "ch2_s1_field7Section_02"}],
     "sequence": 2,
     "name": "Section_02",
     "fields": [{
+      "type": "title",
+      "sfFieldType": "Text",
+      "sequence": 1,
+      "name": "nullSection_02",
+      "label": "ch_2_sec_1_title"
+    }, {
       "validationRules": [{
         "validationError": "ch2_s1_field1_ValidErr",
         "validation": "^([A-Za-z\\s]).{1,99}$",
@@ -137,7 +134,7 @@ export default [{
       }],
       "type": "text",
       "sfFieldType": "Text",
-      "sequence": 1,
+      "sequence": 2,
       "objectApi": "ccApplication_Form__c",
       "name": "ch2_s1_field1Section_02",
       "label": "ch2_s1_field1_label",
@@ -152,7 +149,7 @@ export default [{
       }],
       "type": "drop_down",
       "sfFieldType": "Picklist",
-      "sequence": 2,
+      "sequence": 3,
       "objectApi": "ccApplication_Form__c",
       "name": "ch2_s1_field2Section_02",
       "listOfValues": [{
@@ -160,19 +157,11 @@ export default [{
         "sequence": 1,
         "label": "structure_option_1",
         "description": "1"
-      }, {
-        "value": "structure_option_8",
-        "sequence": 8,
-        "label": "structure_option_8"
-      }, {
+      }, {"value": "structure_option_8", "sequence": 8, "label": "structure_option_8"}, {
         "value": "structure_option_7",
         "sequence": 7,
         "label": "structure_option_7"
-      }, {
-        "value": "structure_option_3",
-        "sequence": 3,
-        "label": "structure_option_3"
-      }, {
+      }, {"value": "structure_option_3", "sequence": 3, "label": "structure_option_3"}, {
         "value": "structure_option_5",
         "sequence": 5,
         "label": "structure_option_5"
@@ -180,23 +169,15 @@ export default [{
         "value": "structure_option_10",
         "sequence": 10,
         "label": "structure_option_10"
-      }, {
-        "value": "structure_option_4",
-        "sequence": 4,
-        "label": "structure_option_4"
-      }, {
+      }, {"value": "structure_option_4", "sequence": 4, "label": "structure_option_4"}, {
         "value": "structure_option_9",
         "sequence": 9,
         "label": "structure_option_9"
-      }, {
-        "value": "structure_option_6",
-        "sequence": 6,
-        "label": "structure_option_6"
-      }, {
+      }, {"value": "structure_option_6", "sequence": 6, "label": "structure_option_6"}, {
         "value": "structure_option_2",
         "sequence": 2,
         "label": "structure_option_2"
-      }, { "value": "structure_option_11", "sequence": 11, "label": "structure_option_11" }],
+      }, {"value": "structure_option_11", "sequence": 11, "label": "structure_option_11"}],
       "label": "ch2_s1_field2_label",
       "fieldApi": "Company_Structure__c",
       "description": "ch2_s1_field2_description"
@@ -209,13 +190,19 @@ export default [{
       }],
       "type": "text",
       "sfFieldType": "Text",
-      "sequence": 3,
+      "sequence": 4,
       "objectApi": "ccApplication_Form__c",
       "name": "ch2_s1_field3Section_02",
       "label": "ch2_s1_field3_label",
       "helpText": "ch2_s1_field3_tooltip",
       "fieldApi": "Company_Trading_Name__c",
       "description": "ch2_s1_field3_description"
+    }, {
+      "type": "title",
+      "sfFieldType": "Text",
+      "sequence": 5,
+      "name": "nullSection_02",
+      "label": "ch_2_sec_2_1_title"
     }, {
       "validationRules": [{
         "validationError": "ch2_s1_field4_ValidErr",
@@ -224,22 +211,18 @@ export default [{
       }],
       "type": "drop_down",
       "sfFieldType": "Picklist",
-      "sequence": 4,
+      "sequence": 6,
       "objectApi": "ccApplication_Form__c",
       "name": "ch2_s1_field4Section_02",
       "listOfValues": [{
         "value": "reg_state_option_1",
         "sequence": 1,
         "label": "reg_state_option_1"
-      }, {
-        "value": "reg_state_option_3",
-        "sequence": 3,
-        "label": "reg_state_option_3"
-      }, {
+      }, {"value": "reg_state_option_3", "sequence": 3, "label": "reg_state_option_3"}, {
         "value": "reg_state_option_2",
         "sequence": 2,
         "label": "reg_state_option_2"
-      }, { "value": "reg_state_option_4", "sequence": 4, "label": "reg_state_option_4" }],
+      }, {"value": "reg_state_option_4", "sequence": 4, "label": "reg_state_option_4"}],
       "label": "ch2_s1_field4_label",
       "fieldApi": "Registry_State__c",
       "description": "ch2_s1_field4_description"
@@ -251,18 +234,18 @@ export default [{
       }],
       "type": "drop_down",
       "sfFieldType": "Picklist",
-      "sequence": 5,
+      "sequence": 7,
       "objectApi": "ccApplication_Form__c",
       "name": "ch2_s1_field5Section_02",
       "listOfValues": [{
         "value": "reg_court_option_1",
         "sequence": 1,
         "label": "reg_court_option_1"
-      }, {
-        "value": "reg_court_option_2",
-        "sequence": 2,
-        "label": "reg_court_option_2"
-      }, { "value": "reg_court_option_3", "sequence": 3, "label": "reg_court_option_3" }],
+      }, {"value": "reg_court_option_2", "sequence": 2, "label": "reg_court_option_2"}, {
+        "value": "reg_court_option_3",
+        "sequence": 3,
+        "label": "reg_court_option_3"
+      }],
       "label": "ch2_s1_field5_label",
       "fieldApi": "Registry_Court__c",
       "description": "ch2_s1_field5_description"
@@ -275,7 +258,7 @@ export default [{
       }],
       "type": "text",
       "sfFieldType": "Text",
-      "sequence": 6,
+      "sequence": 8,
       "objectApi": "ccApplication_Form__c",
       "name": "ch2_s1_field6Section_02",
       "label": "ch2_s1_field6_label",
@@ -290,7 +273,7 @@ export default [{
       }],
       "type": "boxed_radio_btns",
       "sfFieldType": "Picklist",
-      "sequence": 7,
+      "sequence": 9,
       "objectApi": "ccApplication_Form__c",
       "name": "ch2_s1_field7Section_02",
       "listOfValues": [{
@@ -303,7 +286,7 @@ export default [{
         "sequence": 1,
         "label": "owner_option_1",
         "description": "opt_description_1"
-      }, { "value": "owner_option_2", "sequence": 2, "label": "owner_option_2", "description": "opt_description_2" }],
+      }, {"value": "owner_option_2", "sequence": 2, "label": "owner_option_2", "description": "opt_description_2"}],
       "label": "ch2_s1_field7_label",
       "fieldApi": "Company_Legal_Owner_s__c",
       "description": "ch2_s1_field7_description"
@@ -311,26 +294,17 @@ export default [{
   }, {
     "type": "Conditional",
     "title": "ch_2_sec_2_title",
-    "serverValues": [{ "fieldCode": "ch1_s1_field1Section_03_1" }, {
-      "fieldValue": "gfdg",
-      "fieldCode": "ch1_s1_field2Section_03_1"
-    }, {
-      "fieldValue": "gdfg",
-      "fieldCode": "ch1_s1_field3Section_03_1"
-    }, { "fieldCode": "ch2_s2_field4Section_03_1" }, {
-      "fieldValue": "1996-12-01",
-      "fieldCode": "ch2_s2_field5Section_03_1"
-    }, {
-      "fieldValue": "country_option_148",
-      "fieldCode": "ch2_s2_field6Section_03_1"
-    }, { "fieldValue": "country_option_148", "fieldCode": "ch2_s2_field7Section_03_1" }, {
-      "fieldValue": "false",
-      "fieldCode": "ch2_s2_field8Section_03_1"
-    }],
+    "serverValues": [{"fieldCode": "ch1_s1_field1Section_03_1"}, {"fieldCode": "ch1_s1_field2Section_03_1"}, {"fieldCode": "ch1_s1_field3Section_03_1"}, {"fieldCode": "ch2_s2_field4Section_03_1"}, {"fieldCode": "ch2_s2_field5Section_03_1"}, {"fieldCode": "ch2_s2_field6Section_03_1"}, {"fieldCode": "ch2_s2_field7Section_03_1"}, {"fieldCode": "ch2_s2_field8Section_03_1"}],
     "sequence": 3,
     "relatedSection": "Section_01",
     "name": "Section_03_1",
     "fields": [{
+      "type": "title",
+      "sfFieldType": "Text",
+      "sequence": 10,
+      "name": "nullSection_03_1",
+      "label": "ch_2_sec_2_title"
+    }, {
       "validationRules": [{
         "validationError": "ch1_s1_field1_ValidErr",
         "requiredError": "ch1_s1_field1_ReqErr",
@@ -338,14 +312,14 @@ export default [{
       }],
       "type": "horizontal_radio_btns",
       "sfFieldType": "Picklist",
-      "sequence": 8,
+      "sequence": 11,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch1_s1_field1Section_03_1",
       "listOfValues": [{
         "value": "title_option_1",
         "sequence": 1,
         "label": "title_option_1"
-      }, { "value": "title_option_2", "sequence": 2, "label": "title_option_2" }],
+      }, {"value": "title_option_2", "sequence": 2, "label": "title_option_2"}],
       "label": "ch1_s1_field1_label",
       "fieldApi": "Title__c",
       "description": "ch1_s1_field1_description"
@@ -358,7 +332,7 @@ export default [{
       }],
       "type": "text",
       "sfFieldType": "Text",
-      "sequence": 9,
+      "sequence": 12,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch1_s1_field2Section_03_1",
       "label": "ch1_s1_field2_label",
@@ -373,7 +347,7 @@ export default [{
       }],
       "type": "text",
       "sfFieldType": "Text",
-      "sequence": 10,
+      "sequence": 13,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch1_s1_field3Section_03_1",
       "label": "ch1_s1_field3_label",
@@ -388,7 +362,7 @@ export default [{
       }],
       "type": "text",
       "sfFieldType": "Text",
-      "sequence": 11,
+      "sequence": 14,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field4Section_03_1",
       "label": "ch2_s2_field4_label",
@@ -402,7 +376,7 @@ export default [{
       }],
       "type": "date",
       "sfFieldType": "Date",
-      "sequence": 12,
+      "sequence": 15,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field5Section_03_1",
       "label": "ch2_s2_field5_label",
@@ -416,7 +390,7 @@ export default [{
       }],
       "type": "drop_down",
       "sfFieldType": "Picklist",
-      "sequence": 13,
+      "sequence": 16,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field6Section_03_1",
       "listOfValues": [{
@@ -431,15 +405,11 @@ export default [{
         "value": "country_option_241",
         "sequence": 241,
         "label": "country_option_241"
-      }, {
-        "value": "country_option_234",
-        "sequence": 234,
-        "label": "country_option_234"
-      }, { "value": "country_option_72", "sequence": 72, "label": "country_option_72" }, {
-        "value": "country_option_29",
-        "sequence": 29,
-        "label": "country_option_29"
-      }, {
+      }, {"value": "country_option_234", "sequence": 234, "label": "country_option_234"}, {
+        "value": "country_option_72",
+        "sequence": 72,
+        "label": "country_option_72"
+      }, {"value": "country_option_29", "sequence": 29, "label": "country_option_29"}, {
         "value": "country_option_87",
         "sequence": 87,
         "label": "country_option_87"
@@ -447,11 +417,7 @@ export default [{
         "value": "country_option_117",
         "sequence": 117,
         "label": "country_option_117"
-      }, {
-        "value": "country_option_154",
-        "sequence": 154,
-        "label": "country_option_154"
-      }, {
+      }, {"value": "country_option_154", "sequence": 154, "label": "country_option_154"}, {
         "value": "country_option_20",
         "sequence": 20,
         "label": "country_option_20"
@@ -459,15 +425,11 @@ export default [{
         "value": "country_option_237",
         "sequence": 237,
         "label": "country_option_237"
-      }, {
-        "value": "country_option_156",
-        "sequence": 156,
-        "label": "country_option_156"
-      }, { "value": "country_option_34", "sequence": 34, "label": "country_option_34" }, {
-        "value": "country_option_64",
-        "sequence": 64,
-        "label": "country_option_64"
-      }, {
+      }, {"value": "country_option_156", "sequence": 156, "label": "country_option_156"}, {
+        "value": "country_option_34",
+        "sequence": 34,
+        "label": "country_option_34"
+      }, {"value": "country_option_64", "sequence": 64, "label": "country_option_64"}, {
         "value": "country_option_93",
         "sequence": 93,
         "label": "country_option_93"
@@ -479,19 +441,11 @@ export default [{
         "value": "country_option_167",
         "sequence": 167,
         "label": "country_option_167"
-      }, {
-        "value": "country_option_171",
-        "sequence": 171,
-        "label": "country_option_171"
-      }, {
+      }, {"value": "country_option_171", "sequence": 171, "label": "country_option_171"}, {
         "value": "country_option_15",
         "sequence": 15,
         "label": "country_option_15"
-      }, {
-        "value": "country_option_208",
-        "sequence": 208,
-        "label": "country_option_208"
-      }, {
+      }, {"value": "country_option_208", "sequence": 208, "label": "country_option_208"}, {
         "value": "country_option_49",
         "sequence": 49,
         "label": "country_option_49"
@@ -503,27 +457,19 @@ export default [{
         "value": "country_option_195",
         "sequence": 195,
         "label": "country_option_195"
-      }, {
-        "value": "country_option_162",
-        "sequence": 162,
-        "label": "country_option_162"
-      }, {
+      }, {"value": "country_option_162", "sequence": 162, "label": "country_option_162"}, {
         "value": "country_option_65",
         "sequence": 65,
         "label": "country_option_65"
-      }, {
-        "value": "country_option_168",
-        "sequence": 168,
-        "label": "country_option_168"
-      }, { "value": "country_option_7", "sequence": 7, "label": "country_option_7" }, {
-        "value": "country_option_39",
-        "sequence": 39,
-        "label": "country_option_39"
-      }, {
+      }, {"value": "country_option_168", "sequence": 168, "label": "country_option_168"}, {
+        "value": "country_option_7",
+        "sequence": 7,
+        "label": "country_option_7"
+      }, {"value": "country_option_39", "sequence": 39, "label": "country_option_39"}, {
         "value": "country_option_189",
         "sequence": 189,
         "label": "country_option_189"
-      }, { "value": "country_option_40", "sequence": 40, "label": "country_option_40" }, {
+      }, {"value": "country_option_40", "sequence": 40, "label": "country_option_40"}, {
         "value": "country_option_60",
         "sequence": 60,
         "label": "country_option_60"
@@ -535,31 +481,19 @@ export default [{
         "value": "country_option_100",
         "sequence": 100,
         "label": "country_option_100"
-      }, {
-        "value": "country_option_231",
-        "sequence": 231,
-        "label": "country_option_231"
-      }, { "value": "country_option_85", "sequence": 85, "label": "country_option_85" }, {
-        "value": "country_option_63",
-        "sequence": 63,
-        "label": "country_option_63"
-      }, {
+      }, {"value": "country_option_231", "sequence": 231, "label": "country_option_231"}, {
+        "value": "country_option_85",
+        "sequence": 85,
+        "label": "country_option_85"
+      }, {"value": "country_option_63", "sequence": 63, "label": "country_option_63"}, {
         "value": "country_option_50",
         "sequence": 50,
         "label": "country_option_50"
-      }, {
-        "value": "country_option_143",
-        "sequence": 143,
-        "label": "country_option_143"
-      }, {
+      }, {"value": "country_option_143", "sequence": 143, "label": "country_option_143"}, {
         "value": "country_option_22",
         "sequence": 22,
         "label": "country_option_22"
-      }, {
-        "value": "country_option_123",
-        "sequence": 123,
-        "label": "country_option_123"
-      }, {
+      }, {"value": "country_option_123", "sequence": 123, "label": "country_option_123"}, {
         "value": "country_option_54",
         "sequence": 54,
         "label": "country_option_54"
@@ -571,11 +505,7 @@ export default [{
         "value": "country_option_131",
         "sequence": 131,
         "label": "country_option_131"
-      }, {
-        "value": "country_option_150",
-        "sequence": 150,
-        "label": "country_option_150"
-      }, {
+      }, {"value": "country_option_150", "sequence": 150, "label": "country_option_150"}, {
         "value": "country_option_89",
         "sequence": 89,
         "label": "country_option_89"
@@ -619,11 +549,7 @@ export default [{
         "value": "country_option_161",
         "sequence": 161,
         "label": "country_option_161"
-      }, {
-        "value": "country_option_193",
-        "sequence": 193,
-        "label": "country_option_193"
-      }, {
+      }, {"value": "country_option_193", "sequence": 193, "label": "country_option_193"}, {
         "value": "country_option_81",
         "sequence": 81,
         "label": "country_option_81"
@@ -659,19 +585,15 @@ export default [{
         "value": "country_option_240",
         "sequence": 240,
         "label": "country_option_240"
-      }, {
-        "value": "country_option_109",
-        "sequence": 109,
-        "label": "country_option_109"
-      }, { "value": "country_option_5", "sequence": 5, "label": "country_option_5" }, {
-        "value": "country_option_158",
-        "sequence": 158,
-        "label": "country_option_158"
-      }, { "value": "country_option_38", "sequence": 38, "label": "country_option_38" }, {
-        "value": "country_option_11",
-        "sequence": 11,
-        "label": "country_option_11"
-      }, {
+      }, {"value": "country_option_109", "sequence": 109, "label": "country_option_109"}, {
+        "value": "country_option_5",
+        "sequence": 5,
+        "label": "country_option_5"
+      }, {"value": "country_option_158", "sequence": 158, "label": "country_option_158"}, {
+        "value": "country_option_38",
+        "sequence": 38,
+        "label": "country_option_38"
+      }, {"value": "country_option_11", "sequence": 11, "label": "country_option_11"}, {
         "value": "country_option_211",
         "sequence": 211,
         "label": "country_option_211"
@@ -691,27 +613,19 @@ export default [{
         "value": "country_option_191",
         "sequence": 191,
         "label": "country_option_191"
-      }, {
-        "value": "country_option_213",
-        "sequence": 213,
-        "label": "country_option_213"
-      }, { "value": "country_option_21", "sequence": 21, "label": "country_option_21" }, {
-        "value": "country_option_84",
-        "sequence": 84,
-        "label": "country_option_84"
-      }, { "value": "country_option_6", "sequence": 6, "label": "country_option_6" }, {
-        "value": "country_option_4",
-        "sequence": 4,
-        "label": "country_option_4"
-      }, {
+      }, {"value": "country_option_213", "sequence": 213, "label": "country_option_213"}, {
+        "value": "country_option_21",
+        "sequence": 21,
+        "label": "country_option_21"
+      }, {"value": "country_option_84", "sequence": 84, "label": "country_option_84"}, {
+        "value": "country_option_6",
+        "sequence": 6,
+        "label": "country_option_6"
+      }, {"value": "country_option_4", "sequence": 4, "label": "country_option_4"}, {
         "value": "country_option_212",
         "sequence": 212,
         "label": "country_option_212"
-      }, {
-        "value": "country_option_104",
-        "sequence": 104,
-        "label": "country_option_104"
-      }, {
+      }, {"value": "country_option_104", "sequence": 104, "label": "country_option_104"}, {
         "value": "country_option_52",
         "sequence": 52,
         "label": "country_option_52"
@@ -719,11 +633,7 @@ export default [{
         "value": "country_option_144",
         "sequence": 144,
         "label": "country_option_144"
-      }, {
-        "value": "country_option_230",
-        "sequence": 230,
-        "label": "country_option_230"
-      }, {
+      }, {"value": "country_option_230", "sequence": 230, "label": "country_option_230"}, {
         "value": "country_option_88",
         "sequence": 88,
         "label": "country_option_88"
@@ -735,15 +645,11 @@ export default [{
         "value": "country_option_170",
         "sequence": 170,
         "label": "country_option_170"
-      }, {
-        "value": "country_option_128",
-        "sequence": 128,
-        "label": "country_option_128"
-      }, { "value": "country_option_94", "sequence": 94, "label": "country_option_94" }, {
-        "value": "country_option_99",
-        "sequence": 99,
-        "label": "country_option_99"
-      }, {
+      }, {"value": "country_option_128", "sequence": 128, "label": "country_option_128"}, {
+        "value": "country_option_94",
+        "sequence": 94,
+        "label": "country_option_94"
+      }, {"value": "country_option_99", "sequence": 99, "label": "country_option_99"}, {
         "value": "country_option_114",
         "sequence": 114,
         "label": "country_option_114"
@@ -751,23 +657,15 @@ export default [{
         "value": "country_option_120",
         "sequence": 120,
         "label": "country_option_120"
-      }, {
-        "value": "country_option_216",
-        "sequence": 216,
-        "label": "country_option_216"
-      }, { "value": "country_option_28", "sequence": 28, "label": "country_option_28" }, {
-        "value": "country_option_92",
-        "sequence": 92,
-        "label": "country_option_92"
-      }, {
+      }, {"value": "country_option_216", "sequence": 216, "label": "country_option_216"}, {
+        "value": "country_option_28",
+        "sequence": 28,
+        "label": "country_option_28"
+      }, {"value": "country_option_92", "sequence": 92, "label": "country_option_92"}, {
         "value": "country_option_236",
         "sequence": 236,
         "label": "country_option_236"
-      }, {
-        "value": "country_option_147",
-        "sequence": 147,
-        "label": "country_option_147"
-      }, {
+      }, {"value": "country_option_147", "sequence": 147, "label": "country_option_147"}, {
         "value": "country_option_82",
         "sequence": 82,
         "label": "country_option_82"
@@ -775,15 +673,11 @@ export default [{
         "value": "country_option_125",
         "sequence": 125,
         "label": "country_option_125"
-      }, {
-        "value": "country_option_126",
-        "sequence": 126,
-        "label": "country_option_126"
-      }, { "value": "country_option_37", "sequence": 37, "label": "country_option_37" }, {
-        "value": "country_option_48",
-        "sequence": 48,
-        "label": "country_option_48"
-      }, {
+      }, {"value": "country_option_126", "sequence": 126, "label": "country_option_126"}, {
+        "value": "country_option_37",
+        "sequence": 37,
+        "label": "country_option_37"
+      }, {"value": "country_option_48", "sequence": 48, "label": "country_option_48"}, {
         "value": "country_option_157",
         "sequence": 157,
         "label": "country_option_157"
@@ -791,27 +685,19 @@ export default [{
         "value": "country_option_221",
         "sequence": 221,
         "label": "country_option_221"
-      }, {
-        "value": "country_option_215",
-        "sequence": 215,
-        "label": "country_option_215"
-      }, { "value": "country_option_32", "sequence": 32, "label": "country_option_32" }, {
-        "value": "country_option_25",
-        "sequence": 25,
-        "label": "country_option_25"
-      }, { "value": "country_option_42", "sequence": 42, "label": "country_option_42" }, {
-        "value": "country_option_12",
-        "sequence": 12,
-        "label": "country_option_12"
-      }, {
+      }, {"value": "country_option_215", "sequence": 215, "label": "country_option_215"}, {
+        "value": "country_option_32",
+        "sequence": 32,
+        "label": "country_option_32"
+      }, {"value": "country_option_25", "sequence": 25, "label": "country_option_25"}, {
+        "value": "country_option_42",
+        "sequence": 42,
+        "label": "country_option_42"
+      }, {"value": "country_option_12", "sequence": 12, "label": "country_option_12"}, {
         "value": "country_option_95",
         "sequence": 95,
         "label": "country_option_95"
-      }, {
-        "value": "country_option_116",
-        "sequence": 116,
-        "label": "country_option_116"
-      }, {
+      }, {"value": "country_option_116", "sequence": 116, "label": "country_option_116"}, {
         "value": "country_option_31",
         "sequence": 31,
         "label": "country_option_31"
@@ -823,23 +709,15 @@ export default [{
         "value": "country_option_197",
         "sequence": 197,
         "label": "country_option_197"
-      }, {
-        "value": "country_option_142",
-        "sequence": 142,
-        "label": "country_option_142"
-      }, {
+      }, {"value": "country_option_142", "sequence": 142, "label": "country_option_142"}, {
         "value": "country_option_57",
         "sequence": 57,
         "label": "country_option_57"
-      }, {
-        "value": "country_option_113",
-        "sequence": 113,
-        "label": "country_option_113"
-      }, { "value": "country_option_51", "sequence": 51, "label": "country_option_51" }, {
-        "value": "country_option_90",
-        "sequence": 90,
-        "label": "country_option_90"
-      }, {
+      }, {"value": "country_option_113", "sequence": 113, "label": "country_option_113"}, {
+        "value": "country_option_51",
+        "sequence": 51,
+        "label": "country_option_51"
+      }, {"value": "country_option_90", "sequence": 90, "label": "country_option_90"}, {
         "value": "country_option_129",
         "sequence": 129,
         "label": "country_option_129"
@@ -851,11 +729,7 @@ export default [{
         "value": "country_option_238",
         "sequence": 238,
         "label": "country_option_238"
-      }, {
-        "value": "country_option_219",
-        "sequence": 219,
-        "label": "country_option_219"
-      }, {
+      }, {"value": "country_option_219", "sequence": 219, "label": "country_option_219"}, {
         "value": "country_option_79",
         "sequence": 79,
         "label": "country_option_79"
@@ -875,23 +749,15 @@ export default [{
         "value": "country_option_242",
         "sequence": 242,
         "label": "country_option_242"
-      }, {
-        "value": "country_option_101",
-        "sequence": 101,
-        "label": "country_option_101"
-      }, {
+      }, {"value": "country_option_101", "sequence": 101, "label": "country_option_101"}, {
         "value": "country_option_98",
         "sequence": 98,
         "label": "country_option_98"
-      }, {
-        "value": "country_option_106",
-        "sequence": 106,
-        "label": "country_option_106"
-      }, { "value": "country_option_53", "sequence": 53, "label": "country_option_53" }, {
-        "value": "country_option_44",
-        "sequence": 44,
-        "label": "country_option_44"
-      }, {
+      }, {"value": "country_option_106", "sequence": 106, "label": "country_option_106"}, {
+        "value": "country_option_53",
+        "sequence": 53,
+        "label": "country_option_53"
+      }, {"value": "country_option_44", "sequence": 44, "label": "country_option_44"}, {
         "value": "country_option_59",
         "sequence": 59,
         "label": "country_option_59"
@@ -899,15 +765,11 @@ export default [{
         "value": "country_option_209",
         "sequence": 209,
         "label": "country_option_209"
-      }, {
-        "value": "country_option_149",
-        "sequence": 149,
-        "label": "country_option_149"
-      }, { "value": "country_option_13", "sequence": 13, "label": "country_option_13" }, {
-        "value": "country_option_27",
-        "sequence": 27,
-        "label": "country_option_27"
-      }, {
+      }, {"value": "country_option_149", "sequence": 149, "label": "country_option_149"}, {
+        "value": "country_option_13",
+        "sequence": 13,
+        "label": "country_option_13"
+      }, {"value": "country_option_27", "sequence": 27, "label": "country_option_27"}, {
         "value": "country_option_74",
         "sequence": 74,
         "label": "country_option_74"
@@ -935,15 +797,11 @@ export default [{
         "value": "country_option_169",
         "sequence": 169,
         "label": "country_option_169"
-      }, {
-        "value": "country_option_140",
-        "sequence": 140,
-        "label": "country_option_140"
-      }, { "value": "country_option_69", "sequence": 69, "label": "country_option_69" }, {
-        "value": "country_option_75",
-        "sequence": 75,
-        "label": "country_option_75"
-      }, {
+      }, {"value": "country_option_140", "sequence": 140, "label": "country_option_140"}, {
+        "value": "country_option_69",
+        "sequence": 69,
+        "label": "country_option_69"
+      }, {"value": "country_option_75", "sequence": 75, "label": "country_option_75"}, {
         "value": "country_option_232",
         "sequence": 232,
         "label": "country_option_232"
@@ -951,11 +809,7 @@ export default [{
         "value": "country_option_248",
         "sequence": 248,
         "label": "country_option_248"
-      }, {
-        "value": "country_option_108",
-        "sequence": 108,
-        "label": "country_option_108"
-      }, {
+      }, {"value": "country_option_108", "sequence": 108, "label": "country_option_108"}, {
         "value": "country_option_43",
         "sequence": 43,
         "label": "country_option_43"
@@ -975,11 +829,7 @@ export default [{
         "value": "country_option_227",
         "sequence": 227,
         "label": "country_option_227"
-      }, {
-        "value": "country_option_210",
-        "sequence": 210,
-        "label": "country_option_210"
-      }, {
+      }, {"value": "country_option_210", "sequence": 210, "label": "country_option_210"}, {
         "value": "country_option_45",
         "sequence": 45,
         "label": "country_option_45"
@@ -991,43 +841,31 @@ export default [{
         "value": "country_option_112",
         "sequence": 112,
         "label": "country_option_112"
-      }, {
-        "value": "country_option_226",
-        "sequence": 226,
-        "label": "country_option_226"
-      }, {
+      }, {"value": "country_option_226", "sequence": 226, "label": "country_option_226"}, {
         "value": "country_option_36",
         "sequence": 36,
         "label": "country_option_36"
-      }, {
-        "value": "country_option_148",
-        "sequence": 148,
-        "label": "country_option_148"
-      }, { "value": "country_option_76", "sequence": 76, "label": "country_option_76" }, {
-        "value": "country_option_91",
-        "sequence": 91,
-        "label": "country_option_91"
-      }, {
+      }, {"value": "country_option_148", "sequence": 148, "label": "country_option_148"}, {
+        "value": "country_option_76",
+        "sequence": 76,
+        "label": "country_option_76"
+      }, {"value": "country_option_91", "sequence": 91, "label": "country_option_91"}, {
         "value": "country_option_115",
         "sequence": 115,
         "label": "country_option_115"
-      }, {
-        "value": "country_option_35",
-        "sequence": 35,
-        "label": "country_option_35"
-      }, {
+      }, {"value": "country_option_35", "sequence": 35, "label": "country_option_35"}, {
         "value": "country_option_181",
         "sequence": 181,
         "label": "country_option_181"
-      }, { "value": "country_option_96", "sequence": 96, "label": "country_option_96" }, {
+      }, {"value": "country_option_96", "sequence": 96, "label": "country_option_96"}, {
         "value": "country_option_73",
         "sequence": 73,
         "label": "country_option_73"
+      }, {"value": "country_option_159", "sequence": 159, "label": "country_option_159"}, {
+        "value": "country_option_9",
+        "sequence": 9,
+        "label": "country_option_9"
       }, {
-        "value": "country_option_159",
-        "sequence": 159,
-        "label": "country_option_159"
-      }, { "value": "country_option_9", "sequence": 9, "label": "country_option_9" }, {
         "value": "country_option_200",
         "sequence": 200,
         "label": "country_option_200"
@@ -1039,39 +877,23 @@ export default [{
         "value": "country_option_176",
         "sequence": 176,
         "label": "country_option_176"
-      }, {
-        "value": "country_option_103",
-        "sequence": 103,
-        "label": "country_option_103"
-      }, { "value": "country_option_78", "sequence": 78, "label": "country_option_78" }, {
-        "value": "country_option_3",
-        "sequence": 3,
-        "label": "country_option_3"
-      }, {
+      }, {"value": "country_option_103", "sequence": 103, "label": "country_option_103"}, {
+        "value": "country_option_78",
+        "sequence": 78,
+        "label": "country_option_78"
+      }, {"value": "country_option_3", "sequence": 3, "label": "country_option_3"}, {
         "value": "country_option_246",
         "sequence": 246,
         "label": "country_option_246"
-      }, {
-        "value": "country_option_86",
-        "sequence": 86,
-        "label": "country_option_86"
-      }, {
+      }, {"value": "country_option_86", "sequence": 86, "label": "country_option_86"}, {
         "value": "country_option_199",
         "sequence": 199,
         "label": "country_option_199"
-      }, {
-        "value": "country_option_33",
-        "sequence": 33,
-        "label": "country_option_33"
-      }, {
+      }, {"value": "country_option_33", "sequence": 33, "label": "country_option_33"}, {
         "value": "country_option_217",
         "sequence": 217,
         "label": "country_option_217"
-      }, {
-        "value": "country_option_111",
-        "sequence": 111,
-        "label": "country_option_111"
-      }, {
+      }, {"value": "country_option_111", "sequence": 111, "label": "country_option_111"}, {
         "value": "country_option_18",
         "sequence": 18,
         "label": "country_option_18"
@@ -1079,19 +901,11 @@ export default [{
         "value": "country_option_138",
         "sequence": 138,
         "label": "country_option_138"
-      }, {
-        "value": "country_option_179",
-        "sequence": 179,
-        "label": "country_option_179"
-      }, {
+      }, {"value": "country_option_179", "sequence": 179, "label": "country_option_179"}, {
         "value": "country_option_67",
         "sequence": 67,
         "label": "country_option_67"
-      }, {
-        "value": "country_option_155",
-        "sequence": 155,
-        "label": "country_option_155"
-      }, {
+      }, {"value": "country_option_155", "sequence": 155, "label": "country_option_155"}, {
         "value": "country_option_14",
         "sequence": 14,
         "label": "country_option_14"
@@ -1103,27 +917,19 @@ export default [{
         "value": "country_option_188",
         "sequence": 188,
         "label": "country_option_188"
-      }, {
-        "value": "country_option_177",
-        "sequence": 177,
-        "label": "country_option_177"
-      }, {
+      }, {"value": "country_option_177", "sequence": 177, "label": "country_option_177"}, {
         "value": "country_option_56",
         "sequence": 56,
         "label": "country_option_56"
-      }, {
-        "value": "country_option_175",
-        "sequence": 175,
-        "label": "country_option_175"
-      }, { "value": "country_option_1", "sequence": 1, "label": "country_option_1" }, {
-        "value": "country_option_243",
-        "sequence": 243,
-        "label": "country_option_243"
-      }, { "value": "country_option_66", "sequence": 66, "label": "country_option_66" }, {
-        "value": "country_option_24",
-        "sequence": 24,
-        "label": "country_option_24"
-      }, {
+      }, {"value": "country_option_175", "sequence": 175, "label": "country_option_175"}, {
+        "value": "country_option_1",
+        "sequence": 1,
+        "label": "country_option_1"
+      }, {"value": "country_option_243", "sequence": 243, "label": "country_option_243"}, {
+        "value": "country_option_66",
+        "sequence": 66,
+        "label": "country_option_66"
+      }, {"value": "country_option_24", "sequence": 24, "label": "country_option_24"}, {
         "value": "country_option_107",
         "sequence": 107,
         "label": "country_option_107"
@@ -1135,39 +941,23 @@ export default [{
         "value": "country_option_165",
         "sequence": 165,
         "label": "country_option_165"
-      }, {
-        "value": "country_option_183",
-        "sequence": 183,
-        "label": "country_option_183"
-      }, { "value": "country_option_19", "sequence": 19, "label": "country_option_19" }, {
-        "value": "country_option_68",
-        "sequence": 68,
-        "label": "country_option_68"
-      }, {
+      }, {"value": "country_option_183", "sequence": 183, "label": "country_option_183"}, {
+        "value": "country_option_19",
+        "sequence": 19,
+        "label": "country_option_19"
+      }, {"value": "country_option_68", "sequence": 68, "label": "country_option_68"}, {
         "value": "country_option_130",
         "sequence": 130,
         "label": "country_option_130"
-      }, {
-        "value": "country_option_30",
-        "sequence": 30,
-        "label": "country_option_30"
-      }, {
+      }, {"value": "country_option_30", "sequence": 30, "label": "country_option_30"}, {
         "value": "country_option_105",
         "sequence": 105,
         "label": "country_option_105"
-      }, {
-        "value": "country_option_23",
-        "sequence": 23,
-        "label": "country_option_23"
-      }, {
+      }, {"value": "country_option_23", "sequence": 23, "label": "country_option_23"}, {
         "value": "country_option_141",
         "sequence": 141,
         "label": "country_option_141"
-      }, {
-        "value": "country_option_17",
-        "sequence": 17,
-        "label": "country_option_17"
-      }, {
+      }, {"value": "country_option_17", "sequence": 17, "label": "country_option_17"}, {
         "value": "country_option_145",
         "sequence": 145,
         "label": "country_option_145"
@@ -1175,39 +965,27 @@ export default [{
         "value": "country_option_118",
         "sequence": 118,
         "label": "country_option_118"
-      }, {
-        "value": "country_option_185",
-        "sequence": 185,
-        "label": "country_option_185"
-      }, { "value": "country_option_71", "sequence": 71, "label": "country_option_71" }, {
-        "value": "country_option_26",
-        "sequence": 26,
-        "label": "country_option_26"
-      }, {
+      }, {"value": "country_option_185", "sequence": 185, "label": "country_option_185"}, {
+        "value": "country_option_71",
+        "sequence": 71,
+        "label": "country_option_71"
+      }, {"value": "country_option_26", "sequence": 26, "label": "country_option_26"}, {
         "value": "country_option_136",
         "sequence": 136,
         "label": "country_option_136"
-      }, {
-        "value": "country_option_47",
-        "sequence": 47,
-        "label": "country_option_47"
-      }, {
+      }, {"value": "country_option_47", "sequence": 47, "label": "country_option_47"}, {
         "value": "country_option_110",
         "sequence": 110,
         "label": "country_option_110"
-      }, {
-        "value": "country_option_46",
-        "sequence": 46,
-        "label": "country_option_46"
-      }, {
+      }, {"value": "country_option_46", "sequence": 46, "label": "country_option_46"}, {
         "value": "country_option_233",
         "sequence": 233,
         "label": "country_option_233"
-      }, { "value": "country_option_2", "sequence": 2, "label": "country_option_2" }, {
+      }, {"value": "country_option_2", "sequence": 2, "label": "country_option_2"}, {
         "value": "country_option_58",
         "sequence": 58,
         "label": "country_option_58"
-      }, { "value": "country_option_61", "sequence": 61, "label": "country_option_61" }, {
+      }, {"value": "country_option_61", "sequence": 61, "label": "country_option_61"}, {
         "value": "country_option_16",
         "sequence": 16,
         "label": "country_option_16"
@@ -1215,19 +993,15 @@ export default [{
         "value": "country_option_194",
         "sequence": 194,
         "label": "country_option_194"
-      }, {
-        "value": "country_option_180",
-        "sequence": 180,
-        "label": "country_option_180"
-      }, {
+      }, {"value": "country_option_180", "sequence": 180, "label": "country_option_180"}, {
         "value": "country_option_41",
         "sequence": 41,
         "label": "country_option_41"
+      }, {"value": "country_option_172", "sequence": 172, "label": "country_option_172"}, {
+        "value": "country_option_8",
+        "sequence": 8,
+        "label": "country_option_8"
       }, {
-        "value": "country_option_172",
-        "sequence": 172,
-        "label": "country_option_172"
-      }, { "value": "country_option_8", "sequence": 8, "label": "country_option_8" }, {
         "value": "country_option_160",
         "sequence": 160,
         "label": "country_option_160"
@@ -1235,11 +1009,7 @@ export default [{
         "value": "country_option_146",
         "sequence": 146,
         "label": "country_option_146"
-      }, {
-        "value": "country_option_223",
-        "sequence": 223,
-        "label": "country_option_223"
-      }, {
+      }, {"value": "country_option_223", "sequence": 223, "label": "country_option_223"}, {
         "value": "country_option_80",
         "sequence": 80,
         "label": "country_option_80"
@@ -1247,23 +1017,15 @@ export default [{
         "value": "country_option_186",
         "sequence": 186,
         "label": "country_option_186"
-      }, {
-        "value": "country_option_192",
-        "sequence": 192,
-        "label": "country_option_192"
-      }, { "value": "country_option_62", "sequence": 62, "label": "country_option_62" }, {
-        "value": "country_option_97",
-        "sequence": 97,
-        "label": "country_option_97"
-      }, {
+      }, {"value": "country_option_192", "sequence": 192, "label": "country_option_192"}, {
+        "value": "country_option_62",
+        "sequence": 62,
+        "label": "country_option_62"
+      }, {"value": "country_option_97", "sequence": 97, "label": "country_option_97"}, {
         "value": "country_option_251",
         "sequence": 251,
         "label": "country_option_251"
-      }, {
-        "value": "country_option_10",
-        "sequence": 10,
-        "label": "country_option_10"
-      }, {
+      }, {"value": "country_option_10", "sequence": 10, "label": "country_option_10"}, {
         "value": "country_option_122",
         "sequence": 122,
         "label": "country_option_122"
@@ -1283,23 +1045,19 @@ export default [{
         "value": "country_option_214",
         "sequence": 214,
         "label": "country_option_214"
-      }, {
-        "value": "country_option_224",
-        "sequence": 224,
-        "label": "country_option_224"
-      }, { "value": "country_option_83", "sequence": 83, "label": "country_option_83" }, {
-        "value": "country_option_55",
-        "sequence": 55,
-        "label": "country_option_55"
-      }, {
+      }, {"value": "country_option_224", "sequence": 224, "label": "country_option_224"}, {
+        "value": "country_option_83",
+        "sequence": 83,
+        "label": "country_option_83"
+      }, {"value": "country_option_55", "sequence": 55, "label": "country_option_55"}, {
         "value": "country_option_229",
         "sequence": 229,
         "label": "country_option_229"
-      }, {
-        "value": "country_option_77",
-        "sequence": 77,
-        "label": "country_option_77"
-      }, { "value": "country_option_132", "sequence": 132, "label": "country_option_132" }],
+      }, {"value": "country_option_77", "sequence": 77, "label": "country_option_77"}, {
+        "value": "country_option_132",
+        "sequence": 132,
+        "label": "country_option_132"
+      }],
       "label": "ch2_s2_field6_label",
       "fieldApi": "Citizenship__c",
       "description": "ch2_s2_field6_description"
@@ -1311,18 +1069,14 @@ export default [{
       }],
       "type": "drop_down",
       "sfFieldType": "Picklist",
-      "sequence": 14,
+      "sequence": 17,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field7Section_03_1",
       "listOfValues": [{
         "value": "country_option_85",
         "sequence": 85,
         "label": "country_option_85"
-      }, {
-        "value": "country_option_148",
-        "sequence": 148,
-        "label": "country_option_148"
-      }, {
+      }, {"value": "country_option_148", "sequence": 148, "label": "country_option_148"}, {
         "value": "country_option_18",
         "sequence": 18,
         "label": "country_option_18"
@@ -1330,55 +1084,35 @@ export default [{
         "value": "country_option_191",
         "sequence": 191,
         "label": "country_option_191"
-      }, {
-        "value": "country_option_104",
-        "sequence": 104,
-        "label": "country_option_104"
-      }, {
+      }, {"value": "country_option_104", "sequence": 104, "label": "country_option_104"}, {
         "value": "country_option_13",
         "sequence": 13,
         "label": "country_option_13"
-      }, {
-        "value": "country_option_233",
-        "sequence": 233,
-        "label": "country_option_233"
-      }, {
+      }, {"value": "country_option_233", "sequence": 233, "label": "country_option_233"}, {
         "value": "country_option_12",
         "sequence": 12,
         "label": "country_option_12"
-      }, {
-        "value": "country_option_140",
-        "sequence": 140,
-        "label": "country_option_140"
-      }, {
+      }, {"value": "country_option_140", "sequence": 140, "label": "country_option_140"}, {
         "value": "country_option_83",
         "sequence": 83,
         "label": "country_option_83"
-      }, {
-        "value": "country_option_133",
-        "sequence": 133,
-        "label": "country_option_133"
-      }, { "value": "country_option_32", "sequence": 32, "label": "country_option_32" }, {
-        "value": "country_option_11",
-        "sequence": 11,
-        "label": "country_option_11"
-      }, { "value": "country_option_39", "sequence": 39, "label": "country_option_39" }, {
-        "value": "country_option_55",
-        "sequence": 55,
-        "label": "country_option_55"
-      }, {
+      }, {"value": "country_option_133", "sequence": 133, "label": "country_option_133"}, {
+        "value": "country_option_32",
+        "sequence": 32,
+        "label": "country_option_32"
+      }, {"value": "country_option_11", "sequence": 11, "label": "country_option_11"}, {
+        "value": "country_option_39",
+        "sequence": 39,
+        "label": "country_option_39"
+      }, {"value": "country_option_55", "sequence": 55, "label": "country_option_55"}, {
         "value": "country_option_236",
         "sequence": 236,
         "label": "country_option_236"
-      }, { "value": "country_option_29", "sequence": 29, "label": "country_option_29" }, {
+      }, {"value": "country_option_29", "sequence": 29, "label": "country_option_29"}, {
         "value": "country_option_31",
         "sequence": 31,
         "label": "country_option_31"
-      }, {
-        "value": "country_option_14",
-        "sequence": 14,
-        "label": "country_option_14"
-      }, {
+      }, {"value": "country_option_14", "sequence": 14, "label": "country_option_14"}, {
         "value": "country_option_195",
         "sequence": 195,
         "label": "country_option_195"
@@ -1394,35 +1128,23 @@ export default [{
         "value": "country_option_214",
         "sequence": 214,
         "label": "country_option_214"
-      }, {
-        "value": "country_option_183",
-        "sequence": 183,
-        "label": "country_option_183"
-      }, { "value": "country_option_40", "sequence": 40, "label": "country_option_40" }, {
-        "value": "country_option_38",
-        "sequence": 38,
-        "label": "country_option_38"
-      }, { "value": "country_option_90", "sequence": 90, "label": "country_option_90" }, {
-        "value": "country_option_16",
-        "sequence": 16,
-        "label": "country_option_16"
-      }, {
+      }, {"value": "country_option_183", "sequence": 183, "label": "country_option_183"}, {
+        "value": "country_option_40",
+        "sequence": 40,
+        "label": "country_option_40"
+      }, {"value": "country_option_38", "sequence": 38, "label": "country_option_38"}, {
+        "value": "country_option_90",
+        "sequence": 90,
+        "label": "country_option_90"
+      }, {"value": "country_option_16", "sequence": 16, "label": "country_option_16"}, {
         "value": "country_option_26",
         "sequence": 26,
         "label": "country_option_26"
-      }, {
-        "value": "country_option_149",
-        "sequence": 149,
-        "label": "country_option_149"
-      }, {
+      }, {"value": "country_option_149", "sequence": 149, "label": "country_option_149"}, {
         "value": "country_option_70",
         "sequence": 70,
         "label": "country_option_70"
-      }, {
-        "value": "country_option_162",
-        "sequence": 162,
-        "label": "country_option_162"
-      }, {
+      }, {"value": "country_option_162", "sequence": 162, "label": "country_option_162"}, {
         "value": "country_option_51",
         "sequence": 51,
         "label": "country_option_51"
@@ -1430,23 +1152,15 @@ export default [{
         "value": "country_option_207",
         "sequence": 207,
         "label": "country_option_207"
-      }, {
-        "value": "country_option_184",
-        "sequence": 184,
-        "label": "country_option_184"
-      }, { "value": "country_option_8", "sequence": 8, "label": "country_option_8" }, {
-        "value": "country_option_52",
-        "sequence": 52,
-        "label": "country_option_52"
-      }, {
+      }, {"value": "country_option_184", "sequence": 184, "label": "country_option_184"}, {
+        "value": "country_option_8",
+        "sequence": 8,
+        "label": "country_option_8"
+      }, {"value": "country_option_52", "sequence": 52, "label": "country_option_52"}, {
         "value": "country_option_59",
         "sequence": 59,
         "label": "country_option_59"
-      }, {
-        "value": "country_option_200",
-        "sequence": 200,
-        "label": "country_option_200"
-      }, {
+      }, {"value": "country_option_200", "sequence": 200, "label": "country_option_200"}, {
         "value": "country_option_17",
         "sequence": 17,
         "label": "country_option_17"
@@ -1454,15 +1168,11 @@ export default [{
         "value": "country_option_120",
         "sequence": 120,
         "label": "country_option_120"
-      }, {
-        "value": "country_option_151",
-        "sequence": 151,
-        "label": "country_option_151"
-      }, { "value": "country_option_3", "sequence": 3, "label": "country_option_3" }, {
-        "value": "country_option_87",
-        "sequence": 87,
-        "label": "country_option_87"
-      }, {
+      }, {"value": "country_option_151", "sequence": 151, "label": "country_option_151"}, {
+        "value": "country_option_3",
+        "sequence": 3,
+        "label": "country_option_3"
+      }, {"value": "country_option_87", "sequence": 87, "label": "country_option_87"}, {
         "value": "country_option_157",
         "sequence": 157,
         "label": "country_option_157"
@@ -1486,19 +1196,11 @@ export default [{
         "value": "country_option_114",
         "sequence": 114,
         "label": "country_option_114"
-      }, {
-        "value": "country_option_128",
-        "sequence": 128,
-        "label": "country_option_128"
-      }, {
+      }, {"value": "country_option_128", "sequence": 128, "label": "country_option_128"}, {
         "value": "country_option_53",
         "sequence": 53,
         "label": "country_option_53"
-      }, {
-        "value": "country_option_125",
-        "sequence": 125,
-        "label": "country_option_125"
-      }, {
+      }, {"value": "country_option_125", "sequence": 125, "label": "country_option_125"}, {
         "value": "country_option_58",
         "sequence": 58,
         "label": "country_option_58"
@@ -1514,23 +1216,15 @@ export default [{
         "value": "country_option_219",
         "sequence": 219,
         "label": "country_option_219"
-      }, {
-        "value": "country_option_242",
-        "sequence": 242,
-        "label": "country_option_242"
-      }, {
+      }, {"value": "country_option_242", "sequence": 242, "label": "country_option_242"}, {
         "value": "country_option_96",
         "sequence": 96,
         "label": "country_option_96"
-      }, {
-        "value": "country_option_154",
-        "sequence": 154,
-        "label": "country_option_154"
-      }, { "value": "country_option_25", "sequence": 25, "label": "country_option_25" }, {
-        "value": "country_option_61",
-        "sequence": 61,
-        "label": "country_option_61"
-      }, {
+      }, {"value": "country_option_154", "sequence": 154, "label": "country_option_154"}, {
+        "value": "country_option_25",
+        "sequence": 25,
+        "label": "country_option_25"
+      }, {"value": "country_option_61", "sequence": 61, "label": "country_option_61"}, {
         "value": "country_option_82",
         "sequence": 82,
         "label": "country_option_82"
@@ -1558,11 +1252,7 @@ export default [{
         "value": "country_option_130",
         "sequence": 130,
         "label": "country_option_130"
-      }, {
-        "value": "country_option_178",
-        "sequence": 178,
-        "label": "country_option_178"
-      }, {
+      }, {"value": "country_option_178", "sequence": 178, "label": "country_option_178"}, {
         "value": "country_option_41",
         "sequence": 41,
         "label": "country_option_41"
@@ -1574,19 +1264,11 @@ export default [{
         "value": "country_option_206",
         "sequence": 206,
         "label": "country_option_206"
-      }, {
-        "value": "country_option_213",
-        "sequence": 213,
-        "label": "country_option_213"
-      }, {
+      }, {"value": "country_option_213", "sequence": 213, "label": "country_option_213"}, {
         "value": "country_option_35",
         "sequence": 35,
         "label": "country_option_35"
-      }, {
-        "value": "country_option_185",
-        "sequence": 185,
-        "label": "country_option_185"
-      }, {
+      }, {"value": "country_option_185", "sequence": 185, "label": "country_option_185"}, {
         "value": "country_option_89",
         "sequence": 89,
         "label": "country_option_89"
@@ -1598,23 +1280,15 @@ export default [{
         "value": "country_option_160",
         "sequence": 160,
         "label": "country_option_160"
-      }, {
-        "value": "country_option_117",
-        "sequence": 117,
-        "label": "country_option_117"
-      }, {
+      }, {"value": "country_option_117", "sequence": 117, "label": "country_option_117"}, {
         "value": "country_option_42",
         "sequence": 42,
         "label": "country_option_42"
-      }, {
-        "value": "country_option_243",
-        "sequence": 243,
-        "label": "country_option_243"
-      }, { "value": "country_option_68", "sequence": 68, "label": "country_option_68" }, {
-        "value": "country_option_64",
-        "sequence": 64,
-        "label": "country_option_64"
-      }, {
+      }, {"value": "country_option_243", "sequence": 243, "label": "country_option_243"}, {
+        "value": "country_option_68",
+        "sequence": 68,
+        "label": "country_option_68"
+      }, {"value": "country_option_64", "sequence": 64, "label": "country_option_64"}, {
         "value": "country_option_73",
         "sequence": 73,
         "label": "country_option_73"
@@ -1630,11 +1304,7 @@ export default [{
         "value": "country_option_102",
         "sequence": 102,
         "label": "country_option_102"
-      }, {
-        "value": "country_option_248",
-        "sequence": 248,
-        "label": "country_option_248"
-      }, {
+      }, {"value": "country_option_248", "sequence": 248, "label": "country_option_248"}, {
         "value": "country_option_72",
         "sequence": 72,
         "label": "country_option_72"
@@ -1650,11 +1320,7 @@ export default [{
         "value": "country_option_225",
         "sequence": 225,
         "label": "country_option_225"
-      }, {
-        "value": "country_option_112",
-        "sequence": 112,
-        "label": "country_option_112"
-      }, {
+      }, {"value": "country_option_112", "sequence": 112, "label": "country_option_112"}, {
         "value": "country_option_93",
         "sequence": 93,
         "label": "country_option_93"
@@ -1670,19 +1336,11 @@ export default [{
         "value": "country_option_235",
         "sequence": 235,
         "label": "country_option_235"
-      }, {
-        "value": "country_option_136",
-        "sequence": 136,
-        "label": "country_option_136"
-      }, {
+      }, {"value": "country_option_136", "sequence": 136, "label": "country_option_136"}, {
         "value": "country_option_34",
         "sequence": 34,
         "label": "country_option_34"
-      }, {
-        "value": "country_option_107",
-        "sequence": 107,
-        "label": "country_option_107"
-      }, {
+      }, {"value": "country_option_107", "sequence": 107, "label": "country_option_107"}, {
         "value": "country_option_20",
         "sequence": 20,
         "label": "country_option_20"
@@ -1698,15 +1356,11 @@ export default [{
         "value": "country_option_163",
         "sequence": 163,
         "label": "country_option_163"
-      }, {
-        "value": "country_option_190",
-        "sequence": 190,
-        "label": "country_option_190"
-      }, { "value": "country_option_79", "sequence": 79, "label": "country_option_79" }, {
-        "value": "country_option_19",
-        "sequence": 19,
-        "label": "country_option_19"
-      }, {
+      }, {"value": "country_option_190", "sequence": 190, "label": "country_option_190"}, {
+        "value": "country_option_79",
+        "sequence": 79,
+        "label": "country_option_79"
+      }, {"value": "country_option_19", "sequence": 19, "label": "country_option_19"}, {
         "value": "country_option_129",
         "sequence": 129,
         "label": "country_option_129"
@@ -1718,15 +1372,11 @@ export default [{
         "value": "country_option_220",
         "sequence": 220,
         "label": "country_option_220"
-      }, {
-        "value": "country_option_132",
-        "sequence": 132,
-        "label": "country_option_132"
-      }, { "value": "country_option_75", "sequence": 75, "label": "country_option_75" }, {
-        "value": "country_option_1",
-        "sequence": 1,
-        "label": "country_option_1"
-      }, {
+      }, {"value": "country_option_132", "sequence": 132, "label": "country_option_132"}, {
+        "value": "country_option_75",
+        "sequence": 75,
+        "label": "country_option_75"
+      }, {"value": "country_option_1", "sequence": 1, "label": "country_option_1"}, {
         "value": "country_option_208",
         "sequence": 208,
         "label": "country_option_208"
@@ -1742,15 +1392,11 @@ export default [{
         "value": "country_option_197",
         "sequence": 197,
         "label": "country_option_197"
-      }, {
-        "value": "country_option_122",
-        "sequence": 122,
-        "label": "country_option_122"
-      }, { "value": "country_option_98", "sequence": 98, "label": "country_option_98" }, {
-        "value": "country_option_97",
-        "sequence": 97,
-        "label": "country_option_97"
-      }, {
+      }, {"value": "country_option_122", "sequence": 122, "label": "country_option_122"}, {
+        "value": "country_option_98",
+        "sequence": 98,
+        "label": "country_option_98"
+      }, {"value": "country_option_97", "sequence": 97, "label": "country_option_97"}, {
         "value": "country_option_36",
         "sequence": 36,
         "label": "country_option_36"
@@ -1770,31 +1416,19 @@ export default [{
         "value": "country_option_150",
         "sequence": 150,
         "label": "country_option_150"
-      }, {
-        "value": "country_option_252",
-        "sequence": 252,
-        "label": "country_option_252"
-      }, { "value": "country_option_4", "sequence": 4, "label": "country_option_4" }, {
-        "value": "country_option_46",
-        "sequence": 46,
-        "label": "country_option_46"
-      }, {
+      }, {"value": "country_option_252", "sequence": 252, "label": "country_option_252"}, {
+        "value": "country_option_4",
+        "sequence": 4,
+        "label": "country_option_4"
+      }, {"value": "country_option_46", "sequence": 46, "label": "country_option_46"}, {
         "value": "country_option_204",
         "sequence": 204,
         "label": "country_option_204"
-      }, {
-        "value": "country_option_66",
-        "sequence": 66,
-        "label": "country_option_66"
-      }, {
+      }, {"value": "country_option_66", "sequence": 66, "label": "country_option_66"}, {
         "value": "country_option_229",
         "sequence": 229,
         "label": "country_option_229"
-      }, {
-        "value": "country_option_241",
-        "sequence": 241,
-        "label": "country_option_241"
-      }, {
+      }, {"value": "country_option_241", "sequence": 241, "label": "country_option_241"}, {
         "value": "country_option_22",
         "sequence": 22,
         "label": "country_option_22"
@@ -1814,23 +1448,15 @@ export default [{
         "value": "country_option_143",
         "sequence": 143,
         "label": "country_option_143"
-      }, {
-        "value": "country_option_174",
-        "sequence": 174,
-        "label": "country_option_174"
-      }, {
+      }, {"value": "country_option_174", "sequence": 174, "label": "country_option_174"}, {
         "value": "country_option_95",
         "sequence": 95,
         "label": "country_option_95"
-      }, {
-        "value": "country_option_141",
-        "sequence": 141,
-        "label": "country_option_141"
-      }, { "value": "country_option_60", "sequence": 60, "label": "country_option_60" }, {
-        "value": "country_option_56",
-        "sequence": 56,
-        "label": "country_option_56"
-      }, {
+      }, {"value": "country_option_141", "sequence": 141, "label": "country_option_141"}, {
+        "value": "country_option_60",
+        "sequence": 60,
+        "label": "country_option_60"
+      }, {"value": "country_option_56", "sequence": 56, "label": "country_option_56"}, {
         "value": "country_option_212",
         "sequence": 212,
         "label": "country_option_212"
@@ -1838,15 +1464,11 @@ export default [{
         "value": "country_option_146",
         "sequence": 146,
         "label": "country_option_146"
-      }, {
-        "value": "country_option_222",
-        "sequence": 222,
-        "label": "country_option_222"
-      }, { "value": "country_option_67", "sequence": 67, "label": "country_option_67" }, {
-        "value": "country_option_57",
-        "sequence": 57,
-        "label": "country_option_57"
-      }, {
+      }, {"value": "country_option_222", "sequence": 222, "label": "country_option_222"}, {
+        "value": "country_option_67",
+        "sequence": 67,
+        "label": "country_option_67"
+      }, {"value": "country_option_57", "sequence": 57, "label": "country_option_57"}, {
         "value": "country_option_10",
         "sequence": 10,
         "label": "country_option_10"
@@ -1862,15 +1484,11 @@ export default [{
         "value": "country_option_186",
         "sequence": 186,
         "label": "country_option_186"
-      }, {
-        "value": "country_option_198",
-        "sequence": 198,
-        "label": "country_option_198"
-      }, { "value": "country_option_44", "sequence": 44, "label": "country_option_44" }, {
-        "value": "country_option_81",
-        "sequence": 81,
-        "label": "country_option_81"
-      }, {
+      }, {"value": "country_option_198", "sequence": 198, "label": "country_option_198"}, {
+        "value": "country_option_44",
+        "sequence": 44,
+        "label": "country_option_44"
+      }, {"value": "country_option_81", "sequence": 81, "label": "country_option_81"}, {
         "value": "country_option_142",
         "sequence": 142,
         "label": "country_option_142"
@@ -1882,31 +1500,19 @@ export default [{
         "value": "country_option_159",
         "sequence": 159,
         "label": "country_option_159"
-      }, {
-        "value": "country_option_239",
-        "sequence": 239,
-        "label": "country_option_239"
-      }, { "value": "country_option_45", "sequence": 45, "label": "country_option_45" }, {
-        "value": "country_option_50",
-        "sequence": 50,
-        "label": "country_option_50"
-      }, {
+      }, {"value": "country_option_239", "sequence": 239, "label": "country_option_239"}, {
+        "value": "country_option_45",
+        "sequence": 45,
+        "label": "country_option_45"
+      }, {"value": "country_option_50", "sequence": 50, "label": "country_option_50"}, {
         "value": "country_option_189",
         "sequence": 189,
         "label": "country_option_189"
-      }, {
-        "value": "country_option_48",
-        "sequence": 48,
-        "label": "country_option_48"
-      }, {
+      }, {"value": "country_option_48", "sequence": 48, "label": "country_option_48"}, {
         "value": "country_option_126",
         "sequence": 126,
         "label": "country_option_126"
-      }, {
-        "value": "country_option_77",
-        "sequence": 77,
-        "label": "country_option_77"
-      }, {
+      }, {"value": "country_option_77", "sequence": 77, "label": "country_option_77"}, {
         "value": "country_option_123",
         "sequence": 123,
         "label": "country_option_123"
@@ -1966,31 +1572,23 @@ export default [{
         "value": "country_option_156",
         "sequence": 156,
         "label": "country_option_156"
+      }, {"value": "country_option_119", "sequence": 119, "label": "country_option_119"}, {
+        "value": "country_option_9",
+        "sequence": 9,
+        "label": "country_option_9"
       }, {
-        "value": "country_option_119",
-        "sequence": 119,
-        "label": "country_option_119"
-      }, { "value": "country_option_9", "sequence": 9, "label": "country_option_9" }, {
         "value": "country_option_251",
         "sequence": 251,
         "label": "country_option_251"
-      }, {
-        "value": "country_option_137",
-        "sequence": 137,
-        "label": "country_option_137"
-      }, {
+      }, {"value": "country_option_137", "sequence": 137, "label": "country_option_137"}, {
         "value": "country_option_65",
         "sequence": 65,
         "label": "country_option_65"
-      }, {
-        "value": "country_option_165",
-        "sequence": 165,
-        "label": "country_option_165"
-      }, { "value": "country_option_7", "sequence": 7, "label": "country_option_7" }, {
-        "value": "country_option_27",
-        "sequence": 27,
-        "label": "country_option_27"
-      }, {
+      }, {"value": "country_option_165", "sequence": 165, "label": "country_option_165"}, {
+        "value": "country_option_7",
+        "sequence": 7,
+        "label": "country_option_7"
+      }, {"value": "country_option_27", "sequence": 27, "label": "country_option_27"}, {
         "value": "country_option_171",
         "sequence": 171,
         "label": "country_option_171"
@@ -2006,11 +1604,7 @@ export default [{
         "value": "country_option_173",
         "sequence": 173,
         "label": "country_option_173"
-      }, {
-        "value": "country_option_237",
-        "sequence": 237,
-        "label": "country_option_237"
-      }, {
+      }, {"value": "country_option_237", "sequence": 237, "label": "country_option_237"}, {
         "value": "country_option_99",
         "sequence": 99,
         "label": "country_option_99"
@@ -2022,67 +1616,47 @@ export default [{
         "value": "country_option_201",
         "sequence": 201,
         "label": "country_option_201"
-      }, {
-        "value": "country_option_216",
-        "sequence": 216,
-        "label": "country_option_216"
-      }, { "value": "country_option_62", "sequence": 62, "label": "country_option_62" }, {
-        "value": "country_option_33",
-        "sequence": 33,
-        "label": "country_option_33"
-      }, { "value": "country_option_91", "sequence": 91, "label": "country_option_91" }, {
-        "value": "country_option_86",
-        "sequence": 86,
-        "label": "country_option_86"
-      }, {
+      }, {"value": "country_option_216", "sequence": 216, "label": "country_option_216"}, {
+        "value": "country_option_62",
+        "sequence": 62,
+        "label": "country_option_62"
+      }, {"value": "country_option_33", "sequence": 33, "label": "country_option_33"}, {
+        "value": "country_option_91",
+        "sequence": 91,
+        "label": "country_option_91"
+      }, {"value": "country_option_86", "sequence": 86, "label": "country_option_86"}, {
         "value": "country_option_211",
         "sequence": 211,
         "label": "country_option_211"
-      }, {
-        "value": "country_option_196",
-        "sequence": 196,
-        "label": "country_option_196"
-      }, { "value": "country_option_23", "sequence": 23, "label": "country_option_23" }, {
-        "value": "country_option_74",
-        "sequence": 74,
-        "label": "country_option_74"
-      }, {
+      }, {"value": "country_option_196", "sequence": 196, "label": "country_option_196"}, {
+        "value": "country_option_23",
+        "sequence": 23,
+        "label": "country_option_23"
+      }, {"value": "country_option_74", "sequence": 74, "label": "country_option_74"}, {
         "value": "country_option_232",
         "sequence": 232,
         "label": "country_option_232"
-      }, { "value": "country_option_37", "sequence": 37, "label": "country_option_37" }, {
+      }, {"value": "country_option_37", "sequence": 37, "label": "country_option_37"}, {
         "value": "country_option_78",
         "sequence": 78,
         "label": "country_option_78"
-      }, { "value": "country_option_69", "sequence": 69, "label": "country_option_69" }, {
+      }, {"value": "country_option_69", "sequence": 69, "label": "country_option_69"}, {
         "value": "country_option_54",
         "sequence": 54,
         "label": "country_option_54"
-      }, { "value": "country_option_94", "sequence": 94, "label": "country_option_94" }, {
+      }, {"value": "country_option_94", "sequence": 94, "label": "country_option_94"}, {
         "value": "country_option_21",
         "sequence": 21,
         "label": "country_option_21"
-      }, {
-        "value": "country_option_116",
-        "sequence": 116,
-        "label": "country_option_116"
-      }, {
+      }, {"value": "country_option_116", "sequence": 116, "label": "country_option_116"}, {
         "value": "country_option_88",
         "sequence": 88,
         "label": "country_option_88"
-      }, {
-        "value": "country_option_124",
-        "sequence": 124,
-        "label": "country_option_124"
-      }, {
+      }, {"value": "country_option_124", "sequence": 124, "label": "country_option_124"}, {
         "value": "country_option_71",
         "sequence": 71,
         "label": "country_option_71"
-      }, {
-        "value": "country_option_188",
-        "sequence": 188,
-        "label": "country_option_188"
-      }, {
+      }, {"value": "country_option_188", "sequence": 188, "label": "country_option_188"}, {
         "value": "country_option_76",
         "sequence": 76,
         "label": "country_option_76"
@@ -2098,19 +1672,15 @@ export default [{
         "value": "country_option_170",
         "sequence": 170,
         "label": "country_option_170"
-      }, {
-        "value": "country_option_106",
-        "sequence": 106,
-        "label": "country_option_106"
-      }, { "value": "country_option_49", "sequence": 49, "label": "country_option_49" }, {
-        "value": "country_option_28",
-        "sequence": 28,
-        "label": "country_option_28"
-      }, { "value": "country_option_63", "sequence": 63, "label": "country_option_63" }, {
-        "value": "country_option_47",
-        "sequence": 47,
-        "label": "country_option_47"
-      }, {
+      }, {"value": "country_option_106", "sequence": 106, "label": "country_option_106"}, {
+        "value": "country_option_49",
+        "sequence": 49,
+        "label": "country_option_49"
+      }, {"value": "country_option_28", "sequence": 28, "label": "country_option_28"}, {
+        "value": "country_option_63",
+        "sequence": 63,
+        "label": "country_option_63"
+      }, {"value": "country_option_47", "sequence": 47, "label": "country_option_47"}, {
         "value": "country_option_131",
         "sequence": 131,
         "label": "country_option_131"
@@ -2134,35 +1704,27 @@ export default [{
         "value": "country_option_218",
         "sequence": 218,
         "label": "country_option_218"
-      }, {
-        "value": "country_option_152",
-        "sequence": 152,
-        "label": "country_option_152"
-      }, { "value": "country_option_5", "sequence": 5, "label": "country_option_5" }, {
-        "value": "country_option_24",
-        "sequence": 24,
-        "label": "country_option_24"
-      }, {
+      }, {"value": "country_option_152", "sequence": 152, "label": "country_option_152"}, {
+        "value": "country_option_5",
+        "sequence": 5,
+        "label": "country_option_5"
+      }, {"value": "country_option_24", "sequence": 24, "label": "country_option_24"}, {
         "value": "country_option_15",
         "sequence": 15,
         "label": "country_option_15"
+      }, {"value": "country_option_175", "sequence": 175, "label": "country_option_175"}, {
+        "value": "country_option_2",
+        "sequence": 2,
+        "label": "country_option_2"
       }, {
-        "value": "country_option_175",
-        "sequence": 175,
-        "label": "country_option_175"
-      }, { "value": "country_option_2", "sequence": 2, "label": "country_option_2" }, {
         "value": "country_option_121",
         "sequence": 121,
         "label": "country_option_121"
-      }, {
-        "value": "country_option_203",
-        "sequence": 203,
-        "label": "country_option_203"
-      }, { "value": "country_option_84", "sequence": 84, "label": "country_option_84" }, {
-        "value": "country_option_80",
-        "sequence": 80,
-        "label": "country_option_80"
-      }, {
+      }, {"value": "country_option_203", "sequence": 203, "label": "country_option_203"}, {
+        "value": "country_option_84",
+        "sequence": 84,
+        "label": "country_option_84"
+      }, {"value": "country_option_80", "sequence": 80, "label": "country_option_80"}, {
         "value": "country_option_181",
         "sequence": 181,
         "label": "country_option_181"
@@ -2170,23 +1732,19 @@ export default [{
         "value": "country_option_224",
         "sequence": 224,
         "label": "country_option_224"
-      }, {
-        "value": "country_option_134",
-        "sequence": 134,
-        "label": "country_option_134"
-      }, { "value": "country_option_92", "sequence": 92, "label": "country_option_92" }, {
-        "value": "country_option_43",
-        "sequence": 43,
-        "label": "country_option_43"
-      }, { "value": "country_option_30", "sequence": 30, "label": "country_option_30" }, {
-        "value": "country_option_6",
-        "sequence": 6,
-        "label": "country_option_6"
-      }, {
+      }, {"value": "country_option_134", "sequence": 134, "label": "country_option_134"}, {
+        "value": "country_option_92",
+        "sequence": 92,
+        "label": "country_option_92"
+      }, {"value": "country_option_43", "sequence": 43, "label": "country_option_43"}, {
+        "value": "country_option_30",
+        "sequence": 30,
+        "label": "country_option_30"
+      }, {"value": "country_option_6", "sequence": 6, "label": "country_option_6"}, {
         "value": "country_option_221",
         "sequence": 221,
         "label": "country_option_221"
-      }, { "value": "country_option_168", "sequence": 168, "label": "country_option_168" }],
+      }, {"value": "country_option_168", "sequence": 168, "label": "country_option_168"}],
       "label": "ch2_s2_field7_label",
       "fieldApi": "Country_of_Residence__c",
       "description": "ch2_s2_field7_description"
@@ -2198,7 +1756,7 @@ export default [{
       }],
       "type": "boxed_checkbox",
       "sfFieldType": "Checkbox",
-      "sequence": 15,
+      "sequence": 18,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field8Section_03_1",
       "label": "ch2_s2_field8_label",
@@ -2209,26 +1767,17 @@ export default [{
   }, {
     "type": "Conditional",
     "title": "ch_2_sec_2_title",
-    "serverValues": [{ "fieldCode": "ch1_s1_field1Section_03_2" }, {
-      "fieldValue": "gfdg",
-      "fieldCode": "ch1_s1_field2Section_03_2"
-    }, {
-      "fieldValue": "gdfg",
-      "fieldCode": "ch1_s1_field3Section_03_2"
-    }, { "fieldCode": "ch2_s2_field4Section_03_2" }, {
-      "fieldValue": "1996-12-01",
-      "fieldCode": "ch2_s2_field5Section_03_2"
-    }, {
-      "fieldValue": "country_option_148",
-      "fieldCode": "ch2_s2_field6Section_03_2"
-    }, { "fieldValue": "country_option_148", "fieldCode": "ch2_s2_field7Section_03_2" }, {
-      "fieldValue": "false",
-      "fieldCode": "ch2_s2_field8Section_03_2"
-    }],
+    "serverValues": [{"fieldCode": "ch1_s1_field1Section_03_2"}, {"fieldCode": "ch1_s1_field2Section_03_2"}, {"fieldCode": "ch1_s1_field3Section_03_2"}, {"fieldCode": "ch2_s2_field4Section_03_2"}, {"fieldCode": "ch2_s2_field5Section_03_2"}, {"fieldCode": "ch2_s2_field6Section_03_2"}, {"fieldCode": "ch2_s2_field7Section_03_2"}, {"fieldCode": "ch2_s2_field8Section_03_2"}],
     "sequence": 4,
     "relatedSection": "Section_01",
     "name": "Section_03_2",
     "fields": [{
+      "type": "title",
+      "sfFieldType": "Text",
+      "sequence": 19,
+      "name": "nullSection_03_2",
+      "label": "ch_2_sec_2_title"
+    }, {
       "validationRules": [{
         "validationError": "ch1_s1_field1_ValidErr",
         "requiredError": "ch1_s1_field1_ReqErr",
@@ -2236,14 +1785,14 @@ export default [{
       }],
       "type": "horizontal_radio_btns",
       "sfFieldType": "Picklist",
-      "sequence": 8,
+      "sequence": 20,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch1_s1_field1Section_03_2",
       "listOfValues": [{
         "value": "title_option_1",
         "sequence": 1,
         "label": "title_option_1"
-      }, { "value": "title_option_2", "sequence": 2, "label": "title_option_2" }],
+      }, {"value": "title_option_2", "sequence": 2, "label": "title_option_2"}],
       "label": "ch1_s1_field1_label",
       "fieldApi": "Title__c",
       "description": "ch1_s1_field1_description"
@@ -2256,7 +1805,7 @@ export default [{
       }],
       "type": "text",
       "sfFieldType": "Text",
-      "sequence": 9,
+      "sequence": 21,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch1_s1_field2Section_03_2",
       "label": "ch1_s1_field2_label",
@@ -2271,7 +1820,7 @@ export default [{
       }],
       "type": "text",
       "sfFieldType": "Text",
-      "sequence": 10,
+      "sequence": 22,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch1_s1_field3Section_03_2",
       "label": "ch1_s1_field3_label",
@@ -2286,7 +1835,7 @@ export default [{
       }],
       "type": "text",
       "sfFieldType": "Text",
-      "sequence": 11,
+      "sequence": 23,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field4Section_03_2",
       "label": "ch2_s2_field4_label",
@@ -2300,7 +1849,7 @@ export default [{
       }],
       "type": "date",
       "sfFieldType": "Date",
-      "sequence": 12,
+      "sequence": 24,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field5Section_03_2",
       "label": "ch2_s2_field5_label",
@@ -2314,18 +1863,14 @@ export default [{
       }],
       "type": "drop_down",
       "sfFieldType": "Picklist",
-      "sequence": 13,
+      "sequence": 25,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field6Section_03_2",
       "listOfValues": [{
         "value": "country_option_85",
         "sequence": 85,
         "label": "country_option_85"
-      }, {
-        "value": "country_option_148",
-        "sequence": 148,
-        "label": "country_option_148"
-      }, {
+      }, {"value": "country_option_148", "sequence": 148, "label": "country_option_148"}, {
         "value": "country_option_18",
         "sequence": 18,
         "label": "country_option_18"
@@ -2333,55 +1878,35 @@ export default [{
         "value": "country_option_191",
         "sequence": 191,
         "label": "country_option_191"
-      }, {
-        "value": "country_option_104",
-        "sequence": 104,
-        "label": "country_option_104"
-      }, {
+      }, {"value": "country_option_104", "sequence": 104, "label": "country_option_104"}, {
         "value": "country_option_13",
         "sequence": 13,
         "label": "country_option_13"
-      }, {
-        "value": "country_option_233",
-        "sequence": 233,
-        "label": "country_option_233"
-      }, {
+      }, {"value": "country_option_233", "sequence": 233, "label": "country_option_233"}, {
         "value": "country_option_12",
         "sequence": 12,
         "label": "country_option_12"
-      }, {
-        "value": "country_option_140",
-        "sequence": 140,
-        "label": "country_option_140"
-      }, {
+      }, {"value": "country_option_140", "sequence": 140, "label": "country_option_140"}, {
         "value": "country_option_83",
         "sequence": 83,
         "label": "country_option_83"
-      }, {
-        "value": "country_option_133",
-        "sequence": 133,
-        "label": "country_option_133"
-      }, { "value": "country_option_32", "sequence": 32, "label": "country_option_32" }, {
-        "value": "country_option_11",
-        "sequence": 11,
-        "label": "country_option_11"
-      }, { "value": "country_option_39", "sequence": 39, "label": "country_option_39" }, {
-        "value": "country_option_55",
-        "sequence": 55,
-        "label": "country_option_55"
-      }, {
+      }, {"value": "country_option_133", "sequence": 133, "label": "country_option_133"}, {
+        "value": "country_option_32",
+        "sequence": 32,
+        "label": "country_option_32"
+      }, {"value": "country_option_11", "sequence": 11, "label": "country_option_11"}, {
+        "value": "country_option_39",
+        "sequence": 39,
+        "label": "country_option_39"
+      }, {"value": "country_option_55", "sequence": 55, "label": "country_option_55"}, {
         "value": "country_option_236",
         "sequence": 236,
         "label": "country_option_236"
-      }, { "value": "country_option_29", "sequence": 29, "label": "country_option_29" }, {
+      }, {"value": "country_option_29", "sequence": 29, "label": "country_option_29"}, {
         "value": "country_option_31",
         "sequence": 31,
         "label": "country_option_31"
-      }, {
-        "value": "country_option_14",
-        "sequence": 14,
-        "label": "country_option_14"
-      }, {
+      }, {"value": "country_option_14", "sequence": 14, "label": "country_option_14"}, {
         "value": "country_option_195",
         "sequence": 195,
         "label": "country_option_195"
@@ -2397,35 +1922,23 @@ export default [{
         "value": "country_option_214",
         "sequence": 214,
         "label": "country_option_214"
-      }, {
-        "value": "country_option_183",
-        "sequence": 183,
-        "label": "country_option_183"
-      }, { "value": "country_option_40", "sequence": 40, "label": "country_option_40" }, {
-        "value": "country_option_38",
-        "sequence": 38,
-        "label": "country_option_38"
-      }, { "value": "country_option_90", "sequence": 90, "label": "country_option_90" }, {
-        "value": "country_option_16",
-        "sequence": 16,
-        "label": "country_option_16"
-      }, {
+      }, {"value": "country_option_183", "sequence": 183, "label": "country_option_183"}, {
+        "value": "country_option_40",
+        "sequence": 40,
+        "label": "country_option_40"
+      }, {"value": "country_option_38", "sequence": 38, "label": "country_option_38"}, {
+        "value": "country_option_90",
+        "sequence": 90,
+        "label": "country_option_90"
+      }, {"value": "country_option_16", "sequence": 16, "label": "country_option_16"}, {
         "value": "country_option_26",
         "sequence": 26,
         "label": "country_option_26"
-      }, {
-        "value": "country_option_149",
-        "sequence": 149,
-        "label": "country_option_149"
-      }, {
+      }, {"value": "country_option_149", "sequence": 149, "label": "country_option_149"}, {
         "value": "country_option_70",
         "sequence": 70,
         "label": "country_option_70"
-      }, {
-        "value": "country_option_162",
-        "sequence": 162,
-        "label": "country_option_162"
-      }, {
+      }, {"value": "country_option_162", "sequence": 162, "label": "country_option_162"}, {
         "value": "country_option_51",
         "sequence": 51,
         "label": "country_option_51"
@@ -2433,23 +1946,15 @@ export default [{
         "value": "country_option_207",
         "sequence": 207,
         "label": "country_option_207"
-      }, {
-        "value": "country_option_184",
-        "sequence": 184,
-        "label": "country_option_184"
-      }, { "value": "country_option_8", "sequence": 8, "label": "country_option_8" }, {
-        "value": "country_option_52",
-        "sequence": 52,
-        "label": "country_option_52"
-      }, {
+      }, {"value": "country_option_184", "sequence": 184, "label": "country_option_184"}, {
+        "value": "country_option_8",
+        "sequence": 8,
+        "label": "country_option_8"
+      }, {"value": "country_option_52", "sequence": 52, "label": "country_option_52"}, {
         "value": "country_option_59",
         "sequence": 59,
         "label": "country_option_59"
-      }, {
-        "value": "country_option_200",
-        "sequence": 200,
-        "label": "country_option_200"
-      }, {
+      }, {"value": "country_option_200", "sequence": 200, "label": "country_option_200"}, {
         "value": "country_option_17",
         "sequence": 17,
         "label": "country_option_17"
@@ -2457,15 +1962,11 @@ export default [{
         "value": "country_option_120",
         "sequence": 120,
         "label": "country_option_120"
-      }, {
-        "value": "country_option_151",
-        "sequence": 151,
-        "label": "country_option_151"
-      }, { "value": "country_option_3", "sequence": 3, "label": "country_option_3" }, {
-        "value": "country_option_87",
-        "sequence": 87,
-        "label": "country_option_87"
-      }, {
+      }, {"value": "country_option_151", "sequence": 151, "label": "country_option_151"}, {
+        "value": "country_option_3",
+        "sequence": 3,
+        "label": "country_option_3"
+      }, {"value": "country_option_87", "sequence": 87, "label": "country_option_87"}, {
         "value": "country_option_157",
         "sequence": 157,
         "label": "country_option_157"
@@ -2489,19 +1990,11 @@ export default [{
         "value": "country_option_114",
         "sequence": 114,
         "label": "country_option_114"
-      }, {
-        "value": "country_option_128",
-        "sequence": 128,
-        "label": "country_option_128"
-      }, {
+      }, {"value": "country_option_128", "sequence": 128, "label": "country_option_128"}, {
         "value": "country_option_53",
         "sequence": 53,
         "label": "country_option_53"
-      }, {
-        "value": "country_option_125",
-        "sequence": 125,
-        "label": "country_option_125"
-      }, {
+      }, {"value": "country_option_125", "sequence": 125, "label": "country_option_125"}, {
         "value": "country_option_58",
         "sequence": 58,
         "label": "country_option_58"
@@ -2517,23 +2010,15 @@ export default [{
         "value": "country_option_219",
         "sequence": 219,
         "label": "country_option_219"
-      }, {
-        "value": "country_option_242",
-        "sequence": 242,
-        "label": "country_option_242"
-      }, {
+      }, {"value": "country_option_242", "sequence": 242, "label": "country_option_242"}, {
         "value": "country_option_96",
         "sequence": 96,
         "label": "country_option_96"
-      }, {
-        "value": "country_option_154",
-        "sequence": 154,
-        "label": "country_option_154"
-      }, { "value": "country_option_25", "sequence": 25, "label": "country_option_25" }, {
-        "value": "country_option_61",
-        "sequence": 61,
-        "label": "country_option_61"
-      }, {
+      }, {"value": "country_option_154", "sequence": 154, "label": "country_option_154"}, {
+        "value": "country_option_25",
+        "sequence": 25,
+        "label": "country_option_25"
+      }, {"value": "country_option_61", "sequence": 61, "label": "country_option_61"}, {
         "value": "country_option_82",
         "sequence": 82,
         "label": "country_option_82"
@@ -2561,11 +2046,7 @@ export default [{
         "value": "country_option_130",
         "sequence": 130,
         "label": "country_option_130"
-      }, {
-        "value": "country_option_178",
-        "sequence": 178,
-        "label": "country_option_178"
-      }, {
+      }, {"value": "country_option_178", "sequence": 178, "label": "country_option_178"}, {
         "value": "country_option_41",
         "sequence": 41,
         "label": "country_option_41"
@@ -2577,19 +2058,11 @@ export default [{
         "value": "country_option_206",
         "sequence": 206,
         "label": "country_option_206"
-      }, {
-        "value": "country_option_213",
-        "sequence": 213,
-        "label": "country_option_213"
-      }, {
+      }, {"value": "country_option_213", "sequence": 213, "label": "country_option_213"}, {
         "value": "country_option_35",
         "sequence": 35,
         "label": "country_option_35"
-      }, {
-        "value": "country_option_185",
-        "sequence": 185,
-        "label": "country_option_185"
-      }, {
+      }, {"value": "country_option_185", "sequence": 185, "label": "country_option_185"}, {
         "value": "country_option_89",
         "sequence": 89,
         "label": "country_option_89"
@@ -2601,23 +2074,15 @@ export default [{
         "value": "country_option_160",
         "sequence": 160,
         "label": "country_option_160"
-      }, {
-        "value": "country_option_117",
-        "sequence": 117,
-        "label": "country_option_117"
-      }, {
+      }, {"value": "country_option_117", "sequence": 117, "label": "country_option_117"}, {
         "value": "country_option_42",
         "sequence": 42,
         "label": "country_option_42"
-      }, {
-        "value": "country_option_243",
-        "sequence": 243,
-        "label": "country_option_243"
-      }, { "value": "country_option_68", "sequence": 68, "label": "country_option_68" }, {
-        "value": "country_option_64",
-        "sequence": 64,
-        "label": "country_option_64"
-      }, {
+      }, {"value": "country_option_243", "sequence": 243, "label": "country_option_243"}, {
+        "value": "country_option_68",
+        "sequence": 68,
+        "label": "country_option_68"
+      }, {"value": "country_option_64", "sequence": 64, "label": "country_option_64"}, {
         "value": "country_option_73",
         "sequence": 73,
         "label": "country_option_73"
@@ -2633,11 +2098,7 @@ export default [{
         "value": "country_option_102",
         "sequence": 102,
         "label": "country_option_102"
-      }, {
-        "value": "country_option_248",
-        "sequence": 248,
-        "label": "country_option_248"
-      }, {
+      }, {"value": "country_option_248", "sequence": 248, "label": "country_option_248"}, {
         "value": "country_option_72",
         "sequence": 72,
         "label": "country_option_72"
@@ -2653,11 +2114,7 @@ export default [{
         "value": "country_option_225",
         "sequence": 225,
         "label": "country_option_225"
-      }, {
-        "value": "country_option_112",
-        "sequence": 112,
-        "label": "country_option_112"
-      }, {
+      }, {"value": "country_option_112", "sequence": 112, "label": "country_option_112"}, {
         "value": "country_option_93",
         "sequence": 93,
         "label": "country_option_93"
@@ -2673,19 +2130,11 @@ export default [{
         "value": "country_option_235",
         "sequence": 235,
         "label": "country_option_235"
-      }, {
-        "value": "country_option_136",
-        "sequence": 136,
-        "label": "country_option_136"
-      }, {
+      }, {"value": "country_option_136", "sequence": 136, "label": "country_option_136"}, {
         "value": "country_option_34",
         "sequence": 34,
         "label": "country_option_34"
-      }, {
-        "value": "country_option_107",
-        "sequence": 107,
-        "label": "country_option_107"
-      }, {
+      }, {"value": "country_option_107", "sequence": 107, "label": "country_option_107"}, {
         "value": "country_option_20",
         "sequence": 20,
         "label": "country_option_20"
@@ -2701,15 +2150,11 @@ export default [{
         "value": "country_option_163",
         "sequence": 163,
         "label": "country_option_163"
-      }, {
-        "value": "country_option_190",
-        "sequence": 190,
-        "label": "country_option_190"
-      }, { "value": "country_option_79", "sequence": 79, "label": "country_option_79" }, {
-        "value": "country_option_19",
-        "sequence": 19,
-        "label": "country_option_19"
-      }, {
+      }, {"value": "country_option_190", "sequence": 190, "label": "country_option_190"}, {
+        "value": "country_option_79",
+        "sequence": 79,
+        "label": "country_option_79"
+      }, {"value": "country_option_19", "sequence": 19, "label": "country_option_19"}, {
         "value": "country_option_129",
         "sequence": 129,
         "label": "country_option_129"
@@ -2721,15 +2166,11 @@ export default [{
         "value": "country_option_220",
         "sequence": 220,
         "label": "country_option_220"
-      }, {
-        "value": "country_option_132",
-        "sequence": 132,
-        "label": "country_option_132"
-      }, { "value": "country_option_75", "sequence": 75, "label": "country_option_75" }, {
-        "value": "country_option_1",
-        "sequence": 1,
-        "label": "country_option_1"
-      }, {
+      }, {"value": "country_option_132", "sequence": 132, "label": "country_option_132"}, {
+        "value": "country_option_75",
+        "sequence": 75,
+        "label": "country_option_75"
+      }, {"value": "country_option_1", "sequence": 1, "label": "country_option_1"}, {
         "value": "country_option_208",
         "sequence": 208,
         "label": "country_option_208"
@@ -2745,15 +2186,11 @@ export default [{
         "value": "country_option_197",
         "sequence": 197,
         "label": "country_option_197"
-      }, {
-        "value": "country_option_122",
-        "sequence": 122,
-        "label": "country_option_122"
-      }, { "value": "country_option_98", "sequence": 98, "label": "country_option_98" }, {
-        "value": "country_option_97",
-        "sequence": 97,
-        "label": "country_option_97"
-      }, {
+      }, {"value": "country_option_122", "sequence": 122, "label": "country_option_122"}, {
+        "value": "country_option_98",
+        "sequence": 98,
+        "label": "country_option_98"
+      }, {"value": "country_option_97", "sequence": 97, "label": "country_option_97"}, {
         "value": "country_option_36",
         "sequence": 36,
         "label": "country_option_36"
@@ -2773,31 +2210,19 @@ export default [{
         "value": "country_option_150",
         "sequence": 150,
         "label": "country_option_150"
-      }, {
-        "value": "country_option_252",
-        "sequence": 252,
-        "label": "country_option_252"
-      }, { "value": "country_option_4", "sequence": 4, "label": "country_option_4" }, {
-        "value": "country_option_46",
-        "sequence": 46,
-        "label": "country_option_46"
-      }, {
+      }, {"value": "country_option_252", "sequence": 252, "label": "country_option_252"}, {
+        "value": "country_option_4",
+        "sequence": 4,
+        "label": "country_option_4"
+      }, {"value": "country_option_46", "sequence": 46, "label": "country_option_46"}, {
         "value": "country_option_204",
         "sequence": 204,
         "label": "country_option_204"
-      }, {
-        "value": "country_option_66",
-        "sequence": 66,
-        "label": "country_option_66"
-      }, {
+      }, {"value": "country_option_66", "sequence": 66, "label": "country_option_66"}, {
         "value": "country_option_229",
         "sequence": 229,
         "label": "country_option_229"
-      }, {
-        "value": "country_option_241",
-        "sequence": 241,
-        "label": "country_option_241"
-      }, {
+      }, {"value": "country_option_241", "sequence": 241, "label": "country_option_241"}, {
         "value": "country_option_22",
         "sequence": 22,
         "label": "country_option_22"
@@ -2817,23 +2242,15 @@ export default [{
         "value": "country_option_143",
         "sequence": 143,
         "label": "country_option_143"
-      }, {
-        "value": "country_option_174",
-        "sequence": 174,
-        "label": "country_option_174"
-      }, {
+      }, {"value": "country_option_174", "sequence": 174, "label": "country_option_174"}, {
         "value": "country_option_95",
         "sequence": 95,
         "label": "country_option_95"
-      }, {
-        "value": "country_option_141",
-        "sequence": 141,
-        "label": "country_option_141"
-      }, { "value": "country_option_60", "sequence": 60, "label": "country_option_60" }, {
-        "value": "country_option_56",
-        "sequence": 56,
-        "label": "country_option_56"
-      }, {
+      }, {"value": "country_option_141", "sequence": 141, "label": "country_option_141"}, {
+        "value": "country_option_60",
+        "sequence": 60,
+        "label": "country_option_60"
+      }, {"value": "country_option_56", "sequence": 56, "label": "country_option_56"}, {
         "value": "country_option_212",
         "sequence": 212,
         "label": "country_option_212"
@@ -2841,15 +2258,11 @@ export default [{
         "value": "country_option_146",
         "sequence": 146,
         "label": "country_option_146"
-      }, {
-        "value": "country_option_222",
-        "sequence": 222,
-        "label": "country_option_222"
-      }, { "value": "country_option_67", "sequence": 67, "label": "country_option_67" }, {
-        "value": "country_option_57",
-        "sequence": 57,
-        "label": "country_option_57"
-      }, {
+      }, {"value": "country_option_222", "sequence": 222, "label": "country_option_222"}, {
+        "value": "country_option_67",
+        "sequence": 67,
+        "label": "country_option_67"
+      }, {"value": "country_option_57", "sequence": 57, "label": "country_option_57"}, {
         "value": "country_option_10",
         "sequence": 10,
         "label": "country_option_10"
@@ -2865,15 +2278,11 @@ export default [{
         "value": "country_option_186",
         "sequence": 186,
         "label": "country_option_186"
-      }, {
-        "value": "country_option_198",
-        "sequence": 198,
-        "label": "country_option_198"
-      }, { "value": "country_option_44", "sequence": 44, "label": "country_option_44" }, {
-        "value": "country_option_81",
-        "sequence": 81,
-        "label": "country_option_81"
-      }, {
+      }, {"value": "country_option_198", "sequence": 198, "label": "country_option_198"}, {
+        "value": "country_option_44",
+        "sequence": 44,
+        "label": "country_option_44"
+      }, {"value": "country_option_81", "sequence": 81, "label": "country_option_81"}, {
         "value": "country_option_142",
         "sequence": 142,
         "label": "country_option_142"
@@ -2885,31 +2294,19 @@ export default [{
         "value": "country_option_159",
         "sequence": 159,
         "label": "country_option_159"
-      }, {
-        "value": "country_option_239",
-        "sequence": 239,
-        "label": "country_option_239"
-      }, { "value": "country_option_45", "sequence": 45, "label": "country_option_45" }, {
-        "value": "country_option_50",
-        "sequence": 50,
-        "label": "country_option_50"
-      }, {
+      }, {"value": "country_option_239", "sequence": 239, "label": "country_option_239"}, {
+        "value": "country_option_45",
+        "sequence": 45,
+        "label": "country_option_45"
+      }, {"value": "country_option_50", "sequence": 50, "label": "country_option_50"}, {
         "value": "country_option_189",
         "sequence": 189,
         "label": "country_option_189"
-      }, {
-        "value": "country_option_48",
-        "sequence": 48,
-        "label": "country_option_48"
-      }, {
+      }, {"value": "country_option_48", "sequence": 48, "label": "country_option_48"}, {
         "value": "country_option_126",
         "sequence": 126,
         "label": "country_option_126"
-      }, {
-        "value": "country_option_77",
-        "sequence": 77,
-        "label": "country_option_77"
-      }, {
+      }, {"value": "country_option_77", "sequence": 77, "label": "country_option_77"}, {
         "value": "country_option_123",
         "sequence": 123,
         "label": "country_option_123"
@@ -2969,31 +2366,23 @@ export default [{
         "value": "country_option_156",
         "sequence": 156,
         "label": "country_option_156"
+      }, {"value": "country_option_119", "sequence": 119, "label": "country_option_119"}, {
+        "value": "country_option_9",
+        "sequence": 9,
+        "label": "country_option_9"
       }, {
-        "value": "country_option_119",
-        "sequence": 119,
-        "label": "country_option_119"
-      }, { "value": "country_option_9", "sequence": 9, "label": "country_option_9" }, {
         "value": "country_option_251",
         "sequence": 251,
         "label": "country_option_251"
-      }, {
-        "value": "country_option_137",
-        "sequence": 137,
-        "label": "country_option_137"
-      }, {
+      }, {"value": "country_option_137", "sequence": 137, "label": "country_option_137"}, {
         "value": "country_option_65",
         "sequence": 65,
         "label": "country_option_65"
-      }, {
-        "value": "country_option_165",
-        "sequence": 165,
-        "label": "country_option_165"
-      }, { "value": "country_option_7", "sequence": 7, "label": "country_option_7" }, {
-        "value": "country_option_27",
-        "sequence": 27,
-        "label": "country_option_27"
-      }, {
+      }, {"value": "country_option_165", "sequence": 165, "label": "country_option_165"}, {
+        "value": "country_option_7",
+        "sequence": 7,
+        "label": "country_option_7"
+      }, {"value": "country_option_27", "sequence": 27, "label": "country_option_27"}, {
         "value": "country_option_171",
         "sequence": 171,
         "label": "country_option_171"
@@ -3009,11 +2398,7 @@ export default [{
         "value": "country_option_173",
         "sequence": 173,
         "label": "country_option_173"
-      }, {
-        "value": "country_option_237",
-        "sequence": 237,
-        "label": "country_option_237"
-      }, {
+      }, {"value": "country_option_237", "sequence": 237, "label": "country_option_237"}, {
         "value": "country_option_99",
         "sequence": 99,
         "label": "country_option_99"
@@ -3025,67 +2410,47 @@ export default [{
         "value": "country_option_201",
         "sequence": 201,
         "label": "country_option_201"
-      }, {
-        "value": "country_option_216",
-        "sequence": 216,
-        "label": "country_option_216"
-      }, { "value": "country_option_62", "sequence": 62, "label": "country_option_62" }, {
-        "value": "country_option_33",
-        "sequence": 33,
-        "label": "country_option_33"
-      }, { "value": "country_option_91", "sequence": 91, "label": "country_option_91" }, {
-        "value": "country_option_86",
-        "sequence": 86,
-        "label": "country_option_86"
-      }, {
+      }, {"value": "country_option_216", "sequence": 216, "label": "country_option_216"}, {
+        "value": "country_option_62",
+        "sequence": 62,
+        "label": "country_option_62"
+      }, {"value": "country_option_33", "sequence": 33, "label": "country_option_33"}, {
+        "value": "country_option_91",
+        "sequence": 91,
+        "label": "country_option_91"
+      }, {"value": "country_option_86", "sequence": 86, "label": "country_option_86"}, {
         "value": "country_option_211",
         "sequence": 211,
         "label": "country_option_211"
-      }, {
-        "value": "country_option_196",
-        "sequence": 196,
-        "label": "country_option_196"
-      }, { "value": "country_option_23", "sequence": 23, "label": "country_option_23" }, {
-        "value": "country_option_74",
-        "sequence": 74,
-        "label": "country_option_74"
-      }, {
+      }, {"value": "country_option_196", "sequence": 196, "label": "country_option_196"}, {
+        "value": "country_option_23",
+        "sequence": 23,
+        "label": "country_option_23"
+      }, {"value": "country_option_74", "sequence": 74, "label": "country_option_74"}, {
         "value": "country_option_232",
         "sequence": 232,
         "label": "country_option_232"
-      }, { "value": "country_option_37", "sequence": 37, "label": "country_option_37" }, {
+      }, {"value": "country_option_37", "sequence": 37, "label": "country_option_37"}, {
         "value": "country_option_78",
         "sequence": 78,
         "label": "country_option_78"
-      }, { "value": "country_option_69", "sequence": 69, "label": "country_option_69" }, {
+      }, {"value": "country_option_69", "sequence": 69, "label": "country_option_69"}, {
         "value": "country_option_54",
         "sequence": 54,
         "label": "country_option_54"
-      }, { "value": "country_option_94", "sequence": 94, "label": "country_option_94" }, {
+      }, {"value": "country_option_94", "sequence": 94, "label": "country_option_94"}, {
         "value": "country_option_21",
         "sequence": 21,
         "label": "country_option_21"
-      }, {
-        "value": "country_option_116",
-        "sequence": 116,
-        "label": "country_option_116"
-      }, {
+      }, {"value": "country_option_116", "sequence": 116, "label": "country_option_116"}, {
         "value": "country_option_88",
         "sequence": 88,
         "label": "country_option_88"
-      }, {
-        "value": "country_option_124",
-        "sequence": 124,
-        "label": "country_option_124"
-      }, {
+      }, {"value": "country_option_124", "sequence": 124, "label": "country_option_124"}, {
         "value": "country_option_71",
         "sequence": 71,
         "label": "country_option_71"
-      }, {
-        "value": "country_option_188",
-        "sequence": 188,
-        "label": "country_option_188"
-      }, {
+      }, {"value": "country_option_188", "sequence": 188, "label": "country_option_188"}, {
         "value": "country_option_76",
         "sequence": 76,
         "label": "country_option_76"
@@ -3101,19 +2466,15 @@ export default [{
         "value": "country_option_170",
         "sequence": 170,
         "label": "country_option_170"
-      }, {
-        "value": "country_option_106",
-        "sequence": 106,
-        "label": "country_option_106"
-      }, { "value": "country_option_49", "sequence": 49, "label": "country_option_49" }, {
-        "value": "country_option_28",
-        "sequence": 28,
-        "label": "country_option_28"
-      }, { "value": "country_option_63", "sequence": 63, "label": "country_option_63" }, {
-        "value": "country_option_47",
-        "sequence": 47,
-        "label": "country_option_47"
-      }, {
+      }, {"value": "country_option_106", "sequence": 106, "label": "country_option_106"}, {
+        "value": "country_option_49",
+        "sequence": 49,
+        "label": "country_option_49"
+      }, {"value": "country_option_28", "sequence": 28, "label": "country_option_28"}, {
+        "value": "country_option_63",
+        "sequence": 63,
+        "label": "country_option_63"
+      }, {"value": "country_option_47", "sequence": 47, "label": "country_option_47"}, {
         "value": "country_option_131",
         "sequence": 131,
         "label": "country_option_131"
@@ -3137,35 +2498,27 @@ export default [{
         "value": "country_option_218",
         "sequence": 218,
         "label": "country_option_218"
-      }, {
-        "value": "country_option_152",
-        "sequence": 152,
-        "label": "country_option_152"
-      }, { "value": "country_option_5", "sequence": 5, "label": "country_option_5" }, {
-        "value": "country_option_24",
-        "sequence": 24,
-        "label": "country_option_24"
-      }, {
+      }, {"value": "country_option_152", "sequence": 152, "label": "country_option_152"}, {
+        "value": "country_option_5",
+        "sequence": 5,
+        "label": "country_option_5"
+      }, {"value": "country_option_24", "sequence": 24, "label": "country_option_24"}, {
         "value": "country_option_15",
         "sequence": 15,
         "label": "country_option_15"
+      }, {"value": "country_option_175", "sequence": 175, "label": "country_option_175"}, {
+        "value": "country_option_2",
+        "sequence": 2,
+        "label": "country_option_2"
       }, {
-        "value": "country_option_175",
-        "sequence": 175,
-        "label": "country_option_175"
-      }, { "value": "country_option_2", "sequence": 2, "label": "country_option_2" }, {
         "value": "country_option_121",
         "sequence": 121,
         "label": "country_option_121"
-      }, {
-        "value": "country_option_203",
-        "sequence": 203,
-        "label": "country_option_203"
-      }, { "value": "country_option_84", "sequence": 84, "label": "country_option_84" }, {
-        "value": "country_option_80",
-        "sequence": 80,
-        "label": "country_option_80"
-      }, {
+      }, {"value": "country_option_203", "sequence": 203, "label": "country_option_203"}, {
+        "value": "country_option_84",
+        "sequence": 84,
+        "label": "country_option_84"
+      }, {"value": "country_option_80", "sequence": 80, "label": "country_option_80"}, {
         "value": "country_option_181",
         "sequence": 181,
         "label": "country_option_181"
@@ -3173,19 +2526,15 @@ export default [{
         "value": "country_option_224",
         "sequence": 224,
         "label": "country_option_224"
-      }, {
-        "value": "country_option_134",
-        "sequence": 134,
-        "label": "country_option_134"
-      }, { "value": "country_option_92", "sequence": 92, "label": "country_option_92" }, {
-        "value": "country_option_43",
-        "sequence": 43,
-        "label": "country_option_43"
-      }, { "value": "country_option_30", "sequence": 30, "label": "country_option_30" }, {
-        "value": "country_option_6",
-        "sequence": 6,
-        "label": "country_option_6"
-      }, {
+      }, {"value": "country_option_134", "sequence": 134, "label": "country_option_134"}, {
+        "value": "country_option_92",
+        "sequence": 92,
+        "label": "country_option_92"
+      }, {"value": "country_option_43", "sequence": 43, "label": "country_option_43"}, {
+        "value": "country_option_30",
+        "sequence": 30,
+        "label": "country_option_30"
+      }, {"value": "country_option_6", "sequence": 6, "label": "country_option_6"}, {
         "value": "country_option_221",
         "sequence": 221,
         "label": "country_option_221"
@@ -3193,7 +2542,7 @@ export default [{
         "value": "country_option_168",
         "sequence": 168,
         "label": "country_option_168"
-      }, { "value": "country_option_199", "sequence": 199, "label": "country_option_199" }],
+      }, {"value": "country_option_199", "sequence": 199, "label": "country_option_199"}],
       "label": "ch2_s2_field6_label",
       "fieldApi": "Citizenship__c",
       "description": "ch2_s2_field6_description"
@@ -3205,18 +2554,14 @@ export default [{
       }],
       "type": "drop_down",
       "sfFieldType": "Picklist",
-      "sequence": 14,
+      "sequence": 26,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field7Section_03_2",
       "listOfValues": [{
         "value": "country_option_85",
         "sequence": 85,
         "label": "country_option_85"
-      }, {
-        "value": "country_option_148",
-        "sequence": 148,
-        "label": "country_option_148"
-      }, {
+      }, {"value": "country_option_148", "sequence": 148, "label": "country_option_148"}, {
         "value": "country_option_18",
         "sequence": 18,
         "label": "country_option_18"
@@ -3224,55 +2569,35 @@ export default [{
         "value": "country_option_191",
         "sequence": 191,
         "label": "country_option_191"
-      }, {
-        "value": "country_option_104",
-        "sequence": 104,
-        "label": "country_option_104"
-      }, {
+      }, {"value": "country_option_104", "sequence": 104, "label": "country_option_104"}, {
         "value": "country_option_13",
         "sequence": 13,
         "label": "country_option_13"
-      }, {
-        "value": "country_option_233",
-        "sequence": 233,
-        "label": "country_option_233"
-      }, {
+      }, {"value": "country_option_233", "sequence": 233, "label": "country_option_233"}, {
         "value": "country_option_12",
         "sequence": 12,
         "label": "country_option_12"
-      }, {
-        "value": "country_option_140",
-        "sequence": 140,
-        "label": "country_option_140"
-      }, {
+      }, {"value": "country_option_140", "sequence": 140, "label": "country_option_140"}, {
         "value": "country_option_83",
         "sequence": 83,
         "label": "country_option_83"
-      }, {
-        "value": "country_option_133",
-        "sequence": 133,
-        "label": "country_option_133"
-      }, { "value": "country_option_32", "sequence": 32, "label": "country_option_32" }, {
-        "value": "country_option_11",
-        "sequence": 11,
-        "label": "country_option_11"
-      }, { "value": "country_option_39", "sequence": 39, "label": "country_option_39" }, {
-        "value": "country_option_55",
-        "sequence": 55,
-        "label": "country_option_55"
-      }, {
+      }, {"value": "country_option_133", "sequence": 133, "label": "country_option_133"}, {
+        "value": "country_option_32",
+        "sequence": 32,
+        "label": "country_option_32"
+      }, {"value": "country_option_11", "sequence": 11, "label": "country_option_11"}, {
+        "value": "country_option_39",
+        "sequence": 39,
+        "label": "country_option_39"
+      }, {"value": "country_option_55", "sequence": 55, "label": "country_option_55"}, {
         "value": "country_option_236",
         "sequence": 236,
         "label": "country_option_236"
-      }, { "value": "country_option_29", "sequence": 29, "label": "country_option_29" }, {
+      }, {"value": "country_option_29", "sequence": 29, "label": "country_option_29"}, {
         "value": "country_option_31",
         "sequence": 31,
         "label": "country_option_31"
-      }, {
-        "value": "country_option_14",
-        "sequence": 14,
-        "label": "country_option_14"
-      }, {
+      }, {"value": "country_option_14", "sequence": 14, "label": "country_option_14"}, {
         "value": "country_option_195",
         "sequence": 195,
         "label": "country_option_195"
@@ -3288,35 +2613,23 @@ export default [{
         "value": "country_option_214",
         "sequence": 214,
         "label": "country_option_214"
-      }, {
-        "value": "country_option_183",
-        "sequence": 183,
-        "label": "country_option_183"
-      }, { "value": "country_option_40", "sequence": 40, "label": "country_option_40" }, {
-        "value": "country_option_38",
-        "sequence": 38,
-        "label": "country_option_38"
-      }, { "value": "country_option_90", "sequence": 90, "label": "country_option_90" }, {
-        "value": "country_option_16",
-        "sequence": 16,
-        "label": "country_option_16"
-      }, {
+      }, {"value": "country_option_183", "sequence": 183, "label": "country_option_183"}, {
+        "value": "country_option_40",
+        "sequence": 40,
+        "label": "country_option_40"
+      }, {"value": "country_option_38", "sequence": 38, "label": "country_option_38"}, {
+        "value": "country_option_90",
+        "sequence": 90,
+        "label": "country_option_90"
+      }, {"value": "country_option_16", "sequence": 16, "label": "country_option_16"}, {
         "value": "country_option_26",
         "sequence": 26,
         "label": "country_option_26"
-      }, {
-        "value": "country_option_149",
-        "sequence": 149,
-        "label": "country_option_149"
-      }, {
+      }, {"value": "country_option_149", "sequence": 149, "label": "country_option_149"}, {
         "value": "country_option_70",
         "sequence": 70,
         "label": "country_option_70"
-      }, {
-        "value": "country_option_162",
-        "sequence": 162,
-        "label": "country_option_162"
-      }, {
+      }, {"value": "country_option_162", "sequence": 162, "label": "country_option_162"}, {
         "value": "country_option_51",
         "sequence": 51,
         "label": "country_option_51"
@@ -3324,23 +2637,15 @@ export default [{
         "value": "country_option_207",
         "sequence": 207,
         "label": "country_option_207"
-      }, {
-        "value": "country_option_184",
-        "sequence": 184,
-        "label": "country_option_184"
-      }, { "value": "country_option_8", "sequence": 8, "label": "country_option_8" }, {
-        "value": "country_option_52",
-        "sequence": 52,
-        "label": "country_option_52"
-      }, {
+      }, {"value": "country_option_184", "sequence": 184, "label": "country_option_184"}, {
+        "value": "country_option_8",
+        "sequence": 8,
+        "label": "country_option_8"
+      }, {"value": "country_option_52", "sequence": 52, "label": "country_option_52"}, {
         "value": "country_option_59",
         "sequence": 59,
         "label": "country_option_59"
-      }, {
-        "value": "country_option_200",
-        "sequence": 200,
-        "label": "country_option_200"
-      }, {
+      }, {"value": "country_option_200", "sequence": 200, "label": "country_option_200"}, {
         "value": "country_option_17",
         "sequence": 17,
         "label": "country_option_17"
@@ -3348,15 +2653,11 @@ export default [{
         "value": "country_option_120",
         "sequence": 120,
         "label": "country_option_120"
-      }, {
-        "value": "country_option_151",
-        "sequence": 151,
-        "label": "country_option_151"
-      }, { "value": "country_option_3", "sequence": 3, "label": "country_option_3" }, {
-        "value": "country_option_87",
-        "sequence": 87,
-        "label": "country_option_87"
-      }, {
+      }, {"value": "country_option_151", "sequence": 151, "label": "country_option_151"}, {
+        "value": "country_option_3",
+        "sequence": 3,
+        "label": "country_option_3"
+      }, {"value": "country_option_87", "sequence": 87, "label": "country_option_87"}, {
         "value": "country_option_157",
         "sequence": 157,
         "label": "country_option_157"
@@ -3380,19 +2681,11 @@ export default [{
         "value": "country_option_114",
         "sequence": 114,
         "label": "country_option_114"
-      }, {
-        "value": "country_option_128",
-        "sequence": 128,
-        "label": "country_option_128"
-      }, {
+      }, {"value": "country_option_128", "sequence": 128, "label": "country_option_128"}, {
         "value": "country_option_53",
         "sequence": 53,
         "label": "country_option_53"
-      }, {
-        "value": "country_option_125",
-        "sequence": 125,
-        "label": "country_option_125"
-      }, {
+      }, {"value": "country_option_125", "sequence": 125, "label": "country_option_125"}, {
         "value": "country_option_58",
         "sequence": 58,
         "label": "country_option_58"
@@ -3408,23 +2701,15 @@ export default [{
         "value": "country_option_219",
         "sequence": 219,
         "label": "country_option_219"
-      }, {
-        "value": "country_option_242",
-        "sequence": 242,
-        "label": "country_option_242"
-      }, {
+      }, {"value": "country_option_242", "sequence": 242, "label": "country_option_242"}, {
         "value": "country_option_96",
         "sequence": 96,
         "label": "country_option_96"
-      }, {
-        "value": "country_option_154",
-        "sequence": 154,
-        "label": "country_option_154"
-      }, { "value": "country_option_25", "sequence": 25, "label": "country_option_25" }, {
-        "value": "country_option_61",
-        "sequence": 61,
-        "label": "country_option_61"
-      }, {
+      }, {"value": "country_option_154", "sequence": 154, "label": "country_option_154"}, {
+        "value": "country_option_25",
+        "sequence": 25,
+        "label": "country_option_25"
+      }, {"value": "country_option_61", "sequence": 61, "label": "country_option_61"}, {
         "value": "country_option_82",
         "sequence": 82,
         "label": "country_option_82"
@@ -3452,11 +2737,7 @@ export default [{
         "value": "country_option_130",
         "sequence": 130,
         "label": "country_option_130"
-      }, {
-        "value": "country_option_178",
-        "sequence": 178,
-        "label": "country_option_178"
-      }, {
+      }, {"value": "country_option_178", "sequence": 178, "label": "country_option_178"}, {
         "value": "country_option_41",
         "sequence": 41,
         "label": "country_option_41"
@@ -3468,19 +2749,11 @@ export default [{
         "value": "country_option_206",
         "sequence": 206,
         "label": "country_option_206"
-      }, {
-        "value": "country_option_213",
-        "sequence": 213,
-        "label": "country_option_213"
-      }, {
+      }, {"value": "country_option_213", "sequence": 213, "label": "country_option_213"}, {
         "value": "country_option_35",
         "sequence": 35,
         "label": "country_option_35"
-      }, {
-        "value": "country_option_185",
-        "sequence": 185,
-        "label": "country_option_185"
-      }, {
+      }, {"value": "country_option_185", "sequence": 185, "label": "country_option_185"}, {
         "value": "country_option_89",
         "sequence": 89,
         "label": "country_option_89"
@@ -3492,23 +2765,15 @@ export default [{
         "value": "country_option_160",
         "sequence": 160,
         "label": "country_option_160"
-      }, {
-        "value": "country_option_117",
-        "sequence": 117,
-        "label": "country_option_117"
-      }, {
+      }, {"value": "country_option_117", "sequence": 117, "label": "country_option_117"}, {
         "value": "country_option_42",
         "sequence": 42,
         "label": "country_option_42"
-      }, {
-        "value": "country_option_243",
-        "sequence": 243,
-        "label": "country_option_243"
-      }, { "value": "country_option_68", "sequence": 68, "label": "country_option_68" }, {
-        "value": "country_option_64",
-        "sequence": 64,
-        "label": "country_option_64"
-      }, {
+      }, {"value": "country_option_243", "sequence": 243, "label": "country_option_243"}, {
+        "value": "country_option_68",
+        "sequence": 68,
+        "label": "country_option_68"
+      }, {"value": "country_option_64", "sequence": 64, "label": "country_option_64"}, {
         "value": "country_option_73",
         "sequence": 73,
         "label": "country_option_73"
@@ -3524,11 +2789,7 @@ export default [{
         "value": "country_option_102",
         "sequence": 102,
         "label": "country_option_102"
-      }, {
-        "value": "country_option_248",
-        "sequence": 248,
-        "label": "country_option_248"
-      }, {
+      }, {"value": "country_option_248", "sequence": 248, "label": "country_option_248"}, {
         "value": "country_option_72",
         "sequence": 72,
         "label": "country_option_72"
@@ -3544,11 +2805,7 @@ export default [{
         "value": "country_option_225",
         "sequence": 225,
         "label": "country_option_225"
-      }, {
-        "value": "country_option_112",
-        "sequence": 112,
-        "label": "country_option_112"
-      }, {
+      }, {"value": "country_option_112", "sequence": 112, "label": "country_option_112"}, {
         "value": "country_option_93",
         "sequence": 93,
         "label": "country_option_93"
@@ -3564,19 +2821,11 @@ export default [{
         "value": "country_option_235",
         "sequence": 235,
         "label": "country_option_235"
-      }, {
-        "value": "country_option_136",
-        "sequence": 136,
-        "label": "country_option_136"
-      }, {
+      }, {"value": "country_option_136", "sequence": 136, "label": "country_option_136"}, {
         "value": "country_option_34",
         "sequence": 34,
         "label": "country_option_34"
-      }, {
-        "value": "country_option_107",
-        "sequence": 107,
-        "label": "country_option_107"
-      }, {
+      }, {"value": "country_option_107", "sequence": 107, "label": "country_option_107"}, {
         "value": "country_option_20",
         "sequence": 20,
         "label": "country_option_20"
@@ -3592,15 +2841,11 @@ export default [{
         "value": "country_option_163",
         "sequence": 163,
         "label": "country_option_163"
-      }, {
-        "value": "country_option_190",
-        "sequence": 190,
-        "label": "country_option_190"
-      }, { "value": "country_option_79", "sequence": 79, "label": "country_option_79" }, {
-        "value": "country_option_19",
-        "sequence": 19,
-        "label": "country_option_19"
-      }, {
+      }, {"value": "country_option_190", "sequence": 190, "label": "country_option_190"}, {
+        "value": "country_option_79",
+        "sequence": 79,
+        "label": "country_option_79"
+      }, {"value": "country_option_19", "sequence": 19, "label": "country_option_19"}, {
         "value": "country_option_129",
         "sequence": 129,
         "label": "country_option_129"
@@ -3612,15 +2857,11 @@ export default [{
         "value": "country_option_220",
         "sequence": 220,
         "label": "country_option_220"
-      }, {
-        "value": "country_option_132",
-        "sequence": 132,
-        "label": "country_option_132"
-      }, { "value": "country_option_75", "sequence": 75, "label": "country_option_75" }, {
-        "value": "country_option_1",
-        "sequence": 1,
-        "label": "country_option_1"
-      }, {
+      }, {"value": "country_option_132", "sequence": 132, "label": "country_option_132"}, {
+        "value": "country_option_75",
+        "sequence": 75,
+        "label": "country_option_75"
+      }, {"value": "country_option_1", "sequence": 1, "label": "country_option_1"}, {
         "value": "country_option_208",
         "sequence": 208,
         "label": "country_option_208"
@@ -3636,15 +2877,11 @@ export default [{
         "value": "country_option_197",
         "sequence": 197,
         "label": "country_option_197"
-      }, {
-        "value": "country_option_122",
-        "sequence": 122,
-        "label": "country_option_122"
-      }, { "value": "country_option_98", "sequence": 98, "label": "country_option_98" }, {
-        "value": "country_option_97",
-        "sequence": 97,
-        "label": "country_option_97"
-      }, {
+      }, {"value": "country_option_122", "sequence": 122, "label": "country_option_122"}, {
+        "value": "country_option_98",
+        "sequence": 98,
+        "label": "country_option_98"
+      }, {"value": "country_option_97", "sequence": 97, "label": "country_option_97"}, {
         "value": "country_option_36",
         "sequence": 36,
         "label": "country_option_36"
@@ -3664,31 +2901,19 @@ export default [{
         "value": "country_option_150",
         "sequence": 150,
         "label": "country_option_150"
-      }, {
-        "value": "country_option_252",
-        "sequence": 252,
-        "label": "country_option_252"
-      }, { "value": "country_option_4", "sequence": 4, "label": "country_option_4" }, {
-        "value": "country_option_46",
-        "sequence": 46,
-        "label": "country_option_46"
-      }, {
+      }, {"value": "country_option_252", "sequence": 252, "label": "country_option_252"}, {
+        "value": "country_option_4",
+        "sequence": 4,
+        "label": "country_option_4"
+      }, {"value": "country_option_46", "sequence": 46, "label": "country_option_46"}, {
         "value": "country_option_204",
         "sequence": 204,
         "label": "country_option_204"
-      }, {
-        "value": "country_option_66",
-        "sequence": 66,
-        "label": "country_option_66"
-      }, {
+      }, {"value": "country_option_66", "sequence": 66, "label": "country_option_66"}, {
         "value": "country_option_229",
         "sequence": 229,
         "label": "country_option_229"
-      }, {
-        "value": "country_option_241",
-        "sequence": 241,
-        "label": "country_option_241"
-      }, {
+      }, {"value": "country_option_241", "sequence": 241, "label": "country_option_241"}, {
         "value": "country_option_22",
         "sequence": 22,
         "label": "country_option_22"
@@ -3708,23 +2933,15 @@ export default [{
         "value": "country_option_143",
         "sequence": 143,
         "label": "country_option_143"
-      }, {
-        "value": "country_option_174",
-        "sequence": 174,
-        "label": "country_option_174"
-      }, {
+      }, {"value": "country_option_174", "sequence": 174, "label": "country_option_174"}, {
         "value": "country_option_95",
         "sequence": 95,
         "label": "country_option_95"
-      }, {
-        "value": "country_option_141",
-        "sequence": 141,
-        "label": "country_option_141"
-      }, { "value": "country_option_60", "sequence": 60, "label": "country_option_60" }, {
-        "value": "country_option_56",
-        "sequence": 56,
-        "label": "country_option_56"
-      }, {
+      }, {"value": "country_option_141", "sequence": 141, "label": "country_option_141"}, {
+        "value": "country_option_60",
+        "sequence": 60,
+        "label": "country_option_60"
+      }, {"value": "country_option_56", "sequence": 56, "label": "country_option_56"}, {
         "value": "country_option_212",
         "sequence": 212,
         "label": "country_option_212"
@@ -3732,15 +2949,11 @@ export default [{
         "value": "country_option_146",
         "sequence": 146,
         "label": "country_option_146"
-      }, {
-        "value": "country_option_222",
-        "sequence": 222,
-        "label": "country_option_222"
-      }, { "value": "country_option_67", "sequence": 67, "label": "country_option_67" }, {
-        "value": "country_option_57",
-        "sequence": 57,
-        "label": "country_option_57"
-      }, {
+      }, {"value": "country_option_222", "sequence": 222, "label": "country_option_222"}, {
+        "value": "country_option_67",
+        "sequence": 67,
+        "label": "country_option_67"
+      }, {"value": "country_option_57", "sequence": 57, "label": "country_option_57"}, {
         "value": "country_option_10",
         "sequence": 10,
         "label": "country_option_10"
@@ -3756,15 +2969,11 @@ export default [{
         "value": "country_option_186",
         "sequence": 186,
         "label": "country_option_186"
-      }, {
-        "value": "country_option_198",
-        "sequence": 198,
-        "label": "country_option_198"
-      }, { "value": "country_option_44", "sequence": 44, "label": "country_option_44" }, {
-        "value": "country_option_81",
-        "sequence": 81,
-        "label": "country_option_81"
-      }, {
+      }, {"value": "country_option_198", "sequence": 198, "label": "country_option_198"}, {
+        "value": "country_option_44",
+        "sequence": 44,
+        "label": "country_option_44"
+      }, {"value": "country_option_81", "sequence": 81, "label": "country_option_81"}, {
         "value": "country_option_142",
         "sequence": 142,
         "label": "country_option_142"
@@ -3776,31 +2985,19 @@ export default [{
         "value": "country_option_159",
         "sequence": 159,
         "label": "country_option_159"
-      }, {
-        "value": "country_option_239",
-        "sequence": 239,
-        "label": "country_option_239"
-      }, { "value": "country_option_45", "sequence": 45, "label": "country_option_45" }, {
-        "value": "country_option_50",
-        "sequence": 50,
-        "label": "country_option_50"
-      }, {
+      }, {"value": "country_option_239", "sequence": 239, "label": "country_option_239"}, {
+        "value": "country_option_45",
+        "sequence": 45,
+        "label": "country_option_45"
+      }, {"value": "country_option_50", "sequence": 50, "label": "country_option_50"}, {
         "value": "country_option_189",
         "sequence": 189,
         "label": "country_option_189"
-      }, {
-        "value": "country_option_48",
-        "sequence": 48,
-        "label": "country_option_48"
-      }, {
+      }, {"value": "country_option_48", "sequence": 48, "label": "country_option_48"}, {
         "value": "country_option_126",
         "sequence": 126,
         "label": "country_option_126"
-      }, {
-        "value": "country_option_77",
-        "sequence": 77,
-        "label": "country_option_77"
-      }, {
+      }, {"value": "country_option_77", "sequence": 77, "label": "country_option_77"}, {
         "value": "country_option_123",
         "sequence": 123,
         "label": "country_option_123"
@@ -3860,31 +3057,23 @@ export default [{
         "value": "country_option_156",
         "sequence": 156,
         "label": "country_option_156"
+      }, {"value": "country_option_119", "sequence": 119, "label": "country_option_119"}, {
+        "value": "country_option_9",
+        "sequence": 9,
+        "label": "country_option_9"
       }, {
-        "value": "country_option_119",
-        "sequence": 119,
-        "label": "country_option_119"
-      }, { "value": "country_option_9", "sequence": 9, "label": "country_option_9" }, {
         "value": "country_option_251",
         "sequence": 251,
         "label": "country_option_251"
-      }, {
-        "value": "country_option_137",
-        "sequence": 137,
-        "label": "country_option_137"
-      }, {
+      }, {"value": "country_option_137", "sequence": 137, "label": "country_option_137"}, {
         "value": "country_option_65",
         "sequence": 65,
         "label": "country_option_65"
-      }, {
-        "value": "country_option_165",
-        "sequence": 165,
-        "label": "country_option_165"
-      }, { "value": "country_option_7", "sequence": 7, "label": "country_option_7" }, {
-        "value": "country_option_27",
-        "sequence": 27,
-        "label": "country_option_27"
-      }, {
+      }, {"value": "country_option_165", "sequence": 165, "label": "country_option_165"}, {
+        "value": "country_option_7",
+        "sequence": 7,
+        "label": "country_option_7"
+      }, {"value": "country_option_27", "sequence": 27, "label": "country_option_27"}, {
         "value": "country_option_171",
         "sequence": 171,
         "label": "country_option_171"
@@ -3900,11 +3089,7 @@ export default [{
         "value": "country_option_173",
         "sequence": 173,
         "label": "country_option_173"
-      }, {
-        "value": "country_option_237",
-        "sequence": 237,
-        "label": "country_option_237"
-      }, {
+      }, {"value": "country_option_237", "sequence": 237, "label": "country_option_237"}, {
         "value": "country_option_99",
         "sequence": 99,
         "label": "country_option_99"
@@ -3916,67 +3101,47 @@ export default [{
         "value": "country_option_201",
         "sequence": 201,
         "label": "country_option_201"
-      }, {
-        "value": "country_option_216",
-        "sequence": 216,
-        "label": "country_option_216"
-      }, { "value": "country_option_62", "sequence": 62, "label": "country_option_62" }, {
-        "value": "country_option_33",
-        "sequence": 33,
-        "label": "country_option_33"
-      }, { "value": "country_option_91", "sequence": 91, "label": "country_option_91" }, {
-        "value": "country_option_86",
-        "sequence": 86,
-        "label": "country_option_86"
-      }, {
+      }, {"value": "country_option_216", "sequence": 216, "label": "country_option_216"}, {
+        "value": "country_option_62",
+        "sequence": 62,
+        "label": "country_option_62"
+      }, {"value": "country_option_33", "sequence": 33, "label": "country_option_33"}, {
+        "value": "country_option_91",
+        "sequence": 91,
+        "label": "country_option_91"
+      }, {"value": "country_option_86", "sequence": 86, "label": "country_option_86"}, {
         "value": "country_option_211",
         "sequence": 211,
         "label": "country_option_211"
-      }, {
-        "value": "country_option_196",
-        "sequence": 196,
-        "label": "country_option_196"
-      }, { "value": "country_option_23", "sequence": 23, "label": "country_option_23" }, {
-        "value": "country_option_74",
-        "sequence": 74,
-        "label": "country_option_74"
-      }, {
+      }, {"value": "country_option_196", "sequence": 196, "label": "country_option_196"}, {
+        "value": "country_option_23",
+        "sequence": 23,
+        "label": "country_option_23"
+      }, {"value": "country_option_74", "sequence": 74, "label": "country_option_74"}, {
         "value": "country_option_232",
         "sequence": 232,
         "label": "country_option_232"
-      }, { "value": "country_option_37", "sequence": 37, "label": "country_option_37" }, {
+      }, {"value": "country_option_37", "sequence": 37, "label": "country_option_37"}, {
         "value": "country_option_78",
         "sequence": 78,
         "label": "country_option_78"
-      }, { "value": "country_option_69", "sequence": 69, "label": "country_option_69" }, {
+      }, {"value": "country_option_69", "sequence": 69, "label": "country_option_69"}, {
         "value": "country_option_54",
         "sequence": 54,
         "label": "country_option_54"
-      }, { "value": "country_option_94", "sequence": 94, "label": "country_option_94" }, {
+      }, {"value": "country_option_94", "sequence": 94, "label": "country_option_94"}, {
         "value": "country_option_21",
         "sequence": 21,
         "label": "country_option_21"
-      }, {
-        "value": "country_option_116",
-        "sequence": 116,
-        "label": "country_option_116"
-      }, {
+      }, {"value": "country_option_116", "sequence": 116, "label": "country_option_116"}, {
         "value": "country_option_88",
         "sequence": 88,
         "label": "country_option_88"
-      }, {
-        "value": "country_option_124",
-        "sequence": 124,
-        "label": "country_option_124"
-      }, {
+      }, {"value": "country_option_124", "sequence": 124, "label": "country_option_124"}, {
         "value": "country_option_71",
         "sequence": 71,
         "label": "country_option_71"
-      }, {
-        "value": "country_option_188",
-        "sequence": 188,
-        "label": "country_option_188"
-      }, {
+      }, {"value": "country_option_188", "sequence": 188, "label": "country_option_188"}, {
         "value": "country_option_76",
         "sequence": 76,
         "label": "country_option_76"
@@ -3992,19 +3157,15 @@ export default [{
         "value": "country_option_170",
         "sequence": 170,
         "label": "country_option_170"
-      }, {
-        "value": "country_option_106",
-        "sequence": 106,
-        "label": "country_option_106"
-      }, { "value": "country_option_49", "sequence": 49, "label": "country_option_49" }, {
-        "value": "country_option_28",
-        "sequence": 28,
-        "label": "country_option_28"
-      }, { "value": "country_option_63", "sequence": 63, "label": "country_option_63" }, {
-        "value": "country_option_47",
-        "sequence": 47,
-        "label": "country_option_47"
-      }, {
+      }, {"value": "country_option_106", "sequence": 106, "label": "country_option_106"}, {
+        "value": "country_option_49",
+        "sequence": 49,
+        "label": "country_option_49"
+      }, {"value": "country_option_28", "sequence": 28, "label": "country_option_28"}, {
+        "value": "country_option_63",
+        "sequence": 63,
+        "label": "country_option_63"
+      }, {"value": "country_option_47", "sequence": 47, "label": "country_option_47"}, {
         "value": "country_option_131",
         "sequence": 131,
         "label": "country_option_131"
@@ -4028,35 +3189,27 @@ export default [{
         "value": "country_option_218",
         "sequence": 218,
         "label": "country_option_218"
-      }, {
-        "value": "country_option_152",
-        "sequence": 152,
-        "label": "country_option_152"
-      }, { "value": "country_option_5", "sequence": 5, "label": "country_option_5" }, {
-        "value": "country_option_24",
-        "sequence": 24,
-        "label": "country_option_24"
-      }, {
+      }, {"value": "country_option_152", "sequence": 152, "label": "country_option_152"}, {
+        "value": "country_option_5",
+        "sequence": 5,
+        "label": "country_option_5"
+      }, {"value": "country_option_24", "sequence": 24, "label": "country_option_24"}, {
         "value": "country_option_15",
         "sequence": 15,
         "label": "country_option_15"
+      }, {"value": "country_option_175", "sequence": 175, "label": "country_option_175"}, {
+        "value": "country_option_2",
+        "sequence": 2,
+        "label": "country_option_2"
       }, {
-        "value": "country_option_175",
-        "sequence": 175,
-        "label": "country_option_175"
-      }, { "value": "country_option_2", "sequence": 2, "label": "country_option_2" }, {
         "value": "country_option_121",
         "sequence": 121,
         "label": "country_option_121"
-      }, {
-        "value": "country_option_203",
-        "sequence": 203,
-        "label": "country_option_203"
-      }, { "value": "country_option_84", "sequence": 84, "label": "country_option_84" }, {
-        "value": "country_option_80",
-        "sequence": 80,
-        "label": "country_option_80"
-      }, {
+      }, {"value": "country_option_203", "sequence": 203, "label": "country_option_203"}, {
+        "value": "country_option_84",
+        "sequence": 84,
+        "label": "country_option_84"
+      }, {"value": "country_option_80", "sequence": 80, "label": "country_option_80"}, {
         "value": "country_option_181",
         "sequence": 181,
         "label": "country_option_181"
@@ -4064,23 +3217,19 @@ export default [{
         "value": "country_option_224",
         "sequence": 224,
         "label": "country_option_224"
-      }, {
-        "value": "country_option_134",
-        "sequence": 134,
-        "label": "country_option_134"
-      }, { "value": "country_option_92", "sequence": 92, "label": "country_option_92" }, {
-        "value": "country_option_43",
-        "sequence": 43,
-        "label": "country_option_43"
-      }, { "value": "country_option_30", "sequence": 30, "label": "country_option_30" }, {
-        "value": "country_option_6",
-        "sequence": 6,
-        "label": "country_option_6"
-      }, {
+      }, {"value": "country_option_134", "sequence": 134, "label": "country_option_134"}, {
+        "value": "country_option_92",
+        "sequence": 92,
+        "label": "country_option_92"
+      }, {"value": "country_option_43", "sequence": 43, "label": "country_option_43"}, {
+        "value": "country_option_30",
+        "sequence": 30,
+        "label": "country_option_30"
+      }, {"value": "country_option_6", "sequence": 6, "label": "country_option_6"}, {
         "value": "country_option_221",
         "sequence": 221,
         "label": "country_option_221"
-      }, { "value": "country_option_168", "sequence": 168, "label": "country_option_168" }],
+      }, {"value": "country_option_168", "sequence": 168, "label": "country_option_168"}],
       "label": "ch2_s2_field7_label",
       "fieldApi": "Country_of_Residence__c",
       "description": "ch2_s2_field7_description"
@@ -4092,7 +3241,7 @@ export default [{
       }],
       "type": "boxed_checkbox",
       "sfFieldType": "Checkbox",
-      "sequence": 15,
+      "sequence": 27,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field8Section_03_2",
       "label": "ch2_s2_field8_label",
@@ -4103,26 +3252,17 @@ export default [{
   }, {
     "type": "Conditional",
     "title": "ch_2_sec_2_title",
-    "serverValues": [{ "fieldCode": "ch1_s1_field1Section_03_3" }, {
-      "fieldValue": "gfdg",
-      "fieldCode": "ch1_s1_field2Section_03_3"
-    }, {
-      "fieldValue": "gdfg",
-      "fieldCode": "ch1_s1_field3Section_03_3"
-    }, { "fieldCode": "ch2_s2_field4Section_03_3" }, {
-      "fieldValue": "1996-12-01",
-      "fieldCode": "ch2_s2_field5Section_03_3"
-    }, {
-      "fieldValue": "country_option_148",
-      "fieldCode": "ch2_s2_field6Section_03_3"
-    }, { "fieldValue": "country_option_148", "fieldCode": "ch2_s2_field7Section_03_3" }, {
-      "fieldValue": "false",
-      "fieldCode": "ch2_s2_field8Section_03_3"
-    }],
+    "serverValues": [{"fieldCode": "ch1_s1_field1Section_03_3"}, {"fieldCode": "ch1_s1_field2Section_03_3"}, {"fieldCode": "ch1_s1_field3Section_03_3"}, {"fieldCode": "ch2_s2_field4Section_03_3"}, {"fieldCode": "ch2_s2_field5Section_03_3"}, {"fieldCode": "ch2_s2_field6Section_03_3"}, {"fieldCode": "ch2_s2_field7Section_03_3"}, {"fieldCode": "ch2_s2_field8Section_03_3"}],
     "sequence": 5,
     "relatedSection": "Section_01",
     "name": "Section_03_3",
     "fields": [{
+      "type": "title",
+      "sfFieldType": "Text",
+      "sequence": 28,
+      "name": "nullSection_03_3",
+      "label": "ch_2_sec_2_title"
+    }, {
       "validationRules": [{
         "validationError": "ch1_s1_field1_ValidErr",
         "requiredError": "ch1_s1_field1_ReqErr",
@@ -4130,14 +3270,14 @@ export default [{
       }],
       "type": "horizontal_radio_btns",
       "sfFieldType": "Picklist",
-      "sequence": 8,
+      "sequence": 29,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch1_s1_field1Section_03_3",
       "listOfValues": [{
         "value": "title_option_1",
         "sequence": 1,
         "label": "title_option_1"
-      }, { "value": "title_option_2", "sequence": 2, "label": "title_option_2" }],
+      }, {"value": "title_option_2", "sequence": 2, "label": "title_option_2"}],
       "label": "ch1_s1_field1_label",
       "fieldApi": "Title__c",
       "description": "ch1_s1_field1_description"
@@ -4150,7 +3290,7 @@ export default [{
       }],
       "type": "text",
       "sfFieldType": "Text",
-      "sequence": 9,
+      "sequence": 30,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch1_s1_field2Section_03_3",
       "label": "ch1_s1_field2_label",
@@ -4165,7 +3305,7 @@ export default [{
       }],
       "type": "text",
       "sfFieldType": "Text",
-      "sequence": 10,
+      "sequence": 31,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch1_s1_field3Section_03_3",
       "label": "ch1_s1_field3_label",
@@ -4180,7 +3320,7 @@ export default [{
       }],
       "type": "text",
       "sfFieldType": "Text",
-      "sequence": 11,
+      "sequence": 32,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field4Section_03_3",
       "label": "ch2_s2_field4_label",
@@ -4194,7 +3334,7 @@ export default [{
       }],
       "type": "date",
       "sfFieldType": "Date",
-      "sequence": 12,
+      "sequence": 33,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field5Section_03_3",
       "label": "ch2_s2_field5_label",
@@ -4208,18 +3348,14 @@ export default [{
       }],
       "type": "drop_down",
       "sfFieldType": "Picklist",
-      "sequence": 13,
+      "sequence": 34,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field6Section_03_3",
       "listOfValues": [{
         "value": "country_option_85",
         "sequence": 85,
         "label": "country_option_85"
-      }, {
-        "value": "country_option_148",
-        "sequence": 148,
-        "label": "country_option_148"
-      }, {
+      }, {"value": "country_option_148", "sequence": 148, "label": "country_option_148"}, {
         "value": "country_option_18",
         "sequence": 18,
         "label": "country_option_18"
@@ -4227,55 +3363,35 @@ export default [{
         "value": "country_option_191",
         "sequence": 191,
         "label": "country_option_191"
-      }, {
-        "value": "country_option_104",
-        "sequence": 104,
-        "label": "country_option_104"
-      }, {
+      }, {"value": "country_option_104", "sequence": 104, "label": "country_option_104"}, {
         "value": "country_option_13",
         "sequence": 13,
         "label": "country_option_13"
-      }, {
-        "value": "country_option_233",
-        "sequence": 233,
-        "label": "country_option_233"
-      }, {
+      }, {"value": "country_option_233", "sequence": 233, "label": "country_option_233"}, {
         "value": "country_option_12",
         "sequence": 12,
         "label": "country_option_12"
-      }, {
-        "value": "country_option_140",
-        "sequence": 140,
-        "label": "country_option_140"
-      }, {
+      }, {"value": "country_option_140", "sequence": 140, "label": "country_option_140"}, {
         "value": "country_option_83",
         "sequence": 83,
         "label": "country_option_83"
-      }, {
-        "value": "country_option_133",
-        "sequence": 133,
-        "label": "country_option_133"
-      }, { "value": "country_option_32", "sequence": 32, "label": "country_option_32" }, {
-        "value": "country_option_11",
-        "sequence": 11,
-        "label": "country_option_11"
-      }, { "value": "country_option_39", "sequence": 39, "label": "country_option_39" }, {
-        "value": "country_option_55",
-        "sequence": 55,
-        "label": "country_option_55"
-      }, {
+      }, {"value": "country_option_133", "sequence": 133, "label": "country_option_133"}, {
+        "value": "country_option_32",
+        "sequence": 32,
+        "label": "country_option_32"
+      }, {"value": "country_option_11", "sequence": 11, "label": "country_option_11"}, {
+        "value": "country_option_39",
+        "sequence": 39,
+        "label": "country_option_39"
+      }, {"value": "country_option_55", "sequence": 55, "label": "country_option_55"}, {
         "value": "country_option_236",
         "sequence": 236,
         "label": "country_option_236"
-      }, { "value": "country_option_29", "sequence": 29, "label": "country_option_29" }, {
+      }, {"value": "country_option_29", "sequence": 29, "label": "country_option_29"}, {
         "value": "country_option_31",
         "sequence": 31,
         "label": "country_option_31"
-      }, {
-        "value": "country_option_14",
-        "sequence": 14,
-        "label": "country_option_14"
-      }, {
+      }, {"value": "country_option_14", "sequence": 14, "label": "country_option_14"}, {
         "value": "country_option_195",
         "sequence": 195,
         "label": "country_option_195"
@@ -4291,35 +3407,23 @@ export default [{
         "value": "country_option_214",
         "sequence": 214,
         "label": "country_option_214"
-      }, {
-        "value": "country_option_183",
-        "sequence": 183,
-        "label": "country_option_183"
-      }, { "value": "country_option_40", "sequence": 40, "label": "country_option_40" }, {
-        "value": "country_option_38",
-        "sequence": 38,
-        "label": "country_option_38"
-      }, { "value": "country_option_90", "sequence": 90, "label": "country_option_90" }, {
-        "value": "country_option_16",
-        "sequence": 16,
-        "label": "country_option_16"
-      }, {
+      }, {"value": "country_option_183", "sequence": 183, "label": "country_option_183"}, {
+        "value": "country_option_40",
+        "sequence": 40,
+        "label": "country_option_40"
+      }, {"value": "country_option_38", "sequence": 38, "label": "country_option_38"}, {
+        "value": "country_option_90",
+        "sequence": 90,
+        "label": "country_option_90"
+      }, {"value": "country_option_16", "sequence": 16, "label": "country_option_16"}, {
         "value": "country_option_26",
         "sequence": 26,
         "label": "country_option_26"
-      }, {
-        "value": "country_option_149",
-        "sequence": 149,
-        "label": "country_option_149"
-      }, {
+      }, {"value": "country_option_149", "sequence": 149, "label": "country_option_149"}, {
         "value": "country_option_70",
         "sequence": 70,
         "label": "country_option_70"
-      }, {
-        "value": "country_option_162",
-        "sequence": 162,
-        "label": "country_option_162"
-      }, {
+      }, {"value": "country_option_162", "sequence": 162, "label": "country_option_162"}, {
         "value": "country_option_51",
         "sequence": 51,
         "label": "country_option_51"
@@ -4327,23 +3431,15 @@ export default [{
         "value": "country_option_207",
         "sequence": 207,
         "label": "country_option_207"
-      }, {
-        "value": "country_option_184",
-        "sequence": 184,
-        "label": "country_option_184"
-      }, { "value": "country_option_8", "sequence": 8, "label": "country_option_8" }, {
-        "value": "country_option_52",
-        "sequence": 52,
-        "label": "country_option_52"
-      }, {
+      }, {"value": "country_option_184", "sequence": 184, "label": "country_option_184"}, {
+        "value": "country_option_8",
+        "sequence": 8,
+        "label": "country_option_8"
+      }, {"value": "country_option_52", "sequence": 52, "label": "country_option_52"}, {
         "value": "country_option_59",
         "sequence": 59,
         "label": "country_option_59"
-      }, {
-        "value": "country_option_200",
-        "sequence": 200,
-        "label": "country_option_200"
-      }, {
+      }, {"value": "country_option_200", "sequence": 200, "label": "country_option_200"}, {
         "value": "country_option_17",
         "sequence": 17,
         "label": "country_option_17"
@@ -4351,15 +3447,11 @@ export default [{
         "value": "country_option_120",
         "sequence": 120,
         "label": "country_option_120"
-      }, {
-        "value": "country_option_151",
-        "sequence": 151,
-        "label": "country_option_151"
-      }, { "value": "country_option_3", "sequence": 3, "label": "country_option_3" }, {
-        "value": "country_option_87",
-        "sequence": 87,
-        "label": "country_option_87"
-      }, {
+      }, {"value": "country_option_151", "sequence": 151, "label": "country_option_151"}, {
+        "value": "country_option_3",
+        "sequence": 3,
+        "label": "country_option_3"
+      }, {"value": "country_option_87", "sequence": 87, "label": "country_option_87"}, {
         "value": "country_option_157",
         "sequence": 157,
         "label": "country_option_157"
@@ -4383,19 +3475,11 @@ export default [{
         "value": "country_option_114",
         "sequence": 114,
         "label": "country_option_114"
-      }, {
-        "value": "country_option_128",
-        "sequence": 128,
-        "label": "country_option_128"
-      }, {
+      }, {"value": "country_option_128", "sequence": 128, "label": "country_option_128"}, {
         "value": "country_option_53",
         "sequence": 53,
         "label": "country_option_53"
-      }, {
-        "value": "country_option_125",
-        "sequence": 125,
-        "label": "country_option_125"
-      }, {
+      }, {"value": "country_option_125", "sequence": 125, "label": "country_option_125"}, {
         "value": "country_option_58",
         "sequence": 58,
         "label": "country_option_58"
@@ -4411,23 +3495,15 @@ export default [{
         "value": "country_option_219",
         "sequence": 219,
         "label": "country_option_219"
-      }, {
-        "value": "country_option_242",
-        "sequence": 242,
-        "label": "country_option_242"
-      }, {
+      }, {"value": "country_option_242", "sequence": 242, "label": "country_option_242"}, {
         "value": "country_option_96",
         "sequence": 96,
         "label": "country_option_96"
-      }, {
-        "value": "country_option_154",
-        "sequence": 154,
-        "label": "country_option_154"
-      }, { "value": "country_option_25", "sequence": 25, "label": "country_option_25" }, {
-        "value": "country_option_61",
-        "sequence": 61,
-        "label": "country_option_61"
-      }, {
+      }, {"value": "country_option_154", "sequence": 154, "label": "country_option_154"}, {
+        "value": "country_option_25",
+        "sequence": 25,
+        "label": "country_option_25"
+      }, {"value": "country_option_61", "sequence": 61, "label": "country_option_61"}, {
         "value": "country_option_82",
         "sequence": 82,
         "label": "country_option_82"
@@ -4455,11 +3531,7 @@ export default [{
         "value": "country_option_130",
         "sequence": 130,
         "label": "country_option_130"
-      }, {
-        "value": "country_option_178",
-        "sequence": 178,
-        "label": "country_option_178"
-      }, {
+      }, {"value": "country_option_178", "sequence": 178, "label": "country_option_178"}, {
         "value": "country_option_41",
         "sequence": 41,
         "label": "country_option_41"
@@ -4471,19 +3543,11 @@ export default [{
         "value": "country_option_206",
         "sequence": 206,
         "label": "country_option_206"
-      }, {
-        "value": "country_option_213",
-        "sequence": 213,
-        "label": "country_option_213"
-      }, {
+      }, {"value": "country_option_213", "sequence": 213, "label": "country_option_213"}, {
         "value": "country_option_35",
         "sequence": 35,
         "label": "country_option_35"
-      }, {
-        "value": "country_option_185",
-        "sequence": 185,
-        "label": "country_option_185"
-      }, {
+      }, {"value": "country_option_185", "sequence": 185, "label": "country_option_185"}, {
         "value": "country_option_89",
         "sequence": 89,
         "label": "country_option_89"
@@ -4495,23 +3559,15 @@ export default [{
         "value": "country_option_160",
         "sequence": 160,
         "label": "country_option_160"
-      }, {
-        "value": "country_option_117",
-        "sequence": 117,
-        "label": "country_option_117"
-      }, {
+      }, {"value": "country_option_117", "sequence": 117, "label": "country_option_117"}, {
         "value": "country_option_42",
         "sequence": 42,
         "label": "country_option_42"
-      }, {
-        "value": "country_option_243",
-        "sequence": 243,
-        "label": "country_option_243"
-      }, { "value": "country_option_68", "sequence": 68, "label": "country_option_68" }, {
-        "value": "country_option_64",
-        "sequence": 64,
-        "label": "country_option_64"
-      }, {
+      }, {"value": "country_option_243", "sequence": 243, "label": "country_option_243"}, {
+        "value": "country_option_68",
+        "sequence": 68,
+        "label": "country_option_68"
+      }, {"value": "country_option_64", "sequence": 64, "label": "country_option_64"}, {
         "value": "country_option_73",
         "sequence": 73,
         "label": "country_option_73"
@@ -4527,11 +3583,7 @@ export default [{
         "value": "country_option_102",
         "sequence": 102,
         "label": "country_option_102"
-      }, {
-        "value": "country_option_248",
-        "sequence": 248,
-        "label": "country_option_248"
-      }, {
+      }, {"value": "country_option_248", "sequence": 248, "label": "country_option_248"}, {
         "value": "country_option_72",
         "sequence": 72,
         "label": "country_option_72"
@@ -4547,11 +3599,7 @@ export default [{
         "value": "country_option_225",
         "sequence": 225,
         "label": "country_option_225"
-      }, {
-        "value": "country_option_112",
-        "sequence": 112,
-        "label": "country_option_112"
-      }, {
+      }, {"value": "country_option_112", "sequence": 112, "label": "country_option_112"}, {
         "value": "country_option_93",
         "sequence": 93,
         "label": "country_option_93"
@@ -4567,19 +3615,11 @@ export default [{
         "value": "country_option_235",
         "sequence": 235,
         "label": "country_option_235"
-      }, {
-        "value": "country_option_136",
-        "sequence": 136,
-        "label": "country_option_136"
-      }, {
+      }, {"value": "country_option_136", "sequence": 136, "label": "country_option_136"}, {
         "value": "country_option_34",
         "sequence": 34,
         "label": "country_option_34"
-      }, {
-        "value": "country_option_107",
-        "sequence": 107,
-        "label": "country_option_107"
-      }, {
+      }, {"value": "country_option_107", "sequence": 107, "label": "country_option_107"}, {
         "value": "country_option_20",
         "sequence": 20,
         "label": "country_option_20"
@@ -4595,15 +3635,11 @@ export default [{
         "value": "country_option_163",
         "sequence": 163,
         "label": "country_option_163"
-      }, {
-        "value": "country_option_190",
-        "sequence": 190,
-        "label": "country_option_190"
-      }, { "value": "country_option_79", "sequence": 79, "label": "country_option_79" }, {
-        "value": "country_option_19",
-        "sequence": 19,
-        "label": "country_option_19"
-      }, {
+      }, {"value": "country_option_190", "sequence": 190, "label": "country_option_190"}, {
+        "value": "country_option_79",
+        "sequence": 79,
+        "label": "country_option_79"
+      }, {"value": "country_option_19", "sequence": 19, "label": "country_option_19"}, {
         "value": "country_option_129",
         "sequence": 129,
         "label": "country_option_129"
@@ -4615,15 +3651,11 @@ export default [{
         "value": "country_option_220",
         "sequence": 220,
         "label": "country_option_220"
-      }, {
-        "value": "country_option_132",
-        "sequence": 132,
-        "label": "country_option_132"
-      }, { "value": "country_option_75", "sequence": 75, "label": "country_option_75" }, {
-        "value": "country_option_1",
-        "sequence": 1,
-        "label": "country_option_1"
-      }, {
+      }, {"value": "country_option_132", "sequence": 132, "label": "country_option_132"}, {
+        "value": "country_option_75",
+        "sequence": 75,
+        "label": "country_option_75"
+      }, {"value": "country_option_1", "sequence": 1, "label": "country_option_1"}, {
         "value": "country_option_208",
         "sequence": 208,
         "label": "country_option_208"
@@ -4639,15 +3671,11 @@ export default [{
         "value": "country_option_197",
         "sequence": 197,
         "label": "country_option_197"
-      }, {
-        "value": "country_option_122",
-        "sequence": 122,
-        "label": "country_option_122"
-      }, { "value": "country_option_98", "sequence": 98, "label": "country_option_98" }, {
-        "value": "country_option_97",
-        "sequence": 97,
-        "label": "country_option_97"
-      }, {
+      }, {"value": "country_option_122", "sequence": 122, "label": "country_option_122"}, {
+        "value": "country_option_98",
+        "sequence": 98,
+        "label": "country_option_98"
+      }, {"value": "country_option_97", "sequence": 97, "label": "country_option_97"}, {
         "value": "country_option_36",
         "sequence": 36,
         "label": "country_option_36"
@@ -4667,31 +3695,19 @@ export default [{
         "value": "country_option_150",
         "sequence": 150,
         "label": "country_option_150"
-      }, {
-        "value": "country_option_252",
-        "sequence": 252,
-        "label": "country_option_252"
-      }, { "value": "country_option_4", "sequence": 4, "label": "country_option_4" }, {
-        "value": "country_option_46",
-        "sequence": 46,
-        "label": "country_option_46"
-      }, {
+      }, {"value": "country_option_252", "sequence": 252, "label": "country_option_252"}, {
+        "value": "country_option_4",
+        "sequence": 4,
+        "label": "country_option_4"
+      }, {"value": "country_option_46", "sequence": 46, "label": "country_option_46"}, {
         "value": "country_option_204",
         "sequence": 204,
         "label": "country_option_204"
-      }, {
-        "value": "country_option_66",
-        "sequence": 66,
-        "label": "country_option_66"
-      }, {
+      }, {"value": "country_option_66", "sequence": 66, "label": "country_option_66"}, {
         "value": "country_option_229",
         "sequence": 229,
         "label": "country_option_229"
-      }, {
-        "value": "country_option_241",
-        "sequence": 241,
-        "label": "country_option_241"
-      }, {
+      }, {"value": "country_option_241", "sequence": 241, "label": "country_option_241"}, {
         "value": "country_option_22",
         "sequence": 22,
         "label": "country_option_22"
@@ -4711,23 +3727,15 @@ export default [{
         "value": "country_option_143",
         "sequence": 143,
         "label": "country_option_143"
-      }, {
-        "value": "country_option_174",
-        "sequence": 174,
-        "label": "country_option_174"
-      }, {
+      }, {"value": "country_option_174", "sequence": 174, "label": "country_option_174"}, {
         "value": "country_option_95",
         "sequence": 95,
         "label": "country_option_95"
-      }, {
-        "value": "country_option_141",
-        "sequence": 141,
-        "label": "country_option_141"
-      }, { "value": "country_option_60", "sequence": 60, "label": "country_option_60" }, {
-        "value": "country_option_56",
-        "sequence": 56,
-        "label": "country_option_56"
-      }, {
+      }, {"value": "country_option_141", "sequence": 141, "label": "country_option_141"}, {
+        "value": "country_option_60",
+        "sequence": 60,
+        "label": "country_option_60"
+      }, {"value": "country_option_56", "sequence": 56, "label": "country_option_56"}, {
         "value": "country_option_212",
         "sequence": 212,
         "label": "country_option_212"
@@ -4735,15 +3743,11 @@ export default [{
         "value": "country_option_146",
         "sequence": 146,
         "label": "country_option_146"
-      }, {
-        "value": "country_option_222",
-        "sequence": 222,
-        "label": "country_option_222"
-      }, { "value": "country_option_67", "sequence": 67, "label": "country_option_67" }, {
-        "value": "country_option_57",
-        "sequence": 57,
-        "label": "country_option_57"
-      }, {
+      }, {"value": "country_option_222", "sequence": 222, "label": "country_option_222"}, {
+        "value": "country_option_67",
+        "sequence": 67,
+        "label": "country_option_67"
+      }, {"value": "country_option_57", "sequence": 57, "label": "country_option_57"}, {
         "value": "country_option_10",
         "sequence": 10,
         "label": "country_option_10"
@@ -4759,15 +3763,11 @@ export default [{
         "value": "country_option_186",
         "sequence": 186,
         "label": "country_option_186"
-      }, {
-        "value": "country_option_198",
-        "sequence": 198,
-        "label": "country_option_198"
-      }, { "value": "country_option_44", "sequence": 44, "label": "country_option_44" }, {
-        "value": "country_option_81",
-        "sequence": 81,
-        "label": "country_option_81"
-      }, {
+      }, {"value": "country_option_198", "sequence": 198, "label": "country_option_198"}, {
+        "value": "country_option_44",
+        "sequence": 44,
+        "label": "country_option_44"
+      }, {"value": "country_option_81", "sequence": 81, "label": "country_option_81"}, {
         "value": "country_option_142",
         "sequence": 142,
         "label": "country_option_142"
@@ -4779,31 +3779,19 @@ export default [{
         "value": "country_option_159",
         "sequence": 159,
         "label": "country_option_159"
-      }, {
-        "value": "country_option_239",
-        "sequence": 239,
-        "label": "country_option_239"
-      }, { "value": "country_option_45", "sequence": 45, "label": "country_option_45" }, {
-        "value": "country_option_50",
-        "sequence": 50,
-        "label": "country_option_50"
-      }, {
+      }, {"value": "country_option_239", "sequence": 239, "label": "country_option_239"}, {
+        "value": "country_option_45",
+        "sequence": 45,
+        "label": "country_option_45"
+      }, {"value": "country_option_50", "sequence": 50, "label": "country_option_50"}, {
         "value": "country_option_189",
         "sequence": 189,
         "label": "country_option_189"
-      }, {
-        "value": "country_option_48",
-        "sequence": 48,
-        "label": "country_option_48"
-      }, {
+      }, {"value": "country_option_48", "sequence": 48, "label": "country_option_48"}, {
         "value": "country_option_126",
         "sequence": 126,
         "label": "country_option_126"
-      }, {
-        "value": "country_option_77",
-        "sequence": 77,
-        "label": "country_option_77"
-      }, {
+      }, {"value": "country_option_77", "sequence": 77, "label": "country_option_77"}, {
         "value": "country_option_123",
         "sequence": 123,
         "label": "country_option_123"
@@ -4863,31 +3851,23 @@ export default [{
         "value": "country_option_156",
         "sequence": 156,
         "label": "country_option_156"
+      }, {"value": "country_option_119", "sequence": 119, "label": "country_option_119"}, {
+        "value": "country_option_9",
+        "sequence": 9,
+        "label": "country_option_9"
       }, {
-        "value": "country_option_119",
-        "sequence": 119,
-        "label": "country_option_119"
-      }, { "value": "country_option_9", "sequence": 9, "label": "country_option_9" }, {
         "value": "country_option_251",
         "sequence": 251,
         "label": "country_option_251"
-      }, {
-        "value": "country_option_137",
-        "sequence": 137,
-        "label": "country_option_137"
-      }, {
+      }, {"value": "country_option_137", "sequence": 137, "label": "country_option_137"}, {
         "value": "country_option_65",
         "sequence": 65,
         "label": "country_option_65"
-      }, {
-        "value": "country_option_165",
-        "sequence": 165,
-        "label": "country_option_165"
-      }, { "value": "country_option_7", "sequence": 7, "label": "country_option_7" }, {
-        "value": "country_option_27",
-        "sequence": 27,
-        "label": "country_option_27"
-      }, {
+      }, {"value": "country_option_165", "sequence": 165, "label": "country_option_165"}, {
+        "value": "country_option_7",
+        "sequence": 7,
+        "label": "country_option_7"
+      }, {"value": "country_option_27", "sequence": 27, "label": "country_option_27"}, {
         "value": "country_option_171",
         "sequence": 171,
         "label": "country_option_171"
@@ -4903,11 +3883,7 @@ export default [{
         "value": "country_option_173",
         "sequence": 173,
         "label": "country_option_173"
-      }, {
-        "value": "country_option_237",
-        "sequence": 237,
-        "label": "country_option_237"
-      }, {
+      }, {"value": "country_option_237", "sequence": 237, "label": "country_option_237"}, {
         "value": "country_option_99",
         "sequence": 99,
         "label": "country_option_99"
@@ -4919,67 +3895,47 @@ export default [{
         "value": "country_option_201",
         "sequence": 201,
         "label": "country_option_201"
-      }, {
-        "value": "country_option_216",
-        "sequence": 216,
-        "label": "country_option_216"
-      }, { "value": "country_option_62", "sequence": 62, "label": "country_option_62" }, {
-        "value": "country_option_33",
-        "sequence": 33,
-        "label": "country_option_33"
-      }, { "value": "country_option_91", "sequence": 91, "label": "country_option_91" }, {
-        "value": "country_option_86",
-        "sequence": 86,
-        "label": "country_option_86"
-      }, {
+      }, {"value": "country_option_216", "sequence": 216, "label": "country_option_216"}, {
+        "value": "country_option_62",
+        "sequence": 62,
+        "label": "country_option_62"
+      }, {"value": "country_option_33", "sequence": 33, "label": "country_option_33"}, {
+        "value": "country_option_91",
+        "sequence": 91,
+        "label": "country_option_91"
+      }, {"value": "country_option_86", "sequence": 86, "label": "country_option_86"}, {
         "value": "country_option_211",
         "sequence": 211,
         "label": "country_option_211"
-      }, {
-        "value": "country_option_196",
-        "sequence": 196,
-        "label": "country_option_196"
-      }, { "value": "country_option_23", "sequence": 23, "label": "country_option_23" }, {
-        "value": "country_option_74",
-        "sequence": 74,
-        "label": "country_option_74"
-      }, {
+      }, {"value": "country_option_196", "sequence": 196, "label": "country_option_196"}, {
+        "value": "country_option_23",
+        "sequence": 23,
+        "label": "country_option_23"
+      }, {"value": "country_option_74", "sequence": 74, "label": "country_option_74"}, {
         "value": "country_option_232",
         "sequence": 232,
         "label": "country_option_232"
-      }, { "value": "country_option_37", "sequence": 37, "label": "country_option_37" }, {
+      }, {"value": "country_option_37", "sequence": 37, "label": "country_option_37"}, {
         "value": "country_option_78",
         "sequence": 78,
         "label": "country_option_78"
-      }, { "value": "country_option_69", "sequence": 69, "label": "country_option_69" }, {
+      }, {"value": "country_option_69", "sequence": 69, "label": "country_option_69"}, {
         "value": "country_option_54",
         "sequence": 54,
         "label": "country_option_54"
-      }, { "value": "country_option_94", "sequence": 94, "label": "country_option_94" }, {
+      }, {"value": "country_option_94", "sequence": 94, "label": "country_option_94"}, {
         "value": "country_option_21",
         "sequence": 21,
         "label": "country_option_21"
-      }, {
-        "value": "country_option_116",
-        "sequence": 116,
-        "label": "country_option_116"
-      }, {
+      }, {"value": "country_option_116", "sequence": 116, "label": "country_option_116"}, {
         "value": "country_option_88",
         "sequence": 88,
         "label": "country_option_88"
-      }, {
-        "value": "country_option_124",
-        "sequence": 124,
-        "label": "country_option_124"
-      }, {
+      }, {"value": "country_option_124", "sequence": 124, "label": "country_option_124"}, {
         "value": "country_option_71",
         "sequence": 71,
         "label": "country_option_71"
-      }, {
-        "value": "country_option_188",
-        "sequence": 188,
-        "label": "country_option_188"
-      }, {
+      }, {"value": "country_option_188", "sequence": 188, "label": "country_option_188"}, {
         "value": "country_option_76",
         "sequence": 76,
         "label": "country_option_76"
@@ -4995,19 +3951,15 @@ export default [{
         "value": "country_option_170",
         "sequence": 170,
         "label": "country_option_170"
-      }, {
-        "value": "country_option_106",
-        "sequence": 106,
-        "label": "country_option_106"
-      }, { "value": "country_option_49", "sequence": 49, "label": "country_option_49" }, {
-        "value": "country_option_28",
-        "sequence": 28,
-        "label": "country_option_28"
-      }, { "value": "country_option_63", "sequence": 63, "label": "country_option_63" }, {
-        "value": "country_option_47",
-        "sequence": 47,
-        "label": "country_option_47"
-      }, {
+      }, {"value": "country_option_106", "sequence": 106, "label": "country_option_106"}, {
+        "value": "country_option_49",
+        "sequence": 49,
+        "label": "country_option_49"
+      }, {"value": "country_option_28", "sequence": 28, "label": "country_option_28"}, {
+        "value": "country_option_63",
+        "sequence": 63,
+        "label": "country_option_63"
+      }, {"value": "country_option_47", "sequence": 47, "label": "country_option_47"}, {
         "value": "country_option_131",
         "sequence": 131,
         "label": "country_option_131"
@@ -5031,35 +3983,27 @@ export default [{
         "value": "country_option_218",
         "sequence": 218,
         "label": "country_option_218"
-      }, {
-        "value": "country_option_152",
-        "sequence": 152,
-        "label": "country_option_152"
-      }, { "value": "country_option_5", "sequence": 5, "label": "country_option_5" }, {
-        "value": "country_option_24",
-        "sequence": 24,
-        "label": "country_option_24"
-      }, {
+      }, {"value": "country_option_152", "sequence": 152, "label": "country_option_152"}, {
+        "value": "country_option_5",
+        "sequence": 5,
+        "label": "country_option_5"
+      }, {"value": "country_option_24", "sequence": 24, "label": "country_option_24"}, {
         "value": "country_option_15",
         "sequence": 15,
         "label": "country_option_15"
+      }, {"value": "country_option_175", "sequence": 175, "label": "country_option_175"}, {
+        "value": "country_option_2",
+        "sequence": 2,
+        "label": "country_option_2"
       }, {
-        "value": "country_option_175",
-        "sequence": 175,
-        "label": "country_option_175"
-      }, { "value": "country_option_2", "sequence": 2, "label": "country_option_2" }, {
         "value": "country_option_121",
         "sequence": 121,
         "label": "country_option_121"
-      }, {
-        "value": "country_option_203",
-        "sequence": 203,
-        "label": "country_option_203"
-      }, { "value": "country_option_84", "sequence": 84, "label": "country_option_84" }, {
-        "value": "country_option_80",
-        "sequence": 80,
-        "label": "country_option_80"
-      }, {
+      }, {"value": "country_option_203", "sequence": 203, "label": "country_option_203"}, {
+        "value": "country_option_84",
+        "sequence": 84,
+        "label": "country_option_84"
+      }, {"value": "country_option_80", "sequence": 80, "label": "country_option_80"}, {
         "value": "country_option_181",
         "sequence": 181,
         "label": "country_option_181"
@@ -5067,19 +4011,15 @@ export default [{
         "value": "country_option_224",
         "sequence": 224,
         "label": "country_option_224"
-      }, {
-        "value": "country_option_134",
-        "sequence": 134,
-        "label": "country_option_134"
-      }, { "value": "country_option_92", "sequence": 92, "label": "country_option_92" }, {
-        "value": "country_option_43",
-        "sequence": 43,
-        "label": "country_option_43"
-      }, { "value": "country_option_30", "sequence": 30, "label": "country_option_30" }, {
-        "value": "country_option_6",
-        "sequence": 6,
-        "label": "country_option_6"
-      }, {
+      }, {"value": "country_option_134", "sequence": 134, "label": "country_option_134"}, {
+        "value": "country_option_92",
+        "sequence": 92,
+        "label": "country_option_92"
+      }, {"value": "country_option_43", "sequence": 43, "label": "country_option_43"}, {
+        "value": "country_option_30",
+        "sequence": 30,
+        "label": "country_option_30"
+      }, {"value": "country_option_6", "sequence": 6, "label": "country_option_6"}, {
         "value": "country_option_221",
         "sequence": 221,
         "label": "country_option_221"
@@ -5087,7 +4027,7 @@ export default [{
         "value": "country_option_168",
         "sequence": 168,
         "label": "country_option_168"
-      }, { "value": "country_option_199", "sequence": 199, "label": "country_option_199" }],
+      }, {"value": "country_option_199", "sequence": 199, "label": "country_option_199"}],
       "label": "ch2_s2_field6_label",
       "fieldApi": "Citizenship__c",
       "description": "ch2_s2_field6_description"
@@ -5099,18 +4039,14 @@ export default [{
       }],
       "type": "drop_down",
       "sfFieldType": "Picklist",
-      "sequence": 14,
+      "sequence": 35,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field7Section_03_3",
       "listOfValues": [{
         "value": "country_option_85",
         "sequence": 85,
         "label": "country_option_85"
-      }, {
-        "value": "country_option_148",
-        "sequence": 148,
-        "label": "country_option_148"
-      }, {
+      }, {"value": "country_option_148", "sequence": 148, "label": "country_option_148"}, {
         "value": "country_option_18",
         "sequence": 18,
         "label": "country_option_18"
@@ -5118,55 +4054,35 @@ export default [{
         "value": "country_option_191",
         "sequence": 191,
         "label": "country_option_191"
-      }, {
-        "value": "country_option_104",
-        "sequence": 104,
-        "label": "country_option_104"
-      }, {
+      }, {"value": "country_option_104", "sequence": 104, "label": "country_option_104"}, {
         "value": "country_option_13",
         "sequence": 13,
         "label": "country_option_13"
-      }, {
-        "value": "country_option_233",
-        "sequence": 233,
-        "label": "country_option_233"
-      }, {
+      }, {"value": "country_option_233", "sequence": 233, "label": "country_option_233"}, {
         "value": "country_option_12",
         "sequence": 12,
         "label": "country_option_12"
-      }, {
-        "value": "country_option_140",
-        "sequence": 140,
-        "label": "country_option_140"
-      }, {
+      }, {"value": "country_option_140", "sequence": 140, "label": "country_option_140"}, {
         "value": "country_option_83",
         "sequence": 83,
         "label": "country_option_83"
-      }, {
-        "value": "country_option_133",
-        "sequence": 133,
-        "label": "country_option_133"
-      }, { "value": "country_option_32", "sequence": 32, "label": "country_option_32" }, {
-        "value": "country_option_11",
-        "sequence": 11,
-        "label": "country_option_11"
-      }, { "value": "country_option_39", "sequence": 39, "label": "country_option_39" }, {
-        "value": "country_option_55",
-        "sequence": 55,
-        "label": "country_option_55"
-      }, {
+      }, {"value": "country_option_133", "sequence": 133, "label": "country_option_133"}, {
+        "value": "country_option_32",
+        "sequence": 32,
+        "label": "country_option_32"
+      }, {"value": "country_option_11", "sequence": 11, "label": "country_option_11"}, {
+        "value": "country_option_39",
+        "sequence": 39,
+        "label": "country_option_39"
+      }, {"value": "country_option_55", "sequence": 55, "label": "country_option_55"}, {
         "value": "country_option_236",
         "sequence": 236,
         "label": "country_option_236"
-      }, { "value": "country_option_29", "sequence": 29, "label": "country_option_29" }, {
+      }, {"value": "country_option_29", "sequence": 29, "label": "country_option_29"}, {
         "value": "country_option_31",
         "sequence": 31,
         "label": "country_option_31"
-      }, {
-        "value": "country_option_14",
-        "sequence": 14,
-        "label": "country_option_14"
-      }, {
+      }, {"value": "country_option_14", "sequence": 14, "label": "country_option_14"}, {
         "value": "country_option_195",
         "sequence": 195,
         "label": "country_option_195"
@@ -5182,35 +4098,23 @@ export default [{
         "value": "country_option_214",
         "sequence": 214,
         "label": "country_option_214"
-      }, {
-        "value": "country_option_183",
-        "sequence": 183,
-        "label": "country_option_183"
-      }, { "value": "country_option_40", "sequence": 40, "label": "country_option_40" }, {
-        "value": "country_option_38",
-        "sequence": 38,
-        "label": "country_option_38"
-      }, { "value": "country_option_90", "sequence": 90, "label": "country_option_90" }, {
-        "value": "country_option_16",
-        "sequence": 16,
-        "label": "country_option_16"
-      }, {
+      }, {"value": "country_option_183", "sequence": 183, "label": "country_option_183"}, {
+        "value": "country_option_40",
+        "sequence": 40,
+        "label": "country_option_40"
+      }, {"value": "country_option_38", "sequence": 38, "label": "country_option_38"}, {
+        "value": "country_option_90",
+        "sequence": 90,
+        "label": "country_option_90"
+      }, {"value": "country_option_16", "sequence": 16, "label": "country_option_16"}, {
         "value": "country_option_26",
         "sequence": 26,
         "label": "country_option_26"
-      }, {
-        "value": "country_option_149",
-        "sequence": 149,
-        "label": "country_option_149"
-      }, {
+      }, {"value": "country_option_149", "sequence": 149, "label": "country_option_149"}, {
         "value": "country_option_70",
         "sequence": 70,
         "label": "country_option_70"
-      }, {
-        "value": "country_option_162",
-        "sequence": 162,
-        "label": "country_option_162"
-      }, {
+      }, {"value": "country_option_162", "sequence": 162, "label": "country_option_162"}, {
         "value": "country_option_51",
         "sequence": 51,
         "label": "country_option_51"
@@ -5218,23 +4122,15 @@ export default [{
         "value": "country_option_207",
         "sequence": 207,
         "label": "country_option_207"
-      }, {
-        "value": "country_option_184",
-        "sequence": 184,
-        "label": "country_option_184"
-      }, { "value": "country_option_8", "sequence": 8, "label": "country_option_8" }, {
-        "value": "country_option_52",
-        "sequence": 52,
-        "label": "country_option_52"
-      }, {
+      }, {"value": "country_option_184", "sequence": 184, "label": "country_option_184"}, {
+        "value": "country_option_8",
+        "sequence": 8,
+        "label": "country_option_8"
+      }, {"value": "country_option_52", "sequence": 52, "label": "country_option_52"}, {
         "value": "country_option_59",
         "sequence": 59,
         "label": "country_option_59"
-      }, {
-        "value": "country_option_200",
-        "sequence": 200,
-        "label": "country_option_200"
-      }, {
+      }, {"value": "country_option_200", "sequence": 200, "label": "country_option_200"}, {
         "value": "country_option_17",
         "sequence": 17,
         "label": "country_option_17"
@@ -5242,15 +4138,11 @@ export default [{
         "value": "country_option_120",
         "sequence": 120,
         "label": "country_option_120"
-      }, {
-        "value": "country_option_151",
-        "sequence": 151,
-        "label": "country_option_151"
-      }, { "value": "country_option_3", "sequence": 3, "label": "country_option_3" }, {
-        "value": "country_option_87",
-        "sequence": 87,
-        "label": "country_option_87"
-      }, {
+      }, {"value": "country_option_151", "sequence": 151, "label": "country_option_151"}, {
+        "value": "country_option_3",
+        "sequence": 3,
+        "label": "country_option_3"
+      }, {"value": "country_option_87", "sequence": 87, "label": "country_option_87"}, {
         "value": "country_option_157",
         "sequence": 157,
         "label": "country_option_157"
@@ -5274,19 +4166,11 @@ export default [{
         "value": "country_option_114",
         "sequence": 114,
         "label": "country_option_114"
-      }, {
-        "value": "country_option_128",
-        "sequence": 128,
-        "label": "country_option_128"
-      }, {
+      }, {"value": "country_option_128", "sequence": 128, "label": "country_option_128"}, {
         "value": "country_option_53",
         "sequence": 53,
         "label": "country_option_53"
-      }, {
-        "value": "country_option_125",
-        "sequence": 125,
-        "label": "country_option_125"
-      }, {
+      }, {"value": "country_option_125", "sequence": 125, "label": "country_option_125"}, {
         "value": "country_option_58",
         "sequence": 58,
         "label": "country_option_58"
@@ -5302,23 +4186,15 @@ export default [{
         "value": "country_option_219",
         "sequence": 219,
         "label": "country_option_219"
-      }, {
-        "value": "country_option_242",
-        "sequence": 242,
-        "label": "country_option_242"
-      }, {
+      }, {"value": "country_option_242", "sequence": 242, "label": "country_option_242"}, {
         "value": "country_option_96",
         "sequence": 96,
         "label": "country_option_96"
-      }, {
-        "value": "country_option_154",
-        "sequence": 154,
-        "label": "country_option_154"
-      }, { "value": "country_option_25", "sequence": 25, "label": "country_option_25" }, {
-        "value": "country_option_61",
-        "sequence": 61,
-        "label": "country_option_61"
-      }, {
+      }, {"value": "country_option_154", "sequence": 154, "label": "country_option_154"}, {
+        "value": "country_option_25",
+        "sequence": 25,
+        "label": "country_option_25"
+      }, {"value": "country_option_61", "sequence": 61, "label": "country_option_61"}, {
         "value": "country_option_82",
         "sequence": 82,
         "label": "country_option_82"
@@ -5346,11 +4222,7 @@ export default [{
         "value": "country_option_130",
         "sequence": 130,
         "label": "country_option_130"
-      }, {
-        "value": "country_option_178",
-        "sequence": 178,
-        "label": "country_option_178"
-      }, {
+      }, {"value": "country_option_178", "sequence": 178, "label": "country_option_178"}, {
         "value": "country_option_41",
         "sequence": 41,
         "label": "country_option_41"
@@ -5362,19 +4234,11 @@ export default [{
         "value": "country_option_206",
         "sequence": 206,
         "label": "country_option_206"
-      }, {
-        "value": "country_option_213",
-        "sequence": 213,
-        "label": "country_option_213"
-      }, {
+      }, {"value": "country_option_213", "sequence": 213, "label": "country_option_213"}, {
         "value": "country_option_35",
         "sequence": 35,
         "label": "country_option_35"
-      }, {
-        "value": "country_option_185",
-        "sequence": 185,
-        "label": "country_option_185"
-      }, {
+      }, {"value": "country_option_185", "sequence": 185, "label": "country_option_185"}, {
         "value": "country_option_89",
         "sequence": 89,
         "label": "country_option_89"
@@ -5386,23 +4250,15 @@ export default [{
         "value": "country_option_160",
         "sequence": 160,
         "label": "country_option_160"
-      }, {
-        "value": "country_option_117",
-        "sequence": 117,
-        "label": "country_option_117"
-      }, {
+      }, {"value": "country_option_117", "sequence": 117, "label": "country_option_117"}, {
         "value": "country_option_42",
         "sequence": 42,
         "label": "country_option_42"
-      }, {
-        "value": "country_option_243",
-        "sequence": 243,
-        "label": "country_option_243"
-      }, { "value": "country_option_68", "sequence": 68, "label": "country_option_68" }, {
-        "value": "country_option_64",
-        "sequence": 64,
-        "label": "country_option_64"
-      }, {
+      }, {"value": "country_option_243", "sequence": 243, "label": "country_option_243"}, {
+        "value": "country_option_68",
+        "sequence": 68,
+        "label": "country_option_68"
+      }, {"value": "country_option_64", "sequence": 64, "label": "country_option_64"}, {
         "value": "country_option_73",
         "sequence": 73,
         "label": "country_option_73"
@@ -5418,11 +4274,7 @@ export default [{
         "value": "country_option_102",
         "sequence": 102,
         "label": "country_option_102"
-      }, {
-        "value": "country_option_248",
-        "sequence": 248,
-        "label": "country_option_248"
-      }, {
+      }, {"value": "country_option_248", "sequence": 248, "label": "country_option_248"}, {
         "value": "country_option_72",
         "sequence": 72,
         "label": "country_option_72"
@@ -5438,11 +4290,7 @@ export default [{
         "value": "country_option_225",
         "sequence": 225,
         "label": "country_option_225"
-      }, {
-        "value": "country_option_112",
-        "sequence": 112,
-        "label": "country_option_112"
-      }, {
+      }, {"value": "country_option_112", "sequence": 112, "label": "country_option_112"}, {
         "value": "country_option_93",
         "sequence": 93,
         "label": "country_option_93"
@@ -5458,19 +4306,11 @@ export default [{
         "value": "country_option_235",
         "sequence": 235,
         "label": "country_option_235"
-      }, {
-        "value": "country_option_136",
-        "sequence": 136,
-        "label": "country_option_136"
-      }, {
+      }, {"value": "country_option_136", "sequence": 136, "label": "country_option_136"}, {
         "value": "country_option_34",
         "sequence": 34,
         "label": "country_option_34"
-      }, {
-        "value": "country_option_107",
-        "sequence": 107,
-        "label": "country_option_107"
-      }, {
+      }, {"value": "country_option_107", "sequence": 107, "label": "country_option_107"}, {
         "value": "country_option_20",
         "sequence": 20,
         "label": "country_option_20"
@@ -5486,15 +4326,11 @@ export default [{
         "value": "country_option_163",
         "sequence": 163,
         "label": "country_option_163"
-      }, {
-        "value": "country_option_190",
-        "sequence": 190,
-        "label": "country_option_190"
-      }, { "value": "country_option_79", "sequence": 79, "label": "country_option_79" }, {
-        "value": "country_option_19",
-        "sequence": 19,
-        "label": "country_option_19"
-      }, {
+      }, {"value": "country_option_190", "sequence": 190, "label": "country_option_190"}, {
+        "value": "country_option_79",
+        "sequence": 79,
+        "label": "country_option_79"
+      }, {"value": "country_option_19", "sequence": 19, "label": "country_option_19"}, {
         "value": "country_option_129",
         "sequence": 129,
         "label": "country_option_129"
@@ -5506,15 +4342,11 @@ export default [{
         "value": "country_option_220",
         "sequence": 220,
         "label": "country_option_220"
-      }, {
-        "value": "country_option_132",
-        "sequence": 132,
-        "label": "country_option_132"
-      }, { "value": "country_option_75", "sequence": 75, "label": "country_option_75" }, {
-        "value": "country_option_1",
-        "sequence": 1,
-        "label": "country_option_1"
-      }, {
+      }, {"value": "country_option_132", "sequence": 132, "label": "country_option_132"}, {
+        "value": "country_option_75",
+        "sequence": 75,
+        "label": "country_option_75"
+      }, {"value": "country_option_1", "sequence": 1, "label": "country_option_1"}, {
         "value": "country_option_208",
         "sequence": 208,
         "label": "country_option_208"
@@ -5530,15 +4362,11 @@ export default [{
         "value": "country_option_197",
         "sequence": 197,
         "label": "country_option_197"
-      }, {
-        "value": "country_option_122",
-        "sequence": 122,
-        "label": "country_option_122"
-      }, { "value": "country_option_98", "sequence": 98, "label": "country_option_98" }, {
-        "value": "country_option_97",
-        "sequence": 97,
-        "label": "country_option_97"
-      }, {
+      }, {"value": "country_option_122", "sequence": 122, "label": "country_option_122"}, {
+        "value": "country_option_98",
+        "sequence": 98,
+        "label": "country_option_98"
+      }, {"value": "country_option_97", "sequence": 97, "label": "country_option_97"}, {
         "value": "country_option_36",
         "sequence": 36,
         "label": "country_option_36"
@@ -5558,31 +4386,19 @@ export default [{
         "value": "country_option_150",
         "sequence": 150,
         "label": "country_option_150"
-      }, {
-        "value": "country_option_252",
-        "sequence": 252,
-        "label": "country_option_252"
-      }, { "value": "country_option_4", "sequence": 4, "label": "country_option_4" }, {
-        "value": "country_option_46",
-        "sequence": 46,
-        "label": "country_option_46"
-      }, {
+      }, {"value": "country_option_252", "sequence": 252, "label": "country_option_252"}, {
+        "value": "country_option_4",
+        "sequence": 4,
+        "label": "country_option_4"
+      }, {"value": "country_option_46", "sequence": 46, "label": "country_option_46"}, {
         "value": "country_option_204",
         "sequence": 204,
         "label": "country_option_204"
-      }, {
-        "value": "country_option_66",
-        "sequence": 66,
-        "label": "country_option_66"
-      }, {
+      }, {"value": "country_option_66", "sequence": 66, "label": "country_option_66"}, {
         "value": "country_option_229",
         "sequence": 229,
         "label": "country_option_229"
-      }, {
-        "value": "country_option_241",
-        "sequence": 241,
-        "label": "country_option_241"
-      }, {
+      }, {"value": "country_option_241", "sequence": 241, "label": "country_option_241"}, {
         "value": "country_option_22",
         "sequence": 22,
         "label": "country_option_22"
@@ -5602,23 +4418,15 @@ export default [{
         "value": "country_option_143",
         "sequence": 143,
         "label": "country_option_143"
-      }, {
-        "value": "country_option_174",
-        "sequence": 174,
-        "label": "country_option_174"
-      }, {
+      }, {"value": "country_option_174", "sequence": 174, "label": "country_option_174"}, {
         "value": "country_option_95",
         "sequence": 95,
         "label": "country_option_95"
-      }, {
-        "value": "country_option_141",
-        "sequence": 141,
-        "label": "country_option_141"
-      }, { "value": "country_option_60", "sequence": 60, "label": "country_option_60" }, {
-        "value": "country_option_56",
-        "sequence": 56,
-        "label": "country_option_56"
-      }, {
+      }, {"value": "country_option_141", "sequence": 141, "label": "country_option_141"}, {
+        "value": "country_option_60",
+        "sequence": 60,
+        "label": "country_option_60"
+      }, {"value": "country_option_56", "sequence": 56, "label": "country_option_56"}, {
         "value": "country_option_212",
         "sequence": 212,
         "label": "country_option_212"
@@ -5626,15 +4434,11 @@ export default [{
         "value": "country_option_146",
         "sequence": 146,
         "label": "country_option_146"
-      }, {
-        "value": "country_option_222",
-        "sequence": 222,
-        "label": "country_option_222"
-      }, { "value": "country_option_67", "sequence": 67, "label": "country_option_67" }, {
-        "value": "country_option_57",
-        "sequence": 57,
-        "label": "country_option_57"
-      }, {
+      }, {"value": "country_option_222", "sequence": 222, "label": "country_option_222"}, {
+        "value": "country_option_67",
+        "sequence": 67,
+        "label": "country_option_67"
+      }, {"value": "country_option_57", "sequence": 57, "label": "country_option_57"}, {
         "value": "country_option_10",
         "sequence": 10,
         "label": "country_option_10"
@@ -5650,15 +4454,11 @@ export default [{
         "value": "country_option_186",
         "sequence": 186,
         "label": "country_option_186"
-      }, {
-        "value": "country_option_198",
-        "sequence": 198,
-        "label": "country_option_198"
-      }, { "value": "country_option_44", "sequence": 44, "label": "country_option_44" }, {
-        "value": "country_option_81",
-        "sequence": 81,
-        "label": "country_option_81"
-      }, {
+      }, {"value": "country_option_198", "sequence": 198, "label": "country_option_198"}, {
+        "value": "country_option_44",
+        "sequence": 44,
+        "label": "country_option_44"
+      }, {"value": "country_option_81", "sequence": 81, "label": "country_option_81"}, {
         "value": "country_option_142",
         "sequence": 142,
         "label": "country_option_142"
@@ -5670,31 +4470,19 @@ export default [{
         "value": "country_option_159",
         "sequence": 159,
         "label": "country_option_159"
-      }, {
-        "value": "country_option_239",
-        "sequence": 239,
-        "label": "country_option_239"
-      }, { "value": "country_option_45", "sequence": 45, "label": "country_option_45" }, {
-        "value": "country_option_50",
-        "sequence": 50,
-        "label": "country_option_50"
-      }, {
+      }, {"value": "country_option_239", "sequence": 239, "label": "country_option_239"}, {
+        "value": "country_option_45",
+        "sequence": 45,
+        "label": "country_option_45"
+      }, {"value": "country_option_50", "sequence": 50, "label": "country_option_50"}, {
         "value": "country_option_189",
         "sequence": 189,
         "label": "country_option_189"
-      }, {
-        "value": "country_option_48",
-        "sequence": 48,
-        "label": "country_option_48"
-      }, {
+      }, {"value": "country_option_48", "sequence": 48, "label": "country_option_48"}, {
         "value": "country_option_126",
         "sequence": 126,
         "label": "country_option_126"
-      }, {
-        "value": "country_option_77",
-        "sequence": 77,
-        "label": "country_option_77"
-      }, {
+      }, {"value": "country_option_77", "sequence": 77, "label": "country_option_77"}, {
         "value": "country_option_123",
         "sequence": 123,
         "label": "country_option_123"
@@ -5754,31 +4542,23 @@ export default [{
         "value": "country_option_156",
         "sequence": 156,
         "label": "country_option_156"
+      }, {"value": "country_option_119", "sequence": 119, "label": "country_option_119"}, {
+        "value": "country_option_9",
+        "sequence": 9,
+        "label": "country_option_9"
       }, {
-        "value": "country_option_119",
-        "sequence": 119,
-        "label": "country_option_119"
-      }, { "value": "country_option_9", "sequence": 9, "label": "country_option_9" }, {
         "value": "country_option_251",
         "sequence": 251,
         "label": "country_option_251"
-      }, {
-        "value": "country_option_137",
-        "sequence": 137,
-        "label": "country_option_137"
-      }, {
+      }, {"value": "country_option_137", "sequence": 137, "label": "country_option_137"}, {
         "value": "country_option_65",
         "sequence": 65,
         "label": "country_option_65"
-      }, {
-        "value": "country_option_165",
-        "sequence": 165,
-        "label": "country_option_165"
-      }, { "value": "country_option_7", "sequence": 7, "label": "country_option_7" }, {
-        "value": "country_option_27",
-        "sequence": 27,
-        "label": "country_option_27"
-      }, {
+      }, {"value": "country_option_165", "sequence": 165, "label": "country_option_165"}, {
+        "value": "country_option_7",
+        "sequence": 7,
+        "label": "country_option_7"
+      }, {"value": "country_option_27", "sequence": 27, "label": "country_option_27"}, {
         "value": "country_option_171",
         "sequence": 171,
         "label": "country_option_171"
@@ -5794,11 +4574,7 @@ export default [{
         "value": "country_option_173",
         "sequence": 173,
         "label": "country_option_173"
-      }, {
-        "value": "country_option_237",
-        "sequence": 237,
-        "label": "country_option_237"
-      }, {
+      }, {"value": "country_option_237", "sequence": 237, "label": "country_option_237"}, {
         "value": "country_option_99",
         "sequence": 99,
         "label": "country_option_99"
@@ -5810,67 +4586,47 @@ export default [{
         "value": "country_option_201",
         "sequence": 201,
         "label": "country_option_201"
-      }, {
-        "value": "country_option_216",
-        "sequence": 216,
-        "label": "country_option_216"
-      }, { "value": "country_option_62", "sequence": 62, "label": "country_option_62" }, {
-        "value": "country_option_33",
-        "sequence": 33,
-        "label": "country_option_33"
-      }, { "value": "country_option_91", "sequence": 91, "label": "country_option_91" }, {
-        "value": "country_option_86",
-        "sequence": 86,
-        "label": "country_option_86"
-      }, {
+      }, {"value": "country_option_216", "sequence": 216, "label": "country_option_216"}, {
+        "value": "country_option_62",
+        "sequence": 62,
+        "label": "country_option_62"
+      }, {"value": "country_option_33", "sequence": 33, "label": "country_option_33"}, {
+        "value": "country_option_91",
+        "sequence": 91,
+        "label": "country_option_91"
+      }, {"value": "country_option_86", "sequence": 86, "label": "country_option_86"}, {
         "value": "country_option_211",
         "sequence": 211,
         "label": "country_option_211"
-      }, {
-        "value": "country_option_196",
-        "sequence": 196,
-        "label": "country_option_196"
-      }, { "value": "country_option_23", "sequence": 23, "label": "country_option_23" }, {
-        "value": "country_option_74",
-        "sequence": 74,
-        "label": "country_option_74"
-      }, {
+      }, {"value": "country_option_196", "sequence": 196, "label": "country_option_196"}, {
+        "value": "country_option_23",
+        "sequence": 23,
+        "label": "country_option_23"
+      }, {"value": "country_option_74", "sequence": 74, "label": "country_option_74"}, {
         "value": "country_option_232",
         "sequence": 232,
         "label": "country_option_232"
-      }, { "value": "country_option_37", "sequence": 37, "label": "country_option_37" }, {
+      }, {"value": "country_option_37", "sequence": 37, "label": "country_option_37"}, {
         "value": "country_option_78",
         "sequence": 78,
         "label": "country_option_78"
-      }, { "value": "country_option_69", "sequence": 69, "label": "country_option_69" }, {
+      }, {"value": "country_option_69", "sequence": 69, "label": "country_option_69"}, {
         "value": "country_option_54",
         "sequence": 54,
         "label": "country_option_54"
-      }, { "value": "country_option_94", "sequence": 94, "label": "country_option_94" }, {
+      }, {"value": "country_option_94", "sequence": 94, "label": "country_option_94"}, {
         "value": "country_option_21",
         "sequence": 21,
         "label": "country_option_21"
-      }, {
-        "value": "country_option_116",
-        "sequence": 116,
-        "label": "country_option_116"
-      }, {
+      }, {"value": "country_option_116", "sequence": 116, "label": "country_option_116"}, {
         "value": "country_option_88",
         "sequence": 88,
         "label": "country_option_88"
-      }, {
-        "value": "country_option_124",
-        "sequence": 124,
-        "label": "country_option_124"
-      }, {
+      }, {"value": "country_option_124", "sequence": 124, "label": "country_option_124"}, {
         "value": "country_option_71",
         "sequence": 71,
         "label": "country_option_71"
-      }, {
-        "value": "country_option_188",
-        "sequence": 188,
-        "label": "country_option_188"
-      }, {
+      }, {"value": "country_option_188", "sequence": 188, "label": "country_option_188"}, {
         "value": "country_option_76",
         "sequence": 76,
         "label": "country_option_76"
@@ -5886,19 +4642,15 @@ export default [{
         "value": "country_option_170",
         "sequence": 170,
         "label": "country_option_170"
-      }, {
-        "value": "country_option_106",
-        "sequence": 106,
-        "label": "country_option_106"
-      }, { "value": "country_option_49", "sequence": 49, "label": "country_option_49" }, {
-        "value": "country_option_28",
-        "sequence": 28,
-        "label": "country_option_28"
-      }, { "value": "country_option_63", "sequence": 63, "label": "country_option_63" }, {
-        "value": "country_option_47",
-        "sequence": 47,
-        "label": "country_option_47"
-      }, {
+      }, {"value": "country_option_106", "sequence": 106, "label": "country_option_106"}, {
+        "value": "country_option_49",
+        "sequence": 49,
+        "label": "country_option_49"
+      }, {"value": "country_option_28", "sequence": 28, "label": "country_option_28"}, {
+        "value": "country_option_63",
+        "sequence": 63,
+        "label": "country_option_63"
+      }, {"value": "country_option_47", "sequence": 47, "label": "country_option_47"}, {
         "value": "country_option_131",
         "sequence": 131,
         "label": "country_option_131"
@@ -5922,35 +4674,27 @@ export default [{
         "value": "country_option_218",
         "sequence": 218,
         "label": "country_option_218"
-      }, {
-        "value": "country_option_152",
-        "sequence": 152,
-        "label": "country_option_152"
-      }, { "value": "country_option_5", "sequence": 5, "label": "country_option_5" }, {
-        "value": "country_option_24",
-        "sequence": 24,
-        "label": "country_option_24"
-      }, {
+      }, {"value": "country_option_152", "sequence": 152, "label": "country_option_152"}, {
+        "value": "country_option_5",
+        "sequence": 5,
+        "label": "country_option_5"
+      }, {"value": "country_option_24", "sequence": 24, "label": "country_option_24"}, {
         "value": "country_option_15",
         "sequence": 15,
         "label": "country_option_15"
+      }, {"value": "country_option_175", "sequence": 175, "label": "country_option_175"}, {
+        "value": "country_option_2",
+        "sequence": 2,
+        "label": "country_option_2"
       }, {
-        "value": "country_option_175",
-        "sequence": 175,
-        "label": "country_option_175"
-      }, { "value": "country_option_2", "sequence": 2, "label": "country_option_2" }, {
         "value": "country_option_121",
         "sequence": 121,
         "label": "country_option_121"
-      }, {
-        "value": "country_option_203",
-        "sequence": 203,
-        "label": "country_option_203"
-      }, { "value": "country_option_84", "sequence": 84, "label": "country_option_84" }, {
-        "value": "country_option_80",
-        "sequence": 80,
-        "label": "country_option_80"
-      }, {
+      }, {"value": "country_option_203", "sequence": 203, "label": "country_option_203"}, {
+        "value": "country_option_84",
+        "sequence": 84,
+        "label": "country_option_84"
+      }, {"value": "country_option_80", "sequence": 80, "label": "country_option_80"}, {
         "value": "country_option_181",
         "sequence": 181,
         "label": "country_option_181"
@@ -5958,23 +4702,19 @@ export default [{
         "value": "country_option_224",
         "sequence": 224,
         "label": "country_option_224"
-      }, {
-        "value": "country_option_134",
-        "sequence": 134,
-        "label": "country_option_134"
-      }, { "value": "country_option_92", "sequence": 92, "label": "country_option_92" }, {
-        "value": "country_option_43",
-        "sequence": 43,
-        "label": "country_option_43"
-      }, { "value": "country_option_30", "sequence": 30, "label": "country_option_30" }, {
-        "value": "country_option_6",
-        "sequence": 6,
-        "label": "country_option_6"
-      }, {
+      }, {"value": "country_option_134", "sequence": 134, "label": "country_option_134"}, {
+        "value": "country_option_92",
+        "sequence": 92,
+        "label": "country_option_92"
+      }, {"value": "country_option_43", "sequence": 43, "label": "country_option_43"}, {
+        "value": "country_option_30",
+        "sequence": 30,
+        "label": "country_option_30"
+      }, {"value": "country_option_6", "sequence": 6, "label": "country_option_6"}, {
         "value": "country_option_221",
         "sequence": 221,
         "label": "country_option_221"
-      }, { "value": "country_option_168", "sequence": 168, "label": "country_option_168" }],
+      }, {"value": "country_option_168", "sequence": 168, "label": "country_option_168"}],
       "label": "ch2_s2_field7_label",
       "fieldApi": "Country_of_Residence__c",
       "description": "ch2_s2_field7_description"
@@ -5986,7 +4726,7 @@ export default [{
       }],
       "type": "boxed_checkbox",
       "sfFieldType": "Checkbox",
-      "sequence": 15,
+      "sequence": 36,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field8Section_03_3",
       "label": "ch2_s2_field8_label",
@@ -5997,19 +4737,16 @@ export default [{
   }, {
     "type": "Conditional",
     "title": "ch_2_sec_5_title",
-    "serverValues": [{
-      "fieldValue": "",
-      "fieldCode": "ch1_s1_field1Section_04_1"
-    }, { "fieldCode": "ch1_s1_field2Section_04_1" }, { "fieldCode": "ch1_s1_field3Section_04_1" }, { "fieldCode": "ch2_s2_field4Section_04_1" }, {
-      "fieldValue": "",
-      "fieldCode": "ch2_s2_field5Section_04_1"
-    }, { "fieldValue": "", "fieldCode": "ch2_s2_field6Section_04_1" }, {
-      "fieldValue": "",
-      "fieldCode": "ch2_s2_field7Section_04_1"
-    }, { "fieldValue": "false", "fieldCode": "ch2_s2_field8Section_04_1" }],
+    "serverValues": [{"fieldCode": "ch1_s1_field1Section_04_1"}, {"fieldCode": "ch1_s1_field2Section_04_1"}, {"fieldCode": "ch1_s1_field3Section_04_1"}, {"fieldCode": "ch2_s2_field4Section_04_1"}, {"fieldCode": "ch2_s2_field5Section_04_1"}, {"fieldCode": "ch2_s2_field6Section_04_1"}, {"fieldCode": "ch2_s2_field7Section_04_1"}, {"fieldCode": "ch2_s2_field8Section_04_1"}],
     "sequence": 6,
     "name": "Section_04_1",
     "fields": [{
+      "type": "title",
+      "sfFieldType": "Text",
+      "sequence": 37,
+      "name": "nullSection_04_1",
+      "label": "ch_2_sec_5_title"
+    }, {
       "validationRules": [{
         "validationError": "ch1_s1_field1_ValidErr",
         "requiredError": "ch1_s1_field1_ReqErr",
@@ -6017,14 +4754,14 @@ export default [{
       }],
       "type": "horizontal_radio_btns",
       "sfFieldType": "Picklist",
-      "sequence": 16,
+      "sequence": 38,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch1_s1_field1Section_04_1",
       "listOfValues": [{
         "value": "title_option_2",
         "sequence": 2,
         "label": "title_option_2"
-      }, { "value": "title_option_1", "sequence": 1, "label": "title_option_1" }],
+      }, {"value": "title_option_1", "sequence": 1, "label": "title_option_1"}],
       "label": "ch1_s1_field1_label",
       "fieldApi": "Title__c",
       "description": "ch1_s1_field1_description"
@@ -6037,7 +4774,7 @@ export default [{
       }],
       "type": "text",
       "sfFieldType": "Text",
-      "sequence": 17,
+      "sequence": 39,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch1_s1_field2Section_04_1",
       "label": "ch1_s1_field2_label",
@@ -6052,7 +4789,7 @@ export default [{
       }],
       "type": "text",
       "sfFieldType": "Text",
-      "sequence": 18,
+      "sequence": 40,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch1_s1_field3Section_04_1",
       "label": "ch1_s1_field3_label",
@@ -6067,7 +4804,7 @@ export default [{
       }],
       "type": "text",
       "sfFieldType": "Text",
-      "sequence": 19,
+      "sequence": 41,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field4Section_04_1",
       "label": "ch2_s2_field4_label",
@@ -6081,7 +4818,7 @@ export default [{
       }],
       "type": "date",
       "sfFieldType": "Date",
-      "sequence": 20,
+      "sequence": 42,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field5Section_04_1",
       "label": "ch2_s2_field5_label",
@@ -6095,18 +4832,14 @@ export default [{
       }],
       "type": "drop_down",
       "sfFieldType": "Picklist",
-      "sequence": 21,
+      "sequence": 43,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field6Section_04_1",
       "listOfValues": [{
         "value": "country_option_85",
         "sequence": 85,
         "label": "country_option_85"
-      }, {
-        "value": "country_option_148",
-        "sequence": 148,
-        "label": "country_option_148"
-      }, {
+      }, {"value": "country_option_148", "sequence": 148, "label": "country_option_148"}, {
         "value": "country_option_18",
         "sequence": 18,
         "label": "country_option_18"
@@ -6114,55 +4847,35 @@ export default [{
         "value": "country_option_191",
         "sequence": 191,
         "label": "country_option_191"
-      }, {
-        "value": "country_option_104",
-        "sequence": 104,
-        "label": "country_option_104"
-      }, {
+      }, {"value": "country_option_104", "sequence": 104, "label": "country_option_104"}, {
         "value": "country_option_13",
         "sequence": 13,
         "label": "country_option_13"
-      }, {
-        "value": "country_option_233",
-        "sequence": 233,
-        "label": "country_option_233"
-      }, {
+      }, {"value": "country_option_233", "sequence": 233, "label": "country_option_233"}, {
         "value": "country_option_12",
         "sequence": 12,
         "label": "country_option_12"
-      }, {
-        "value": "country_option_140",
-        "sequence": 140,
-        "label": "country_option_140"
-      }, {
+      }, {"value": "country_option_140", "sequence": 140, "label": "country_option_140"}, {
         "value": "country_option_83",
         "sequence": 83,
         "label": "country_option_83"
-      }, {
-        "value": "country_option_133",
-        "sequence": 133,
-        "label": "country_option_133"
-      }, { "value": "country_option_32", "sequence": 32, "label": "country_option_32" }, {
-        "value": "country_option_11",
-        "sequence": 11,
-        "label": "country_option_11"
-      }, { "value": "country_option_39", "sequence": 39, "label": "country_option_39" }, {
-        "value": "country_option_55",
-        "sequence": 55,
-        "label": "country_option_55"
-      }, {
+      }, {"value": "country_option_133", "sequence": 133, "label": "country_option_133"}, {
+        "value": "country_option_32",
+        "sequence": 32,
+        "label": "country_option_32"
+      }, {"value": "country_option_11", "sequence": 11, "label": "country_option_11"}, {
+        "value": "country_option_39",
+        "sequence": 39,
+        "label": "country_option_39"
+      }, {"value": "country_option_55", "sequence": 55, "label": "country_option_55"}, {
         "value": "country_option_236",
         "sequence": 236,
         "label": "country_option_236"
-      }, { "value": "country_option_29", "sequence": 29, "label": "country_option_29" }, {
+      }, {"value": "country_option_29", "sequence": 29, "label": "country_option_29"}, {
         "value": "country_option_31",
         "sequence": 31,
         "label": "country_option_31"
-      }, {
-        "value": "country_option_14",
-        "sequence": 14,
-        "label": "country_option_14"
-      }, {
+      }, {"value": "country_option_14", "sequence": 14, "label": "country_option_14"}, {
         "value": "country_option_195",
         "sequence": 195,
         "label": "country_option_195"
@@ -6178,35 +4891,23 @@ export default [{
         "value": "country_option_214",
         "sequence": 214,
         "label": "country_option_214"
-      }, {
-        "value": "country_option_183",
-        "sequence": 183,
-        "label": "country_option_183"
-      }, { "value": "country_option_40", "sequence": 40, "label": "country_option_40" }, {
-        "value": "country_option_38",
-        "sequence": 38,
-        "label": "country_option_38"
-      }, { "value": "country_option_90", "sequence": 90, "label": "country_option_90" }, {
-        "value": "country_option_16",
-        "sequence": 16,
-        "label": "country_option_16"
-      }, {
+      }, {"value": "country_option_183", "sequence": 183, "label": "country_option_183"}, {
+        "value": "country_option_40",
+        "sequence": 40,
+        "label": "country_option_40"
+      }, {"value": "country_option_38", "sequence": 38, "label": "country_option_38"}, {
+        "value": "country_option_90",
+        "sequence": 90,
+        "label": "country_option_90"
+      }, {"value": "country_option_16", "sequence": 16, "label": "country_option_16"}, {
         "value": "country_option_26",
         "sequence": 26,
         "label": "country_option_26"
-      }, {
-        "value": "country_option_149",
-        "sequence": 149,
-        "label": "country_option_149"
-      }, {
+      }, {"value": "country_option_149", "sequence": 149, "label": "country_option_149"}, {
         "value": "country_option_70",
         "sequence": 70,
         "label": "country_option_70"
-      }, {
-        "value": "country_option_162",
-        "sequence": 162,
-        "label": "country_option_162"
-      }, {
+      }, {"value": "country_option_162", "sequence": 162, "label": "country_option_162"}, {
         "value": "country_option_51",
         "sequence": 51,
         "label": "country_option_51"
@@ -6214,23 +4915,15 @@ export default [{
         "value": "country_option_207",
         "sequence": 207,
         "label": "country_option_207"
-      }, {
-        "value": "country_option_184",
-        "sequence": 184,
-        "label": "country_option_184"
-      }, { "value": "country_option_8", "sequence": 8, "label": "country_option_8" }, {
-        "value": "country_option_52",
-        "sequence": 52,
-        "label": "country_option_52"
-      }, {
+      }, {"value": "country_option_184", "sequence": 184, "label": "country_option_184"}, {
+        "value": "country_option_8",
+        "sequence": 8,
+        "label": "country_option_8"
+      }, {"value": "country_option_52", "sequence": 52, "label": "country_option_52"}, {
         "value": "country_option_59",
         "sequence": 59,
         "label": "country_option_59"
-      }, {
-        "value": "country_option_200",
-        "sequence": 200,
-        "label": "country_option_200"
-      }, {
+      }, {"value": "country_option_200", "sequence": 200, "label": "country_option_200"}, {
         "value": "country_option_17",
         "sequence": 17,
         "label": "country_option_17"
@@ -6238,15 +4931,11 @@ export default [{
         "value": "country_option_120",
         "sequence": 120,
         "label": "country_option_120"
-      }, {
-        "value": "country_option_151",
-        "sequence": 151,
-        "label": "country_option_151"
-      }, { "value": "country_option_3", "sequence": 3, "label": "country_option_3" }, {
-        "value": "country_option_87",
-        "sequence": 87,
-        "label": "country_option_87"
-      }, {
+      }, {"value": "country_option_151", "sequence": 151, "label": "country_option_151"}, {
+        "value": "country_option_3",
+        "sequence": 3,
+        "label": "country_option_3"
+      }, {"value": "country_option_87", "sequence": 87, "label": "country_option_87"}, {
         "value": "country_option_157",
         "sequence": 157,
         "label": "country_option_157"
@@ -6270,19 +4959,11 @@ export default [{
         "value": "country_option_114",
         "sequence": 114,
         "label": "country_option_114"
-      }, {
-        "value": "country_option_128",
-        "sequence": 128,
-        "label": "country_option_128"
-      }, {
+      }, {"value": "country_option_128", "sequence": 128, "label": "country_option_128"}, {
         "value": "country_option_53",
         "sequence": 53,
         "label": "country_option_53"
-      }, {
-        "value": "country_option_125",
-        "sequence": 125,
-        "label": "country_option_125"
-      }, {
+      }, {"value": "country_option_125", "sequence": 125, "label": "country_option_125"}, {
         "value": "country_option_58",
         "sequence": 58,
         "label": "country_option_58"
@@ -6298,23 +4979,15 @@ export default [{
         "value": "country_option_219",
         "sequence": 219,
         "label": "country_option_219"
-      }, {
-        "value": "country_option_242",
-        "sequence": 242,
-        "label": "country_option_242"
-      }, {
+      }, {"value": "country_option_242", "sequence": 242, "label": "country_option_242"}, {
         "value": "country_option_96",
         "sequence": 96,
         "label": "country_option_96"
-      }, {
-        "value": "country_option_154",
-        "sequence": 154,
-        "label": "country_option_154"
-      }, { "value": "country_option_25", "sequence": 25, "label": "country_option_25" }, {
-        "value": "country_option_61",
-        "sequence": 61,
-        "label": "country_option_61"
-      }, {
+      }, {"value": "country_option_154", "sequence": 154, "label": "country_option_154"}, {
+        "value": "country_option_25",
+        "sequence": 25,
+        "label": "country_option_25"
+      }, {"value": "country_option_61", "sequence": 61, "label": "country_option_61"}, {
         "value": "country_option_82",
         "sequence": 82,
         "label": "country_option_82"
@@ -6342,11 +5015,7 @@ export default [{
         "value": "country_option_130",
         "sequence": 130,
         "label": "country_option_130"
-      }, {
-        "value": "country_option_178",
-        "sequence": 178,
-        "label": "country_option_178"
-      }, {
+      }, {"value": "country_option_178", "sequence": 178, "label": "country_option_178"}, {
         "value": "country_option_41",
         "sequence": 41,
         "label": "country_option_41"
@@ -6358,19 +5027,11 @@ export default [{
         "value": "country_option_206",
         "sequence": 206,
         "label": "country_option_206"
-      }, {
-        "value": "country_option_213",
-        "sequence": 213,
-        "label": "country_option_213"
-      }, {
+      }, {"value": "country_option_213", "sequence": 213, "label": "country_option_213"}, {
         "value": "country_option_35",
         "sequence": 35,
         "label": "country_option_35"
-      }, {
-        "value": "country_option_185",
-        "sequence": 185,
-        "label": "country_option_185"
-      }, {
+      }, {"value": "country_option_185", "sequence": 185, "label": "country_option_185"}, {
         "value": "country_option_89",
         "sequence": 89,
         "label": "country_option_89"
@@ -6382,23 +5043,15 @@ export default [{
         "value": "country_option_160",
         "sequence": 160,
         "label": "country_option_160"
-      }, {
-        "value": "country_option_117",
-        "sequence": 117,
-        "label": "country_option_117"
-      }, {
+      }, {"value": "country_option_117", "sequence": 117, "label": "country_option_117"}, {
         "value": "country_option_42",
         "sequence": 42,
         "label": "country_option_42"
-      }, {
-        "value": "country_option_243",
-        "sequence": 243,
-        "label": "country_option_243"
-      }, { "value": "country_option_68", "sequence": 68, "label": "country_option_68" }, {
-        "value": "country_option_64",
-        "sequence": 64,
-        "label": "country_option_64"
-      }, {
+      }, {"value": "country_option_243", "sequence": 243, "label": "country_option_243"}, {
+        "value": "country_option_68",
+        "sequence": 68,
+        "label": "country_option_68"
+      }, {"value": "country_option_64", "sequence": 64, "label": "country_option_64"}, {
         "value": "country_option_73",
         "sequence": 73,
         "label": "country_option_73"
@@ -6414,11 +5067,7 @@ export default [{
         "value": "country_option_102",
         "sequence": 102,
         "label": "country_option_102"
-      }, {
-        "value": "country_option_248",
-        "sequence": 248,
-        "label": "country_option_248"
-      }, {
+      }, {"value": "country_option_248", "sequence": 248, "label": "country_option_248"}, {
         "value": "country_option_72",
         "sequence": 72,
         "label": "country_option_72"
@@ -6434,11 +5083,7 @@ export default [{
         "value": "country_option_225",
         "sequence": 225,
         "label": "country_option_225"
-      }, {
-        "value": "country_option_112",
-        "sequence": 112,
-        "label": "country_option_112"
-      }, {
+      }, {"value": "country_option_112", "sequence": 112, "label": "country_option_112"}, {
         "value": "country_option_93",
         "sequence": 93,
         "label": "country_option_93"
@@ -6454,19 +5099,11 @@ export default [{
         "value": "country_option_235",
         "sequence": 235,
         "label": "country_option_235"
-      }, {
-        "value": "country_option_136",
-        "sequence": 136,
-        "label": "country_option_136"
-      }, {
+      }, {"value": "country_option_136", "sequence": 136, "label": "country_option_136"}, {
         "value": "country_option_34",
         "sequence": 34,
         "label": "country_option_34"
-      }, {
-        "value": "country_option_107",
-        "sequence": 107,
-        "label": "country_option_107"
-      }, {
+      }, {"value": "country_option_107", "sequence": 107, "label": "country_option_107"}, {
         "value": "country_option_20",
         "sequence": 20,
         "label": "country_option_20"
@@ -6482,15 +5119,11 @@ export default [{
         "value": "country_option_163",
         "sequence": 163,
         "label": "country_option_163"
-      }, {
-        "value": "country_option_190",
-        "sequence": 190,
-        "label": "country_option_190"
-      }, { "value": "country_option_79", "sequence": 79, "label": "country_option_79" }, {
-        "value": "country_option_19",
-        "sequence": 19,
-        "label": "country_option_19"
-      }, {
+      }, {"value": "country_option_190", "sequence": 190, "label": "country_option_190"}, {
+        "value": "country_option_79",
+        "sequence": 79,
+        "label": "country_option_79"
+      }, {"value": "country_option_19", "sequence": 19, "label": "country_option_19"}, {
         "value": "country_option_129",
         "sequence": 129,
         "label": "country_option_129"
@@ -6502,15 +5135,11 @@ export default [{
         "value": "country_option_220",
         "sequence": 220,
         "label": "country_option_220"
-      }, {
-        "value": "country_option_132",
-        "sequence": 132,
-        "label": "country_option_132"
-      }, { "value": "country_option_75", "sequence": 75, "label": "country_option_75" }, {
-        "value": "country_option_1",
-        "sequence": 1,
-        "label": "country_option_1"
-      }, {
+      }, {"value": "country_option_132", "sequence": 132, "label": "country_option_132"}, {
+        "value": "country_option_75",
+        "sequence": 75,
+        "label": "country_option_75"
+      }, {"value": "country_option_1", "sequence": 1, "label": "country_option_1"}, {
         "value": "country_option_208",
         "sequence": 208,
         "label": "country_option_208"
@@ -6526,15 +5155,11 @@ export default [{
         "value": "country_option_197",
         "sequence": 197,
         "label": "country_option_197"
-      }, {
-        "value": "country_option_122",
-        "sequence": 122,
-        "label": "country_option_122"
-      }, { "value": "country_option_98", "sequence": 98, "label": "country_option_98" }, {
-        "value": "country_option_97",
-        "sequence": 97,
-        "label": "country_option_97"
-      }, {
+      }, {"value": "country_option_122", "sequence": 122, "label": "country_option_122"}, {
+        "value": "country_option_98",
+        "sequence": 98,
+        "label": "country_option_98"
+      }, {"value": "country_option_97", "sequence": 97, "label": "country_option_97"}, {
         "value": "country_option_36",
         "sequence": 36,
         "label": "country_option_36"
@@ -6554,31 +5179,19 @@ export default [{
         "value": "country_option_150",
         "sequence": 150,
         "label": "country_option_150"
-      }, {
-        "value": "country_option_252",
-        "sequence": 252,
-        "label": "country_option_252"
-      }, { "value": "country_option_4", "sequence": 4, "label": "country_option_4" }, {
-        "value": "country_option_46",
-        "sequence": 46,
-        "label": "country_option_46"
-      }, {
+      }, {"value": "country_option_252", "sequence": 252, "label": "country_option_252"}, {
+        "value": "country_option_4",
+        "sequence": 4,
+        "label": "country_option_4"
+      }, {"value": "country_option_46", "sequence": 46, "label": "country_option_46"}, {
         "value": "country_option_204",
         "sequence": 204,
         "label": "country_option_204"
-      }, {
-        "value": "country_option_66",
-        "sequence": 66,
-        "label": "country_option_66"
-      }, {
+      }, {"value": "country_option_66", "sequence": 66, "label": "country_option_66"}, {
         "value": "country_option_229",
         "sequence": 229,
         "label": "country_option_229"
-      }, {
-        "value": "country_option_241",
-        "sequence": 241,
-        "label": "country_option_241"
-      }, {
+      }, {"value": "country_option_241", "sequence": 241, "label": "country_option_241"}, {
         "value": "country_option_22",
         "sequence": 22,
         "label": "country_option_22"
@@ -6598,23 +5211,15 @@ export default [{
         "value": "country_option_143",
         "sequence": 143,
         "label": "country_option_143"
-      }, {
-        "value": "country_option_174",
-        "sequence": 174,
-        "label": "country_option_174"
-      }, {
+      }, {"value": "country_option_174", "sequence": 174, "label": "country_option_174"}, {
         "value": "country_option_95",
         "sequence": 95,
         "label": "country_option_95"
-      }, {
-        "value": "country_option_141",
-        "sequence": 141,
-        "label": "country_option_141"
-      }, { "value": "country_option_60", "sequence": 60, "label": "country_option_60" }, {
-        "value": "country_option_56",
-        "sequence": 56,
-        "label": "country_option_56"
-      }, {
+      }, {"value": "country_option_141", "sequence": 141, "label": "country_option_141"}, {
+        "value": "country_option_60",
+        "sequence": 60,
+        "label": "country_option_60"
+      }, {"value": "country_option_56", "sequence": 56, "label": "country_option_56"}, {
         "value": "country_option_212",
         "sequence": 212,
         "label": "country_option_212"
@@ -6622,15 +5227,11 @@ export default [{
         "value": "country_option_146",
         "sequence": 146,
         "label": "country_option_146"
-      }, {
-        "value": "country_option_222",
-        "sequence": 222,
-        "label": "country_option_222"
-      }, { "value": "country_option_67", "sequence": 67, "label": "country_option_67" }, {
-        "value": "country_option_57",
-        "sequence": 57,
-        "label": "country_option_57"
-      }, {
+      }, {"value": "country_option_222", "sequence": 222, "label": "country_option_222"}, {
+        "value": "country_option_67",
+        "sequence": 67,
+        "label": "country_option_67"
+      }, {"value": "country_option_57", "sequence": 57, "label": "country_option_57"}, {
         "value": "country_option_10",
         "sequence": 10,
         "label": "country_option_10"
@@ -6646,15 +5247,11 @@ export default [{
         "value": "country_option_186",
         "sequence": 186,
         "label": "country_option_186"
-      }, {
-        "value": "country_option_198",
-        "sequence": 198,
-        "label": "country_option_198"
-      }, { "value": "country_option_44", "sequence": 44, "label": "country_option_44" }, {
-        "value": "country_option_81",
-        "sequence": 81,
-        "label": "country_option_81"
-      }, {
+      }, {"value": "country_option_198", "sequence": 198, "label": "country_option_198"}, {
+        "value": "country_option_44",
+        "sequence": 44,
+        "label": "country_option_44"
+      }, {"value": "country_option_81", "sequence": 81, "label": "country_option_81"}, {
         "value": "country_option_142",
         "sequence": 142,
         "label": "country_option_142"
@@ -6666,31 +5263,19 @@ export default [{
         "value": "country_option_159",
         "sequence": 159,
         "label": "country_option_159"
-      }, {
-        "value": "country_option_239",
-        "sequence": 239,
-        "label": "country_option_239"
-      }, { "value": "country_option_45", "sequence": 45, "label": "country_option_45" }, {
-        "value": "country_option_50",
-        "sequence": 50,
-        "label": "country_option_50"
-      }, {
+      }, {"value": "country_option_239", "sequence": 239, "label": "country_option_239"}, {
+        "value": "country_option_45",
+        "sequence": 45,
+        "label": "country_option_45"
+      }, {"value": "country_option_50", "sequence": 50, "label": "country_option_50"}, {
         "value": "country_option_189",
         "sequence": 189,
         "label": "country_option_189"
-      }, {
-        "value": "country_option_48",
-        "sequence": 48,
-        "label": "country_option_48"
-      }, {
+      }, {"value": "country_option_48", "sequence": 48, "label": "country_option_48"}, {
         "value": "country_option_126",
         "sequence": 126,
         "label": "country_option_126"
-      }, {
-        "value": "country_option_77",
-        "sequence": 77,
-        "label": "country_option_77"
-      }, {
+      }, {"value": "country_option_77", "sequence": 77, "label": "country_option_77"}, {
         "value": "country_option_123",
         "sequence": 123,
         "label": "country_option_123"
@@ -6750,31 +5335,23 @@ export default [{
         "value": "country_option_156",
         "sequence": 156,
         "label": "country_option_156"
+      }, {"value": "country_option_119", "sequence": 119, "label": "country_option_119"}, {
+        "value": "country_option_9",
+        "sequence": 9,
+        "label": "country_option_9"
       }, {
-        "value": "country_option_119",
-        "sequence": 119,
-        "label": "country_option_119"
-      }, { "value": "country_option_9", "sequence": 9, "label": "country_option_9" }, {
         "value": "country_option_251",
         "sequence": 251,
         "label": "country_option_251"
-      }, {
-        "value": "country_option_137",
-        "sequence": 137,
-        "label": "country_option_137"
-      }, {
+      }, {"value": "country_option_137", "sequence": 137, "label": "country_option_137"}, {
         "value": "country_option_65",
         "sequence": 65,
         "label": "country_option_65"
-      }, {
-        "value": "country_option_165",
-        "sequence": 165,
-        "label": "country_option_165"
-      }, { "value": "country_option_7", "sequence": 7, "label": "country_option_7" }, {
-        "value": "country_option_27",
-        "sequence": 27,
-        "label": "country_option_27"
-      }, {
+      }, {"value": "country_option_165", "sequence": 165, "label": "country_option_165"}, {
+        "value": "country_option_7",
+        "sequence": 7,
+        "label": "country_option_7"
+      }, {"value": "country_option_27", "sequence": 27, "label": "country_option_27"}, {
         "value": "country_option_171",
         "sequence": 171,
         "label": "country_option_171"
@@ -6790,11 +5367,7 @@ export default [{
         "value": "country_option_173",
         "sequence": 173,
         "label": "country_option_173"
-      }, {
-        "value": "country_option_237",
-        "sequence": 237,
-        "label": "country_option_237"
-      }, {
+      }, {"value": "country_option_237", "sequence": 237, "label": "country_option_237"}, {
         "value": "country_option_99",
         "sequence": 99,
         "label": "country_option_99"
@@ -6806,67 +5379,47 @@ export default [{
         "value": "country_option_201",
         "sequence": 201,
         "label": "country_option_201"
-      }, {
-        "value": "country_option_216",
-        "sequence": 216,
-        "label": "country_option_216"
-      }, { "value": "country_option_62", "sequence": 62, "label": "country_option_62" }, {
-        "value": "country_option_33",
-        "sequence": 33,
-        "label": "country_option_33"
-      }, { "value": "country_option_91", "sequence": 91, "label": "country_option_91" }, {
-        "value": "country_option_86",
-        "sequence": 86,
-        "label": "country_option_86"
-      }, {
+      }, {"value": "country_option_216", "sequence": 216, "label": "country_option_216"}, {
+        "value": "country_option_62",
+        "sequence": 62,
+        "label": "country_option_62"
+      }, {"value": "country_option_33", "sequence": 33, "label": "country_option_33"}, {
+        "value": "country_option_91",
+        "sequence": 91,
+        "label": "country_option_91"
+      }, {"value": "country_option_86", "sequence": 86, "label": "country_option_86"}, {
         "value": "country_option_211",
         "sequence": 211,
         "label": "country_option_211"
-      }, {
-        "value": "country_option_196",
-        "sequence": 196,
-        "label": "country_option_196"
-      }, { "value": "country_option_23", "sequence": 23, "label": "country_option_23" }, {
-        "value": "country_option_74",
-        "sequence": 74,
-        "label": "country_option_74"
-      }, {
+      }, {"value": "country_option_196", "sequence": 196, "label": "country_option_196"}, {
+        "value": "country_option_23",
+        "sequence": 23,
+        "label": "country_option_23"
+      }, {"value": "country_option_74", "sequence": 74, "label": "country_option_74"}, {
         "value": "country_option_232",
         "sequence": 232,
         "label": "country_option_232"
-      }, { "value": "country_option_37", "sequence": 37, "label": "country_option_37" }, {
+      }, {"value": "country_option_37", "sequence": 37, "label": "country_option_37"}, {
         "value": "country_option_78",
         "sequence": 78,
         "label": "country_option_78"
-      }, { "value": "country_option_69", "sequence": 69, "label": "country_option_69" }, {
+      }, {"value": "country_option_69", "sequence": 69, "label": "country_option_69"}, {
         "value": "country_option_54",
         "sequence": 54,
         "label": "country_option_54"
-      }, { "value": "country_option_94", "sequence": 94, "label": "country_option_94" }, {
+      }, {"value": "country_option_94", "sequence": 94, "label": "country_option_94"}, {
         "value": "country_option_21",
         "sequence": 21,
         "label": "country_option_21"
-      }, {
-        "value": "country_option_116",
-        "sequence": 116,
-        "label": "country_option_116"
-      }, {
+      }, {"value": "country_option_116", "sequence": 116, "label": "country_option_116"}, {
         "value": "country_option_88",
         "sequence": 88,
         "label": "country_option_88"
-      }, {
-        "value": "country_option_124",
-        "sequence": 124,
-        "label": "country_option_124"
-      }, {
+      }, {"value": "country_option_124", "sequence": 124, "label": "country_option_124"}, {
         "value": "country_option_71",
         "sequence": 71,
         "label": "country_option_71"
-      }, {
-        "value": "country_option_188",
-        "sequence": 188,
-        "label": "country_option_188"
-      }, {
+      }, {"value": "country_option_188", "sequence": 188, "label": "country_option_188"}, {
         "value": "country_option_76",
         "sequence": 76,
         "label": "country_option_76"
@@ -6882,19 +5435,15 @@ export default [{
         "value": "country_option_170",
         "sequence": 170,
         "label": "country_option_170"
-      }, {
-        "value": "country_option_106",
-        "sequence": 106,
-        "label": "country_option_106"
-      }, { "value": "country_option_49", "sequence": 49, "label": "country_option_49" }, {
-        "value": "country_option_28",
-        "sequence": 28,
-        "label": "country_option_28"
-      }, { "value": "country_option_63", "sequence": 63, "label": "country_option_63" }, {
-        "value": "country_option_47",
-        "sequence": 47,
-        "label": "country_option_47"
-      }, {
+      }, {"value": "country_option_106", "sequence": 106, "label": "country_option_106"}, {
+        "value": "country_option_49",
+        "sequence": 49,
+        "label": "country_option_49"
+      }, {"value": "country_option_28", "sequence": 28, "label": "country_option_28"}, {
+        "value": "country_option_63",
+        "sequence": 63,
+        "label": "country_option_63"
+      }, {"value": "country_option_47", "sequence": 47, "label": "country_option_47"}, {
         "value": "country_option_131",
         "sequence": 131,
         "label": "country_option_131"
@@ -6918,35 +5467,27 @@ export default [{
         "value": "country_option_218",
         "sequence": 218,
         "label": "country_option_218"
-      }, {
-        "value": "country_option_152",
-        "sequence": 152,
-        "label": "country_option_152"
-      }, { "value": "country_option_5", "sequence": 5, "label": "country_option_5" }, {
-        "value": "country_option_24",
-        "sequence": 24,
-        "label": "country_option_24"
-      }, {
+      }, {"value": "country_option_152", "sequence": 152, "label": "country_option_152"}, {
+        "value": "country_option_5",
+        "sequence": 5,
+        "label": "country_option_5"
+      }, {"value": "country_option_24", "sequence": 24, "label": "country_option_24"}, {
         "value": "country_option_15",
         "sequence": 15,
         "label": "country_option_15"
+      }, {"value": "country_option_175", "sequence": 175, "label": "country_option_175"}, {
+        "value": "country_option_2",
+        "sequence": 2,
+        "label": "country_option_2"
       }, {
-        "value": "country_option_175",
-        "sequence": 175,
-        "label": "country_option_175"
-      }, { "value": "country_option_2", "sequence": 2, "label": "country_option_2" }, {
         "value": "country_option_121",
         "sequence": 121,
         "label": "country_option_121"
-      }, {
-        "value": "country_option_203",
-        "sequence": 203,
-        "label": "country_option_203"
-      }, { "value": "country_option_84", "sequence": 84, "label": "country_option_84" }, {
-        "value": "country_option_80",
-        "sequence": 80,
-        "label": "country_option_80"
-      }, {
+      }, {"value": "country_option_203", "sequence": 203, "label": "country_option_203"}, {
+        "value": "country_option_84",
+        "sequence": 84,
+        "label": "country_option_84"
+      }, {"value": "country_option_80", "sequence": 80, "label": "country_option_80"}, {
         "value": "country_option_181",
         "sequence": 181,
         "label": "country_option_181"
@@ -6954,19 +5495,15 @@ export default [{
         "value": "country_option_224",
         "sequence": 224,
         "label": "country_option_224"
-      }, {
-        "value": "country_option_134",
-        "sequence": 134,
-        "label": "country_option_134"
-      }, { "value": "country_option_92", "sequence": 92, "label": "country_option_92" }, {
-        "value": "country_option_43",
-        "sequence": 43,
-        "label": "country_option_43"
-      }, { "value": "country_option_30", "sequence": 30, "label": "country_option_30" }, {
-        "value": "country_option_6",
-        "sequence": 6,
-        "label": "country_option_6"
-      }, {
+      }, {"value": "country_option_134", "sequence": 134, "label": "country_option_134"}, {
+        "value": "country_option_92",
+        "sequence": 92,
+        "label": "country_option_92"
+      }, {"value": "country_option_43", "sequence": 43, "label": "country_option_43"}, {
+        "value": "country_option_30",
+        "sequence": 30,
+        "label": "country_option_30"
+      }, {"value": "country_option_6", "sequence": 6, "label": "country_option_6"}, {
         "value": "country_option_221",
         "sequence": 221,
         "label": "country_option_221"
@@ -6974,7 +5511,7 @@ export default [{
         "value": "country_option_168",
         "sequence": 168,
         "label": "country_option_168"
-      }, { "value": "country_option_199", "sequence": 199, "label": "country_option_199" }],
+      }, {"value": "country_option_199", "sequence": 199, "label": "country_option_199"}],
       "label": "ch2_s2_field6_label",
       "fieldApi": "Citizenship__c",
       "description": "ch2_s2_field6_description"
@@ -6986,30 +5523,22 @@ export default [{
       }],
       "type": "drop_down",
       "sfFieldType": "Picklist",
-      "sequence": 22,
+      "sequence": 44,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field7Section_04_1",
       "listOfValues": [{
         "value": "country_option_31",
         "sequence": 31,
         "label": "country_option_31"
-      }, {
-        "value": "country_option_43",
-        "sequence": 43,
-        "label": "country_option_43"
-      }, {
+      }, {"value": "country_option_43", "sequence": 43, "label": "country_option_43"}, {
         "value": "country_option_205",
         "sequence": 205,
         "label": "country_option_205"
-      }, { "value": "country_option_56", "sequence": 56, "label": "country_option_56" }, {
+      }, {"value": "country_option_56", "sequence": 56, "label": "country_option_56"}, {
         "value": "country_option_68",
         "sequence": 68,
         "label": "country_option_68"
-      }, {
-        "value": "country_option_200",
-        "sequence": 200,
-        "label": "country_option_200"
-      }, {
+      }, {"value": "country_option_200", "sequence": 200, "label": "country_option_200"}, {
         "value": "country_option_25",
         "sequence": 25,
         "label": "country_option_25"
@@ -7045,15 +5574,11 @@ export default [{
         "value": "country_option_157",
         "sequence": 157,
         "label": "country_option_157"
-      }, {
-        "value": "country_option_185",
-        "sequence": 185,
-        "label": "country_option_185"
-      }, { "value": "country_option_38", "sequence": 38, "label": "country_option_38" }, {
-        "value": "country_option_59",
-        "sequence": 59,
-        "label": "country_option_59"
-      }, {
+      }, {"value": "country_option_185", "sequence": 185, "label": "country_option_185"}, {
+        "value": "country_option_38",
+        "sequence": 38,
+        "label": "country_option_38"
+      }, {"value": "country_option_59", "sequence": 59, "label": "country_option_59"}, {
         "value": "country_option_176",
         "sequence": 176,
         "label": "country_option_176"
@@ -7065,11 +5590,7 @@ export default [{
         "value": "country_option_195",
         "sequence": 195,
         "label": "country_option_195"
-      }, {
-        "value": "country_option_245",
-        "sequence": 245,
-        "label": "country_option_245"
-      }, {
+      }, {"value": "country_option_245", "sequence": 245, "label": "country_option_245"}, {
         "value": "country_option_84",
         "sequence": 84,
         "label": "country_option_84"
@@ -7077,27 +5598,19 @@ export default [{
         "value": "country_option_104",
         "sequence": 104,
         "label": "country_option_104"
-      }, {
-        "value": "country_option_210",
-        "sequence": 210,
-        "label": "country_option_210"
-      }, {
+      }, {"value": "country_option_210", "sequence": 210, "label": "country_option_210"}, {
         "value": "country_option_88",
         "sequence": 88,
         "label": "country_option_88"
-      }, {
-        "value": "country_option_208",
-        "sequence": 208,
-        "label": "country_option_208"
-      }, { "value": "country_option_78", "sequence": 78, "label": "country_option_78" }, {
-        "value": "country_option_94",
-        "sequence": 94,
-        "label": "country_option_94"
-      }, {
+      }, {"value": "country_option_208", "sequence": 208, "label": "country_option_208"}, {
+        "value": "country_option_78",
+        "sequence": 78,
+        "label": "country_option_78"
+      }, {"value": "country_option_94", "sequence": 94, "label": "country_option_94"}, {
         "value": "country_option_183",
         "sequence": 183,
         "label": "country_option_183"
-      }, { "value": "country_option_3", "sequence": 3, "label": "country_option_3" }, {
+      }, {"value": "country_option_3", "sequence": 3, "label": "country_option_3"}, {
         "value": "country_option_114",
         "sequence": 114,
         "label": "country_option_114"
@@ -7109,23 +5622,19 @@ export default [{
         "value": "country_option_123",
         "sequence": 123,
         "label": "country_option_123"
-      }, {
-        "value": "country_option_142",
-        "sequence": 142,
-        "label": "country_option_142"
-      }, { "value": "country_option_40", "sequence": 40, "label": "country_option_40" }, {
-        "value": "country_option_58",
-        "sequence": 58,
-        "label": "country_option_58"
-      }, {
+      }, {"value": "country_option_142", "sequence": 142, "label": "country_option_142"}, {
+        "value": "country_option_40",
+        "sequence": 40,
+        "label": "country_option_40"
+      }, {"value": "country_option_58", "sequence": 58, "label": "country_option_58"}, {
         "value": "country_option_169",
         "sequence": 169,
         "label": "country_option_169"
-      }, { "value": "country_option_53", "sequence": 53, "label": "country_option_53" }, {
+      }, {"value": "country_option_53", "sequence": 53, "label": "country_option_53"}, {
         "value": "country_option_41",
         "sequence": 41,
         "label": "country_option_41"
-      }, { "value": "country_option_5", "sequence": 5, "label": "country_option_5" }, {
+      }, {"value": "country_option_5", "sequence": 5, "label": "country_option_5"}, {
         "value": "country_option_174",
         "sequence": 174,
         "label": "country_option_174"
@@ -7145,31 +5654,19 @@ export default [{
         "value": "country_option_201",
         "sequence": 201,
         "label": "country_option_201"
-      }, {
-        "value": "country_option_248",
-        "sequence": 248,
-        "label": "country_option_248"
-      }, {
+      }, {"value": "country_option_248", "sequence": 248, "label": "country_option_248"}, {
         "value": "country_option_16",
         "sequence": 16,
         "label": "country_option_16"
-      }, {
-        "value": "country_option_154",
-        "sequence": 154,
-        "label": "country_option_154"
-      }, { "value": "country_option_93", "sequence": 93, "label": "country_option_93" }, {
-        "value": "country_option_47",
-        "sequence": 47,
-        "label": "country_option_47"
-      }, {
+      }, {"value": "country_option_154", "sequence": 154, "label": "country_option_154"}, {
+        "value": "country_option_93",
+        "sequence": 93,
+        "label": "country_option_93"
+      }, {"value": "country_option_47", "sequence": 47, "label": "country_option_47"}, {
         "value": "country_option_170",
         "sequence": 170,
         "label": "country_option_170"
-      }, {
-        "value": "country_option_159",
-        "sequence": 159,
-        "label": "country_option_159"
-      }, {
+      }, {"value": "country_option_159", "sequence": 159, "label": "country_option_159"}, {
         "value": "country_option_86",
         "sequence": 86,
         "label": "country_option_86"
@@ -7177,43 +5674,27 @@ export default [{
         "value": "country_option_168",
         "sequence": 168,
         "label": "country_option_168"
-      }, {
-        "value": "country_option_217",
-        "sequence": 217,
-        "label": "country_option_217"
-      }, { "value": "country_option_24", "sequence": 24, "label": "country_option_24" }, {
-        "value": "country_option_22",
-        "sequence": 22,
-        "label": "country_option_22"
-      }, {
+      }, {"value": "country_option_217", "sequence": 217, "label": "country_option_217"}, {
+        "value": "country_option_24",
+        "sequence": 24,
+        "label": "country_option_24"
+      }, {"value": "country_option_22", "sequence": 22, "label": "country_option_22"}, {
         "value": "country_option_72",
         "sequence": 72,
         "label": "country_option_72"
-      }, {
-        "value": "country_option_145",
-        "sequence": 145,
-        "label": "country_option_145"
-      }, {
+      }, {"value": "country_option_145", "sequence": 145, "label": "country_option_145"}, {
         "value": "country_option_29",
         "sequence": 29,
         "label": "country_option_29"
-      }, {
-        "value": "country_option_165",
-        "sequence": 165,
-        "label": "country_option_165"
-      }, { "value": "country_option_46", "sequence": 46, "label": "country_option_46" }, {
-        "value": "country_option_35",
-        "sequence": 35,
-        "label": "country_option_35"
-      }, {
+      }, {"value": "country_option_165", "sequence": 165, "label": "country_option_165"}, {
+        "value": "country_option_46",
+        "sequence": 46,
+        "label": "country_option_46"
+      }, {"value": "country_option_35", "sequence": 35, "label": "country_option_35"}, {
         "value": "country_option_143",
         "sequence": 143,
         "label": "country_option_143"
-      }, {
-        "value": "country_option_62",
-        "sequence": 62,
-        "label": "country_option_62"
-      }, {
+      }, {"value": "country_option_62", "sequence": 62, "label": "country_option_62"}, {
         "value": "country_option_251",
         "sequence": 251,
         "label": "country_option_251"
@@ -7221,43 +5702,31 @@ export default [{
         "value": "country_option_214",
         "sequence": 214,
         "label": "country_option_214"
+      }, {"value": "country_option_133", "sequence": 133, "label": "country_option_133"}, {
+        "value": "country_option_8",
+        "sequence": 8,
+        "label": "country_option_8"
       }, {
-        "value": "country_option_133",
-        "sequence": 133,
-        "label": "country_option_133"
-      }, { "value": "country_option_8", "sequence": 8, "label": "country_option_8" }, {
         "value": "country_option_246",
         "sequence": 246,
         "label": "country_option_246"
-      }, {
-        "value": "country_option_212",
-        "sequence": 212,
-        "label": "country_option_212"
-      }, { "value": "country_option_70", "sequence": 70, "label": "country_option_70" }, {
-        "value": "country_option_80",
-        "sequence": 80,
-        "label": "country_option_80"
-      }, { "value": "country_option_20", "sequence": 20, "label": "country_option_20" }, {
-        "value": "country_option_65",
-        "sequence": 65,
-        "label": "country_option_65"
-      }, {
+      }, {"value": "country_option_212", "sequence": 212, "label": "country_option_212"}, {
+        "value": "country_option_70",
+        "sequence": 70,
+        "label": "country_option_70"
+      }, {"value": "country_option_80", "sequence": 80, "label": "country_option_80"}, {
+        "value": "country_option_20",
+        "sequence": 20,
+        "label": "country_option_20"
+      }, {"value": "country_option_65", "sequence": 65, "label": "country_option_65"}, {
         "value": "country_option_103",
         "sequence": 103,
         "label": "country_option_103"
-      }, {
-        "value": "country_option_18",
-        "sequence": 18,
-        "label": "country_option_18"
-      }, {
+      }, {"value": "country_option_18", "sequence": 18, "label": "country_option_18"}, {
         "value": "country_option_137",
         "sequence": 137,
         "label": "country_option_137"
-      }, {
-        "value": "country_option_12",
-        "sequence": 12,
-        "label": "country_option_12"
-      }, {
+      }, {"value": "country_option_12", "sequence": 12, "label": "country_option_12"}, {
         "value": "country_option_229",
         "sequence": 229,
         "label": "country_option_229"
@@ -7269,15 +5738,11 @@ export default [{
         "value": "country_option_120",
         "sequence": 120,
         "label": "country_option_120"
-      }, {
-        "value": "country_option_107",
-        "sequence": 107,
-        "label": "country_option_107"
-      }, { "value": "country_option_87", "sequence": 87, "label": "country_option_87" }, {
-        "value": "country_option_67",
-        "sequence": 67,
-        "label": "country_option_67"
-      }, {
+      }, {"value": "country_option_107", "sequence": 107, "label": "country_option_107"}, {
+        "value": "country_option_87",
+        "sequence": 87,
+        "label": "country_option_87"
+      }, {"value": "country_option_67", "sequence": 67, "label": "country_option_67"}, {
         "value": "country_option_73",
         "sequence": 73,
         "label": "country_option_73"
@@ -7309,11 +5774,7 @@ export default [{
         "value": "country_option_237",
         "sequence": 237,
         "label": "country_option_237"
-      }, {
-        "value": "country_option_117",
-        "sequence": 117,
-        "label": "country_option_117"
-      }, {
+      }, {"value": "country_option_117", "sequence": 117, "label": "country_option_117"}, {
         "value": "country_option_48",
         "sequence": 48,
         "label": "country_option_48"
@@ -7321,23 +5782,15 @@ export default [{
         "value": "country_option_155",
         "sequence": 155,
         "label": "country_option_155"
-      }, {
-        "value": "country_option_166",
-        "sequence": 166,
-        "label": "country_option_166"
-      }, {
+      }, {"value": "country_option_166", "sequence": 166, "label": "country_option_166"}, {
         "value": "country_option_52",
         "sequence": 52,
         "label": "country_option_52"
-      }, {
-        "value": "country_option_239",
-        "sequence": 239,
-        "label": "country_option_239"
-      }, { "value": "country_option_21", "sequence": 21, "label": "country_option_21" }, {
-        "value": "country_option_7",
-        "sequence": 7,
-        "label": "country_option_7"
-      }, {
+      }, {"value": "country_option_239", "sequence": 239, "label": "country_option_239"}, {
+        "value": "country_option_21",
+        "sequence": 21,
+        "label": "country_option_21"
+      }, {"value": "country_option_7", "sequence": 7, "label": "country_option_7"}, {
         "value": "country_option_19",
         "sequence": 19,
         "label": "country_option_19"
@@ -7389,11 +5842,7 @@ export default [{
         "value": "country_option_227",
         "sequence": 227,
         "label": "country_option_227"
-      }, {
-        "value": "country_option_151",
-        "sequence": 151,
-        "label": "country_option_151"
-      }, {
+      }, {"value": "country_option_151", "sequence": 151, "label": "country_option_151"}, {
         "value": "country_option_85",
         "sequence": 85,
         "label": "country_option_85"
@@ -7405,19 +5854,11 @@ export default [{
         "value": "country_option_161",
         "sequence": 161,
         "label": "country_option_161"
-      }, {
-        "value": "country_option_218",
-        "sequence": 218,
-        "label": "country_option_218"
-      }, {
+      }, {"value": "country_option_218", "sequence": 218, "label": "country_option_218"}, {
         "value": "country_option_75",
         "sequence": 75,
         "label": "country_option_75"
-      }, {
-        "value": "country_option_167",
-        "sequence": 167,
-        "label": "country_option_167"
-      }, {
+      }, {"value": "country_option_167", "sequence": 167, "label": "country_option_167"}, {
         "value": "country_option_74",
         "sequence": 74,
         "label": "country_option_74"
@@ -7457,15 +5898,11 @@ export default [{
         "value": "country_option_163",
         "sequence": 163,
         "label": "country_option_163"
-      }, {
-        "value": "country_option_148",
-        "sequence": 148,
-        "label": "country_option_148"
-      }, { "value": "country_option_76", "sequence": 76, "label": "country_option_76" }, {
-        "value": "country_option_54",
-        "sequence": 54,
-        "label": "country_option_54"
-      }, {
+      }, {"value": "country_option_148", "sequence": 148, "label": "country_option_148"}, {
+        "value": "country_option_76",
+        "sequence": 76,
+        "label": "country_option_76"
+      }, {"value": "country_option_54", "sequence": 54, "label": "country_option_54"}, {
         "value": "country_option_146",
         "sequence": 146,
         "label": "country_option_146"
@@ -7473,31 +5910,19 @@ export default [{
         "value": "country_option_241",
         "sequence": 241,
         "label": "country_option_241"
-      }, {
-        "value": "country_option_162",
-        "sequence": 162,
-        "label": "country_option_162"
-      }, {
+      }, {"value": "country_option_162", "sequence": 162, "label": "country_option_162"}, {
         "value": "country_option_61",
         "sequence": 61,
         "label": "country_option_61"
-      }, {
-        "value": "country_option_225",
-        "sequence": 225,
-        "label": "country_option_225"
-      }, { "value": "country_option_26", "sequence": 26, "label": "country_option_26" }, {
-        "value": "country_option_71",
-        "sequence": 71,
-        "label": "country_option_71"
-      }, {
+      }, {"value": "country_option_225", "sequence": 225, "label": "country_option_225"}, {
+        "value": "country_option_26",
+        "sequence": 26,
+        "label": "country_option_26"
+      }, {"value": "country_option_71", "sequence": 71, "label": "country_option_71"}, {
         "value": "country_option_138",
         "sequence": 138,
         "label": "country_option_138"
-      }, {
-        "value": "country_option_222",
-        "sequence": 222,
-        "label": "country_option_222"
-      }, {
+      }, {"value": "country_option_222", "sequence": 222, "label": "country_option_222"}, {
         "value": "country_option_57",
         "sequence": 57,
         "label": "country_option_57"
@@ -7505,11 +5930,7 @@ export default [{
         "value": "country_option_209",
         "sequence": 209,
         "label": "country_option_209"
-      }, {
-        "value": "country_option_179",
-        "sequence": 179,
-        "label": "country_option_179"
-      }, {
+      }, {"value": "country_option_179", "sequence": 179, "label": "country_option_179"}, {
         "value": "country_option_66",
         "sequence": 66,
         "label": "country_option_66"
@@ -7525,27 +5946,19 @@ export default [{
         "value": "country_option_194",
         "sequence": 194,
         "label": "country_option_194"
-      }, {
-        "value": "country_option_132",
-        "sequence": 132,
-        "label": "country_option_132"
-      }, { "value": "country_option_96", "sequence": 96, "label": "country_option_96" }, {
-        "value": "country_option_95",
-        "sequence": 95,
-        "label": "country_option_95"
-      }, {
+      }, {"value": "country_option_132", "sequence": 132, "label": "country_option_132"}, {
+        "value": "country_option_96",
+        "sequence": 96,
+        "label": "country_option_96"
+      }, {"value": "country_option_95", "sequence": 95, "label": "country_option_95"}, {
         "value": "country_option_99",
         "sequence": 99,
         "label": "country_option_99"
-      }, {
-        "value": "country_option_101",
-        "sequence": 101,
-        "label": "country_option_101"
-      }, { "value": "country_option_91", "sequence": 91, "label": "country_option_91" }, {
-        "value": "country_option_49",
-        "sequence": 49,
-        "label": "country_option_49"
-      }, {
+      }, {"value": "country_option_101", "sequence": 101, "label": "country_option_101"}, {
+        "value": "country_option_91",
+        "sequence": 91,
+        "label": "country_option_91"
+      }, {"value": "country_option_49", "sequence": 49, "label": "country_option_49"}, {
         "value": "country_option_226",
         "sequence": 226,
         "label": "country_option_226"
@@ -7553,23 +5966,15 @@ export default [{
         "value": "country_option_242",
         "sequence": 242,
         "label": "country_option_242"
-      }, {
-        "value": "country_option_139",
-        "sequence": 139,
-        "label": "country_option_139"
-      }, {
+      }, {"value": "country_option_139", "sequence": 139, "label": "country_option_139"}, {
         "value": "country_option_79",
         "sequence": 79,
         "label": "country_option_79"
-      }, {
-        "value": "country_option_228",
-        "sequence": 228,
-        "label": "country_option_228"
-      }, { "value": "country_option_83", "sequence": 83, "label": "country_option_83" }, {
-        "value": "country_option_6",
-        "sequence": 6,
-        "label": "country_option_6"
-      }, {
+      }, {"value": "country_option_228", "sequence": 228, "label": "country_option_228"}, {
+        "value": "country_option_83",
+        "sequence": 83,
+        "label": "country_option_83"
+      }, {"value": "country_option_6", "sequence": 6, "label": "country_option_6"}, {
         "value": "country_option_81",
         "sequence": 81,
         "label": "country_option_81"
@@ -7577,27 +5982,19 @@ export default [{
         "value": "country_option_122",
         "sequence": 122,
         "label": "country_option_122"
-      }, {
-        "value": "country_option_221",
-        "sequence": 221,
-        "label": "country_option_221"
-      }, {
+      }, {"value": "country_option_221", "sequence": 221, "label": "country_option_221"}, {
         "value": "country_option_45",
         "sequence": 45,
         "label": "country_option_45"
-      }, {
-        "value": "country_option_136",
-        "sequence": 136,
-        "label": "country_option_136"
-      }, { "value": "country_option_27", "sequence": 27, "label": "country_option_27" }, {
-        "value": "country_option_13",
-        "sequence": 13,
-        "label": "country_option_13"
-      }, { "value": "country_option_34", "sequence": 34, "label": "country_option_34" }, {
-        "value": "country_option_92",
-        "sequence": 92,
-        "label": "country_option_92"
-      }, {
+      }, {"value": "country_option_136", "sequence": 136, "label": "country_option_136"}, {
+        "value": "country_option_27",
+        "sequence": 27,
+        "label": "country_option_27"
+      }, {"value": "country_option_13", "sequence": 13, "label": "country_option_13"}, {
+        "value": "country_option_34",
+        "sequence": 34,
+        "label": "country_option_34"
+      }, {"value": "country_option_92", "sequence": 92, "label": "country_option_92"}, {
         "value": "country_option_30",
         "sequence": 30,
         "label": "country_option_30"
@@ -7605,15 +6002,11 @@ export default [{
         "value": "country_option_240",
         "sequence": 240,
         "label": "country_option_240"
-      }, {
-        "value": "country_option_131",
-        "sequence": 131,
-        "label": "country_option_131"
-      }, { "value": "country_option_97", "sequence": 97, "label": "country_option_97" }, {
-        "value": "country_option_11",
-        "sequence": 11,
-        "label": "country_option_11"
-      }, {
+      }, {"value": "country_option_131", "sequence": 131, "label": "country_option_131"}, {
+        "value": "country_option_97",
+        "sequence": 97,
+        "label": "country_option_97"
+      }, {"value": "country_option_11", "sequence": 11, "label": "country_option_11"}, {
         "value": "country_option_173",
         "sequence": 173,
         "label": "country_option_173"
@@ -7621,23 +6014,15 @@ export default [{
         "value": "country_option_199",
         "sequence": 199,
         "label": "country_option_199"
-      }, {
-        "value": "country_option_126",
-        "sequence": 126,
-        "label": "country_option_126"
-      }, { "value": "country_option_1", "sequence": 1, "label": "country_option_1" }, {
-        "value": "country_option_2",
-        "sequence": 2,
-        "label": "country_option_2"
-      }, {
+      }, {"value": "country_option_126", "sequence": 126, "label": "country_option_126"}, {
+        "value": "country_option_1",
+        "sequence": 1,
+        "label": "country_option_1"
+      }, {"value": "country_option_2", "sequence": 2, "label": "country_option_2"}, {
         "value": "country_option_127",
         "sequence": 127,
         "label": "country_option_127"
-      }, {
-        "value": "country_option_15",
-        "sequence": 15,
-        "label": "country_option_15"
-      }, {
+      }, {"value": "country_option_15", "sequence": 15, "label": "country_option_15"}, {
         "value": "country_option_252",
         "sequence": 252,
         "label": "country_option_252"
@@ -7645,31 +6030,19 @@ export default [{
         "value": "country_option_113",
         "sequence": 113,
         "label": "country_option_113"
-      }, {
-        "value": "country_option_178",
-        "sequence": 178,
-        "label": "country_option_178"
-      }, { "value": "country_option_60", "sequence": 60, "label": "country_option_60" }, {
-        "value": "country_option_50",
-        "sequence": 50,
-        "label": "country_option_50"
-      }, {
+      }, {"value": "country_option_178", "sequence": 178, "label": "country_option_178"}, {
+        "value": "country_option_60",
+        "sequence": 60,
+        "label": "country_option_60"
+      }, {"value": "country_option_50", "sequence": 50, "label": "country_option_50"}, {
         "value": "country_option_202",
         "sequence": 202,
         "label": "country_option_202"
-      }, {
-        "value": "country_option_244",
-        "sequence": 244,
-        "label": "country_option_244"
-      }, {
+      }, {"value": "country_option_244", "sequence": 244, "label": "country_option_244"}, {
         "value": "country_option_36",
         "sequence": 36,
         "label": "country_option_36"
-      }, {
-        "value": "country_option_118",
-        "sequence": 118,
-        "label": "country_option_118"
-      }, {
+      }, {"value": "country_option_118", "sequence": 118, "label": "country_option_118"}, {
         "value": "country_option_90",
         "sequence": 90,
         "label": "country_option_90"
@@ -7681,23 +6054,15 @@ export default [{
         "value": "country_option_147",
         "sequence": 147,
         "label": "country_option_147"
-      }, {
-        "value": "country_option_172",
-        "sequence": 172,
-        "label": "country_option_172"
-      }, { "value": "country_option_63", "sequence": 63, "label": "country_option_63" }, {
-        "value": "country_option_64",
-        "sequence": 64,
-        "label": "country_option_64"
-      }, {
+      }, {"value": "country_option_172", "sequence": 172, "label": "country_option_172"}, {
+        "value": "country_option_63",
+        "sequence": 63,
+        "label": "country_option_63"
+      }, {"value": "country_option_64", "sequence": 64, "label": "country_option_64"}, {
         "value": "country_option_233",
         "sequence": 233,
         "label": "country_option_233"
-      }, {
-        "value": "country_option_232",
-        "sequence": 232,
-        "label": "country_option_232"
-      }, {
+      }, {"value": "country_option_232", "sequence": 232, "label": "country_option_232"}, {
         "value": "country_option_42",
         "sequence": 42,
         "label": "country_option_42"
@@ -7709,11 +6074,7 @@ export default [{
         "value": "country_option_129",
         "sequence": 129,
         "label": "country_option_129"
-      }, {
-        "value": "country_option_216",
-        "sequence": 216,
-        "label": "country_option_216"
-      }, {
+      }, {"value": "country_option_216", "sequence": 216, "label": "country_option_216"}, {
         "value": "country_option_39",
         "sequence": 39,
         "label": "country_option_39"
@@ -7725,23 +6086,15 @@ export default [{
         "value": "country_option_203",
         "sequence": 203,
         "label": "country_option_203"
-      }, {
-        "value": "country_option_115",
-        "sequence": 115,
-        "label": "country_option_115"
-      }, { "value": "country_option_51", "sequence": 51, "label": "country_option_51" }, {
-        "value": "country_option_77",
-        "sequence": 77,
-        "label": "country_option_77"
-      }, {
+      }, {"value": "country_option_115", "sequence": 115, "label": "country_option_115"}, {
+        "value": "country_option_51",
+        "sequence": 51,
+        "label": "country_option_51"
+      }, {"value": "country_option_77", "sequence": 77, "label": "country_option_77"}, {
         "value": "country_option_188",
         "sequence": 188,
         "label": "country_option_188"
-      }, {
-        "value": "country_option_119",
-        "sequence": 119,
-        "label": "country_option_119"
-      }, {
+      }, {"value": "country_option_119", "sequence": 119, "label": "country_option_119"}, {
         "value": "country_option_44",
         "sequence": 44,
         "label": "country_option_44"
@@ -7757,43 +6110,31 @@ export default [{
         "value": "country_option_197",
         "sequence": 197,
         "label": "country_option_197"
-      }, {
-        "value": "country_option_149",
-        "sequence": 149,
-        "label": "country_option_149"
-      }, { "value": "country_option_4", "sequence": 4, "label": "country_option_4" }, {
-        "value": "country_option_14",
-        "sequence": 14,
-        "label": "country_option_14"
-      }, {
+      }, {"value": "country_option_149", "sequence": 149, "label": "country_option_149"}, {
+        "value": "country_option_4",
+        "sequence": 4,
+        "label": "country_option_4"
+      }, {"value": "country_option_14", "sequence": 14, "label": "country_option_14"}, {
         "value": "country_option_192",
         "sequence": 192,
         "label": "country_option_192"
-      }, { "value": "country_option_55", "sequence": 55, "label": "country_option_55" }, {
+      }, {"value": "country_option_55", "sequence": 55, "label": "country_option_55"}, {
         "value": "country_option_37",
         "sequence": 37,
         "label": "country_option_37"
-      }, { "value": "country_option_33", "sequence": 33, "label": "country_option_33" }, {
+      }, {"value": "country_option_33", "sequence": 33, "label": "country_option_33"}, {
         "value": "country_option_28",
         "sequence": 28,
         "label": "country_option_28"
-      }, {
-        "value": "country_option_177",
-        "sequence": 177,
-        "label": "country_option_177"
-      }, { "value": "country_option_98", "sequence": 98, "label": "country_option_98" }, {
-        "value": "country_option_69",
-        "sequence": 69,
-        "label": "country_option_69"
-      }, {
+      }, {"value": "country_option_177", "sequence": 177, "label": "country_option_177"}, {
+        "value": "country_option_98",
+        "sequence": 98,
+        "label": "country_option_98"
+      }, {"value": "country_option_69", "sequence": 69, "label": "country_option_69"}, {
         "value": "country_option_135",
         "sequence": 135,
         "label": "country_option_135"
-      }, {
-        "value": "country_option_207",
-        "sequence": 207,
-        "label": "country_option_207"
-      }, {
+      }, {"value": "country_option_207", "sequence": 207, "label": "country_option_207"}, {
         "value": "country_option_82",
         "sequence": 82,
         "label": "country_option_82"
@@ -7801,11 +6142,7 @@ export default [{
         "value": "country_option_110",
         "sequence": 110,
         "label": "country_option_110"
-      }, {
-        "value": "country_option_128",
-        "sequence": 128,
-        "label": "country_option_128"
-      }, {
+      }, {"value": "country_option_128", "sequence": 128, "label": "country_option_128"}, {
         "value": "country_option_17",
         "sequence": 17,
         "label": "country_option_17"
@@ -7813,15 +6150,11 @@ export default [{
         "value": "country_option_102",
         "sequence": 102,
         "label": "country_option_102"
-      }, {
-        "value": "country_option_213",
-        "sequence": 213,
-        "label": "country_option_213"
-      }, { "value": "country_option_9", "sequence": 9, "label": "country_option_9" }, {
-        "value": "country_option_10",
-        "sequence": 10,
-        "label": "country_option_10"
-      }, {
+      }, {"value": "country_option_213", "sequence": 213, "label": "country_option_213"}, {
+        "value": "country_option_9",
+        "sequence": 9,
+        "label": "country_option_9"
+      }, {"value": "country_option_10", "sequence": 10, "label": "country_option_10"}, {
         "value": "country_option_32",
         "sequence": 32,
         "label": "country_option_32"
@@ -7845,19 +6178,11 @@ export default [{
         "value": "country_option_235",
         "sequence": 235,
         "label": "country_option_235"
-      }, {
-        "value": "country_option_108",
-        "sequence": 108,
-        "label": "country_option_108"
-      }, {
+      }, {"value": "country_option_108", "sequence": 108, "label": "country_option_108"}, {
         "value": "country_option_23",
         "sequence": 23,
         "label": "country_option_23"
-      }, {
-        "value": "country_option_230",
-        "sequence": 230,
-        "label": "country_option_230"
-      }, {
+      }, {"value": "country_option_230", "sequence": 230, "label": "country_option_230"}, {
         "value": "country_option_89",
         "sequence": 89,
         "label": "country_option_89"
@@ -7865,7 +6190,7 @@ export default [{
         "value": "country_option_215",
         "sequence": 215,
         "label": "country_option_215"
-      }, { "value": "country_option_193", "sequence": 193, "label": "country_option_193" }],
+      }, {"value": "country_option_193", "sequence": 193, "label": "country_option_193"}],
       "label": "ch2_s2_field7_label",
       "fieldApi": "Country_of_Residence__c",
       "description": "ch2_s2_field7_description"
@@ -7877,7 +6202,7 @@ export default [{
       }],
       "type": "boxed_checkbox",
       "sfFieldType": "Checkbox",
-      "sequence": 23,
+      "sequence": 45,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field8Section_04_1",
       "label": "ch2_s2_field8_label",
@@ -7890,7 +6215,7 @@ export default [{
         "required": false
       }],
       "type": "boxed_checkbox",
-      "sequence": 24,
+      "sequence": 46,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field9Section_04_1",
       "label": "ch2_s2_field9_label",
@@ -7901,19 +6226,16 @@ export default [{
   }, {
     "type": "Conditional",
     "title": "ch_2_sec_6_title",
-    "serverValues": [{
-      "fieldValue": "",
-      "fieldCode": "ch1_s1_field1Section_04_2"
-    }, { "fieldCode": "ch1_s1_field2Section_04_2" }, { "fieldCode": "ch1_s1_field3Section_04_2" }, { "fieldCode": "ch2_s2_field4Section_04_2" }, {
-      "fieldValue": "",
-      "fieldCode": "ch2_s2_field5Section_04_2"
-    }, { "fieldValue": "", "fieldCode": "ch2_s2_field6Section_04_2" }, {
-      "fieldValue": "",
-      "fieldCode": "ch2_s2_field7Section_04_2"
-    }, { "fieldValue": "false", "fieldCode": "ch2_s2_field8Section_04_2" }],
+    "serverValues": [{"fieldCode": "ch1_s1_field1Section_04_2"}, {"fieldCode": "ch1_s1_field2Section_04_2"}, {"fieldCode": "ch1_s1_field3Section_04_2"}, {"fieldCode": "ch2_s2_field4Section_04_2"}, {"fieldCode": "ch2_s2_field5Section_04_2"}, {"fieldCode": "ch2_s2_field6Section_04_2"}, {"fieldCode": "ch2_s2_field7Section_04_2"}, {"fieldCode": "ch2_s2_field8Section_04_2"}],
     "sequence": 7,
     "name": "Section_04_2",
     "fields": [{
+      "type": "title",
+      "sfFieldType": "Text",
+      "sequence": 47,
+      "name": "nullSection_04_2",
+      "label": "ch_2_sec_6_title"
+    }, {
       "validationRules": [{
         "validationError": "ch1_s1_field1_ValidErr",
         "requiredError": "ch1_s1_field1_ReqErr",
@@ -7921,14 +6243,14 @@ export default [{
       }],
       "type": "horizontal_radio_btns",
       "sfFieldType": "Picklist",
-      "sequence": 16,
+      "sequence": 48,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch1_s1_field1Section_04_2",
       "listOfValues": [{
         "value": "title_option_2",
         "sequence": 2,
         "label": "title_option_2"
-      }, { "value": "title_option_1", "sequence": 1, "label": "title_option_1" }],
+      }, {"value": "title_option_1", "sequence": 1, "label": "title_option_1"}],
       "label": "ch1_s1_field1_label",
       "fieldApi": "Title__c",
       "description": "ch1_s1_field1_description"
@@ -7941,7 +6263,7 @@ export default [{
       }],
       "type": "text",
       "sfFieldType": "Text",
-      "sequence": 17,
+      "sequence": 49,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch1_s1_field2Section_04_2",
       "label": "ch1_s1_field2_label",
@@ -7956,7 +6278,7 @@ export default [{
       }],
       "type": "text",
       "sfFieldType": "Text",
-      "sequence": 18,
+      "sequence": 50,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch1_s1_field3Section_04_2",
       "label": "ch1_s1_field3_label",
@@ -7971,7 +6293,7 @@ export default [{
       }],
       "type": "text",
       "sfFieldType": "Text",
-      "sequence": 19,
+      "sequence": 51,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field4Section_04_2",
       "label": "ch2_s2_field4_label",
@@ -7985,7 +6307,7 @@ export default [{
       }],
       "type": "date",
       "sfFieldType": "Date",
-      "sequence": 20,
+      "sequence": 52,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field5Section_04_2",
       "label": "ch2_s2_field5_label",
@@ -7999,18 +6321,14 @@ export default [{
       }],
       "type": "drop_down",
       "sfFieldType": "Picklist",
-      "sequence": 21,
+      "sequence": 53,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field6Section_04_2",
       "listOfValues": [{
         "value": "country_option_85",
         "sequence": 85,
         "label": "country_option_85"
-      }, {
-        "value": "country_option_148",
-        "sequence": 148,
-        "label": "country_option_148"
-      }, {
+      }, {"value": "country_option_148", "sequence": 148, "label": "country_option_148"}, {
         "value": "country_option_18",
         "sequence": 18,
         "label": "country_option_18"
@@ -8018,55 +6336,35 @@ export default [{
         "value": "country_option_191",
         "sequence": 191,
         "label": "country_option_191"
-      }, {
-        "value": "country_option_104",
-        "sequence": 104,
-        "label": "country_option_104"
-      }, {
+      }, {"value": "country_option_104", "sequence": 104, "label": "country_option_104"}, {
         "value": "country_option_13",
         "sequence": 13,
         "label": "country_option_13"
-      }, {
-        "value": "country_option_233",
-        "sequence": 233,
-        "label": "country_option_233"
-      }, {
+      }, {"value": "country_option_233", "sequence": 233, "label": "country_option_233"}, {
         "value": "country_option_12",
         "sequence": 12,
         "label": "country_option_12"
-      }, {
-        "value": "country_option_140",
-        "sequence": 140,
-        "label": "country_option_140"
-      }, {
+      }, {"value": "country_option_140", "sequence": 140, "label": "country_option_140"}, {
         "value": "country_option_83",
         "sequence": 83,
         "label": "country_option_83"
-      }, {
-        "value": "country_option_133",
-        "sequence": 133,
-        "label": "country_option_133"
-      }, { "value": "country_option_32", "sequence": 32, "label": "country_option_32" }, {
-        "value": "country_option_11",
-        "sequence": 11,
-        "label": "country_option_11"
-      }, { "value": "country_option_39", "sequence": 39, "label": "country_option_39" }, {
-        "value": "country_option_55",
-        "sequence": 55,
-        "label": "country_option_55"
-      }, {
+      }, {"value": "country_option_133", "sequence": 133, "label": "country_option_133"}, {
+        "value": "country_option_32",
+        "sequence": 32,
+        "label": "country_option_32"
+      }, {"value": "country_option_11", "sequence": 11, "label": "country_option_11"}, {
+        "value": "country_option_39",
+        "sequence": 39,
+        "label": "country_option_39"
+      }, {"value": "country_option_55", "sequence": 55, "label": "country_option_55"}, {
         "value": "country_option_236",
         "sequence": 236,
         "label": "country_option_236"
-      }, { "value": "country_option_29", "sequence": 29, "label": "country_option_29" }, {
+      }, {"value": "country_option_29", "sequence": 29, "label": "country_option_29"}, {
         "value": "country_option_31",
         "sequence": 31,
         "label": "country_option_31"
-      }, {
-        "value": "country_option_14",
-        "sequence": 14,
-        "label": "country_option_14"
-      }, {
+      }, {"value": "country_option_14", "sequence": 14, "label": "country_option_14"}, {
         "value": "country_option_195",
         "sequence": 195,
         "label": "country_option_195"
@@ -8082,35 +6380,23 @@ export default [{
         "value": "country_option_214",
         "sequence": 214,
         "label": "country_option_214"
-      }, {
-        "value": "country_option_183",
-        "sequence": 183,
-        "label": "country_option_183"
-      }, { "value": "country_option_40", "sequence": 40, "label": "country_option_40" }, {
-        "value": "country_option_38",
-        "sequence": 38,
-        "label": "country_option_38"
-      }, { "value": "country_option_90", "sequence": 90, "label": "country_option_90" }, {
-        "value": "country_option_16",
-        "sequence": 16,
-        "label": "country_option_16"
-      }, {
+      }, {"value": "country_option_183", "sequence": 183, "label": "country_option_183"}, {
+        "value": "country_option_40",
+        "sequence": 40,
+        "label": "country_option_40"
+      }, {"value": "country_option_38", "sequence": 38, "label": "country_option_38"}, {
+        "value": "country_option_90",
+        "sequence": 90,
+        "label": "country_option_90"
+      }, {"value": "country_option_16", "sequence": 16, "label": "country_option_16"}, {
         "value": "country_option_26",
         "sequence": 26,
         "label": "country_option_26"
-      }, {
-        "value": "country_option_149",
-        "sequence": 149,
-        "label": "country_option_149"
-      }, {
+      }, {"value": "country_option_149", "sequence": 149, "label": "country_option_149"}, {
         "value": "country_option_70",
         "sequence": 70,
         "label": "country_option_70"
-      }, {
-        "value": "country_option_162",
-        "sequence": 162,
-        "label": "country_option_162"
-      }, {
+      }, {"value": "country_option_162", "sequence": 162, "label": "country_option_162"}, {
         "value": "country_option_51",
         "sequence": 51,
         "label": "country_option_51"
@@ -8118,23 +6404,15 @@ export default [{
         "value": "country_option_207",
         "sequence": 207,
         "label": "country_option_207"
-      }, {
-        "value": "country_option_184",
-        "sequence": 184,
-        "label": "country_option_184"
-      }, { "value": "country_option_8", "sequence": 8, "label": "country_option_8" }, {
-        "value": "country_option_52",
-        "sequence": 52,
-        "label": "country_option_52"
-      }, {
+      }, {"value": "country_option_184", "sequence": 184, "label": "country_option_184"}, {
+        "value": "country_option_8",
+        "sequence": 8,
+        "label": "country_option_8"
+      }, {"value": "country_option_52", "sequence": 52, "label": "country_option_52"}, {
         "value": "country_option_59",
         "sequence": 59,
         "label": "country_option_59"
-      }, {
-        "value": "country_option_200",
-        "sequence": 200,
-        "label": "country_option_200"
-      }, {
+      }, {"value": "country_option_200", "sequence": 200, "label": "country_option_200"}, {
         "value": "country_option_17",
         "sequence": 17,
         "label": "country_option_17"
@@ -8142,15 +6420,11 @@ export default [{
         "value": "country_option_120",
         "sequence": 120,
         "label": "country_option_120"
-      }, {
-        "value": "country_option_151",
-        "sequence": 151,
-        "label": "country_option_151"
-      }, { "value": "country_option_3", "sequence": 3, "label": "country_option_3" }, {
-        "value": "country_option_87",
-        "sequence": 87,
-        "label": "country_option_87"
-      }, {
+      }, {"value": "country_option_151", "sequence": 151, "label": "country_option_151"}, {
+        "value": "country_option_3",
+        "sequence": 3,
+        "label": "country_option_3"
+      }, {"value": "country_option_87", "sequence": 87, "label": "country_option_87"}, {
         "value": "country_option_157",
         "sequence": 157,
         "label": "country_option_157"
@@ -8174,19 +6448,11 @@ export default [{
         "value": "country_option_114",
         "sequence": 114,
         "label": "country_option_114"
-      }, {
-        "value": "country_option_128",
-        "sequence": 128,
-        "label": "country_option_128"
-      }, {
+      }, {"value": "country_option_128", "sequence": 128, "label": "country_option_128"}, {
         "value": "country_option_53",
         "sequence": 53,
         "label": "country_option_53"
-      }, {
-        "value": "country_option_125",
-        "sequence": 125,
-        "label": "country_option_125"
-      }, {
+      }, {"value": "country_option_125", "sequence": 125, "label": "country_option_125"}, {
         "value": "country_option_58",
         "sequence": 58,
         "label": "country_option_58"
@@ -8202,23 +6468,15 @@ export default [{
         "value": "country_option_219",
         "sequence": 219,
         "label": "country_option_219"
-      }, {
-        "value": "country_option_242",
-        "sequence": 242,
-        "label": "country_option_242"
-      }, {
+      }, {"value": "country_option_242", "sequence": 242, "label": "country_option_242"}, {
         "value": "country_option_96",
         "sequence": 96,
         "label": "country_option_96"
-      }, {
-        "value": "country_option_154",
-        "sequence": 154,
-        "label": "country_option_154"
-      }, { "value": "country_option_25", "sequence": 25, "label": "country_option_25" }, {
-        "value": "country_option_61",
-        "sequence": 61,
-        "label": "country_option_61"
-      }, {
+      }, {"value": "country_option_154", "sequence": 154, "label": "country_option_154"}, {
+        "value": "country_option_25",
+        "sequence": 25,
+        "label": "country_option_25"
+      }, {"value": "country_option_61", "sequence": 61, "label": "country_option_61"}, {
         "value": "country_option_82",
         "sequence": 82,
         "label": "country_option_82"
@@ -8246,11 +6504,7 @@ export default [{
         "value": "country_option_130",
         "sequence": 130,
         "label": "country_option_130"
-      }, {
-        "value": "country_option_178",
-        "sequence": 178,
-        "label": "country_option_178"
-      }, {
+      }, {"value": "country_option_178", "sequence": 178, "label": "country_option_178"}, {
         "value": "country_option_41",
         "sequence": 41,
         "label": "country_option_41"
@@ -8262,19 +6516,11 @@ export default [{
         "value": "country_option_206",
         "sequence": 206,
         "label": "country_option_206"
-      }, {
-        "value": "country_option_213",
-        "sequence": 213,
-        "label": "country_option_213"
-      }, {
+      }, {"value": "country_option_213", "sequence": 213, "label": "country_option_213"}, {
         "value": "country_option_35",
         "sequence": 35,
         "label": "country_option_35"
-      }, {
-        "value": "country_option_185",
-        "sequence": 185,
-        "label": "country_option_185"
-      }, {
+      }, {"value": "country_option_185", "sequence": 185, "label": "country_option_185"}, {
         "value": "country_option_89",
         "sequence": 89,
         "label": "country_option_89"
@@ -8286,23 +6532,15 @@ export default [{
         "value": "country_option_160",
         "sequence": 160,
         "label": "country_option_160"
-      }, {
-        "value": "country_option_117",
-        "sequence": 117,
-        "label": "country_option_117"
-      }, {
+      }, {"value": "country_option_117", "sequence": 117, "label": "country_option_117"}, {
         "value": "country_option_42",
         "sequence": 42,
         "label": "country_option_42"
-      }, {
-        "value": "country_option_243",
-        "sequence": 243,
-        "label": "country_option_243"
-      }, { "value": "country_option_68", "sequence": 68, "label": "country_option_68" }, {
-        "value": "country_option_64",
-        "sequence": 64,
-        "label": "country_option_64"
-      }, {
+      }, {"value": "country_option_243", "sequence": 243, "label": "country_option_243"}, {
+        "value": "country_option_68",
+        "sequence": 68,
+        "label": "country_option_68"
+      }, {"value": "country_option_64", "sequence": 64, "label": "country_option_64"}, {
         "value": "country_option_73",
         "sequence": 73,
         "label": "country_option_73"
@@ -8318,11 +6556,7 @@ export default [{
         "value": "country_option_102",
         "sequence": 102,
         "label": "country_option_102"
-      }, {
-        "value": "country_option_248",
-        "sequence": 248,
-        "label": "country_option_248"
-      }, {
+      }, {"value": "country_option_248", "sequence": 248, "label": "country_option_248"}, {
         "value": "country_option_72",
         "sequence": 72,
         "label": "country_option_72"
@@ -8338,11 +6572,7 @@ export default [{
         "value": "country_option_225",
         "sequence": 225,
         "label": "country_option_225"
-      }, {
-        "value": "country_option_112",
-        "sequence": 112,
-        "label": "country_option_112"
-      }, {
+      }, {"value": "country_option_112", "sequence": 112, "label": "country_option_112"}, {
         "value": "country_option_93",
         "sequence": 93,
         "label": "country_option_93"
@@ -8358,19 +6588,11 @@ export default [{
         "value": "country_option_235",
         "sequence": 235,
         "label": "country_option_235"
-      }, {
-        "value": "country_option_136",
-        "sequence": 136,
-        "label": "country_option_136"
-      }, {
+      }, {"value": "country_option_136", "sequence": 136, "label": "country_option_136"}, {
         "value": "country_option_34",
         "sequence": 34,
         "label": "country_option_34"
-      }, {
-        "value": "country_option_107",
-        "sequence": 107,
-        "label": "country_option_107"
-      }, {
+      }, {"value": "country_option_107", "sequence": 107, "label": "country_option_107"}, {
         "value": "country_option_20",
         "sequence": 20,
         "label": "country_option_20"
@@ -8386,15 +6608,11 @@ export default [{
         "value": "country_option_163",
         "sequence": 163,
         "label": "country_option_163"
-      }, {
-        "value": "country_option_190",
-        "sequence": 190,
-        "label": "country_option_190"
-      }, { "value": "country_option_79", "sequence": 79, "label": "country_option_79" }, {
-        "value": "country_option_19",
-        "sequence": 19,
-        "label": "country_option_19"
-      }, {
+      }, {"value": "country_option_190", "sequence": 190, "label": "country_option_190"}, {
+        "value": "country_option_79",
+        "sequence": 79,
+        "label": "country_option_79"
+      }, {"value": "country_option_19", "sequence": 19, "label": "country_option_19"}, {
         "value": "country_option_129",
         "sequence": 129,
         "label": "country_option_129"
@@ -8406,15 +6624,11 @@ export default [{
         "value": "country_option_220",
         "sequence": 220,
         "label": "country_option_220"
-      }, {
-        "value": "country_option_132",
-        "sequence": 132,
-        "label": "country_option_132"
-      }, { "value": "country_option_75", "sequence": 75, "label": "country_option_75" }, {
-        "value": "country_option_1",
-        "sequence": 1,
-        "label": "country_option_1"
-      }, {
+      }, {"value": "country_option_132", "sequence": 132, "label": "country_option_132"}, {
+        "value": "country_option_75",
+        "sequence": 75,
+        "label": "country_option_75"
+      }, {"value": "country_option_1", "sequence": 1, "label": "country_option_1"}, {
         "value": "country_option_208",
         "sequence": 208,
         "label": "country_option_208"
@@ -8430,15 +6644,11 @@ export default [{
         "value": "country_option_197",
         "sequence": 197,
         "label": "country_option_197"
-      }, {
-        "value": "country_option_122",
-        "sequence": 122,
-        "label": "country_option_122"
-      }, { "value": "country_option_98", "sequence": 98, "label": "country_option_98" }, {
-        "value": "country_option_97",
-        "sequence": 97,
-        "label": "country_option_97"
-      }, {
+      }, {"value": "country_option_122", "sequence": 122, "label": "country_option_122"}, {
+        "value": "country_option_98",
+        "sequence": 98,
+        "label": "country_option_98"
+      }, {"value": "country_option_97", "sequence": 97, "label": "country_option_97"}, {
         "value": "country_option_36",
         "sequence": 36,
         "label": "country_option_36"
@@ -8458,31 +6668,19 @@ export default [{
         "value": "country_option_150",
         "sequence": 150,
         "label": "country_option_150"
-      }, {
-        "value": "country_option_252",
-        "sequence": 252,
-        "label": "country_option_252"
-      }, { "value": "country_option_4", "sequence": 4, "label": "country_option_4" }, {
-        "value": "country_option_46",
-        "sequence": 46,
-        "label": "country_option_46"
-      }, {
+      }, {"value": "country_option_252", "sequence": 252, "label": "country_option_252"}, {
+        "value": "country_option_4",
+        "sequence": 4,
+        "label": "country_option_4"
+      }, {"value": "country_option_46", "sequence": 46, "label": "country_option_46"}, {
         "value": "country_option_204",
         "sequence": 204,
         "label": "country_option_204"
-      }, {
-        "value": "country_option_66",
-        "sequence": 66,
-        "label": "country_option_66"
-      }, {
+      }, {"value": "country_option_66", "sequence": 66, "label": "country_option_66"}, {
         "value": "country_option_229",
         "sequence": 229,
         "label": "country_option_229"
-      }, {
-        "value": "country_option_241",
-        "sequence": 241,
-        "label": "country_option_241"
-      }, {
+      }, {"value": "country_option_241", "sequence": 241, "label": "country_option_241"}, {
         "value": "country_option_22",
         "sequence": 22,
         "label": "country_option_22"
@@ -8502,23 +6700,15 @@ export default [{
         "value": "country_option_143",
         "sequence": 143,
         "label": "country_option_143"
-      }, {
-        "value": "country_option_174",
-        "sequence": 174,
-        "label": "country_option_174"
-      }, {
+      }, {"value": "country_option_174", "sequence": 174, "label": "country_option_174"}, {
         "value": "country_option_95",
         "sequence": 95,
         "label": "country_option_95"
-      }, {
-        "value": "country_option_141",
-        "sequence": 141,
-        "label": "country_option_141"
-      }, { "value": "country_option_60", "sequence": 60, "label": "country_option_60" }, {
-        "value": "country_option_56",
-        "sequence": 56,
-        "label": "country_option_56"
-      }, {
+      }, {"value": "country_option_141", "sequence": 141, "label": "country_option_141"}, {
+        "value": "country_option_60",
+        "sequence": 60,
+        "label": "country_option_60"
+      }, {"value": "country_option_56", "sequence": 56, "label": "country_option_56"}, {
         "value": "country_option_212",
         "sequence": 212,
         "label": "country_option_212"
@@ -8526,15 +6716,11 @@ export default [{
         "value": "country_option_146",
         "sequence": 146,
         "label": "country_option_146"
-      }, {
-        "value": "country_option_222",
-        "sequence": 222,
-        "label": "country_option_222"
-      }, { "value": "country_option_67", "sequence": 67, "label": "country_option_67" }, {
-        "value": "country_option_57",
-        "sequence": 57,
-        "label": "country_option_57"
-      }, {
+      }, {"value": "country_option_222", "sequence": 222, "label": "country_option_222"}, {
+        "value": "country_option_67",
+        "sequence": 67,
+        "label": "country_option_67"
+      }, {"value": "country_option_57", "sequence": 57, "label": "country_option_57"}, {
         "value": "country_option_10",
         "sequence": 10,
         "label": "country_option_10"
@@ -8550,15 +6736,11 @@ export default [{
         "value": "country_option_186",
         "sequence": 186,
         "label": "country_option_186"
-      }, {
-        "value": "country_option_198",
-        "sequence": 198,
-        "label": "country_option_198"
-      }, { "value": "country_option_44", "sequence": 44, "label": "country_option_44" }, {
-        "value": "country_option_81",
-        "sequence": 81,
-        "label": "country_option_81"
-      }, {
+      }, {"value": "country_option_198", "sequence": 198, "label": "country_option_198"}, {
+        "value": "country_option_44",
+        "sequence": 44,
+        "label": "country_option_44"
+      }, {"value": "country_option_81", "sequence": 81, "label": "country_option_81"}, {
         "value": "country_option_142",
         "sequence": 142,
         "label": "country_option_142"
@@ -8570,31 +6752,19 @@ export default [{
         "value": "country_option_159",
         "sequence": 159,
         "label": "country_option_159"
-      }, {
-        "value": "country_option_239",
-        "sequence": 239,
-        "label": "country_option_239"
-      }, { "value": "country_option_45", "sequence": 45, "label": "country_option_45" }, {
-        "value": "country_option_50",
-        "sequence": 50,
-        "label": "country_option_50"
-      }, {
+      }, {"value": "country_option_239", "sequence": 239, "label": "country_option_239"}, {
+        "value": "country_option_45",
+        "sequence": 45,
+        "label": "country_option_45"
+      }, {"value": "country_option_50", "sequence": 50, "label": "country_option_50"}, {
         "value": "country_option_189",
         "sequence": 189,
         "label": "country_option_189"
-      }, {
-        "value": "country_option_48",
-        "sequence": 48,
-        "label": "country_option_48"
-      }, {
+      }, {"value": "country_option_48", "sequence": 48, "label": "country_option_48"}, {
         "value": "country_option_126",
         "sequence": 126,
         "label": "country_option_126"
-      }, {
-        "value": "country_option_77",
-        "sequence": 77,
-        "label": "country_option_77"
-      }, {
+      }, {"value": "country_option_77", "sequence": 77, "label": "country_option_77"}, {
         "value": "country_option_123",
         "sequence": 123,
         "label": "country_option_123"
@@ -8654,31 +6824,23 @@ export default [{
         "value": "country_option_156",
         "sequence": 156,
         "label": "country_option_156"
+      }, {"value": "country_option_119", "sequence": 119, "label": "country_option_119"}, {
+        "value": "country_option_9",
+        "sequence": 9,
+        "label": "country_option_9"
       }, {
-        "value": "country_option_119",
-        "sequence": 119,
-        "label": "country_option_119"
-      }, { "value": "country_option_9", "sequence": 9, "label": "country_option_9" }, {
         "value": "country_option_251",
         "sequence": 251,
         "label": "country_option_251"
-      }, {
-        "value": "country_option_137",
-        "sequence": 137,
-        "label": "country_option_137"
-      }, {
+      }, {"value": "country_option_137", "sequence": 137, "label": "country_option_137"}, {
         "value": "country_option_65",
         "sequence": 65,
         "label": "country_option_65"
-      }, {
-        "value": "country_option_165",
-        "sequence": 165,
-        "label": "country_option_165"
-      }, { "value": "country_option_7", "sequence": 7, "label": "country_option_7" }, {
-        "value": "country_option_27",
-        "sequence": 27,
-        "label": "country_option_27"
-      }, {
+      }, {"value": "country_option_165", "sequence": 165, "label": "country_option_165"}, {
+        "value": "country_option_7",
+        "sequence": 7,
+        "label": "country_option_7"
+      }, {"value": "country_option_27", "sequence": 27, "label": "country_option_27"}, {
         "value": "country_option_171",
         "sequence": 171,
         "label": "country_option_171"
@@ -8694,11 +6856,7 @@ export default [{
         "value": "country_option_173",
         "sequence": 173,
         "label": "country_option_173"
-      }, {
-        "value": "country_option_237",
-        "sequence": 237,
-        "label": "country_option_237"
-      }, {
+      }, {"value": "country_option_237", "sequence": 237, "label": "country_option_237"}, {
         "value": "country_option_99",
         "sequence": 99,
         "label": "country_option_99"
@@ -8710,67 +6868,47 @@ export default [{
         "value": "country_option_201",
         "sequence": 201,
         "label": "country_option_201"
-      }, {
-        "value": "country_option_216",
-        "sequence": 216,
-        "label": "country_option_216"
-      }, { "value": "country_option_62", "sequence": 62, "label": "country_option_62" }, {
-        "value": "country_option_33",
-        "sequence": 33,
-        "label": "country_option_33"
-      }, { "value": "country_option_91", "sequence": 91, "label": "country_option_91" }, {
-        "value": "country_option_86",
-        "sequence": 86,
-        "label": "country_option_86"
-      }, {
+      }, {"value": "country_option_216", "sequence": 216, "label": "country_option_216"}, {
+        "value": "country_option_62",
+        "sequence": 62,
+        "label": "country_option_62"
+      }, {"value": "country_option_33", "sequence": 33, "label": "country_option_33"}, {
+        "value": "country_option_91",
+        "sequence": 91,
+        "label": "country_option_91"
+      }, {"value": "country_option_86", "sequence": 86, "label": "country_option_86"}, {
         "value": "country_option_211",
         "sequence": 211,
         "label": "country_option_211"
-      }, {
-        "value": "country_option_196",
-        "sequence": 196,
-        "label": "country_option_196"
-      }, { "value": "country_option_23", "sequence": 23, "label": "country_option_23" }, {
-        "value": "country_option_74",
-        "sequence": 74,
-        "label": "country_option_74"
-      }, {
+      }, {"value": "country_option_196", "sequence": 196, "label": "country_option_196"}, {
+        "value": "country_option_23",
+        "sequence": 23,
+        "label": "country_option_23"
+      }, {"value": "country_option_74", "sequence": 74, "label": "country_option_74"}, {
         "value": "country_option_232",
         "sequence": 232,
         "label": "country_option_232"
-      }, { "value": "country_option_37", "sequence": 37, "label": "country_option_37" }, {
+      }, {"value": "country_option_37", "sequence": 37, "label": "country_option_37"}, {
         "value": "country_option_78",
         "sequence": 78,
         "label": "country_option_78"
-      }, { "value": "country_option_69", "sequence": 69, "label": "country_option_69" }, {
+      }, {"value": "country_option_69", "sequence": 69, "label": "country_option_69"}, {
         "value": "country_option_54",
         "sequence": 54,
         "label": "country_option_54"
-      }, { "value": "country_option_94", "sequence": 94, "label": "country_option_94" }, {
+      }, {"value": "country_option_94", "sequence": 94, "label": "country_option_94"}, {
         "value": "country_option_21",
         "sequence": 21,
         "label": "country_option_21"
-      }, {
-        "value": "country_option_116",
-        "sequence": 116,
-        "label": "country_option_116"
-      }, {
+      }, {"value": "country_option_116", "sequence": 116, "label": "country_option_116"}, {
         "value": "country_option_88",
         "sequence": 88,
         "label": "country_option_88"
-      }, {
-        "value": "country_option_124",
-        "sequence": 124,
-        "label": "country_option_124"
-      }, {
+      }, {"value": "country_option_124", "sequence": 124, "label": "country_option_124"}, {
         "value": "country_option_71",
         "sequence": 71,
         "label": "country_option_71"
-      }, {
-        "value": "country_option_188",
-        "sequence": 188,
-        "label": "country_option_188"
-      }, {
+      }, {"value": "country_option_188", "sequence": 188, "label": "country_option_188"}, {
         "value": "country_option_76",
         "sequence": 76,
         "label": "country_option_76"
@@ -8786,19 +6924,15 @@ export default [{
         "value": "country_option_170",
         "sequence": 170,
         "label": "country_option_170"
-      }, {
-        "value": "country_option_106",
-        "sequence": 106,
-        "label": "country_option_106"
-      }, { "value": "country_option_49", "sequence": 49, "label": "country_option_49" }, {
-        "value": "country_option_28",
-        "sequence": 28,
-        "label": "country_option_28"
-      }, { "value": "country_option_63", "sequence": 63, "label": "country_option_63" }, {
-        "value": "country_option_47",
-        "sequence": 47,
-        "label": "country_option_47"
-      }, {
+      }, {"value": "country_option_106", "sequence": 106, "label": "country_option_106"}, {
+        "value": "country_option_49",
+        "sequence": 49,
+        "label": "country_option_49"
+      }, {"value": "country_option_28", "sequence": 28, "label": "country_option_28"}, {
+        "value": "country_option_63",
+        "sequence": 63,
+        "label": "country_option_63"
+      }, {"value": "country_option_47", "sequence": 47, "label": "country_option_47"}, {
         "value": "country_option_131",
         "sequence": 131,
         "label": "country_option_131"
@@ -8822,35 +6956,27 @@ export default [{
         "value": "country_option_218",
         "sequence": 218,
         "label": "country_option_218"
-      }, {
-        "value": "country_option_152",
-        "sequence": 152,
-        "label": "country_option_152"
-      }, { "value": "country_option_5", "sequence": 5, "label": "country_option_5" }, {
-        "value": "country_option_24",
-        "sequence": 24,
-        "label": "country_option_24"
-      }, {
+      }, {"value": "country_option_152", "sequence": 152, "label": "country_option_152"}, {
+        "value": "country_option_5",
+        "sequence": 5,
+        "label": "country_option_5"
+      }, {"value": "country_option_24", "sequence": 24, "label": "country_option_24"}, {
         "value": "country_option_15",
         "sequence": 15,
         "label": "country_option_15"
+      }, {"value": "country_option_175", "sequence": 175, "label": "country_option_175"}, {
+        "value": "country_option_2",
+        "sequence": 2,
+        "label": "country_option_2"
       }, {
-        "value": "country_option_175",
-        "sequence": 175,
-        "label": "country_option_175"
-      }, { "value": "country_option_2", "sequence": 2, "label": "country_option_2" }, {
         "value": "country_option_121",
         "sequence": 121,
         "label": "country_option_121"
-      }, {
-        "value": "country_option_203",
-        "sequence": 203,
-        "label": "country_option_203"
-      }, { "value": "country_option_84", "sequence": 84, "label": "country_option_84" }, {
-        "value": "country_option_80",
-        "sequence": 80,
-        "label": "country_option_80"
-      }, {
+      }, {"value": "country_option_203", "sequence": 203, "label": "country_option_203"}, {
+        "value": "country_option_84",
+        "sequence": 84,
+        "label": "country_option_84"
+      }, {"value": "country_option_80", "sequence": 80, "label": "country_option_80"}, {
         "value": "country_option_181",
         "sequence": 181,
         "label": "country_option_181"
@@ -8858,23 +6984,19 @@ export default [{
         "value": "country_option_224",
         "sequence": 224,
         "label": "country_option_224"
-      }, {
-        "value": "country_option_134",
-        "sequence": 134,
-        "label": "country_option_134"
-      }, { "value": "country_option_92", "sequence": 92, "label": "country_option_92" }, {
-        "value": "country_option_43",
-        "sequence": 43,
-        "label": "country_option_43"
-      }, { "value": "country_option_30", "sequence": 30, "label": "country_option_30" }, {
-        "value": "country_option_6",
-        "sequence": 6,
-        "label": "country_option_6"
-      }, {
+      }, {"value": "country_option_134", "sequence": 134, "label": "country_option_134"}, {
+        "value": "country_option_92",
+        "sequence": 92,
+        "label": "country_option_92"
+      }, {"value": "country_option_43", "sequence": 43, "label": "country_option_43"}, {
+        "value": "country_option_30",
+        "sequence": 30,
+        "label": "country_option_30"
+      }, {"value": "country_option_6", "sequence": 6, "label": "country_option_6"}, {
         "value": "country_option_221",
         "sequence": 221,
         "label": "country_option_221"
-      }, { "value": "country_option_168", "sequence": 168, "label": "country_option_168" }],
+      }, {"value": "country_option_168", "sequence": 168, "label": "country_option_168"}],
       "label": "ch2_s2_field6_label",
       "fieldApi": "Citizenship__c",
       "description": "ch2_s2_field6_description"
@@ -8886,7 +7008,7 @@ export default [{
       }],
       "type": "drop_down",
       "sfFieldType": "Picklist",
-      "sequence": 22,
+      "sequence": 54,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field7Section_04_2",
       "listOfValues": [{
@@ -8905,15 +7027,11 @@ export default [{
         "value": "country_option_184",
         "sequence": 184,
         "label": "country_option_184"
-      }, {
-        "value": "country_option_130",
-        "sequence": 130,
-        "label": "country_option_130"
-      }, { "value": "country_option_67", "sequence": 67, "label": "country_option_67" }, {
-        "value": "country_option_37",
-        "sequence": 37,
-        "label": "country_option_37"
-      }, {
+      }, {"value": "country_option_130", "sequence": 130, "label": "country_option_130"}, {
+        "value": "country_option_67",
+        "sequence": 67,
+        "label": "country_option_67"
+      }, {"value": "country_option_37", "sequence": 37, "label": "country_option_37"}, {
         "value": "country_option_248",
         "sequence": 248,
         "label": "country_option_248"
@@ -8921,15 +7039,15 @@ export default [{
         "value": "country_option_132",
         "sequence": 132,
         "label": "country_option_132"
+      }, {"value": "country_option_212", "sequence": 212, "label": "country_option_212"}, {
+        "value": "country_option_31",
+        "sequence": 31,
+        "label": "country_option_31"
+      }, {"value": "country_option_75", "sequence": 75, "label": "country_option_75"}, {
+        "value": "country_option_1",
+        "sequence": 1,
+        "label": "country_option_1"
       }, {
-        "value": "country_option_212",
-        "sequence": 212,
-        "label": "country_option_212"
-      }, { "value": "country_option_31", "sequence": 31, "label": "country_option_31" }, {
-        "value": "country_option_75",
-        "sequence": 75,
-        "label": "country_option_75"
-      }, { "value": "country_option_1", "sequence": 1, "label": "country_option_1" }, {
         "value": "country_option_224",
         "sequence": 224,
         "label": "country_option_224"
@@ -8941,19 +7059,11 @@ export default [{
         "value": "country_option_241",
         "sequence": 241,
         "label": "country_option_241"
-      }, {
-        "value": "country_option_138",
-        "sequence": 138,
-        "label": "country_option_138"
-      }, {
+      }, {"value": "country_option_138", "sequence": 138, "label": "country_option_138"}, {
         "value": "country_option_33",
         "sequence": 33,
         "label": "country_option_33"
-      }, {
-        "value": "country_option_111",
-        "sequence": 111,
-        "label": "country_option_111"
-      }, {
+      }, {"value": "country_option_111", "sequence": 111, "label": "country_option_111"}, {
         "value": "country_option_25",
         "sequence": 25,
         "label": "country_option_25"
@@ -8981,11 +7091,7 @@ export default [{
         "value": "country_option_215",
         "sequence": 215,
         "label": "country_option_215"
-      }, {
-        "value": "country_option_234",
-        "sequence": 234,
-        "label": "country_option_234"
-      }, {
+      }, {"value": "country_option_234", "sequence": 234, "label": "country_option_234"}, {
         "value": "country_option_32",
         "sequence": 32,
         "label": "country_option_32"
@@ -9013,51 +7119,31 @@ export default [{
         "value": "country_option_121",
         "sequence": 121,
         "label": "country_option_121"
-      }, {
-        "value": "country_option_227",
-        "sequence": 227,
-        "label": "country_option_227"
-      }, {
+      }, {"value": "country_option_227", "sequence": 227, "label": "country_option_227"}, {
         "value": "country_option_30",
         "sequence": 30,
         "label": "country_option_30"
-      }, {
-        "value": "country_option_119",
-        "sequence": 119,
-        "label": "country_option_119"
-      }, {
+      }, {"value": "country_option_119", "sequence": 119, "label": "country_option_119"}, {
         "value": "country_option_66",
         "sequence": 66,
         "label": "country_option_66"
-      }, {
-        "value": "country_option_185",
-        "sequence": 185,
-        "label": "country_option_185"
-      }, { "value": "country_option_45", "sequence": 45, "label": "country_option_45" }, {
-        "value": "country_option_59",
-        "sequence": 59,
-        "label": "country_option_59"
-      }, {
+      }, {"value": "country_option_185", "sequence": 185, "label": "country_option_185"}, {
+        "value": "country_option_45",
+        "sequence": 45,
+        "label": "country_option_45"
+      }, {"value": "country_option_59", "sequence": 59, "label": "country_option_59"}, {
         "value": "country_option_157",
         "sequence": 157,
         "label": "country_option_157"
-      }, {
-        "value": "country_option_182",
-        "sequence": 182,
-        "label": "country_option_182"
-      }, {
+      }, {"value": "country_option_182", "sequence": 182, "label": "country_option_182"}, {
         "value": "country_option_52",
         "sequence": 52,
         "label": "country_option_52"
-      }, {
-        "value": "country_option_149",
-        "sequence": 149,
-        "label": "country_option_149"
-      }, { "value": "country_option_79", "sequence": 79, "label": "country_option_79" }, {
-        "value": "country_option_29",
-        "sequence": 29,
-        "label": "country_option_29"
-      }, {
+      }, {"value": "country_option_149", "sequence": 149, "label": "country_option_149"}, {
+        "value": "country_option_79",
+        "sequence": 79,
+        "label": "country_option_79"
+      }, {"value": "country_option_29", "sequence": 29, "label": "country_option_29"}, {
         "value": "country_option_217",
         "sequence": 217,
         "label": "country_option_217"
@@ -9069,11 +7155,7 @@ export default [{
         "value": "country_option_102",
         "sequence": 102,
         "label": "country_option_102"
-      }, {
-        "value": "country_option_209",
-        "sequence": 209,
-        "label": "country_option_209"
-      }, {
+      }, {"value": "country_option_209", "sequence": 209, "label": "country_option_209"}, {
         "value": "country_option_69",
         "sequence": 69,
         "label": "country_option_69"
@@ -9093,15 +7175,11 @@ export default [{
         "value": "country_option_250",
         "sequence": 250,
         "label": "country_option_250"
-      }, {
-        "value": "country_option_118",
-        "sequence": 118,
-        "label": "country_option_118"
-      }, { "value": "country_option_28", "sequence": 28, "label": "country_option_28" }, {
-        "value": "country_option_36",
-        "sequence": 36,
-        "label": "country_option_36"
-      }, {
+      }, {"value": "country_option_118", "sequence": 118, "label": "country_option_118"}, {
+        "value": "country_option_28",
+        "sequence": 28,
+        "label": "country_option_28"
+      }, {"value": "country_option_36", "sequence": 36, "label": "country_option_36"}, {
         "value": "country_option_87",
         "sequence": 87,
         "label": "country_option_87"
@@ -9113,11 +7191,7 @@ export default [{
         "value": "country_option_247",
         "sequence": 247,
         "label": "country_option_247"
-      }, {
-        "value": "country_option_203",
-        "sequence": 203,
-        "label": "country_option_203"
-      }, {
+      }, {"value": "country_option_203", "sequence": 203, "label": "country_option_203"}, {
         "value": "country_option_38",
         "sequence": 38,
         "label": "country_option_38"
@@ -9125,11 +7199,7 @@ export default [{
         "value": "country_option_162",
         "sequence": 162,
         "label": "country_option_162"
-      }, {
-        "value": "country_option_153",
-        "sequence": 153,
-        "label": "country_option_153"
-      }, {
+      }, {"value": "country_option_153", "sequence": 153, "label": "country_option_153"}, {
         "value": "country_option_90",
         "sequence": 90,
         "label": "country_option_90"
@@ -9153,47 +7223,35 @@ export default [{
         "value": "country_option_220",
         "sequence": 220,
         "label": "country_option_220"
-      }, {
-        "value": "country_option_164",
-        "sequence": 164,
-        "label": "country_option_164"
-      }, { "value": "country_option_68", "sequence": 68, "label": "country_option_68" }, {
-        "value": "country_option_39",
-        "sequence": 39,
-        "label": "country_option_39"
-      }, { "value": "country_option_21", "sequence": 21, "label": "country_option_21" }, {
-        "value": "country_option_15",
-        "sequence": 15,
-        "label": "country_option_15"
-      }, {
+      }, {"value": "country_option_164", "sequence": 164, "label": "country_option_164"}, {
+        "value": "country_option_68",
+        "sequence": 68,
+        "label": "country_option_68"
+      }, {"value": "country_option_39", "sequence": 39, "label": "country_option_39"}, {
+        "value": "country_option_21",
+        "sequence": 21,
+        "label": "country_option_21"
+      }, {"value": "country_option_15", "sequence": 15, "label": "country_option_15"}, {
         "value": "country_option_100",
         "sequence": 100,
         "label": "country_option_100"
-      }, {
-        "value": "country_option_177",
-        "sequence": 177,
-        "label": "country_option_177"
-      }, { "value": "country_option_61", "sequence": 61, "label": "country_option_61" }, {
-        "value": "country_option_26",
-        "sequence": 26,
-        "label": "country_option_26"
-      }, {
+      }, {"value": "country_option_177", "sequence": 177, "label": "country_option_177"}, {
+        "value": "country_option_61",
+        "sequence": 61,
+        "label": "country_option_61"
+      }, {"value": "country_option_26", "sequence": 26, "label": "country_option_26"}, {
         "value": "country_option_223",
         "sequence": 223,
         "label": "country_option_223"
-      }, { "value": "country_option_81", "sequence": 81, "label": "country_option_81" }, {
+      }, {"value": "country_option_81", "sequence": 81, "label": "country_option_81"}, {
         "value": "country_option_23",
         "sequence": 23,
         "label": "country_option_23"
-      }, { "value": "country_option_34", "sequence": 34, "label": "country_option_34" }, {
+      }, {"value": "country_option_34", "sequence": 34, "label": "country_option_34"}, {
         "value": "country_option_80",
         "sequence": 80,
         "label": "country_option_80"
-      }, {
-        "value": "country_option_179",
-        "sequence": 179,
-        "label": "country_option_179"
-      }, {
+      }, {"value": "country_option_179", "sequence": 179, "label": "country_option_179"}, {
         "value": "country_option_58",
         "sequence": 58,
         "label": "country_option_58"
@@ -9201,11 +7259,7 @@ export default [{
         "value": "country_option_127",
         "sequence": 127,
         "label": "country_option_127"
-      }, {
-        "value": "country_option_123",
-        "sequence": 123,
-        "label": "country_option_123"
-      }, {
+      }, {"value": "country_option_123", "sequence": 123, "label": "country_option_123"}, {
         "value": "country_option_53",
         "sequence": 53,
         "label": "country_option_53"
@@ -9229,39 +7283,23 @@ export default [{
         "value": "country_option_232",
         "sequence": 232,
         "label": "country_option_232"
-      }, {
-        "value": "country_option_210",
-        "sequence": 210,
-        "label": "country_option_210"
-      }, { "value": "country_option_7", "sequence": 7, "label": "country_option_7" }, {
-        "value": "country_option_228",
-        "sequence": 228,
-        "label": "country_option_228"
-      }, {
+      }, {"value": "country_option_210", "sequence": 210, "label": "country_option_210"}, {
+        "value": "country_option_7",
+        "sequence": 7,
+        "label": "country_option_7"
+      }, {"value": "country_option_228", "sequence": 228, "label": "country_option_228"}, {
         "value": "country_option_82",
         "sequence": 82,
         "label": "country_option_82"
-      }, {
-        "value": "country_option_146",
-        "sequence": 146,
-        "label": "country_option_146"
-      }, {
+      }, {"value": "country_option_146", "sequence": 146, "label": "country_option_146"}, {
         "value": "country_option_54",
         "sequence": 54,
         "label": "country_option_54"
-      }, {
-        "value": "country_option_128",
-        "sequence": 128,
-        "label": "country_option_128"
-      }, {
+      }, {"value": "country_option_128", "sequence": 128, "label": "country_option_128"}, {
         "value": "country_option_56",
         "sequence": 56,
         "label": "country_option_56"
-      }, {
-        "value": "country_option_136",
-        "sequence": 136,
-        "label": "country_option_136"
-      }, {
+      }, {"value": "country_option_136", "sequence": 136, "label": "country_option_136"}, {
         "value": "country_option_17",
         "sequence": 17,
         "label": "country_option_17"
@@ -9269,11 +7307,7 @@ export default [{
         "value": "country_option_167",
         "sequence": 167,
         "label": "country_option_167"
-      }, {
-        "value": "country_option_208",
-        "sequence": 208,
-        "label": "country_option_208"
-      }, {
+      }, {"value": "country_option_208", "sequence": 208, "label": "country_option_208"}, {
         "value": "country_option_91",
         "sequence": 91,
         "label": "country_option_91"
@@ -9281,59 +7315,39 @@ export default [{
         "value": "country_option_133",
         "sequence": 133,
         "label": "country_option_133"
-      }, {
-        "value": "country_option_166",
-        "sequence": 166,
-        "label": "country_option_166"
-      }, { "value": "country_option_98", "sequence": 98, "label": "country_option_98" }, {
-        "value": "country_option_46",
-        "sequence": 46,
-        "label": "country_option_46"
-      }, { "value": "country_option_60", "sequence": 60, "label": "country_option_60" }, {
-        "value": "country_option_20",
-        "sequence": 20,
-        "label": "country_option_20"
-      }, {
+      }, {"value": "country_option_166", "sequence": 166, "label": "country_option_166"}, {
+        "value": "country_option_98",
+        "sequence": 98,
+        "label": "country_option_98"
+      }, {"value": "country_option_46", "sequence": 46, "label": "country_option_46"}, {
+        "value": "country_option_60",
+        "sequence": 60,
+        "label": "country_option_60"
+      }, {"value": "country_option_20", "sequence": 20, "label": "country_option_20"}, {
         "value": "country_option_242",
         "sequence": 242,
         "label": "country_option_242"
-      }, {
-        "value": "country_option_88",
-        "sequence": 88,
-        "label": "country_option_88"
-      }, {
+      }, {"value": "country_option_88", "sequence": 88, "label": "country_option_88"}, {
         "value": "country_option_122",
         "sequence": 122,
         "label": "country_option_122"
-      }, {
-        "value": "country_option_108",
-        "sequence": 108,
-        "label": "country_option_108"
-      }, { "value": "country_option_77", "sequence": 77, "label": "country_option_77" }, {
-        "value": "country_option_27",
-        "sequence": 27,
-        "label": "country_option_27"
-      }, { "value": "country_option_11", "sequence": 11, "label": "country_option_11" }, {
-        "value": "country_option_63",
-        "sequence": 63,
-        "label": "country_option_63"
-      }, {
+      }, {"value": "country_option_108", "sequence": 108, "label": "country_option_108"}, {
+        "value": "country_option_77",
+        "sequence": 77,
+        "label": "country_option_77"
+      }, {"value": "country_option_27", "sequence": 27, "label": "country_option_27"}, {
+        "value": "country_option_11",
+        "sequence": 11,
+        "label": "country_option_11"
+      }, {"value": "country_option_63", "sequence": 63, "label": "country_option_63"}, {
         "value": "country_option_165",
         "sequence": 165,
         "label": "country_option_165"
-      }, {
-        "value": "country_option_181",
-        "sequence": 181,
-        "label": "country_option_181"
-      }, {
+      }, {"value": "country_option_181", "sequence": 181, "label": "country_option_181"}, {
         "value": "country_option_57",
         "sequence": 57,
         "label": "country_option_57"
-      }, {
-        "value": "country_option_125",
-        "sequence": 125,
-        "label": "country_option_125"
-      }, {
+      }, {"value": "country_option_125", "sequence": 125, "label": "country_option_125"}, {
         "value": "country_option_42",
         "sequence": 42,
         "label": "country_option_42"
@@ -9341,15 +7355,11 @@ export default [{
         "value": "country_option_160",
         "sequence": 160,
         "label": "country_option_160"
-      }, {
-        "value": "country_option_195",
-        "sequence": 195,
-        "label": "country_option_195"
-      }, { "value": "country_option_95", "sequence": 95, "label": "country_option_95" }, {
-        "value": "country_option_84",
-        "sequence": 84,
-        "label": "country_option_84"
-      }, {
+      }, {"value": "country_option_195", "sequence": 195, "label": "country_option_195"}, {
+        "value": "country_option_95",
+        "sequence": 95,
+        "label": "country_option_95"
+      }, {"value": "country_option_84", "sequence": 84, "label": "country_option_84"}, {
         "value": "country_option_154",
         "sequence": 154,
         "label": "country_option_154"
@@ -9357,43 +7367,31 @@ export default [{
         "value": "country_option_206",
         "sequence": 206,
         "label": "country_option_206"
-      }, {
-        "value": "country_option_214",
-        "sequence": 214,
-        "label": "country_option_214"
-      }, { "value": "country_option_71", "sequence": 71, "label": "country_option_71" }, {
-        "value": "country_option_43",
-        "sequence": 43,
-        "label": "country_option_43"
-      }, {
+      }, {"value": "country_option_214", "sequence": 214, "label": "country_option_214"}, {
+        "value": "country_option_71",
+        "sequence": 71,
+        "label": "country_option_71"
+      }, {"value": "country_option_43", "sequence": 43, "label": "country_option_43"}, {
         "value": "country_option_230",
         "sequence": 230,
         "label": "country_option_230"
-      }, {
-        "value": "country_option_238",
-        "sequence": 238,
-        "label": "country_option_238"
-      }, { "value": "country_option_13", "sequence": 13, "label": "country_option_13" }, {
-        "value": "country_option_83",
-        "sequence": 83,
-        "label": "country_option_83"
-      }, {
+      }, {"value": "country_option_238", "sequence": 238, "label": "country_option_238"}, {
+        "value": "country_option_13",
+        "sequence": 13,
+        "label": "country_option_13"
+      }, {"value": "country_option_83", "sequence": 83, "label": "country_option_83"}, {
         "value": "country_option_202",
         "sequence": 202,
         "label": "country_option_202"
-      }, { "value": "country_option_6", "sequence": 6, "label": "country_option_6" }, {
+      }, {"value": "country_option_6", "sequence": 6, "label": "country_option_6"}, {
         "value": "country_option_65",
         "sequence": 65,
         "label": "country_option_65"
-      }, {
-        "value": "country_option_172",
-        "sequence": 172,
-        "label": "country_option_172"
-      }, { "value": "country_option_9", "sequence": 9, "label": "country_option_9" }, {
-        "value": "country_option_93",
-        "sequence": 93,
-        "label": "country_option_93"
-      }, {
+      }, {"value": "country_option_172", "sequence": 172, "label": "country_option_172"}, {
+        "value": "country_option_9",
+        "sequence": 9,
+        "label": "country_option_9"
+      }, {"value": "country_option_93", "sequence": 93, "label": "country_option_93"}, {
         "value": "country_option_207",
         "sequence": 207,
         "label": "country_option_207"
@@ -9409,23 +7407,15 @@ export default [{
         "value": "country_option_225",
         "sequence": 225,
         "label": "country_option_225"
-      }, {
-        "value": "country_option_200",
-        "sequence": 200,
-        "label": "country_option_200"
-      }, {
+      }, {"value": "country_option_200", "sequence": 200, "label": "country_option_200"}, {
         "value": "country_option_73",
         "sequence": 73,
         "label": "country_option_73"
-      }, {
-        "value": "country_option_144",
-        "sequence": 144,
-        "label": "country_option_144"
-      }, { "value": "country_option_40", "sequence": 40, "label": "country_option_40" }, {
-        "value": "country_option_14",
-        "sequence": 14,
-        "label": "country_option_14"
-      }, {
+      }, {"value": "country_option_144", "sequence": 144, "label": "country_option_144"}, {
+        "value": "country_option_40",
+        "sequence": 40,
+        "label": "country_option_40"
+      }, {"value": "country_option_14", "sequence": 14, "label": "country_option_14"}, {
         "value": "country_option_116",
         "sequence": 116,
         "label": "country_option_116"
@@ -9441,23 +7431,15 @@ export default [{
         "value": "country_option_114",
         "sequence": 114,
         "label": "country_option_114"
-      }, {
-        "value": "country_option_193",
-        "sequence": 193,
-        "label": "country_option_193"
-      }, { "value": "country_option_62", "sequence": 62, "label": "country_option_62" }, {
-        "value": "country_option_24",
-        "sequence": 24,
-        "label": "country_option_24"
-      }, {
+      }, {"value": "country_option_193", "sequence": 193, "label": "country_option_193"}, {
+        "value": "country_option_62",
+        "sequence": 62,
+        "label": "country_option_62"
+      }, {"value": "country_option_24", "sequence": 24, "label": "country_option_24"}, {
         "value": "country_option_187",
         "sequence": 187,
         "label": "country_option_187"
-      }, {
-        "value": "country_option_74",
-        "sequence": 74,
-        "label": "country_option_74"
-      }, {
+      }, {"value": "country_option_74", "sequence": 74, "label": "country_option_74"}, {
         "value": "country_option_103",
         "sequence": 103,
         "label": "country_option_103"
@@ -9465,19 +7447,11 @@ export default [{
         "value": "country_option_109",
         "sequence": 109,
         "label": "country_option_109"
-      }, {
-        "value": "country_option_244",
-        "sequence": 244,
-        "label": "country_option_244"
-      }, {
+      }, {"value": "country_option_244", "sequence": 244, "label": "country_option_244"}, {
         "value": "country_option_92",
         "sequence": 92,
         "label": "country_option_92"
-      }, {
-        "value": "country_option_239",
-        "sequence": 239,
-        "label": "country_option_239"
-      }, {
+      }, {"value": "country_option_239", "sequence": 239, "label": "country_option_239"}, {
         "value": "country_option_51",
         "sequence": 51,
         "label": "country_option_51"
@@ -9489,15 +7463,11 @@ export default [{
         "value": "country_option_115",
         "sequence": 115,
         "label": "country_option_115"
-      }, {
-        "value": "country_option_151",
-        "sequence": 151,
-        "label": "country_option_151"
-      }, { "value": "country_option_85", "sequence": 85, "label": "country_option_85" }, {
-        "value": "country_option_8",
-        "sequence": 8,
-        "label": "country_option_8"
-      }, {
+      }, {"value": "country_option_151", "sequence": 151, "label": "country_option_151"}, {
+        "value": "country_option_85",
+        "sequence": 85,
+        "label": "country_option_85"
+      }, {"value": "country_option_8", "sequence": 8, "label": "country_option_8"}, {
         "value": "country_option_186",
         "sequence": 186,
         "label": "country_option_186"
@@ -9525,23 +7495,15 @@ export default [{
         "value": "country_option_191",
         "sequence": 191,
         "label": "country_option_191"
-      }, {
-        "value": "country_option_113",
-        "sequence": 113,
-        "label": "country_option_113"
-      }, { "value": "country_option_86", "sequence": 86, "label": "country_option_86" }, {
-        "value": "country_option_48",
-        "sequence": 48,
-        "label": "country_option_48"
-      }, {
+      }, {"value": "country_option_113", "sequence": 113, "label": "country_option_113"}, {
+        "value": "country_option_86",
+        "sequence": 86,
+        "label": "country_option_86"
+      }, {"value": "country_option_48", "sequence": 48, "label": "country_option_48"}, {
         "value": "country_option_141",
         "sequence": 141,
         "label": "country_option_141"
-      }, {
-        "value": "country_option_233",
-        "sequence": 233,
-        "label": "country_option_233"
-      }, {
+      }, {"value": "country_option_233", "sequence": 233, "label": "country_option_233"}, {
         "value": "country_option_35",
         "sequence": 35,
         "label": "country_option_35"
@@ -9549,15 +7511,11 @@ export default [{
         "value": "country_option_139",
         "sequence": 139,
         "label": "country_option_139"
-      }, {
-        "value": "country_option_171",
-        "sequence": 171,
-        "label": "country_option_171"
-      }, { "value": "country_option_12", "sequence": 12, "label": "country_option_12" }, {
-        "value": "country_option_2",
-        "sequence": 2,
-        "label": "country_option_2"
-      }, {
+      }, {"value": "country_option_171", "sequence": 171, "label": "country_option_171"}, {
+        "value": "country_option_12",
+        "sequence": 12,
+        "label": "country_option_12"
+      }, {"value": "country_option_2", "sequence": 2, "label": "country_option_2"}, {
         "value": "country_option_246",
         "sequence": 246,
         "label": "country_option_246"
@@ -9569,19 +7527,15 @@ export default [{
         "value": "country_option_237",
         "sequence": 237,
         "label": "country_option_237"
-      }, {
-        "value": "country_option_236",
-        "sequence": 236,
-        "label": "country_option_236"
-      }, { "value": "country_option_19", "sequence": 19, "label": "country_option_19" }, {
-        "value": "country_option_49",
-        "sequence": 49,
-        "label": "country_option_49"
-      }, {
+      }, {"value": "country_option_236", "sequence": 236, "label": "country_option_236"}, {
+        "value": "country_option_19",
+        "sequence": 19,
+        "label": "country_option_19"
+      }, {"value": "country_option_49", "sequence": 49, "label": "country_option_49"}, {
         "value": "country_option_174",
         "sequence": 174,
         "label": "country_option_174"
-      }, { "value": "country_option_3", "sequence": 3, "label": "country_option_3" }, {
+      }, {"value": "country_option_3", "sequence": 3, "label": "country_option_3"}, {
         "value": "country_option_89",
         "sequence": 89,
         "label": "country_option_89"
@@ -9593,15 +7547,11 @@ export default [{
         "value": "country_option_129",
         "sequence": 129,
         "label": "country_option_129"
-      }, {
-        "value": "country_option_124",
-        "sequence": 124,
-        "label": "country_option_124"
-      }, { "value": "country_option_97", "sequence": 97, "label": "country_option_97" }, {
-        "value": "country_option_94",
-        "sequence": 94,
-        "label": "country_option_94"
-      }, {
+      }, {"value": "country_option_124", "sequence": 124, "label": "country_option_124"}, {
+        "value": "country_option_97",
+        "sequence": 97,
+        "label": "country_option_97"
+      }, {"value": "country_option_94", "sequence": 94, "label": "country_option_94"}, {
         "value": "country_option_22",
         "sequence": 22,
         "label": "country_option_22"
@@ -9617,27 +7567,19 @@ export default [{
         "value": "country_option_110",
         "sequence": 110,
         "label": "country_option_110"
-      }, {
-        "value": "country_option_251",
-        "sequence": 251,
-        "label": "country_option_251"
-      }, { "value": "country_option_70", "sequence": 70, "label": "country_option_70" }, {
-        "value": "country_option_16",
-        "sequence": 16,
-        "label": "country_option_16"
-      }, {
+      }, {"value": "country_option_251", "sequence": 251, "label": "country_option_251"}, {
+        "value": "country_option_70",
+        "sequence": 70,
+        "label": "country_option_70"
+      }, {"value": "country_option_16", "sequence": 16, "label": "country_option_16"}, {
         "value": "country_option_173",
         "sequence": 173,
         "label": "country_option_173"
-      }, { "value": "country_option_10", "sequence": 10, "label": "country_option_10" }, {
+      }, {"value": "country_option_10", "sequence": 10, "label": "country_option_10"}, {
         "value": "country_option_96",
         "sequence": 96,
         "label": "country_option_96"
-      }, {
-        "value": "country_option_159",
-        "sequence": 159,
-        "label": "country_option_159"
-      }, {
+      }, {"value": "country_option_159", "sequence": 159, "label": "country_option_159"}, {
         "value": "country_option_64",
         "sequence": 64,
         "label": "country_option_64"
@@ -9645,15 +7587,11 @@ export default [{
         "value": "country_option_161",
         "sequence": 161,
         "label": "country_option_161"
-      }, {
-        "value": "country_option_137",
-        "sequence": 137,
-        "label": "country_option_137"
-      }, { "value": "country_option_5", "sequence": 5, "label": "country_option_5" }, {
-        "value": "country_option_18",
-        "sequence": 18,
-        "label": "country_option_18"
-      }, {
+      }, {"value": "country_option_137", "sequence": 137, "label": "country_option_137"}, {
+        "value": "country_option_5",
+        "sequence": 5,
+        "label": "country_option_5"
+      }, {"value": "country_option_18", "sequence": 18, "label": "country_option_18"}, {
         "value": "country_option_41",
         "sequence": 41,
         "label": "country_option_41"
@@ -9661,19 +7599,15 @@ export default [{
         "value": "country_option_143",
         "sequence": 143,
         "label": "country_option_143"
-      }, {
-        "value": "country_option_156",
-        "sequence": 156,
-        "label": "country_option_156"
-      }, { "value": "country_option_78", "sequence": 78, "label": "country_option_78" }, {
-        "value": "country_option_4",
-        "sequence": 4,
-        "label": "country_option_4"
-      }, { "value": "country_option_76", "sequence": 76, "label": "country_option_76" }, {
-        "value": "country_option_47",
-        "sequence": 47,
-        "label": "country_option_47"
-      }, {
+      }, {"value": "country_option_156", "sequence": 156, "label": "country_option_156"}, {
+        "value": "country_option_78",
+        "sequence": 78,
+        "label": "country_option_78"
+      }, {"value": "country_option_4", "sequence": 4, "label": "country_option_4"}, {
+        "value": "country_option_76",
+        "sequence": 76,
+        "label": "country_option_76"
+      }, {"value": "country_option_47", "sequence": 47, "label": "country_option_47"}, {
         "value": "country_option_190",
         "sequence": 190,
         "label": "country_option_190"
@@ -9705,19 +7639,11 @@ export default [{
         "value": "country_option_211",
         "sequence": 211,
         "label": "country_option_211"
-      }, {
-        "value": "country_option_158",
-        "sequence": 158,
-        "label": "country_option_158"
-      }, {
+      }, {"value": "country_option_158", "sequence": 158, "label": "country_option_158"}, {
         "value": "country_option_55",
         "sequence": 55,
         "label": "country_option_55"
-      }, {
-        "value": "country_option_135",
-        "sequence": 135,
-        "label": "country_option_135"
-      }, {
+      }, {"value": "country_option_135", "sequence": 135, "label": "country_option_135"}, {
         "value": "country_option_99",
         "sequence": 99,
         "label": "country_option_99"
@@ -9733,19 +7659,11 @@ export default [{
         "value": "country_option_198",
         "sequence": 198,
         "label": "country_option_198"
-      }, {
-        "value": "country_option_222",
-        "sequence": 222,
-        "label": "country_option_222"
-      }, {
+      }, {"value": "country_option_222", "sequence": 222, "label": "country_option_222"}, {
         "value": "country_option_50",
         "sequence": 50,
         "label": "country_option_50"
-      }, {
-        "value": "country_option_218",
-        "sequence": 218,
-        "label": "country_option_218"
-      }, {
+      }, {"value": "country_option_218", "sequence": 218, "label": "country_option_218"}, {
         "value": "country_option_72",
         "sequence": 72,
         "label": "country_option_72"
@@ -9753,7 +7671,7 @@ export default [{
         "value": "country_option_180",
         "sequence": 180,
         "label": "country_option_180"
-      }, { "value": "country_option_175", "sequence": 175, "label": "country_option_175" }],
+      }, {"value": "country_option_175", "sequence": 175, "label": "country_option_175"}],
       "label": "ch2_s2_field7_label",
       "fieldApi": "Country_of_Residence__c",
       "description": "ch2_s2_field7_description"
@@ -9765,7 +7683,7 @@ export default [{
       }],
       "type": "boxed_checkbox",
       "sfFieldType": "Checkbox",
-      "sequence": 23,
+      "sequence": 55,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field8Section_04_2",
       "label": "ch2_s2_field8_label",
@@ -9778,7 +7696,7 @@ export default [{
         "required": false
       }],
       "type": "boxed_checkbox",
-      "sequence": 24,
+      "sequence": 56,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field10Section_04_2",
       "label": "ch2_s2_field10_label",
@@ -9789,19 +7707,16 @@ export default [{
   }, {
     "type": "Conditional",
     "title": "ch_2_sec_7_title",
-    "serverValues": [{
-      "fieldValue": "",
-      "fieldCode": "ch1_s1_field1Section_04_3"
-    }, { "fieldCode": "ch1_s1_field2Section_04_3" }, { "fieldCode": "ch1_s1_field3Section_04_3" }, { "fieldCode": "ch2_s2_field4Section_04_3" }, {
-      "fieldValue": "",
-      "fieldCode": "ch2_s2_field5Section_04_3"
-    }, { "fieldValue": "", "fieldCode": "ch2_s2_field6Section_04_3" }, {
-      "fieldValue": "",
-      "fieldCode": "ch2_s2_field7Section_04_3"
-    }, { "fieldValue": "false", "fieldCode": "ch2_s2_field8Section_04_3" }],
+    "serverValues": [{"fieldCode": "ch1_s1_field1Section_04_3"}, {"fieldCode": "ch1_s1_field2Section_04_3"}, {"fieldCode": "ch1_s1_field3Section_04_3"}, {"fieldCode": "ch2_s2_field4Section_04_3"}, {"fieldCode": "ch2_s2_field5Section_04_3"}, {"fieldCode": "ch2_s2_field6Section_04_3"}, {"fieldCode": "ch2_s2_field7Section_04_3"}, {"fieldCode": "ch2_s2_field8Section_04_3"}],
     "sequence": 8,
     "name": "Section_04_3",
     "fields": [{
+      "type": "title",
+      "sfFieldType": "Text",
+      "sequence": 57,
+      "name": "nullSection_04_3",
+      "label": "ch_2_sec_7_title"
+    }, {
       "validationRules": [{
         "validationError": "ch1_s1_field1_ValidErr",
         "requiredError": "ch1_s1_field1_ReqErr",
@@ -9809,14 +7724,14 @@ export default [{
       }],
       "type": "horizontal_radio_btns",
       "sfFieldType": "Picklist",
-      "sequence": 16,
+      "sequence": 58,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch1_s1_field1Section_04_3",
       "listOfValues": [{
         "value": "title_option_1",
         "sequence": 1,
         "label": "title_option_1"
-      }, { "value": "title_option_2", "sequence": 2, "label": "title_option_2" }],
+      }, {"value": "title_option_2", "sequence": 2, "label": "title_option_2"}],
       "label": "ch1_s1_field1_label",
       "fieldApi": "Title__c",
       "description": "ch1_s1_field1_description"
@@ -9829,7 +7744,7 @@ export default [{
       }],
       "type": "text",
       "sfFieldType": "Text",
-      "sequence": 17,
+      "sequence": 59,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch1_s1_field2Section_04_3",
       "label": "ch1_s1_field2_label",
@@ -9844,7 +7759,7 @@ export default [{
       }],
       "type": "text",
       "sfFieldType": "Text",
-      "sequence": 18,
+      "sequence": 60,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch1_s1_field3Section_04_3",
       "label": "ch1_s1_field3_label",
@@ -9859,7 +7774,7 @@ export default [{
       }],
       "type": "text",
       "sfFieldType": "Text",
-      "sequence": 19,
+      "sequence": 61,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field4Section_04_3",
       "label": "ch2_s2_field4_label",
@@ -9873,7 +7788,7 @@ export default [{
       }],
       "type": "date",
       "sfFieldType": "Date",
-      "sequence": 20,
+      "sequence": 62,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field5Section_04_3",
       "label": "ch2_s2_field5_label",
@@ -9887,18 +7802,14 @@ export default [{
       }],
       "type": "drop_down",
       "sfFieldType": "Picklist",
-      "sequence": 21,
+      "sequence": 63,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field6Section_04_3",
       "listOfValues": [{
         "value": "country_option_85",
         "sequence": 85,
         "label": "country_option_85"
-      }, {
-        "value": "country_option_148",
-        "sequence": 148,
-        "label": "country_option_148"
-      }, {
+      }, {"value": "country_option_148", "sequence": 148, "label": "country_option_148"}, {
         "value": "country_option_18",
         "sequence": 18,
         "label": "country_option_18"
@@ -9906,55 +7817,35 @@ export default [{
         "value": "country_option_191",
         "sequence": 191,
         "label": "country_option_191"
-      }, {
-        "value": "country_option_104",
-        "sequence": 104,
-        "label": "country_option_104"
-      }, {
+      }, {"value": "country_option_104", "sequence": 104, "label": "country_option_104"}, {
         "value": "country_option_13",
         "sequence": 13,
         "label": "country_option_13"
-      }, {
-        "value": "country_option_233",
-        "sequence": 233,
-        "label": "country_option_233"
-      }, {
+      }, {"value": "country_option_233", "sequence": 233, "label": "country_option_233"}, {
         "value": "country_option_12",
         "sequence": 12,
         "label": "country_option_12"
-      }, {
-        "value": "country_option_140",
-        "sequence": 140,
-        "label": "country_option_140"
-      }, {
+      }, {"value": "country_option_140", "sequence": 140, "label": "country_option_140"}, {
         "value": "country_option_83",
         "sequence": 83,
         "label": "country_option_83"
-      }, {
-        "value": "country_option_133",
-        "sequence": 133,
-        "label": "country_option_133"
-      }, { "value": "country_option_32", "sequence": 32, "label": "country_option_32" }, {
-        "value": "country_option_11",
-        "sequence": 11,
-        "label": "country_option_11"
-      }, { "value": "country_option_39", "sequence": 39, "label": "country_option_39" }, {
-        "value": "country_option_55",
-        "sequence": 55,
-        "label": "country_option_55"
-      }, {
+      }, {"value": "country_option_133", "sequence": 133, "label": "country_option_133"}, {
+        "value": "country_option_32",
+        "sequence": 32,
+        "label": "country_option_32"
+      }, {"value": "country_option_11", "sequence": 11, "label": "country_option_11"}, {
+        "value": "country_option_39",
+        "sequence": 39,
+        "label": "country_option_39"
+      }, {"value": "country_option_55", "sequence": 55, "label": "country_option_55"}, {
         "value": "country_option_236",
         "sequence": 236,
         "label": "country_option_236"
-      }, { "value": "country_option_29", "sequence": 29, "label": "country_option_29" }, {
+      }, {"value": "country_option_29", "sequence": 29, "label": "country_option_29"}, {
         "value": "country_option_31",
         "sequence": 31,
         "label": "country_option_31"
-      }, {
-        "value": "country_option_14",
-        "sequence": 14,
-        "label": "country_option_14"
-      }, {
+      }, {"value": "country_option_14", "sequence": 14, "label": "country_option_14"}, {
         "value": "country_option_195",
         "sequence": 195,
         "label": "country_option_195"
@@ -9970,35 +7861,23 @@ export default [{
         "value": "country_option_214",
         "sequence": 214,
         "label": "country_option_214"
-      }, {
-        "value": "country_option_183",
-        "sequence": 183,
-        "label": "country_option_183"
-      }, { "value": "country_option_40", "sequence": 40, "label": "country_option_40" }, {
-        "value": "country_option_38",
-        "sequence": 38,
-        "label": "country_option_38"
-      }, { "value": "country_option_90", "sequence": 90, "label": "country_option_90" }, {
-        "value": "country_option_16",
-        "sequence": 16,
-        "label": "country_option_16"
-      }, {
+      }, {"value": "country_option_183", "sequence": 183, "label": "country_option_183"}, {
+        "value": "country_option_40",
+        "sequence": 40,
+        "label": "country_option_40"
+      }, {"value": "country_option_38", "sequence": 38, "label": "country_option_38"}, {
+        "value": "country_option_90",
+        "sequence": 90,
+        "label": "country_option_90"
+      }, {"value": "country_option_16", "sequence": 16, "label": "country_option_16"}, {
         "value": "country_option_26",
         "sequence": 26,
         "label": "country_option_26"
-      }, {
-        "value": "country_option_149",
-        "sequence": 149,
-        "label": "country_option_149"
-      }, {
+      }, {"value": "country_option_149", "sequence": 149, "label": "country_option_149"}, {
         "value": "country_option_70",
         "sequence": 70,
         "label": "country_option_70"
-      }, {
-        "value": "country_option_162",
-        "sequence": 162,
-        "label": "country_option_162"
-      }, {
+      }, {"value": "country_option_162", "sequence": 162, "label": "country_option_162"}, {
         "value": "country_option_51",
         "sequence": 51,
         "label": "country_option_51"
@@ -10006,23 +7885,15 @@ export default [{
         "value": "country_option_207",
         "sequence": 207,
         "label": "country_option_207"
-      }, {
-        "value": "country_option_184",
-        "sequence": 184,
-        "label": "country_option_184"
-      }, { "value": "country_option_8", "sequence": 8, "label": "country_option_8" }, {
-        "value": "country_option_52",
-        "sequence": 52,
-        "label": "country_option_52"
-      }, {
+      }, {"value": "country_option_184", "sequence": 184, "label": "country_option_184"}, {
+        "value": "country_option_8",
+        "sequence": 8,
+        "label": "country_option_8"
+      }, {"value": "country_option_52", "sequence": 52, "label": "country_option_52"}, {
         "value": "country_option_59",
         "sequence": 59,
         "label": "country_option_59"
-      }, {
-        "value": "country_option_200",
-        "sequence": 200,
-        "label": "country_option_200"
-      }, {
+      }, {"value": "country_option_200", "sequence": 200, "label": "country_option_200"}, {
         "value": "country_option_17",
         "sequence": 17,
         "label": "country_option_17"
@@ -10030,15 +7901,11 @@ export default [{
         "value": "country_option_120",
         "sequence": 120,
         "label": "country_option_120"
-      }, {
-        "value": "country_option_151",
-        "sequence": 151,
-        "label": "country_option_151"
-      }, { "value": "country_option_3", "sequence": 3, "label": "country_option_3" }, {
-        "value": "country_option_87",
-        "sequence": 87,
-        "label": "country_option_87"
-      }, {
+      }, {"value": "country_option_151", "sequence": 151, "label": "country_option_151"}, {
+        "value": "country_option_3",
+        "sequence": 3,
+        "label": "country_option_3"
+      }, {"value": "country_option_87", "sequence": 87, "label": "country_option_87"}, {
         "value": "country_option_157",
         "sequence": 157,
         "label": "country_option_157"
@@ -10062,19 +7929,11 @@ export default [{
         "value": "country_option_114",
         "sequence": 114,
         "label": "country_option_114"
-      }, {
-        "value": "country_option_128",
-        "sequence": 128,
-        "label": "country_option_128"
-      }, {
+      }, {"value": "country_option_128", "sequence": 128, "label": "country_option_128"}, {
         "value": "country_option_53",
         "sequence": 53,
         "label": "country_option_53"
-      }, {
-        "value": "country_option_125",
-        "sequence": 125,
-        "label": "country_option_125"
-      }, {
+      }, {"value": "country_option_125", "sequence": 125, "label": "country_option_125"}, {
         "value": "country_option_58",
         "sequence": 58,
         "label": "country_option_58"
@@ -10090,23 +7949,15 @@ export default [{
         "value": "country_option_219",
         "sequence": 219,
         "label": "country_option_219"
-      }, {
-        "value": "country_option_242",
-        "sequence": 242,
-        "label": "country_option_242"
-      }, {
+      }, {"value": "country_option_242", "sequence": 242, "label": "country_option_242"}, {
         "value": "country_option_96",
         "sequence": 96,
         "label": "country_option_96"
-      }, {
-        "value": "country_option_154",
-        "sequence": 154,
-        "label": "country_option_154"
-      }, { "value": "country_option_25", "sequence": 25, "label": "country_option_25" }, {
-        "value": "country_option_61",
-        "sequence": 61,
-        "label": "country_option_61"
-      }, {
+      }, {"value": "country_option_154", "sequence": 154, "label": "country_option_154"}, {
+        "value": "country_option_25",
+        "sequence": 25,
+        "label": "country_option_25"
+      }, {"value": "country_option_61", "sequence": 61, "label": "country_option_61"}, {
         "value": "country_option_82",
         "sequence": 82,
         "label": "country_option_82"
@@ -10134,11 +7985,7 @@ export default [{
         "value": "country_option_130",
         "sequence": 130,
         "label": "country_option_130"
-      }, {
-        "value": "country_option_178",
-        "sequence": 178,
-        "label": "country_option_178"
-      }, {
+      }, {"value": "country_option_178", "sequence": 178, "label": "country_option_178"}, {
         "value": "country_option_41",
         "sequence": 41,
         "label": "country_option_41"
@@ -10150,19 +7997,11 @@ export default [{
         "value": "country_option_206",
         "sequence": 206,
         "label": "country_option_206"
-      }, {
-        "value": "country_option_213",
-        "sequence": 213,
-        "label": "country_option_213"
-      }, {
+      }, {"value": "country_option_213", "sequence": 213, "label": "country_option_213"}, {
         "value": "country_option_35",
         "sequence": 35,
         "label": "country_option_35"
-      }, {
-        "value": "country_option_185",
-        "sequence": 185,
-        "label": "country_option_185"
-      }, {
+      }, {"value": "country_option_185", "sequence": 185, "label": "country_option_185"}, {
         "value": "country_option_89",
         "sequence": 89,
         "label": "country_option_89"
@@ -10174,23 +8013,15 @@ export default [{
         "value": "country_option_160",
         "sequence": 160,
         "label": "country_option_160"
-      }, {
-        "value": "country_option_117",
-        "sequence": 117,
-        "label": "country_option_117"
-      }, {
+      }, {"value": "country_option_117", "sequence": 117, "label": "country_option_117"}, {
         "value": "country_option_42",
         "sequence": 42,
         "label": "country_option_42"
-      }, {
-        "value": "country_option_243",
-        "sequence": 243,
-        "label": "country_option_243"
-      }, { "value": "country_option_68", "sequence": 68, "label": "country_option_68" }, {
-        "value": "country_option_64",
-        "sequence": 64,
-        "label": "country_option_64"
-      }, {
+      }, {"value": "country_option_243", "sequence": 243, "label": "country_option_243"}, {
+        "value": "country_option_68",
+        "sequence": 68,
+        "label": "country_option_68"
+      }, {"value": "country_option_64", "sequence": 64, "label": "country_option_64"}, {
         "value": "country_option_73",
         "sequence": 73,
         "label": "country_option_73"
@@ -10206,11 +8037,7 @@ export default [{
         "value": "country_option_102",
         "sequence": 102,
         "label": "country_option_102"
-      }, {
-        "value": "country_option_248",
-        "sequence": 248,
-        "label": "country_option_248"
-      }, {
+      }, {"value": "country_option_248", "sequence": 248, "label": "country_option_248"}, {
         "value": "country_option_72",
         "sequence": 72,
         "label": "country_option_72"
@@ -10226,11 +8053,7 @@ export default [{
         "value": "country_option_225",
         "sequence": 225,
         "label": "country_option_225"
-      }, {
-        "value": "country_option_112",
-        "sequence": 112,
-        "label": "country_option_112"
-      }, {
+      }, {"value": "country_option_112", "sequence": 112, "label": "country_option_112"}, {
         "value": "country_option_93",
         "sequence": 93,
         "label": "country_option_93"
@@ -10246,19 +8069,11 @@ export default [{
         "value": "country_option_235",
         "sequence": 235,
         "label": "country_option_235"
-      }, {
-        "value": "country_option_136",
-        "sequence": 136,
-        "label": "country_option_136"
-      }, {
+      }, {"value": "country_option_136", "sequence": 136, "label": "country_option_136"}, {
         "value": "country_option_34",
         "sequence": 34,
         "label": "country_option_34"
-      }, {
-        "value": "country_option_107",
-        "sequence": 107,
-        "label": "country_option_107"
-      }, {
+      }, {"value": "country_option_107", "sequence": 107, "label": "country_option_107"}, {
         "value": "country_option_20",
         "sequence": 20,
         "label": "country_option_20"
@@ -10274,15 +8089,11 @@ export default [{
         "value": "country_option_163",
         "sequence": 163,
         "label": "country_option_163"
-      }, {
-        "value": "country_option_190",
-        "sequence": 190,
-        "label": "country_option_190"
-      }, { "value": "country_option_79", "sequence": 79, "label": "country_option_79" }, {
-        "value": "country_option_19",
-        "sequence": 19,
-        "label": "country_option_19"
-      }, {
+      }, {"value": "country_option_190", "sequence": 190, "label": "country_option_190"}, {
+        "value": "country_option_79",
+        "sequence": 79,
+        "label": "country_option_79"
+      }, {"value": "country_option_19", "sequence": 19, "label": "country_option_19"}, {
         "value": "country_option_129",
         "sequence": 129,
         "label": "country_option_129"
@@ -10294,15 +8105,11 @@ export default [{
         "value": "country_option_220",
         "sequence": 220,
         "label": "country_option_220"
-      }, {
-        "value": "country_option_132",
-        "sequence": 132,
-        "label": "country_option_132"
-      }, { "value": "country_option_75", "sequence": 75, "label": "country_option_75" }, {
-        "value": "country_option_1",
-        "sequence": 1,
-        "label": "country_option_1"
-      }, {
+      }, {"value": "country_option_132", "sequence": 132, "label": "country_option_132"}, {
+        "value": "country_option_75",
+        "sequence": 75,
+        "label": "country_option_75"
+      }, {"value": "country_option_1", "sequence": 1, "label": "country_option_1"}, {
         "value": "country_option_208",
         "sequence": 208,
         "label": "country_option_208"
@@ -10318,15 +8125,11 @@ export default [{
         "value": "country_option_197",
         "sequence": 197,
         "label": "country_option_197"
-      }, {
-        "value": "country_option_122",
-        "sequence": 122,
-        "label": "country_option_122"
-      }, { "value": "country_option_98", "sequence": 98, "label": "country_option_98" }, {
-        "value": "country_option_97",
-        "sequence": 97,
-        "label": "country_option_97"
-      }, {
+      }, {"value": "country_option_122", "sequence": 122, "label": "country_option_122"}, {
+        "value": "country_option_98",
+        "sequence": 98,
+        "label": "country_option_98"
+      }, {"value": "country_option_97", "sequence": 97, "label": "country_option_97"}, {
         "value": "country_option_36",
         "sequence": 36,
         "label": "country_option_36"
@@ -10346,31 +8149,19 @@ export default [{
         "value": "country_option_150",
         "sequence": 150,
         "label": "country_option_150"
-      }, {
-        "value": "country_option_252",
-        "sequence": 252,
-        "label": "country_option_252"
-      }, { "value": "country_option_4", "sequence": 4, "label": "country_option_4" }, {
-        "value": "country_option_46",
-        "sequence": 46,
-        "label": "country_option_46"
-      }, {
+      }, {"value": "country_option_252", "sequence": 252, "label": "country_option_252"}, {
+        "value": "country_option_4",
+        "sequence": 4,
+        "label": "country_option_4"
+      }, {"value": "country_option_46", "sequence": 46, "label": "country_option_46"}, {
         "value": "country_option_204",
         "sequence": 204,
         "label": "country_option_204"
-      }, {
-        "value": "country_option_66",
-        "sequence": 66,
-        "label": "country_option_66"
-      }, {
+      }, {"value": "country_option_66", "sequence": 66, "label": "country_option_66"}, {
         "value": "country_option_229",
         "sequence": 229,
         "label": "country_option_229"
-      }, {
-        "value": "country_option_241",
-        "sequence": 241,
-        "label": "country_option_241"
-      }, {
+      }, {"value": "country_option_241", "sequence": 241, "label": "country_option_241"}, {
         "value": "country_option_22",
         "sequence": 22,
         "label": "country_option_22"
@@ -10390,23 +8181,15 @@ export default [{
         "value": "country_option_143",
         "sequence": 143,
         "label": "country_option_143"
-      }, {
-        "value": "country_option_174",
-        "sequence": 174,
-        "label": "country_option_174"
-      }, {
+      }, {"value": "country_option_174", "sequence": 174, "label": "country_option_174"}, {
         "value": "country_option_95",
         "sequence": 95,
         "label": "country_option_95"
-      }, {
-        "value": "country_option_141",
-        "sequence": 141,
-        "label": "country_option_141"
-      }, { "value": "country_option_60", "sequence": 60, "label": "country_option_60" }, {
-        "value": "country_option_56",
-        "sequence": 56,
-        "label": "country_option_56"
-      }, {
+      }, {"value": "country_option_141", "sequence": 141, "label": "country_option_141"}, {
+        "value": "country_option_60",
+        "sequence": 60,
+        "label": "country_option_60"
+      }, {"value": "country_option_56", "sequence": 56, "label": "country_option_56"}, {
         "value": "country_option_212",
         "sequence": 212,
         "label": "country_option_212"
@@ -10414,15 +8197,11 @@ export default [{
         "value": "country_option_146",
         "sequence": 146,
         "label": "country_option_146"
-      }, {
-        "value": "country_option_222",
-        "sequence": 222,
-        "label": "country_option_222"
-      }, { "value": "country_option_67", "sequence": 67, "label": "country_option_67" }, {
-        "value": "country_option_57",
-        "sequence": 57,
-        "label": "country_option_57"
-      }, {
+      }, {"value": "country_option_222", "sequence": 222, "label": "country_option_222"}, {
+        "value": "country_option_67",
+        "sequence": 67,
+        "label": "country_option_67"
+      }, {"value": "country_option_57", "sequence": 57, "label": "country_option_57"}, {
         "value": "country_option_10",
         "sequence": 10,
         "label": "country_option_10"
@@ -10438,15 +8217,11 @@ export default [{
         "value": "country_option_186",
         "sequence": 186,
         "label": "country_option_186"
-      }, {
-        "value": "country_option_198",
-        "sequence": 198,
-        "label": "country_option_198"
-      }, { "value": "country_option_44", "sequence": 44, "label": "country_option_44" }, {
-        "value": "country_option_81",
-        "sequence": 81,
-        "label": "country_option_81"
-      }, {
+      }, {"value": "country_option_198", "sequence": 198, "label": "country_option_198"}, {
+        "value": "country_option_44",
+        "sequence": 44,
+        "label": "country_option_44"
+      }, {"value": "country_option_81", "sequence": 81, "label": "country_option_81"}, {
         "value": "country_option_142",
         "sequence": 142,
         "label": "country_option_142"
@@ -10458,31 +8233,19 @@ export default [{
         "value": "country_option_159",
         "sequence": 159,
         "label": "country_option_159"
-      }, {
-        "value": "country_option_239",
-        "sequence": 239,
-        "label": "country_option_239"
-      }, { "value": "country_option_45", "sequence": 45, "label": "country_option_45" }, {
-        "value": "country_option_50",
-        "sequence": 50,
-        "label": "country_option_50"
-      }, {
+      }, {"value": "country_option_239", "sequence": 239, "label": "country_option_239"}, {
+        "value": "country_option_45",
+        "sequence": 45,
+        "label": "country_option_45"
+      }, {"value": "country_option_50", "sequence": 50, "label": "country_option_50"}, {
         "value": "country_option_189",
         "sequence": 189,
         "label": "country_option_189"
-      }, {
-        "value": "country_option_48",
-        "sequence": 48,
-        "label": "country_option_48"
-      }, {
+      }, {"value": "country_option_48", "sequence": 48, "label": "country_option_48"}, {
         "value": "country_option_126",
         "sequence": 126,
         "label": "country_option_126"
-      }, {
-        "value": "country_option_77",
-        "sequence": 77,
-        "label": "country_option_77"
-      }, {
+      }, {"value": "country_option_77", "sequence": 77, "label": "country_option_77"}, {
         "value": "country_option_123",
         "sequence": 123,
         "label": "country_option_123"
@@ -10542,31 +8305,23 @@ export default [{
         "value": "country_option_156",
         "sequence": 156,
         "label": "country_option_156"
+      }, {"value": "country_option_119", "sequence": 119, "label": "country_option_119"}, {
+        "value": "country_option_9",
+        "sequence": 9,
+        "label": "country_option_9"
       }, {
-        "value": "country_option_119",
-        "sequence": 119,
-        "label": "country_option_119"
-      }, { "value": "country_option_9", "sequence": 9, "label": "country_option_9" }, {
         "value": "country_option_251",
         "sequence": 251,
         "label": "country_option_251"
-      }, {
-        "value": "country_option_137",
-        "sequence": 137,
-        "label": "country_option_137"
-      }, {
+      }, {"value": "country_option_137", "sequence": 137, "label": "country_option_137"}, {
         "value": "country_option_65",
         "sequence": 65,
         "label": "country_option_65"
-      }, {
-        "value": "country_option_165",
-        "sequence": 165,
-        "label": "country_option_165"
-      }, { "value": "country_option_7", "sequence": 7, "label": "country_option_7" }, {
-        "value": "country_option_27",
-        "sequence": 27,
-        "label": "country_option_27"
-      }, {
+      }, {"value": "country_option_165", "sequence": 165, "label": "country_option_165"}, {
+        "value": "country_option_7",
+        "sequence": 7,
+        "label": "country_option_7"
+      }, {"value": "country_option_27", "sequence": 27, "label": "country_option_27"}, {
         "value": "country_option_171",
         "sequence": 171,
         "label": "country_option_171"
@@ -10582,11 +8337,7 @@ export default [{
         "value": "country_option_173",
         "sequence": 173,
         "label": "country_option_173"
-      }, {
-        "value": "country_option_237",
-        "sequence": 237,
-        "label": "country_option_237"
-      }, {
+      }, {"value": "country_option_237", "sequence": 237, "label": "country_option_237"}, {
         "value": "country_option_99",
         "sequence": 99,
         "label": "country_option_99"
@@ -10598,67 +8349,47 @@ export default [{
         "value": "country_option_201",
         "sequence": 201,
         "label": "country_option_201"
-      }, {
-        "value": "country_option_216",
-        "sequence": 216,
-        "label": "country_option_216"
-      }, { "value": "country_option_62", "sequence": 62, "label": "country_option_62" }, {
-        "value": "country_option_33",
-        "sequence": 33,
-        "label": "country_option_33"
-      }, { "value": "country_option_91", "sequence": 91, "label": "country_option_91" }, {
-        "value": "country_option_86",
-        "sequence": 86,
-        "label": "country_option_86"
-      }, {
+      }, {"value": "country_option_216", "sequence": 216, "label": "country_option_216"}, {
+        "value": "country_option_62",
+        "sequence": 62,
+        "label": "country_option_62"
+      }, {"value": "country_option_33", "sequence": 33, "label": "country_option_33"}, {
+        "value": "country_option_91",
+        "sequence": 91,
+        "label": "country_option_91"
+      }, {"value": "country_option_86", "sequence": 86, "label": "country_option_86"}, {
         "value": "country_option_211",
         "sequence": 211,
         "label": "country_option_211"
-      }, {
-        "value": "country_option_196",
-        "sequence": 196,
-        "label": "country_option_196"
-      }, { "value": "country_option_23", "sequence": 23, "label": "country_option_23" }, {
-        "value": "country_option_74",
-        "sequence": 74,
-        "label": "country_option_74"
-      }, {
+      }, {"value": "country_option_196", "sequence": 196, "label": "country_option_196"}, {
+        "value": "country_option_23",
+        "sequence": 23,
+        "label": "country_option_23"
+      }, {"value": "country_option_74", "sequence": 74, "label": "country_option_74"}, {
         "value": "country_option_232",
         "sequence": 232,
         "label": "country_option_232"
-      }, { "value": "country_option_37", "sequence": 37, "label": "country_option_37" }, {
+      }, {"value": "country_option_37", "sequence": 37, "label": "country_option_37"}, {
         "value": "country_option_78",
         "sequence": 78,
         "label": "country_option_78"
-      }, { "value": "country_option_69", "sequence": 69, "label": "country_option_69" }, {
+      }, {"value": "country_option_69", "sequence": 69, "label": "country_option_69"}, {
         "value": "country_option_54",
         "sequence": 54,
         "label": "country_option_54"
-      }, { "value": "country_option_94", "sequence": 94, "label": "country_option_94" }, {
+      }, {"value": "country_option_94", "sequence": 94, "label": "country_option_94"}, {
         "value": "country_option_21",
         "sequence": 21,
         "label": "country_option_21"
-      }, {
-        "value": "country_option_116",
-        "sequence": 116,
-        "label": "country_option_116"
-      }, {
+      }, {"value": "country_option_116", "sequence": 116, "label": "country_option_116"}, {
         "value": "country_option_88",
         "sequence": 88,
         "label": "country_option_88"
-      }, {
-        "value": "country_option_124",
-        "sequence": 124,
-        "label": "country_option_124"
-      }, {
+      }, {"value": "country_option_124", "sequence": 124, "label": "country_option_124"}, {
         "value": "country_option_71",
         "sequence": 71,
         "label": "country_option_71"
-      }, {
-        "value": "country_option_188",
-        "sequence": 188,
-        "label": "country_option_188"
-      }, {
+      }, {"value": "country_option_188", "sequence": 188, "label": "country_option_188"}, {
         "value": "country_option_76",
         "sequence": 76,
         "label": "country_option_76"
@@ -10674,19 +8405,15 @@ export default [{
         "value": "country_option_170",
         "sequence": 170,
         "label": "country_option_170"
-      }, {
-        "value": "country_option_106",
-        "sequence": 106,
-        "label": "country_option_106"
-      }, { "value": "country_option_49", "sequence": 49, "label": "country_option_49" }, {
-        "value": "country_option_28",
-        "sequence": 28,
-        "label": "country_option_28"
-      }, { "value": "country_option_63", "sequence": 63, "label": "country_option_63" }, {
-        "value": "country_option_47",
-        "sequence": 47,
-        "label": "country_option_47"
-      }, {
+      }, {"value": "country_option_106", "sequence": 106, "label": "country_option_106"}, {
+        "value": "country_option_49",
+        "sequence": 49,
+        "label": "country_option_49"
+      }, {"value": "country_option_28", "sequence": 28, "label": "country_option_28"}, {
+        "value": "country_option_63",
+        "sequence": 63,
+        "label": "country_option_63"
+      }, {"value": "country_option_47", "sequence": 47, "label": "country_option_47"}, {
         "value": "country_option_131",
         "sequence": 131,
         "label": "country_option_131"
@@ -10710,35 +8437,27 @@ export default [{
         "value": "country_option_218",
         "sequence": 218,
         "label": "country_option_218"
-      }, {
-        "value": "country_option_152",
-        "sequence": 152,
-        "label": "country_option_152"
-      }, { "value": "country_option_5", "sequence": 5, "label": "country_option_5" }, {
-        "value": "country_option_24",
-        "sequence": 24,
-        "label": "country_option_24"
-      }, {
+      }, {"value": "country_option_152", "sequence": 152, "label": "country_option_152"}, {
+        "value": "country_option_5",
+        "sequence": 5,
+        "label": "country_option_5"
+      }, {"value": "country_option_24", "sequence": 24, "label": "country_option_24"}, {
         "value": "country_option_15",
         "sequence": 15,
         "label": "country_option_15"
+      }, {"value": "country_option_175", "sequence": 175, "label": "country_option_175"}, {
+        "value": "country_option_2",
+        "sequence": 2,
+        "label": "country_option_2"
       }, {
-        "value": "country_option_175",
-        "sequence": 175,
-        "label": "country_option_175"
-      }, { "value": "country_option_2", "sequence": 2, "label": "country_option_2" }, {
         "value": "country_option_121",
         "sequence": 121,
         "label": "country_option_121"
-      }, {
-        "value": "country_option_203",
-        "sequence": 203,
-        "label": "country_option_203"
-      }, { "value": "country_option_84", "sequence": 84, "label": "country_option_84" }, {
-        "value": "country_option_80",
-        "sequence": 80,
-        "label": "country_option_80"
-      }, {
+      }, {"value": "country_option_203", "sequence": 203, "label": "country_option_203"}, {
+        "value": "country_option_84",
+        "sequence": 84,
+        "label": "country_option_84"
+      }, {"value": "country_option_80", "sequence": 80, "label": "country_option_80"}, {
         "value": "country_option_181",
         "sequence": 181,
         "label": "country_option_181"
@@ -10746,19 +8465,15 @@ export default [{
         "value": "country_option_224",
         "sequence": 224,
         "label": "country_option_224"
-      }, {
-        "value": "country_option_134",
-        "sequence": 134,
-        "label": "country_option_134"
-      }, { "value": "country_option_92", "sequence": 92, "label": "country_option_92" }, {
-        "value": "country_option_43",
-        "sequence": 43,
-        "label": "country_option_43"
-      }, { "value": "country_option_30", "sequence": 30, "label": "country_option_30" }, {
-        "value": "country_option_6",
-        "sequence": 6,
-        "label": "country_option_6"
-      }, {
+      }, {"value": "country_option_134", "sequence": 134, "label": "country_option_134"}, {
+        "value": "country_option_92",
+        "sequence": 92,
+        "label": "country_option_92"
+      }, {"value": "country_option_43", "sequence": 43, "label": "country_option_43"}, {
+        "value": "country_option_30",
+        "sequence": 30,
+        "label": "country_option_30"
+      }, {"value": "country_option_6", "sequence": 6, "label": "country_option_6"}, {
         "value": "country_option_221",
         "sequence": 221,
         "label": "country_option_221"
@@ -10766,7 +8481,7 @@ export default [{
         "value": "country_option_168",
         "sequence": 168,
         "label": "country_option_168"
-      }, { "value": "country_option_199", "sequence": 199, "label": "country_option_199" }],
+      }, {"value": "country_option_199", "sequence": 199, "label": "country_option_199"}],
       "label": "ch2_s2_field6_label",
       "fieldApi": "Citizenship__c",
       "description": "ch2_s2_field6_description"
@@ -10778,18 +8493,14 @@ export default [{
       }],
       "type": "drop_down",
       "sfFieldType": "Picklist",
-      "sequence": 22,
+      "sequence": 64,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field7Section_04_3",
       "listOfValues": [{
         "value": "country_option_85",
         "sequence": 85,
         "label": "country_option_85"
-      }, {
-        "value": "country_option_148",
-        "sequence": 148,
-        "label": "country_option_148"
-      }, {
+      }, {"value": "country_option_148", "sequence": 148, "label": "country_option_148"}, {
         "value": "country_option_18",
         "sequence": 18,
         "label": "country_option_18"
@@ -10797,55 +8508,35 @@ export default [{
         "value": "country_option_191",
         "sequence": 191,
         "label": "country_option_191"
-      }, {
-        "value": "country_option_104",
-        "sequence": 104,
-        "label": "country_option_104"
-      }, {
+      }, {"value": "country_option_104", "sequence": 104, "label": "country_option_104"}, {
         "value": "country_option_13",
         "sequence": 13,
         "label": "country_option_13"
-      }, {
-        "value": "country_option_233",
-        "sequence": 233,
-        "label": "country_option_233"
-      }, {
+      }, {"value": "country_option_233", "sequence": 233, "label": "country_option_233"}, {
         "value": "country_option_12",
         "sequence": 12,
         "label": "country_option_12"
-      }, {
-        "value": "country_option_140",
-        "sequence": 140,
-        "label": "country_option_140"
-      }, {
+      }, {"value": "country_option_140", "sequence": 140, "label": "country_option_140"}, {
         "value": "country_option_83",
         "sequence": 83,
         "label": "country_option_83"
-      }, {
-        "value": "country_option_133",
-        "sequence": 133,
-        "label": "country_option_133"
-      }, { "value": "country_option_32", "sequence": 32, "label": "country_option_32" }, {
-        "value": "country_option_11",
-        "sequence": 11,
-        "label": "country_option_11"
-      }, { "value": "country_option_39", "sequence": 39, "label": "country_option_39" }, {
-        "value": "country_option_55",
-        "sequence": 55,
-        "label": "country_option_55"
-      }, {
+      }, {"value": "country_option_133", "sequence": 133, "label": "country_option_133"}, {
+        "value": "country_option_32",
+        "sequence": 32,
+        "label": "country_option_32"
+      }, {"value": "country_option_11", "sequence": 11, "label": "country_option_11"}, {
+        "value": "country_option_39",
+        "sequence": 39,
+        "label": "country_option_39"
+      }, {"value": "country_option_55", "sequence": 55, "label": "country_option_55"}, {
         "value": "country_option_236",
         "sequence": 236,
         "label": "country_option_236"
-      }, { "value": "country_option_29", "sequence": 29, "label": "country_option_29" }, {
+      }, {"value": "country_option_29", "sequence": 29, "label": "country_option_29"}, {
         "value": "country_option_31",
         "sequence": 31,
         "label": "country_option_31"
-      }, {
-        "value": "country_option_14",
-        "sequence": 14,
-        "label": "country_option_14"
-      }, {
+      }, {"value": "country_option_14", "sequence": 14, "label": "country_option_14"}, {
         "value": "country_option_195",
         "sequence": 195,
         "label": "country_option_195"
@@ -10861,35 +8552,23 @@ export default [{
         "value": "country_option_214",
         "sequence": 214,
         "label": "country_option_214"
-      }, {
-        "value": "country_option_183",
-        "sequence": 183,
-        "label": "country_option_183"
-      }, { "value": "country_option_40", "sequence": 40, "label": "country_option_40" }, {
-        "value": "country_option_38",
-        "sequence": 38,
-        "label": "country_option_38"
-      }, { "value": "country_option_90", "sequence": 90, "label": "country_option_90" }, {
-        "value": "country_option_16",
-        "sequence": 16,
-        "label": "country_option_16"
-      }, {
+      }, {"value": "country_option_183", "sequence": 183, "label": "country_option_183"}, {
+        "value": "country_option_40",
+        "sequence": 40,
+        "label": "country_option_40"
+      }, {"value": "country_option_38", "sequence": 38, "label": "country_option_38"}, {
+        "value": "country_option_90",
+        "sequence": 90,
+        "label": "country_option_90"
+      }, {"value": "country_option_16", "sequence": 16, "label": "country_option_16"}, {
         "value": "country_option_26",
         "sequence": 26,
         "label": "country_option_26"
-      }, {
-        "value": "country_option_149",
-        "sequence": 149,
-        "label": "country_option_149"
-      }, {
+      }, {"value": "country_option_149", "sequence": 149, "label": "country_option_149"}, {
         "value": "country_option_70",
         "sequence": 70,
         "label": "country_option_70"
-      }, {
-        "value": "country_option_162",
-        "sequence": 162,
-        "label": "country_option_162"
-      }, {
+      }, {"value": "country_option_162", "sequence": 162, "label": "country_option_162"}, {
         "value": "country_option_51",
         "sequence": 51,
         "label": "country_option_51"
@@ -10897,23 +8576,15 @@ export default [{
         "value": "country_option_207",
         "sequence": 207,
         "label": "country_option_207"
-      }, {
-        "value": "country_option_184",
-        "sequence": 184,
-        "label": "country_option_184"
-      }, { "value": "country_option_8", "sequence": 8, "label": "country_option_8" }, {
-        "value": "country_option_52",
-        "sequence": 52,
-        "label": "country_option_52"
-      }, {
+      }, {"value": "country_option_184", "sequence": 184, "label": "country_option_184"}, {
+        "value": "country_option_8",
+        "sequence": 8,
+        "label": "country_option_8"
+      }, {"value": "country_option_52", "sequence": 52, "label": "country_option_52"}, {
         "value": "country_option_59",
         "sequence": 59,
         "label": "country_option_59"
-      }, {
-        "value": "country_option_200",
-        "sequence": 200,
-        "label": "country_option_200"
-      }, {
+      }, {"value": "country_option_200", "sequence": 200, "label": "country_option_200"}, {
         "value": "country_option_17",
         "sequence": 17,
         "label": "country_option_17"
@@ -10921,15 +8592,11 @@ export default [{
         "value": "country_option_120",
         "sequence": 120,
         "label": "country_option_120"
-      }, {
-        "value": "country_option_151",
-        "sequence": 151,
-        "label": "country_option_151"
-      }, { "value": "country_option_3", "sequence": 3, "label": "country_option_3" }, {
-        "value": "country_option_87",
-        "sequence": 87,
-        "label": "country_option_87"
-      }, {
+      }, {"value": "country_option_151", "sequence": 151, "label": "country_option_151"}, {
+        "value": "country_option_3",
+        "sequence": 3,
+        "label": "country_option_3"
+      }, {"value": "country_option_87", "sequence": 87, "label": "country_option_87"}, {
         "value": "country_option_157",
         "sequence": 157,
         "label": "country_option_157"
@@ -10953,19 +8620,11 @@ export default [{
         "value": "country_option_114",
         "sequence": 114,
         "label": "country_option_114"
-      }, {
-        "value": "country_option_128",
-        "sequence": 128,
-        "label": "country_option_128"
-      }, {
+      }, {"value": "country_option_128", "sequence": 128, "label": "country_option_128"}, {
         "value": "country_option_53",
         "sequence": 53,
         "label": "country_option_53"
-      }, {
-        "value": "country_option_125",
-        "sequence": 125,
-        "label": "country_option_125"
-      }, {
+      }, {"value": "country_option_125", "sequence": 125, "label": "country_option_125"}, {
         "value": "country_option_58",
         "sequence": 58,
         "label": "country_option_58"
@@ -10981,23 +8640,15 @@ export default [{
         "value": "country_option_219",
         "sequence": 219,
         "label": "country_option_219"
-      }, {
-        "value": "country_option_242",
-        "sequence": 242,
-        "label": "country_option_242"
-      }, {
+      }, {"value": "country_option_242", "sequence": 242, "label": "country_option_242"}, {
         "value": "country_option_96",
         "sequence": 96,
         "label": "country_option_96"
-      }, {
-        "value": "country_option_154",
-        "sequence": 154,
-        "label": "country_option_154"
-      }, { "value": "country_option_25", "sequence": 25, "label": "country_option_25" }, {
-        "value": "country_option_61",
-        "sequence": 61,
-        "label": "country_option_61"
-      }, {
+      }, {"value": "country_option_154", "sequence": 154, "label": "country_option_154"}, {
+        "value": "country_option_25",
+        "sequence": 25,
+        "label": "country_option_25"
+      }, {"value": "country_option_61", "sequence": 61, "label": "country_option_61"}, {
         "value": "country_option_82",
         "sequence": 82,
         "label": "country_option_82"
@@ -11025,11 +8676,7 @@ export default [{
         "value": "country_option_130",
         "sequence": 130,
         "label": "country_option_130"
-      }, {
-        "value": "country_option_178",
-        "sequence": 178,
-        "label": "country_option_178"
-      }, {
+      }, {"value": "country_option_178", "sequence": 178, "label": "country_option_178"}, {
         "value": "country_option_41",
         "sequence": 41,
         "label": "country_option_41"
@@ -11041,19 +8688,11 @@ export default [{
         "value": "country_option_206",
         "sequence": 206,
         "label": "country_option_206"
-      }, {
-        "value": "country_option_213",
-        "sequence": 213,
-        "label": "country_option_213"
-      }, {
+      }, {"value": "country_option_213", "sequence": 213, "label": "country_option_213"}, {
         "value": "country_option_35",
         "sequence": 35,
         "label": "country_option_35"
-      }, {
-        "value": "country_option_185",
-        "sequence": 185,
-        "label": "country_option_185"
-      }, {
+      }, {"value": "country_option_185", "sequence": 185, "label": "country_option_185"}, {
         "value": "country_option_89",
         "sequence": 89,
         "label": "country_option_89"
@@ -11065,23 +8704,15 @@ export default [{
         "value": "country_option_160",
         "sequence": 160,
         "label": "country_option_160"
-      }, {
-        "value": "country_option_117",
-        "sequence": 117,
-        "label": "country_option_117"
-      }, {
+      }, {"value": "country_option_117", "sequence": 117, "label": "country_option_117"}, {
         "value": "country_option_42",
         "sequence": 42,
         "label": "country_option_42"
-      }, {
-        "value": "country_option_243",
-        "sequence": 243,
-        "label": "country_option_243"
-      }, { "value": "country_option_68", "sequence": 68, "label": "country_option_68" }, {
-        "value": "country_option_64",
-        "sequence": 64,
-        "label": "country_option_64"
-      }, {
+      }, {"value": "country_option_243", "sequence": 243, "label": "country_option_243"}, {
+        "value": "country_option_68",
+        "sequence": 68,
+        "label": "country_option_68"
+      }, {"value": "country_option_64", "sequence": 64, "label": "country_option_64"}, {
         "value": "country_option_73",
         "sequence": 73,
         "label": "country_option_73"
@@ -11097,11 +8728,7 @@ export default [{
         "value": "country_option_102",
         "sequence": 102,
         "label": "country_option_102"
-      }, {
-        "value": "country_option_248",
-        "sequence": 248,
-        "label": "country_option_248"
-      }, {
+      }, {"value": "country_option_248", "sequence": 248, "label": "country_option_248"}, {
         "value": "country_option_72",
         "sequence": 72,
         "label": "country_option_72"
@@ -11117,11 +8744,7 @@ export default [{
         "value": "country_option_225",
         "sequence": 225,
         "label": "country_option_225"
-      }, {
-        "value": "country_option_112",
-        "sequence": 112,
-        "label": "country_option_112"
-      }, {
+      }, {"value": "country_option_112", "sequence": 112, "label": "country_option_112"}, {
         "value": "country_option_93",
         "sequence": 93,
         "label": "country_option_93"
@@ -11137,19 +8760,11 @@ export default [{
         "value": "country_option_235",
         "sequence": 235,
         "label": "country_option_235"
-      }, {
-        "value": "country_option_136",
-        "sequence": 136,
-        "label": "country_option_136"
-      }, {
+      }, {"value": "country_option_136", "sequence": 136, "label": "country_option_136"}, {
         "value": "country_option_34",
         "sequence": 34,
         "label": "country_option_34"
-      }, {
-        "value": "country_option_107",
-        "sequence": 107,
-        "label": "country_option_107"
-      }, {
+      }, {"value": "country_option_107", "sequence": 107, "label": "country_option_107"}, {
         "value": "country_option_20",
         "sequence": 20,
         "label": "country_option_20"
@@ -11165,15 +8780,11 @@ export default [{
         "value": "country_option_163",
         "sequence": 163,
         "label": "country_option_163"
-      }, {
-        "value": "country_option_190",
-        "sequence": 190,
-        "label": "country_option_190"
-      }, { "value": "country_option_79", "sequence": 79, "label": "country_option_79" }, {
-        "value": "country_option_19",
-        "sequence": 19,
-        "label": "country_option_19"
-      }, {
+      }, {"value": "country_option_190", "sequence": 190, "label": "country_option_190"}, {
+        "value": "country_option_79",
+        "sequence": 79,
+        "label": "country_option_79"
+      }, {"value": "country_option_19", "sequence": 19, "label": "country_option_19"}, {
         "value": "country_option_129",
         "sequence": 129,
         "label": "country_option_129"
@@ -11185,15 +8796,11 @@ export default [{
         "value": "country_option_220",
         "sequence": 220,
         "label": "country_option_220"
-      }, {
-        "value": "country_option_132",
-        "sequence": 132,
-        "label": "country_option_132"
-      }, { "value": "country_option_75", "sequence": 75, "label": "country_option_75" }, {
-        "value": "country_option_1",
-        "sequence": 1,
-        "label": "country_option_1"
-      }, {
+      }, {"value": "country_option_132", "sequence": 132, "label": "country_option_132"}, {
+        "value": "country_option_75",
+        "sequence": 75,
+        "label": "country_option_75"
+      }, {"value": "country_option_1", "sequence": 1, "label": "country_option_1"}, {
         "value": "country_option_208",
         "sequence": 208,
         "label": "country_option_208"
@@ -11209,15 +8816,11 @@ export default [{
         "value": "country_option_197",
         "sequence": 197,
         "label": "country_option_197"
-      }, {
-        "value": "country_option_122",
-        "sequence": 122,
-        "label": "country_option_122"
-      }, { "value": "country_option_98", "sequence": 98, "label": "country_option_98" }, {
-        "value": "country_option_97",
-        "sequence": 97,
-        "label": "country_option_97"
-      }, {
+      }, {"value": "country_option_122", "sequence": 122, "label": "country_option_122"}, {
+        "value": "country_option_98",
+        "sequence": 98,
+        "label": "country_option_98"
+      }, {"value": "country_option_97", "sequence": 97, "label": "country_option_97"}, {
         "value": "country_option_36",
         "sequence": 36,
         "label": "country_option_36"
@@ -11237,31 +8840,19 @@ export default [{
         "value": "country_option_150",
         "sequence": 150,
         "label": "country_option_150"
-      }, {
-        "value": "country_option_252",
-        "sequence": 252,
-        "label": "country_option_252"
-      }, { "value": "country_option_4", "sequence": 4, "label": "country_option_4" }, {
-        "value": "country_option_46",
-        "sequence": 46,
-        "label": "country_option_46"
-      }, {
+      }, {"value": "country_option_252", "sequence": 252, "label": "country_option_252"}, {
+        "value": "country_option_4",
+        "sequence": 4,
+        "label": "country_option_4"
+      }, {"value": "country_option_46", "sequence": 46, "label": "country_option_46"}, {
         "value": "country_option_204",
         "sequence": 204,
         "label": "country_option_204"
-      }, {
-        "value": "country_option_66",
-        "sequence": 66,
-        "label": "country_option_66"
-      }, {
+      }, {"value": "country_option_66", "sequence": 66, "label": "country_option_66"}, {
         "value": "country_option_229",
         "sequence": 229,
         "label": "country_option_229"
-      }, {
-        "value": "country_option_241",
-        "sequence": 241,
-        "label": "country_option_241"
-      }, {
+      }, {"value": "country_option_241", "sequence": 241, "label": "country_option_241"}, {
         "value": "country_option_22",
         "sequence": 22,
         "label": "country_option_22"
@@ -11281,23 +8872,15 @@ export default [{
         "value": "country_option_143",
         "sequence": 143,
         "label": "country_option_143"
-      }, {
-        "value": "country_option_174",
-        "sequence": 174,
-        "label": "country_option_174"
-      }, {
+      }, {"value": "country_option_174", "sequence": 174, "label": "country_option_174"}, {
         "value": "country_option_95",
         "sequence": 95,
         "label": "country_option_95"
-      }, {
-        "value": "country_option_141",
-        "sequence": 141,
-        "label": "country_option_141"
-      }, { "value": "country_option_60", "sequence": 60, "label": "country_option_60" }, {
-        "value": "country_option_56",
-        "sequence": 56,
-        "label": "country_option_56"
-      }, {
+      }, {"value": "country_option_141", "sequence": 141, "label": "country_option_141"}, {
+        "value": "country_option_60",
+        "sequence": 60,
+        "label": "country_option_60"
+      }, {"value": "country_option_56", "sequence": 56, "label": "country_option_56"}, {
         "value": "country_option_212",
         "sequence": 212,
         "label": "country_option_212"
@@ -11305,15 +8888,11 @@ export default [{
         "value": "country_option_146",
         "sequence": 146,
         "label": "country_option_146"
-      }, {
-        "value": "country_option_222",
-        "sequence": 222,
-        "label": "country_option_222"
-      }, { "value": "country_option_67", "sequence": 67, "label": "country_option_67" }, {
-        "value": "country_option_57",
-        "sequence": 57,
-        "label": "country_option_57"
-      }, {
+      }, {"value": "country_option_222", "sequence": 222, "label": "country_option_222"}, {
+        "value": "country_option_67",
+        "sequence": 67,
+        "label": "country_option_67"
+      }, {"value": "country_option_57", "sequence": 57, "label": "country_option_57"}, {
         "value": "country_option_10",
         "sequence": 10,
         "label": "country_option_10"
@@ -11329,15 +8908,11 @@ export default [{
         "value": "country_option_186",
         "sequence": 186,
         "label": "country_option_186"
-      }, {
-        "value": "country_option_198",
-        "sequence": 198,
-        "label": "country_option_198"
-      }, { "value": "country_option_44", "sequence": 44, "label": "country_option_44" }, {
-        "value": "country_option_81",
-        "sequence": 81,
-        "label": "country_option_81"
-      }, {
+      }, {"value": "country_option_198", "sequence": 198, "label": "country_option_198"}, {
+        "value": "country_option_44",
+        "sequence": 44,
+        "label": "country_option_44"
+      }, {"value": "country_option_81", "sequence": 81, "label": "country_option_81"}, {
         "value": "country_option_142",
         "sequence": 142,
         "label": "country_option_142"
@@ -11349,31 +8924,19 @@ export default [{
         "value": "country_option_159",
         "sequence": 159,
         "label": "country_option_159"
-      }, {
-        "value": "country_option_239",
-        "sequence": 239,
-        "label": "country_option_239"
-      }, { "value": "country_option_45", "sequence": 45, "label": "country_option_45" }, {
-        "value": "country_option_50",
-        "sequence": 50,
-        "label": "country_option_50"
-      }, {
+      }, {"value": "country_option_239", "sequence": 239, "label": "country_option_239"}, {
+        "value": "country_option_45",
+        "sequence": 45,
+        "label": "country_option_45"
+      }, {"value": "country_option_50", "sequence": 50, "label": "country_option_50"}, {
         "value": "country_option_189",
         "sequence": 189,
         "label": "country_option_189"
-      }, {
-        "value": "country_option_48",
-        "sequence": 48,
-        "label": "country_option_48"
-      }, {
+      }, {"value": "country_option_48", "sequence": 48, "label": "country_option_48"}, {
         "value": "country_option_126",
         "sequence": 126,
         "label": "country_option_126"
-      }, {
-        "value": "country_option_77",
-        "sequence": 77,
-        "label": "country_option_77"
-      }, {
+      }, {"value": "country_option_77", "sequence": 77, "label": "country_option_77"}, {
         "value": "country_option_123",
         "sequence": 123,
         "label": "country_option_123"
@@ -11433,31 +8996,23 @@ export default [{
         "value": "country_option_156",
         "sequence": 156,
         "label": "country_option_156"
+      }, {"value": "country_option_119", "sequence": 119, "label": "country_option_119"}, {
+        "value": "country_option_9",
+        "sequence": 9,
+        "label": "country_option_9"
       }, {
-        "value": "country_option_119",
-        "sequence": 119,
-        "label": "country_option_119"
-      }, { "value": "country_option_9", "sequence": 9, "label": "country_option_9" }, {
         "value": "country_option_251",
         "sequence": 251,
         "label": "country_option_251"
-      }, {
-        "value": "country_option_137",
-        "sequence": 137,
-        "label": "country_option_137"
-      }, {
+      }, {"value": "country_option_137", "sequence": 137, "label": "country_option_137"}, {
         "value": "country_option_65",
         "sequence": 65,
         "label": "country_option_65"
-      }, {
-        "value": "country_option_165",
-        "sequence": 165,
-        "label": "country_option_165"
-      }, { "value": "country_option_7", "sequence": 7, "label": "country_option_7" }, {
-        "value": "country_option_27",
-        "sequence": 27,
-        "label": "country_option_27"
-      }, {
+      }, {"value": "country_option_165", "sequence": 165, "label": "country_option_165"}, {
+        "value": "country_option_7",
+        "sequence": 7,
+        "label": "country_option_7"
+      }, {"value": "country_option_27", "sequence": 27, "label": "country_option_27"}, {
         "value": "country_option_171",
         "sequence": 171,
         "label": "country_option_171"
@@ -11473,11 +9028,7 @@ export default [{
         "value": "country_option_173",
         "sequence": 173,
         "label": "country_option_173"
-      }, {
-        "value": "country_option_237",
-        "sequence": 237,
-        "label": "country_option_237"
-      }, {
+      }, {"value": "country_option_237", "sequence": 237, "label": "country_option_237"}, {
         "value": "country_option_99",
         "sequence": 99,
         "label": "country_option_99"
@@ -11489,67 +9040,47 @@ export default [{
         "value": "country_option_201",
         "sequence": 201,
         "label": "country_option_201"
-      }, {
-        "value": "country_option_216",
-        "sequence": 216,
-        "label": "country_option_216"
-      }, { "value": "country_option_62", "sequence": 62, "label": "country_option_62" }, {
-        "value": "country_option_33",
-        "sequence": 33,
-        "label": "country_option_33"
-      }, { "value": "country_option_91", "sequence": 91, "label": "country_option_91" }, {
-        "value": "country_option_86",
-        "sequence": 86,
-        "label": "country_option_86"
-      }, {
+      }, {"value": "country_option_216", "sequence": 216, "label": "country_option_216"}, {
+        "value": "country_option_62",
+        "sequence": 62,
+        "label": "country_option_62"
+      }, {"value": "country_option_33", "sequence": 33, "label": "country_option_33"}, {
+        "value": "country_option_91",
+        "sequence": 91,
+        "label": "country_option_91"
+      }, {"value": "country_option_86", "sequence": 86, "label": "country_option_86"}, {
         "value": "country_option_211",
         "sequence": 211,
         "label": "country_option_211"
-      }, {
-        "value": "country_option_196",
-        "sequence": 196,
-        "label": "country_option_196"
-      }, { "value": "country_option_23", "sequence": 23, "label": "country_option_23" }, {
-        "value": "country_option_74",
-        "sequence": 74,
-        "label": "country_option_74"
-      }, {
+      }, {"value": "country_option_196", "sequence": 196, "label": "country_option_196"}, {
+        "value": "country_option_23",
+        "sequence": 23,
+        "label": "country_option_23"
+      }, {"value": "country_option_74", "sequence": 74, "label": "country_option_74"}, {
         "value": "country_option_232",
         "sequence": 232,
         "label": "country_option_232"
-      }, { "value": "country_option_37", "sequence": 37, "label": "country_option_37" }, {
+      }, {"value": "country_option_37", "sequence": 37, "label": "country_option_37"}, {
         "value": "country_option_78",
         "sequence": 78,
         "label": "country_option_78"
-      }, { "value": "country_option_69", "sequence": 69, "label": "country_option_69" }, {
+      }, {"value": "country_option_69", "sequence": 69, "label": "country_option_69"}, {
         "value": "country_option_54",
         "sequence": 54,
         "label": "country_option_54"
-      }, { "value": "country_option_94", "sequence": 94, "label": "country_option_94" }, {
+      }, {"value": "country_option_94", "sequence": 94, "label": "country_option_94"}, {
         "value": "country_option_21",
         "sequence": 21,
         "label": "country_option_21"
-      }, {
-        "value": "country_option_116",
-        "sequence": 116,
-        "label": "country_option_116"
-      }, {
+      }, {"value": "country_option_116", "sequence": 116, "label": "country_option_116"}, {
         "value": "country_option_88",
         "sequence": 88,
         "label": "country_option_88"
-      }, {
-        "value": "country_option_124",
-        "sequence": 124,
-        "label": "country_option_124"
-      }, {
+      }, {"value": "country_option_124", "sequence": 124, "label": "country_option_124"}, {
         "value": "country_option_71",
         "sequence": 71,
         "label": "country_option_71"
-      }, {
-        "value": "country_option_188",
-        "sequence": 188,
-        "label": "country_option_188"
-      }, {
+      }, {"value": "country_option_188", "sequence": 188, "label": "country_option_188"}, {
         "value": "country_option_76",
         "sequence": 76,
         "label": "country_option_76"
@@ -11565,19 +9096,15 @@ export default [{
         "value": "country_option_170",
         "sequence": 170,
         "label": "country_option_170"
-      }, {
-        "value": "country_option_106",
-        "sequence": 106,
-        "label": "country_option_106"
-      }, { "value": "country_option_49", "sequence": 49, "label": "country_option_49" }, {
-        "value": "country_option_28",
-        "sequence": 28,
-        "label": "country_option_28"
-      }, { "value": "country_option_63", "sequence": 63, "label": "country_option_63" }, {
-        "value": "country_option_47",
-        "sequence": 47,
-        "label": "country_option_47"
-      }, {
+      }, {"value": "country_option_106", "sequence": 106, "label": "country_option_106"}, {
+        "value": "country_option_49",
+        "sequence": 49,
+        "label": "country_option_49"
+      }, {"value": "country_option_28", "sequence": 28, "label": "country_option_28"}, {
+        "value": "country_option_63",
+        "sequence": 63,
+        "label": "country_option_63"
+      }, {"value": "country_option_47", "sequence": 47, "label": "country_option_47"}, {
         "value": "country_option_131",
         "sequence": 131,
         "label": "country_option_131"
@@ -11601,35 +9128,27 @@ export default [{
         "value": "country_option_218",
         "sequence": 218,
         "label": "country_option_218"
-      }, {
-        "value": "country_option_152",
-        "sequence": 152,
-        "label": "country_option_152"
-      }, { "value": "country_option_5", "sequence": 5, "label": "country_option_5" }, {
-        "value": "country_option_24",
-        "sequence": 24,
-        "label": "country_option_24"
-      }, {
+      }, {"value": "country_option_152", "sequence": 152, "label": "country_option_152"}, {
+        "value": "country_option_5",
+        "sequence": 5,
+        "label": "country_option_5"
+      }, {"value": "country_option_24", "sequence": 24, "label": "country_option_24"}, {
         "value": "country_option_15",
         "sequence": 15,
         "label": "country_option_15"
+      }, {"value": "country_option_175", "sequence": 175, "label": "country_option_175"}, {
+        "value": "country_option_2",
+        "sequence": 2,
+        "label": "country_option_2"
       }, {
-        "value": "country_option_175",
-        "sequence": 175,
-        "label": "country_option_175"
-      }, { "value": "country_option_2", "sequence": 2, "label": "country_option_2" }, {
         "value": "country_option_121",
         "sequence": 121,
         "label": "country_option_121"
-      }, {
-        "value": "country_option_203",
-        "sequence": 203,
-        "label": "country_option_203"
-      }, { "value": "country_option_84", "sequence": 84, "label": "country_option_84" }, {
-        "value": "country_option_80",
-        "sequence": 80,
-        "label": "country_option_80"
-      }, {
+      }, {"value": "country_option_203", "sequence": 203, "label": "country_option_203"}, {
+        "value": "country_option_84",
+        "sequence": 84,
+        "label": "country_option_84"
+      }, {"value": "country_option_80", "sequence": 80, "label": "country_option_80"}, {
         "value": "country_option_181",
         "sequence": 181,
         "label": "country_option_181"
@@ -11637,19 +9156,15 @@ export default [{
         "value": "country_option_224",
         "sequence": 224,
         "label": "country_option_224"
-      }, {
-        "value": "country_option_134",
-        "sequence": 134,
-        "label": "country_option_134"
-      }, { "value": "country_option_92", "sequence": 92, "label": "country_option_92" }, {
-        "value": "country_option_43",
-        "sequence": 43,
-        "label": "country_option_43"
-      }, { "value": "country_option_30", "sequence": 30, "label": "country_option_30" }, {
-        "value": "country_option_6",
-        "sequence": 6,
-        "label": "country_option_6"
-      }, {
+      }, {"value": "country_option_134", "sequence": 134, "label": "country_option_134"}, {
+        "value": "country_option_92",
+        "sequence": 92,
+        "label": "country_option_92"
+      }, {"value": "country_option_43", "sequence": 43, "label": "country_option_43"}, {
+        "value": "country_option_30",
+        "sequence": 30,
+        "label": "country_option_30"
+      }, {"value": "country_option_6", "sequence": 6, "label": "country_option_6"}, {
         "value": "country_option_221",
         "sequence": 221,
         "label": "country_option_221"
@@ -11657,7 +9172,7 @@ export default [{
         "value": "country_option_168",
         "sequence": 168,
         "label": "country_option_168"
-      }, { "value": "country_option_199", "sequence": 199, "label": "country_option_199" }],
+      }, {"value": "country_option_199", "sequence": 199, "label": "country_option_199"}],
       "label": "ch2_s2_field7_label",
       "fieldApi": "Country_of_Residence__c",
       "description": "ch2_s2_field7_description"
@@ -11669,7 +9184,7 @@ export default [{
       }],
       "type": "boxed_checkbox",
       "sfFieldType": "Checkbox",
-      "sequence": 23,
+      "sequence": 65,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field8Section_04_3",
       "label": "ch2_s2_field8_label",
@@ -11683,25 +9198,28 @@ export default [{
 }, {
   "title": "chapter_3_title",
   "subtitle": "chapter_3_sub_title",
-  "status": "WAITING",
+  "status": "FINISHED",
   "sequence": 3,
   "sections": [{
     "type": "Simple",
     "title": "ch_3_sec_8_title",
-    "serverValues": [{ "fieldValue": "yrtyr", "fieldCode": "ch3_s1_field1Section_05" }, {
-      "fieldValue": "a1234",
-      "fieldCode": "ch3_s1_field2Section_05"
-    }, { "fieldValue": "yryrt", "fieldCode": "ch3_s1_field3Section_05" }, {
+    "serverValues": [{"fieldCode": "ch3_s1_field1Section_05"}, {"fieldCode": "ch3_s1_field2Section_05"}, {"fieldCode": "ch3_s1_field3Section_05"}, {"fieldCode": "ch3_s1_field4Section_05"}, {
+      "fieldValue": "yrtyrty",
+      "fieldCode": "ch3_s1_field5Section_05"
+    }, {"fieldValue": "yryr", "fieldCode": "ch3_s1_field6Section_05"}, {
       "fieldValue": "",
-      "fieldCode": "ch3_s1_field4Section_05"
-    }, { "fieldValue": "yrtyrty", "fieldCode": "ch3_s1_field5Section_05" }, {
-      "fieldValue": "yryr",
-      "fieldCode": "ch3_s1_field6Section_05"
-    }, { "fieldValue": "", "fieldCode": "ch3_s1_field7Section_05" }],
+      "fieldCode": "ch3_s1_field7Section_05"
+    }],
     "sequence": 9,
     "name": "Section_05",
-    "hiddenType": "Business",
+    "hiddenType": "Business address",
     "fields": [{
+      "type": "title",
+      "sfFieldType": "Text",
+      "sequence": 1,
+      "name": "nullSection_05",
+      "label": "ch_3_sec_8_title"
+    }, {
       "validationRules": [{
         "validationError": "ch3_s1_field1_ValidErr",
         "validation": "^([0-9A-Za-z\\s]).{1,59}$",
@@ -11710,7 +9228,7 @@ export default [{
       }],
       "type": "text",
       "sfFieldType": "Text",
-      "sequence": 1,
+      "sequence": 2,
       "objectApi": "ccApplication_Form_Address__c",
       "name": "ch3_s1_field1Section_05",
       "label": "ch3_s1_field1_label",
@@ -11725,7 +9243,7 @@ export default [{
       }],
       "type": "text",
       "sfFieldType": "Text",
-      "sequence": 2,
+      "sequence": 3,
       "objectApi": "ccApplication_Form_Address__c",
       "name": "ch3_s1_field2Section_05",
       "label": "ch3_s1_field2_label",
@@ -11741,7 +9259,7 @@ export default [{
       }],
       "type": "text",
       "sfFieldType": "Text",
-      "sequence": 3,
+      "sequence": 4,
       "objectApi": "ccApplication_Form_Address__c",
       "name": "ch3_s1_field3Section_05",
       "label": "ch3_s1_field3_label",
@@ -11755,13 +9273,19 @@ export default [{
       }],
       "type": "drop_down",
       "sfFieldType": "Picklist",
-      "sequence": 4,
+      "sequence": 5,
       "objectApi": "ccApplication_Form_Address__c",
       "name": "ch3_s1_field4Section_05",
-      "listOfValues": [{ "value": "country_option_86", "sequence": 86, "label": "country_option_86" }],
+      "listOfValues": [{"value": "country_option_86", "sequence": 86, "label": "country_option_86"}],
       "label": "ch3_s1_field4_label",
       "fieldApi": "Country__c",
       "description": "ch3_s1_field4_description"
+    }, {
+      "type": "title",
+      "sfFieldType": "Text",
+      "sequence": 6,
+      "name": "nullSection_05",
+      "label": "ch_3_sec_5_1_title"
     }, {
       "validationRules": [{
         "validationError": "ch3_s1_field5_ValidErr",
@@ -11771,7 +9295,7 @@ export default [{
       }],
       "type": "text",
       "sfFieldType": "Phone",
-      "sequence": 5,
+      "sequence": 7,
       "objectApi": "ccApplication_Form__c",
       "name": "ch3_s1_field5Section_05",
       "label": "ch3_s1_field5_label",
@@ -11786,7 +9310,7 @@ export default [{
       }],
       "type": "text",
       "sfFieldType": "URL",
-      "sequence": 6,
+      "sequence": 8,
       "objectApi": "ccApplication_Form__c",
       "name": "ch3_s1_field6Section_05",
       "label": "ch3_s1_field6_label",
@@ -11801,7 +9325,7 @@ export default [{
       }],
       "type": "boxed_checkbox_group",
       "sfFieldType": "Picklist (Multi-Select)",
-      "sequence": 7,
+      "sequence": 9,
       "objectApi": "ccApplication_Form__c",
       "name": "ch3_s1_field7Section_05",
       "listOfValues": [{
@@ -11809,12 +9333,7 @@ export default [{
         "sequence": 2,
         "label": "address_option_2",
         "description": "opt_description_5"
-      }, {
-        "value": "address_option_1",
-        "sequence": 1,
-        "label": "address_option_1",
-        "description": "opt_description_4"
-      }],
+      }, {"value": "address_option_1", "sequence": 1, "label": "address_option_1", "description": "opt_description_4"}],
       "label": "ch3_s1_field7_label",
       "fieldApi": "Alternative_Address__c",
       "description": "ch3_s1_field7_description"
@@ -11822,17 +9341,17 @@ export default [{
   }, {
     "type": "Conditional",
     "title": "ch_3_sec_9_title",
-    "serverValues": [{ "fieldValue": "werwr", "fieldCode": "ch3_s1_field1Section_06_1" }, {
-      "fieldValue": "rwer",
-      "fieldCode": "ch3_s1_field2Section_06_1"
-    }, { "fieldValue": "rwer", "fieldCode": "ch3_s1_field3Section_06_1" }, {
-      "fieldValue": "",
-      "fieldCode": "ch3_s1_field4Section_06_1"
-    }],
+    "serverValues": [{"fieldCode": "ch3_s1_field1Section_06_1"}, {"fieldCode": "ch3_s1_field2Section_06_1"}, {"fieldCode": "ch3_s1_field3Section_06_1"}, {"fieldCode": "ch3_s1_field4Section_06_1"}],
     "sequence": 10,
     "name": "Section_06_1",
-    "hiddenType": "Correspondence",
+    "hiddenType": "Correspondence address",
     "fields": [{
+      "type": "title",
+      "sfFieldType": "Text",
+      "sequence": 10,
+      "name": "nullSection_06_1",
+      "label": "ch_3_sec_9_title"
+    }, {
       "validationRules": [{
         "validationError": "ch3_s1_field1_ValidErr",
         "validation": "^([0-9A-Za-z\\s]).{1,59}$",
@@ -11841,7 +9360,7 @@ export default [{
       }],
       "type": "text",
       "sfFieldType": "Text",
-      "sequence": 8,
+      "sequence": 11,
       "objectApi": "ccApplication_Form_Address__c",
       "name": "ch3_s1_field1Section_06_1",
       "label": "ch3_s1_field1_label",
@@ -11856,7 +9375,7 @@ export default [{
       }],
       "type": "text",
       "sfFieldType": "Text",
-      "sequence": 9,
+      "sequence": 12,
       "objectApi": "ccApplication_Form_Address__c",
       "name": "ch3_s1_field2Section_06_1",
       "label": "ch3_s1_field2_label",
@@ -11872,7 +9391,7 @@ export default [{
       }],
       "type": "text",
       "sfFieldType": "Text",
-      "sequence": 10,
+      "sequence": 13,
       "objectApi": "ccApplication_Form_Address__c",
       "name": "ch3_s1_field3Section_06_1",
       "label": "ch3_s1_field3_label",
@@ -11886,10 +9405,10 @@ export default [{
       }],
       "type": "drop_down",
       "sfFieldType": "Picklist",
-      "sequence": 11,
+      "sequence": 14,
       "objectApi": "ccApplication_Form_Address__c",
       "name": "ch3_s1_field4Section_06_1",
-      "listOfValues": [{ "value": "country_option_86", "sequence": 86, "label": "country_option_86" }],
+      "listOfValues": [{"value": "country_option_86", "sequence": 86, "label": "country_option_86"}],
       "label": "ch3_s1_field4_label",
       "fieldApi": "Country__c",
       "description": "ch3_s1_field4_description"
@@ -11898,17 +9417,17 @@ export default [{
   }, {
     "type": "Conditional",
     "title": "ch_3_sec_10_title",
-    "serverValues": [{ "fieldValue": "11", "fieldCode": "ch3_s1_field1Section_06_2" }, {
-      "fieldValue": "11",
-      "fieldCode": "ch3_s1_field2Section_06_2"
-    }, { "fieldValue": "11", "fieldCode": "ch3_s1_field3Section_06_2" }, {
-      "fieldValue": "",
-      "fieldCode": "ch3_s1_field4Section_06_2"
-    }],
+    "serverValues": [{"fieldCode": "ch3_s1_field1Section_06_2"}, {"fieldCode": "ch3_s1_field2Section_06_2"}, {"fieldCode": "ch3_s1_field3Section_06_2"}, {"fieldCode": "ch3_s1_field4Section_06_2"}],
     "sequence": 11,
     "name": "Section_06_2",
-    "hiddenType": "Outlet",
+    "hiddenType": "Outlet address",
     "fields": [{
+      "type": "title",
+      "sfFieldType": "Text",
+      "sequence": 15,
+      "name": "nullSection_06_2",
+      "label": "ch_3_sec_10_title"
+    }, {
       "validationRules": [{
         "validationError": "ch3_s1_field1_ValidErr",
         "validation": "^([0-9A-Za-z\\s]).{1,59}$",
@@ -11917,7 +9436,7 @@ export default [{
       }],
       "type": "text",
       "sfFieldType": "Text",
-      "sequence": 8,
+      "sequence": 16,
       "objectApi": "ccApplication_Form_Address__c",
       "name": "ch3_s1_field1Section_06_2",
       "label": "ch3_s1_field1_label",
@@ -11932,7 +9451,7 @@ export default [{
       }],
       "type": "text",
       "sfFieldType": "Text",
-      "sequence": 9,
+      "sequence": 17,
       "objectApi": "ccApplication_Form_Address__c",
       "name": "ch3_s1_field2Section_06_2",
       "label": "ch3_s1_field2_label",
@@ -11948,7 +9467,7 @@ export default [{
       }],
       "type": "text",
       "sfFieldType": "Text",
-      "sequence": 10,
+      "sequence": 18,
       "objectApi": "ccApplication_Form_Address__c",
       "name": "ch3_s1_field3Section_06_2",
       "label": "ch3_s1_field3_label",
@@ -11962,10 +9481,10 @@ export default [{
       }],
       "type": "drop_down",
       "sfFieldType": "Picklist",
-      "sequence": 11,
+      "sequence": 19,
       "objectApi": "ccApplication_Form_Address__c",
       "name": "ch3_s1_field4Section_06_2",
-      "listOfValues": [{ "value": "country_option_86", "sequence": 86, "label": "country_option_86" }],
+      "listOfValues": [{"value": "country_option_86", "sequence": 86, "label": "country_option_86"}],
       "label": "ch3_s1_field4_label",
       "fieldApi": "Country__c",
       "description": "ch3_s1_field4_description"
@@ -11976,15 +9495,30 @@ export default [{
 }, {
   "title": "chapter_4_title",
   "subtitle": "chapter_4_sub_title",
-  "status": "WAITING",
+  "status": "FINISHED",
   "sequence": 4,
   "sections": [{
     "type": "Simple",
     "title": "ch_4_sec_11_title",
-    "serverValues": [{ "fieldCode": "ch4_s1_field1Section_07" }, { "fieldCode": "ch4_s1_field2Section_07" }, { "fieldCode": "ch4_s1_field3Section_07" }, { "fieldCode": "ch4_s1_field4Section_07" }],
+    "serverValues": [{
+      "fieldValue": "industry_option_1",
+      "fieldCode": "ch4_s1_field1Section_07"
+    }, {
+      "fieldValue": "activity_option_15",
+      "fieldCode": "ch4_s1_field2Section_07"
+    }, {"fieldValue": "subactivity_option_91", "fieldCode": "ch4_s1_field3Section_07"}, {
+      "fieldValue": "vat_option_2",
+      "fieldCode": "ch4_s1_field4Section_07"
+    }],
     "sequence": 12,
     "name": "Section_07",
     "fields": [{
+      "type": "title",
+      "sfFieldType": "Text",
+      "sequence": 1,
+      "name": "nullSection_07",
+      "label": "ch_4_sec_11_title"
+    }, {
       "validationRules": [{
         "validationError": "ch4_s1_field1_ValidErr",
         "requiredError": "ch4_s1_field1_ReqErr",
@@ -11992,26 +9526,26 @@ export default [{
       }],
       "type": "drop_down",
       "sfFieldType": "Picklist",
-      "sequence": 1,
+      "sequence": 2,
       "objectApi": "ccApplication_Form__c",
       "name": "ch4_s1_field1Section_07",
       "listOfValues": [{
         "value": "industry_option_8",
         "sequence": 8,
         "label": "industry_option_8"
-      }, { "value": "industry_option_1", "sequence": 1, "label": "industry_option_1" }, {
+      }, {"value": "industry_option_1", "sequence": 1, "label": "industry_option_1"}, {
         "value": "industry_option_4",
         "sequence": 4,
         "label": "industry_option_4"
-      }, { "value": "industry_option_5", "sequence": 5, "label": "industry_option_5" }, {
+      }, {"value": "industry_option_5", "sequence": 5, "label": "industry_option_5"}, {
         "value": "industry_option_2",
         "sequence": 2,
         "label": "industry_option_2"
-      }, { "value": "industry_option_7", "sequence": 7, "label": "industry_option_7" }, {
+      }, {"value": "industry_option_7", "sequence": 7, "label": "industry_option_7"}, {
         "value": "industry_option_3",
         "sequence": 3,
         "label": "industry_option_3"
-      }, { "value": "industry_option_9", "sequence": 9, "label": "industry_option_9" }],
+      }, {"value": "industry_option_9", "sequence": 9, "label": "industry_option_9"}],
       "label": "ch4_s1_field1_label",
       "fieldApi": "Main_Industry__c",
       "description": "ch4_s1_field1_description"
@@ -12023,146 +9557,98 @@ export default [{
       }],
       "type": "drop_down",
       "sfFieldType": "Picklist",
-      "sequence": 2,
+      "sequence": 3,
       "objectApi": "ccApplication_Form__c",
       "name": "ch4_s1_field2Section_07",
       "listOfValues": [{
         "value": "activity_option_39",
         "sequence": 39,
         "label": "activity_option_39"
-      }, {
-        "value": "activity_option_31",
-        "sequence": 31,
-        "label": "activity_option_31"
-      }, {
+      }, {"value": "activity_option_31", "sequence": 31, "label": "activity_option_31"}, {
         "value": "activity_option_15",
         "sequence": 15,
         "label": "activity_option_15"
-      }, { "value": "activity_option_4", "sequence": 4, "label": "activity_option_4" }, {
+      }, {"value": "activity_option_4", "sequence": 4, "label": "activity_option_4"}, {
         "value": "activity_option_42",
         "sequence": 42,
         "label": "activity_option_42"
-      }, { "value": "activity_option_8", "sequence": 8, "label": "activity_option_8" }, {
+      }, {"value": "activity_option_8", "sequence": 8, "label": "activity_option_8"}, {
         "value": "activity_option_14",
         "sequence": 14,
         "label": "activity_option_14"
-      }, {
-        "value": "activity_option_25",
-        "sequence": 25,
-        "label": "activity_option_25"
-      }, {
+      }, {"value": "activity_option_25", "sequence": 25, "label": "activity_option_25"}, {
         "value": "activity_option_22",
         "sequence": 22,
         "label": "activity_option_22"
-      }, {
-        "value": "activity_option_44",
-        "sequence": 44,
-        "label": "activity_option_44"
-      }, {
+      }, {"value": "activity_option_44", "sequence": 44, "label": "activity_option_44"}, {
         "value": "activity_option_18",
         "sequence": 18,
         "label": "activity_option_18"
-      }, { "value": "activity_option_6", "sequence": 6, "label": "activity_option_6" }, {
+      }, {"value": "activity_option_6", "sequence": 6, "label": "activity_option_6"}, {
         "value": "activity_option_11",
         "sequence": 11,
         "label": "activity_option_11"
-      }, {
-        "value": "activity_option_27",
-        "sequence": 27,
-        "label": "activity_option_27"
-      }, {
+      }, {"value": "activity_option_27", "sequence": 27, "label": "activity_option_27"}, {
         "value": "activity_option_35",
         "sequence": 35,
         "label": "activity_option_35"
-      }, {
-        "value": "activity_option_26",
-        "sequence": 26,
-        "label": "activity_option_26"
-      }, {
+      }, {"value": "activity_option_26", "sequence": 26, "label": "activity_option_26"}, {
         "value": "activity_option_32",
         "sequence": 32,
         "label": "activity_option_32"
-      }, {
-        "value": "activity_option_10",
-        "sequence": 10,
-        "label": "activity_option_10"
-      }, { "value": "activity_option_7", "sequence": 7, "label": "activity_option_7" }, {
-        "value": "activity_option_23",
-        "sequence": 23,
-        "label": "activity_option_23"
-      }, {
+      }, {"value": "activity_option_10", "sequence": 10, "label": "activity_option_10"}, {
+        "value": "activity_option_7",
+        "sequence": 7,
+        "label": "activity_option_7"
+      }, {"value": "activity_option_23", "sequence": 23, "label": "activity_option_23"}, {
         "value": "activity_option_30",
         "sequence": 30,
         "label": "activity_option_30"
-      }, { "value": "activity_option_1", "sequence": 1, "label": "activity_option_1" }, {
+      }, {"value": "activity_option_1", "sequence": 1, "label": "activity_option_1"}, {
         "value": "activity_option_29",
         "sequence": 29,
         "label": "activity_option_29"
-      }, {
-        "value": "activity_option_43",
-        "sequence": 43,
-        "label": "activity_option_43"
-      }, {
+      }, {"value": "activity_option_43", "sequence": 43, "label": "activity_option_43"}, {
         "value": "activity_option_38",
         "sequence": 38,
         "label": "activity_option_38"
-      }, {
-        "value": "activity_option_16",
-        "sequence": 16,
-        "label": "activity_option_16"
-      }, {
+      }, {"value": "activity_option_16", "sequence": 16, "label": "activity_option_16"}, {
         "value": "activity_option_17",
         "sequence": 17,
         "label": "activity_option_17"
-      }, {
-        "value": "activity_option_12",
-        "sequence": 12,
-        "label": "activity_option_12"
-      }, { "value": "activity_option_9", "sequence": 9, "label": "activity_option_9" }, {
-        "value": "activity_option_40",
-        "sequence": 40,
-        "label": "activity_option_40"
-      }, {
+      }, {"value": "activity_option_12", "sequence": 12, "label": "activity_option_12"}, {
+        "value": "activity_option_9",
+        "sequence": 9,
+        "label": "activity_option_9"
+      }, {"value": "activity_option_40", "sequence": 40, "label": "activity_option_40"}, {
         "value": "activity_option_13",
         "sequence": 13,
         "label": "activity_option_13"
-      }, {
-        "value": "activity_option_33",
-        "sequence": 33,
-        "label": "activity_option_33"
-      }, {
+      }, {"value": "activity_option_33", "sequence": 33, "label": "activity_option_33"}, {
         "value": "activity_option_36",
         "sequence": 36,
         "label": "activity_option_36"
-      }, { "value": "activity_option_5", "sequence": 5, "label": "activity_option_5" }, {
+      }, {"value": "activity_option_5", "sequence": 5, "label": "activity_option_5"}, {
         "value": "activity_option_21",
         "sequence": 21,
         "label": "activity_option_21"
-      }, {
-        "value": "activity_option_28",
-        "sequence": 28,
-        "label": "activity_option_28"
-      }, {
+      }, {"value": "activity_option_28", "sequence": 28, "label": "activity_option_28"}, {
         "value": "activity_option_24",
         "sequence": 24,
         "label": "activity_option_24"
-      }, { "value": "activity_option_3", "sequence": 3, "label": "activity_option_3" }, {
+      }, {"value": "activity_option_3", "sequence": 3, "label": "activity_option_3"}, {
         "value": "activity_option_34",
         "sequence": 34,
         "label": "activity_option_34"
-      }, { "value": "activity_option_2", "sequence": 2, "label": "activity_option_2" }, {
+      }, {"value": "activity_option_2", "sequence": 2, "label": "activity_option_2"}, {
         "value": "activity_option_20",
         "sequence": 20,
         "label": "activity_option_20"
-      }, {
-        "value": "activity_option_37",
-        "sequence": 37,
-        "label": "activity_option_37"
-      }, {
+      }, {"value": "activity_option_37", "sequence": 37, "label": "activity_option_37"}, {
         "value": "activity_option_41",
         "sequence": 41,
         "label": "activity_option_41"
-      }, { "value": "activity_option_19", "sequence": 19, "label": "activity_option_19" }],
+      }, {"value": "activity_option_19", "sequence": 19, "label": "activity_option_19"}],
       "label": "ch4_s1_field2_label",
       "fieldApi": "Main_Activity__c",
       "description": "ch4_s1_field2_description"
@@ -12174,7 +9660,7 @@ export default [{
       }],
       "type": "drop_down",
       "sfFieldType": "Picklist",
-      "sequence": 3,
+      "sequence": 4,
       "objectApi": "ccApplication_Form__c",
       "name": "ch4_s1_field3Section_07",
       "listOfValues": [{
@@ -13293,7 +10779,7 @@ export default [{
         "value": "subactivity_option_221",
         "sequence": 221,
         "label": "subactivity_option_221"
-      }, { "value": "subactivity_option_191", "sequence": 191, "label": "subactivity_option_191" }],
+      }, {"value": "subactivity_option_191", "sequence": 191, "label": "subactivity_option_191"}],
       "label": "ch4_s1_field3_label",
       "fieldApi": "Sub_Activity__c",
       "description": "ch4_s1_field3_description"
@@ -13305,10 +10791,10 @@ export default [{
       }],
       "type": "vertical_radio_btns",
       "sfFieldType": "Picklist",
-      "sequence": 4,
+      "sequence": 5,
       "objectApi": "ccApplication_Form__c",
       "name": "ch4_s1_field4Section_07",
-      "listOfValues": [{ "value": "vat_option_2", "sequence": 2, "label": "vat_option_2" }, {
+      "listOfValues": [{"value": "vat_option_2", "sequence": 2, "label": "vat_option_2"}, {
         "value": "vat_option_1",
         "sequence": 1,
         "label": "vat_option_1"
@@ -13319,7 +10805,7 @@ export default [{
     }]
   }, {
     "type": "Conditional",
-    "serverValues": [{ "fieldCode": "ch4_s2_field1Section_08" }],
+    "serverValues": [{"fieldCode": "ch4_s2_field1Section_08"}],
     "sequence": 13,
     "name": "Section_08",
     "fields": [{
@@ -13331,7 +10817,7 @@ export default [{
       }],
       "type": "text",
       "sfFieldType": "Text",
-      "sequence": 5,
+      "sequence": 6,
       "objectApi": "ccApplication_Form__c",
       "name": "ch4_s2_field1Section_08",
       "label": "ch4_s2_field1_label",
@@ -13344,20 +10830,26 @@ export default [{
 }, {
   "title": "chapter_5_title",
   "subtitle": "chapter_5_sub_title",
-  "status": "WAITING",
+  "status": "FINISHED",
   "sequence": 5,
   "sections": [{
     "type": "Simple",
-    "serverValues": [{ "fieldValue": "tert", "fieldCode": "ch5_s1_field1Section_09" }, {
+    "serverValues": [{"fieldValue": "tert", "fieldCode": "ch5_s1_field1Section_09"}, {
       "fieldValue": "tert",
       "fieldCode": "ch5_s1_field2Section_09"
-    }, { "fieldValue": "tertet", "fieldCode": "ch5_s1_field3Section_09" }, {
+    }, {"fieldValue": "tertet", "fieldCode": "ch5_s1_field3Section_09"}, {
       "fieldValue": "tertet",
       "fieldCode": "ch5_s1_field4Section_09"
-    }, { "fieldValue": "trete", "fieldCode": "ch5_s1_field5Section_09" }],
+    }, {"fieldValue": "trete", "fieldCode": "ch5_s1_field5Section_09"}],
     "sequence": 14,
     "name": "Section_09",
     "fields": [{
+      "type": "title",
+      "sfFieldType": "Text",
+      "sequence": 1,
+      "name": "nullSection_09",
+      "label": "ch_5_sec_9_1_title"
+    }, {
       "validationRules": [{
         "validationError": "ch5_s1_field1_ValidErr",
         "validation": "^([0-9A-Za-z\\s]).{1,24}$",
@@ -13367,7 +10859,7 @@ export default [{
       }],
       "type": "text",
       "sfFieldType": "Text",
-      "sequence": 1,
+      "sequence": 2,
       "objectApi": "ccApplication_Form__c",
       "name": "ch5_s1_field1Section_09",
       "label": "ch5_s1_field1_label",
@@ -13384,7 +10876,7 @@ export default [{
       }],
       "type": "text",
       "sfFieldType": "Text",
-      "sequence": 2,
+      "sequence": 3,
       "objectApi": "ccApplication_Form__c",
       "name": "ch5_s1_field2Section_09",
       "label": "ch5_s1_field2_label",
@@ -13400,7 +10892,7 @@ export default [{
       }],
       "type": "text",
       "sfFieldType": "Text",
-      "sequence": 3,
+      "sequence": 4,
       "objectApi": "ccApplication_Form__c",
       "name": "ch5_s1_field3Section_09",
       "label": "ch5_s1_field3_label",
@@ -13416,7 +10908,7 @@ export default [{
       }],
       "type": "text",
       "sfFieldType": "Text",
-      "sequence": 4,
+      "sequence": 5,
       "objectApi": "ccApplication_Form__c",
       "name": "ch5_s1_field4Section_09",
       "label": "ch5_s1_field4_label",
@@ -13432,7 +10924,7 @@ export default [{
       }],
       "type": "text",
       "sfFieldType": "Text",
-      "sequence": 5,
+      "sequence": 6,
       "objectApi": "ccApplication_Form__c",
       "name": "ch5_s1_field5Section_09",
       "label": "ch5_s1_field5_label",
@@ -13442,10 +10934,16 @@ export default [{
   }, {
     "type": "Conditional",
     "title": "ch_5_sec_12_title",
-    "serverValues": [{ "fieldCode": "ch5_s2_field1Section_10" }],
+    "serverValues": [{"fieldValue": "", "fieldCode": "ch5_s2_field1Section_10"}],
     "sequence": 15,
     "name": "Section_10",
     "fields": [{
+      "type": "title",
+      "sfFieldType": "Text",
+      "sequence": 7,
+      "name": "nullSection_10",
+      "label": "ch_5_sec_12_title"
+    }, {
       "validationRules": [{
         "validationError": "ch5_s2_field1_ValidErr",
         "requiredError": "ch5_s2_field1_ReqErr",
@@ -13453,14 +10951,14 @@ export default [{
       }],
       "type": "drop_down",
       "sfFieldType": "Picklist",
-      "sequence": 6,
+      "sequence": 8,
       "objectApi": "ccApplication_Form__c",
       "name": "ch5_s2_field1Section_10",
       "listOfValues": [{
         "value": "deadline_option_3",
         "sequence": 3,
         "label": "deadline_option_3"
-      }, { "value": "deadline_option_1", "sequence": 1, "label": "deadline_option_1" }, {
+      }, {"value": "deadline_option_1", "sequence": 1, "label": "deadline_option_1"}, {
         "value": "deadline_option_2",
         "sequence": 2,
         "label": "deadline_option_2"
@@ -13481,10 +10979,10 @@ export default [{
     "serverValues": [{
       "fieldValue": "tertre",
       "fieldCode": "ch6_s1_field1Section_11"
-    }, { "fieldValue": "DE91100000000123456789", "fieldCode": "ch6_s1_field2Section_11" }, {
+    }, {"fieldValue": "DE91100000000123456789", "fieldCode": "ch6_s1_field2Section_11"}, {
       "fieldValue": "tretret",
       "fieldCode": "ch6_s1_field3Section_11"
-    }, { "fieldValue": "false", "fieldCode": "ch6_s1_field4Section_11" }],
+    }, {"fieldValue": "false", "fieldCode": "ch6_s1_field4Section_11"}],
     "sequence": 16,
     "name": "Section_11",
     "fields": [{
@@ -13543,7 +11041,7 @@ export default [{
         "requiredError": "ch6_s1_field4_ReqErr",
         "required": true
       }],
-      "type": "checkbox",
+      "type": "boxed_checkbox",
       "sfFieldType": "Checkbox",
       "sequence": 4,
       "objectApi": "ccApplication_Form__c",
