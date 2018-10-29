@@ -62,6 +62,7 @@ const RenderVerticalRadioBtns = createRenderer((input, meta, rest) => {
     value={input.value}
     {...rest}
     meta={meta}
+    input={input}
   />
 })
 

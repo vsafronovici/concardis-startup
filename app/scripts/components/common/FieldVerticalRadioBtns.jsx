@@ -1,12 +1,31 @@
 import React from 'react'
 import { Radio } from 'antd'
 import PropTypes from 'prop-types'
+import { map, memoizeWith, pipe } from 'ramda'
 import { translate } from '../../i18n/i18n'
 import { FieldTooltip } from './FieldTooltip'
-import { getNotRequired } from '../../utils/application-form-utils'
+import { getNotRequired, sortBySequence } from '../../utils/application-form-utils'
 import { Optional } from './Optional'
 
+
 const RadioGroup = Radio.Group
+
+const options = memoizeWith(
+  (fieldName, listOfValues) => `${fieldName}_${listOfValues.length}`,
+  (_, listOfValues, onFocus, autoFocus) => pipe(sortBySequence, map(({ value, label, ...rest }, index) => (
+    <div className="bottom-container" key={index}>
+      <Radio
+        className="radio-required"
+        value={value}
+        style={radioStyle}
+        autoFocus={index === 0 && autoFocus}
+        onFocus={onFocus}
+        {...rest}
+      />
+      <div className="bottom-label">{translate(label)}</div>
+    </div>
+  )))(listOfValues)
+)
 
 const radioStyle = {
   display: 'block',
@@ -15,7 +34,7 @@ const radioStyle = {
 }
 
 export const FieldVerticalRadioBtns = props => {
-  const { value, onChange, label, listOfValues, autoFocus, required, helpText, onFocus, validationRules } = props
+  const { value, onChange, label, listOfValues, autoFocus, required, helpText, onFocus, validationRules, input: { name } } = props
   return (
     <div className="field-vertical-radio">
       <div className="label-container">
@@ -27,19 +46,7 @@ export const FieldVerticalRadioBtns = props => {
         </div>
       </div>
       <RadioGroup onChange={(val) => onChange(val)} value={value} required={required}>
-        {listOfValues && listOfValues.map((radio, index) => (
-          <div className="bottom-container" key={index}>
-            <Radio
-              className="radio-required"
-              value={radio.value}
-              style={radioStyle}
-              autoFocus={index === 0 && autoFocus}
-              onFocus={onFocus}
-              {...radio}
-            />
-            <div className="bottom-label">{translate(radio.label)}</div>
-          </div>
-        ))}
+        {listOfValues && options(name, listOfValues, onFocus, autoFocus)}
       </RadioGroup>
     </div>
   )
