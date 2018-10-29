@@ -2,21 +2,31 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Button } from 'antd'
 import { connect } from 'react-redux'
-
+import { SubmissionError } from 'redux-form'
 import { FieldRow } from './FieldRow'
 import { translate } from '../../i18n/i18n'
 import VoidLink from '../common/VoidLink'
 import FormError from '../common/FormError'
 import { FieldMainTitle } from '../common/FieldMainTitle'
-import { getReview, save } from '../../actions/application-form-action'
+import { save } from '../../actions/application-form-action'
 import { currentSelector, nrOfChaptersSelector, reviewModeSelector } from '../../selectors/application-form-selector'
 import { i18nSelector } from '../../selectors/i18n-selector'
 import { fieldsToShow } from '../../utils/application-form-utils'
-import { SubmissionError } from 'redux-form'
 import { RESPONSE_STATUS } from '../../utils/constants'
 
 export class DynamicForm extends React.Component {
   static propTypes = {
+    current: PropTypes.number,
+    saveAction: PropTypes.func,
+    nrOfChapters: PropTypes.any,
+    reviewMode: PropTypes.bool,
+    chapter: PropTypes.object,
+    rValues: PropTypes.any,
+    i18n: PropTypes.any,
+    touch: PropTypes.any,
+    handleSubmit: PropTypes.func,
+    error: PropTypes.any,
+    submitting: PropTypes.bool
   }
 
   submitForm = values => {
@@ -44,7 +54,6 @@ export class DynamicForm extends React.Component {
 
   render() {
     const { chapter, rValues, current, i18n, touch, handleSubmit, error, reviewMode, submitting } = this.props
-    console.log('DynamicForm', this.props)
 
     const fieldsToDisplay = fieldsToShow(chapter, rValues)
 
@@ -53,7 +62,7 @@ export class DynamicForm extends React.Component {
 
         { current === 4 && !reviewMode &&
           <div className="dynamic-form-receipt">
-            <img src={window.configSettings.resources.imgs.receipt} />
+            <img src={window.configSettings.resources.imgs.receipt} alt="img" />
           </div>
         }
 

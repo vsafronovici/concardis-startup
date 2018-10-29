@@ -10,6 +10,12 @@ import { Optional } from './Optional'
 
 const RadioGroup = Radio.Group
 
+const radioStyle = {
+  display: 'block',
+  marginRight: '15px',
+  marginBottom: '15px'
+}
+
 const options = memoizeWith(
   (fieldName, listOfValues) => `${fieldName}_${listOfValues.length}`,
   (_, listOfValues, onFocus, autoFocus) => pipe(sortBySequence, map(({ value, label, ...rest }, index) => (
@@ -26,12 +32,6 @@ const options = memoizeWith(
     </div>
   )))(listOfValues)
 )
-
-const radioStyle = {
-  display: 'block',
-  marginRight: '15px',
-  marginBottom: '15px'
-}
 
 export const FieldVerticalRadioBtns = props => {
   const { value, onChange, label, listOfValues, autoFocus, required, helpText, onFocus, validationRules, input: { name } } = props
@@ -61,5 +61,6 @@ FieldVerticalRadioBtns.propTypes = {
   required: PropTypes.bool,
   helpText: PropTypes.string,
   onFocus: PropTypes.func,
-  validationRules: PropTypes.array
+  validationRules: PropTypes.array,
+  input: PropTypes.object
 }
