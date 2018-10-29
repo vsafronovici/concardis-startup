@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Checkbox } from 'antd'
-import { contains, without, uniq, compose, memoizeWith, pipe, map } from 'ramda'
+import { contains, without, uniq, compose, memoizeWith, pipe, map, identity } from 'ramda'
 import { translate } from './../../i18n/i18n'
 import { MULTIPLE_OPTIONS_SEPARATOR, sortBySequence } from '../../utils/application-form-utils'
 
@@ -47,7 +47,7 @@ const fromValue = value => isNilOrEmpty(value) ? [] : value.split(MULTIPLE_OPTIO
 const toValue = valuesArr => isNilOrEmpty(valuesArr) ? '' : valuesArr.join(MULTIPLE_OPTIONS_SEPARATOR)
 
 const renderCheckboxItems = memoizeWith(
-  (fieldName, listOfValues) => `${fieldName}_${listOfValues.length}`,
+  identity,
   (_, listOfValues, onFocus, defaultValuesArr, handleChange) => pipe(sortBySequence, map(({ name, value: optionValue, label, help, ...field }, index) => {
     return (
       <div key={index}>
@@ -86,7 +86,7 @@ export const FieldBoxedCheckboxGroup = (props) => {
       <div className="description">
         {description && translate(description)}
       </div>
-      { listOfValues && renderCheckboxItems(name, listOfValues, onFocus, defaultValuesArr, handleChange) }
+      { listOfValues && renderCheckboxItems(name + '_' + listOfValues.length + '_' + value, listOfValues, onFocus, defaultValuesArr, handleChange) }
     </div>
   )
 }
