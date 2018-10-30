@@ -19,25 +19,15 @@ if (definePlugin) {
   GITHASH = definePlugin.definitions.GITHASH ? definePlugin.definitions.GITHASH.replace(/"/g, '') : '';
 }
 
-module.exports = merge.smart(webpackConfig, {
-  entry: {
-    'scripts/modernizr': paths.modernizr,
-    'scripts/app': paths.appIndexJs,
-  },
-  output: {
-    chunkFilename: 'scripts/[name].[git-hash].js',
-    filename: '[name].[git-hash].js',
-    path: paths.destination,
-    publicPath: '/',
-  },
-  devtool: 'source-map',
-  plugins: [
-    new CleanPlugin(['dist'], { root: paths.root }),
+const isWithDll = process.env.noDll !== 'true';
+
+const plugins = [
+    new CleanPlugin(['dist/scripts', 'dist/styles'], { root: paths.root }),
     new CopyPlugin([
       { from: '../assets/manifest.json' }
     ]),
     new ExtractText('styles/app.[git-hash].css'),
-    new HtmlPlugin({
+    /*new HtmlPlugin({
       githash: GITHASH,
       inject: false,
       minify: {
@@ -46,7 +36,8 @@ module.exports = merge.smart(webpackConfig, {
       },
       template: './index.ejs',
       title: NPMPackage.title,
-    }),
+      externals: [ "/antd.dll.js" ],
+    }),*/
     new LodashModuleReplacementPlugin(),
     new webpack.LoaderOptionsPlugin({
       minimize: true,
@@ -59,38 +50,29 @@ module.exports = merge.smart(webpackConfig, {
       },
     }),
     new webpack.IgnorePlugin(/mock-data/)
-    // new OfflinePlugin({
-    //   autoUpdate: true,
-    //   safeToUseOptionalCaches: true,
-    //   ServiceWorker: {
-    //     events: true,
-    //   },
-    //   AppCache: {
-    //     events: true,
-    //   },
-    //   caches: {
-    //     main: [
-    //       '**/*.js',
-    //       '**/*.css',
-    //       'index.html',
-    //     ],
-    //     additional: [
-    //       'fonts/*.woff',
-    //       'fonts/*.ttf',
-    //       'fonts/*.svg',
-    //     ],
-    //     optional: [
-    //       ':rest:',
-    //     ],
-    //   },
-    //   cacheMaps: [
-    //     {
-    //       match: function() {
-    //         return new URL('/', location);
-    //       },
-    //       requestTypes: ['navigate'],
-    //     },
-    //   ],
-    // }),
-  ],
+  ]
+
+if (isWithDll) {
+  plugins.push(
+    new webpack.DllReferencePlugin({
+      context: __dirname,
+      manifest: require(paths.destinationDLL + '/app_libs-manifest.json')
+    })
+  )
+}
+
+
+module.exports = merge.smart(webpackConfig, {
+  entry: {
+    // 'scripts/modernizr': paths.modernizr,
+    'scripts/app': paths.appIndexJs,
+  },
+  output: {
+    chunkFilename: 'scripts/[name].[git-hash].js',
+    filename: '[name].[git-hash].js',
+    path: paths.destination,
+    publicPath: '/',
+  },
+  devtool: 'source-map',
+  plugins: plugins
 });

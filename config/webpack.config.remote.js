@@ -3,24 +3,12 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 const ExtractText = require('extract-text-webpack-plugin');
 const CleanPlugin = require('clean-webpack-plugin');
-const HtmlPlugin = require('html-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
-const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 
 const paths = require('./paths');
 const webpackConfig = require('./webpack.config.base');
 
-const NPMPackage = require(paths.packageJson);
-
-let GITHASH = '';
-const definePlugin = webpackConfig.plugins.find(d => d.constructor.name === 'DefinePlugin');
-if (definePlugin) {
-  GITHASH = definePlugin.definitions.GITHASH ? definePlugin.definitions.GITHASH.replace(/"/g, '') : '';
-}
-
 module.exports = merge.smart(webpackConfig, {
   entry: {
-    // 'scripts/modernizr': paths.modernizr,
     'scripts/app': paths.appIndexJs,
   },
   output: {
@@ -32,30 +20,10 @@ module.exports = merge.smart(webpackConfig, {
   devtool: 'source-map',
   plugins: [
     new CleanPlugin(['dist/scripts/app.js', 'dist/scripts/app.js.map'], { root: paths.root }),
-    /*new CopyPlugin([
-      { from: '../assets/manifest.json' }
-    ]),*/
     new ExtractText('styles/app.css'),
-    /*new HtmlPlugin({
-      githash: GITHASH,
-      inject: false,
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true,
-      },
-      template: './index.ejs',
-      title: NPMPackage.title,
-    }),
-    new LodashModuleReplacementPlugin(),
-    new webpack.LoaderOptionsPlugin({
-      minimize: true,
-      debug: false,
-    }),*/
-    /*new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      mangle: {
-        keep_fnames: true,
-      },
-    })*/
+    new webpack.DllReferencePlugin({
+      context: __dirname,
+      manifest: require(paths.destinationDLL + '/app_libs-manifest.json')
+    })
   ],
 });

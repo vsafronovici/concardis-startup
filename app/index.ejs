@@ -31,6 +31,9 @@
   }
 </script>
 
+<% for (var chunk in htmlWebpackPlugin.options.externals) { %><script src="<%=htmlWebpackPlugin.options.externals[chunk] %>"></script><% } %>
+
+
 <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
 <script src="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
 <% } %>

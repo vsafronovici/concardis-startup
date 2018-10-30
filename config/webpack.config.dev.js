@@ -2,12 +2,14 @@ const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
 const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin');
 const getClientEnvironment = require('./env');
 const webpackConfig = require('./webpack.config.base');
 const paths = require('./paths');
+
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // In development, we always serve from the root. This makes config easier.
@@ -30,7 +32,7 @@ module.exports = merge.smart(webpackConfig, {
   // This means they will be the "root" imports that are included in JS bundle.
   // The first two entry points enable "hot" CSS and auto-refreshes for JS.
   entry: {
-    modernizr: paths.modernizr,
+    // modernizr: paths.modernizr,
     bundle: [
       'react-hot-loader/patch',
       'react-dev-utils/webpackHotDevClient',
@@ -66,8 +68,9 @@ module.exports = merge.smart(webpackConfig, {
     new InterpolateHtmlPlugin(env.raw),
     // Generates an `index.html` file with the <script> injected.
     new HtmlWebpackPlugin({
-      inject: true,
+      inject: false,
       template: paths.appHtml,
+      externals: [ "/app_libs.dll.js" ],
     }),
     // Add module names to factory functions so they appear in browser profiler.
     new webpack.NamedModulesPlugin(),
@@ -91,6 +94,13 @@ module.exports = merge.smart(webpackConfig, {
     // https://github.com/jmblog/how-to-optimize-momentjs-with-webpack
     // You can remove this if you don't use Moment.js:
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+    new webpack.DllReferencePlugin({
+      context: __dirname,
+      manifest: require(paths.destinationDLL + '/app_libs-manifest.json')
+    }),
+    new CopyPlugin([
+      { from: '../dist/app_libs.dll.js' }
+    ])
   ],
   // Some libraries import Node modules but don't use them in the browser.
   // Tell Webpack to provide empty mocks for them so importing them works.
