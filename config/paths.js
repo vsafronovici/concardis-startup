@@ -12,6 +12,7 @@ module.exports = {
   assets: resolvePath('assets'),
   config: resolvePath('config'),
   destination: resolvePath('dist'),
+  destinationDLL: resolvePath('dist'),
   dotenv: resolvePath('.env'),
   modernizr: resolvePath('app/scripts/vendor/modernizr-custom.js'),
   modernizrrc: resolvePath('config/modernizrrc.json'),

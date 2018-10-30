@@ -82,7 +82,6 @@ module.exports = {
     }),
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     new webpack.IgnorePlugin(/_POC/),
-    new webpack.IgnorePlugin(/_POC/)
   ],
   module: {
     rules: [

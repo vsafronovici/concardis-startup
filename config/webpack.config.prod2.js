@@ -19,14 +19,25 @@ if (definePlugin) {
   GITHASH = definePlugin.definitions.GITHASH ? definePlugin.definitions.GITHASH.replace(/"/g, '') : '';
 }
 
-const isWithDll = process.env.noDll !== 'true';
-
-const plugins = [
-    new CleanPlugin(['dist/scripts', 'dist/styles'], { root: paths.root }),
+module.exports = merge.smart(webpackConfig, {
+  entry: {
+    // 'scripts/modernizr': paths.modernizr,
+    'scripts/app': paths.appIndexJs,
+    // antd: ['antd']
+  },
+  output: {
+    chunkFilename: 'scripts/[name].js',
+    filename: '[name].js',
+    path: paths.destination,
+    publicPath: '/',
+  },
+  devtool: 'source-map',
+  plugins: [
+    // new CleanPlugin(['dist'], { root: paths.root }),
     new CopyPlugin([
       { from: '../assets/manifest.json' }
     ]),
-    new ExtractText('styles/app.[git-hash].css'),
+    new ExtractText('styles/app.css'),
     /*new HtmlPlugin({
       githash: GITHASH,
       inject: false,
@@ -49,30 +60,44 @@ const plugins = [
         keep_fnames: true,
       },
     }),
-    new webpack.IgnorePlugin(/mock-data/)
-  ]
-
-if (isWithDll) {
-  plugins.push(
     new webpack.DllReferencePlugin({
       context: __dirname,
       manifest: require(paths.destinationDLL + '/app_libs-manifest.json')
-    })
-  )
-}
+    }),
 
-
-module.exports = merge.smart(webpackConfig, {
-  entry: {
-    // 'scripts/modernizr': paths.modernizr,
-    'scripts/app': paths.appIndexJs,
-  },
-  output: {
-    chunkFilename: 'scripts/[name].[git-hash].js',
-    filename: '[name].[git-hash].js',
-    path: paths.destination,
-    publicPath: '/',
-  },
-  devtool: 'source-map',
-  plugins: plugins
+    new webpack.IgnorePlugin(/mock-data/),
+    // new OfflinePlugin({
+    //   autoUpdate: true,
+    //   safeToUseOptionalCaches: true,
+    //   ServiceWorker: {
+    //     events: true,
+    //   },
+    //   AppCache: {
+    //     events: true,
+    //   },
+    //   caches: {
+    //     main: [
+    //       '**/*.js',
+    //       '**/*.css',
+    //       'index.html',
+    //     ],
+    //     additional: [
+    //       'fonts/*.woff',
+    //       'fonts/*.ttf',
+    //       'fonts/*.svg',
+    //     ],
+    //     optional: [
+    //       ':rest:',
+    //     ],
+    //   },
+    //   cacheMaps: [
+    //     {
+    //       match: function() {
+    //         return new URL('/', location);
+    //       },
+    //       requestTypes: ['navigate'],
+    //     },
+    //   ],
+    // }),
+  ],
 });

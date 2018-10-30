@@ -66,8 +66,9 @@ module.exports = merge.smart(webpackConfig, {
     new InterpolateHtmlPlugin(env.raw),
     // Generates an `index.html` file with the <script> injected.
     new HtmlWebpackPlugin({
-      inject: true,
+      inject: false,
       template: paths.appHtml,
+      externals: [ "/antd.dll.js" ],
     }),
     // Add module names to factory functions so they appear in browser profiler.
     new webpack.NamedModulesPlugin(),
@@ -91,6 +92,11 @@ module.exports = merge.smart(webpackConfig, {
     // https://github.com/jmblog/how-to-optimize-momentjs-with-webpack
     // You can remove this if you don't use Moment.js:
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+    new webpack.DllReferencePlugin({
+      context: __dirname,
+      manifest: require(paths.destinationDLL + '/antd-manifest.json')
+    })
+
   ],
   // Some libraries import Node modules but don't use them in the browser.
   // Tell Webpack to provide empty mocks for them so importing them works.
