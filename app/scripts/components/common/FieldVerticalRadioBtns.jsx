@@ -1,7 +1,7 @@
 import React from 'react'
 import { Radio } from 'antd'
 import PropTypes from 'prop-types'
-import { map, memoizeWith, pipe } from 'ramda'
+import { map, memoizeWith, pipe, identity } from 'ramda'
 import { translate } from '../../i18n/i18n'
 import { FieldTooltip } from './FieldTooltip'
 import { getNotRequired, sortBySequence } from '../../utils/application-form-utils'
@@ -16,9 +16,9 @@ const radioStyle = {
 }
 
 const options = memoizeWith(
-  (fieldName, listOfValues) => `${fieldName}_${listOfValues.length}`,
+  identity,
   (_, listOfValues, onFocus, autoFocus) => pipe(sortBySequence, map(({ value, label, ...rest }, index) => (
-    <div className="bottom-container" key={index}>
+    <div className="bottom-container" key={value}>
       <Radio
         className="radio-required"
         value={value}
@@ -45,7 +45,7 @@ export const FieldVerticalRadioBtns = props => {
         </div>
       </div>
       <RadioGroup onChange={(val) => onChange(val)} value={value} required={required}>
-        {listOfValues && options(name, listOfValues, onFocus, autoFocus)}
+        {listOfValues && options(`${name}_${listOfValues.length}_${value}`, listOfValues, onFocus, autoFocus)}
       </RadioGroup>
     </div>
   )

@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Radio } from 'antd'
-import { map, pipe, memoizeWith } from 'ramda'
+import { map, pipe, memoizeWith, identity } from 'ramda'
 import { translate } from '../../i18n/i18n'
 import { FieldTooltip } from './FieldTooltip'
 import { getNotRequired, sortBySequence } from '../../utils/application-form-utils'
@@ -11,10 +11,10 @@ import { isNilOrEmpty } from '../../utils/function-utils'
 const RadioGroup = Radio.Group
 
 const options = memoizeWith(
-  (fieldName, listOfValues) => `${fieldName}_${listOfValues.length}`,
-  (_, listOfValues, onFocus) => pipe(sortBySequence, map(({ value, label }, index) => (
+  identity,
+  (_, listOfValues, onFocus) => pipe(sortBySequence, map(({ value, label }) => (
     <Radio
-      key={index}
+      key={value}
       value={value}
       className="item radio-required"
       onFocus={onFocus}
@@ -33,7 +33,7 @@ export const FieldHorizontalRadioBtns = props => {
         <label>{translate(label)}</label>{getNotRequired(validationRules) && <Optional />}{helpText && <FieldTooltip label={helpText} />}
       </div>
       <RadioGroup onChange={event => onChange(event)} value={value} className="flex-row" required={required}>
-        {!isNilOrEmpty(listOfValues) && options(name, listOfValues, onFocus)}
+        {!isNilOrEmpty(listOfValues) && options(`${name}_${listOfValues.length}_${value}`, listOfValues, onFocus)}
       </RadioGroup>
     </div>
   )

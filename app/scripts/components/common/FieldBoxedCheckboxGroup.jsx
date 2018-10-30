@@ -49,7 +49,7 @@ const toValue = valuesArr => (isNilOrEmpty(valuesArr) ? '' : valuesArr.join(MULT
 const renderCheckboxItems = memoizeWith(
   identity,
   (_, listOfValues, onFocus, defaultValuesArr, handleChange) => pipe(sortBySequence, map(({ name, value: optionValue, label, help, ...field }, index) => (
-    <div key={index}>
+    <div key={optionValue}>
       <CheckBoxItem
         {...field}
         name={name}
