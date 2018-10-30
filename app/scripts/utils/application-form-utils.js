@@ -63,7 +63,7 @@ export const buildSaveRequest = ({ formValues, chapters, currentChapterIdx }) =>
       return
     }
 
-    const serverValues = isNilOrEmpty(formValues) || !isNilOrEmpty(condition) && !checkSectionCondition(condition, formValues)
+    const serverValues = ((isNilOrEmpty(formValues) || !isNilOrEmpty(condition)) && !checkSectionCondition(condition, formValues))
       ? []
       : fields.reduce((acc, { name }) => {
         const value = formValues[name]

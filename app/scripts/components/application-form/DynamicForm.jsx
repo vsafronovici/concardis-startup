@@ -46,10 +46,10 @@ export class DynamicForm extends React.Component {
 
   getBtnName = () => {
     const { current, nrOfChapters, reviewMode } = this.props
-    return reviewMode
-      ? 'appForm.btn.saveSection'
-      : current === nrOfChapters - 1 ? 'btn_applicationForm_reviewApplication'
-        : 'btn_applicationForm_nextSection'
+    /* eslint-disable */ 
+    return reviewMode ? 'appForm.btn.saveSection': current === nrOfChapters - 1
+      ? 'btn_applicationForm_reviewApplication' : 'btn_applicationForm_nextSection'
+    /* eslint-enable */
   }
 
   render() {
@@ -72,7 +72,7 @@ export class DynamicForm extends React.Component {
           </div>
         }
 
-        <form onSubmit={handleSubmit(this.submitForm)} className={reviewMode && 'form-chapter-review'}>
+        <form onSubmit={handleSubmit(this.submitForm)} className={reviewMode && 'form-chapter-review' || ''}>
           <div>
             <FieldMainTitle title={chapter.title} subtitle={chapter.subtitle} />
             <div>

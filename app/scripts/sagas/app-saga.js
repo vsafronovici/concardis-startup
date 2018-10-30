@@ -4,15 +4,6 @@ import { loadTranslationsReq, loadTranslationsResp, failedApiFetch } from '../ac
 import { SFAction, memoizedSFAction } from '../modules/client'
 import { LanguageType } from '../utils/constants'
 
-function* loadTranslationsSaga({ payload: { lang } }) {
-  const action = {
-    actionName: window.configSettings.remoteActions.getDictionaryMetadata,
-    args: lang
-  }
-  const response = yield call(apiFetchSaga, action)
-  yield put(loadTranslationsResp(response.data))
-}
-
 function* initPageSaga() {
   yield put(loadTranslationsReq(window.configSettings.lang || LanguageType.EN))
 }
@@ -25,6 +16,15 @@ export function* apiFetchSaga(action, options = {}) {
   } catch (err) {
     return yield put(failedApiFetch(err))
   }
+}
+
+function* loadTranslationsSaga({ payload: { lang } }) {
+  const action = {
+    actionName: window.configSettings.remoteActions.getDictionaryMetadata,
+    args: lang
+  }
+  const response = yield call(apiFetchSaga, action)
+  yield put(loadTranslationsResp(response.data))
 }
 
 export default function* root() {

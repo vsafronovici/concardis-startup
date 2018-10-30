@@ -1,14 +1,12 @@
 import React from 'react'
-import { Field } from 'redux-form'
+import PropTypes from 'prop-types'
 
 import { translate } from '../../i18n/i18n'
 import { FieldType } from '../../utils/constants'
-import { parseCheckBoxValues } from '../../utils/function-utils'
-
 
 const renderFieldComponent = ({ idx, field, value }) => {
-  const { type, title } = field
-  console.log('renderFieldComponent', translate(value), { field, value })
+  const { type } = field
+
   let label = translate(field.label)
   let valueToDisplay
   switch (type) {
@@ -19,8 +17,6 @@ const renderFieldComponent = ({ idx, field, value }) => {
     case FieldType.VERTICAL_RADIO_BTNS: {
       valueToDisplay = translate(value)
       break
-    }
-    case FieldType.BOXED_RADIO_BTNS: {
     }
     case FieldType.BOXED_CHECKBOX: {
       valueToDisplay = null
@@ -61,10 +57,18 @@ const renderFieldComponent = ({ idx, field, value }) => {
     }
   }
 
-  return <div>
-    {type !== FieldType.TITLE && label && <span className="label">{label}:</span>}
-    <span className="value">{valueToDisplay}</span>
-  </div>
+  return (
+    <div>
+      {type !== FieldType.TITLE && label && <span className="label">{label}:</span>}
+      <span className="value">{valueToDisplay}</span>
+    </div>
+  )
+}
+
+renderFieldComponent.propTypes = {
+  idx: PropTypes.number,
+  field: PropTypes.object,
+  value: PropTypes.any,
 }
 
 export const ReadFieldRow = ({ idx, field, value }) => (
@@ -72,4 +76,10 @@ export const ReadFieldRow = ({ idx, field, value }) => (
     { renderFieldComponent({ idx, field, value }) }
   </div>
 )
+
+ReadFieldRow.propTypes = {
+  idx: PropTypes.number,
+  field: PropTypes.object,
+  value: PropTypes.any,
+}
 

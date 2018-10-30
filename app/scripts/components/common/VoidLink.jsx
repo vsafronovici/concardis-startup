@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 const VoidLink = props => <a href="javascript:void(0)" {...props}>{props.children}</a>
 
 VoidLink.propTypes = {
-  children: PropTypes.object
+  children: PropTypes.string
 }
 
 export default VoidLink

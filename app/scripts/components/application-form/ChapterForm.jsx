@@ -11,4 +11,8 @@ const mapStateToProps = state => ({
   chapter: currentChapterSelector(state)
 })
 
+ChapterForm.propTypes = {
+  chapter: PropTypes.object
+}
+
 export default connect(mapStateToProps)(ChapterForm)

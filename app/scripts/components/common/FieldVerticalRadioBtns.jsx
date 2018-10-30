@@ -7,7 +7,6 @@ import { FieldTooltip } from './FieldTooltip'
 import { getNotRequired, sortBySequence } from '../../utils/application-form-utils'
 import { Optional } from './Optional'
 
-
 const RadioGroup = Radio.Group
 
 const radioStyle = {

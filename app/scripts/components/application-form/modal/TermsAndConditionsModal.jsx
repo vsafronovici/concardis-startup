@@ -15,9 +15,22 @@ const Footer = props => (
   </div>
 )
 
+Footer.propTypes = {
+  onOk: PropTypes.func,
+  disabled: PropTypes.bool,
+}
+
 export class TermsAndConditionsModal extends Component {
   state = {
     seen: false
+  }
+
+  static propTypes = {
+    id: PropTypes.string,
+    onOk: PropTypes.func,
+    lang: PropTypes.string,
+    show: PropTypes.bool,
+    onClose: PropTypes.func
   }
 
   enableBtn = () => {
@@ -47,12 +60,6 @@ export class TermsAndConditionsModal extends Component {
       </Modal>
     )
   }
-}
-
-TermsAndConditionsModal.propTypes = {
-  lang: PropTypes.string,
-  show: PropTypes.bool,
-  onClose: PropTypes.func
 }
 
 const mapStateToProps = state => ({
