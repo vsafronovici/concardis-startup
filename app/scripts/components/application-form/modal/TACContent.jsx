@@ -5,7 +5,7 @@ const jQuery = window.jQuery || {}
 
 export class TACContent extends Component {
   static propTypes = {
-    id: PropTypes.string,           
+    id: PropTypes.string,
     enableBtn: PropTypes.func,
     show: PropTypes.bool,
     height: PropTypes.number,

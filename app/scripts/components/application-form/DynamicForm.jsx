@@ -72,7 +72,7 @@ export class DynamicForm extends React.Component {
           </div>
         }
 
-        <form onSubmit={handleSubmit(this.submitForm)} className={reviewMode && 'form-chapter-review' || ''}>
+        <form onSubmit={handleSubmit(this.submitForm)} className={(reviewMode && 'form-chapter-review') || ''}>
           <div>
             <FieldMainTitle title={chapter.title} subtitle={chapter.subtitle} />
             <div>
