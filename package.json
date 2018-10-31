@@ -146,7 +146,7 @@
     "start": "node tools/start.js",
     "build": "cross-env NODE_ENV=production webpack --config config/webpack.config.prod.js --hide-modules --display-optimization-bailout",
     "build:noDll": "cross-env NODE_ENV=production noDll=true webpack --config config/webpack.config.prod.js --hide-modules --display-optimization-bailout",
-    "build:dll": "cross-env NODE_ENV=production webpack --config config/vendor-bundles.webpack.config --display-optimization-bailout",
+    "build:dll": "cross-env NODE_ENV=production webpack --config config/dll.webpack.config --display-optimization-bailout",
     "build:remote": "cross-env NODE_ENV=production webpack --config config/webpack.config.remote.js --watch --progress ",
     "build:serve": "npm run build && npm run serve",
     "analyze": "NODE_ENV=production webpack --config config/webpack.config.prod.js --profile --json > webpack.stats.json",
