@@ -77,7 +77,7 @@ export class DynamicForm extends React.Component {
             <FieldMainTitle title={chapter.title} subtitle={chapter.subtitle} />
             <div>
               { fieldsToDisplay.map((field, idx) => <FieldRow
-                key={field.name} field={field} idx={idx} i18n={i18n}
+                key={field.name + idx} field={field} idx={idx} i18n={i18n}
                 touch={touch}
               />) }
             </div>
