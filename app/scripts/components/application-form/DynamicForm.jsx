@@ -8,7 +8,7 @@ import { translate } from '../../i18n/i18n'
 import VoidLink from '../common/VoidLink'
 import FormError from '../common/FormError'
 import { FieldMainTitle } from '../common/FieldMainTitle'
-import { save } from '../../actions/application-form-action'
+import { save, saveAndClose } from '../../actions/application-form-action'
 import { currentSelector, nrOfChaptersSelector, reviewModeSelector } from '../../selectors/application-form-selector'
 import { i18nSelector } from '../../selectors/i18n-selector'
 import { fieldsToShow } from '../../utils/application-form-utils'
@@ -18,6 +18,7 @@ export class DynamicForm extends React.Component {
   static propTypes = {
     current: PropTypes.number,
     saveAction: PropTypes.func,
+    saveAndCloseAction: PropTypes.func,
     nrOfChapters: PropTypes.any,
     reviewMode: PropTypes.bool,
     chapter: PropTypes.object,
@@ -44,6 +45,11 @@ export class DynamicForm extends React.Component {
     })
   }
 
+  saveAndClose = () => {
+    const { chapter, rValues, rSyncErrors, saveAndCloseAction } = this.props
+    saveAndCloseAction({ chapter, formValues: rValues, formErrors: rSyncErrors })
+  }
+
   getBtnName = () => {
     const { current, nrOfChapters, reviewMode } = this.props
     /* eslint-disable */ 
@@ -68,7 +74,7 @@ export class DynamicForm extends React.Component {
 
         { !reviewMode &&
           <div className="flex-row-justify-end">
-            <div><VoidLink>{translate('link_applicationForm_saveAndClose')}</VoidLink></div>
+            <div><VoidLink onClick={this.saveAndClose}>{translate('link_applicationForm_saveAndClose')}</VoidLink></div>
           </div>
         }
 
@@ -100,7 +106,8 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = ({
-  saveAction: save
+  saveAction: save,
+  saveAndCloseAction: saveAndClose
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(DynamicForm)

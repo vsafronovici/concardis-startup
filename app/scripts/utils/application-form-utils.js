@@ -1,5 +1,5 @@
-import { pluck, prop, sortBy } from 'ramda'
-import { isNilOrEmpty } from './function-utils'
+import { pluck, prop, sortBy, compose, filter, not } from 'ramda'
+import { isNilOrEmpty, isNotNilOrEmpty } from './function-utils'
 import { SectionStatusType } from './constants'
 
 export const DYNAMIC_FORM_PREFIX = 'dynamicForm_'
@@ -52,32 +52,47 @@ export const fieldsToShow = (chapter, formValues = {}) => {
   }, [])
 }
 
+const buildServerValues = (section, formValues) => {
+  const { condition, fields } = section
+
+  if (isNilOrEmpty(fields) || isNilOrEmpty(formValues) || isNotNilOrEmpty(condition) && !checkSectionCondition(condition, formValues)) {
+    return []
+  }
+
+  return fields.reduce((acc, { name }) => {
+    const value = formValues[name]
+    if (value) {
+      acc.push({ fieldCode: name, fieldValue: value })
+    }
+    return acc
+  }, [])
+
+}
+
+const hasNoFormErrors = formErrors => serverValue => !formErrors[serverValue.fieldCode]
+
 export const buildSaveRequest = ({ formValues, chapters, currentChapterIdx }) => {
   const chapter = chapters[currentChapterIdx]
   chapter.status = SectionStatusType.IN_PROGRESS
 
   chapter.sections.forEach(section => {
-    const { condition, fields } = section
-
-    if (isNilOrEmpty(fields)) {
-      return
-    }
-
-    const serverValues = ((isNilOrEmpty(formValues) || !isNilOrEmpty(condition)) && !checkSectionCondition(condition, formValues))
-      ? []
-      : fields.reduce((acc, { name }) => {
-        const value = formValues[name]
-        if (value) {
-          acc.push({ fieldCode: name, fieldValue: value })
-        }
-        return acc
-      }, [])
-
-    section.serverValues = serverValues
+    section.serverValues = buildServerValues(section, formValues)
   })
 
   return chapters
 }
+
+export const buildSaveAndCloseRequest = ({ chapter, formValues, formErrors }) => {
+  console.log('buildSaveAndCloseRequest', { chapter, formValues, formErrors })
+  chapter.status = SectionStatusType.IN_PROGRESS
+
+  chapter.sections.forEach(section => {
+    section.serverValues = compose(filter(hasNoFormErrors(formErrors)), buildServerValues)(section, formValues)
+  })
+
+  return chapter
+}
+
 
 export const getNotRequired = validationRules =>
   isNilOrEmpty(validationRules) || !pluck('required', validationRules)[0]

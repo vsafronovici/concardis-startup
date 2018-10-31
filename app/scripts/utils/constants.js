@@ -74,7 +74,8 @@ export const PackageRoutes = {
 }
 
 export const EXTERNAL_LINKS = {
-  APPLICATION_FORM: '/OndoardingSME/apex/ApplicationFormPage'
+  APPLICATION_FORM: '/OndoardingSME/apex/ApplicationFormPage',
+  PACKAGE_CONFIGURE: '/OndoardingSME/apex/PackageConfigurePage'
 }
 
 export const ApplicationFormStepsTitles = {

@@ -15,7 +15,9 @@ import {
   openTACModal,
   saveReq,
   saveRes,
-  getReviewQuote
+  getReviewQuote,
+  saveAndCloseReq,
+  saveAndCloseRes
 } from '../actions/application-form-action'
 import {
   chaptersSelector,
@@ -24,8 +26,8 @@ import {
   tacSelector,
   readyForSubmitSelector,
 } from '../selectors/application-form-selector'
-import { buildSaveRequest } from '../utils/application-form-utils'
-import { RESPONSE_STATUS, SectionStatusType } from '../utils/constants'
+import { buildSaveAndCloseRequest, buildSaveRequest } from '../utils/application-form-utils'
+import { EXTERNAL_LINKS, RESPONSE_STATUS, SectionStatusType } from '../utils/constants'
 
 function* getAppFormMetadataSaga() {
   const action = {
@@ -99,6 +101,22 @@ function* saveSaga({ payload: { formValues, currentChapterIdx, callback } }) {
   }
 }
 
+function* saveAndCloseSaga({ payload: { chapter, formValues, formErrors  } }) {
+
+  const req = buildSaveAndCloseRequest({ chapter, formValues, formErrors })
+  yield put(saveAndCloseReq(req))
+
+  const action = {
+    actionName: window.configSettings.remoteActions.saveAndClose,
+    args: JSON.stringify(req)
+  }
+
+  const response = yield call(apiFetchSaga, action, { parseToJSON: true })
+  yield put(saveAndCloseRes(response.data))
+
+  window.location.href = EXTERNAL_LINKS.PACKAGE_CONFIGURE
+}
+
 function* submitSaga() {
   const isReadyForSubmit = yield select(readyForSubmitSelector)
   const { agree } = yield select(tacSelector)
@@ -142,6 +160,7 @@ export default function* root() {
     takeLatest(APPLICATION_FORM.INIT_DATA, initDataSaga),
     takeLatest(APPLICATION_FORM.AGREE_TAC, agreeTACSaga),
     takeLatest(APPLICATION_FORM.SAVE, saveSaga),
+    takeLatest(APPLICATION_FORM.SAVE_AND_CLOSE, saveAndCloseSaga),
     takeLatest(APPLICATION_FORM.SUBMIT, submitSaga),
     takeLatest(APPLICATION_FORM.SUBMIT_REQ, submitReqSaga),
     takeLatest(APPLICATION_FORM.CONFIRM, confirmTAC),

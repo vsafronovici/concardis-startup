@@ -1,10 +1,11 @@
-import { addIndex, toPairs, values, isNil, equals, all, isEmpty, propOr, curry, anyPass, map } from 'ramda'
+import { addIndex, toPairs, values, isNil, equals, all, isEmpty, propOr, curry, anyPass, map, compose, not } from 'ramda'
 import numeral from 'numeral'
 import moment from 'moment'
 import { DATE_FORMAT } from './constants'
 import { translate } from '../i18n/i18n'
 
 export const isNilOrEmpty = anyPass([isNil, isEmpty])
+export const isNotNilOrEmpty = compose(not, isNilOrEmpty)
 export const propOrEmptyObj = propOr({})
 export const propOrEmptyArr = propOr([])
 export const mapIndexed = addIndex(map)
