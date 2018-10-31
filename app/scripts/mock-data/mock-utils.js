@@ -32,6 +32,7 @@ export const MOCK_REMOTE_ACTIONS = createNamespace('MOCK_REMOTE_ACTIONS', {
   getAppFormMetadata: undefined,
   updateCommercialsTC: undefined,
   validateForm: undefined,
+  saveAndClose: undefined,
   submitForm: undefined,
 })
 
@@ -73,6 +74,9 @@ export const mockResponse = action => {
     case MOCK_REMOTE_ACTIONS.validateForm:
       return validateForm_OK
 
+    case MOCK_REMOTE_ACTIONS.saveAndClose:
+      return validateForm_OK
+
     case MOCK_REMOTE_ACTIONS.submitForm:
       return submitError
 
@@ -99,6 +103,7 @@ export const mockVisualForceConfig = {
     getAppFormMetadata: MOCK_REMOTE_ACTIONS.getAppFormMetadata,
     updateCommercialsTC: MOCK_REMOTE_ACTIONS.updateCommercialsTC,
     validateForm: MOCK_REMOTE_ACTIONS.validateForm,
+    saveAndClose: MOCK_REMOTE_ACTIONS.saveAndClose,
     submitForm: MOCK_REMOTE_ACTIONS.submitForm,
   },
   lang: 'en_US',

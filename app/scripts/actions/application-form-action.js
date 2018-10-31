@@ -45,20 +45,14 @@ export const goToNextSection = payload => ({
   payload
 })
 
-export const getReview = payload => ({
-  type: APPLICATION_FORM.GET_REVIEW,
-  payload
+export const goToReviewMode = () => ({
+  type: APPLICATION_FORM.GO_TO_REVIEW_MODE
 })
 
 export const save = payload => ({
   type: APPLICATION_FORM.SAVE,
   payload
 })
-
-export const goToReviewMode = () => ({
-  type: APPLICATION_FORM.GO_TO_REVIEW_MODE
-})
-
 
 export const saveReq = payload => ({
   type: APPLICATION_FORM.SAVE_REQ,
@@ -70,12 +64,19 @@ export const saveRes = payload => ({
   payload
 })
 
-export const submitReq = () => ({
-  type: APPLICATION_FORM.SUBMIT_REQ
+export const saveAndClose = payload => ({
+  type: APPLICATION_FORM.SAVE_AND_CLOSE,
+  payload
 })
 
-export const submit = () => ({
-  type: APPLICATION_FORM.SUBMIT
+export const saveAndCloseReq = payload => ({
+  type: APPLICATION_FORM.SAVE_AND_CLOSE_REQ,
+  payload
+})
+
+export const saveAndCloseRes = payload => ({
+  type: APPLICATION_FORM.SAVE_AND_CLOSE_RES,
+  payload
 })
 
 export const setReadyForSubmit = () => ({
@@ -84,6 +85,14 @@ export const setReadyForSubmit = () => ({
 
 export const confirm = () => ({
   type: APPLICATION_FORM.CONFIRM
+})
+
+export const submit = () => ({
+  type: APPLICATION_FORM.SUBMIT
+})
+
+export const submitReq = () => ({
+  type: APPLICATION_FORM.SUBMIT_REQ
 })
 
 export const submitRes = payload => ({
