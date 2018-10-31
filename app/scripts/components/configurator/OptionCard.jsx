@@ -34,6 +34,7 @@ export class OptionCard extends React.Component {
     if (!readonly) {
       elProps.onClick = this.chooseOption
     }
+    console.log('OPTIONCARD', this.props)
     return (
       <div {...elProps}>
         <div className="oc-top">
@@ -46,7 +47,7 @@ export class OptionCard extends React.Component {
           <div className="oc-subtitle">{description}</div>
           <div className="oc-items">
             {
-              features.map((item, idx) => (
+              features && features.map((item, idx) => (
                 <div className="oc-item" key={idx}>
                   {/* <i className="oc-item-icon" />*/}
                   <div className="oc-item-content">{item.name}</div>
@@ -61,7 +62,7 @@ export class OptionCard extends React.Component {
         <hr />
         <div className="oc-footer">
           <div style={{ marginBottom: '10px' }}><strong >{translate('configurator.optionCards.accIncluded')}</strong></div>
-          {includedItems.map(item => (
+          {includedItems && includedItems.map(item => (
             <div key={item.name}>
               {item.quantity.value > 1 && <span>{item.quantity.value}x</span>} {item.name}
             </div>

@@ -5,10 +5,23 @@ export default [{
   "sequence": 1,
   "sections": [{
     "type": "Simple",
-    "serverValues": [{"fieldCode": "ch1_s1_field1Section_01"}, {"fieldCode": "ch1_s1_field2Section_01"}, {"fieldCode": "ch1_s1_field3Section_01"}, {"fieldCode": "ch1_s1_field4Section_01"}, {"fieldCode": "ch1_s1_field5Section_01"}],
+    "serverValues": [{"fieldValue": "title_option_2", "fieldCode": "ch1_s1_field1Section_01"}, {
+      "fieldValue": "asdas",
+      "fieldCode": "ch1_s1_field2Section_01"
+    }, {"fieldValue": "dasdas", "fieldCode": "ch1_s1_field3Section_01"}, {
+      "fieldValue": "e@e.md",
+      "fieldCode": "ch1_s1_field4Section_01"
+    }, {"fieldValue": "role_option_2", "fieldCode": "ch1_s1_field5Section_01"}],
     "sequence": 1,
     "name": "Section_01",
     "fields": [{
+      "type": "warning",
+      "sfFieldType": "Text",
+      "sequence": 0,
+      "readOnly": false,
+      "name": "nullSection_01",
+      "label": "ch1_warning"
+    }, {
       "validationRules": [{
         "validationError": "ch1_s1_field1_ValidErr",
         "requiredError": "ch1_s1_field1_ReqErr",
@@ -17,6 +30,7 @@ export default [{
       "type": "horizontal_radio_btns",
       "sfFieldType": "Picklist",
       "sequence": 1,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch1_s1_field1Section_01",
       "listOfValues": [{
@@ -37,6 +51,7 @@ export default [{
       "type": "text",
       "sfFieldType": "Text",
       "sequence": 2,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch1_s1_field2Section_01",
       "label": "ch1_s1_field2_label",
@@ -52,6 +67,7 @@ export default [{
       "type": "text",
       "sfFieldType": "Text",
       "sequence": 3,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch1_s1_field3Section_01",
       "label": "ch1_s1_field3_label",
@@ -67,6 +83,7 @@ export default [{
       "type": "text",
       "sfFieldType": "Email",
       "sequence": 4,
+      "readOnly": true,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch1_s1_field4Section_01",
       "label": "ch1_s1_field4_label",
@@ -82,6 +99,7 @@ export default [{
       "type": "vertical_radio_btns",
       "sfFieldType": "Picklist",
       "sequence": 5,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch1_s1_field5Section_01",
       "listOfValues": [{"value": "role_option_2", "sequence": 2, "label": "role_option_2"}, {
@@ -107,22 +125,30 @@ export default [{
     "serverValues": [{
       "fieldValue": "fsdf",
       "fieldCode": "ch2_s1_field1Section_02"
+    }, {"fieldValue": "structure_option_8", "fieldCode": "ch2_s1_field2Section_02"}, {
+      "fieldValue": "adasdsa",
+      "fieldCode": "ch2_s1_field3Section_02"
     }, {
-      "fieldValue": "structure_option_8",
-      "fieldCode": "ch2_s1_field2Section_02"
-    }, {"fieldCode": "ch2_s1_field3Section_02"}, {
       "fieldValue": "reg_state_option_3",
       "fieldCode": "ch2_s1_field4Section_02"
     }, {"fieldValue": "reg_court_option_2", "fieldCode": "ch2_s1_field5Section_02"}, {
       "fieldValue": "fsdfsdf",
       "fieldCode": "ch2_s1_field6Section_02"
-    }, {"fieldCode": "ch2_s1_field7Section_02"}],
+    }, {"fieldValue": "owner_option_2", "fieldCode": "ch2_s1_field7Section_02"}],
     "sequence": 2,
     "name": "Section_02",
     "fields": [{
+      "type": "warning",
+      "sfFieldType": "Text",
+      "sequence": 0,
+      "readOnly": false,
+      "name": "nullSection_02",
+      "label": "ch2_warning"
+    }, {
       "type": "title",
       "sfFieldType": "Text",
       "sequence": 1,
+      "readOnly": false,
       "name": "nullSection_02",
       "label": "ch_2_sec_1_title"
     }, {
@@ -135,6 +161,7 @@ export default [{
       "type": "text",
       "sfFieldType": "Text",
       "sequence": 2,
+      "readOnly": false,
       "objectApi": "ccApplication_Form__c",
       "name": "ch2_s1_field1Section_02",
       "label": "ch2_s1_field1_label",
@@ -150,6 +177,7 @@ export default [{
       "type": "drop_down",
       "sfFieldType": "Picklist",
       "sequence": 3,
+      "readOnly": false,
       "objectApi": "ccApplication_Form__c",
       "name": "ch2_s1_field2Section_02",
       "listOfValues": [{
@@ -191,6 +219,7 @@ export default [{
       "type": "text",
       "sfFieldType": "Text",
       "sequence": 4,
+      "readOnly": false,
       "objectApi": "ccApplication_Form__c",
       "name": "ch2_s1_field3Section_02",
       "label": "ch2_s1_field3_label",
@@ -201,6 +230,7 @@ export default [{
       "type": "title",
       "sfFieldType": "Text",
       "sequence": 5,
+      "readOnly": false,
       "name": "nullSection_02",
       "label": "ch_2_sec_2_1_title"
     }, {
@@ -212,6 +242,7 @@ export default [{
       "type": "drop_down",
       "sfFieldType": "Picklist",
       "sequence": 6,
+      "readOnly": false,
       "objectApi": "ccApplication_Form__c",
       "name": "ch2_s1_field4Section_02",
       "listOfValues": [{
@@ -235,6 +266,7 @@ export default [{
       "type": "drop_down",
       "sfFieldType": "Picklist",
       "sequence": 7,
+      "readOnly": false,
       "objectApi": "ccApplication_Form__c",
       "name": "ch2_s1_field5Section_02",
       "listOfValues": [{
@@ -259,6 +291,7 @@ export default [{
       "type": "text",
       "sfFieldType": "Text",
       "sequence": 8,
+      "readOnly": false,
       "objectApi": "ccApplication_Form__c",
       "name": "ch2_s1_field6Section_02",
       "label": "ch2_s1_field6_label",
@@ -274,6 +307,7 @@ export default [{
       "type": "boxed_radio_btns",
       "sfFieldType": "Picklist",
       "sequence": 9,
+      "readOnly": false,
       "objectApi": "ccApplication_Form__c",
       "name": "ch2_s1_field7Section_02",
       "listOfValues": [{
@@ -294,7 +328,19 @@ export default [{
   }, {
     "type": "Conditional",
     "title": "ch_2_sec_2_title",
-    "serverValues": [{"fieldCode": "ch1_s1_field1Section_03_1"}, {"fieldCode": "ch1_s1_field2Section_03_1"}, {"fieldCode": "ch1_s1_field3Section_03_1"}, {"fieldCode": "ch2_s2_field4Section_03_1"}, {"fieldCode": "ch2_s2_field5Section_03_1"}, {"fieldCode": "ch2_s2_field6Section_03_1"}, {"fieldCode": "ch2_s2_field7Section_03_1"}, {"fieldCode": "ch2_s2_field8Section_03_1"}],
+    "serverValues": [{"fieldValue": "title_option_2", "fieldCode": "ch1_s1_field1Section_03_1"}, {
+      "fieldValue": "asdas",
+      "fieldCode": "ch1_s1_field2Section_03_1"
+    }, {
+      "fieldValue": "dasdas",
+      "fieldCode": "ch1_s1_field3Section_03_1"
+    }, {"fieldCode": "ch2_s2_field4Section_03_1"}, {
+      "fieldValue": "1988-11-11",
+      "fieldCode": "ch2_s2_field5Section_03_1"
+    }, {"fieldValue": "country_option_3", "fieldCode": "ch2_s2_field6Section_03_1"}, {
+      "fieldValue": "country_option_3",
+      "fieldCode": "ch2_s2_field7Section_03_1"
+    }, {"fieldValue": "true", "fieldCode": "ch2_s2_field8Section_03_1"}],
     "sequence": 3,
     "relatedSection": "Section_01",
     "name": "Section_03_1",
@@ -302,6 +348,7 @@ export default [{
       "type": "title",
       "sfFieldType": "Text",
       "sequence": 10,
+      "readOnly": false,
       "name": "nullSection_03_1",
       "label": "ch_2_sec_2_title"
     }, {
@@ -313,6 +360,7 @@ export default [{
       "type": "horizontal_radio_btns",
       "sfFieldType": "Picklist",
       "sequence": 11,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch1_s1_field1Section_03_1",
       "listOfValues": [{
@@ -333,6 +381,7 @@ export default [{
       "type": "text",
       "sfFieldType": "Text",
       "sequence": 12,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch1_s1_field2Section_03_1",
       "label": "ch1_s1_field2_label",
@@ -348,6 +397,7 @@ export default [{
       "type": "text",
       "sfFieldType": "Text",
       "sequence": 13,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch1_s1_field3Section_03_1",
       "label": "ch1_s1_field3_label",
@@ -363,6 +413,7 @@ export default [{
       "type": "text",
       "sfFieldType": "Text",
       "sequence": 14,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field4Section_03_1",
       "label": "ch2_s2_field4_label",
@@ -377,6 +428,7 @@ export default [{
       "type": "date",
       "sfFieldType": "Date",
       "sequence": 15,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field5Section_03_1",
       "label": "ch2_s2_field5_label",
@@ -391,6 +443,7 @@ export default [{
       "type": "drop_down",
       "sfFieldType": "Picklist",
       "sequence": 16,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field6Section_03_1",
       "listOfValues": [{
@@ -1070,6 +1123,7 @@ export default [{
       "type": "drop_down",
       "sfFieldType": "Picklist",
       "sequence": 17,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field7Section_03_1",
       "listOfValues": [{
@@ -1757,6 +1811,7 @@ export default [{
       "type": "boxed_checkbox",
       "sfFieldType": "Checkbox",
       "sequence": 18,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field8Section_03_1",
       "label": "ch2_s2_field8_label",
@@ -1767,7 +1822,19 @@ export default [{
   }, {
     "type": "Conditional",
     "title": "ch_2_sec_2_title",
-    "serverValues": [{"fieldCode": "ch1_s1_field1Section_03_2"}, {"fieldCode": "ch1_s1_field2Section_03_2"}, {"fieldCode": "ch1_s1_field3Section_03_2"}, {"fieldCode": "ch2_s2_field4Section_03_2"}, {"fieldCode": "ch2_s2_field5Section_03_2"}, {"fieldCode": "ch2_s2_field6Section_03_2"}, {"fieldCode": "ch2_s2_field7Section_03_2"}, {"fieldCode": "ch2_s2_field8Section_03_2"}],
+    "serverValues": [{"fieldValue": "title_option_2", "fieldCode": "ch1_s1_field1Section_03_2"}, {
+      "fieldValue": "asdas",
+      "fieldCode": "ch1_s1_field2Section_03_2"
+    }, {
+      "fieldValue": "dasdas",
+      "fieldCode": "ch1_s1_field3Section_03_2"
+    }, {"fieldCode": "ch2_s2_field4Section_03_2"}, {
+      "fieldValue": "1988-11-11",
+      "fieldCode": "ch2_s2_field5Section_03_2"
+    }, {"fieldValue": "country_option_3", "fieldCode": "ch2_s2_field6Section_03_2"}, {
+      "fieldValue": "country_option_3",
+      "fieldCode": "ch2_s2_field7Section_03_2"
+    }, {"fieldValue": "true", "fieldCode": "ch2_s2_field8Section_03_2"}],
     "sequence": 4,
     "relatedSection": "Section_01",
     "name": "Section_03_2",
@@ -1775,6 +1842,7 @@ export default [{
       "type": "title",
       "sfFieldType": "Text",
       "sequence": 19,
+      "readOnly": false,
       "name": "nullSection_03_2",
       "label": "ch_2_sec_2_title"
     }, {
@@ -1786,6 +1854,7 @@ export default [{
       "type": "horizontal_radio_btns",
       "sfFieldType": "Picklist",
       "sequence": 20,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch1_s1_field1Section_03_2",
       "listOfValues": [{
@@ -1806,6 +1875,7 @@ export default [{
       "type": "text",
       "sfFieldType": "Text",
       "sequence": 21,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch1_s1_field2Section_03_2",
       "label": "ch1_s1_field2_label",
@@ -1821,6 +1891,7 @@ export default [{
       "type": "text",
       "sfFieldType": "Text",
       "sequence": 22,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch1_s1_field3Section_03_2",
       "label": "ch1_s1_field3_label",
@@ -1836,6 +1907,7 @@ export default [{
       "type": "text",
       "sfFieldType": "Text",
       "sequence": 23,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field4Section_03_2",
       "label": "ch2_s2_field4_label",
@@ -1850,6 +1922,7 @@ export default [{
       "type": "date",
       "sfFieldType": "Date",
       "sequence": 24,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field5Section_03_2",
       "label": "ch2_s2_field5_label",
@@ -1864,6 +1937,7 @@ export default [{
       "type": "drop_down",
       "sfFieldType": "Picklist",
       "sequence": 25,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field6Section_03_2",
       "listOfValues": [{
@@ -2555,6 +2629,7 @@ export default [{
       "type": "drop_down",
       "sfFieldType": "Picklist",
       "sequence": 26,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field7Section_03_2",
       "listOfValues": [{
@@ -3242,6 +3317,7 @@ export default [{
       "type": "boxed_checkbox",
       "sfFieldType": "Checkbox",
       "sequence": 27,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field8Section_03_2",
       "label": "ch2_s2_field8_label",
@@ -3252,7 +3328,19 @@ export default [{
   }, {
     "type": "Conditional",
     "title": "ch_2_sec_2_title",
-    "serverValues": [{"fieldCode": "ch1_s1_field1Section_03_3"}, {"fieldCode": "ch1_s1_field2Section_03_3"}, {"fieldCode": "ch1_s1_field3Section_03_3"}, {"fieldCode": "ch2_s2_field4Section_03_3"}, {"fieldCode": "ch2_s2_field5Section_03_3"}, {"fieldCode": "ch2_s2_field6Section_03_3"}, {"fieldCode": "ch2_s2_field7Section_03_3"}, {"fieldCode": "ch2_s2_field8Section_03_3"}],
+    "serverValues": [{"fieldValue": "title_option_1", "fieldCode": "ch1_s1_field1Section_03_3"}, {
+      "fieldValue": "owner",
+      "fieldCode": "ch1_s1_field2Section_03_3"
+    }, {
+      "fieldValue": "ownersurname",
+      "fieldCode": "ch1_s1_field3Section_03_3"
+    }, {"fieldCode": "ch2_s2_field4Section_03_3"}, {
+      "fieldValue": "1980-11-11",
+      "fieldCode": "ch2_s2_field5Section_03_3"
+    }, {"fieldValue": "country_option_2", "fieldCode": "ch2_s2_field6Section_03_3"}, {
+      "fieldValue": "country_option_1",
+      "fieldCode": "ch2_s2_field7Section_03_3"
+    }, {"fieldValue": "true", "fieldCode": "ch2_s2_field8Section_03_3"}],
     "sequence": 5,
     "relatedSection": "Section_01",
     "name": "Section_03_3",
@@ -3260,6 +3348,7 @@ export default [{
       "type": "title",
       "sfFieldType": "Text",
       "sequence": 28,
+      "readOnly": false,
       "name": "nullSection_03_3",
       "label": "ch_2_sec_2_title"
     }, {
@@ -3271,6 +3360,7 @@ export default [{
       "type": "horizontal_radio_btns",
       "sfFieldType": "Picklist",
       "sequence": 29,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch1_s1_field1Section_03_3",
       "listOfValues": [{
@@ -3291,6 +3381,7 @@ export default [{
       "type": "text",
       "sfFieldType": "Text",
       "sequence": 30,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch1_s1_field2Section_03_3",
       "label": "ch1_s1_field2_label",
@@ -3306,6 +3397,7 @@ export default [{
       "type": "text",
       "sfFieldType": "Text",
       "sequence": 31,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch1_s1_field3Section_03_3",
       "label": "ch1_s1_field3_label",
@@ -3321,6 +3413,7 @@ export default [{
       "type": "text",
       "sfFieldType": "Text",
       "sequence": 32,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field4Section_03_3",
       "label": "ch2_s2_field4_label",
@@ -3335,6 +3428,7 @@ export default [{
       "type": "date",
       "sfFieldType": "Date",
       "sequence": 33,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field5Section_03_3",
       "label": "ch2_s2_field5_label",
@@ -3349,6 +3443,7 @@ export default [{
       "type": "drop_down",
       "sfFieldType": "Picklist",
       "sequence": 34,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field6Section_03_3",
       "listOfValues": [{
@@ -4040,6 +4135,7 @@ export default [{
       "type": "drop_down",
       "sfFieldType": "Picklist",
       "sequence": 35,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field7Section_03_3",
       "listOfValues": [{
@@ -4727,6 +4823,7 @@ export default [{
       "type": "boxed_checkbox",
       "sfFieldType": "Checkbox",
       "sequence": 36,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field8Section_03_3",
       "label": "ch2_s2_field8_label",
@@ -4737,13 +4834,26 @@ export default [{
   }, {
     "type": "Conditional",
     "title": "ch_2_sec_5_title",
-    "serverValues": [{"fieldCode": "ch1_s1_field1Section_04_1"}, {"fieldCode": "ch1_s1_field2Section_04_1"}, {"fieldCode": "ch1_s1_field3Section_04_1"}, {"fieldCode": "ch2_s2_field4Section_04_1"}, {"fieldCode": "ch2_s2_field5Section_04_1"}, {"fieldCode": "ch2_s2_field6Section_04_1"}, {"fieldCode": "ch2_s2_field7Section_04_1"}, {"fieldCode": "ch2_s2_field8Section_04_1"}],
+    "serverValues": [{"fieldValue": "title_option_1", "fieldCode": "ch1_s1_field1Section_04_1"}, {
+      "fieldValue": "sadas",
+      "fieldCode": "ch1_s1_field2Section_04_1"
+    }, {"fieldValue": "dasda", "fieldCode": "ch1_s1_field3Section_04_1"}, {
+      "fieldValue": "asda",
+      "fieldCode": "ch2_s2_field4Section_04_1"
+    }, {"fieldValue": "1980-11-22", "fieldCode": "ch2_s2_field5Section_04_1"}, {
+      "fieldValue": "country_option_3",
+      "fieldCode": "ch2_s2_field6Section_04_1"
+    }, {"fieldValue": "country_option_3", "fieldCode": "ch2_s2_field7Section_04_1"}, {
+      "fieldValue": "true",
+      "fieldCode": "ch2_s2_field8Section_04_1"
+    }],
     "sequence": 6,
     "name": "Section_04_1",
     "fields": [{
       "type": "title",
       "sfFieldType": "Text",
       "sequence": 37,
+      "readOnly": false,
       "name": "nullSection_04_1",
       "label": "ch_2_sec_5_title"
     }, {
@@ -4755,6 +4865,7 @@ export default [{
       "type": "horizontal_radio_btns",
       "sfFieldType": "Picklist",
       "sequence": 38,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch1_s1_field1Section_04_1",
       "listOfValues": [{
@@ -4775,6 +4886,7 @@ export default [{
       "type": "text",
       "sfFieldType": "Text",
       "sequence": 39,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch1_s1_field2Section_04_1",
       "label": "ch1_s1_field2_label",
@@ -4790,6 +4902,7 @@ export default [{
       "type": "text",
       "sfFieldType": "Text",
       "sequence": 40,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch1_s1_field3Section_04_1",
       "label": "ch1_s1_field3_label",
@@ -4805,6 +4918,7 @@ export default [{
       "type": "text",
       "sfFieldType": "Text",
       "sequence": 41,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field4Section_04_1",
       "label": "ch2_s2_field4_label",
@@ -4819,6 +4933,7 @@ export default [{
       "type": "date",
       "sfFieldType": "Date",
       "sequence": 42,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field5Section_04_1",
       "label": "ch2_s2_field5_label",
@@ -4833,6 +4948,7 @@ export default [{
       "type": "drop_down",
       "sfFieldType": "Picklist",
       "sequence": 43,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field6Section_04_1",
       "listOfValues": [{
@@ -5524,6 +5640,7 @@ export default [{
       "type": "drop_down",
       "sfFieldType": "Picklist",
       "sequence": 44,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field7Section_04_1",
       "listOfValues": [{
@@ -6203,6 +6320,7 @@ export default [{
       "type": "boxed_checkbox",
       "sfFieldType": "Checkbox",
       "sequence": 45,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field8Section_04_1",
       "label": "ch2_s2_field8_label",
@@ -6216,6 +6334,7 @@ export default [{
       }],
       "type": "boxed_checkbox",
       "sequence": 46,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field9Section_04_1",
       "label": "ch2_s2_field9_label",
@@ -6226,13 +6345,26 @@ export default [{
   }, {
     "type": "Conditional",
     "title": "ch_2_sec_6_title",
-    "serverValues": [{"fieldCode": "ch1_s1_field1Section_04_2"}, {"fieldCode": "ch1_s1_field2Section_04_2"}, {"fieldCode": "ch1_s1_field3Section_04_2"}, {"fieldCode": "ch2_s2_field4Section_04_2"}, {"fieldCode": "ch2_s2_field5Section_04_2"}, {"fieldCode": "ch2_s2_field6Section_04_2"}, {"fieldCode": "ch2_s2_field7Section_04_2"}, {"fieldCode": "ch2_s2_field8Section_04_2"}],
+    "serverValues": [{
+      "fieldValue": "title_option_2",
+      "fieldCode": "ch1_s1_field1Section_04_2"
+    }, {"fieldValue": "asdasdfff", "fieldCode": "ch1_s1_field2Section_04_2"}, {
+      "fieldValue": "dasdsaefe",
+      "fieldCode": "ch1_s1_field3Section_04_2"
+    }, {"fieldCode": "ch2_s2_field4Section_04_2"}, {
+      "fieldValue": "1988-11-11",
+      "fieldCode": "ch2_s2_field5Section_04_2"
+    }, {"fieldValue": "country_option_2", "fieldCode": "ch2_s2_field6Section_04_2"}, {
+      "fieldValue": "country_option_3",
+      "fieldCode": "ch2_s2_field7Section_04_2"
+    }, {"fieldValue": "true", "fieldCode": "ch2_s2_field8Section_04_2"}],
     "sequence": 7,
     "name": "Section_04_2",
     "fields": [{
       "type": "title",
       "sfFieldType": "Text",
       "sequence": 47,
+      "readOnly": false,
       "name": "nullSection_04_2",
       "label": "ch_2_sec_6_title"
     }, {
@@ -6244,6 +6376,7 @@ export default [{
       "type": "horizontal_radio_btns",
       "sfFieldType": "Picklist",
       "sequence": 48,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch1_s1_field1Section_04_2",
       "listOfValues": [{
@@ -6264,6 +6397,7 @@ export default [{
       "type": "text",
       "sfFieldType": "Text",
       "sequence": 49,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch1_s1_field2Section_04_2",
       "label": "ch1_s1_field2_label",
@@ -6279,6 +6413,7 @@ export default [{
       "type": "text",
       "sfFieldType": "Text",
       "sequence": 50,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch1_s1_field3Section_04_2",
       "label": "ch1_s1_field3_label",
@@ -6294,6 +6429,7 @@ export default [{
       "type": "text",
       "sfFieldType": "Text",
       "sequence": 51,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field4Section_04_2",
       "label": "ch2_s2_field4_label",
@@ -6308,6 +6444,7 @@ export default [{
       "type": "date",
       "sfFieldType": "Date",
       "sequence": 52,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field5Section_04_2",
       "label": "ch2_s2_field5_label",
@@ -6322,6 +6459,7 @@ export default [{
       "type": "drop_down",
       "sfFieldType": "Picklist",
       "sequence": 53,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field6Section_04_2",
       "listOfValues": [{
@@ -7009,6 +7147,7 @@ export default [{
       "type": "drop_down",
       "sfFieldType": "Picklist",
       "sequence": 54,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field7Section_04_2",
       "listOfValues": [{
@@ -7684,6 +7823,7 @@ export default [{
       "type": "boxed_checkbox",
       "sfFieldType": "Checkbox",
       "sequence": 55,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field8Section_04_2",
       "label": "ch2_s2_field8_label",
@@ -7697,6 +7837,7 @@ export default [{
       }],
       "type": "boxed_checkbox",
       "sequence": 56,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field10Section_04_2",
       "label": "ch2_s2_field10_label",
@@ -7707,13 +7848,26 @@ export default [{
   }, {
     "type": "Conditional",
     "title": "ch_2_sec_7_title",
-    "serverValues": [{"fieldCode": "ch1_s1_field1Section_04_3"}, {"fieldCode": "ch1_s1_field2Section_04_3"}, {"fieldCode": "ch1_s1_field3Section_04_3"}, {"fieldCode": "ch2_s2_field4Section_04_3"}, {"fieldCode": "ch2_s2_field5Section_04_3"}, {"fieldCode": "ch2_s2_field6Section_04_3"}, {"fieldCode": "ch2_s2_field7Section_04_3"}, {"fieldCode": "ch2_s2_field8Section_04_3"}],
+    "serverValues": [{
+      "fieldValue": "title_option_1",
+      "fieldCode": "ch1_s1_field1Section_04_3"
+    }, {"fieldValue": "dasdadasdasd", "fieldCode": "ch1_s1_field2Section_04_3"}, {
+      "fieldValue": "dasdadasda",
+      "fieldCode": "ch1_s1_field3Section_04_3"
+    }, {"fieldCode": "ch2_s2_field4Section_04_3"}, {
+      "fieldValue": "1985-12-12",
+      "fieldCode": "ch2_s2_field5Section_04_3"
+    }, {"fieldValue": "country_option_3", "fieldCode": "ch2_s2_field6Section_04_3"}, {
+      "fieldValue": "country_option_3",
+      "fieldCode": "ch2_s2_field7Section_04_3"
+    }, {"fieldValue": "true", "fieldCode": "ch2_s2_field8Section_04_3"}],
     "sequence": 8,
     "name": "Section_04_3",
     "fields": [{
       "type": "title",
       "sfFieldType": "Text",
       "sequence": 57,
+      "readOnly": false,
       "name": "nullSection_04_3",
       "label": "ch_2_sec_7_title"
     }, {
@@ -7725,6 +7879,7 @@ export default [{
       "type": "horizontal_radio_btns",
       "sfFieldType": "Picklist",
       "sequence": 58,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch1_s1_field1Section_04_3",
       "listOfValues": [{
@@ -7745,6 +7900,7 @@ export default [{
       "type": "text",
       "sfFieldType": "Text",
       "sequence": 59,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch1_s1_field2Section_04_3",
       "label": "ch1_s1_field2_label",
@@ -7760,6 +7916,7 @@ export default [{
       "type": "text",
       "sfFieldType": "Text",
       "sequence": 60,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch1_s1_field3Section_04_3",
       "label": "ch1_s1_field3_label",
@@ -7775,6 +7932,7 @@ export default [{
       "type": "text",
       "sfFieldType": "Text",
       "sequence": 61,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field4Section_04_3",
       "label": "ch2_s2_field4_label",
@@ -7789,6 +7947,7 @@ export default [{
       "type": "date",
       "sfFieldType": "Date",
       "sequence": 62,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field5Section_04_3",
       "label": "ch2_s2_field5_label",
@@ -7803,6 +7962,7 @@ export default [{
       "type": "drop_down",
       "sfFieldType": "Picklist",
       "sequence": 63,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field6Section_04_3",
       "listOfValues": [{
@@ -8494,6 +8654,7 @@ export default [{
       "type": "drop_down",
       "sfFieldType": "Picklist",
       "sequence": 64,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field7Section_04_3",
       "listOfValues": [{
@@ -9185,6 +9346,7 @@ export default [{
       "type": "boxed_checkbox",
       "sfFieldType": "Checkbox",
       "sequence": 65,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Contact__c",
       "name": "ch2_s2_field8Section_04_3",
       "label": "ch2_s2_field8_label",
@@ -9203,20 +9365,31 @@ export default [{
   "sections": [{
     "type": "Simple",
     "title": "ch_3_sec_8_title",
-    "serverValues": [{"fieldCode": "ch3_s1_field1Section_05"}, {"fieldCode": "ch3_s1_field2Section_05"}, {"fieldCode": "ch3_s1_field3Section_05"}, {"fieldCode": "ch3_s1_field4Section_05"}, {
-      "fieldValue": "yrtyrty",
-      "fieldCode": "ch3_s1_field5Section_05"
-    }, {"fieldValue": "yryr", "fieldCode": "ch3_s1_field6Section_05"}, {
-      "fieldValue": "",
-      "fieldCode": "ch3_s1_field7Section_05"
-    }],
+    "serverValues": [{"fieldValue": "asdasd", "fieldCode": "ch3_s1_field1Section_05"}, {
+      "fieldValue": "12313",
+      "fieldCode": "ch3_s1_field2Section_05"
+    }, {"fieldValue": "adasd", "fieldCode": "ch3_s1_field3Section_05"}, {
+      "fieldValue": "country_option_86",
+      "fieldCode": "ch3_s1_field4Section_05"
+    }, {"fieldValue": "yrtyrty", "fieldCode": "ch3_s1_field5Section_05"}, {
+      "fieldValue": "yryr",
+      "fieldCode": "ch3_s1_field6Section_05"
+    }, {"fieldValue": "address_option_1;address_option_2", "fieldCode": "ch3_s1_field7Section_05"}],
     "sequence": 9,
     "name": "Section_05",
     "hiddenType": "Business address",
     "fields": [{
+      "type": "warning",
+      "sfFieldType": "Text",
+      "sequence": 0,
+      "readOnly": false,
+      "name": "nullSection_05",
+      "label": "ch3_warning"
+    }, {
       "type": "title",
       "sfFieldType": "Text",
       "sequence": 1,
+      "readOnly": false,
       "name": "nullSection_05",
       "label": "ch_3_sec_8_title"
     }, {
@@ -9229,6 +9402,7 @@ export default [{
       "type": "text",
       "sfFieldType": "Text",
       "sequence": 2,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Address__c",
       "name": "ch3_s1_field1Section_05",
       "label": "ch3_s1_field1_label",
@@ -9244,6 +9418,7 @@ export default [{
       "type": "text",
       "sfFieldType": "Text",
       "sequence": 3,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Address__c",
       "name": "ch3_s1_field2Section_05",
       "label": "ch3_s1_field2_label",
@@ -9260,6 +9435,7 @@ export default [{
       "type": "text",
       "sfFieldType": "Text",
       "sequence": 4,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Address__c",
       "name": "ch3_s1_field3Section_05",
       "label": "ch3_s1_field3_label",
@@ -9274,6 +9450,7 @@ export default [{
       "type": "drop_down",
       "sfFieldType": "Picklist",
       "sequence": 5,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Address__c",
       "name": "ch3_s1_field4Section_05",
       "listOfValues": [{"value": "country_option_86", "sequence": 86, "label": "country_option_86"}],
@@ -9284,6 +9461,7 @@ export default [{
       "type": "title",
       "sfFieldType": "Text",
       "sequence": 6,
+      "readOnly": false,
       "name": "nullSection_05",
       "label": "ch_3_sec_5_1_title"
     }, {
@@ -9296,6 +9474,7 @@ export default [{
       "type": "text",
       "sfFieldType": "Phone",
       "sequence": 7,
+      "readOnly": false,
       "objectApi": "ccApplication_Form__c",
       "name": "ch3_s1_field5Section_05",
       "label": "ch3_s1_field5_label",
@@ -9311,6 +9490,7 @@ export default [{
       "type": "text",
       "sfFieldType": "URL",
       "sequence": 8,
+      "readOnly": false,
       "objectApi": "ccApplication_Form__c",
       "name": "ch3_s1_field6Section_05",
       "label": "ch3_s1_field6_label",
@@ -9326,6 +9506,7 @@ export default [{
       "type": "boxed_checkbox_group",
       "sfFieldType": "Picklist (Multi-Select)",
       "sequence": 9,
+      "readOnly": false,
       "objectApi": "ccApplication_Form__c",
       "name": "ch3_s1_field7Section_05",
       "listOfValues": [{
@@ -9341,7 +9522,13 @@ export default [{
   }, {
     "type": "Conditional",
     "title": "ch_3_sec_9_title",
-    "serverValues": [{"fieldCode": "ch3_s1_field1Section_06_1"}, {"fieldCode": "ch3_s1_field2Section_06_1"}, {"fieldCode": "ch3_s1_field3Section_06_1"}, {"fieldCode": "ch3_s1_field4Section_06_1"}],
+    "serverValues": [{"fieldValue": "asdasd", "fieldCode": "ch3_s1_field1Section_06_1"}, {
+      "fieldValue": "12312",
+      "fieldCode": "ch3_s1_field2Section_06_1"
+    }, {"fieldValue": "asdas", "fieldCode": "ch3_s1_field3Section_06_1"}, {
+      "fieldValue": "country_option_86",
+      "fieldCode": "ch3_s1_field4Section_06_1"
+    }],
     "sequence": 10,
     "name": "Section_06_1",
     "hiddenType": "Correspondence address",
@@ -9349,6 +9536,7 @@ export default [{
       "type": "title",
       "sfFieldType": "Text",
       "sequence": 10,
+      "readOnly": false,
       "name": "nullSection_06_1",
       "label": "ch_3_sec_9_title"
     }, {
@@ -9361,6 +9549,7 @@ export default [{
       "type": "text",
       "sfFieldType": "Text",
       "sequence": 11,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Address__c",
       "name": "ch3_s1_field1Section_06_1",
       "label": "ch3_s1_field1_label",
@@ -9376,6 +9565,7 @@ export default [{
       "type": "text",
       "sfFieldType": "Text",
       "sequence": 12,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Address__c",
       "name": "ch3_s1_field2Section_06_1",
       "label": "ch3_s1_field2_label",
@@ -9392,6 +9582,7 @@ export default [{
       "type": "text",
       "sfFieldType": "Text",
       "sequence": 13,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Address__c",
       "name": "ch3_s1_field3Section_06_1",
       "label": "ch3_s1_field3_label",
@@ -9406,6 +9597,7 @@ export default [{
       "type": "drop_down",
       "sfFieldType": "Picklist",
       "sequence": 14,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Address__c",
       "name": "ch3_s1_field4Section_06_1",
       "listOfValues": [{"value": "country_option_86", "sequence": 86, "label": "country_option_86"}],
@@ -9417,7 +9609,13 @@ export default [{
   }, {
     "type": "Conditional",
     "title": "ch_3_sec_10_title",
-    "serverValues": [{"fieldCode": "ch3_s1_field1Section_06_2"}, {"fieldCode": "ch3_s1_field2Section_06_2"}, {"fieldCode": "ch3_s1_field3Section_06_2"}, {"fieldCode": "ch3_s1_field4Section_06_2"}],
+    "serverValues": [{"fieldValue": "dasdas", "fieldCode": "ch3_s1_field1Section_06_2"}, {
+      "fieldValue": "12312",
+      "fieldCode": "ch3_s1_field2Section_06_2"
+    }, {"fieldValue": "asdasda", "fieldCode": "ch3_s1_field3Section_06_2"}, {
+      "fieldValue": "country_option_86",
+      "fieldCode": "ch3_s1_field4Section_06_2"
+    }],
     "sequence": 11,
     "name": "Section_06_2",
     "hiddenType": "Outlet address",
@@ -9425,6 +9623,7 @@ export default [{
       "type": "title",
       "sfFieldType": "Text",
       "sequence": 15,
+      "readOnly": false,
       "name": "nullSection_06_2",
       "label": "ch_3_sec_10_title"
     }, {
@@ -9437,6 +9636,7 @@ export default [{
       "type": "text",
       "sfFieldType": "Text",
       "sequence": 16,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Address__c",
       "name": "ch3_s1_field1Section_06_2",
       "label": "ch3_s1_field1_label",
@@ -9452,6 +9652,7 @@ export default [{
       "type": "text",
       "sfFieldType": "Text",
       "sequence": 17,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Address__c",
       "name": "ch3_s1_field2Section_06_2",
       "label": "ch3_s1_field2_label",
@@ -9468,6 +9669,7 @@ export default [{
       "type": "text",
       "sfFieldType": "Text",
       "sequence": 18,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Address__c",
       "name": "ch3_s1_field3Section_06_2",
       "label": "ch3_s1_field3_label",
@@ -9482,6 +9684,7 @@ export default [{
       "type": "drop_down",
       "sfFieldType": "Picklist",
       "sequence": 19,
+      "readOnly": false,
       "objectApi": "ccApplication_Form_Address__c",
       "name": "ch3_s1_field4Section_06_2",
       "listOfValues": [{"value": "country_option_86", "sequence": 86, "label": "country_option_86"}],
@@ -9516,6 +9719,7 @@ export default [{
       "type": "title",
       "sfFieldType": "Text",
       "sequence": 1,
+      "readOnly": false,
       "name": "nullSection_07",
       "label": "ch_4_sec_11_title"
     }, {
@@ -9527,6 +9731,7 @@ export default [{
       "type": "drop_down",
       "sfFieldType": "Picklist",
       "sequence": 2,
+      "readOnly": false,
       "objectApi": "ccApplication_Form__c",
       "name": "ch4_s1_field1Section_07",
       "listOfValues": [{
@@ -9558,6 +9763,7 @@ export default [{
       "type": "drop_down",
       "sfFieldType": "Picklist",
       "sequence": 3,
+      "readOnly": false,
       "objectApi": "ccApplication_Form__c",
       "name": "ch4_s1_field2Section_07",
       "listOfValues": [{
@@ -9661,6 +9867,7 @@ export default [{
       "type": "drop_down",
       "sfFieldType": "Picklist",
       "sequence": 4,
+      "readOnly": false,
       "objectApi": "ccApplication_Form__c",
       "name": "ch4_s1_field3Section_07",
       "listOfValues": [{
@@ -10792,6 +10999,7 @@ export default [{
       "type": "vertical_radio_btns",
       "sfFieldType": "Picklist",
       "sequence": 5,
+      "readOnly": false,
       "objectApi": "ccApplication_Form__c",
       "name": "ch4_s1_field4Section_07",
       "listOfValues": [{"value": "vat_option_2", "sequence": 2, "label": "vat_option_2"}, {
@@ -10818,6 +11026,7 @@ export default [{
       "type": "text",
       "sfFieldType": "Text",
       "sequence": 6,
+      "readOnly": false,
       "objectApi": "ccApplication_Form__c",
       "name": "ch4_s2_field1Section_08",
       "label": "ch4_s2_field1_label",
@@ -10844,9 +11053,17 @@ export default [{
     "sequence": 14,
     "name": "Section_09",
     "fields": [{
+      "type": "warning",
+      "sfFieldType": "Text",
+      "sequence": 0,
+      "readOnly": false,
+      "name": "nullSection_09",
+      "label": "ch5_warning"
+    }, {
       "type": "title",
       "sfFieldType": "Text",
       "sequence": 1,
+      "readOnly": false,
       "name": "nullSection_09",
       "label": "ch_5_sec_9_1_title"
     }, {
@@ -10860,6 +11077,7 @@ export default [{
       "type": "text",
       "sfFieldType": "Text",
       "sequence": 2,
+      "readOnly": false,
       "objectApi": "ccApplication_Form__c",
       "name": "ch5_s1_field1Section_09",
       "label": "ch5_s1_field1_label",
@@ -10877,6 +11095,7 @@ export default [{
       "type": "text",
       "sfFieldType": "Text",
       "sequence": 3,
+      "readOnly": false,
       "objectApi": "ccApplication_Form__c",
       "name": "ch5_s1_field2Section_09",
       "label": "ch5_s1_field2_label",
@@ -10893,6 +11112,7 @@ export default [{
       "type": "text",
       "sfFieldType": "Text",
       "sequence": 4,
+      "readOnly": false,
       "objectApi": "ccApplication_Form__c",
       "name": "ch5_s1_field3Section_09",
       "label": "ch5_s1_field3_label",
@@ -10909,6 +11129,7 @@ export default [{
       "type": "text",
       "sfFieldType": "Text",
       "sequence": 5,
+      "readOnly": false,
       "objectApi": "ccApplication_Form__c",
       "name": "ch5_s1_field4Section_09",
       "label": "ch5_s1_field4_label",
@@ -10925,6 +11146,7 @@ export default [{
       "type": "text",
       "sfFieldType": "Text",
       "sequence": 6,
+      "readOnly": false,
       "objectApi": "ccApplication_Form__c",
       "name": "ch5_s1_field5Section_09",
       "label": "ch5_s1_field5_label",
@@ -10934,13 +11156,14 @@ export default [{
   }, {
     "type": "Conditional",
     "title": "ch_5_sec_12_title",
-    "serverValues": [{"fieldValue": "", "fieldCode": "ch5_s2_field1Section_10"}],
+    "serverValues": [{"fieldValue": "deadline_option_2", "fieldCode": "ch5_s2_field1Section_10"}],
     "sequence": 15,
     "name": "Section_10",
     "fields": [{
       "type": "title",
       "sfFieldType": "Text",
       "sequence": 7,
+      "readOnly": false,
       "name": "nullSection_10",
       "label": "ch_5_sec_12_title"
     }, {
@@ -10952,6 +11175,7 @@ export default [{
       "type": "drop_down",
       "sfFieldType": "Picklist",
       "sequence": 8,
+      "readOnly": false,
       "objectApi": "ccApplication_Form__c",
       "name": "ch5_s2_field1Section_10",
       "listOfValues": [{
@@ -10972,7 +11196,7 @@ export default [{
 }, {
   "title": "chapter_6_title",
   "subtitle": "chapter_6_sub_title",
-  "status": "WAITING",
+  "status": "WARNING",
   "sequence": 6,
   "sections": [{
     "type": "Simple",
@@ -10982,7 +11206,7 @@ export default [{
     }, {"fieldValue": "DE91100000000123456789", "fieldCode": "ch6_s1_field2Section_11"}, {
       "fieldValue": "tretret",
       "fieldCode": "ch6_s1_field3Section_11"
-    }, {"fieldValue": "false", "fieldCode": "ch6_s1_field4Section_11"}],
+    }, {"fieldValue": "true", "fieldCode": "ch6_s1_field4Section_11"}],
     "sequence": 16,
     "name": "Section_11",
     "fields": [{
@@ -10995,6 +11219,7 @@ export default [{
       "type": "text",
       "sfFieldType": "Text",
       "sequence": 1,
+      "readOnly": false,
       "objectApi": "ccApplication_Form__c",
       "name": "ch6_s1_field1Section_11",
       "label": "ch6_s1_field1_label",
@@ -11011,6 +11236,7 @@ export default [{
       "type": "text",
       "sfFieldType": "Text",
       "sequence": 2,
+      "readOnly": false,
       "objectApi": "ccApplication_Form__c",
       "name": "ch6_s1_field2Section_11",
       "label": "ch6_s1_field2_label",
@@ -11028,6 +11254,7 @@ export default [{
       "type": "text",
       "sfFieldType": "Text",
       "sequence": 3,
+      "readOnly": false,
       "objectApi": "ccApplication_Form__c",
       "name": "ch6_s1_field3Section_11",
       "label": "ch6_s1_field3_label",
@@ -11044,6 +11271,7 @@ export default [{
       "type": "boxed_checkbox",
       "sfFieldType": "Checkbox",
       "sequence": 4,
+      "readOnly": false,
       "objectApi": "ccApplication_Form__c",
       "name": "ch6_s1_field4Section_11",
       "label": "ch6_s1_field4_label",

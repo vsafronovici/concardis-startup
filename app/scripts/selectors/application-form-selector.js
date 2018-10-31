@@ -11,6 +11,8 @@ export const readyForSubmitSelector = compose(prop('readyForSubmit'), applicatio
 export const nrOfChaptersSelector = compose(prop('length'), chaptersSelector)
 export const reviewModeSelector = compose(prop('reviewMode'), applicationFormSelector)
 export const finalSubmitSelector = compose(prop('finalSubmit'), applicationFormSelector)
+export const quoteReviewSelector = compose(prop('quote'), applicationFormSelector)
+
 
 export const currentChapterSelector = createSelector(
   chaptersSelector,

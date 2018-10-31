@@ -42,7 +42,8 @@ export const FieldType = {
   CHECKBOX: 'checkbox',
   BOXED_CHECKBOX: 'boxed_checkbox',
   BOXED_CHECKBOX_GROUP: 'boxed_checkbox_group',
-  TITLE: 'title'
+  TITLE: 'title',
+  WARNING: 'warning'
 }
 
 export const SectionStatusType = {

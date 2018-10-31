@@ -86,5 +86,6 @@ export const APPLICATION_FORM = createNamespace('APPLICATION_FORM', {
   SUBMIT_RES: undefined,
   SUBMIT: undefined,
   READY_FOR_SUBMIT: undefined,
-  CONFIRM: undefined
+  CONFIRM: undefined,
+  GET_REVIEW_QUOTE: undefined
 })

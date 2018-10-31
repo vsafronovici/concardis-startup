@@ -99,3 +99,8 @@ export const submitRes = payload => ({
   type: APPLICATION_FORM.SUBMIT_RES,
   payload
 })
+
+export const getReviewQuote = payload => ({
+  type: APPLICATION_FORM.GET_REVIEW_QUOTE,
+  payload
+})

@@ -134,6 +134,12 @@ export default {
         }
       }
     },
+    [APPLICATION_FORM.GET_REVIEW_QUOTE](state, { payload }) {
+      return {
+        ...state,
+        quote: payload
+      }
+    },
   })
 }
 

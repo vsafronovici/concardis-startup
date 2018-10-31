@@ -15,6 +15,7 @@ import {
   openTACModal,
   saveReq,
   saveRes,
+  getReviewQuote
 } from '../actions/application-form-action'
 import {
   chaptersSelector,
@@ -128,6 +129,14 @@ function* submitReqSaga() {
   yield put(submitRes(response.data))
 }
 
+function* getReviewQuoteSaga() {
+  const action = {
+    actionName: window.configSettings.remoteActions.getQuote
+  }
+  const response = yield call(apiFetchSaga, action, { parseToJSON: true })
+  yield put(getReviewQuote(response.data))
+}
+
 export default function* root() {
   yield all([
     takeLatest(APPLICATION_FORM.INIT_DATA, initDataSaga),
@@ -136,5 +145,7 @@ export default function* root() {
     takeLatest(APPLICATION_FORM.SUBMIT, submitSaga),
     takeLatest(APPLICATION_FORM.SUBMIT_REQ, submitReqSaga),
     takeLatest(APPLICATION_FORM.CONFIRM, confirmTAC),
+    takeLatest(APPLICATION_FORM.GO_TO_REVIEW_MODE, getReviewQuoteSaga),
+
   ])
 }

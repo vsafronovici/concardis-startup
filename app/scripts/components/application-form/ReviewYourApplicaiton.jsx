@@ -5,10 +5,12 @@ import { Row, Col, Button } from 'antd'
 import { translate } from '../../i18n/i18n'
 import { closeTACModal, submit, confirm, setReadyForSubmit } from '../../actions/application-form-action'
 import ReviewChapters from './ReviewChapters'
-import { tacSelector } from '../../selectors/application-form-selector'
+import {quoteReviewSelector, tacSelector} from '../../selectors/application-form-selector'
 import TermsAndConditionsModal from './modal/TermsAndConditionsModal'
+import { OptionCard } from "../configurator/OptionCard";
 
 const ReviewYourApplication = props => {
+  const { quote } = props
   const {
     submitAction,
     TAC: { show },
@@ -21,7 +23,7 @@ const ReviewYourApplication = props => {
     setReadyForSubmitAction()
     submitAction()
   }
-
+  console.log('OPTION_PROPS', props)
   return (
     <div className="review-container">
       <Row>
@@ -38,11 +40,20 @@ const ReviewYourApplication = props => {
                 <ReviewChapters />
               </Col>
               <Col span={12}>
-                <div className="review-buttons-container">
-                  <Button onClick={onSubmit}>{translate('btn_applicationForm_submitApplication')}</Button>
-                  <Button onClick={submitAction}>{translate('btn_applicationForm_termsAndConditions')}</Button>
+                <div className="bundle-container">
+                  <div className="quote-container">
+                    {quote && <OptionCard
+                      includedItems={quote.includedItems}
+                      description={quote.description}
+                      name={quote.name}
+                      features={quote.features} />}
+                  </div>
+                  <div className="review-buttons-container">
+                    <Button onClick={onSubmit}>{translate('btn_applicationForm_submitApplication')}</Button>
+                    <Button onClick={submitAction}>{translate('btn_applicationForm_termsAndConditions')}</Button>
+                  </div>
+                  <TermsAndConditionsModal id="TAC_2" show={show} onClose={closeTACModalAction} onOk={confirmationAction} />
                 </div>
-                <TermsAndConditionsModal id="TAC_2" show={show} onClose={closeTACModalAction} onOk={confirmationAction} />
               </Col>
             </Row>
           </div>
@@ -53,7 +64,8 @@ const ReviewYourApplication = props => {
 }
 
 const mapStateToProps = (state) => ({
-  TAC: tacSelector(state)
+  TAC: tacSelector(state),
+  quote: quoteReviewSelector(state)
 })
 
 const mapDispatchToProps = ({

@@ -16,6 +16,7 @@ import { FieldHorizontalRadioBtns } from '../common/FieldHorizontalRadioBtns'
 import { FieldDate } from '../common/FieldDate'
 import { FieldTextBold } from '../common/FieldTextBold'
 import { FieldTitle } from '../common/FieldTitle'
+import { FieldWarning} from "../common/FieldWarning";
 
 /* eslint-disable react/prop-types */
 const createRenderer = render => ({ input, meta, type, ...rest }) => (
@@ -148,7 +149,8 @@ const RenderDate = createRenderer((input, meta, rest) => {
   )
 })
 
-const renderFieldComponent = ({ idx, field, i18n, touch }) => {
+
+const renderFieldComponent = ({ idx, field, i18n, touch, reviewMode }) => {
   const { type } = field
 
   const fieldProps = { ...field }
@@ -201,16 +203,19 @@ const renderFieldComponent = ({ idx, field, i18n, touch }) => {
     case FieldType.TITLE: {
       return <FieldTitle {...fieldProps} />
     }
+    case FieldType.WARNING: {
+      return reviewMode && <FieldWarning {...fieldProps} />
+    }
     default: {
       return null
     }
   }
 }
 
-export const FieldRow = ({ idx, field, i18n, touch }) => (
+export const FieldRow = ({ idx, field, i18n, touch, reviewMode }) => (
   <div className="form-field-row">
     <div style={{ display: 'none' }}>{field.name}</div>
-    { renderFieldComponent({ idx, field, i18n, touch }) }
+    { renderFieldComponent({ idx, field, i18n, touch, reviewMode }) }
   </div>
 )
 
