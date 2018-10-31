@@ -5,5 +5,5 @@ import { translate } from '../../i18n/i18n'
 export const FieldTitle = ({ label }) => <div className="field-title">{translate(label)}</div>
 
 FieldTitle.propTypes = {
-  title: PropTypes.string
+  label: PropTypes.string
 }

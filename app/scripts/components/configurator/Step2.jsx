@@ -87,7 +87,7 @@ export class Step2 extends React.Component {
 }
 
 Step2.propTypes = {
-  cardOption: PropTypes.object,
+  cardOption: PropTypes.string,
   summary: PropTypes.array,
   productsQ: PropTypes.array,
   changeFieldValue: PropTypes.func,

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 import { Icon } from 'antd'
 
 const style = {
@@ -9,15 +9,17 @@ const style = {
   heigth: '30px'
 }
 
-class CheckBoxField extends Component {
+export default class CheckBoxField extends Component {
   state = {
     checked: false
   }
 
+  static propTypes = {
+    onChange: PropTypes.func
+  }
+
   handleCheckBox = (value) => {
-    this.setState({
-      checked: !this.state.checked
-    })
+    this.setState({ checked: !this.state.checked })
     this.props.onChange(value)
   }
 
@@ -33,9 +35,3 @@ class CheckBoxField extends Component {
     )
   }
 }
-
-const mapStateToProps = state => ({})
-
-const mapDispatchToProps = state => ({})
-
-export default connect(mapStateToProps, mapDispatchToProps)(CheckBoxField)

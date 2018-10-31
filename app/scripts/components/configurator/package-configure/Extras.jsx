@@ -94,7 +94,8 @@ const mapDispatchToProps = ({
 Extras.propTypes = {
   extraFields: PropTypes.object,
   extraFieldsTotal: PropTypes.number,
-  extras: PropTypes.array
+  extras: PropTypes.array,
+  changeExtraQnty: PropTypes.func,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Extras)

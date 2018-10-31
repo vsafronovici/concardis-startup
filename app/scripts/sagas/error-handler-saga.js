@@ -9,6 +9,8 @@ function* errorHandler({ payload }) {
     content: 'Unexpected System Error',
     className: 'api-error-confirm'
   })
+
+  yield true
 }
 
 export default function* root() {

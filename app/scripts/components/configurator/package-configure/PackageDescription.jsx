@@ -14,7 +14,7 @@ const FEATURES = [
 ]
 
 const PackageDescription = props => {
-  const { dateValidTill, goToRoute } = props
+  const { dateValidTill, goToRouteAction } = props
 
   return (
     <Row>
@@ -33,7 +33,7 @@ const PackageDescription = props => {
             <ul className="pd-list">
               {FEATURES.map((feature, index) => (
                 <li className="pd-list-item" key={index}>
-                {translate(feature)}
+                  {translate(feature)}
                 </li>
               ))}
             </ul>
@@ -67,7 +67,7 @@ const PackageDescription = props => {
               </Col>
             </Row>
           </div>
-          <Button onClick={() => goToRoute(PackageRoutes.ROUTE_2)}>
+          <Button onClick={() => goToRouteAction(PackageRoutes.ROUTE_2)}>
             {translate('configurator.packagePersonalise.btn.packageApply')}
           </Button>
         </div>
@@ -81,11 +81,11 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = ({
-  goToRoute
+  goToRouteAction: goToRoute
 })
 
 PackageDescription.propTypes = {
-  goToRoute: PropTypes.func,
+  goToRouteAction: PropTypes.func,
   dateValidTill: PropTypes.string,
 }
 

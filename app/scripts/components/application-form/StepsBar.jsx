@@ -1,37 +1,18 @@
 import React from 'react'
-import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import { Col, Row, Steps, Icon } from 'antd'
+import { connect } from 'react-redux'
+import { Col, Row, Steps } from 'antd'
 import { translate } from './../../i18n/i18n'
-import { ApplicationFormStepsTitles, SectionStatusType } from '../../utils/constants'
+import { SectionStatusType } from '../../utils/constants'
 import { currentSelector, chaptersSelector } from '../../selectors/application-form-selector'
 import { goToSection } from './../../actions/application-form-action'
 
 const { Step } = Steps
 
-const Loading = <Icon type="loading" className="step_loading" />
-
-const getStepTitle = status => {
-  switch (status) {
-    case ApplicationFormStepsTitles.STEP_1:
-      return 'About you'
-    case ApplicationFormStepsTitles.STEP_2:
-      return 'Company legal details'
-    case ApplicationFormStepsTitles.STEP_3:
-      return 'Company contact details'
-    case ApplicationFormStepsTitles.STEP_4:
-      return 'Company business model'
-    case ApplicationFormStepsTitles.STEP_5:
-      return 'Customise your product'
-    case ApplicationFormStepsTitles.STEP_6:
-      return 'Payment details'
-    default:
-      return 'About you'
-  }
-}
 const RenderStepLink = (props) => {
   const { title, disabled, goToSectionAction, stepIndex } = props
   return (
+    // eslint-disable-next-line no-script-url
     <a href="javascript:void(0)" className="field-step-link" disabled={disabled} onClick={() => goToSectionAction(stepIndex)}>
       {translate(title)}
     </a>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Modal } from 'antd'
-import PropTypes from 'prop-types'
 import { Loader } from '../../Loader'
 import { request } from './../../../modules/client'
 import { NodeProcess } from '../../../utils/constants'
@@ -9,6 +9,12 @@ import { translate } from '../../../i18n/i18n'
 import { i18nLangSelector } from '../../../selectors/i18n-selector'
 
 export class TermsAndConditions extends Component {
+  static propTypes = {
+    lang: PropTypes.string,
+    show: PropTypes.bool,
+    onClose: PropTypes.func,
+  }
+
   componentDidMount() {
     if (process.env.NODE_ENV === NodeProcess.DEV) {
       this.content = (
@@ -40,12 +46,6 @@ export class TermsAndConditions extends Component {
       </Modal>
     )
   }
-}
-
-TermsAndConditions.propTypes = {
-  lang: PropTypes.string,
-  show: PropTypes.bool,
-  onClose: PropTypes.func
 }
 
 const mapStateToProps = state => ({

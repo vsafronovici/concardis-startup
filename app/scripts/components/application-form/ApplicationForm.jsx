@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Row, Col } from 'antd'
 
@@ -7,7 +6,6 @@ import StepsBar from './StepsBar'
 import TAC from './TAC'
 import SectionForm from './ChapterForm'
 import { translate } from '../../i18n/i18n'
-import { ReviewYourApplication } from './ReviewYourApplicaiton'
 
 const ApplicationForm = props => (
   <Row>

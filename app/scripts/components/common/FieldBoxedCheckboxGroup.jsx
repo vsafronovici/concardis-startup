@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { Checkbox } from 'antd'
-import { contains, without, uniq, compose, memoizeWith, pipe, map, identity } from 'ramda'
+import { contains, without, uniq, memoizeWith, pipe, map, identity } from 'ramda'
 import { translate } from './../../i18n/i18n'
 import { MULTIPLE_OPTIONS_SEPARATOR, sortBySequence } from '../../utils/application-form-utils'
 
@@ -43,29 +43,27 @@ CheckBoxItem.propTypes = {
   checked: PropTypes.bool
 }
 
-const fromValue = value => isNilOrEmpty(value) ? [] : value.split(MULTIPLE_OPTIONS_SEPARATOR)
-const toValue = valuesArr => isNilOrEmpty(valuesArr) ? '' : valuesArr.join(MULTIPLE_OPTIONS_SEPARATOR)
+const fromValue = value => (isNilOrEmpty(value) ? [] : value.split(MULTIPLE_OPTIONS_SEPARATOR))
+const toValue = valuesArr => (isNilOrEmpty(valuesArr) ? '' : valuesArr.join(MULTIPLE_OPTIONS_SEPARATOR))
 
 const renderCheckboxItems = memoizeWith(
   identity,
-  (_, listOfValues, onFocus, defaultValuesArr, handleChange) => pipe(sortBySequence, map(({ name, value: optionValue, label, help, ...field }, index) => {
-    return (
-      <div key={index}>
-        <CheckBoxItem
-          {...field}
-          name={name}
-          value={optionValue}
-          label={label}
-          help={help}
-          onChange={handleChange(optionValue)}
-          description={field.description}
-          index={index}
-          onFocus={onFocus}
-          checked={contains(optionValue, defaultValuesArr)}
-        />
-      </div>
-    )
-  }))(listOfValues)
+  (_, listOfValues, onFocus, defaultValuesArr, handleChange) => pipe(sortBySequence, map(({ name, value: optionValue, label, help, ...field }, index) => (
+    <div key={optionValue}>
+      <CheckBoxItem
+        {...field}
+        name={name}
+        value={optionValue}
+        label={label}
+        help={help}
+        onChange={handleChange(optionValue)}
+        description={field.description}
+        index={index}
+        onFocus={onFocus}
+        checked={contains(optionValue, defaultValuesArr)}
+      />
+    </div>
+  )))(listOfValues)
 )
 
 export const FieldBoxedCheckboxGroup = (props) => {
@@ -73,7 +71,6 @@ export const FieldBoxedCheckboxGroup = (props) => {
   const defaultValuesArr = fromValue(value)
 
   const handleChange = optionKey => checked => {
-    const defaultValuesArr = fromValue(props.value)
     const valuesArr = checked ? uniq([...defaultValuesArr, optionKey]) : without(optionKey, defaultValuesArr)
     props.onChange(toValue(valuesArr))
   }
@@ -97,6 +94,6 @@ FieldBoxedCheckboxGroup.propTypes = {
   listOfValues: PropTypes.array,
   description: PropTypes.string,
   onFocus: PropTypes.func,
-  checked: PropTypes.bool,
-  value: PropTypes.any
+  value: PropTypes.any,
+  input: PropTypes.object,
 }
