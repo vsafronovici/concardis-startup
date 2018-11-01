@@ -11206,7 +11206,7 @@ export default [{
     }, {"fieldValue": "DE91100000000123456789", "fieldCode": "ch6_s1_field2Section_11"}, {
       "fieldValue": "tretret",
       "fieldCode": "ch6_s1_field3Section_11"
-    }, {"fieldValue": "true", "fieldCode": "ch6_s1_field4Section_11"}],
+    }, {"fieldValue": "false", "fieldCode": "ch6_s1_field4Section_11"}],
     "sequence": 16,
     "name": "Section_11",
     "fields": [{

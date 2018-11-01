@@ -81,25 +81,29 @@ const RenderBoxedRadioBtns = createRenderer((input, meta, rest) => {
 
 const RenderBoxedCheckbox = createRenderer((input, meta, rest) => {
   const { touch } = rest
+  console.log('RENDER_BOXED_CHECK', rest, input, meta)
   return (
     <FieldBoxedCheckbox
-      onChange={(event) => input.onChange(event)}
+      onChange={event => onChangeCheckBox(event, input, touch)}
       input={input}
       value={input.value}
-      onBlur={event => touch(input.name)}
+      //onBlur={event => touch(input.name)}
       {...rest}
     />
   )
 })
 
-const RenderCheckbox = createRenderer((input, meta, rest) => (
-  <FieldCheckbox
-    onChange={(event) => input.onChange(event)}
-    input={input}
-    value={input.value}
-    {...rest}
-  />
-))
+const RenderCheckbox = createRenderer((input, meta, rest) => {
+  const { touch } = rest
+  return (
+    <FieldCheckbox
+      onChange={event => onChangeCheckBox(event, input, touch)}
+      input={input}
+      value={input.value}
+      {...rest}
+    />
+  )
+})
 
 const RenderBoxedCheckboxGroup = createRenderer((input, meta, rest) => {
   const { touch } = rest
@@ -186,10 +190,10 @@ const renderFieldComponent = ({ idx, field, i18n, touch, reviewMode }) => {
       return <Field {...fieldProps} component={RenderBoxedRadioBtns} touch={touch} />
     }
     case FieldType.BOXED_CHECKBOX: {
-      return <Field {...fieldProps} component={RenderBoxedCheckbox} />
+      return <Field {...fieldProps} component={RenderBoxedCheckbox} touch={touch}/>
     }
     case FieldType.CHECKBOX: {
-      return <Field {...fieldProps} component={RenderCheckbox} />
+      return <Field {...fieldProps} component={RenderCheckbox} touch={touch}/>
     }
     case FieldType.DROPDOWN: {
       return <Field {...fieldProps} component={RenderDropDown} touch={touch} />
