@@ -79,14 +79,18 @@ const RenderBoxedRadioBtns = createRenderer((input, meta, rest) => {
   />
 })
 
-const RenderBoxedCheckbox = createRenderer((input, meta, rest) => (
-  <FieldBoxedCheckbox
-    onChange={(event) => input.onChange(event)}
-    input={input}
-    value={input.value}
-    {...rest}
-  />
-))
+const RenderBoxedCheckbox = createRenderer((input, meta, rest) => {
+  const { touch } = rest
+  return (
+    <FieldBoxedCheckbox
+      onChange={(event) => input.onChange(event)}
+      input={input}
+      value={input.value}
+      onBlur={event => touch(input.name)}
+      {...rest}
+    />
+  )
+})
 
 const RenderCheckbox = createRenderer((input, meta, rest) => (
   <FieldCheckbox
