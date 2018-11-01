@@ -77,3 +77,8 @@ export const confirmOffer = payload => ({
   type: PACKAGE_CONFIGURE.CONFIRM_OFFER,
   payload
 })
+
+export const sitePageSetting = payload => ({
+  type: PACKAGE_CONFIGURE.PAGE_SITE_SETTINGS,
+  payload
+})

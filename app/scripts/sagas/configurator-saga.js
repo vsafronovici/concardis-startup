@@ -3,7 +3,7 @@ import { delay } from 'redux-saga'
 
 import { CONFIGURATOR } from '../actions/types'
 import {
-  changeFieldValue, getMetaStep1Res, getMetaStep2Req, getMetaStep2Res, recalculateQuoteRes, signupRes
+  changeFieldValue, getMetaStep1Res, getMetaStep2Req, getMetaStep2Res, recalculateQuoteRes, signupRes,
 } from '../actions/configurator-action'
 import { apiFetchSaga } from './app-saga'
 import { ConfiguratorPageStep, NodeProcess } from '../utils/constants'

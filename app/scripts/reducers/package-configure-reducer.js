@@ -6,7 +6,8 @@ import { RESPONSE_STATUS_CODE, PackageRoutes } from '../utils/constants'
 
 export const initialState = {
   submitting: false,
-  route: PackageRoutes.ROUTE_1
+  route: PackageRoutes.ROUTE_1,
+  sitePageSetting: null,
 }
 
 const getQuantity = path(['quantity', 'value'])
@@ -19,6 +20,12 @@ const createExtraFields = ({ extraItems }) =>
 
 export default {
   packageConfigure: createReducer(initialState, {
+    [PACKAGE_CONFIGURE.PAGE_SITE_SETTINGS](state, { payload }) {
+      return {
+        ...state,
+        sitePageSetting: payload,
+      }
+    },
     [PACKAGE_CONFIGURE.GET_META_PACKAGE_REQ](state) {
       return {
         ...state
