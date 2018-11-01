@@ -15,7 +15,7 @@ export const ReadChapterForm = ({ chapter, index, editSection }) => {
         <div className="chapter-title">
           {translate(chapter.title)}
         </div>
-        { fieldsToDisplay.map((field, idx) => <ReadFieldRow key={field.name} field={field} idx={idx} value={serverValues[field.name]} />) }
+        { fieldsToDisplay.map((field, idx) => <ReadFieldRow key={field.name + idx} field={field} idx={idx} value={serverValues[field.name]} />) }
       </div>
       <div className="edit-button">
         <Button onClick={() => editSection(index)}>Edit</Button>

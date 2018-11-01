@@ -2,7 +2,9 @@ import { FieldType } from '../../utils/constants'
 import { checkDate, isNilOrEmpty } from '../../utils/function-utils'
 import { fieldsToShow } from '../../utils/application-form-utils'
 
-const isTextualComponent = ({ type }) => type === FieldType.TEXT || type === FieldType.TEXT_BOLD
+const isTextualComponent = type => type === FieldType.TEXT || type === FieldType.TEXT_BOLD
+const isCheckboxComponent = type => type === FieldType.CHECKBOX || type === FieldType.BOXED_CHECKBOX
+const isFalse = value => value !== 'true'
 
 const createReducer = values => (errors, field) => {
   const { name, type, validationRules } = field
@@ -30,7 +32,7 @@ const createReducer = values => (errors, field) => {
     }
   }
 
-  if (!required && (!isTextualComponent(field) || isNilOrEmpty(value))) {
+  if (!required && (!isTextualComponent(type) || isNilOrEmpty(value))) {
     return errors
   }
 
@@ -41,10 +43,18 @@ const createReducer = values => (errors, field) => {
     }
   }
 
-  if (required && isNilOrEmpty(value)) {
-    return {
-      ...errors,
-      [name]: requiredError
+  if (required) {
+    switch (true) {
+      case (isCheckboxComponent(type) && isFalse(value)):
+      case (!isCheckboxComponent(type) && isNilOrEmpty(value)):
+        return {
+          ...errors,
+          [name]: requiredError
+        }
+
+      default:
+        return errors
+
     }
   }
 
