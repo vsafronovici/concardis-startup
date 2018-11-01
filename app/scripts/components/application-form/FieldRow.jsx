@@ -16,7 +16,8 @@ import { FieldHorizontalRadioBtns } from '../common/FieldHorizontalRadioBtns'
 import { FieldDate } from '../common/FieldDate'
 import { FieldTextBold } from '../common/FieldTextBold'
 import { FieldTitle } from '../common/FieldTitle'
-import { FieldWarning} from "../common/FieldWarning";
+import { FieldWarning } from '../common/FieldWarning'
+import { onChangeCheckBox } from '../../utils/application-form-utils'
 
 /* eslint-disable react/prop-types */
 const createRenderer = render => ({ input, meta, type, ...rest }) => (
@@ -59,7 +60,7 @@ const RenderVerticalRadioBtns = createRenderer((input, meta, rest) => {
 
   return <FieldVerticalRadioBtns
     onChange={(event) => input.onChange(event)}
-    onFocus={e => { touch(input.name) }}
+    onBlur={e => { touch(input.name) }}
     value={input.value}
     {...rest}
     meta={meta}
@@ -73,7 +74,7 @@ const RenderBoxedRadioBtns = createRenderer((input, meta, rest) => {
     onChange={(event) => input.onChange(event)}
     value={input.value}
     input={input}
-    onFocus={event => { touch(input.name) }}
+    onBlur={event => { touch(input.name) }}
     {...rest}
   />
 })
@@ -98,12 +99,13 @@ const RenderCheckbox = createRenderer((input, meta, rest) => (
 
 const RenderBoxedCheckboxGroup = createRenderer((input, meta, rest) => {
   const { touch } = rest
+
   return (
     <FieldBoxedCheckboxGroup
-      onChange={(event) => input.onChange(event)}
+      onChange={event => onChangeCheckBox(event, input, touch)}
       input={input}
       value={input.value}
-      onFocus={event => { touch(input.name) }}
+      //onFocus={event => { touch(input.name) }}
       {...rest}
     />
   )
@@ -130,7 +132,7 @@ const RenderHorizontalRadioBtns = createRenderer((input, meta, rest) => {
       onChange={event => input.onChange(event)}
       input={input}
       value={input.value}
-      onFocus={event => { touch(input.name) }}
+      onBlur={event => { touch(input.name) }}
       {...rest}
     />
   )

@@ -11,7 +11,7 @@ const RadioGroup = Radio.Group
 
 const options = memoizeWith(
   (fieldName, listOfValues) => `${fieldName}_${listOfValues.length}`,
-  (_, listOfValues, onFocus, autoFocus) => pipe(sortBySequence, mapIndexed((radio, index) => (
+  (_, listOfValues, onBlur, autoFocus) => pipe(sortBySequence, mapIndexed((radio, index) => (
     <div className="radio-container" key={index}>
       <div className="container-titles">
         <label>
@@ -27,7 +27,7 @@ const options = memoizeWith(
             {...radio}
             value={radio.value}
             autoFocus={index === 0 && autoFocus}
-            onFocus={onFocus}
+            onBlur={onBlur}
           />
         </div>
       </div>
@@ -36,7 +36,7 @@ const options = memoizeWith(
 )
 
 export const FieldBoxedRadioBtns = (props) => {
-  const { listOfValues, onChange, value, autoFocus, label, description, onFocus, validationRules, input: { name } } = props
+  const { listOfValues, onChange, value, autoFocus, label, description, onBlur, validationRules, input: { name } } = props
   return (
     <div className="field-boxed_radio_group">
       <div className="label">
@@ -48,7 +48,7 @@ export const FieldBoxedRadioBtns = (props) => {
         {description && translate(description)}
       </div>
       <RadioGroup onChange={(val) => onChange(val)} value={value} >
-        {!isNilOrEmpty(listOfValues) && options(name, listOfValues, onFocus, autoFocus)}
+        {!isNilOrEmpty(listOfValues) && options(name, listOfValues, onBlur, autoFocus)}
       </RadioGroup>
     </div>
   )

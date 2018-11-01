@@ -9501,7 +9501,7 @@ export default [{
       "validationRules": [{
         "validationError": "ch3_s1_field7_ValidErr",
         "requiredError": "ch3_s1_field7_ReqErr",
-        "required": false
+        "required": true
       }],
       "type": "boxed_checkbox_group",
       "sfFieldType": "Picklist (Multi-Select)",

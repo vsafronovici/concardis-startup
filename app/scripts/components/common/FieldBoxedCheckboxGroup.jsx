@@ -48,7 +48,7 @@ const toValue = valuesArr => (isNilOrEmpty(valuesArr) ? '' : valuesArr.join(MULT
 
 const renderCheckboxItems = memoizeWith(
   identity,
-  (_, listOfValues, onFocus, defaultValuesArr, handleChange) => pipe(sortBySequence, map(({ name, value: optionValue, label, help, ...field }, index) => (
+  (_, listOfValues, defaultValuesArr, handleChange) => pipe(sortBySequence, map(({ name, value: optionValue, label, help, ...field }, index) => (
     <div key={optionValue}>
       <CheckBoxItem
         {...field}
@@ -59,7 +59,7 @@ const renderCheckboxItems = memoizeWith(
         onChange={handleChange(optionValue)}
         description={field.description}
         index={index}
-        onFocus={onFocus}
+        //onFocus={onFocus}
         checked={contains(optionValue, defaultValuesArr)}
       />
     </div>
@@ -74,7 +74,7 @@ export const FieldBoxedCheckboxGroup = (props) => {
     const valuesArr = checked ? uniq([...defaultValuesArr, optionKey]) : without(optionKey, defaultValuesArr)
     props.onChange(toValue(valuesArr))
   }
-
+  console.log('BOXED_GROUP', props)
   return (
     <div className="field-boxed-checkbox-group">
       <label>
@@ -83,7 +83,7 @@ export const FieldBoxedCheckboxGroup = (props) => {
       <div className="description">
         {description && translate(description)}
       </div>
-      { listOfValues && renderCheckboxItems(`${name}_${listOfValues.length}_${value}`, listOfValues, onFocus, defaultValuesArr, handleChange) }
+      { listOfValues && renderCheckboxItems(`${name}_${listOfValues.length}_${value}`, listOfValues, defaultValuesArr, handleChange) }
     </div>
   )
 }

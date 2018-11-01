@@ -18,14 +18,14 @@ const radioStyle = {
 
 const options = memoizeWith(
   identity,
-  (_, listOfValues, onFocus, autoFocus) => pipe(sortBySequence, mapIndexed(({ value, label, ...rest }, index) => (
+  (_, listOfValues, onBlur, autoFocus) => pipe(sortBySequence, mapIndexed(({ value, label, ...rest }, index) => (
     <div className="bottom-container" key={value}>
       <Radio
         className="radio-required"
         value={value}
         style={radioStyle}
         autoFocus={index === 0 && autoFocus}
-        onFocus={onFocus}
+        onBlur={onBlur}
         {...rest}
       />
       <div className="bottom-label">{translate(label)}</div>
@@ -34,7 +34,7 @@ const options = memoizeWith(
 )
 
 export const FieldVerticalRadioBtns = props => {
-  const { value, onChange, label, listOfValues, autoFocus, required, helpText, onFocus, validationRules, input: { name } } = props
+  const { value, onChange, label, listOfValues, autoFocus, required, helpText, onBlur, validationRules, input: { name } } = props
   return (
     <div className="field-vertical-radio">
       <div className="label-container">
@@ -46,7 +46,7 @@ export const FieldVerticalRadioBtns = props => {
         </div>
       </div>
       <RadioGroup onChange={(val) => onChange(val)} value={value} required={required}>
-        {listOfValues && options(`${name}_${listOfValues.length}`, listOfValues, onFocus, autoFocus)}
+        {listOfValues && options(`${name}_${listOfValues.length}`, listOfValues, onBlur, autoFocus)}
       </RadioGroup>
     </div>
   )

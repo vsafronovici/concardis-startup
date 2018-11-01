@@ -12,12 +12,12 @@ const RadioGroup = Radio.Group
 
 const options = memoizeWith(
   identity,
-  (_, listOfValues, onFocus) => pipe(sortBySequence, map(({ value, label }) => (
+  (_, listOfValues, onBlur) => pipe(sortBySequence, map(({ value, label }) => (
     <Radio
       key={value}
       value={value}
       className="item radio-required"
-      onFocus={onFocus}
+      onBlur={onBlur}
     >
       {translate(label)}
     </Radio>
@@ -25,7 +25,7 @@ const options = memoizeWith(
 )
 
 export const FieldHorizontalRadioBtns = props => {
-  const { label, onChange, value, required, listOfValues, helpText, onFocus, validationRules, input: { name } } = props
+  const { label, onChange, value, required, listOfValues, helpText, onBlur, validationRules, input: { name } } = props
 
   return (
     <div className="field-horizontal-radio-btns">
@@ -33,7 +33,7 @@ export const FieldHorizontalRadioBtns = props => {
         <label>{translate(label)}</label>{getNotRequired(validationRules) && <Optional />}{helpText && <FieldTooltip label={helpText} />}
       </div>
       <RadioGroup onChange={event => onChange(event)} value={value} className="flex-row" required={required}>
-        {!isNilOrEmpty(listOfValues) && options(`${name}_${listOfValues.length}_${value}`, listOfValues, onFocus)}
+        {!isNilOrEmpty(listOfValues) && options(`${name}_${listOfValues.length}_${value}`, listOfValues, onBlur)}
       </RadioGroup>
     </div>
   )

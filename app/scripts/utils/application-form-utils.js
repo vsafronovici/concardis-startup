@@ -100,3 +100,8 @@ export const getNotRequired = validationRules =>
 export const sortBySequence = sortBy(prop('sequence'))
 
 export const toBoolean = value => value && value.toString() === 'true'
+
+export const onChangeCheckBox = (event, input, touch) => {
+  input.onChange(event)
+  touch(input.name)
+}
