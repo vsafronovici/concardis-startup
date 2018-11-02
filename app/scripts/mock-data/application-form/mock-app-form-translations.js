@@ -313,6 +313,7 @@ export default {
   "country_option_150": "Montenegro",
   "ch4_s1_field4_ReqErr": "This field is required.",
   "btn_applicationForm_reviewApplication": "Review application",
+  "review_application_title": "Review and Submit",
   "country_option_48": "Christmas Island",
   "subactivity_option_205": "Pawn Shops and Salvage Yards",
   "ch5_s1_field5_ReqErr": "This field is required.",
