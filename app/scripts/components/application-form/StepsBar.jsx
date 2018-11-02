@@ -7,21 +7,6 @@ import { SectionStatusType } from '../../utils/constants'
 import { currentSelector, chaptersSelector } from '../../selectors/application-form-selector'
 
 const { Step } = Steps
-
-const RenderStepLink = (props) => {
-  const { title } = props
-  return (
-    // eslint-disable-next-line no-script-url
-    <a href="javascript:void(0)" className="field-step-link" disabled={true}>
-      {translate(title)}
-    </a>
-  )
-}
-
-RenderStepLink.propTypes = {
-  title: PropTypes.string,
-}
-
 const renderStep = (props) => {
   const { section, stepIndex, currentIndex } = props
 
@@ -39,12 +24,11 @@ const renderStep = (props) => {
   }
   const checkNewCurrent =  ((stepIndex === currentIndex) ? 'process' : checkStepStatus(section.status)) ||
     ((stepIndex !== currentIndex) ? 'wait' : checkStepStatus(section.status))
-
   return <Step
     key={stepIndex}
     status={checkNewCurrent}
     disabled={true}
-    title={<RenderStepLink {...props} disabled={true} title={section.title} />}
+    title={<span className="field-step-link">{translate(props.section.title)}</span>}
     style={{ cursor: 'normal', lineHeight: '24px' }}
   />
 }
@@ -66,7 +50,7 @@ export const StepsBar = (props) => {
               <Step
                 key={sections.length}
                 disabled={true}
-                title={<RenderStepLink {...props} title={translate('review_application_title')} />}
+                title={<span className="field-step-link">{translate('review_application_title')}</span>}
                 style={{ cursor: 'normal', lineHeight: '24px' }}
               />]}
           </Steps>
