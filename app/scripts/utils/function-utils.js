@@ -60,3 +60,7 @@ export const parseCheckBoxValues = vals => {
   const parsedValues = vals.split(';').map(value => ` ${translate(value)} ${translate('vat_option_1')} `)
   return parsedValues
 }
+
+export const goToExternalPage = pageLink => {
+  window.location.href = pageLink
+}

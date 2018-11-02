@@ -61,6 +61,7 @@ export const PACKAGE_CONFIGURE = createNamespace('PACKAGE_CONFIGURE', {
   SUBMIT_QUOTE_RES: undefined,
   GO_TO_ROUTE: undefined,
   CONFIRM_OFFER: undefined,
+  PAGE_SITE_SETTINGS: undefined,
 })
 
 export const APPLICATION_FORM = createNamespace('APPLICATION_FORM', {

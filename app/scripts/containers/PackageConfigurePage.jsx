@@ -5,8 +5,8 @@ import { connect } from 'react-redux'
 import { initData } from '../actions/package-configure-action'
 import { i18nSelector } from '../selectors/i18n-selector'
 import { Loader } from '../components/Loader'
-import { quoteSelector } from '../selectors/package-configure-selector'
-import PackageRouter from './../components/configurator/package-configure/PackageRouter'
+import { quoteSelector, sitePageSettingSelector } from '../selectors/package-configure-selector'
+import PackageConfigureSwitcher from './../components/configurator/package-configure/PackageConfiguratorSwitcher'
 
 export class PackageConfigurePage extends React.Component {
   static propTypes = {
@@ -19,13 +19,18 @@ export class PackageConfigurePage extends React.Component {
     this.props.initData()
   }
 
+  showLoader = ({ quote, sitePageSettings }) =>
+    ((sitePageSettings < 3) && !quote)
+
   render() {
-    const { i18n, quote } = this.props
-    return !(i18n && quote)
+    const { i18n } = this.props
+    const showLoader = this.showLoader(this.props)
+
+    return (showLoader || !i18n)
       ? <Loader />
       : (
         <div>
-          <PackageRouter quote={quote} {...this.props} />
+          <PackageConfigureSwitcher {...this.props} />
         </div>
       )
   }
@@ -33,7 +38,8 @@ export class PackageConfigurePage extends React.Component {
 
 const mapStateToProps = state => ({
   i18n: i18nSelector(state),
-  quote: quoteSelector(state)
+  quote: quoteSelector(state),
+  sitePageSettings: sitePageSettingSelector(state),
 })
 
 const mapDispatchToProps = ({

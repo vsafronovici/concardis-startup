@@ -3,23 +3,28 @@ import { all, call, put, select, takeLatest } from 'redux-saga/effects'
 import { PACKAGE_CONFIGURE } from '../actions/types'
 import {
   getMetaPackageRes, validateDiscountCodeReq, validateDiscountCodeRes, applyDiscountReq, applyDiscountRes,
-  submitQuoteRes, goToRoute,
+  submitQuoteRes, goToRoute, sitePageSetting,
 } from '../actions/package-configure-action'
 import { failedApiFetch } from '../actions/app-action'
 import { apiFetchSaga } from './app-saga'
 import { applyDiscountPayloadSelector, saveQuoteResponseSelector } from '../selectors/package-configure-selector'
+import { goToExternalPage } from '../utils/function-utils'
 import { EXTERNAL_LINKS, PackageRoutes, RESPONSE_STATUS_CODE } from '../utils/constants'
 import { i18nLangSelector } from '../selectors/i18n-selector'
 
 function* initDataSaga() {
-  const lang = yield select(i18nLangSelector)
+  const sitePageValue = window.configSettings.statePageSetting
+  yield put(sitePageSetting(sitePageValue))
 
-  const action = {
-    actionName: window.configSettings.remoteActions.getQuote,
-    args: lang
+  if (sitePageValue < 3) {
+    const lang = yield select(i18nLangSelector)
+    const action = {
+      actionName: window.configSettings.remoteActions.getQuote,
+      args: lang
+    }
+    const response = yield call(apiFetchSaga, action, { parseToJSON: true })
+    yield put(getMetaPackageRes(response.data))
   }
-  const response = yield call(apiFetchSaga, action, { parseToJSON: true })
-  yield put(getMetaPackageRes(response.data))
 }
 
 function* applyDiscountSaga() {
@@ -82,7 +87,7 @@ function* confirmOfferSaga({ payload }) {
   const { code } = yield select(saveQuoteResponseSelector)
 
   if (code === RESPONSE_STATUS_CODE.OK) {
-    window.location.href = EXTERNAL_LINKS.APPLICATION_FORM
+    goToExternalPage(EXTERNAL_LINKS.APPLICATION_FORM)
   } else {
     yield put(failedApiFetch('Error when saving Quote'))
   }

@@ -8,7 +8,7 @@ import { translateToNumber } from './../transformers/configurator-transformer'
 export const initialState = {
   fields: {},
   step: ConfiguratorPageStep.STEP1,
-  submitting: false,
+  submitting: false
 }
 
 const createDefaultValues = (payload, step) => {
