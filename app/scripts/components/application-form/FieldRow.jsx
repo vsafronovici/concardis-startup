@@ -160,10 +160,10 @@ const RenderDate = createRenderer((input, meta, rest) => {
 })
 
 
-const renderFieldComponent = ({ idx, field, i18n, touch, reviewMode }) => {
+const renderFieldComponent = ({ idx, field, i18n, touch, reviewMode, formValues, changeFormValue }) => {
   const { type } = field
 
-  const fieldProps = { ...field }
+  const fieldProps = { ...field, touch }
 
   if (!i18n[fieldProps.description]) {
     fieldProps.description = null
@@ -184,31 +184,31 @@ const renderFieldComponent = ({ idx, field, i18n, touch, reviewMode }) => {
       return <Field {...fieldProps} component={RenderInput} />
     }
     case FieldType.VERTICAL_RADIO_BTNS: {
-      return <Field {...fieldProps} component={RenderVerticalRadioBtns} touch={touch} />
+      return <Field {...fieldProps} component={RenderVerticalRadioBtns} />
     }
     case FieldType.BOXED_RADIO_BTNS: {
-      return <Field {...fieldProps} component={RenderBoxedRadioBtns} touch={touch} />
+      return <Field {...fieldProps} component={RenderBoxedRadioBtns} />
     }
     case FieldType.BOXED_CHECKBOX: {
-      return <Field {...fieldProps} component={RenderBoxedCheckbox} touch={touch}/>
+      return <Field {...fieldProps} component={RenderBoxedCheckbox} />
     }
     case FieldType.CHECKBOX: {
-      return <Field {...fieldProps} component={RenderCheckbox} touch={touch}/>
+      return <Field {...fieldProps} component={RenderCheckbox} />
     }
     case FieldType.DROPDOWN: {
-      return <Field {...fieldProps} component={RenderDropDown} touch={touch} />
+      return <Field {...fieldProps} component={RenderDropDown} formValues={formValues} changeFormValue={changeFormValue} />
     }
     case FieldType.BOXED_CHECKBOX_GROUP: {
-      return <Field {...fieldProps} component={RenderBoxedCheckboxGroup} touch={touch} />
+      return <Field {...fieldProps} component={RenderBoxedCheckboxGroup} />
     }
     case FieldType.HORIZONTAL_RADIO_BTNS: {
-      return <Field {...fieldProps} component={RenderHorizontalRadioBtns} touch={touch} />
+      return <Field {...fieldProps} component={RenderHorizontalRadioBtns} />
     }
     case FieldType.DATE: {
-      return <Field {...fieldProps} component={RenderDate} touch={touch} />
+      return <Field {...fieldProps} component={RenderDate} />
     }
     case FieldType.TEXT_BOLD: {
-      return <Field {...fieldProps} component={RenderTextBold} touch={touch} />
+      return <Field {...fieldProps} component={RenderTextBold} />
     }
     case FieldType.TITLE: {
       return <FieldTitle {...fieldProps} />
@@ -222,10 +222,10 @@ const renderFieldComponent = ({ idx, field, i18n, touch, reviewMode }) => {
   }
 }
 
-export const FieldRow = ({ idx, field, i18n, touch, reviewMode }) => (
+export const FieldRow = props => (
   <div className="form-field-row">
-    <div style={{ display: 'none' }}>{field.name}</div>
-    { renderFieldComponent({ idx, field, i18n, touch, reviewMode }) }
+    <div style={{ display: 'none' }}>{props.field.name}</div>
+    { renderFieldComponent(props) }
   </div>
 )
 

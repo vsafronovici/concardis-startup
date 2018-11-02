@@ -59,7 +59,7 @@ export class DynamicForm extends React.Component {
   }
 
   render() {
-    const { chapter, rValues, current, i18n, touch, handleSubmit, error, reviewMode, submitting } = this.props
+    const { chapter, rValues, current, i18n, touch, handleSubmit, error, reviewMode, submitting, change: changeFormValue } = this.props
 
     const fieldsToDisplay = fieldsToShow(chapter, rValues)
 
@@ -82,11 +82,18 @@ export class DynamicForm extends React.Component {
           <div>
             <FieldMainTitle title={chapter.title} subtitle={chapter.subtitle} />
             <div>
-              { fieldsToDisplay.map((field, idx) => <FieldRow
-                key={field.name + idx} field={field} idx={idx} i18n={i18n}
-                touch={touch}
-                reviewMode={reviewMode}
-              />) }
+              { fieldsToDisplay.map((field, idx) =>
+                <FieldRow
+                  key={field.name + idx}
+                  field={field}
+                  idx={idx}
+                  i18n={i18n}
+                  touch={touch}
+                  reviewMode={reviewMode}
+                  formValues={rValues}
+                  changeFormValue={changeFormValue}
+                />
+              )}
             </div>
           </div>
           <div className="button-container">
