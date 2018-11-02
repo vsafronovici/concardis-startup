@@ -19,7 +19,7 @@ export class PackageConfigurePage extends React.Component {
     this.props.initData()
   }
 
-  showLoader = ({ i18n, quote, sitePageSettings }) =>
+  showLoader = ({ quote, sitePageSettings }) =>
     ((sitePageSettings < 3) && !quote)
 
   render() {
