@@ -5,15 +5,14 @@ import { Col, Row, Steps } from 'antd'
 import { translate } from './../../i18n/i18n'
 import { SectionStatusType } from '../../utils/constants'
 import { currentSelector, chaptersSelector } from '../../selectors/application-form-selector'
-import { goToSection } from './../../actions/application-form-action'
 
 const { Step } = Steps
 
 const RenderStepLink = (props) => {
-  const { title, disabled, goToSectionAction, stepIndex } = props
+  const { title } = props
   return (
     // eslint-disable-next-line no-script-url
-    <a href="javascript:void(0)" className="field-step-link" disabled={disabled} onClick={() => goToSectionAction(stepIndex)}>
+    <a href="javascript:void(0)" className="field-step-link" disabled={true}>
       {translate(title)}
     </a>
   )
@@ -21,22 +20,10 @@ const RenderStepLink = (props) => {
 
 RenderStepLink.propTypes = {
   title: PropTypes.string,
-  disabled: PropTypes.bool,
-  goToSectionAction: PropTypes.func,
-  stepIndex: PropTypes.any
 }
 
 const renderStep = (props) => {
   const { section, stepIndex, currentIndex } = props
-  const isFinishedOrProgress = (status) => {
-    switch (section.status) {
-      case SectionStatusType.IN_PROGRESS:
-      case SectionStatusType.FINISHED:
-        return true
-      default:
-        return false
-    }
-  }
 
   const checkStepStatus = () => {
     switch (section.status) {
@@ -50,15 +37,15 @@ const renderStep = (props) => {
         return 'wait'
     }
   }
-  const canGoToStep = isFinishedOrProgress(section.status)
   const checkNewCurrent =  ((stepIndex === currentIndex) ? 'process' : checkStepStatus(section.status)) ||
     ((stepIndex !== currentIndex) ? 'wait' : checkStepStatus(section.status))
 
   return <Step
     key={stepIndex}
     status={checkNewCurrent}
-    title={<RenderStepLink {...props} disabled={!canGoToStep} title={section.title} />}
-    style={canGoToStep ? { cursor: 'pointer', lineHeight: '24px' } : { cursor: 'normal', lineHeight: '24px' }}
+    disabled={true}
+    title={<RenderStepLink {...props} disabled={true} title={section.title} />}
+    style={{ cursor: 'normal', lineHeight: '24px' }}
   />
 }
 
@@ -69,13 +56,19 @@ renderStep.propTypes = {
 }
 
 export const StepsBar = (props) => {
-  const { sections = [], current, goToSectionAction } = props
+  const { sections = [], current } = props
   return (
     <div className="sf-container">
       <Row>
         <Col span={20}>
           <Steps direction="vertical" size="small" current={current} >
-            { sections && sections.map((section, index) => renderStep({ section, stepIndex: index, goToSectionAction, currentIndex: current })) }
+            { sections && [...sections.map((section, index) => renderStep({ section, stepIndex: index, currentIndex: current })),
+              <Step
+                key={sections.length}
+                disabled={true}
+                title={<RenderStepLink {...props} title={translate('review_application_title')} />}
+                style={{ cursor: 'normal', lineHeight: '24px' }}
+              />]}
           </Steps>
         </Col>
       </Row>
@@ -88,14 +81,9 @@ const mapStateToProps = state => ({
   current: currentSelector(state),
 })
 
-const mapDispatchToProps = ({
-  goToSectionAction: goToSection
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(StepsBar)
+export default connect(mapStateToProps)(StepsBar)
 
 StepsBar.propTypes = {
-  goToSectionAction: PropTypes.func,
   sections: PropTypes.array,
   current: PropTypes.any
 }
