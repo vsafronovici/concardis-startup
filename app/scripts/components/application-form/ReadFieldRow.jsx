@@ -52,6 +52,11 @@ const renderFieldComponent = ({ idx, field, value }) => {
       valueToDisplay = label
       break
     }
+    case FieldType.WARNING: {
+      valueToDisplay = null
+      label = null
+      break
+    }
     default: {
       valueToDisplay = value
     }

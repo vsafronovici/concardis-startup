@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { translate } from './../../i18n/i18n'
 
 export const FieldMainTitle = props => {
-  const { title, subtitle } = props
+  const { title, subtitle, reviewMode } = props
 
   return (
     <div className="field-main-title">
@@ -11,7 +11,7 @@ export const FieldMainTitle = props => {
         {translate(title)}
       </div>
       <div className="subtitle">
-        {translate(subtitle)}
+        {!reviewMode && translate(subtitle)}
       </div>
     </div>
   )
