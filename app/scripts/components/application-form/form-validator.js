@@ -8,7 +8,6 @@ const isFalse = value => value !== 'true'
 
 const createReducer = values => (errors, field) => {
   const { name, type, validationRules } = field
-
   if (isNilOrEmpty(validationRules)) {
     return errors
   }
@@ -44,17 +43,16 @@ const createReducer = values => (errors, field) => {
   }
 
   if (required) {
-    switch (true) {
-      case (isCheckboxComponent(type) && isFalse(value)):
-      case (!isCheckboxComponent(type) && isNilOrEmpty(value)):
-        return {
-          ...errors,
-          [name]: requiredError
-        }
-
-      default:
-        return errors
-
+    if (isCheckboxComponent(type) && isFalse(value)) {
+      return {
+        ...errors,
+        [name]: requiredError
+      }
+    } else if (!isCheckboxComponent(type) && isNilOrEmpty(value)) {
+      return {
+        ...errors,
+        [name]: requiredError
+      }
     }
   }
 
